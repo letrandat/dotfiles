@@ -1,16 +1,24 @@
-""" to reload vimrc :action IdeaVim.ReloadVimRc.reload
-""" Yank use system clipboard
+""" NOTES """
+" to reload vimrc :action IdeaVim.ReloadVimRc.reload
+
+""" CORE SETTINGS """
+" Yank to system clipboard
 set clipboard+=unnamed
-
-""" Map leader to space ---------------------
-let mapleader=" "
-
-""" IdeaVIM config
+" Stop Vim from yanking visual selected text
+xnoremap p pgvy
 set relativenumber
 
-""" Plugins  --------------------------------
-set easymotion
+""" REMAP """
+" Map leader to space
+let mapleader=" "
 
-""" Mappings --------------------------------
+""" PLUGINS """
+"""" easymotion start """"
+set easymotion
 map f <Plug>(easymotion-jumptoanywhere)
+"""" easymotion end """"
+
+"""" NERDTree start """"
+set NERDTree
+"""" NERDTree end """"
 
