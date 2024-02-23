@@ -23,9 +23,14 @@ map <leader>a <Action>(GotoAction)
 " Buffer: close(bo) all others
 map <leader>bo <Action>(CloseAllEditorsButActive)
 
-" Splitter (tab)
+" Splitter
 map <C-h> <Action>(NextSplitter)
 map <C-l> <Action>(PrevSplitter)
+
+" Tab
+nmap L <Action>(NextTab)
+nmap H <Action>(PreviousTab)
+
 
 """ PLUGINS """
 """" easymotion start """"
