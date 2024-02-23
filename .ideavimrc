@@ -14,12 +14,18 @@ let mapleader=" "
 " Y to copy from current to $
 nmap Y y$
 
+" General:
 " Action Go to File
 map <leader>f <Action>(GotoFile)
 " Action Go to Action
 map <leader>a <Action>(GotoAction)
-" bo all others
+
+" Buffer: close(bo) all others
 map <leader>bo <Action>(CloseAllEditorsButActive)
+
+" Splitter (tab)
+map <C-h> <Action>(NextSplitter)
+map <C-l> <Action>(PrevSplitter)
 
 """ PLUGINS """
 """" easymotion start """"
