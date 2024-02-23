@@ -18,6 +18,8 @@ nmap Y y$
 map <leader>f <Action>(GotoFile)
 " Action Go to Action
 map <leader>a <Action>(GotoAction)
+" bo all others
+map <leader>bo <Action>(CloseAllEditorsButActive)
 
 """ PLUGINS """
 """" easymotion start """"
