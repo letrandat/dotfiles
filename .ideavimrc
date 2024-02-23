@@ -1,0 +1,16 @@
+""" to reload vimrc :action IdeaVim.ReloadVimRc.reload
+""" Yank use system clipboard
+set clipboard+=unnamed
+
+""" Map leader to space ---------------------
+let mapleader=" "
+
+""" IdeaVIM config
+set relativenumber
+
+""" Plugins  --------------------------------
+set easymotion
+
+""" Mappings --------------------------------
+map f <Plug>(easymotion-jumptoanywhere)
+
