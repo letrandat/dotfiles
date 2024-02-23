@@ -24,7 +24,7 @@ map <leader>bo <Action>(CloseAllEditorsButActive)
 """ PLUGINS """
 """" easymotion start """"
 set easymotion
-map f <Plug>(easymotion-jumptoanywhere)
+map f <Plug>(easymotion-lineanywhere)
 """" easymotion end """"
 
 """" NERDTree start """"
