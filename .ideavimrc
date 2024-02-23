@@ -11,6 +11,8 @@ set relativenumber
 """ REMAP """
 " Map leader to space
 let mapleader=" "
+" Y to copy from current to $
+nmap Y y$
 
 """ PLUGINS """
 """" easymotion start """"
