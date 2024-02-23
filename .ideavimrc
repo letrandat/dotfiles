@@ -14,6 +14,11 @@ let mapleader=" "
 " Y to copy from current to $
 nmap Y y$
 
+" Action Go to File
+map <leader>f <Action>(GotoFile)
+" Action Go to Action
+map <leader>a <Action>(GotoAction)
+
 """ PLUGINS """
 """" easymotion start """"
 set easymotion
