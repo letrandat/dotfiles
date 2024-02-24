@@ -19,8 +19,6 @@ nmap Y y$
 map <leader>f <Action>(GotoFile)
 " Action Go to Action
 map <leader>a <Action>(GotoAction)
-" Action open recent projects
-map <C-e> <Action>(RecentProjectListGroup)
 
 " Buffer: close(bo) all others
 map <leader>bo <Action>(CloseAllEditorsButActive)
