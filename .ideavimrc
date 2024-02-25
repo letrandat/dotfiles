@@ -16,7 +16,7 @@ nmap Y y$
 
 " General:
 " Action Go to File
-map <leader>f <Action>(GotoFile)
+map <leader><leader> <Action>(GotoFile)
 " Action Go to Action
 map <leader>a <Action>(GotoAction)
 
