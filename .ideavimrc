@@ -43,10 +43,8 @@ nmap H <Action>(PreviousTab)
 """ PLUGINS """
 """" easymotion start """"
 set easymotion
-" f<char> to jump to forward char
-map f <Plug>(easymotion-f)
-" F<char> to jump to backward char
-map F <Plug>(easymotion-F)
+" f<char> to jump to anywhere
+map f <Plug>(easymotion-jumptoanywhere)
 """" easymotion end """"
 
 """" NERDTree start """"
