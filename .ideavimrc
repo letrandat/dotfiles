@@ -23,6 +23,11 @@ map <leader>a <Action>(GotoAction)
 " re-map gd to implementation
 map gd <Action>(GotoImplementation)
 
+
+" re-map C-o/C-i to go back(out) and forward(in)
+map <C-o> <Action>(Back)
+map <C-i> <Action>(Forward)
+
 " Buffer: close(bo) all others
 map <leader>bo <Action>(CloseAllEditorsButActive)
 
