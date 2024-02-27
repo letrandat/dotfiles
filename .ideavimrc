@@ -20,6 +20,10 @@ map <leader><leader> <Action>(GotoFile)
 " Action Go to Action
 map <leader>a <Action>(GotoAction)
 
+" Run/Debug Configuration
+map <leader>r <Action>(ChooseRunConfiguration)
+map <leader>d <Action>(ChooseDebugConfiguration)
+
 " re-map gd to implementation
 map gd <Action>(GotoImplementation)
 
