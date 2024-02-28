@@ -27,6 +27,10 @@ map <leader>d <Action>(ChooseDebugConfiguration)
 " re-map gd to implementation
 map gd <Action>(GotoImplementation)
 
+
+" map C-k to ParameterInfo which is equivalent to Signature Help in lazyvim
+map <C-k> <Action>(ParameterInfo)
+
 " map gu to find usages
 map gu <Action>(FindUsages)
 
