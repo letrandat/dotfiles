@@ -38,6 +38,8 @@ map gu <Action>(FindUsages)
 " re-map C-o/C-i to go back(out) and forward(in)
 map <C-o> <Action>(Back)
 map <C-i> <Action>(Forward)
+" re-map `. to JumpToLastChange because default ideavim only jump to the same buffer
+map `. <Action>(JumpToLastChange)
 
 " Buffer: close(bo) all others
 map <leader>bo <Action>(CloseAllEditorsButActive)
