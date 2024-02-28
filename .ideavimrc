@@ -14,7 +14,7 @@ let mapleader=" "
 " Y to copy from current to $
 nmap Y y$
 
-" General:
+"""" General """"
 " Action Go to File
 map <leader><leader> <Action>(GotoFile)
 " Action Go to Action
@@ -24,25 +24,20 @@ map <leader>a <Action>(GotoAction)
 map <leader>r <Action>(ChooseRunConfiguration)
 map <leader>d <Action>(ChooseDebugConfiguration)
 
+
+"""" Browsing code """"
 " re-map gd to implementation
 map gd <Action>(GotoImplementation)
-
-
-" map C-k to ParameterInfo which is equivalent to Signature Help in lazyvim
-map <C-k> <Action>(ParameterInfo)
-
-" map gu to find usages
-map gu <Action>(FindUsages)
-
-
 " re-map C-o/C-i to go back(out) and forward(in)
 map <C-o> <Action>(Back)
 map <C-i> <Action>(Forward)
 " re-map `. to JumpToLastChange because default ideavim only jump to the same buffer
 map `. <Action>(JumpToLastChange)
 
-" Buffer: close(bo) all others
-map <leader>bo <Action>(CloseAllEditorsButActive)
+" map gu to find usages
+map gu <Action>(FindUsages)
+" map C-k to ParameterInfo which is equivalent to Signature Help in lazyvim
+map <C-k> <Action>(ParameterInfo)
 
 " Splitter
 map <C-h> <Action>(NextSplitter)
@@ -51,6 +46,10 @@ map <C-l> <Action>(PrevSplitter)
 " Tab
 nmap L <Action>(NextTab)
 nmap H <Action>(PreviousTab)
+
+"""" Utility """"
+" Buffer: close(bo) all others
+map <leader>bo <Action>(CloseAllEditorsButActive)
 
 
 """ PLUGINS """
