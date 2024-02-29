@@ -52,8 +52,9 @@ nmap H <Action>(PreviousTab)
 map <leader>bo <Action>(CloseAllEditorsButActive)
 
 """" Refactor """"
-" Rename
-map <leader>rn <Action>(RenameElement)
+" Refactor start with <leader>x
+" Rename r
+map <leader>xr <Action>(RenameElement)
 
 """ PLUGINS """
 """" easymotion start """"
