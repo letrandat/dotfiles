@@ -56,6 +56,8 @@ map <leader>bo <Action>(CloseAllEditorsButActive)
 " Refactor start with <leader>x
 " Rename r
 map <leader>xr <Action>(RenameElement)
+" Extract Method
+map <leader>xm <Action>(ExtractMethod)
 
 """ PLUGINS """
 """" easymotion start """"
