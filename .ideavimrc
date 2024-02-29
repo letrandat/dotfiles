@@ -51,6 +51,9 @@ nmap H <Action>(PreviousTab)
 " Buffer: close(bo) all others
 map <leader>bo <Action>(CloseAllEditorsButActive)
 
+"""" Refactor """"
+" Rename
+map <leader>rn <Action>(RenameElement)
 
 """ PLUGINS """
 """" easymotion start """"
