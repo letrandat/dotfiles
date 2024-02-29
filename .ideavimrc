@@ -6,6 +6,7 @@
 set clipboard+=unnamed
 " Stop Vim from yanking visual selected text
 xnoremap p pgvy
+set number
 set relativenumber
 
 """ REMAP """
