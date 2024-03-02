@@ -98,9 +98,8 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
+# ALIASES
 alias zshconfig="nvim ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ws="cd ~/workspace"
 alias repo="cd ~/workspace/repo"
 alias dc="git reset --hard"
