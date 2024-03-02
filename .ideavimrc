@@ -27,8 +27,9 @@ map <leader>d <Action>(ChooseDebugConfiguration)
 
 
 """" Browsing code """"
-" re-map gd to implementation
+" re-map gd to GotoDeclaration (and usages)
 map gd <Action>(GotoDeclaration)
+" re-map gi to implementation
 map gi <Action>(GotoImplementation)
 
 " re-map C-o/C-i to go back(out) and forward(in)
