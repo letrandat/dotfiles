@@ -56,11 +56,9 @@ nmap H <Action>(PreviousTab)
 map <leader>bo <Action>(CloseAllEditorsButActive)
 
 """" Refactor """"
-" Refactor start with <leader>x
-" Rename r
-map <leader>xr <Action>(RenameElement)
-" Extract Method
-map <leader>xm <Action>(ExtractMethod)
+" Show Refactor QuickListPopupAction
+" Default IntelliJ keybinding is <C-t> which can be used in insert mode
+map <leader>t <Action>(Refactorings.QuickListPopupAction)
 
 """ PLUGINS """
 """" easymotion start """"
