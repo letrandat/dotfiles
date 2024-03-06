@@ -63,8 +63,8 @@ map <leader>t <Action>(Refactorings.QuickListPopupAction)
 """ PLUGINS """
 """" easymotion start """"
 set easymotion
-" f<char> to jump to anywhere
-map f <Plug>(easymotion-jumptoanywhere)
+" s<char> to jump to anywhere, to be similar to sneak
+map s <Plug>(easymotion-jumptoanywhere)
 """" easymotion end """"
 
 """" NERDTree start """"
