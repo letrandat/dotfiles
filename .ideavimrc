@@ -25,6 +25,8 @@ map <leader>a <Action>(GotoAction)
 map <leader>r <Action>(ChooseRunConfiguration)
 map <leader>d <Action>(ChooseDebugConfiguration)
 
+" Toggle Breakpoint
+map <leader>db <Action>(ToggleLineBreakpoint)
 
 """" Browsing code """"
 " re-map gd to GotoDeclaration (and usages)
