@@ -119,6 +119,8 @@ alias lg="lazygit"
 alias ld="lazydocker"
 
 # ENVIRONMENT
+# homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
 # java jenv
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
