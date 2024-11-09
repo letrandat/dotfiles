@@ -124,3 +124,5 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # java jenv
 export PATH="$HOME/.jenv/bin:$PATH"
 eval "$(jenv init -)"
+# Python
+export PATH="/opt/homebrew/opt/python@3.13/bin:$PATH"
