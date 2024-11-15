@@ -94,7 +94,6 @@ sethandler <C-K> a:ide
 sethandler <C-M> a:ide
 sethandler <C-N> a:ide
 sethandler <C-P> a:ide
-sethandler <C-R> a:ide
 sethandler <C-S> a:ide
 sethandler <C-T> a:ide
 """ Use these keybinding for Vim
@@ -105,4 +104,5 @@ sethandler <C-W> a:vim
 sethandler <C-I> a:vim
 sethandler <C-O> a:vim
 sethandler <C-V> a:vim
+sethandler <C-R> a:vim
 """" sethandler end """"
