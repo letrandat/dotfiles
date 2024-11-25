@@ -15,8 +15,20 @@
   // vim.easymotion
   "vim.easymotion": true,
   "vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjf",
-  // vim keybindings
+  // tabnine
+  "tabnine.experimentalAutoImports": true,
   "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "f"
+      ], // read: use f to jump to anywhere with easymotion
+      "after": [
+        "<leader>",
+        "<leader>",
+        "<leader>",
+        "j"
+      ]
+    },
     {
       "before": [
         "Y"
@@ -26,10 +38,5 @@
         "$"
       ]
     }
-  ],
-  // vim.sneak
-  // use f to jump to anywhere, a replacement for easymotion
-  "vim.sneak": true,
-  // tabnine
-  "tabnine.experimentalAutoImports": true,
+  ]
 }
