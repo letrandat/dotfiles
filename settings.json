@@ -6,6 +6,8 @@
   // editor
   "editor.formatOnSave": true,
   "editor.lineNumbers": "relative",
+  // terminal
+  "terminal.integrated.copyOnSelection": true,
   // plugins
   // vim.core
   "vim.useSystemClipboard": true,
@@ -26,5 +28,5 @@
   // use f to jump to anywhere, a replacement for easymotion
   "vim.sneak": true,
   // tabnine
-  "tabnine.experimentalAutoImports": true
+  "tabnine.experimentalAutoImports": true,
 }
