@@ -12,6 +12,9 @@
   // vim.core
   "vim.useSystemClipboard": true,
   "vim.leader": "<space>",
+  // vim.easymotion
+  "vim.easymotion": true,
+  "vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjf",
   // vim keybindings
   "vim.normalModeKeyBindingsNonRecursive": [
     {
