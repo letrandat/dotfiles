@@ -2,6 +2,7 @@
   // workbench
   // https://code.visualstudio.com/api/extension-capabilities/extending-workbench
   "workbench.colorTheme": "Visual Studio Light",
+  "workbench.iconTheme": "material-icon-theme",
   // plugins
   // tabnine
   "tabnine.experimentalAutoImports": true
