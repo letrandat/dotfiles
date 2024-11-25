@@ -1,0 +1,8 @@
+{
+  // workbench
+  // https://code.visualstudio.com/api/extension-capabilities/extending-workbench
+  "workbench.colorTheme": "Visual Studio Light",
+  // plugins
+  // tabnine
+  "tabnine.experimentalAutoImports": true
+}
