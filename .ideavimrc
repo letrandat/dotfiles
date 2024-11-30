@@ -96,6 +96,12 @@ sethandler <C-N> a:ide
 sethandler <C-P> a:ide
 sethandler <C-S> a:ide
 sethandler <C-T> a:ide
+""" Ace Jump tend to take over, so reassign the shortcuts to the IDE.
+sethandler <C-;> a:ide
+sethandler <C-S-;> a:ide
+sethandler <M-;> a:ide
+sethandler <M-S-;> a:ide
+sethandler <C-Q> a:ide
 """ Use these keybinding for Vim
 sethandler <C-H> a:vim
 sethandler <C-L> a:vim
