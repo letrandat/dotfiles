@@ -37,6 +37,15 @@
         "y",
         "$"
       ]
+    },
+    {
+      "before": [
+        "leader",
+        "f"
+      ],
+      "commands": [
+        "workbench.action.quickOpen"
+      ]
     }
   ]
 }
