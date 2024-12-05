@@ -4,5 +4,19 @@
     "key": "ctrl+d",
     "command": "-workbench.action.debug.run",
     "when": "debuggersAvailable && !inDebugMode && !terminalFocus"
+  },
+  {
+    "key": "escape",
+    "command": "workbench.action.focusActiveEditorGroup"
+  },
+  // replicate shift+cmd+f12 in intellij
+  {
+    "key": "shift+cmd+f12",
+    "command": "workbench.action.maximizeEditorHideSidebar"
+  },
+  {
+    "key": "shift+cmd+f12",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "editorFocus"
   }
 ]
