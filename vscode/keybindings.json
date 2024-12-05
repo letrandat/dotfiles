@@ -7,7 +7,8 @@
   },
   {
     "key": "escape",
-    "command": "workbench.action.focusActiveEditorGroup"
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "!editorTextFocus"
   },
   {
     "key": "escape",
