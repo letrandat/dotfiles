@@ -9,7 +9,12 @@
     "key": "escape",
     "command": "workbench.action.focusActiveEditorGroup"
   },
-  // replicate shift+cmd+f12 in intellij
+  {
+    "key": "escape",
+    "command": "extension.vim_escape",
+    "when": "editorTextFocus"
+  },
+  // replicate shift+cmd+f12 to maximize editor and hide sidebar
   {
     "key": "shift+cmd+f12",
     "command": "workbench.action.maximizeEditorHideSidebar"
