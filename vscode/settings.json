@@ -40,11 +40,21 @@
     },
     {
       "before": [
-        "leader",
+        "<leader>",
         "f"
       ],
       "commands": [
         "workbench.action.quickOpen"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "b",
+        "o"
+      ],
+      "commands": [
+        "workbench.action.closeOtherEditors"
       ]
     }
   ]
