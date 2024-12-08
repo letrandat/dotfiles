@@ -1,10 +1,17 @@
 // Place your key bindings in this file to override the defaults
 [
+  // disable ctrl+d to run debugger
   {
     "key": "ctrl+d",
     "command": "-workbench.action.debug.run",
     "when": "debuggersAvailable && !inDebugMode && !terminalFocus"
   },
+  {
+    "key": "ctrl+d",
+    "command": "-workbench.action.debug.run",
+    "when": "debuggersAvailable && !inDebugMode && !terminalFocus"
+  },
+  // use escape to focus active editor group
   {
     "key": "escape",
     "command": "workbench.action.focusActiveEditorGroup",
@@ -24,5 +31,28 @@
     "key": "shift+cmd+f12",
     "command": "workbench.action.toggleSidebarVisibility",
     "when": "editorFocus"
+  },
+  // use ctrl+n and ctrl+p to navigate list items
+  {
+    "key": "ctrl+n",
+    "command": "list.focusDown",
+    "when": "listFocus"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "list.focusUp",
+    "when": "listFocus"
+  },
+  // Nerdtree
+  // disable ctrl+n to focus file explorer
+  {
+    "key": "ctrl+n",
+    "command": "-workbench.files.action.focusFilesExplorer",
+    "when": "sideBarVisible && !filesExplorerFocus && !suggestWidgetVisible && vim.mode != 'Insert'"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "-workbench.files.action.focusFilesExplorer",
+    "when": "!sideBarVisible && !suggestWidgetVisible && vim.mode != 'Insert'"
   }
 ]
