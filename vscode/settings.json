@@ -15,8 +15,6 @@
   // vim.easymotion
   "vim.easymotion": true,
   "vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjf",
-  // tabnine
-  "tabnine.experimentalAutoImports": true,
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": [
@@ -56,6 +54,14 @@
       "commands": [
         "workbench.action.closeOtherEditors"
       ]
+    }
+  ],
+  "github.copilot.chat.testGeneration.instructions": [
+    {
+      "text": "For Java, use JUnit 5 and Mockito for testing."
+    },
+    {
+      "text": "Use @DisplayName whenever possible to make the test more readable."
     }
   ]
 }
