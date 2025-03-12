@@ -10,9 +10,7 @@
   // terminal
   "terminal.integrated.copyOnSelection": true,
   // languages settings
-  "[jsonc]": {
-    "editor.formatOnSave": false
-  },
+  "[jsonc]": {},
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
@@ -28,43 +26,20 @@
   "vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjf",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": [
-        "f"
-      ], // read: use f to jump to anywhere with easymotion
-      "after": [
-        "<leader>",
-        "<leader>",
-        "<leader>",
-        "j"
-      ]
+      "before": ["f"], // read: use f to jump to anywhere with easymotion
+      "after": ["<leader>", "<leader>", "<leader>", "j"]
     },
     {
-      "before": [
-        "Y"
-      ], // usage: Y to yank from start to end
-      "after": [
-        "y",
-        "$"
-      ]
+      "before": ["Y"], // usage: Y to yank from start to end
+      "after": ["y", "$"]
     },
     {
-      "before": [
-        "<leader>",
-        "f"
-      ],
-      "commands": [
-        "workbench.action.quickOpen"
-      ]
+      "before": ["<leader>", "f"],
+      "commands": ["workbench.action.quickOpen"]
     },
     {
-      "before": [
-        "<leader>",
-        "b",
-        "o"
-      ],
-      "commands": [
-        "workbench.action.closeOtherEditors"
-      ]
+      "before": ["<leader>", "b", "o"],
+      "commands": ["workbench.action.closeOtherEditors"]
     }
   ],
   // github.copilot
