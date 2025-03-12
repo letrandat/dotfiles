@@ -58,10 +58,12 @@
   ],
   "github.copilot.chat.testGeneration.instructions": [
     {
-      "text": "For Java, use JUnit 5 and Mockito for testing."
-    },
+      "text": "For Java, use JUnit 5 and Mockito for testing. Use @DisplayName whenever possible to make the test more readable."
+    }
+  ],
+  "github.copilot.chat.commitMessageGeneration.instructions": [
     {
-      "text": "Use @DisplayName whenever possible to make the test more readable."
+      "text": "Be extremely detailed with the file changes and the reason for the changes. Use a lot of emojis"
     }
   ]
 }
