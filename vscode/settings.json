@@ -4,13 +4,13 @@
   "workbench.colorTheme": "Visual Studio Light",
   "workbench.iconTheme": "material-icon-theme",
   // editor
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "editor.lineNumbers": "relative",
   // terminal
   "terminal.integrated.copyOnSelection": true,
   // languages settings
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": false
   },
   "[typescript]": {
