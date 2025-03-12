@@ -8,6 +8,17 @@
   "editor.lineNumbers": "relative",
   // terminal
   "terminal.integrated.copyOnSelection": true,
+  // languages settings
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[java]": {
+    "editor.formatOnSave": false
+  },
   // plugins
   // vim.core
   "vim.useSystemClipboard": true,
@@ -56,6 +67,14 @@
       ]
     }
   ],
+  // github.copilot
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
   "github.copilot.chat.testGeneration.instructions": [
     {
       "text": "For Java, use JUnit 5 and Mockito for testing. Use @DisplayName whenever possible to make the test more readable."
