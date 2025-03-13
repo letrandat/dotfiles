@@ -10,7 +10,9 @@
   // terminal
   "terminal.integrated.copyOnSelection": true,
   // languages settings
-  "[jsonc]": {},
+  "[jsonc]": {
+    "editor.formatOnSave": false
+  },
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
