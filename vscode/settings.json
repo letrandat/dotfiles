@@ -52,6 +52,9 @@
   "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
   "github.copilot.chat.testGeneration.instructions": [
     {
+      "text": "User verbose name that clearly states the purpose of the test case. Use the AAA pattern for test cases (Arrange, Act, Assert)."
+    },
+    {
       "text": "For Java, use JUnit 5 and Mockito for testing. Use @DisplayName whenever possible to make the test more readable."
     }
   ],
