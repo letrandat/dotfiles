@@ -52,17 +52,91 @@
     "scminput": false
   },
   "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
-  "github.copilot.chat.testGeneration.instructions": [
-    {
-      "text": "User verbose name that clearly states the purpose of the test case. Use the AAA pattern for test cases (Arrange, Act, Assert)."
-    },
-    {
-      "text": "For Java, use JUnit 5 and Mockito for testing. Use @DisplayName whenever possible to make the test more readable."
-    }
-  ],
   "github.copilot.chat.commitMessageGeneration.instructions": [
     {
       "text": "Be extremely detailed with the file changes and the reason for the changes. Use a lot of emojis"
+    }
+  ],
+  "github.copilot.chat.testGeneration.instructions": [
+    {
+      "text": "For Java, use JUnit 5 and Mockito for testing. Use @DisplayName whenever possible to make the test more readable."
+    },
+    {
+      "text": "Mocking data is only needed for tests, never mock data for dev or prod"
+    },
+    {
+      "text": "Write tests that are simple and easy to understand"
+    },
+    {
+      "text": "Avoid duplication in test cases by reusing common setup or utility methods"
+    },
+    {
+      "text": "Ensure tests cover all environments: dev, test, and prod, where applicable"
+    },
+    {
+      "text": "Focus on testing the areas of code relevant to the task"
+    },
+    {
+      "text": "Do not write tests for unrelated code"
+    },
+    {
+      "text": "Write thorough tests for all major functionality, including edge cases"
+    },
+    {
+      "text": "Avoid introducing new testing frameworks or patterns unless absolutely necessary"
+    },
+    {
+      "text": "Keep test files clean and organized, and refactor if they grow too large"
+    },
+    {
+      "text": "Always think about how changes in the codebase might affect existing tests"
+    }
+  ],
+  "github.copilot.chat.codeGeneration.instructions": [
+    {
+      "text": "Always prefer simple solutions"
+    },
+    {
+      "text": "Avoid duplication of code whenever possible, which means checking for other areas of the codebase that might already have similar code and functionality"
+    },
+    {
+      "text": "Write code that takes into account the different environments: dev, test, and prod"
+    },
+    {
+      "text": "You are careful to only make changes that are requested or you are confident are well understood and related to the change being requested"
+    },
+    {
+      "text": "When fixing an issue or bug, do not introduce a new pattern or technology without first exhausting all options for the existing implementation. And if you finally do this, make sure to remove the old implementation afterwards so we don’t have duplicate logic."
+    },
+    {
+      "text": "Keep the codebase very clean and organized"
+    },
+    {
+      "text": "Avoid writing scripts in files if possible, especially if the script is likely only to be run once"
+    },
+    {
+      "text": "Avoid having files over 200–300 lines of code. Refactor at that point."
+    },
+    {
+      "text": "Never add stubbing or fake data patterns to code that affects the dev or prod environments"
+    },
+    {
+      "text": "Never overwrite my .env file without first asking and confirming"
+    },
+    {
+      "text": "Focus on the areas of code relevant to the task"
+    },
+    {
+      "text": "Do not touch code that is unrelated to the task"
+    },
+    {
+      "text": "Write thorough tests for all major functionality"
+    },
+    {
+      "text": "Avoid making major changes to the patterns and architecture of how a feature works, after it has shown to work well, unless explicitly instructed"
+    },
+    {
+      "text": "Always think about what other methods and areas of code might be affected by code changes"
     }
   ]
 }
