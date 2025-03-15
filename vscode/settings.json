@@ -46,10 +46,7 @@
   ],
   // github.copilot
   "github.copilot.enable": {
-    "*": true,
-    "plaintext": false,
-    "markdown": false,
-    "scminput": false
+    "*": true
   },
   "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
   "github.copilot.chat.commitMessageGeneration.instructions": [
