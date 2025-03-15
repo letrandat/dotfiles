@@ -45,9 +45,6 @@
     }
   ],
   // github.copilot
-  "github.copilot.enable": {
-    "*": true
-  },
   "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
   "github.copilot.chat.commitMessageGeneration.instructions": [
     {
