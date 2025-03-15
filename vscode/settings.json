@@ -48,7 +48,7 @@
   "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
   "github.copilot.chat.commitMessageGeneration.instructions": [
     {
-      "text": "Be extremely detailed with the file changes and the reason for the changes. Use a lot of emojis"
+      "text": "Follow the Conventional Commits specification to create clear and consistent commit history. Each commit message should start with a type, followed by an optional scope, and a concise description. The type should be one of the following: feat (new feature), fix (bug fix), build (changes affecting the build system or external dependencies), chore (other changes that don't modify source or test files), ci (changes to our CI configuration files and scripts), docs (documentation only changes), perf (a code change that improves performance), refactor (a code change that neither fixes a bug nor adds a feature), revert (reverts a previous commit), or style (changes that do not affect the meaning of the code). The scope provides additional contextual information and is enclosed in parentheses (e.g., feat(user)). The description should be a short, imperative summary of the change. You can optionally include a more detailed body after a blank line, providing context for the change. Finally, the footer can be used to reference issues or note breaking changes (starting with BREAKING CHANGE:). Using this convention helps automate tooling, understand changes, and generate release notes effectively."
     }
   ],
   "github.copilot.chat.testGeneration.instructions": [
