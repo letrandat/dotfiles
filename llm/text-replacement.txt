@@ -3,4 +3,4 @@ pppf
 Can you improve the grammar, clarify the meaning, and restructure for better flow. Provide three distinct examples with different approaches, each with a title summarizing the approach. Include a brieft analysis for each example, and omit the orignal text.
 # Description: Write design doc.md
 pppdd
-I need your help designing a system and preparing a design document in .md format. The document should contain: A high-level Overview, Functional and Non-functional Requirements. Both High-Level Design and a Detailed Design, including changes to the front end and back end. An evaluation of Alternative Approaches, with a focus on trade-offs. A review of Risks and Mitigations.
+I need your help designing a system and preparing a design document in .md format. The document should contain: A high-level Overview, Functional and Non-functional Requirements. Both High-Level Design and a Detailed Design, including changes to the front end and back end. An evaluation of Alternative Approaches, with a focus on trade-offs. A review of Risks and Mitigations. When possible, include data flow, and API design.
