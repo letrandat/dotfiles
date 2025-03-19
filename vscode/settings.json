@@ -5,7 +5,7 @@
   "workbench.iconTheme": "material-icon-theme",
   // editor
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true,
+  "editor.formatOnSave": false,
   "editor.lineNumbers": "relative",
   // terminal
   "terminal.integrated.copyOnSelection": true,
