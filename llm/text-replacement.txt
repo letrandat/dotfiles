@@ -4,3 +4,9 @@ Can you improve the grammar, clarify the meaning, and restructure for better flo
 # Description: Write design doc.md
 pppdd
 I need your help designing a system and preparing a design document in .md format. The document should contain: A high-level Overview, Functional and Non-functional Requirements. Both High-Level Design and a Detailed Design, including changes to the front end and back end. An evaluation of Alternative Approaches, with a focus on trade-offs. A review of Risks and Mitigations. When possible, include data flow, and API design.
+# Analyze a Scala Spark project
+Please analyze this Scala Spark project and provide:
+A high-level overview of the project's purpose and functionality.
+A description of the main data processing pipeline, including the key transformations and data sources.
+An explanation of the data flow, highlighting the key data structures and intermediate steps.
+Identify and describe the main entry point of the application.
