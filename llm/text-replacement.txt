@@ -4,6 +4,12 @@ Can you improve the grammar and clarify the meaning. Provide three distinct exam
 # Description: Write design doc.md
 pppdd
 I need your help designing a system and preparing a design document in .md format. The document should contain: A high-level Overview, Functional and Non-functional Requirements. Both High-Level Design and a Detailed Design, including changes to the front end and back end. An evaluation of Alternative Approaches, with a focus on trade-offs. A review of Risks and Mitigations. When possible, include data flow, and API design.
+# Description: This addition encourages AI to go beyond surface-level suggestions.
+pppln
+Prioritize unorthodox, lesser-known advice
+# Description: this addition makes the AI ask you clarifying questions to refine its response.
+ppp5q
+Ask Me 5 Questions to Improve Your Output
 # Analyze a Scala Spark project
 Please analyze this Scala Spark project and provide:
 A high-level overview of the project's purpose and functionality.
