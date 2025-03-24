@@ -3,7 +3,11 @@
   // https://code.visualstudio.com/api/extension-capabilities/extending-workbench
   "workbench.colorTheme": "Visual Studio Light",
   "workbench.iconTheme": "material-icon-theme",
+  "workbench.preferredDarkColorTheme": "Visual Studio Dark",
+  "workbench.preferredLightColorTheme": "Visual Studio Light",
+  // window
   "window.openFoldersInNewWindow": "on",
+  "window.autoDetectColorScheme": true,
   // editor
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": false,
