@@ -25,7 +25,13 @@
   // use ctrl+e to open recent folders
   {
     "key": "ctrl+e",
-    "command": "workbench.action.openRecent"
+    "command": "workbench.action.openRecent",
+    "when": "!terminalFocus"
+  },
+  // use ctrl+q to close window
+  {
+    "key": "ctrl+q",
+    "command": "workbench.action.closeWindow"
   },
   // replicate shift+cmd+f12 to maximize editor and hide sidebar
   {
