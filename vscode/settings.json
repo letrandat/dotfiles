@@ -15,6 +15,7 @@
   "editor.lineNumbers": "relative",
   // terminal
   "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.suggest.enabled": true,
   // languages settings
   "[jsonc]": {
     "editor.formatOnSave": false
