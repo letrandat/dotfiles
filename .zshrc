@@ -137,3 +137,9 @@ nvm use --lts
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+
+# Added by Windsurf
+export PATH="/Users/dat/.codeium/windsurf/bin:$PATH"
+
+# Created by `pipx` on 2025-03-29 15:42:54
+export PATH="$PATH:/Users/dat/.local/bin"
