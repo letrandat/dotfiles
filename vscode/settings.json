@@ -53,6 +53,8 @@
       "commands": ["workbench.action.closeOtherEditors"]
     }
   ],
+  // git
+  "git.openRepositoryInParentFolders": "always",
   // github.copilot
   "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
   "github.copilot.chat.commitMessageGeneration.instructions": [
