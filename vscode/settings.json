@@ -151,9 +151,21 @@
   "mcp": {
     "inputs": [],
     "servers": {
-      "time": {
-        "command": "docker",
-        "args": ["run", "-i", "--rm", "mcp/time"]
+      "mcp": {
+        "inputs": [],
+        "servers": {
+          "sequential-thinking": {
+            "command": "npx",
+            "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"]
+          },
+          "memory": {
+            "command": "npx",
+            "args": ["-y", "@modelcontextprotocol/server-memory"],
+            "env": {
+              "MEMORY_FILE_PATH": "~/workspace/memory.json"
+            }
+          }
+        }
       }
     }
   }
