@@ -144,5 +144,7 @@
     {
       "text": "Keep test files organized and avoid testing unrelated code or introducing unnecessary complexity."
     }
-  ]
+  ],
+  "chat.agent.enabled": true,
+  "chat.mcp.discovery.enabled": true
 }
