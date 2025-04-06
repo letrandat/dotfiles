@@ -29,6 +29,9 @@
     "editor.formatOnSave": false
   },
   // plugins
+  // git
+  "git.openRepositoryInParentFolders": "always",
+  "git.autofetch": true,
   // vim.core
   "vim.useSystemClipboard": true,
   "vim.leader": "<space>",
@@ -53,8 +56,6 @@
       "commands": ["workbench.action.closeOtherEditors"]
     }
   ],
-  // git
-  "git.openRepositoryInParentFolders": "always",
   // github.copilot
   "github.copilot.chat.agent.thinkingTool": true,
   "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
