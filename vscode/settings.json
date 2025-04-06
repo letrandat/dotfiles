@@ -156,16 +156,11 @@
   "mcp": {
     "inputs": [],
     "servers": {
-      "mcp": {
-        "inputs": [],
-        "servers": {
-          "memory": {
-            "command": "npx",
-            "args": ["-y", "@modelcontextprotocol/server-memory"],
-            "env": {
-              "MEMORY_FILE_PATH": "~/workspace/memory.json"
-            }
-          }
+      "memory": {
+        "command": "npx",
+        "args": ["-y", "@modelcontextprotocol/server-memory"],
+        "env": {
+          "MEMORY_FILE_PATH": "~/workspace/memory.json"
         }
       }
     }
