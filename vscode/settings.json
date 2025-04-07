@@ -19,6 +19,7 @@
   // files
   "files.trimTrailingWhitespace": true,
   // terminal
+  "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.suggest.enabled": true,
   // languages settings
