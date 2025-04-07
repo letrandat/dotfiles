@@ -22,6 +22,9 @@
   "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.suggest.enabled": true,
+  // Use either the following font for vscode terminal
+  // "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
   // languages settings
   "[jsonc]": {
     "editor.formatOnSave": false
