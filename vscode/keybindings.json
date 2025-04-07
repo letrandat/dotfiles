@@ -57,17 +57,5 @@
     "key": "ctrl+p",
     "command": "list.focusUp",
     "when": "listFocus"
-  },
-  // Nerdtree
-  // disable ctrl+n to focus file explorer
-  {
-    "key": "ctrl+n",
-    "command": "-workbench.files.action.focusFilesExplorer",
-    "when": "sideBarVisible && !filesExplorerFocus && !suggestWidgetVisible && vim.mode != 'Insert'"
-  },
-  {
-    "key": "ctrl+n",
-    "command": "-workbench.files.action.focusFilesExplorer",
-    "when": "!sideBarVisible && !suggestWidgetVisible && vim.mode != 'Insert'"
-  },
+  }
 ]
