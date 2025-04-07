@@ -22,17 +22,6 @@
     "command": "extension.vim_escape",
     "when": "editorTextFocus"
   },
-  // use ctrl+e to open recent folders
-  {
-    "key": "ctrl+e",
-    "command": "workbench.action.openRecent",
-    "when": "!terminalFocus"
-  },
-  // use ctrl+q to close window
-  {
-    "key": "ctrl+q",
-    "command": "workbench.action.closeWindow"
-  },
   // replicate shift+cmd+f12 to maximize editor and hide sidebar
   {
     "key": "shift+cmd+f12",
@@ -43,6 +32,21 @@
     "command": "workbench.action.toggleSidebarVisibility",
     "when": "editorFocus"
   },
+  // use ctrl+e to open recent files
+  {
+    "key": "ctrl+e",
+    "command": "workbench.action.openRecent",
+    "when": "!terminalFocus"
+  },
+  // use ctrl+q to close window
+  {
+    "key": "ctrl+q",
+    "command": "workbench.action.closeWindow"
+  },
+  {
+    "key": "ctrl+q",
+    "command": "workbench.action.closeWindow"
+  }
   // use ctrl+n and ctrl+p to navigate list items
   {
     "key": "ctrl+n",
@@ -65,5 +69,5 @@
     "key": "ctrl+n",
     "command": "-workbench.files.action.focusFilesExplorer",
     "when": "!sideBarVisible && !suggestWidgetVisible && vim.mode != 'Insert'"
-  }
+  },
 ]
