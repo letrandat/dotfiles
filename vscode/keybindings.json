@@ -68,5 +68,11 @@
     "key": "ctrl+h",
     "command": "workbench.action.previousEditor",
     "when": "editorTextFocus && vim.active && vim.use<C-h> && !inDebugRepl"
+  },
+  // add back ctrl+` to toggle terminal
+  {
+    "key": "ctrl+`",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
   }
 ]
