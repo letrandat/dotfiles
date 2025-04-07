@@ -143,3 +143,6 @@ export PATH="/Users/dat/.codeium/windsurf/bin:$PATH"
 
 # Created by `pipx` on 2025-03-29 15:42:54
 export PATH="$PATH:/Users/dat/.local/bin"
+
+# starship
+eval "$(starship init zsh)"
