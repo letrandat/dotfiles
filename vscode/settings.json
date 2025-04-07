@@ -54,6 +54,10 @@
     {
       "before": ["<leader>", "b", "o"],
       "commands": ["workbench.action.closeOtherEditors"]
+    },
+    {
+      "before": ["g", "u"],
+      "commands": ["editor.action.goToReferences"]
     }
   ],
   // github.copilot
