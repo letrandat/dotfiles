@@ -13,6 +13,9 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": false,
   "editor.lineNumbers": "relative",
+  // search
+  "search.searchEditor.focusResultsOnSearch": true,
+  "search.searchEditor.reusePriorSearchConfiguration": true,
   // files
   "files.trimTrailingWhitespace": true,
   // terminal
