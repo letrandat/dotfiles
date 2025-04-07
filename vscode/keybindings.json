@@ -58,6 +58,7 @@
     "command": "list.focusUp",
     "when": "listFocus"
   },
+  // use ctrl+l and ctrl+h to navigate editor tabs
   {
     "key": "ctrl+l",
     "command": "workbench.action.nextEditor",
