@@ -46,7 +46,7 @@
   {
     "key": "ctrl+q",
     "command": "workbench.action.closeWindow"
-  }
+  },
   // use ctrl+n and ctrl+p to navigate list items
   {
     "key": "ctrl+n",
