@@ -5,7 +5,6 @@
   "workbench.iconTheme": "material-icon-theme",
   "workbench.preferredDarkColorTheme": "Visual Studio Dark",
   "workbench.preferredLightColorTheme": "Visual Studio Light",
-  "workbench.settings.useWeightedKeySearch": true,
   // window
   "window.openFoldersInNewWindow": "on",
   "window.autoDetectColorScheme": true,
@@ -26,14 +25,15 @@
   // "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
   // languages settings
-  "[jsonc]": {
-    "editor.formatOnSave": false
-  },
+  "[jsonc]": {},
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[java]": {
     "editor.formatOnSave": false
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   // plugins
   // git
