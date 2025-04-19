@@ -2,7 +2,7 @@ return {
   "echasnovski/mini.files",
   opts = {
     windows = {
-      width_preview = 80,
+      width_preview = 100,
     },
   },
 }
