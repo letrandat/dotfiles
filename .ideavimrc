@@ -56,6 +56,8 @@ nmap H <Action>(PreviousTab)
 """" Utility """"
 " Buffer: close(bo) all others
 map <leader>bo <Action>(CloseAllEditorsButActive)
+" Buffer: close(bd) active editor
+map <leader>bd <Action>(CloseContent)
 
 """" Refactor """"
 " Show Refactor QuickListPopupAction
