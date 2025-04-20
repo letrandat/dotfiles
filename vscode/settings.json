@@ -55,6 +55,14 @@
   // vim.easymotion
   "vim.easymotion": true,
   "vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjf",
+  "vim.visualModeKeyBindingsNonRecursive": [
+    // START: easymotion
+    {
+      "before": ["s"], // read: use s to jump to anywhere with easymotion
+      "after": ["<leader>", "<leader>", "<leader>", "j"]
+    }
+    // END: easymotion
+  ],
   "vim.normalModeKeyBindingsNonRecursive": [
     // START: Core settings
     {
