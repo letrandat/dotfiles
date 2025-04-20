@@ -5,6 +5,7 @@
   "workbench.iconTheme": "material-icon-theme",
   "workbench.preferredDarkColorTheme": "Visual Studio Dark",
   "workbench.preferredLightColorTheme": "Visual Studio Light",
+  "workbench.editor.showTabs": "none",
   // window
   "window.openFoldersInNewWindow": "on",
   "window.autoDetectColorScheme": true,
