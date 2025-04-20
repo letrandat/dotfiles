@@ -56,7 +56,7 @@
       "after": ["y", "$"]
     },
     {
-      "before": ["<leader>", "f"],
+      "before": ["<leader>", "f", "r"],
       "commands": ["workbench.action.quickOpen"]
     },
     {
