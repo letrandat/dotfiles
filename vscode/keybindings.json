@@ -125,6 +125,33 @@
     "key": "ctrl+n",
     "command": "-nerdtree.unfocusSidebarOrClose",
     "when": "filesExplorerFocus && sideBarVisible"
-  }
+  },
   // END: use ctrl+n and ctrl+p to navigate list items
+  // START: Explorer settings
+  {
+    "key": "a",
+    "command": "workbench.files.action.createFileFromExplorer",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "d",
+    "command": "moveFileToTrash",
+    "when": "explorerResourceMoveableToTrash && explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "y",
+    "command": "filesExplorer.copy",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+  },
+  {
+    "key": "p",
+    "command": "filesExplorer.paste",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "ctrl+v",
+    "command": "explorer.openToSide",
+    "when": "explorerViewletFocus && foldersViewVisible && !inputFocus"
+  }
+  // END: Explorer settings
 ]
