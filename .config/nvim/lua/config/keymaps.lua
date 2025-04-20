@@ -4,3 +4,7 @@
 
 -- Map Ctrl+q to quit all
 vim.keymap.set("n", "<C-q>", "<cmd>qa<cr>", { desc = "Quit all" })
+-- Map Ctrl+e to select session
+vim.keymap.set("n", "<C-e>", function()
+  require("persistence").select()
+end, { desc = "Select Session" })
