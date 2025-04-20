@@ -63,7 +63,7 @@
       "commands": ["workbench.action.closeOtherEditors"]
     },
     {
-      "before": ["g", "u"],
+      "before": ["g", "r"],
       "commands": ["editor.action.goToReferences"]
     }
   ],
