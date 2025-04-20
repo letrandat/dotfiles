@@ -19,11 +19,6 @@
     "command": "-workbench.action.debug.run",
     "when": "debuggersAvailable && !inDebugMode && !terminalFocus"
   },
-  {
-    "key": "ctrl+d",
-    "command": "-workbench.action.debug.run",
-    "when": "debuggersAvailable && !inDebugMode && !terminalFocus"
-  },
   // use escape to focus active editor group
   {
     "key": "escape",
