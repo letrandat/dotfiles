@@ -47,14 +47,24 @@
   "vim.easymotion": true,
   "vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjf",
   "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": ["s"], // read: use s to jump to anywhere with easymotion
-      "after": ["<leader>", "<leader>", "<leader>", "j"]
-    },
+    // START: Core settings
     {
       "before": ["Y"], // usage: Y to yank from start to end
       "after": ["y", "$"]
     },
+    // END: Core settings
+    // START: easymotion
+    {
+      "before": ["s"], // read: use s to jump to anywhere with easymotion
+      "after": ["<leader>", "<leader>", "<leader>", "j"]
+    },
+    // END: easymotion
+    // START: code settings
+    {
+      "before": ["<leader>", "c", "f"],
+      "commands": ["editor.action.formatChanges"]
+    },
+    // END: code settings
     {
       "before": ["leader", "e"],
       "commands": ["workbench.view.explorer"]
