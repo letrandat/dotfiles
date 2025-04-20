@@ -78,12 +78,6 @@
     "command": "workbench.action.terminal.toggleTerminal",
     "when": "terminal.active"
   },
-  // also use ctrl+/ to toggle terminal
-  {
-    "key": "ctrl+/",
-    "command": "workbench.action.terminal.toggleTerminal",
-    "when": "terminal.active"
-  },
   // END: Terminal setting
   // START: use ctrl+n and ctrl+p to navigate list items
   {
