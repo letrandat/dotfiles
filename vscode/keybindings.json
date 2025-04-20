@@ -28,7 +28,7 @@
   {
     "key": "escape",
     "command": "extension.vim_escape",
-    "when": "editorTextFocus"
+    "when": "editorTextFocus && vim.active"
   },
   // replicate shift+cmd+f12 to maximize editor and hide sidebar
   {
