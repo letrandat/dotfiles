@@ -56,9 +56,20 @@
       "after": ["y", "$"]
     },
     {
+      "before": ["leader", "e"],
+      "commands": ["workbench.view.explorer"]
+    },
+    // START: files
+    {
+      "before": ["leader", "leader"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
       "before": ["<leader>", "f", "r"],
       "commands": ["workbench.action.quickOpen"]
     },
+    // END: files
+    // START: buffers
     {
       "before": ["<leader>", "b", "o"],
       "commands": ["workbench.action.closeOtherEditors"]
@@ -68,16 +79,14 @@
       "commands": ["workbench.action.closeActiveEditor"]
     },
     {
+      // does not work as expected
+      "before": ["<leader>", "w", "v"],
+      "command": "workbench.action.splitEditorRight"
+    },
+    // END: buffers
+    {
       "before": ["g", "r"],
       "commands": ["editor.action.goToReferences"]
-    },
-    {
-      "before": ["leader", "leader"],
-      "commands": ["workbench.action.quickOpen"]
-    },
-    {
-      "before": ["leader", "e"],
-      "commands": ["workbench.view.explorer"]
     }
   ],
   // github.copilot
