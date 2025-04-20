@@ -40,8 +40,8 @@ map <C-i> <Action>(Forward)
 " re-map `. to JumpToLastChange because default ideavim only jump to the same buffer
 map `. <Action>(JumpToLastChange)
 
-" map gu to find usages
-map gu <Action>(FindUsages)
+" map gr to find usages/references
+map gr <Action>(FindUsages)
 " map C-k to ParameterInfo which is equivalent to Signature Help in lazyvim
 map <C-k> <Action>(ParameterInfo)
 
