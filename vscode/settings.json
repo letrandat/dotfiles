@@ -7,7 +7,7 @@
   "workbench.preferredLightColorTheme": "Visual Studio Light",
   "workbench.editor.showTabs": "none",
   // window
-  "window.openFoldersInNewWindow": "on",
+  "window.openFoldersInNewWindow": "off",
   "window.autoDetectColorScheme": true,
   // editor
   "editor.defaultFormatter": "esbenp.prettier-vscode",
