@@ -13,9 +13,7 @@
   "editor.formatOnSave": false,
   "editor.lineNumbers": "relative",
   "workbench.editor.showTabs": "none",
-  "editor.rulers": [
-    100
-  ],
+  "editor.rulers": [100],
   // search
   "search.searchEditor.focusResultsOnSearch": true,
   "search.searchEditor.reusePriorSearchConfiguration": true,
