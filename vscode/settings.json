@@ -74,6 +74,10 @@
     {
       "before": ["leader", "leader"],
       "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["leader", "e"],
+      "commands": ["workbench.view.explorer"]
     }
   ],
   // github.copilot
