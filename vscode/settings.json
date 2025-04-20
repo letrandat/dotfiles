@@ -65,6 +65,10 @@
     {
       "before": ["g", "r"],
       "commands": ["editor.action.goToReferences"]
+    },
+    {
+      "before": ["leader", "leader"],
+      "commands": ["workbench.action.quickOpen"]
     }
   ],
   // github.copilot
