@@ -30,16 +30,6 @@
     "command": "extension.vim_escape",
     "when": "editorTextFocus && vim.active"
   },
-  // replicate shift+cmd+f12 to maximize editor and hide sidebar
-  {
-    "key": "shift+cmd+f12",
-    "command": "workbench.action.maximizeEditorHideSidebar"
-  },
-  {
-    "key": "shift+cmd+f12",
-    "command": "workbench.action.toggleSidebarVisibility",
-    "when": "editorFocus"
-  },
   // use ctrl+e to open recent folders
   {
     "key": "ctrl+e",
