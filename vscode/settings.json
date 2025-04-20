@@ -98,9 +98,8 @@
       "commands": ["workbench.action.closeActiveEditor"]
     },
     {
-      // does not work as expected
       "before": ["<leader>", "w", "v"],
-      "command": "workbench.action.splitEditorRight"
+      "commands": ["workbench.action.splitEditorRight"]
     },
     // END: buffers
     {
