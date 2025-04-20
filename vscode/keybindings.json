@@ -164,6 +164,11 @@
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
   },
   {
+    "key": "r",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
     "key": "ctrl+v",
     "command": "explorer.openToSide",
     "when": "explorerViewletFocus && foldersViewVisible && !inputFocus"
