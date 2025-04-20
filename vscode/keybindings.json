@@ -32,12 +32,13 @@
     "command": "workbench.action.toggleSidebarVisibility",
     "when": "editorFocus"
   },
-  // use ctrl+e to open recent files
+  // use ctrl+e to open recent folders
   {
     "key": "ctrl+e",
     "command": "workbench.action.openRecent",
     "when": "!terminalFocus"
   },
+  // START: Window settings
   // use ctrl+q to close window
   {
     "key": "ctrl+q",
@@ -47,17 +48,8 @@
     "key": "ctrl+q",
     "command": "workbench.action.closeWindow"
   },
-  // use ctrl+n and ctrl+p to navigate list items
-  {
-    "key": "ctrl+n",
-    "command": "list.focusDown",
-    "when": "listFocus"
-  },
-  {
-    "key": "ctrl+p",
-    "command": "list.focusUp",
-    "when": "listFocus"
-  },
+  // END: Window settings
+  // START: Editors settings
   // use ctrl+l and ctrl+h to navigate editor tabs
   {
     "key": "ctrl+l",
@@ -69,6 +61,17 @@
     "command": "workbench.action.focusNextGroup",
     "when": "editorTextFocus && vim.active && vim.use<C-h> && !inDebugRepl"
   },
+  // Move around editors
+  {
+    "key": "shift+h",
+    "command": "workbench.action.previousEditor"
+  },
+  {
+    "key": "shift+l",
+    "command": "workbench.action.nextEditor"
+  },
+  // END: Editors settings
+  // START: Terminal setting
   // add back ctrl+` to toggle terminal
   {
     "key": "ctrl+`",
@@ -81,13 +84,47 @@
     "command": "workbench.action.terminal.toggleTerminal",
     "when": "terminal.active"
   },
-  // Move around editors
+  // END: Terminal setting
+  // START: use ctrl+n and ctrl+p to navigate list items
   {
-    "key": "shift+h",
-    "command": "workbench.action.previousEditor"
+    "key": "ctrl+n",
+    "command": "list.focusDown",
+    "when": "listFocus"
   },
   {
-    "key": "shift+l",
-    "command": "workbench.action.nextEditor"
+    "key": "ctrl+n",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "list.focusUp",
+    "when": "listFocus"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "-workbench.files.action.focusFilesExplorer",
+    "when": "sideBarVisible && !filesExplorerFocus && !suggestWidgetVisible && vim.mode != 'Insert'"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "-workbench.files.action.focusFilesExplorer",
+    "when": "!sideBarVisible && !suggestWidgetVisible && vim.mode != 'Insert'"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "-editor.action.triggerSuggest",
+    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible && vim.mode == 'Insert'"
+  },
+  {
+    "key": "ctrl+n",
+    "command": "-nerdtree.unfocusSidebarOrClose",
+    "when": "filesExplorerFocus && sideBarVisible"
   }
+  // END: use ctrl+n and ctrl+p to navigate list items
 ]
