@@ -18,6 +18,17 @@
     "command": "workbench.panel.chat",
     "when": "workbench.panel.chat.view.copilot.active"
   },
+  // use CMD+3 to open git
+  {
+    "key": "cmd+3",
+    "command": "workbench.view.scm",
+    "when": "workbench.scm.active"
+  },
+  {
+    "key": "cmd+3",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "scmRepository"
+  },
   // use CMD+e to open quickOpen
   {
     "key": "cmd+e",
