@@ -30,13 +30,13 @@
     "key": "shift+cmd+a",
     "command": "workbench.action.showCommands"
   },
-  // END: Core settings
   // use ctrl+e to open recent folders
   {
     "key": "ctrl+e",
     "command": "workbench.action.openRecent",
     "when": "!terminalFocus"
   },
+  // END: Core settings
   // START: Window settings
   // use ctrl+q to close window
   {
