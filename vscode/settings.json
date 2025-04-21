@@ -222,6 +222,11 @@
     }
     // END: lazygit
   ],
+  // lazygit-vscode
+  "lazygit-vscode.autoMaximizeWindow": true,
+  "lazygit-vscode.panels": {
+    "sidebar": "hide"
+  },
   // github.copilot
   "github.copilot.chat.agent.thinkingTool": true,
   "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
@@ -348,5 +353,4 @@
         }
       }
     }
-  }
-}
+  }}
