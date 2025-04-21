@@ -79,49 +79,6 @@
     "when": "terminal.active"
   },
   // END: Terminal setting
-  // START: use ctrl+n and ctrl+p to navigate list items
-  {
-    "key": "ctrl+n",
-    "command": "list.focusDown",
-    "when": "listFocus"
-  },
-  {
-    "key": "ctrl+n",
-    "command": "selectNextSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
-  },
-  {
-    "key": "ctrl+p",
-    "command": "list.focusUp",
-    "when": "listFocus"
-  },
-  {
-    "key": "ctrl+p",
-    "command": "selectPrevSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
-  },
-  {
-    "key": "ctrl+n",
-    "command": "-workbench.files.action.focusFilesExplorer",
-    "when": "sideBarVisible && !filesExplorerFocus && !suggestWidgetVisible && vim.mode != 'Insert'"
-  },
-  {
-    "key": "ctrl+n",
-    "command": "-workbench.files.action.focusFilesExplorer",
-    "when": "!sideBarVisible && !suggestWidgetVisible && vim.mode != 'Insert'"
-  },
-  {
-    "key": "ctrl+n",
-    "command": "-editor.action.triggerSuggest",
-    "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly && !suggestWidgetVisible && vim.mode == 'Insert'"
-  },
-  {
-    "key": "ctrl+n",
-    "command": "-nerdtree.unfocusSidebarOrClose",
-    "when": "filesExplorerFocus && sideBarVisible"
-  },
-  // END: use ctrl+n and ctrl+p to navigate list items
-  // START: Explorer settings
   {
     "key": "a",
     "command": "workbench.files.action.createFileFromExplorer",
