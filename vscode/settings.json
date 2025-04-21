@@ -213,7 +213,7 @@
     // START: lazygit
     {
       "before": ["<leader>", "g", "g"],
-      "commands": ["lazygit.openLazygit"]
+      "commands": ["lazygit-vscode.toggle"]
     }
     // END: lazygit
   ],
