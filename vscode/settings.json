@@ -81,8 +81,14 @@
     {
       "before": ["<leader>", "A"],
       "commands": ["editor.action.sourceAction"]
-    }
+    },
     // END: LSP support
+    // START: git
+    {
+      "before": ["<leader>", "g", "r"],
+      "commands": ["git.revertSelectedRanges"]
+    }
+    // END: git
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     // START: Core settings
