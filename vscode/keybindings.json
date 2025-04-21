@@ -30,6 +30,12 @@
     "when": "!inQuickOpen"
   },
   // END: CMD keybinding settings
+  // START: Core settings
+  {
+    "key": "shift+cmd+a",
+    "command": "workbench.action.showCommands"
+  },
+  // END: Core settings
   // use escape to focus active editor group
   {
     "key": "escape",
