@@ -107,6 +107,11 @@
       "before": ["<leader>", "c", "f"],
       "commands": ["editor.action.formatChanges"]
     },
+    // [o]rganize imports
+    {
+      "before": ["<leader>", "o"],
+      "commands": ["editor.action.organizeImports"]
+    },
     // END: code format
     {
       "before": ["leader", "e"],
@@ -197,11 +202,6 @@
     {
       "before": ["<leader>", "A"],
       "commands": ["editor.action.sourceAction"]
-    },
-    // [o]rganize imports
-    {
-      "before": ["<leader>", "o"],
-      "commands": ["editor.action.organizeImports"]
     },
     // END: LSP support
     // START: lazygit
