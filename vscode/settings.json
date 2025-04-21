@@ -215,12 +215,16 @@
       "commands": ["editor.action.sourceAction"]
     },
     // END: LSP support
-    // START: lazygit
+    // START: git/lazygit
     {
       "before": ["<leader>", "g", "g"],
       "commands": ["lazygit-vscode.toggle"]
+    },
+    {
+      "before": ["<leader>", "g", "o"],
+      "commands": ["git.openChange"]
     }
-    // END: lazygit
+    // END: git/lazygit
   ],
   // lazygit-vscode
   "lazygit-vscode.autoMaximizeWindow": true,
