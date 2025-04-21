@@ -30,12 +30,6 @@
     "when": "!inQuickOpen"
   },
   // END: CMD keybinding settings
-  // disable ctrl+d to run debugger to support vim movement
-  {
-    "key": "ctrl+d",
-    "command": "-workbench.action.debug.run",
-    "when": "debuggersAvailable && !inDebugMode && !terminalFocus"
-  },
   // use escape to focus active editor group
   {
     "key": "escape",
