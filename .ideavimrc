@@ -17,7 +17,7 @@ nmap Y y$
 
 """" General """"
 " Action Go to File
-map <leader><leader> <Action>(GotoFile)
+map <leader>ff <Action>(GotoFile)
 " Action Go to Action
 map <leader>a <Action>(GotoAction)
 
