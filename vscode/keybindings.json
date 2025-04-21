@@ -30,6 +30,12 @@
     "key": "shift+cmd+a",
     "command": "workbench.action.showCommands"
   },
+  // open vim command line
+  {
+    "key": "shift+;",
+    "command": "vim.showQuickpickCmdLine",
+    "when": "editorTextFocus && vim.mode != 'Insert'"
+  },
   // use ctrl+e to open recent folders
   {
     "key": "ctrl+e",
