@@ -57,7 +57,7 @@ map <C-l> <Action>(PrevSplitter)
 nmap L <Action>(NextTab)
 nmap H <Action>(PreviousTab)
 
-"""" Utility """"
+"""" Buffer """"
 " Buffer: close(bo) all others
 map <leader>bo <Action>(CloseAllEditorsButActive)
 " Buffer: close(bd) active editor
