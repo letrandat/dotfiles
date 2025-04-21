@@ -78,6 +78,7 @@
     "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
   },
   // END: Editors settings
+  // START: Explorer settings
   {
     "key": "a",
     "command": "workbench.files.action.createFileFromExplorer",
