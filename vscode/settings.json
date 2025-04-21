@@ -58,8 +58,25 @@
     {
       "before": ["s"], // read: use s to jump to anywhere with easymotion
       "after": ["<leader>", "<leader>", "<leader>", "j"]
-    }
+    },
     // END: easymotion
+    // START: LSP support
+    // rename symbol
+    {
+      "before": ["<leader>", "r"],
+      "commands": ["editor.action.rename"]
+    },
+    // refactor is actually [c]ode [a]ction
+    {
+      "before": ["<leader>", "a"],
+      "commands": ["editor.action.refactor"]
+    },
+    // code source [A]ction like clean up source file
+    {
+      "before": ["<leader>", "A"],
+      "commands": ["editor.action.sourceAction"]
+    }
+    // END: LSP support
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     // START: Core settings
@@ -159,6 +176,26 @@
     {
       "before": ["]", "e"],
       "commands": ["editor.action.marker.nextInFiles"]
+    },
+    // rename symbol
+    {
+      "before": ["<leader>", "r"],
+      "commands": ["editor.action.rename"]
+    },
+    // refactor is actually [c]ode [a]ction
+    {
+      "before": ["<leader>", "a"],
+      "commands": ["editor.action.refactor"]
+    },
+    // code source [A]ction like clean up source file
+    {
+      "before": ["<leader>", "A"],
+      "commands": ["editor.action.sourceAction"]
+    },
+    // [o]rganize imports
+    {
+      "before": ["<leader>", "o"],
+      "commands": ["editor.action.organizeImports"]
     },
     // END: LSP support
     // START: lazygit
