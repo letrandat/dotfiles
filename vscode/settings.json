@@ -67,6 +67,11 @@
       "before": ["Y"], // usage: Y to yank from start to end
       "after": ["y", "$"]
     },
+    // search keybindings
+    {
+      "before": ["<leader>", "s", "k"],
+      "commands": ["workbench.action.openGlobalKeybindings"]
+    },
     // END: Core settings
     // START: easymotion
     {
