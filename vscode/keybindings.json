@@ -23,6 +23,12 @@
     "command": "workbench.panel.chat",
     "when": "workbench.panel.chat.view.copilot.active"
   },
+  // use CMD+e to open quickOpen
+  {
+    "key": "cmd+e",
+    "command": "workbench.action.quickOpen",
+    "when": "!inQuickOpen"
+  },
   // END: CMD keybinding settings
   // disable ctrl+d to run debugger to support vim movement
   {
