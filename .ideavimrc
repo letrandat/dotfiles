@@ -31,8 +31,8 @@ map <leader>db <Action>(ToggleLineBreakpoint)
 """" Browsing code """"
 " re-map gd to GotoDeclaration (and usages)
 map gd <Action>(GotoDeclaration)
-" re-map gi to implementation
-map gi <Action>(GotoImplementation)
+" re-map gI to implementation
+map gI <Action>(GotoImplementation)
 
 " re-map C-o/C-i to go back(out) and forward(in)
 map <C-o> <Action>(Back)
