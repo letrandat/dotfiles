@@ -53,10 +53,6 @@
     "key": "ctrl+q",
     "command": "workbench.action.closeWindow"
   },
-  {
-    "key": "ctrl+q",
-    "command": "workbench.action.closeWindow"
-  },
   // END: Window settings
   // START: Editors settings
   // use ctrl+l and ctrl+h to navigate editor tabs
