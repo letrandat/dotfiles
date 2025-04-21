@@ -63,12 +63,12 @@
   {
     "key": "shift+h",
     "command": "workbench.action.previousEditor",
-    "when": "editorTextFocus && vim.active && !inDebugRepl"
+    "when": "editorTextFocus && vim.active && vim.mode == 'Normal' && !inDebugRepl"
   },
   {
     "key": "shift+l",
     "command": "workbench.action.nextEditor",
-    "when": "editorTextFocus && vim.active && !inDebugRepl"
+    "when": "editorTextFocus && vim.active && vim.mode == 'Normal' && !inDebugRepl"
   },
   // END: Editors settings
   // START: Terminal setting
