@@ -60,6 +60,12 @@
       "after": ["<leader>", "<leader>", "<leader>", "j"]
     },
     // END: easymotion
+    // START: code format
+    {
+      "before": ["<leader>", "c", "f"],
+      "commands": ["editor.action.formatSelection"]
+    },
+    // END: code format
     // START: LSP support
     // rename symbol
     {
@@ -96,12 +102,12 @@
       "after": ["<leader>", "<leader>", "<leader>", "j"]
     },
     // END: easymotion
-    // START: code settings
+    // START: code format
     {
       "before": ["<leader>", "c", "f"],
       "commands": ["editor.action.formatChanges"]
     },
-    // END: code settings
+    // END: code format
     {
       "before": ["leader", "e"],
       "commands": ["workbench.view.explorer"]
