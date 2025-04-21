@@ -108,10 +108,54 @@
       "commands": ["workbench.action.splitEditorRight"]
     },
     // END: buffers
+    // START: LSP support
+    // gr (go to references)
     {
       "before": ["g", "r"],
       "commands": ["editor.action.goToReferences"]
     },
+    // gd (go to definition) is already supported by default
+    // gD (go to source definition)
+    {
+      "before": ["g", "D"],
+      "commands": ["typescript.goToSourceDefinition"]
+    },
+    // gi (go to last insert) is already taken by default
+    // gI (go to Implementation)
+    {
+      "before": ["g", "I"],
+      "commands": ["editor.action.goToImplementation"]
+    },
+    // gf (go to f) is similar to gd
+    {
+      "before": ["g", "f"],
+      "after": ["g", "d"]
+    },
+    // gy (go to t[y]pe definition)
+    {
+      "before": ["g", "y"],
+      "commands": ["editor.action.goToTypeDefinition"]
+    },
+    // gK (go to params hint)
+    {
+      "before": ["g", "K"],
+      "commands": ["editor.action.triggerParameterHints"]
+    },
+    // gch (go to [c]all [h]ierachy)
+    {
+      "before": ["g", "c", "h"],
+      "commands": ["editor.showCallHierarchy"]
+    },
+    // go to prev/next problem in files
+    {
+      "before": ["[", "e"],
+      "commands": ["editor.action.marker.prevInFiles"]
+    },
+    {
+      "before": ["]", "e"],
+      "commands": ["editor.action.marker.nextInFiles"]
+    },
+    // END: LSP support
     // START: lazygit
     {
       "before": ["<leader>", "g", "g"],
