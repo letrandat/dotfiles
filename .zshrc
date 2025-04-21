@@ -121,6 +121,7 @@ alias lg="lazygit"
 alias ld="lazydocker"
 
 # ENVIRONMENT
+export XDG_CONFIG_HOME="$HOME/.config"
 # homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 # java jenv
