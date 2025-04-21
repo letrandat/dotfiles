@@ -31,19 +31,23 @@ map <leader>db <Action>(ToggleLineBreakpoint)
 """" Browsing code """"
 " re-map gd to GotoDeclaration (and usages)
 map gd <Action>(GotoDeclaration)
+map gf <Action>(GotoDeclaration)
 " re-map gI to implementation
 map gI <Action>(GotoImplementation)
+" map gr to find usages/references
+map gr <Action>(FindUsages)
+" gy (go to t[y]pe definition)
+map gy <Action>(GotoTypeDeclaration)
+" map C-k to ParameterInfo which is equivalent to Signature Help in lazyvim
+map gK <Action>(ParameterInfo)
+" gch (go to [c]all [h]ierachy)
+map gch <Action>(CallHierarchy)
 
 " re-map C-o/C-i to go back(out) and forward(in)
 map <C-o> <Action>(Back)
 map <C-i> <Action>(Forward)
 " re-map `. to JumpToLastChange because default ideavim only jump to the same buffer
 map `. <Action>(JumpToLastChange)
-
-" map gr to find usages/references
-map gr <Action>(FindUsages)
-" map C-k to ParameterInfo which is equivalent to Signature Help in lazyvim
-map <C-k> <Action>(ParameterInfo)
 
 " Splitter
 map <C-h> <Action>(NextSplitter)
