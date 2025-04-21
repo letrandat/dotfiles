@@ -146,6 +146,11 @@
       "before": ["<leader>", "w", "v"],
       "commands": ["workbench.action.splitEditorRight"]
     },
+    // simulate buffers list in vim
+    {
+      "before": ["<leader>", ","],
+      "commands": ["workbench.files.action.focusOpenEditorsView"]
+    },
     // END: buffers
     // START: LSP support
     // gr (go to references)
