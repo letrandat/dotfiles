@@ -31,17 +31,6 @@
     "command": "workbench.action.showCommands"
   },
   // END: Core settings
-  // use escape to focus active editor group
-  {
-    "key": "escape",
-    "command": "workbench.action.focusActiveEditorGroup",
-    "when": "!editorTextFocus && !terminalFocus"
-  },
-  {
-    "key": "escape",
-    "command": "extension.vim_escape",
-    "when": "editorTextFocus && vim.active"
-  },
   // use ctrl+e to open recent folders
   {
     "key": "ctrl+e",
@@ -109,6 +98,12 @@
     "key": "ctrl+v",
     "command": "explorer.openToSide",
     "when": "explorerViewletFocus && foldersViewVisible && !inputFocus"
+  },
+  // escape to focus on editor from explorer
+  {
+    "key": "escape",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "vim.active && vim.mode == 'Normal' && explorerViewletFocus"
   }
   // END: Explorer settings
 ]
