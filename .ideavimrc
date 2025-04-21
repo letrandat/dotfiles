@@ -18,6 +18,8 @@ nmap Y y$
 """" General """"
 " Action Go to File
 map <leader>ff <Action>(GotoFile)
+" Action Go to recent files
+map <leader>fr <Action>(RecentFiles)
 " Action Go to Action
 map <leader>a <Action>(GotoAction)
 
@@ -62,6 +64,14 @@ nmap H <Action>(PreviousTab)
 map <leader>bo <Action>(CloseAllEditorsButActive)
 " Buffer: close(bd) active editor
 map <leader>bd <Action>(CloseContent)
+" Split and move right
+map <leader>wv <Action>(MoveTabRight)
+
+"""" Code Format """"
+" ReformatCode
+map <leader>cf <Action>(ReformatCode)
+" OptimizeImports
+map <leader>o <Action>(OptimizeImports)
 
 """" Refactor """"
 " Show Refactor QuickListPopupAction
