@@ -78,14 +78,6 @@
     "when": "editorTextFocus && vim.active && vim.mode == 'Normal'"
   },
   // END: Editors settings
-  // START: Terminal setting
-  // add back ctrl+` to toggle terminal
-  {
-    "key": "ctrl+`",
-    "command": "workbench.action.terminal.toggleTerminal",
-    "when": "terminal.active"
-  },
-  // END: Terminal setting
   {
     "key": "a",
     "command": "workbench.files.action.createFileFromExplorer",
