@@ -36,6 +36,18 @@
     "command": "workbench.action.openRecent",
     "when": "!terminalFocus"
   },
+  // escape to focus on editor from explorer
+  {
+    "key": "escape",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "explorerViewletFocus"
+  },
+  // escape to focus on editor from chat
+  {
+    "key": "escape",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "!inlineChatFocused && inChat"
+  },
   // END: Core settings
   // START: Window settings
   // use ctrl+q to close window
@@ -98,12 +110,6 @@
     "key": "ctrl+v",
     "command": "explorer.openToSide",
     "when": "explorerViewletFocus && foldersViewVisible && !inputFocus"
-  },
-  // escape to focus on editor from explorer
-  {
-    "key": "escape",
-    "command": "workbench.action.focusActiveEditorGroup",
-    "when": "vim.active && vim.mode == 'Normal' && explorerViewletFocus"
   }
   // END: Explorer settings
 ]
