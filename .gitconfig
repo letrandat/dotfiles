@@ -1,19 +1,17 @@
 [user]
-	email = xxx@gmail.com
-	name = Dat
+	name = Tran Dat, Le
+	email = trandatnh@gmail.com
 [core]
 	autocrlf = input
-  pager = delta
+	# use vscode as editor
+	editor = code --wait
 
-[interactive]
-    diffFilter = delta --color-only
-
-[delta]
-    navigate = true    # use n and N to move between diff sections
-    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
-
-[merge]
-    conflictstyle = diff3
-
+# use vscode as diff and merge tool
 [diff]
-    colorMoved = default
+    tool = default-difftool
+[difftool "default-difftool"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+    tool = code
+[mergetool "code"]
+    cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
