@@ -107,6 +107,14 @@
       "before": ["Y"], // usage: Y to yank from start to end
       "after": ["y", "$"]
     },
+    {
+      "before": ["j"], // smooth j over wrapped text
+      "after": ["g", "j"]
+    },
+    {
+      "before": ["k"], // smooth k over wrapped text
+      "after": ["g", "k"]
+    },
     // search keybindings
     {
       "before": ["<leader>", "s", "k"],
