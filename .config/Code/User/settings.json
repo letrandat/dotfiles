@@ -1,4 +1,4 @@
-{
+j{
   // workbench
   // https://code.visualstudio.com/api/extension-capabilities/extending-workbench
   "workbench.colorTheme": "Visual Studio Light",
@@ -54,6 +54,16 @@
   "vim.easymotion": true,
   "vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjf",
   "vim.visualModeKeyBindingsNonRecursive": [
+    // START: Core settings
+    // prevent copying the selected text after pasting
+    {
+        "before": ["p"],
+        // p: Paste the text.
+        // gv: Reselect the text that was just pasted.
+        // y: Yank the reselected text back
+        "after": ["p", "g", "v", "y"]
+    },
+    // END: Core settings
     // START: easymotion
     {
       "before": ["s"], // read: use s to jump to anywhere with easymotion
