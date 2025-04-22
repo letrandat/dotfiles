@@ -98,7 +98,7 @@
     {
       "before": ["<leader>", "g", "u"],
       "commands": ["git.unstageSelectedRanges"]
-    },
+    }
     // END: git
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
@@ -120,9 +120,15 @@
     },
     // END: easymotion
     // START: code format
+    // format the changes only
     {
       "before": ["<leader>", "c", "f"],
       "commands": ["editor.action.formatChanges"]
+    },
+    // [f]ormat but BIGGER
+    {
+      "before": ["<leader>", "c", "F"],
+      "commands": ["editor.action.formatDocument"]
     },
     // [o]rganize imports
     {
@@ -368,4 +374,5 @@
         }
       }
     }
-  }}
+  }
+}
