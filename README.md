@@ -37,5 +37,6 @@ ln -s ~/workspace/repo/dotfiles/.config/Code/User/keybindings.json ~/Library/App
 
 # Files that I need to manually make change (for now)
 ln -s ~/workspace/repo/dotfiles/.zshrc ~/.zshrc
+# Remember to update ~/.gitconfig-local
 ln -s ~/workspace/repo/dotfiles/.gitconfig ~/.gitconfig
 ```

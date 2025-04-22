@@ -1,10 +1,10 @@
 [user]
 	name = Tran Dat, Le
-	email = trandatnh@gmail.com
 [core]
 	autocrlf = input
 	# use vscode as editor
 	editor = code --wait
+	excludesfile = ~/.gitignore_global
 
 # use vscode as diff and merge tool
 [diff]
@@ -15,3 +15,7 @@
     tool = code
 [mergetool "code"]
     cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
+
+[include]
+	# Update .gitconfig-local with local config
+    path = ~/.gitconfig-local
