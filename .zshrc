@@ -149,3 +149,27 @@ export PATH="$PATH:/Users/dat/.local/bin"
 
 # starship
 eval "$(starship init zsh)"
+
+
+# --- VS Code Tmux Auto-Attach ---
+# This block attempts to attach to a specific tmux session
+# only when run inside a VS Code terminal ($TERM_PROGRAM is 'vscode')
+# and not already in a tmux session.
+
+# Check if we are in a VS Code integrated terminal
+if [ "$TERM_PROGRAM" = "vscode" ]; then
+    SESSION_NAME="vscode"
+
+    # check if the target session exists
+    tmux has-session -t "$SESSION_NAME" 2>/dev/null
+    if [ $? -eq 0 ]; then
+        # Session exists, attach to it.
+        # 'exec' replaces the current shell process with tmux.
+        exec tmux attach -t "$SESSION_NAME"
+    else
+        # Session does not exist, create a new one and attach.
+        # 'exec' replaces the current current process with tmux.
+        exec tmux new-session -s "$SESSION_NAME"
+    fi
+fi
+# --- End VS Code Tmux Auto-Attach ---
