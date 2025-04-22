@@ -84,10 +84,21 @@
     },
     // END: LSP support
     // START: git
+    // [g]it [r]evert
     {
       "before": ["<leader>", "g", "r"],
       "commands": ["git.revertSelectedRanges"]
-    }
+    },
+    // [g]it [s]tage
+    {
+      "before": ["<leader>", "g", "s"],
+      "commands": ["git.stageSelectedRanges"]
+    },
+    // [g]it [u]nstage
+    {
+      "before": ["<leader>", "g", "u"],
+      "commands": ["git.unstageSelectedRanges"]
+    },
     // END: git
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
