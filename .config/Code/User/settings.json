@@ -136,6 +136,22 @@
       "before": ["k"], // smooth k over wrapped text
       "after": ["g", "k"]
     },
+    {
+      "before": ["Up"],
+      "after": ["<C-w>", "k"]
+    },
+    {
+      "before": ["Down"],
+      "after": ["<C-w>", "j"]
+    },
+    {
+      "before": ["Left"],
+      "after": ["<C-w>", "h"]
+    },
+    {
+      "before": ["Right"],
+      "after": ["<C-w>", "l"]
+    },
     // search keybindings
     {
       "before": ["<leader>", "s", "k"],
