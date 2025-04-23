@@ -78,7 +78,7 @@
     // START: easymotion
     {
       "before": ["s"], // read: use s to jump to anywhere with easymotion
-      "after": ["<leader>", "<leader>", "<leader>", "j"]
+      "after": ["<leader>", "<leader>", "s"]
     },
     // END: easymotion
     // START: code format
@@ -165,7 +165,7 @@
     // START: easymotion
     {
       "before": ["s"], // read: use s to jump to anywhere with easymotion
-      "after": ["<leader>", "<leader>", "<leader>", "j"]
+      "after": ["<leader>", "<leader>", "s"]
     },
     // END: easymotion
     // START: code format
