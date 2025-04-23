@@ -48,6 +48,7 @@
   "git.openRepositoryInParentFolders": "always",
   "git.autofetch": true,
   "git.verboseCommit": true,
+  "git.enableSmartCommit": true,
   // vim.core
   "vim.useSystemClipboard": true,
   "vim.leader": "<space>",
