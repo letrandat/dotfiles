@@ -289,6 +289,14 @@
     {
       "before": ["<leader>", "g", "o"],
       "commands": ["git.openChange"]
+    },
+    {
+      "before": ["]", "h"],
+      "commands": ["workbench.action.editor.nextChange"]
+    },
+    {
+      "before": ["[", "h"],
+      "commands": ["workbench.action.editor.previousChange"]
     }
     // END: git/lazygit
   ],
