@@ -35,7 +35,7 @@
     "key": "shift+cmd+a",
     "command": "workbench.action.showCommands"
   },
-  // open vim command line
+  // open vim command line with :
   {
     "key": "shift+;",
     "command": "vim.showQuickpickCmdLine",
@@ -110,6 +110,13 @@
     "key": "ctrl+v",
     "command": "explorer.openToSide",
     "when": "explorerViewletFocus && foldersViewVisible && !inputFocus"
-  }
+  },
   // END: Explorer settings
+  // START: git settings
+  {
+    "key": "cmd+shift+c",
+    "command": "git.commit",
+    "when": "!operationInProgress"
+  }
+  // END: git settings
 ]
