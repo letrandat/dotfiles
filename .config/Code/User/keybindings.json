@@ -21,7 +21,7 @@
   // use CMD+3 to open git
   {
     "key": "cmd+3",
-    "command": "lazygit-vscode.toggle",
+    "command": "lazygit-vscode.toggle"
   },
   // use CMD+e to open quickOpen
   {
