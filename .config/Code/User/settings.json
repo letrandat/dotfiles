@@ -288,9 +288,15 @@
       "before": ["<leader>", "g", "g"],
       "commands": ["lazygit-vscode.toggle"]
     },
+    // open change in this file
     {
       "before": ["<leader>", "g", "o"],
       "commands": ["git.openChange"]
+    },
+    // open change but bigger (all files)
+    {
+      "before": ["<leader>", "g", "O"],
+      "commands": ["git.viewChanges"]
     },
     {
       "before": ["]", "h"],
