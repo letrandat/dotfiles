@@ -129,6 +129,10 @@
       "after": ["y", "$"]
     },
     {
+      "before": ["<C-c>"],
+      "after": ["c", "i", "w"]
+    },
+    {
       "before": ["j"], // smooth j over wrapped text
       "after": ["g", "j"]
     },
