@@ -282,6 +282,16 @@
       "before": ["<leader>", "A"],
       "commands": ["editor.action.sourceAction"]
     },
+    // go to [s]ymbol in file
+    {
+      "before": ["<leader>", "s", "s"],
+      "commands": ["workbench.action.gotoSymbol"]
+    },
+    // go to [S]ymbol but bigger, to workspace
+    {
+      "before": ["<leader>", "s", "S"],
+      "commands": ["workbench.action.showAllSymbols"]
+    },
     // END: LSP support
     // START: git/lazygit
     {
