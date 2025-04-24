@@ -288,16 +288,6 @@
       "before": ["<leader>", "g", "g"],
       "commands": ["lazygit-vscode.toggle"]
     },
-    // open change in this file
-    {
-      "before": ["<leader>", "g", "o"],
-      "commands": ["git.openChange"]
-    },
-    // open change but bigger (all files)
-    {
-      "before": ["<leader>", "g", "O"],
-      "commands": ["git.viewChanges"]
-    },
     {
       "before": ["]", "h"],
       "commands": ["workbench.action.editor.nextChange"]
@@ -305,10 +295,6 @@
     {
       "before": ["[", "h"],
       "commands": ["workbench.action.editor.previousChange"]
-    },
-    {
-      "before": ["<leader>", "g", "l"],
-      "commands": ["git.pull"]
     }
     // END: git/lazygit
   ],

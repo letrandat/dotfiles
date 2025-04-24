@@ -114,7 +114,21 @@
   // END: Explorer settings
   // START: git settings
   {
-    "key": "cmd+shift+c",
+    "key": "cmd+g l",
+    "command": "git.pull"
+  },
+  // open change in this file
+  {
+    "key": "cmd+g o",
+    "command": "git.openChange"
+  },
+  // open change but bigger (all files)
+  {
+    "key": "cmd+g shift+o",
+    "command": "git.viewChanges"
+  },
+  {
+    "key": "cmd+g c",
     "command": "git.commit",
     "when": "!operationInProgress"
   }
