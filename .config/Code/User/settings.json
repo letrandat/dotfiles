@@ -192,10 +192,12 @@
       "commands": ["workbench.view.explorer"]
     },
     // START: files
+    // copy [f]ile [f]iles
     {
       "before": ["leader", "f", "f"],
       "commands": ["workbench.action.quickOpen"]
     },
+    // copy [f]ile [r]ecent
     {
       "before": ["<leader>", "f", "r"],
       "commands": ["workbench.action.quickOpen"]
