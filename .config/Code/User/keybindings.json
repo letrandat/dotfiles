@@ -158,6 +158,25 @@
     "key": "cmd+g c",
     "command": "git.commit",
     "when": "!operationInProgress"
+  },
+  // [g]it [r]evert
+  {
+    "key": "cmd+g r",
+    "command": "git.revertSelectedRanges",
+    "when": "editorTextFocus && !operationInProgress && resourceScheme == 'file'"
+  },
+  // [g]it [s]tage
+
+  {
+    "key": "cmd+g s",
+    "command": "git.stageSelectedRanges",
+    "when": "editorTextFocus && !operationInProgress && resourceScheme == 'file'"
+  },
+  // [g]it [u]nstage
+  {
+    "key": "cmd+g u",
+    "command": "git.unstageSelectedRanges",
+    "when": "editorTextFocus && isInDiffEditor && isInDiffRightEditor && !operationInProgress && resourceScheme == 'git'"
   }
   // END: git settings
 ]
