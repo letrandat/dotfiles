@@ -19,6 +19,7 @@
   "search.searchEditor.reusePriorSearchConfiguration": true,
   // files
   "files.trimTrailingWhitespace": true,
+  "files.autoSave": "afterDelay",
   // terminal
   "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.copyOnSelection": true,
