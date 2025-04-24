@@ -105,13 +105,22 @@
     {
       "before": ["<leader>", "A"],
       "commands": ["editor.action.sourceAction"]
-    },
+    }
     // END: LSP support
     // START: git
     // END: git
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     // START: Core settings
+    // use vscode undo/redo
+    {
+      "before": ["u"],
+      "commands": ["undo"]
+    },
+    {
+      "before": ["<C-r>"],
+      "commands": ["redo"]
+    },
     {
       "before": ["Y"], // usage: Y to yank from start to end
       "after": ["y", "$"]
