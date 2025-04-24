@@ -70,11 +70,11 @@
     // START: Core settings
     // prevent copying the selected text after pasting
     {
-        "before": ["p"],
-        // p: Paste the text.
-        // gv: Reselect the text that was just pasted.
-        // y: Yank the reselected text back
-        "after": ["p", "g", "v", "y"]
+      "before": ["p"],
+      // p: Paste the text.
+      // gv: Reselect the text that was just pasted.
+      // y: Yank the reselected text back
+      "after": ["p", "g", "v", "y"]
     },
     // END: Core settings
     // START: easymotion
