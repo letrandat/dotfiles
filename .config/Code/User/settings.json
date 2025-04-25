@@ -60,9 +60,14 @@
   "git.autofetch": true,
   "git.verboseCommit": true,
   "git.enableSmartCommit": true,
+
+  // Vim Configuration
   // vim.core
   "vim.useSystemClipboard": true,
   "vim.leader": "<space>",
+  // Enable and configure yank highlighting
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.duration": 200,
   // allowing more breathing room when using vim keybindings
   "vim.timeout": 2000,
   // vim.easymotion
