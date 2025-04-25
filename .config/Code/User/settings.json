@@ -74,15 +74,6 @@
   "vim.easymotion": true,
   "vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjf",
   "vim.insertModeKeyBindings": [
-    // faster movement in insert mode
-    {
-      "before": ["j", "j"],
-      "after": ["<Esc>"]
-    },
-    {
-      "before": ["k", "k"],
-      "after": ["<Esc>"]
-    }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     // START: Core settings
