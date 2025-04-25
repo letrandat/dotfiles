@@ -202,7 +202,12 @@
     // copy [f]ile [p]ath
     {
       "before": ["<leader>", "f", "p"],
-      "commands": ["workbench.action.files.copyPathOfActiveFile"]
+      "commands": ["copyRelativeFilePath"]
+    },
+    // copy [f]ile [p]ath but BIGGER
+    {
+      "before": ["<leader>", "f", "P"],
+      "commands": ["copyFilePath"]
     },
     // END: files
     // START: buffers
