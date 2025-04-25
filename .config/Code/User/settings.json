@@ -336,27 +336,6 @@
   "github.copilot.chat.agent.thinkingTool": true,
   "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
   "github.copilot.chat.commitMessageGeneration.instructions": [
-    {
-      "text": "Follow the Conventional Commits specification to create clear and consistent commit history."
-    },
-    {
-      "text": "Each commit message should start with a type, followed by an optional scope, and a concise description."
-    },
-    {
-      "text": "The type should be one of the following: feat (new feature), fix (bug fix), build (changes affecting build system), chore (other changes), ci (CI configuration changes), docs (documentation changes), perf (performance improvements), refactor (code restructuring), revert (reverting changes), or style (formatting changes)."
-    },
-    {
-      "text": "The scope provides additional context and is enclosed in parentheses (e.g., feat(user))."
-    },
-    {
-      "text": "The description should be a short, imperative summary of the change."
-    },
-    {
-      "text": "Optionally include a more detailed body after a blank line for context."
-    },
-    {
-      "text": "The footer can reference issues or note breaking changes (starting with BREAKING CHANGE:)."
-    }
   ],
   "github.copilot.chat.testGeneration.instructions": [
     {
