@@ -5,15 +5,25 @@
   "workbench.iconTheme": "material-icon-theme",
   "workbench.preferredDarkColorTheme": "Visual Studio Dark",
   "workbench.preferredLightColorTheme": "Visual Studio Light",
+
   // window settings
   "window.openFoldersInNewWindow": "off",
   "window.autoDetectColorScheme": true,
-  // editor settings
+
+  // Editor Settings
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": false,
   "editor.lineNumbers": "relative",
   "workbench.editor.showTabs": "none",
   "editor.rulers": [100],
+  // Enable bracket pair colorization for better readability
+  "editor.bracketPairColorization.enabled": true,
+  // Show vertical lines for bracket pairs
+  "editor.guides.bracketPairs": true,
+  // Configure minimap for better performance and visibility
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.scale": 2,
+
   // search
   "search.searchEditor.focusResultsOnSearch": true,
   "search.searchEditor.reusePriorSearchConfiguration": true,
