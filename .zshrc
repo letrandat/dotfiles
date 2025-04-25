@@ -108,33 +108,6 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# ENVIRONMENT
-export XDG_CONFIG_HOME="$HOME/.config"
-# homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
-# java jenv
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-# Python
-export PATH="/opt/homebrew/opt/python@3.13/bin:$PATH"
-# export PATH="/Library/Frameworks/Python.framework/Versions/3.13/bin:$PATH"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-nvm use --lts
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
-
-# Added by Windsurf
-export PATH="/Users/dat/.codeium/windsurf/bin:$PATH"
-
-# Created by `pipx` on 2025-03-29 15:42:54
-export PATH="$PATH:/Users/dat/.local/bin"
-
 # starship
 eval "$(starship init zsh)"
 

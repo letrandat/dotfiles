@@ -40,6 +40,8 @@ ln -s ~/workspace/repo/dotfiles/.config/Code/User/keybindings.json ~/Library/App
 mkdir -p ~/.config/zsh
 ln -s ~/workspace/repo/dotfiles/.config/zsh/aliases.zsh ~/.config/zsh/aliases.zsh
 chmod +x ~/.config/zsh/aliases.zsh
+ln -s ~/workspace/repo/dotfiles/.config/zsh/env.zsh ~/.config/zsh/env.zsh
+chmod +x ~/.config/zsh/env.zsh
 ln -s ~/workspace/repo/dotfiles/.zshrc ~/.zshrc
 
 # Remember to update ~/.gitconfig-local
