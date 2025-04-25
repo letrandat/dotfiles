@@ -35,13 +35,15 @@ ln -s ~/workspace/repo/dotfiles/.config/nvim ~/.config/
 ln -s ~/workspace/repo/dotfiles/.config/Code/User/settings.json ~/Library/Application\ Support/Code/User/settings.json
 ln -s ~/workspace/repo/dotfiles/.config/Code/User/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
 
-# Files that I need to manually make change (for now)
 # config zsh
+# add more *.zsh files under ~/.config/zsh to extend functionality
 mkdir -p ~/.config/zsh
 ln -s ~/workspace/repo/dotfiles/.config/zsh/aliases.zsh ~/.config/zsh/aliases.zsh
 chmod +x ~/.config/zsh/aliases.zsh
 ln -s ~/workspace/repo/dotfiles/.config/zsh/env.zsh ~/.config/zsh/env.zsh
 chmod +x ~/.config/zsh/env.zsh
+ln -s ~/workspace/repo/dotfiles/.config/zsh/vscode-tmux.zsh ~/.config/zsh/vscode-tmux.zsh
+chmod +x ~/.config/zsh/vscode-tmux.zsh
 ln -s ~/workspace/repo/dotfiles/.zshrc ~/.zshrc
 
 # Remember to update ~/.gitconfig-local
