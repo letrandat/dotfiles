@@ -53,6 +53,8 @@
   // vim.core
   "vim.useSystemClipboard": true,
   "vim.leader": "<space>",
+  // allowing more breathing room when using vim keybindings
+  "vim.timeout": 2000,
   // vim.easymotion
   "vim.easymotion": true,
   "vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjf",
