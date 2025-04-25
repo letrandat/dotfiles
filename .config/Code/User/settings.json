@@ -238,6 +238,10 @@
       "before": ["<leader>", "w", "v"],
       "commands": ["workbench.action.splitEditorRight"]
     },
+    {
+      "before": ["<leader>", "w", "s"],
+      "commands": ["workbench.action.splitEditorDown"]
+    },
     // simulate buffers list in vim
     {
       "before": ["<leader>", ","],
