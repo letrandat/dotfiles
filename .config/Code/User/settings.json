@@ -201,10 +201,6 @@
     },
     // copy [f]ile [p]ath
     {
-      "before": ["<leader>", "f", "c"],
-      "commands": ["workbench.action.files.copyPathOfActiveFile"]
-    },
-    {
       "before": ["<leader>", "f", "p"],
       "commands": ["workbench.action.files.copyPathOfActiveFile"]
     },
