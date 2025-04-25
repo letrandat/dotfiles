@@ -178,7 +178,6 @@
     "when": "editorTextFocus && !operationInProgress && resourceScheme == 'file'"
   },
   // [g]it [s]tage
-
   {
     "key": "cmd+g s",
     "command": "git.stageSelectedRanges",
@@ -189,5 +188,17 @@
     "key": "cmd+g u",
     "command": "git.unstageSelectedRanges",
     "when": "editorTextFocus && isInDiffEditor && isInDiffRightEditor && !operationInProgress && resourceScheme == 'git'"
+  },
+  // [g]it [s]tash
+  {
+    "key": "cmd+g s s",
+    "command": "git.stash",
+    "when": "!editorHasSelection"
+  },
+  // [g]it [s]tash [p]op
+  {
+    "key": "cmd+g s p",
+    "command": "git.stashPop",
+    "when": "!editorHasSelection"
   }
 ]
