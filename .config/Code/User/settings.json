@@ -73,8 +73,7 @@
   // vim.easymotion
   "vim.easymotion": true,
   "vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjf",
-  "vim.insertModeKeyBindings": [
-  ],
+  "vim.insertModeKeyBindings": [],
   "vim.visualModeKeyBindingsNonRecursive": [
     // START: Core settings
     // prevent copying the selected text after pasting
@@ -160,6 +159,11 @@
     {
       "before": ["Right"],
       "after": ["<C-w>", "l"]
+    },
+    // Vim UI Configuration
+    {
+      "before": ["<leader>", "u", "w"],
+      "commands": ["editor.action.toggleWordWrap"]
     },
     // search keybindings
     {
@@ -335,8 +339,7 @@
   // github.copilot
   "github.copilot.chat.agent.thinkingTool": true,
   "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
-  "github.copilot.chat.commitMessageGeneration.instructions": [
-  ],
+  "github.copilot.chat.commitMessageGeneration.instructions": [],
   "github.copilot.chat.testGeneration.instructions": [
     {
       "text": "Use JUnit 5 and Mockito for Java testing. Include @DisplayName annotations for better readability."
@@ -362,7 +365,7 @@
   ],
   "github.copilot.chat.codeGeneration.instructions": [
     {
-      "text": "Comment First: Write comments at the beginning of the development process. For a new class, start by writing the class interface comment.  Next, write interface comments and signatures for the most important public methods, leaving the method bodies empty.  Iterate over these comments until the basic structure is correct.  Write declarations and comments for the most important class instance variables.  Fill in the bodies of the methods, adding implementation comments as needed.  For each new method, write the interface comment before the method body.  For instance variables, write the comment when declaring the variable."
+      "text": "Comment First: Write comments at the beginning of the development process. For a new class, start by writing the class interface comment.  Next, write interface comments and signatures for the most important public methods, leaving the method bodies empty.  Iterate over these comments until the basic structure is correct.  Write declarations and comments for the most important class instance variables.  Fill in the bodies of the methods, adding implementation comments as needed.  For each new method, write the interface comment before the method body.  For instance variables, write the comment when declaring the variable. Let me know If you're struggling to explain a method or variable with a short, clear comment so that we can improve the design together."
     },
     {
       "text": "Write simple, clean, and organized solutions. Avoid complexity and keep files under 300 lines of code."
