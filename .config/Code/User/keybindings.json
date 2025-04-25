@@ -145,6 +145,7 @@
 
   //
   // GIT NAVIGATION SHORTCUTS
+  // cmd+g = vscode built-in git
   //
   {
     "key": "cmd+g l",
@@ -161,8 +162,13 @@
     "command": "git.viewChanges"
   },
   {
-    "key": "cmd+g c",
+    "key": "cmd+g c c",
     "command": "git.commit",
+    "when": "!operationInProgress"
+  },
+  {
+    "key": "cmd+g c a",
+    "command": "git.commitAmend",
     "when": "!operationInProgress"
   },
   // [g]it [r]evert
