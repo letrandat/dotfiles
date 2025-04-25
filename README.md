@@ -36,7 +36,12 @@ ln -s ~/workspace/repo/dotfiles/.config/Code/User/settings.json ~/Library/Applic
 ln -s ~/workspace/repo/dotfiles/.config/Code/User/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
 
 # Files that I need to manually make change (for now)
+# config zsh
+mkdir -p ~/.config/zsh
+ln -s ~/workspace/repo/dotfiles/.config/zsh/aliases.zsh ~/.config/zsh/aliases.zsh
+chmod +x ~/.config/zsh/aliases.zsh
 ln -s ~/workspace/repo/dotfiles/.zshrc ~/.zshrc
+
 # Remember to update ~/.gitconfig-local
 ln -s ~/workspace/repo/dotfiles/.gitconfig ~/.gitconfig
 ```

@@ -64,6 +64,7 @@ HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_CUSTOM=~/.config/zsh
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -103,25 +104,9 @@ fi
 # - $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
 #
-# ALIASES
-alias zshconfig="nvim ~/.zshrc"
-alias ws="cd ~/workspace"
-alias repo="cd ~/workspace/repo"
-alias dc="git reset --hard"
-alias st="git stash"
-alias ust="git stash pop"
-alias df="git diff"
-alias dff="git diff --staged"
-alias a="git add --all"
-alias ua"git reset HEAD~"
-alias ss="git status"
-alias m="git checkout master"
-alias b="git checkout"
-alias squash="git rebase -i master"
-alias python="/opt/homebrew/bin/python3"
-alias v="nvim"
-alias lg="lazygit"
-alias ld="lazydocker"
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # ENVIRONMENT
 export XDG_CONFIG_HOME="$HOME/.config"
