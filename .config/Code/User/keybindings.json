@@ -27,7 +27,10 @@
     "command": "workbench.action.focusBelowGroup",
     "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
   },
-  // START: CMD keybinding settings
+
+  //
+  // NAVIGATION SHORTCUTS STARTING WITH CMD
+  //
   // use CMD+1 to open explorer
   {
     "key": "cmd+1",
@@ -56,7 +59,7 @@
     "command": "workbench.action.quickOpen",
     "when": "!inQuickOpen"
   },
-  // END: CMD keybinding settings
+
   // START: Core settings
   {
     "key": "shift+cmd+a",
@@ -139,7 +142,10 @@
     "when": "explorerViewletFocus && foldersViewVisible && !inputFocus"
   },
   // END: Explorer settings
-  // START: git settings
+
+  //
+  // GIT NAVIGATION SHORTCUTS
+  //
   {
     "key": "cmd+g l",
     "command": "git.pull"
@@ -178,5 +184,4 @@
     "command": "git.unstageSelectedRanges",
     "when": "editorTextFocus && isInDiffEditor && isInDiffRightEditor && !operationInProgress && resourceScheme == 'git'"
   }
-  // END: git settings
 ]
