@@ -69,7 +69,7 @@
   "vim.highlightedyank.enable": true,
   "vim.highlightedyank.duration": 200,
   // allowing more breathing room when using vim keybindings
-  "vim.timeout": 2000,
+  "vim.timeout": 3000,
   // vim.easymotion
   "vim.easymotion": true,
   "vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjf",
