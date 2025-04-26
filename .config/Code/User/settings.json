@@ -30,13 +30,23 @@
   // files
   "files.trimTrailingWhitespace": true,
   "files.autoSave": "afterDelay",
-  // terminal
-  "terminal.integrated.defaultProfile.osx": "zsh",
+
+  // Terminal Configuration
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.suggest.enabled": true,
   // Use either the following font for vscode terminal
   // "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+  // terminal profiles
   "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+  "terminal.integrated.profiles.osx": {
+    "vscode-tmux": {
+      "path": "zsh",
+      "args": ["-c", "~/.config/Code/User/bin/vscode-tmux.sh"],
+      "icon": "terminal-tmux",
+    }
+  },
+  "terminal.integrated.defaultProfile.osx": "zsh",
+
   // languages settings
   "[jsonc]": {},
   "[typescript]": {
@@ -376,7 +386,7 @@
     {
       "before": ["<leader>", "t", "R"],
       "commands": ["workbench.action.tasks.restartTask"]
-    },
+    }
   ],
   // lazygit-vscode
   "lazygit-vscode.autoMaximizeWindow": true,

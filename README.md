@@ -46,6 +46,11 @@ ln -s ~/workspace/repo/dotfiles/.config/zsh/vscode-tmux.zsh ~/.config/zsh/vscode
 chmod +x ~/.config/zsh/vscode-tmux.zsh
 ln -s ~/workspace/repo/dotfiles/.zshrc ~/.zshrc
 
+# config vscode profiles
+mkdir -p ~/.config/Code/User/bin
+ln -s ~/workspace/repo/dotfiles/.config/Code/User/bin/vscode-tmux.sh ~/.config/Code/User/bin/vscode-tmux.sh
+chmod +x ~/.config/Code/User/bin/vscode-tmux.sh
+
 # Remember to update ~/.gitconfig-local
 ln -s ~/workspace/repo/dotfiles/.gitconfig ~/.gitconfig
 ```
