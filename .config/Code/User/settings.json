@@ -328,8 +328,55 @@
     {
       "before": ["[", "h"],
       "commands": ["workbench.action.editor.previousChange"]
-    }
+    },
     // END: git/lazygit
+
+    // Tasks Configuration
+    // [t]ask [r]un
+    {
+      "before": ["<leader>", "t", "r"],
+      "commands": ["workbench.action.tasks.runTask"]
+    },
+    // [t]ask rerun last
+    {
+      "before": ["<leader>", "t", "."],
+      "commands": ["workbench.action.tasks.reRunTask"]
+    },
+    // [t]ask [b]uild
+    {
+      "before": ["<leader>", "t", "b"],
+      "commands": ["workbench.action.tasks.build"]
+    },
+    // [t]ask [c]onfigure
+    {
+      "before": ["<leader>", "t", "c"],
+      "commands": ["workbench.action.tasks.configureTaskRunner"]
+    },
+    // [t]ask [g]et running tasks
+    {
+      "before": ["<leader>", "t", "g"],
+      "commands": ["workbench.action.tasks.showTasks"]
+    },
+    // [t]ask [x] terminate
+    {
+      "before": ["<leader>", "t", "x"],
+      "commands": ["workbench.action.tasks.terminate"]
+    },
+    // [t]ask [l]og
+    {
+      "before": ["<leader>", "t", "l"],
+      "commands": ["workbench.action.tasks.showLog"]
+    },
+    // [t]ask [t]est
+    {
+      "before": ["<leader>", "t", "t"],
+      "commands": ["workbench.action.tasks.test"]
+    },
+    // [t]ask [R]estart
+    {
+      "before": ["<leader>", "t", "R"],
+      "commands": ["workbench.action.tasks.restartTask"]
+    },
   ],
   // lazygit-vscode
   "lazygit-vscode.autoMaximizeWindow": true,
