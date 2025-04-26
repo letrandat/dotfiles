@@ -221,4 +221,17 @@
     "command": "workbench.action.terminal.newWithProfile",
     "args": { "profileName": "vscode-tmux" }
   },
+
+  //
+  // WINDOWS AND EDITORS SHORTCUTS
+  //
+  // focus on active editor and maximize it
+  {
+    "key": "cmd+w m",
+    "command": "extension.multiCommand.maximizeAndFocusActiveEditorGroup"
+  },
+  {
+    "key": "cmd+w w",
+    "command": "workbench.action.closeActiveEditor"
+  }
 ]

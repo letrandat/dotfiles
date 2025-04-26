@@ -71,6 +71,18 @@
   "git.verboseCommit": true,
   "git.enableSmartCommit": true,
 
+  // MultiCommand Configuration
+  "multiCommand.commands": [
+    {
+      "command": "extension.multiCommand.maximizeAndFocusActiveEditorGroup",
+      "sequence": [
+        "workbench.action.focusActiveEditorGroup",
+        "workbench.action.maximizeEditorHideSidebar",
+        "workbench.action.closePanel"
+      ]
+    }
+  ],
+
   // Vim Configuration
   // vim.core
   "vim.useSystemClipboard": true,
