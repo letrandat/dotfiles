@@ -412,6 +412,9 @@
   ],
   "github.copilot.chat.codeGeneration.instructions": [
     {
+      "text": "When designing software, practice the 'design it twice' philosophy by exploring at least two, preferably radically different, alternatives for major design decisions. For each design alternative, evaluate its strengths and weaknesses by listing pros and cons. Prioritize how easy the design will be for other parts of the system (higher-level software) to use. After presenting design options, wait for me to choose one (e.g., 'option 1') before implementing code."
+    },
+    {
       "text": "Naming Conventions. Prioritize Clarity: Names should be easily understood and clearly indicate purpose, even when seen alone. Be Precise: Avoid generic terms; use specific names that convey the entity's value (e.g., numIndexlets, cursorVisible, charIndex). Be Concise: Aim for brevity (ideally 2-3 words) but ensure the name remains clear. Maintain Consistency: Use the identical name for the same concept everywhere in the codebase."
     },
     {
