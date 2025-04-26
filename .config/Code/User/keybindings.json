@@ -69,7 +69,7 @@
   {
     "key": "shift+;",
     "command": "vim.showQuickpickCmdLine",
-    "when": "editorTextFocus && vim.mode != 'Insert'"
+    "when": "editorTextFocus && vim.mode != 'Insert' && !editorHasSelection"
   },
   // use ctrl+e to open recent folders
   {
