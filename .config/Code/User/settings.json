@@ -42,7 +42,7 @@
     "vscode-tmux": {
       "path": "zsh",
       "args": ["-c", "~/.config/Code/User/bin/vscode-tmux.sh"],
-      "icon": "terminal-tmux",
+      "icon": "terminal-tmux"
     }
   },
   "terminal.integrated.defaultProfile.osx": "zsh",
