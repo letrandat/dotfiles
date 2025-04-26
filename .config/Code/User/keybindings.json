@@ -221,6 +221,11 @@
     "command": "workbench.action.terminal.newWithProfile",
     "args": { "profileName": "vscode-tmux" }
   },
+  // [m]aximize terminal
+  {
+    "key": "cmd+j m",
+    "command": "workbench.action.toggleMaximizedPanel"
+  },
 
   //
   // WINDOWS AND EDITORS SHORTCUTS
