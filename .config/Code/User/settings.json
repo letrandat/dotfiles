@@ -439,6 +439,9 @@
       "text": "Prefer deep modules. Design modules with simple interfaces exposing minimal complexity, like Unix I/O's five basic calls. Provide powerful, hidden functionality within the implementation, concealing significant internal complexity akin to a garbage collector. Design interfaces for common use cases, making frequent operations simple like Unix I/O's default sequential access. Create effective abstractions by omitting unimportant details, showing only necessary information as in file system block allocation."
     },
     {
+      "text": "Prioritize Information Hiding: Encapsulate design details within modules. Keep internal implementation (like data structures) hidden from external interfaces. Avoid Information Leakage: Prevent design decisions from affecting multiple modules. If a decision changes, only one module should need modification. Do not let shared knowledge (like a file format) spread across unrelated modules. Careful with Temporal Decomposition: Do not structure code solely based on the sequence of operations if it causes the same knowledge to be duplicated and spread across different stages/modules."
+    },
+    {
       "text": "When designing software, practice the 'design it twice' philosophy by exploring at least two, preferably radically different, alternatives for major design decisions. For each design alternative, evaluate its strengths and weaknesses by listing pros and cons. Prioritize how easy the design will be for other parts of the system (higher-level software) to use. After presenting design options, wait for me to choose one (e.g., 'option 1') before implementing code."
     },
     {
