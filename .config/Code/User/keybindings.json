@@ -238,5 +238,10 @@
   {
     "key": "cmd+w w",
     "command": "workbench.action.closeActiveEditor"
+  },
+  // simulate buffers list in vim
+  {
+    "key": "cmd+w ,",
+    "command": "workbench.files.action.focusOpenEditorsView"
   }
 ]
