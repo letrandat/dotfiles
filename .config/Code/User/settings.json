@@ -21,8 +21,10 @@
   // Show vertical lines for bracket pairs
   "editor.guides.bracketPairs": true,
   // Configure minimap for better performance and visibility
-  "editor.minimap.renderCharacters": false,
-  "editor.minimap.scale": 2,
+  // "editor.minimap.renderCharacters": false,
+  // "editor.minimap.scale": 2,
+  // I don't use minimap
+  "editor.minimap.enabled": false,
 
   // search
   "search.searchEditor.focusResultsOnSearch": true,
