@@ -235,8 +235,9 @@
     "key": "cmd+w m",
     "command": "extension.multiCommand.maximizeAndFocusActiveEditorGroup"
   },
+  // [d]elete active editor
   {
-    "key": "cmd+w w",
+    "key": "cmd+w d",
     "command": "workbench.action.closeActiveEditor"
   },
   // simulate buffers list in vim
