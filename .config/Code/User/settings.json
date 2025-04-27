@@ -420,6 +420,9 @@
       "text": "Prioritize Information Hiding: Encapsulate design details within modules. Keep internal implementation (like data structures) hidden from external interfaces. Avoid Information Leakage: Prevent design decisions from affecting multiple modules. If a decision changes, only one module should need modification. Do not let shared knowledge (like a file format) spread across unrelated modules. Careful with Temporal Decomposition: Do not structure code solely based on the sequence of operations if it causes the same knowledge to be duplicated and spread across different stages/modules."
     },
     {
+      "text": "Prefer General Code: Write modules (classes, functions) that are general and reusable for various tasks, rather than specific to one. Example: Use insert(pos, text) and delete(start, end) methods for text editing instead of handleBackspace(). Avoid Special Cases: Design code logic to handle common situations and edge cases uniformly, minimizing if/else checks. Example: For text selection, instead of needing a special flag for 'no selection,' represent it as an empty selection where the start and end positions are the same. Code designed to operate on a selection range (like deleting) can then work correctly even with an empty range without needing a separate check for the 'no selection' state"
+    },
+    {
       "text": "When designing software, practice the 'design it twice' philosophy by exploring at least two, preferably radically different, alternatives for major design decisions. For each design alternative, evaluate its strengths and weaknesses by listing pros and cons. Prioritize how easy the design will be for other parts of the system (higher-level software) to use. After presenting design options, wait for me to choose one (e.g., 'option 1') before implementing code."
     },
     {
