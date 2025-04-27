@@ -243,6 +243,7 @@
   // simulate buffers list in vim
   {
     "key": "cmd+w ,",
-    "command": "workbench.files.action.focusOpenEditorsView"
-  }
+    "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
+  },
+  {
 ]

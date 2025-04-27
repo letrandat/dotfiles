@@ -262,7 +262,7 @@
     // simulate buffers list in vim
     {
       "before": ["<leader>", ","],
-      "commands": ["workbench.files.action.focusOpenEditorsView"]
+      "commands": ["workbench.action.showAllEditorsByMostRecentlyUsed"]
     },
     // END: buffers
     // START: LSP support
