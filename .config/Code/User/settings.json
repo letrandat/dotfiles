@@ -437,18 +437,6 @@
     {
       "text": "Exception Handling. Redefine Semantics: Modify operation definitions to eliminate error conditions, ensuring normal behavior handles all situations. For instance, a substring method could return an empty result for out-of-range requests instead of throwing an exception. Mask Exceptions: Handle exceptional conditions at a low level internally so higher levels are unaware. For example, network protocols like TCP mask packet loss by resending them internally. Aggregate Exceptions: Handle multiple exceptions with a single, more generic handler rather than distinct ones. For instance, a web server might use one top-level handler for various parameter errors. Consider Crashing: For errors that are difficult or impossible to handle and occur infrequently, the simplest approach may be to abort the application with clear diagnostic information."
     },
-    {
-      "text": "Make focused changes that are directly related to the task. Do not modify unrelated code or existing architectural patterns unless specifically instructed."
-    },
-    {
-      "text": "Consider all environments (dev, test, prod) when writing code. Never add stubbing or fake data patterns to production code."
-    },
-    {
-      "text": "Write thorough tests for all major functionality and consider the impact of changes on existing tests and related code areas."
-    },
-    {
-      "text": "Protect sensitive configurations: never overwrite .env files without explicit confirmation."
-    },
     // for tests
     {
       "text": "Use JUnit 5 and Mockito for Java testing. Include @DisplayName annotations for better readability."
