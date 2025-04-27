@@ -245,5 +245,9 @@
     "key": "cmd+w ,",
     "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
   },
+  // [s]cratch buffer
   {
+    "key": "cmd+w s",
+    "command": "workbench.action.files.newUntitledFile"
+  }
 ]
