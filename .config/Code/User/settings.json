@@ -55,7 +55,8 @@
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[java]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "redhat.java"
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
