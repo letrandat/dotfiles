@@ -223,7 +223,8 @@
 
   //
   // WINDOWS AND EDITORS SHORTCUTS
-  //
+  // cmd+w = vscode built-in windows and editors
+  // it's equivalent to <leader> b in vim
   // focus on active editor and maximize it
   {
     "key": "cmd+w m",
