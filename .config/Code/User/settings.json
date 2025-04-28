@@ -54,10 +54,15 @@
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
+
+  // Java language settings
   "[java]": {
     "editor.formatOnSave": false,
     "editor.defaultFormatter": "redhat.java"
   },
+  "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+  "java.format.settings.profile": "GoogleStyle",
+
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
