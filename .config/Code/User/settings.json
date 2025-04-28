@@ -431,9 +431,6 @@
     {
       "text": "Prefer deep modules. Design modules with simple interfaces exposing minimal complexity, like Unix I/O's five basic calls. Provide powerful, hidden functionality within the implementation, concealing significant internal complexity akin to a garbage collector. Design interfaces for common use cases, making frequent operations simple like Unix I/O's default sequential access. Create effective abstractions by omitting unimportant details, showing only necessary information as in file system block allocation."
     },
-    {
-      "text": "Prioritize Simple Interfaces: When designing code modules or functions, prioritize creating clean, intuitive, and simple interfaces for the users (other parts of the code or developers using your code). Handle complexity internally within the implementation rather than exposing it through the interface, even if this makes the internal code more complex. Avoid Amplifying Complexity: Do not write code that unnecessarily pushes complexity onto the user or caller. For example, handle errors internally where possible rather than forcing the caller to catch numerous exceptions, and limit the use of excessive configuration parameters when reasonable defaults or internal logic can manage behavior."
-    },
     // for tests
     {
       "text": "Write simple, focused tests that cover all major functionality and edge cases. Tests should be easy to understand and maintain."
