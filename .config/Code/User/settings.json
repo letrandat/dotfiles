@@ -160,6 +160,7 @@
       "before": ["<C-c>"],
       "after": ["c", "i", "w"]
     },
+    // Vim Movement Configuration
     {
       "before": ["j"], // smooth j over wrapped text
       "after": ["g", "j"]
@@ -193,6 +194,11 @@
     {
       "before": ["<leader>", "s", "k"],
       "commands": ["workbench.action.openGlobalKeybindings"]
+    },
+    // open vim command line with :
+    {
+      "before": [":"],
+      "commands": ["vim.showQuickpickCmdLine"]
     },
     // END: Core settings
     // START: easymotion
