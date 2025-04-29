@@ -6,6 +6,10 @@
   "workbench.preferredDarkColorTheme": "Visual Studio Dark",
   "workbench.preferredLightColorTheme": "Visual Studio Light",
 
+  // Accessibility Configuration
+  // Disable auto-send messages in voice chat
+  "accessibility.voice.speechTimeout": 0,
+
   // window settings
   "window.openFoldersInNewWindow": "off",
   "window.autoDetectColorScheme": true,
