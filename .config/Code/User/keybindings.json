@@ -249,5 +249,42 @@
   {
     "key": "cmd+w s",
     "command": "workbench.action.files.newUntitledFile"
+  },
+
+  //
+  // HARPOON SHORTCUTS
+  //
+  {
+    "key": "alt+a",
+    "command": "vscode-harpoon.addEditor"
+  },
+  // [v]iew editors
+  {
+    "key": "alt+v",
+    "command": "vscode-harpoon.editEditors"
+  },
+  {
+    "key": "alt+p",
+    "command": "vscode-harpoon.editorQuickPick"
+  },
+  {
+    "key": "alt+0",
+    "command": "vscode-harpoon.gotoGlobalEditor1"
+  },
+  {
+    "key": "alt+1",
+    "command": "vscode-harpoon.gotoEditor1"
+  },
+  {
+    "key": "alt+2",
+    "command": "vscode-harpoon.gotoEditor2"
+  },
+  {
+    "key": "alt+3",
+    "command": "vscode-harpoon.gotoEditor3"
+  },
+  {
+    "key": "alt+4",
+    "command": "vscode-harpoon.gotoEditor4"
   }
 ]
