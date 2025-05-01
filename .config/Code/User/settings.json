@@ -136,19 +136,19 @@
     },
     // END: code format
     // START: LSP support
-    // rename symbol
+    // rename symbol (code, rename)
     {
-      "before": ["<leader>", "r"],
+      "before": ["<leader>", "c", "r"],
       "commands": ["editor.action.rename"]
     },
-    // refac[t]or
+    // [r]efactor
     {
-      "before": ["<leader>", "t"],
+      "before": ["<leader>", "r"],
       "commands": ["editor.action.refactor"]
     },
-    // refac[T]or but BIGGER
+    // [R]efactor but BIGGER
     {
-      "before": ["<leader>", "T"],
+      "before": ["<leader>", "R"],
       "commands": ["editor.action.sourceAction"]
     }
     // END: LSP support
@@ -336,27 +336,14 @@
       "before": ["g", "w"],
       "commands": ["editor.action.marker.nextInFiles"]
     },
-    {
-      "before": ["[", "e"],
-      "commands": ["editor.action.marker.prevInFiles"]
-    },
-    {
-      "before": ["]", "e"],
-      "commands": ["editor.action.marker.nextInFiles"]
-    },
-    // rename symbol
+    // [r]efactor
     {
       "before": ["<leader>", "r"],
-      "commands": ["editor.action.rename"]
-    },
-    // refactor is actually [c]ode [a]ction
-    {
-      "before": ["<leader>", "a"],
       "commands": ["editor.action.refactor"]
     },
-    // code source [A]ction like clean up source file
+    // [R]efactor but BIGGER
     {
-      "before": ["<leader>", "A"],
+      "before": ["<leader>", "R"],
       "commands": ["editor.action.sourceAction"]
     },
     // go to [s]ymbol in file
