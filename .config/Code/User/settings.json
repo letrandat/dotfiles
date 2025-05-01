@@ -199,6 +199,15 @@
       "before": ["Right"],
       "after": ["<C-w>", "l"]
     },
+    // Move around editors
+    {
+      "before": ["H"],
+      "commands": ["workbench.action.previousEditor"]
+    },
+    {
+      "before": ["L"],
+      "commands": ["workbench.action.nextEditor"]
+    },
     // Vim UI Configuration
     {
       "before": ["<leader>", "u", "w"],
