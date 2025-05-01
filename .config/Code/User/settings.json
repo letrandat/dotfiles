@@ -326,6 +326,16 @@
       "commands": ["editor.showCallHierarchy"]
     },
     // go to prev/next problem in files
+    // go to previous [W]arning
+    {
+      "before": ["g", "W"],
+      "commands": ["editor.action.marker.prevInFiles"]
+    },
+    // go to next [w]arning
+    {
+      "before": ["g", "w"],
+      "commands": ["editor.action.marker.nextInFiles"]
+    },
     {
       "before": ["[", "e"],
       "commands": ["editor.action.marker.prevInFiles"]
