@@ -141,14 +141,14 @@
       "before": ["<leader>", "r"],
       "commands": ["editor.action.rename"]
     },
-    // refactor is actually [c]ode [a]ction
+    // refac[t]or
     {
-      "before": ["<leader>", "a"],
+      "before": ["<leader>", "t"],
       "commands": ["editor.action.refactor"]
     },
-    // code source [A]ction like clean up source file
+    // refac[T]or but BIGGER
     {
-      "before": ["<leader>", "A"],
+      "before": ["<leader>", "T"],
       "commands": ["editor.action.sourceAction"]
     }
     // END: LSP support
