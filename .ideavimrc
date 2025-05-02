@@ -20,8 +20,6 @@ nmap Y y$
 map <leader>ff <Action>(GotoFile)
 " Action Go to recent files
 map <leader>fr <Action>(RecentFiles)
-" Action Go to Action
-map <leader>a <Action>(GotoAction)
 
 " Run/Debug Configuration
 map <leader>r <Action>(ChooseRunConfiguration)
@@ -89,7 +87,6 @@ map s <Plug>(easymotion-jumptoanywhere)
 set NERDTree
 """" NERDTree end """"
 
-
 """" sethandler start """"
 sethandler <C-2> a:ide
 sethandler <C-S-2> a:ide
@@ -101,7 +98,7 @@ sethandler <M-;> a:ide
 sethandler <M-S-;> a:ide
 sethandler <C-A> a:ide
 sethandler <C-B> a:ide
-sethandler <C-C> a:ide
+sethandler <C-C> a:vim
 sethandler <C-E> a:ide
 sethandler <C-F> a:ide
 sethandler <C-G> a:ide
@@ -128,3 +125,118 @@ sethandler <C-O> a:vim
 sethandler <C-V> a:vim
 sethandler <C-R> a:vim
 """" sethandler end """"
+
+""" VS Code Vim Parity Section: Mappings and settings added to match VS Code Vim configuration as closely as possible. """
+
+""" --- Core Vim Settings --- """
+" Use system clipboard for all yanks, deletes, changes and puts (already set above)
+" Highlight yanked text (no direct IdeaVim equivalent, so add a comment)
+" NOTE: IdeaVim does not support highlightedyank natively.
+
+" Set timeout for mappings (no direct IdeaVim equivalent, so add a comment)
+" NOTE: IdeaVim does not support custom mapping timeout.
+
+""" --- Movement and Window Navigation --- """
+" Smooth j/k over wrapped lines
+nmap j gj
+nmap k gk
+
+" Arrow keys for window navigation
+nmap <Up> <C-w>k
+nmap <Down> <C-w>j
+nmap <Left> <C-w>h
+nmap <Right> <C-w>l
+
+" H/L for previous/next editor (already mapped to tabs, so add a comment)
+" NOTE: In VS Code, H/L move between editors; in IntelliJ, they move between tabs.
+
+""" --- Editing and Formatting --- """
+" Y to yank to end of line (already present)
+" <C-c> to change inner word
+nmap <C-c> ciw
+
+" Undo/Redo mapped to VS Code actions (no direct equivalent, but add comment)
+" NOTE: IdeaVim uses u and <C-r> for undo/redo by default; cannot remap to IDE actions.
+
+" Format selection/document (closest: ReformatCode)
+map <leader>cf <Action>(ReformatCode)
+map <leader>cF <Action>(ReformatCode)
+
+" Organize imports
+map <leader>o <Action>(OptimizeImports)
+
+""" --- LSP/Code Navigation --- """
+" gr: Find usages
+map gr <Action>(FindUsages)
+" gd: Go to declaration (already present)
+" gD: Go to source definition (no direct equivalent, use GotoDeclaration)
+map gD <Action>(GotoDeclaration)
+" gI: Go to implementation (already present)
+" gf: Go to declaration (already present)
+" gy: Go to type definition (already present)
+" gK: Parameter info (already present)
+" gch: Call hierarchy (already present)
+
+" <leader>r: Refactor
+map <leader>r <Action>(Refactorings.QuickListPopupAction)
+" <leader>R: Source action (no direct equivalent, use Refactorings.QuickListPopupAction)
+map <leader>R <Action>(Refactorings.QuickListPopupAction)
+
+" <leader>ss: Go to symbol in file
+map <leader>ss <Action>(GotoSymbol)
+" <leader>sS: Go to symbol in workspace (no direct equivalent, use SearchEverywhere)
+map <leader>sS <Action>(GotoSymbol)
+
+""" --- Files and Buffers --- """
+" <leader>ff: Go to file (already present)
+" <leader>fr: Recent files (already present)
+" <leader>fp: Copy relative file path (no direct equivalent, add comment)
+" NOTE: No direct mapping for copying file path in IdeaVim; use IDE shortcut.
+" <leader>fP: Copy absolute file path (no direct equivalent, add comment)
+" NOTE: No direct mapping for copying file path in IdeaVim; use IDE shortcut.
+
+" <leader>bo: Close all editors but active (already present)
+" <leader>bd: Close active editor (already present)
+" <leader>wv: Move tab right (already present)
+" <leader>ws: Split editor down (no direct equivalent, use SplitVertically)
+map <leader>ws <Action>(SplitVertically)
+" <leader>,: Show all editors by most recently used (no direct equivalent, use RecentFiles)
+map <leader>, <Action>(RecentFiles)
+
+""" --- Git Integration --- """
+" <leader>gg: LazyGit (no direct equivalent, add comment)
+" NOTE: No direct mapping for LazyGit in IdeaVim; use IDE shortcut or plugin.
+" gh/gH: Next/previous change (no direct equivalent, use NextChange/PreviousChange)
+map gh <Action>(NextChange)
+map gH <Action>(PreviousChange)
+
+""" --- Tasks --- """
+" <leader>tr: Run task (no direct equivalent, use RunAnything)
+map <leader>tr <Action>(RunAnything)
+" <leader>t.: Rerun last task (no direct equivalent, add comment)
+" NOTE: No direct mapping for rerun last task in IdeaVim; use IDE shortcut.
+" <leader>tb: Build (use BuildProject)
+map <leader>tb <Action>(BuildProject)
+" <leader>tc: Configure tasks (no direct equivalent, add comment)
+" NOTE: No direct mapping for configure tasks in IdeaVim; use IDE shortcut.
+" <leader>tg: Show running tasks (no direct equivalent, add comment)
+" NOTE: No direct mapping for show running tasks in IdeaVim; use IDE shortcut.
+" <leader>tx: Terminate task (no direct equivalent, add comment)
+" NOTE: No direct mapping for terminate task in IdeaVim; use IDE shortcut.
+" <leader>tl: Show task log (no direct equivalent, add comment)
+" NOTE: No direct mapping for show task log in IdeaVim; use IDE shortcut.
+" <leader>tt: Test (use RunContextTest)
+map <leader>tt <Action>(RunContextTest)
+" <leader>tR: Restart task (no direct equivalent, add comment)
+" NOTE: No direct mapping for restart task in IdeaVim; use IDE shortcut.
+
+""" --- EasyMotion --- """
+" s to jump anywhere (already present)
+
+""" --- Miscellaneous --- """
+" <leader>uw: Toggle word wrap (no direct equivalent, add comment)
+" NOTE: No direct mapping for toggle word wrap in IdeaVim; use IDE shortcut.
+
+""" --- End of VS Code Vim Parity Section --- """
+
+" All mappings above are designed to maximize parity with VS Code Vim configuration. Some commands do not have direct equivalents in IntelliJ/IdeaVim and are noted above. For those, use the closest available IDE shortcut or plugin.
