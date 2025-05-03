@@ -124,10 +124,10 @@
   },
   // END: Explorer settings
 
-  // //
-  // // GIT NAVIGATION SHORTCUTS
-  // // cmd+g = vscode built-in git
-  // //
+  //
+  // GIT NAVIGATION SHORTCUTS
+  // cmd+g = vscode built-in git. Mainly used for git commit and amend
+  //
 
   // // when editorHasSelection
   // // [g]it [r]evert
@@ -164,16 +164,16 @@
   //   "key": "cmd+g shift+o",
   //   "command": "git.viewChanges"
   // },
-  // {
-  //   "key": "cmd+g c c",
-  //   "command": "git.commit",
-  //   "when": "!operationInProgress"
-  // },
-  // {
-  //   "key": "cmd+g c a",
-  //   "command": "git.commitAmend",
-  //   "when": "!operationInProgress"
-  // },
+  {
+    "key": "cmd+g c c",
+    "command": "git.commit",
+    "when": "!operationInProgress"
+  },
+  {
+    "key": "cmd+g c a",
+    "command": "git.commitAmend",
+    "when": "!operationInProgress"
+  },
   // // [g]it [s]tash
   // {
   //   "key": "cmd+g s s",

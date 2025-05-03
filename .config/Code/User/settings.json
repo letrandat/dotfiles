@@ -392,10 +392,6 @@
     // END: LSP support
     // START: git/lazygit
     {
-      "before": ["<leader>", "g", "g"],
-      "commands": ["lazygit-vscode.toggle"]
-    },
-    {
       "before": ["g", "h"],
       "commands": ["workbench.action.editor.nextChange"]
     },
@@ -417,16 +413,6 @@
     {
       "before": ["<leader>", "g", "O"],
       "commands": ["git.viewChanges"]
-    },
-    // [g]it [c]ommit (cmd+g c c)
-    {
-      "before": ["<leader>", "g", "c", "c"],
-      "commands": ["git.commit"]
-    },
-    // [g]it [c]ommit [a]mend (cmd+g c a)
-    {
-      "before": ["<leader>", "g", "c", "a"],
-      "commands": ["git.commitAmend"]
     },
     // [g]it [s]tash (cmd+g s s)
     {
