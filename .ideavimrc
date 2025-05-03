@@ -17,37 +17,40 @@ nmap Y y$
 
 """" General """"
 " Action Go to File
-map <leader>ff <Action>(GotoFile)
+nmap <leader>ff <Action>(GotoFile)
 " Action Go to recent files
-map <leader>fr <Action>(RecentFiles)
+nmap <leader>fr <Action>(RecentFiles)
 
 " Toggle Breakpoint
-map <leader>db <Action>(ToggleLineBreakpoint)
+nmap <leader>db <Action>(ToggleLineBreakpoint)
 
 """" Browsing code """"
 " re-map gd to GotoDeclaration (and usages)
-map gd <Action>(GotoDeclaration)
-map gf <Action>(GotoDeclaration)
+nmap gd <Action>(GotoDeclaration)
+nmap gf <Action>(GotoDeclaration)
 " re-map gI to implementation
-map gI <Action>(GotoImplementation)
+nmap gI <Action>(GotoImplementation)
 " map gr to find usages/references
-map gr <Action>(FindUsages)
+nmap gr <Action>(FindUsages)
 " gy (go to t[y]pe definition)
-map gy <Action>(GotoTypeDeclaration)
+nmap gy <Action>(GotoTypeDeclaration)
 " map C-k to ParameterInfo which is equivalent to Signature Help in lazyvim
-map gK <Action>(ParameterInfo)
+nmap gK <Action>(ParameterInfo)
 " gch (go to [c]all [h]ierachy)
-map gch <Action>(CallHierarchy)
+nmap gch <Action>(CallHierarchy)
+" go to next and previous error
+nmap gw <Action>(GotoNextError)
+nmap gW <Action>(GotoPreviousError)
 
 " re-map C-o/C-i to go back(out) and forward(in)
-map <C-o> <Action>(Back)
-map <C-i> <Action>(Forward)
+nmap <C-o> <Action>(Back)
+nmap <C-i> <Action>(Forward)
 " re-map `. to JumpToLastChange because default ideavim only jump to the same buffer
-map `. <Action>(JumpToLastChange)
+nmap `. <Action>(JumpToLastChange)
 
 " Splitter
-map <C-h> <Action>(NextSplitter)
-map <C-l> <Action>(PrevSplitter)
+nmap <C-h> <Action>(NextSplitter)
+nmap <C-l> <Action>(PrevSplitter)
 
 " Tab
 nmap L <Action>(NextTab)
@@ -55,17 +58,17 @@ nmap H <Action>(PreviousTab)
 
 """" Buffer """"
 " Buffer: close(bo) all others
-map <leader>bo <Action>(CloseAllEditorsButActive)
+nmap <leader>bo <Action>(CloseAllEditorsButActive)
 " Buffer: close(bd) active editor
-map <leader>bd <Action>(CloseContent)
+nmap <leader>bd <Action>(CloseContent)
 " Split and move right
-map <leader>wv <Action>(MoveTabRight)
+nmap <leader>wv <Action>(MoveTabRight)
 
 """" Code Format """"
 " ReformatCode
-map <leader>cf <Action>(ReformatCode)
+nmap <leader>cf <Action>(ReformatCode)
 " OptimizeImports
-map <leader>o <Action>(OptimizeImports)
+nmap <leader>o <Action>(OptimizeImports)
 
 vmap J <action>(MoveLineDown)
 vmap K <action>(MoveLineUp)
@@ -73,7 +76,7 @@ vmap K <action>(MoveLineUp)
 """" Refactor """"
 " Show Refactor QuickListPopupAction
 " Default IntelliJ keybinding is <C-t> which can be used in insert mode
-map <leader>t <Action>(Refactorings.QuickListPopupAction)
+nmap <leader>t <Action>(Refactorings.QuickListPopupAction)
 
 """ PLUGINS """
 """" easymotion start """"
