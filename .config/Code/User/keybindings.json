@@ -124,68 +124,68 @@
   },
   // END: Explorer settings
 
-  //
-  // GIT NAVIGATION SHORTCUTS
-  // cmd+g = vscode built-in git
-  //
+  // //
+  // // GIT NAVIGATION SHORTCUTS
+  // // cmd+g = vscode built-in git
+  // //
 
-  // when editorHasSelection
-  // [g]it [r]evert
-  {
-    "key": "cmd+g r",
-    "command": "git.revertSelectedRanges",
-    "when": "editorTextFocus && !operationInProgress && resourceScheme == 'file'"
-  },
-  // [g]it [s]tage
-  {
-    "key": "cmd+g s",
-    "command": "git.stageSelectedRanges",
-    "when": "editorTextFocus && !operationInProgress && resourceScheme == 'file'"
-  },
-  // [g]it [u]nstage
-  {
-    "key": "cmd+g u",
-    "command": "git.unstageSelectedRanges",
-    "when": "editorTextFocus && isInDiffEditor && isInDiffRightEditor && !operationInProgress && resourceScheme == 'git'"
-  },
+  // // when editorHasSelection
+  // // [g]it [r]evert
+  // {
+  //   "key": "cmd+g r",
+  //   "command": "git.revertSelectedRanges",
+  //   "when": "editorTextFocus && !operationInProgress && resourceScheme == 'file'"
+  // },
+  // // [g]it [s]tage
+  // {
+  //   "key": "cmd+g s",
+  //   "command": "git.stageSelectedRanges",
+  //   "when": "editorTextFocus && !operationInProgress && resourceScheme == 'file'"
+  // },
+  // // [g]it [u]nstage
+  // {
+  //   "key": "cmd+g u",
+  //   "command": "git.unstageSelectedRanges",
+  //   "when": "editorTextFocus && isInDiffEditor && isInDiffRightEditor && !operationInProgress && resourceScheme == 'git'"
+  // },
 
-  // when !editorHasSelection
-  {
-    "key": "cmd+g l",
-    "command": "git.pull"
-  },
-  // open change in this file
-  {
-    "key": "cmd+g o",
-    "command": "git.openChange"
-  },
-  // open change but bigger (all files)
-  {
-    "key": "cmd+g shift+o",
-    "command": "git.viewChanges"
-  },
-  {
-    "key": "cmd+g c c",
-    "command": "git.commit",
-    "when": "!operationInProgress"
-  },
-  {
-    "key": "cmd+g c a",
-    "command": "git.commitAmend",
-    "when": "!operationInProgress"
-  },
-  // [g]it [s]tash
-  {
-    "key": "cmd+g s s",
-    "command": "git.stash",
-    "when": "!editorHasSelection"
-  },
-  // [g]it [s]tash [p]op
-  {
-    "key": "cmd+g s p",
-    "command": "git.stashPop",
-    "when": "!editorHasSelection"
-  },
+  // // when !editorHasSelection
+  // {
+  //   "key": "cmd+g l",
+  //   "command": "git.pull"
+  // },
+  // // open change in this file
+  // {
+  //   "key": "cmd+g o",
+  //   "command": "git.openChange"
+  // },
+  // // open change but bigger (all files)
+  // {
+  //   "key": "cmd+g shift+o",
+  //   "command": "git.viewChanges"
+  // },
+  // {
+  //   "key": "cmd+g c c",
+  //   "command": "git.commit",
+  //   "when": "!operationInProgress"
+  // },
+  // {
+  //   "key": "cmd+g c a",
+  //   "command": "git.commitAmend",
+  //   "when": "!operationInProgress"
+  // },
+  // // [g]it [s]tash
+  // {
+  //   "key": "cmd+g s s",
+  //   "command": "git.stash",
+  //   "when": "!editorHasSelection"
+  // },
+  // // [g]it [s]tash [p]op
+  // {
+  //   "key": "cmd+g s p",
+  //   "command": "git.stashPop",
+  //   "when": "!editorHasSelection"
+  // },
 
   //
   // TERMINAL SHORTCUTS
