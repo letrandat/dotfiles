@@ -71,6 +71,9 @@ map <leader>cf <Action>(ReformatCode)
 " OptimizeImports
 map <leader>o <Action>(OptimizeImports)
 
+vmap J <action>(MoveLineDown)
+vmap K <action>(MoveLineUp)
+
 """" Refactor """"
 " Show Refactor QuickListPopupAction
 " Default IntelliJ keybinding is <C-t> which can be used in insert mode
@@ -167,10 +170,10 @@ map <leader>o <Action>(OptimizeImports)
 
 """ --- LSP/Code Navigation --- """
 " gr: Find usages
-map gr <Action>(FindUsages)
+" map gr <Action>(FindUsages) (already present)
 " gd: Go to declaration (already present)
 " gD: Go to source definition (no direct equivalent, use GotoDeclaration)
-map gD <Action>(GotoDeclaration)
+" map gD <Action>(GotoDeclaration) (already present)
 " gI: Go to implementation (already present)
 " gf: Go to declaration (already present)
 " gy: Go to type definition (already present)
@@ -193,7 +196,9 @@ map <leader>sS <Action>(GotoSymbol)
 " <leader>fp: Copy relative file path (no direct equivalent, add comment)
 " NOTE: No direct mapping for copying file path in IdeaVim; use IDE shortcut.
 " <leader>fP: Copy absolute file path (no direct equivalent, add comment)
+nmap <leader>fp <Action>(CopyAbsolutePath)
 " NOTE: No direct mapping for copying file path in IdeaVim; use IDE shortcut.
+nmap <leader>fP <Action>(CopyReferencePopupGroup)
 
 " <leader>bo: Close all editors but active (already present)
 " <leader>bd: Close active editor (already present)

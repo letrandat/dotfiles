@@ -122,6 +122,14 @@
       // y: Yank the reselected text back
       "after": ["p", "g", "v", "y"]
     },
+    {
+      "before": ["K"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    },
+    {
+      "before": ["J"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    },
     // END: Core settings
     // START: easymotion
     {
