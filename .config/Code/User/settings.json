@@ -158,9 +158,25 @@
     {
       "before": ["<leader>", "R"],
       "commands": ["editor.action.sourceAction"]
-    }
+    },
     // END: LSP support
     // START: git
+    // [g]it [r]evert (cmd+g r)
+    {
+      "before": ["<leader>", "g", "r"],
+      "commands": ["git.revertSelectedRanges"]
+    },
+    // [g]it [s]tage (cmd+g s)
+    {
+      "before": ["<leader>", "g", "s"],
+      "commands": ["git.stageSelectedRanges"]
+    },
+    // [g]it [u]nstage (cmd+g u)
+    {
+      "before": ["<leader>", "g", "u"],
+      "commands": ["git.unstageSelectedRanges"]
+    },
+    // END: Git keybindings
     // END: git
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
@@ -387,7 +403,42 @@
       "before": ["g", "H"],
       "commands": ["workbench.action.editor.previousChange"]
     },
-    // END: git/lazygit
+    // [g]it [l] pull (cmd+g l)
+    {
+      "before": ["<leader>", "g", "l"],
+      "commands": ["git.pull"]
+    },
+    // [g]it [o] open change (cmd+g o)
+    {
+      "before": ["<leader>", "g", "o"],
+      "commands": ["git.openChange"]
+    },
+    // [g]it [O] open all changes (cmd+g shift+o)
+    {
+      "before": ["<leader>", "g", "O"],
+      "commands": ["git.viewChanges"]
+    },
+    // [g]it [c]ommit (cmd+g c c)
+    {
+      "before": ["<leader>", "g", "c", "c"],
+      "commands": ["git.commit"]
+    },
+    // [g]it [c]ommit [a]mend (cmd+g c a)
+    {
+      "before": ["<leader>", "g", "c", "a"],
+      "commands": ["git.commitAmend"]
+    },
+    // [g]it [s]tash (cmd+g s s)
+    {
+      "before": ["<leader>", "g", "s", "s"],
+      "commands": ["git.stash"]
+    },
+    // [g]it [s]tash [p]op (cmd+g s p)
+    {
+      "before": ["<leader>", "g", "s", "p"],
+      "commands": ["git.stashPop"]
+    },
+    // END: Git keybindings
 
     // Tasks Configuration
     // [t]ask [r]un
