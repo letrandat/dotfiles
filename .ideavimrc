@@ -213,8 +213,22 @@ nmap <leader>wv <Action>(SplitVertically)
 nmap <leader>, <Action>(RecentFiles)
 
 """ --- Git Integration --- """
-" <leader>gg: LazyGit (no direct equivalent, add comment)
-" NOTE: No direct mapping for LazyGit in IdeaVim; use IDE shortcut or plugin.
+" Visual mode git commands
+" [g]it [r]evert selection
+vmap <leader>gr <Action>(Vcs.RollbackChangedLines)
+
+" Normal mode git commands
+" [g]it [l] pull
+nmap <leader>gl <Action>(Vcs.UpdateProject)
+" [g]it [o]pen change
+nmap <leader>go <Action>(Compare.SameVersion)
+" [g]it [s]tash
+nmap <leader>gss <Action>(Git.Stash)
+" [g]it [s]tash [p]op
+nmap <leader>gsp <Action>(Git.Unstash)
+" [g]it [c]ommit
+nmap <leader>gcc <Action>(CheckinProject)
+
 " gh/gH: Next/previous change (no direct equivalent, use NextChange/PreviousChange)
 nmap gh <Action>(VcsShowNextChangeMarker)
 nmap gH <Action>(VcsShowPrevChangeMarker)
