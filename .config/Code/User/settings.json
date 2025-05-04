@@ -37,6 +37,10 @@
   "files.trimTrailingWhitespace": true,
   "files.autoSave": "afterDelay",
 
+  // Zen Mode Configuration
+  "zenMode.hideLineNumbers": false,
+  "zenMode.showTabs": "none",
+
   // Terminal Configuration
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.suggest.enabled": true,
