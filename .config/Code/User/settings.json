@@ -10,11 +10,11 @@
   // Disable auto-send messages in voice chat
   "accessibility.voice.speechTimeout": 0,
 
-  // window settings
+  // Window Configuration
   "window.openFoldersInNewWindow": "off",
   "window.autoDetectColorScheme": true,
 
-  // Editor Settings
+  // Editor Configuration
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": false,
   "editor.lineNumbers": "relative",
@@ -24,16 +24,12 @@
   "editor.bracketPairColorization.enabled": true,
   // Show vertical lines for bracket pairs
   "editor.guides.bracketPairs": true,
-  // Configure minimap for better performance and visibility
-  // "editor.minimap.renderCharacters": false,
-  // "editor.minimap.scale": 2,
-  // I don't use minimap
   "editor.minimap.enabled": false,
 
-  // search
+  // Search Configuration
   "search.searchEditor.focusResultsOnSearch": true,
   "search.searchEditor.reusePriorSearchConfiguration": true,
-  // files
+  // files Configuration
   "files.trimTrailingWhitespace": true,
   "files.autoSave": "afterDelay",
 
@@ -57,7 +53,7 @@
   },
   "terminal.integrated.defaultProfile.osx": "zsh",
 
-  // languages settings
+  // Programming Languages Configuration
   "[jsonc]": {},
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
