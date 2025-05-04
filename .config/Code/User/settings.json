@@ -255,6 +255,11 @@
     },
     // END: easymotion
     // START: code format
+    // rename symbol (code, rename)
+    {
+      "before": ["<leader>", "c", "r"],
+      "commands": ["editor.action.rename"]
+    },
     // format the changes only
     {
       "before": ["<leader>", "c", "f"],
