@@ -237,6 +237,10 @@
       "before": ["<leader>", "u", "w"],
       "commands": ["editor.action.toggleWordWrap"]
     },
+    {
+      "before": ["<leader>", "u", "z"],
+      "commands": ["workbench.action.toggleZenMode"]
+    },
     // search keybindings
     {
       "before": ["<leader>", "s", "k"],
