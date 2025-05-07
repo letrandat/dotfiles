@@ -233,10 +233,17 @@
       "commands": ["workbench.action.nextEditor"]
     },
     // Vim UI Configuration
+    // show [a]ll commands
+    {
+      "before": ["<leader>", "a"],
+      "commands": ["workbench.action.showCommands"]
+    },
+    // [u]i toggle [w]rap
     {
       "before": ["<leader>", "u", "w"],
       "commands": ["editor.action.toggleWordWrap"]
     },
+    // [u]i toggle [z]en mode
     {
       "before": ["<leader>", "u", "z"],
       "commands": ["workbench.action.toggleZenMode"]
