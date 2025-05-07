@@ -191,6 +191,12 @@
   // TERMINAL SHORTCUTS
   //
   // use CMD+J to interact with terminal
+  // terminal but BIGGER/FASTER J
+  {
+    "key": "cmd+shift+j",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
   {
     "key": "cmd+j cmd+j",
     "command": "workbench.action.terminal.toggleTerminal",
