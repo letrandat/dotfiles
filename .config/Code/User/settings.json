@@ -94,7 +94,8 @@
       "sequence": [
         "workbench.action.focusActiveEditorGroup",
         "workbench.action.maximizeEditorHideSidebar",
-        "workbench.action.closePanel"
+        "workbench.action.closePanel",
+        "workbench.action.joinAllGroups"
       ]
     }
   ],
