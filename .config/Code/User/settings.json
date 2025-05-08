@@ -176,7 +176,7 @@
     {
       "before": ["<leader>", "g", "u"],
       "commands": ["git.unstageSelectedRanges"]
-    },
+    }
     // END: Git keybindings
     // END: git
   ],

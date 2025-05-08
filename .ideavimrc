@@ -16,6 +16,7 @@ let mapleader=" "
 nmap Y y$
 
 """" General """"
+nmap <leader>wm <Action>(HideAllWindows)
 " Action Go to File
 nmap <leader>ff <Action>(GotoFile)
 " Action Go to recent files
