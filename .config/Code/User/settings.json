@@ -506,9 +506,9 @@
   "github.copilot.chat.commitMessageGeneration.instructions": [],
   "github.copilot.chat.testGeneration.instructions": [],
   "github.copilot.chat.codeGeneration.instructions": [
-    {
-      "text": "When designing software, practice the 'design it twice' philosophy by exploring at least two, preferably radically different, alternatives for major design decisions. For each design alternative, evaluate its strengths and weaknesses by listing pros and cons. Prioritize how easy the design will be for other parts of the system (higher-level software) to use. After presenting design options, wait for me to choose one (e.g., 'option 1') before implementing code."
-    },
+    // {
+    //   "text": "When designing software, practice the 'design it twice' philosophy by exploring at least two, preferably radically different, alternatives for major design decisions. For each design alternative, evaluate its strengths and weaknesses by listing pros and cons. Prioritize how easy the design will be for other parts of the system (higher-level software) to use. After presenting design options, wait for me to choose one (e.g., 'option 1') before implementing code."
+    // },
     {
       "text": "Comment First: Write comments at the beginning of the development process. Comments should explain aspects of the code that are not immediately clear from the code itself. Effective comments provide information at a different level of detail than the code, either adding precision or enhancing intuition, and should avoid merely restating the code. For a new class, start by writing the class interface comment. Next, write interface comments and signatures for the most important public methods, leaving the method bodies empty. Iterate over these comments until the basic structure is correct. Write declarations and comments for the most important class instance variables. Fill in the bodies of the methods, adding implementation comments as needed. For each new method, write the interface comment before the method body. For instance variables, write the comment when declaring the variable."
     },
