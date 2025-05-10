@@ -410,11 +410,11 @@
     // END: LSP support
     // START: git/lazygit
     {
-      "before": ["g", "h"],
+      "before": ["g", "]"],
       "commands": ["workbench.action.editor.nextChange"]
     },
     {
-      "before": ["g", "H"],
+      "before": ["g", "["],
       "commands": ["workbench.action.editor.previousChange"]
     },
     // [g]it [l] pull (cmd+g l)
@@ -534,5 +534,5 @@
   "chat.agent.enabled": true,
   "chat.mcp.discovery.enabled": true,
   // mcp servers
-  "mcp": {}
+  "mcp": {},
 }
