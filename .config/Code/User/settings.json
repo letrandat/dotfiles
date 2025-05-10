@@ -288,10 +288,6 @@
       "commands": ["editor.action.organizeImports"]
     },
     // END: code format
-    {
-      "before": ["leader", "e"],
-      "commands": ["workbench.view.explorer"]
-    },
     // START: files
     // copy [f]ile [f]iles
     {
