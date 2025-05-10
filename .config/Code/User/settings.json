@@ -54,6 +54,10 @@
   "terminal.integrated.defaultProfile.osx": "zsh",
 
   // Programming Languages Configuration
+  "[go]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "golang.go"
+  },
   "[jsonc]": {},
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
