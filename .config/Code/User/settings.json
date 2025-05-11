@@ -55,7 +55,7 @@
 
   // Programming Languages Configuration
   "[go]": {
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": true,
     "editor.defaultFormatter": "golang.go"
   },
   "[jsonc]": {},
