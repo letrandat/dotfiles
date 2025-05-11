@@ -518,21 +518,12 @@
     {
       "text": "Prefer deep modules. Design modules with simple interfaces exposing minimal complexity, like Unix I/O's five basic calls. Provide powerful, hidden functionality within the implementation, concealing significant internal complexity akin to a garbage collector. Design interfaces for common use cases, making frequent operations simple like Unix I/O's default sequential access. Create effective abstractions by omitting unimportant details, showing only necessary information as in file system block allocation."
     },
+    {
+      "text": "Follow DRY principles by reusing common setup and utility methods. Refactor if they become too large or complex."
+    },
     // for tests
     {
       "text": "Write simple, focused tests that cover all major functionality and edge cases. Tests should be easy to understand and maintain."
-    },
-    {
-      "text": "Follow DRY principles by reusing common setup and utility methods. Refactor test files if they become too large or complex."
-    },
-    {
-      "text": "Ensure test coverage across all applicable environments (dev, test, prod) while staying focused on the relevant code areas."
-    },
-    {
-      "text": "Maintain existing testing patterns and frameworks unless there's a compelling reason for change. Consider the impact of code changes on existing tests."
-    },
-    {
-      "text": "Keep test files organized and avoid testing unrelated code or introducing unnecessary complexity."
     }
   ],
   "chat.agent.enabled": true,
