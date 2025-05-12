@@ -66,6 +66,15 @@
   "gopls": {
     "ui.semanticTokens": true
   },
+  // Enable all inlay hints for Go just for testing
+  // I will disable some of them later if they are not useful
+  "go.inlayHints.compositeLiteralFields": true,
+  "go.inlayHints.constantValues": true,
+  "go.inlayHints.rangeVariableTypes": true,
+  "go.inlayHints.assignVariableTypes": true,
+  "go.inlayHints.compositeLiteralTypes": true,
+  "go.inlayHints.functionTypeParameters": true,
+  "go.inlayHints.parameterNames": true,
 
   "[jsonc]": {},
   "[typescript]": {
