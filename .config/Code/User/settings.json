@@ -54,10 +54,15 @@
   "terminal.integrated.defaultProfile.osx": "zsh",
 
   // Programming Languages Configuration
+  // Go language Configuration
   "[go]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "golang.go"
   },
+  "gopls": {
+    "ui.semanticTokens": true
+  },
+
   "[jsonc]": {},
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
