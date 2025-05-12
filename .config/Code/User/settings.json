@@ -27,6 +27,8 @@
   // Show vertical lines for bracket pairs
   "editor.guides.bracketPairs": true,
   "editor.minimap.enabled": false,
+  // Enable inlay hints padding for all languages to make them more readable
+  "editor.inlayHints.padding": true,
 
   // Search Configuration
   "search.searchEditor.focusResultsOnSearch": true,
