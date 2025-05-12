@@ -360,6 +360,11 @@
       "before": ["g", "I"],
       "commands": ["editor.action.goToImplementation"]
     },
+    // gA (go to [A]ll implementations)
+    {
+      "before": ["g", "A"],
+      "commands": ["references-view.findImplementations"]
+    },
     // gf (go to f) is similar to gd
     {
       "before": ["g", "f"],
