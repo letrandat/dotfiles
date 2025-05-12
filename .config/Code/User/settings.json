@@ -271,9 +271,15 @@
       "before": ["<leader>", "u", "z"],
       "commands": ["workbench.action.toggleZenMode"]
     },
-    // [u]i [v]iew markdown preview
+    // [u]i [v]iew markdown preview to the side
     {
       "before": ["<leader>", "u", "v"],
+      "commands": ["markdown.showPreviewToSide"],
+      "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+    },
+    // [u]i [V]iew (BIGGER) markdown preview
+    {
+      "before": ["<leader>", "u", "V"],
       "commands": ["markdown.showPreview"],
       "when": "!notebookEditorFocused && editorLangId == 'markdown'"
     },
