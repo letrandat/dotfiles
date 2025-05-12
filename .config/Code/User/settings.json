@@ -271,6 +271,12 @@
       "before": ["<leader>", "u", "z"],
       "commands": ["workbench.action.toggleZenMode"]
     },
+    // [u]i [v]iew markdown preview
+    {
+      "before": ["<leader>", "u", "v"],
+      "commands": ["markdown.showPreview"],
+      "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+    },
     // search keybindings
     {
       "before": ["<leader>", "s", "k"],
