@@ -1,12 +1,12 @@
 {
   // workbench
   // https://code.visualstudio.com/api/extension-capabilities/extending-workbench
-  "workbench.colorTheme": "Visual Studio Light",
+  "workbench.colorTheme": "GitHub Light",
   "workbench.iconTheme": "material-icon-theme",
   // Try either of the following themes for dark mode
   // "workbench.preferredDarkColorTheme": "Dracula Theme",
   "workbench.preferredDarkColorTheme": "GitHub Dark Dimmed",
-  "workbench.preferredLightColorTheme": "Visual Studio Light",
+  "workbench.preferredLightColorTheme": "GitHub Light",
 
   // Accessibility Configuration
   // Disable auto-send messages in voice chat
