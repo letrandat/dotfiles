@@ -535,10 +535,13 @@
   "lazygit-vscode.panels": {
     "sidebar": "hide"
   },
-  // github.copilot
+
+  // github.copilot configuration
   "github.copilot.chat.agent.thinkingTool": true,
   "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
+  // next edit suggestions
   "github.copilot.nextEditSuggestions.enabled": true,
+  "github.copilot.nextEditSuggestions.fixes": true,
   "github.copilot.chat.commitMessageGeneration.instructions": [],
   "github.copilot.chat.testGeneration.instructions": [],
   "github.copilot.chat.codeGeneration.instructions": [
