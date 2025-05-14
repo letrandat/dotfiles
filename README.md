@@ -34,6 +34,7 @@ ln -s ~/workspace/repo/dotfiles/.config/nvim ~/.config/
 # Create symbolic links for macOS Application Support
 ln -s ~/workspace/repo/dotfiles/.config/Code/User/settings.json ~/Library/Application\ Support/Code/User/settings.json
 ln -s ~/workspace/repo/dotfiles/.config/Code/User/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
+ln -s ~/workspace/repo/dotfiles/.config/Code/User/prompts/code-gen.instructions.md ~/Library/Application\ Support/Code/User/prompts/code-gen.instructions.md
 
 # config zsh
 # add more *.zsh files under ~/.config/zsh to extend functionality
