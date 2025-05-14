@@ -71,18 +71,6 @@
     "command": "workbench.action.openRecent",
     "when": "!terminalFocus"
   },
-  // escape to focus on editor from explorer
-  {
-    "key": "escape",
-    "command": "workbench.action.focusActiveEditorGroup",
-    "when": "explorerViewletFocus"
-  },
-  // escape to focus on editor from chat
-  {
-    "key": "escape",
-    "command": "workbench.action.focusActiveEditorGroup",
-    "when": "!inlineChatFocused && inChat"
-  },
   // END: Core settings
   // START: Window settings
   // use ctrl+q to close window
@@ -91,7 +79,10 @@
     "command": "workbench.action.closeWindow"
   },
   // END: Window settings
-  // START: Explorer settings
+
+  //
+  // EXPLORER SHORTCUTS
+  //
   {
     "key": "a",
     "command": "workbench.files.action.createFileFromExplorer",
@@ -122,7 +113,6 @@
     "command": "explorer.openToSide",
     "when": "explorerViewletFocus && foldersViewVisible && !inputFocus"
   },
-  // END: Explorer settings
 
   //
   // GIT NAVIGATION SHORTCUTS
@@ -273,5 +263,19 @@
     "key": "escape",
     "command": "hideSuggestWidget",
     "when": "suggestWidgetVisible && textInputFocus && !vim.active"
+  },
+
+  // Personal settings for vim escape
+  // escape to focus on editor from explorer
+  {
+    "key": "escape",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "explorerViewletFocus"
+  },
+  // escape to focus on editor from chat
+  {
+    "key": "escape",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "!inlineChatFocused && inChat"
   }
 ]
