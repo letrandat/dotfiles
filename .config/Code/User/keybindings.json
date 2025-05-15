@@ -225,47 +225,8 @@
   },
 
   //
-  // VIM ESCAPE KEYBINDINGS
-  // Making escape work nicer with Copilot next edit suggestions (NES) (and other VS Code UI widgets for that matter):
-  // https://github.com/VSCodeVim/Vim/issues/9459#issuecomment-2648156285
-  {
-    "key": "escape",
-    "command": "-extension.vim_escape",
-    "when": "editorTextFocus && vim.active && !inDebugRepl"
-  },
-  {
-    "key": "escape",
-    "command": "extension.vim_escape",
-    "when": "editorTextFocus && vim.active && !inDebugRepl && !testing.isPeekVisible && !testing.isInPeek && (vim.mode == 'Insert' || !notebookEditorFocused) && !inlineEditIsVisible && !suggestWidgetVisible && !findWidgetVisible && !dirtyDiffVisible"
-  },
-  {
-    "key": "escape",
-    "command": "runCommands",
-    "when": "vim.mode == 'Insert' && inlineEditIsVisible",
-    "args": {
-      "commands": ["editor.action.inlineSuggest.hide", "extension.vim_escape"]
-    }
-  },
-  {
-    "key": "escape",
-    "command": "runCommands",
-    "when": "vim.mode == 'Insert' && suggestWidgetVisible",
-    "args": {
-      "commands": ["hideSuggestWidget", "extension.vim_escape"]
-    }
-  },
-  {
-    "key": "escape",
-    "command": "-hideSuggestWidget",
-    "when": "suggestWidgetVisible && textInputFocus"
-  },
-  {
-    "key": "escape",
-    "command": "hideSuggestWidget",
-    "when": "suggestWidgetVisible && textInputFocus && !vim.active"
-  },
-
-  // Personal settings for vim escape
+  // ESCAPE KEYBINDINGS
+  //
   // escape to focus on editor from explorer
   {
     "key": "escape",
