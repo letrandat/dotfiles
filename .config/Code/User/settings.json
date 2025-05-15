@@ -1,6 +1,8 @@
 {
   // workbench
   // https://code.visualstudio.com/api/extension-capabilities/extending-workbench
+  // I don't need activity bar
+  "workbench.activityBar.location": "hidden",
   "workbench.colorTheme": "GitHub Light Default",
   "workbench.iconTheme": "material-icon-theme",
   // Try either of the following themes for dark mode
@@ -17,6 +19,7 @@
   "window.autoDetectColorScheme": true,
 
   // Editor Configuration
+  "editor.fontSize": 13,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": false,
   "editor.lineNumbers": "relative",
