@@ -227,14 +227,6 @@
     },
     // Vim Movement Configuration
     {
-      "before": ["j"], // smooth j over wrapped text
-      "after": ["g", "j"]
-    },
-    {
-      "before": ["k"], // smooth k over wrapped text
-      "after": ["g", "k"]
-    },
-    {
       "before": ["Up"],
       "after": ["<C-w>", "k"]
     },
