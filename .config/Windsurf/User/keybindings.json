@@ -42,6 +42,12 @@
     "command": "workbench.view.explorer",
     "when": "viewContainer.workbench.view.explorer.enabled && !explorerViewletFocus"
   },
+  // unset CMD+2 to focus on second editor group
+  // reserve it for something else later
+  {
+    "key": "cmd+2",
+    "command": "-workbench.action.focusSecondEditorGroup"
+  },
   // use CMD+L to open copilot
   {
     "key": "cmd+l",
@@ -227,5 +233,5 @@
     "key": "escape",
     "command": "workbench.action.focusActiveEditorGroup",
     "when": "!inlineChatFocused && inChat"
-  }
+  },
 ]
