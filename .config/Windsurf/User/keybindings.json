@@ -1,0 +1,231 @@
+// Place your key bindings in this file to override the defaults
+[
+  //
+  // VIM NAVIGATION SHORTCUTS
+  //
+  {
+    // "ctrl+h": Focuses on the left editor group when the text editor is focused, Vim extension is active, and Vim is not in Insert mode
+    "key": "ctrl+h",
+    "command": "workbench.action.focusLeftGroup",
+    "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
+  },
+  {
+    // "ctrl+l": Focuses on the right editor group when the text editor is focused, Vim extension is active, and Vim is not in Insert mode
+    "key": "ctrl+l",
+    "command": "workbench.action.focusRightGroup",
+    "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
+  },
+  {
+    // "ctrl+k": Focuses on the editor group above when the text editor is focused, Vim extension is active, and Vim is not in Insert mode
+    "key": "ctrl+k",
+    "command": "workbench.action.focusAboveGroup",
+    "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
+  },
+  {
+    // "ctrl+j": Focuses on the editor group below when the text editor is focused, Vim extension is active, and Vim is not in Insert mode
+    "key": "ctrl+j",
+    "command": "workbench.action.focusBelowGroup",
+    "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
+  },
+
+  //
+  // NAVIGATION SHORTCUTS STARTING WITH CMD
+  //
+  // use CMD+1 to open explorer
+  {
+    "key": "cmd+1",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "explorerViewletFocus"
+  },
+  {
+    "key": "cmd+1",
+    "command": "workbench.view.explorer",
+    "when": "viewContainer.workbench.view.explorer.enabled && !explorerViewletFocus"
+  },
+  // use CMD+L to open copilot
+  {
+    "key": "cmd+l",
+    "command": "workbench.panel.chat",
+    "when": "workbench.panel.chat.view.copilot.active"
+  },
+  // use CMD+3 to open git
+  {
+    "key": "cmd+3",
+    "command": "lazygit-vscode.toggle"
+  },
+  // use CMD+e to open quickOpen
+  {
+    "key": "cmd+e",
+    "command": "workbench.action.quickOpen",
+    "when": "!inQuickOpen"
+  },
+
+  // START: Core settings
+  {
+    "key": "shift+cmd+a",
+    "command": "workbench.action.showCommands"
+  },
+  // use ctrl+e to open recent folders
+  {
+    "key": "ctrl+e",
+    "command": "workbench.action.openRecent",
+    "when": "!terminalFocus"
+  },
+  // END: Core settings
+  // START: Window settings
+  // use ctrl+q to close window
+  {
+    "key": "ctrl+q",
+    "command": "workbench.action.closeWindow"
+  },
+  // END: Window settings
+
+  //
+  // EXPLORER SHORTCUTS
+  //
+  {
+    "key": "a",
+    "command": "workbench.files.action.createFileFromExplorer",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "d",
+    "command": "moveFileToTrash",
+    "when": "explorerResourceMoveableToTrash && explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "y",
+    "command": "filesExplorer.copy",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+  },
+  {
+    "key": "p",
+    "command": "filesExplorer.paste",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "ctrl+v",
+    "command": "explorer.openToSide",
+    "when": "explorerViewletFocus && foldersViewVisible && !inputFocus"
+  },
+
+  //
+  // GIT NAVIGATION SHORTCUTS
+  // cmd+g = vscode built-in git. Mainly used for git commit and amend
+  //
+
+  {
+    "key": "cmd+g c c",
+    "command": "git.commit",
+    "when": "!operationInProgress"
+  },
+  {
+    "key": "cmd+g c a",
+    "command": "git.commitAmend",
+    "when": "!operationInProgress"
+  },
+
+  //
+  // TERMINAL SHORTCUTS
+  //
+  // use CMD+shift+j to interact with terminal
+  // [n]ew profile [t]mux
+  {
+    "key": "cmd+shift+j n t",
+    "command": "workbench.action.terminal.newWithProfile",
+    "args": { "profileName": "vscode-tmux" }
+  },
+  // [m]aximize terminal
+  {
+    "key": "cmd+shift+j m",
+    "command": "workbench.action.toggleMaximizedPanel"
+  },
+
+  //
+  // WINDOWS AND EDITORS SHORTCUTS
+  // cmd+w = vscode built-in windows and editors
+  // it's equivalent to <leader> b in vim
+  // focus on active editor and maximize it
+  {
+    "key": "cmd+w m",
+    "command": "extension.multiCommand.maximizeAndFocusActiveEditorGroup"
+  },
+  // [d]elete active editor
+  {
+    "key": "cmd+w d",
+    "command": "workbench.action.closeActiveEditor"
+  },
+  // close other editors
+  {
+    "key": "cmd+w o",
+    "command": "workbench.action.closeOtherEditors"
+  },
+  // simulate buffers list in vim
+  {
+    "key": "cmd+w ,",
+    "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
+  },
+  // [s]cratch buffer
+  {
+    "key": "cmd+w s",
+    "command": "workbench.action.files.newUntitledFile"
+  },
+
+  //
+  // HARPOON SHORTCUTS
+  //
+  {
+    "key": "alt+a",
+    "command": "vscode-harpoon.addEditor"
+  },
+  // [v]iew editors
+  {
+    "key": "alt+v",
+    "command": "vscode-harpoon.editEditors"
+  },
+  {
+    "key": "alt+p",
+    "command": "vscode-harpoon.editorQuickPick"
+  },
+  {
+    "key": "alt+0",
+    "command": "vscode-harpoon.gotoGlobalEditor1"
+  },
+  {
+    "key": "alt+1",
+    "command": "vscode-harpoon.gotoEditor1"
+  },
+  {
+    "key": "alt+2",
+    "command": "vscode-harpoon.gotoEditor2"
+  },
+  {
+    "key": "alt+3",
+    "command": "vscode-harpoon.gotoEditor3"
+  },
+  {
+    "key": "alt+4",
+    "command": "vscode-harpoon.gotoEditor4"
+  },
+
+  //
+  // ESCAPE KEYBINDINGS
+  //
+  // escape to focus on editor from explorer
+  {
+    "key": "escape",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "explorerViewletFocus"
+  },
+  // escape to focus on editor from chat
+  {
+    "key": "escape",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "!inlineChatFocused && inChat"
+  }
+]

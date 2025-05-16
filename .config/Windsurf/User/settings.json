@@ -1,0 +1,559 @@
+{
+  // workbench
+  // https://code.visualstudio.com/api/extension-capabilities/extending-workbench
+  // I don't need activity bar
+  "workbench.activityBar.location": "hidden",
+  "workbench.colorTheme": "GitHub Light Default",
+  // Try either of the following themes for dark mode
+  // "workbench.preferredDarkColorTheme": "Dracula Theme",
+  "workbench.preferredDarkColorTheme": "GitHub Dark Dimmed",
+  "workbench.preferredLightColorTheme": "GitHub Light Default",
+
+  // Accessibility Configuration
+  // Disable auto-send messages in voice chat
+  "accessibility.voice.speechTimeout": 0,
+
+  // Window Configuration
+  "window.openFoldersInNewWindow": "off",
+  "window.autoDetectColorScheme": true,
+
+  // Editor Configuration
+  "editor.fontSize": 13,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": false,
+  "editor.lineNumbers": "relative",
+  "workbench.editor.showTabs": "none",
+  "editor.wordWrap": "on",
+  "editor.rulers": [100],
+  // Enable bracket pair colorization for better readability
+  "editor.bracketPairColorization.enabled": true,
+  // Show vertical lines for bracket pairs
+  "editor.guides.bracketPairs": true,
+  "editor.minimap.enabled": false,
+  // Enable inlay hints padding for all languages to make them more readable
+  "editor.inlayHints.padding": true,
+
+  // Search Configuration
+  "search.searchEditor.focusResultsOnSearch": true,
+  "search.searchEditor.reusePriorSearchConfiguration": true,
+  // files Configuration
+  "files.trimTrailingWhitespace": true,
+  "files.autoSave": "afterDelay",
+
+  // Zen Mode Configuration
+  "zenMode.hideLineNumbers": false,
+  "zenMode.showTabs": "none",
+
+  // Terminal Configuration
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.suggest.enabled": true,
+  // Use either the following font for vscode terminal
+  // "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+  // terminal profiles
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+  "terminal.integrated.profiles.osx": {
+    "vscode-tmux": {
+      "path": "zsh",
+      "args": ["-c", "~/.config/Code/User/bin/vscode-tmux.sh"],
+      "icon": "terminal-tmux"
+    }
+  },
+  "terminal.integrated.defaultProfile.osx": "zsh",
+
+  // Programming Languages Configuration
+  // Go language Configuration
+  "[go]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "golang.go"
+  },
+  "gopls": {
+    "ui.semanticTokens": true
+  },
+  // Enable all inlay hints for Go just for testing
+  // I will disable some of them later if they are not useful
+  "go.inlayHints.compositeLiteralFields": true,
+  "go.inlayHints.constantValues": true,
+  "go.inlayHints.rangeVariableTypes": true,
+  "go.inlayHints.assignVariableTypes": true,
+  "go.inlayHints.compositeLiteralTypes": true,
+  "go.inlayHints.functionTypeParameters": true,
+  "go.inlayHints.parameterNames": true,
+
+  "[jsonc]": {},
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+
+  // Java language settings
+  "[java]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "redhat.java"
+  },
+  "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+  "java.format.settings.profile": "GoogleStyle",
+
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonnet]": {
+    "editor.defaultFormatter": "Grafana.vscode-jsonnet"
+  },
+  "jsonnet.languageServer.formatting": {
+    "StringStyle": "double"
+  },
+  // plugins
+
+  // Sonarlint Configuration
+  "sonarlint.pathToNodeExecutable": "/Users/dat/.nvm/versions/node/v22.13.1/bin/node",
+
+  // Git Configuration
+  "git.openRepositoryInParentFolders": "always",
+  "git.autofetch": true,
+  "git.verboseCommit": true,
+  "git.enableSmartCommit": true,
+
+  // MultiCommand Configuration
+  "multiCommand.commands": [
+    {
+      "command": "extension.multiCommand.maximizeAndFocusActiveEditorGroup",
+      "sequence": [
+        "workbench.action.focusActiveEditorGroup",
+        "workbench.action.maximizeEditorHideSidebar",
+        "workbench.action.closePanel",
+        "workbench.action.joinAllGroups"
+      ]
+    }
+  ],
+
+  // Vim Configuration
+  // vim.core
+  "vim.useSystemClipboard": true,
+  "vim.leader": "<space>",
+  // Enable and configure yank highlighting
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.duration": 200,
+  // allowing more breathing room when using vim keybindings
+  "vim.timeout": 3000,
+  // vim.easymotion
+  "vim.easymotion": true,
+  "vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjf",
+  "vim.insertModeKeyBindings": [],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    // START: Core settings
+    // prevent copying the selected text after pasting
+    {
+      "before": ["p"],
+      // p: Paste the text.
+      // gv: Reselect the text that was just pasted.
+      // y: Yank the reselected text back
+      "after": ["p", "g", "v", "y"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    },
+    {
+      "before": ["J"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    },
+    // END: Core settings
+    // START: easymotion
+    {
+      "before": ["s"], // read: use s to jump to anywhere with easymotion
+      "after": ["<leader>", "<leader>", "s"]
+    },
+    // END: easymotion
+    // START: code format
+    {
+      "before": ["<leader>", "c", "f"],
+      "commands": ["editor.action.formatSelection"]
+    },
+    // END: code format
+    // START: LSP support
+    // rename symbol (code, rename)
+    {
+      "before": ["<leader>", "c", "r"],
+      "commands": ["editor.action.rename"]
+    },
+    // [r]efactor
+    {
+      "before": ["<leader>", "r"],
+      "commands": ["editor.action.refactor"]
+    },
+    // [R]efactor but BIGGER
+    {
+      "before": ["<leader>", "R"],
+      "commands": ["editor.action.sourceAction"]
+    },
+    // END: LSP support
+    // START: git
+    // [g]it [r]evert (cmd+g r)
+    {
+      "before": ["<leader>", "g", "r"],
+      "commands": ["git.revertSelectedRanges"]
+    },
+    // [g]it [s]tage (cmd+g s)
+    {
+      "before": ["<leader>", "g", "s"],
+      "commands": ["git.stageSelectedRanges"]
+    },
+    // [g]it [u]nstage (cmd+g u)
+    {
+      "before": ["<leader>", "g", "u"],
+      "commands": ["git.unstageSelectedRanges"]
+    }
+    // END: Git keybindings
+    // END: git
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // START: Core settings
+    // use vscode undo/redo
+    {
+      "before": ["u"],
+      "commands": ["undo"]
+    },
+    {
+      "before": ["<C-r>"],
+      "commands": ["redo"]
+    },
+    {
+      "before": ["Y"], // usage: Y to yank from start to end
+      "after": ["y", "$"]
+    },
+    {
+      "before": ["<C-c>"],
+      "after": ["c", "i", "w"]
+    },
+    // Vim Movement Configuration
+    {
+      "before": ["Up"],
+      "after": ["<C-w>", "k"]
+    },
+    {
+      "before": ["Down"],
+      "after": ["<C-w>", "j"]
+    },
+    {
+      "before": ["Left"],
+      "after": ["<C-w>", "h"]
+    },
+    {
+      "before": ["Right"],
+      "after": ["<C-w>", "l"]
+    },
+    // Move around editors
+    {
+      "before": ["H"],
+      "commands": ["workbench.action.previousEditor"]
+    },
+    {
+      "before": ["L"],
+      "commands": ["workbench.action.nextEditor"]
+    },
+    // Vim UI Configuration
+    // show [a]ll commands
+    {
+      "before": ["<leader>", "a"],
+      "commands": ["workbench.action.showCommands"]
+    },
+    // [u]i toggle [w]rap
+    {
+      "before": ["<leader>", "u", "w"],
+      "commands": ["editor.action.toggleWordWrap"]
+    },
+    // [u]i toggle [z]en mode
+    {
+      "before": ["<leader>", "u", "z"],
+      "commands": ["workbench.action.toggleZenMode"]
+    },
+    // [u]i [v]iew markdown preview to the side
+    {
+      "before": ["<leader>", "u", "v"],
+      "commands": ["markdown.showPreviewToSide"],
+      "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+    },
+    // [u]i [V]iew (BIGGER) markdown preview
+    {
+      "before": ["<leader>", "u", "V"],
+      "commands": ["markdown.showPreview"],
+      "when": "!notebookEditorFocused && editorLangId == 'markdown'"
+    },
+    // search keybindings
+    {
+      "before": ["<leader>", "s", "k"],
+      "commands": ["workbench.action.openGlobalKeybindings"]
+    },
+    // open vim command line with :
+    {
+      "before": [":"],
+      "commands": ["vim.showQuickpickCmdLine"]
+    },
+    // END: Core settings
+    // START: easymotion
+    {
+      "before": ["s"], // read: use s to jump to anywhere with easymotion
+      "after": ["<leader>", "<leader>", "s"]
+    },
+    // END: easymotion
+    // START: code format
+    // rename symbol (code, rename)
+    {
+      "before": ["<leader>", "c", "r"],
+      "commands": ["editor.action.rename"]
+    },
+    // format the changes only
+    {
+      "before": ["<leader>", "c", "f"],
+      "commands": ["editor.action.formatChanges"]
+    },
+    // [f]ormat but BIGGER
+    {
+      "before": ["<leader>", "c", "F"],
+      "commands": ["editor.action.formatDocument"]
+    },
+    // [o]rganize imports
+    {
+      "before": ["<leader>", "o"],
+      "commands": ["editor.action.organizeImports"]
+    },
+    // END: code format
+    // START: files
+    // copy [f]ile [f]iles
+    {
+      "before": ["leader", "f", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    // copy [f]ile [r]ecent
+    {
+      "before": ["<leader>", "f", "r"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    // copy [f]ile [p]ath
+    {
+      "before": ["<leader>", "f", "p"],
+      "commands": ["copyRelativeFilePath"]
+    },
+    // copy [f]ile [p]ath but BIGGER
+    {
+      "before": ["<leader>", "f", "P"],
+      "commands": ["copyFilePath"]
+    },
+    // END: files
+    // START: buffers
+    {
+      "before": ["<leader>", "b", "o"],
+      "commands": ["workbench.action.closeOtherEditors"]
+    },
+    {
+      "before": ["<leader>", "b", "d"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["<leader>", "w", "v"],
+      "commands": ["workbench.action.splitEditorRight"]
+    },
+    {
+      "before": ["<leader>", "w", "s"],
+      "commands": ["workbench.action.splitEditorDown"]
+    },
+    // [m]aximize the active editor
+    {
+      "before": ["<leader>", "w", "m"],
+      "commands": ["extension.multiCommand.maximizeAndFocusActiveEditorGroup"]
+    },
+    // simulate buffers list in vim
+    {
+      "before": ["<leader>", ","],
+      "commands": ["workbench.action.showAllEditorsByMostRecentlyUsed"]
+    },
+    // END: buffers
+    // START: LSP support
+    // gr (go to references)
+    {
+      "before": ["g", "r"],
+      "commands": ["editor.action.goToReferences"]
+    },
+    // gd (go to definition) is already supported by default
+    // gD (go to source definition)
+    {
+      "before": ["g", "D"],
+      "commands": ["typescript.goToSourceDefinition"]
+    },
+    // gi (go to last insert) is already taken by default
+    // gI (go to Implementation)
+    {
+      "before": ["g", "I"],
+      "commands": ["editor.action.goToImplementation"]
+    },
+    // gA (go to [A]ll implementations)
+    {
+      "before": ["g", "A"],
+      "commands": ["references-view.findImplementations"]
+    },
+    // gf (go to f) is similar to gd
+    {
+      "before": ["g", "f"],
+      "after": ["g", "d"]
+    },
+    // gy (go to t[y]pe definition)
+    {
+      "before": ["g", "y"],
+      "commands": ["editor.action.goToTypeDefinition"]
+    },
+    // gK (go to params hint)
+    {
+      "before": ["g", "K"],
+      "commands": ["editor.action.triggerParameterHints"]
+    },
+    // gch (go to [c]all [h]ierachy)
+    {
+      "before": ["g", "c", "h"],
+      "commands": ["editor.showCallHierarchy"]
+    },
+    // go to prev/next problem in files
+    // go to previous [W]arning
+    {
+      "before": ["g", "W"],
+      "commands": ["editor.action.marker.prevInFiles"]
+    },
+    // go to next [w]arning
+    {
+      "before": ["g", "w"],
+      "commands": ["editor.action.marker.nextInFiles"]
+    },
+    // [r]efactor
+    {
+      "before": ["<leader>", "r"],
+      "commands": ["editor.action.refactor"]
+    },
+    // [R]efactor but BIGGER
+    {
+      "before": ["<leader>", "R"],
+      "commands": ["editor.action.sourceAction"]
+    },
+    // go to [s]ymbol in file
+    {
+      "before": ["<leader>", "s", "s"],
+      "commands": ["workbench.action.gotoSymbol"]
+    },
+    // go to [S]ymbol but bigger, to workspace
+    {
+      "before": ["<leader>", "s", "S"],
+      "commands": ["workbench.action.showAllSymbols"]
+    },
+    // END: LSP support
+    // START: git/lazygit
+    {
+      "before": ["g", "]"],
+      "commands": ["workbench.action.editor.nextChange"]
+    },
+    {
+      "before": ["g", "["],
+      "commands": ["workbench.action.editor.previousChange"]
+    },
+    // [g]it [l] pull (cmd+g l)
+    {
+      "before": ["<leader>", "g", "l"],
+      "commands": ["git.pull"]
+    },
+    // [g]it [o] open change (cmd+g o)
+    {
+      "before": ["<leader>", "g", "o"],
+      "commands": ["git.openChange"]
+    },
+    // [g]it [O] open all changes (cmd+g shift+o)
+    {
+      "before": ["<leader>", "g", "O"],
+      "commands": ["git.viewChanges"]
+    },
+    // [g]it [s]tash (cmd+g s s)
+    {
+      "before": ["<leader>", "g", "s", "s"],
+      "commands": ["git.stash"]
+    },
+    // [g]it [s]tash [p]op (cmd+g s p)
+    {
+      "before": ["<leader>", "g", "s", "p"],
+      "commands": ["git.stashPop"]
+    },
+    // END: Git keybindings
+
+    // Tasks Configuration
+    // [t]ask [r]un
+    {
+      "before": ["<leader>", "t", "r"],
+      "commands": ["workbench.action.tasks.runTask"]
+    },
+    // [t]ask rerun last
+    {
+      "before": ["<leader>", "t", "."],
+      "commands": ["workbench.action.tasks.reRunTask"]
+    },
+    // [t]ask [b]uild
+    {
+      "before": ["<leader>", "t", "b"],
+      "commands": ["workbench.action.tasks.build"]
+    },
+    // [t]ask [c]onfigure
+    {
+      "before": ["<leader>", "t", "c"],
+      "commands": ["workbench.action.tasks.configureTaskRunner"]
+    },
+    // [t]ask [g]et running tasks
+    {
+      "before": ["<leader>", "t", "g"],
+      "commands": ["workbench.action.tasks.showTasks"]
+    },
+    // [t]ask [x] terminate
+    {
+      "before": ["<leader>", "t", "x"],
+      "commands": ["workbench.action.tasks.terminate"]
+    },
+    // [t]ask [l]og
+    {
+      "before": ["<leader>", "t", "l"],
+      "commands": ["workbench.action.tasks.showLog"]
+    },
+    // [t]ask [t]est
+    {
+      "before": ["<leader>", "t", "t"],
+      "commands": ["workbench.action.tasks.test"]
+    },
+    // [t]ask [R]estart
+    {
+      "before": ["<leader>", "t", "R"],
+      "commands": ["workbench.action.tasks.restartTask"]
+    }
+  ],
+  // lazygit-vscode
+  "lazygit-vscode.autoMaximizeWindow": true,
+  "lazygit-vscode.panels": {
+    "sidebar": "hide"
+  },
+
+  // GitLens Configuration
+  "gitlens.currentLine.enabled": false,
+
+  // GITHUB.COPILOT CONFIGURATION
+  "github.copilot.chat.agent.thinkingTool": true,
+  "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
+
+  // next edit suggestions
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "github.copilot.nextEditSuggestions.fixes": true,
+
+  // copilot chat configuration
+  "github.copilot.chat.search.keywordSuggestions": true,
+  "github.copilot.chat.commitMessageGeneration.instructions": [],
+  "github.copilot.chat.testGeneration.instructions": [],
+  "github.copilot.chat.codeGeneration.instructions": [
+    {
+      "file": "code-gen.instructions.md"
+    }
+  ],
+  "chat.agent.enabled": true,
+  "chat.mcp.discovery.enabled": true,
+  // mcp servers
+  "mcp": {},
+  "workbench.iconTheme": "material-icon-theme",
+}
