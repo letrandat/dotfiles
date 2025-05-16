@@ -2,21 +2,21 @@
 	name = Tran Dat, Le
 [core]
 	autocrlf = input
-	# use vscode as editor
-	editor = code --wait
+	# use windsurf as editor
+	editor = windsurf --wait
 	excludesfile = ~/.gitignore_global
 [pull]
 	rebase = true
 
-# use vscode as diff and merge tool
+# use windsurf as diff and merge tool
 [diff]
     tool = default-difftool
 [difftool "default-difftool"]
-    cmd = code --wait --diff $LOCAL $REMOTE
+    cmd = windsurf --wait --diff $LOCAL $REMOTE
 [merge]
-    tool = code
-[mergetool "code"]
-    cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
+    tool = windsurf
+[mergetool "windsurf"]
+    cmd = windsurf --wait --merge $REMOTE $LOCAL $BASE $MERGED
 
 [include]
 	# Update .gitconfig-local with local config
