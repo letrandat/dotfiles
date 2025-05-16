@@ -42,7 +42,7 @@
     "command": "workbench.view.explorer",
     "when": "viewContainer.workbench.view.explorer.enabled && !explorerViewletFocus"
   },
-  // use CMD+2 to open copilot
+  // use CMD+l to open copilot
   {
     "key": "cmd+l",
     "command": "workbench.panel.chat",
