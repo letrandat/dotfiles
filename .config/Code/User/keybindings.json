@@ -44,7 +44,7 @@
   },
   // use CMD+2 to open copilot
   {
-    "key": "cmd+2",
+    "key": "cmd+l",
     "command": "workbench.panel.chat",
     "when": "workbench.panel.chat.view.copilot.active"
   },
@@ -133,27 +133,16 @@
   //
   // TERMINAL SHORTCUTS
   //
-  // use CMD+J to interact with terminal
-  // terminal but BIGGER/FASTER J
-  {
-    "key": "cmd+shift+j",
-    "command": "workbench.action.terminal.toggleTerminal",
-    "when": "terminal.active"
-  },
-  {
-    "key": "cmd+j cmd+j",
-    "command": "workbench.action.terminal.toggleTerminal",
-    "when": "terminal.active"
-  },
+  // use CMD+shift+j to interact with terminal
   // [n]ew profile [t]mux
   {
-    "key": "cmd+j n t",
+    "key": "cmd+shift+j n t",
     "command": "workbench.action.terminal.newWithProfile",
     "args": { "profileName": "vscode-tmux" }
   },
   // [m]aximize terminal
   {
-    "key": "cmd+j m",
+    "key": "cmd+shift+j m",
     "command": "workbench.action.toggleMaximizedPanel"
   },
 
