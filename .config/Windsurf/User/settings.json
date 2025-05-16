@@ -4,6 +4,7 @@
   // I don't need activity bar
   "workbench.activityBar.location": "hidden",
   "workbench.colorTheme": "GitHub Light Default",
+  "workbench.iconTheme": "material-icon-theme",
   // Try either of the following themes for dark mode
   // "workbench.preferredDarkColorTheme": "Dracula Theme",
   "workbench.preferredDarkColorTheme": "GitHub Dark Dimmed",
@@ -555,5 +556,4 @@
   "chat.mcp.discovery.enabled": true,
   // mcp servers
   "mcp": {},
-  "workbench.iconTheme": "material-icon-theme",
 }
