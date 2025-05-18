@@ -149,7 +149,7 @@
   // [m]aximize terminal
   {
     "key": "cmd+shift+j m",
-    "command": "workbench.action.toggleMaximizedPanel"
+    "command": "extension.multiCommand.maximizeAndFocusPanel"
   },
 
   //

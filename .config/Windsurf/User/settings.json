@@ -123,6 +123,13 @@
         "workbench.action.closePanel",
         "workbench.action.joinAllGroups"
       ]
+    },
+    {
+      "command": "extension.multiCommand.maximizeAndFocusPanel",
+      "sequence": [
+        "workbench.action.maximizeEditorHideSidebar", // use this to maximize the editor to actually hide all other panels
+        "workbench.action.toggleMaximizedPanel"
+      ]
     }
   ],
 
