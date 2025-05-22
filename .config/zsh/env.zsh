@@ -8,6 +8,9 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # PYTHON
 export PATH="/opt/homebrew/opt/python@3.13/bin:$PATH"
 
+# GO
+export PATH=$PATH:$(go env GOPATH)/bin
+
 # NODE
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
