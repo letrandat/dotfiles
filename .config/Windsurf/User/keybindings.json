@@ -42,12 +42,6 @@
     "command": "workbench.view.explorer",
     "when": "viewContainer.workbench.view.explorer.enabled && !explorerViewletFocus"
   },
-  // use CMD+L to open copilot
-  {
-    "key": "cmd+l",
-    "command": "workbench.panel.chat",
-    "when": "workbench.panel.chat.view.copilot.active"
-  },
 
   // START: Core settings
   // reserve CMD+shift+a for something else
@@ -221,5 +215,25 @@
     "key": "escape",
     "command": "workbench.action.focusActiveEditorGroup",
     "when": "!inlineChatFocused && inChat"
+  },
+  {
+    "key": "shift+cmd+l",
+    "command": "-windsurf.prioritized.chat.openNewConversationFromTerminal",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "shift+cmd+l",
+    "command": "-windsurf.prioritized.chat.openNewConversation",
+    "when": "!terminalFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "windsurf.prioritized.chat.openNewConversationFromTerminal",
+    "when": "terminalFocus && !editorTextFocus"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "windsurf.prioritized.chat.openNewConversation",
+    "when": "!terminalFocus && !editorTextFocus"
   },
 ]
