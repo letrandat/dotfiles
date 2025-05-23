@@ -16,3 +16,6 @@ alias python="/opt/homebrew/bin/python3"
 alias v="nvim"
 alias lg="lazygit"
 alias ld="lazydocker"
+# set NVIM_APPNAME to nvim-kickstart
+# https://github.com/nvim-lua/kickstart.nvim?tab=readme-ov-file#FAQ
+alias nvim-kickstart='NVIM_APPNAME="nvim-kickstart" nvim'
