@@ -138,6 +138,9 @@
     }
   ],
 
+  // vscode-neovim Configuration
+  "vscode-neovim.NVIM_APPNAME": "nvim-kickstart",
+
   // Vim Configuration
   // vim.core
   "vim.useSystemClipboard": true,
