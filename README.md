@@ -30,6 +30,7 @@ ln -s ~/workspace/repo/dotfiles/.config/lazygit/.lazygit.config ~/.config/lazygi
 
 # Create symbolic links for folders
 ln -s ~/workspace/repo/dotfiles/.config/nvim ~/.config/
+ln -s ~/workspace/repo/dotfiles/.config/nvim-kickstart ~/.config/
 
 # Create symbolic links for macOS Application Support
 # VS Code
