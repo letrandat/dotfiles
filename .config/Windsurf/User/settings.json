@@ -264,11 +264,6 @@
       "commands": ["workbench.action.nextEditor"]
     },
     // Vim UI Configuration
-    // show [a]ll commands
-    {
-      "before": ["<leader>", "a"],
-      "commands": ["workbench.action.showCommands"]
-    },
     // [u]i toggle [w]rap
     {
       "before": ["<leader>", "u", "w"],

@@ -50,11 +50,6 @@
   },
 
   // START: Core settings
-  // reserve CMD+shift+a for something else
-  // {
-  //   "key": "shift+cmd+a",
-  //   "command": "workbench.action.showCommands"
-  // },
   // use ctrl+e to open recent folders
   {
     "key": "ctrl+e",
