@@ -555,8 +555,11 @@
   "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
 
   // next edit suggestions
-  "github.copilot.nextEditSuggestions.enabled": true,
-  "github.copilot.nextEditSuggestions.fixes": true,
+  // "github.copilot.nextEditSuggestions.enabled": true,
+  // "github.copilot.nextEditSuggestions.fixes": true,
+  "github.copilot.enable": {
+    "*": false
+  },
 
   // copilot chat configuration
   "github.copilot.chat.search.keywordSuggestions": true,
