@@ -35,6 +35,9 @@
   "editor.inlayHints.padding": true,
   // hold ctrl+opt to show inlay hints
   "editor.inlayHints.enabled": "offUnlessPressed",
+  // Enable font Ligatures
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "JetBrainsMono Nerd Font",
 
   // Search Configuration
   "search.searchEditor.focusResultsOnSearch": true,
