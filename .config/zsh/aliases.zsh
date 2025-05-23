@@ -1,4 +1,3 @@
-alias zshconfig="nvim ~/.zshrc"
 alias ws="cd ~/workspace"
 alias repo="cd ~/workspace/repo"
 alias dc="git reset --hard"
@@ -12,10 +11,14 @@ alias ss="git status"
 alias m="git checkout master"
 alias b="git checkout"
 alias squash="git rebase -i master"
-alias python="/opt/homebrew/bin/python3"
-alias v="nvim"
 alias lg="lazygit"
 alias ld="lazydocker"
+
+
+# set python to homebrew python3
+# this is going to create so many problem for me, #FIXME
+alias python="/opt/homebrew/bin/python3"
+
 # set NVIM_APPNAME to nvim-kickstart
 # https://github.com/nvim-lua/kickstart.nvim?tab=readme-ov-file#FAQ
 alias nvim-kickstart='NVIM_APPNAME="nvim-kickstart" nvim'
