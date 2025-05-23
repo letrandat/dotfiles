@@ -48,11 +48,6 @@
     "command": "workbench.panel.chat",
     "when": "workbench.panel.chat.view.copilot.active"
   },
-  // use CMD+3 to open git
-  {
-    "key": "cmd+3",
-    "command": "lazygit-vscode.toggle"
-  },
 
   // START: Core settings
   // reserve CMD+shift+a for something else
