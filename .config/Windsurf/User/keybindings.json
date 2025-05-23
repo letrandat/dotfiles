@@ -31,14 +31,14 @@
   //
   // NAVIGATION SHORTCUTS STARTING WITH CMD
   //
-  // use CMD+1 to open explorer
+  // use CMD+e to open explorer
   {
-    "key": "cmd+1",
+    "key": "cmd+e",
     "command": "workbench.action.toggleSidebarVisibility",
     "when": "explorerViewletFocus"
   },
   {
-    "key": "cmd+1",
+    "key": "cmd+e",
     "command": "workbench.view.explorer",
     "when": "viewContainer.workbench.view.explorer.enabled && !explorerViewletFocus"
   },
@@ -58,12 +58,6 @@
   {
     "key": "cmd+3",
     "command": "lazygit-vscode.toggle"
-  },
-  // use CMD+e to open quickOpen
-  {
-    "key": "cmd+e",
-    "command": "workbench.action.quickOpen",
-    "when": "!inQuickOpen"
   },
 
   // START: Core settings
