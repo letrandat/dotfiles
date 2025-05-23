@@ -34,7 +34,7 @@
   // Enable inlay hints padding for all languages to make them more readable
   "editor.inlayHints.padding": true,
   // hold ctrl+opt to show inlay hints
-  "editor.inlayHints.enabled": "onUnlessPressed",
+  "editor.inlayHints.enabled": "offUnlessPressed",
 
   // Search Configuration
   "search.searchEditor.focusResultsOnSearch": true,
