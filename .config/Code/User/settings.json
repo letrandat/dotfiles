@@ -369,14 +369,25 @@
       "commands": ["copyFilePath"]
     },
     // END: files
-    // START: buffers
+
+    //
+    // BUFFER/WORKBENCH CONFIGURATION
+    //
+
+    // "<leader>bo" close other buffer
     {
       "before": ["<leader>", "b", "o"],
       "commands": ["workbench.action.closeOtherEditors"]
     },
+    // "<leader>bo" delete current buffer
     {
       "before": ["<leader>", "b", "d"],
       "commands": ["workbench.action.closeActiveEditor"]
+    },
+    // "leader>," simulate buffers list in vim
+    {
+      "before": ["<leader>", ","],
+      "commands": ["workbench.action.showAllEditorsByMostRecentlyUsed"]
     },
     // "<leader>wv" vertical split right
     {
@@ -393,12 +404,11 @@
       "before": ["<leader>", "w", "m"],
       "commands": ["extension.multiCommand.maximizeAndFocusActiveEditorGroup"]
     },
-    // "leader>," simulate buffers list in vim
     {
-      "before": ["<leader>", ","],
-      "commands": ["workbench.action.showAllEditorsByMostRecentlyUsed"]
+      "before": ["<leader>", "w", "r"],
+      "commands": ["workbench.action.reloadWindow"]
     },
-    // END: buffers
+
     // START: LSP support
     // gr (go to references)
     {
