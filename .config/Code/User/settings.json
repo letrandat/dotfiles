@@ -263,14 +263,14 @@
       "before": ["Right"],
       "after": ["<C-w>", "l"]
     },
-    // Move around editors
+    // Move around editors with buffer prev and next
     {
       "before": ["H"],
-      "commands": ["workbench.action.previousEditor"]
+      "commands": [":bp"]
     },
     {
       "before": ["L"],
-      "commands": ["workbench.action.nextEditor"]
+      "commands": [":bn"]
     },
     // Vim UI Configuration
     // [u]i toggle [w]rap
