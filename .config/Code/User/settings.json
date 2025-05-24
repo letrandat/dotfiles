@@ -364,20 +364,22 @@
       "before": ["<leader>", "b", "d"],
       "commands": ["workbench.action.closeActiveEditor"]
     },
+    // "<leader>wv" vertical split right
     {
       "before": ["<leader>", "w", "v"],
       "commands": ["workbench.action.splitEditorRight"]
     },
+    // "<leader>w" normal split down
     {
       "before": ["<leader>", "w", "s"],
       "commands": ["workbench.action.splitEditorDown"]
     },
-    // [m]aximize the active editor
+    // "leader>wm" [m]aximize the active editor
     {
       "before": ["<leader>", "w", "m"],
       "commands": ["extension.multiCommand.maximizeAndFocusActiveEditorGroup"]
     },
-    // simulate buffers list in vim
+    // "leader>," simulate buffers list in vim
     {
       "before": ["<leader>", ","],
       "commands": ["workbench.action.showAllEditorsByMostRecentlyUsed"]
