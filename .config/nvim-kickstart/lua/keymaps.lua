@@ -39,6 +39,14 @@ function M.setup()
   -- vim.keymap.set("n", "<C-S-l>", "<C-w>L", { desc = "Move window to the right" })
   -- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
   -- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
+
+  -- Keybinds to work with buffers
+  vim.keymap.set('n', '<S-h>', ':bprev<CR>', { desc = 'Previous buffer' })
+  vim.keymap.set('n', '<S-l>', ':bnext<CR>', { desc = 'Next buffer' })
+  vim.keymap.set('n', '<leader>bd', ':bdelete<CR>', { desc = 'Delete current buffer' })
+  vim.keymap.set('n', '<leader>,', ':Telescope buffers<CR>', { desc = 'Telescope active buffers' })
+  vim.keymap.set('n', '<leader>fp', ':silent !echo %:p | pbcopy<CR>', { desc = 'Copy current buffer file path' })
+
 end
 
 return M
