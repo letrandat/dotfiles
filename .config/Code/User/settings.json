@@ -85,6 +85,12 @@
   "go.inlayHints.functionTypeParameters": true,
   "go.inlayHints.parameterNames": true,
 
+  // Lua Configuration
+  "[lua]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "yinfei.luahelper"
+  },
+
   "[jsonc]": {},
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
