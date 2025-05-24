@@ -122,15 +122,10 @@
     "key": "cmd+w o",
     "command": "workbench.action.closeOtherEditors"
   },
-  // simulate buffers list in vim
+  // simulate buffers list in vim, useful when I am at certain window that is not an editor
   {
     "key": "cmd+w ,",
     "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
-  },
-  // [s]cratch buffer
-  {
-    "key": "cmd+w s",
-    "command": "workbench.action.files.newUntitledFile"
   },
 
   //
