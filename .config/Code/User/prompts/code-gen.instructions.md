@@ -9,8 +9,8 @@ applyTo: '**'
 2. **Naming Conventions. Prioritize Clarity:**
    Names should be easily understood and clearly indicate purpose, even when seen alone. Be Precise: Avoid generic terms; use specific names that convey the entity's value (e.g., numIndexlets, cursorVisible, charIndex). Be Concise: Aim for brevity (ideally 2-3 words) but ensure the name remains clear. Maintain Consistency: Use the identical name for the same concept everywhere in the codebase.
 
-3. **Prefer deep modules:**
-   Design modules with simple interfaces exposing minimal complexity, like Unix I/O's five basic calls. Provide powerful, hidden functionality within the implementation, concealing significant internal complexity akin to a garbage collector. Design interfaces for common use cases, making frequent operations simple like Unix I/O's default sequential access. Create effective abstractions by omitting unimportant details, showing only necessary information as in file system block allocation.
+3. **Focus on the task:**
+   It's IMPORTANT to only modify enough code to implement the current feature, do not change any other code
 
 4. **When working in any file, look around to see how the existing code is structured, and follow it**
 
