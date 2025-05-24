@@ -251,6 +251,7 @@
     //
     // Editor Groups aka VIM SPLIT Movement Configuration
     //
+    // note: always use arrow keys to interact with editor groups
     {
       "before": ["Up"],
       "after": ["<C-w>", "k"]
