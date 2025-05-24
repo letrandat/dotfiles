@@ -199,12 +199,12 @@
       "before": ["<leader>", "c", "r"],
       "commands": ["editor.action.rename"]
     },
-    // "leader>ca" equivalent to refactor
+    // "<leader>ca" equivalent to refactor
     {
       "before": ["<leader>", "c", "a"],
       "commands": ["editor.action.refactor"]
     },
-    // "leader>cA" equivalent to refactor at source level
+    // "<leader>cA" equivalent to refactor at source level
     {
       "before": ["<leader>", "c", "A"],
       "commands": ["editor.action.sourceAction"]
@@ -463,14 +463,14 @@
       "before": ["g", "w"],
       "commands": ["editor.action.marker.nextInFiles"]
     },
-    // [r]efactor
+    // "<leader>ca" equivalent to refactor
     {
-      "before": ["<leader>", "r"],
+      "before": ["<leader>", "c", "a"],
       "commands": ["editor.action.refactor"]
     },
-    // [R]efactor but BIGGER
+    // "<leader>cA" equivalent to refactor at source level
     {
-      "before": ["<leader>", "R"],
+      "before": ["<leader>", "c", "A"],
       "commands": ["editor.action.sourceAction"]
     },
     // go to [s]ymbol in file
@@ -499,70 +499,71 @@
       "commands": ["git.viewChanges"]
     },
 
-    // Tasks Configuration
-    // [t]ask [r]un
+    // Tasks RUN Configuration
+    // [r]un
     {
-      "before": ["<leader>", "t", "r"],
+      "before": ["<leader>", "r", "r"],
       "commands": ["workbench.action.tasks.runTask"]
     },
-    // [t]ask rerun last
+    // rerun last
     {
-      "before": ["<leader>", "t", "."],
+      "before": ["<leader>", "r", "."],
       "commands": ["workbench.action.tasks.reRunTask"]
     },
-    // [t]ask [b]uild
+    // [b]uild
     {
-      "before": ["<leader>", "t", "b"],
+      "before": ["<leader>", "r", "b"],
       "commands": ["workbench.action.tasks.build"]
     },
-    // [t]ask [c]onfigure
+    // [c]onfigure
     {
-      "before": ["<leader>", "t", "c"],
+      "before": ["<leader>", "r", "c"],
       "commands": ["workbench.action.tasks.configureTaskRunner"]
     },
-    // [t]ask [g]et running tasks
+    // [g]et running tasks
     {
-      "before": ["<leader>", "t", "g"],
+      "before": ["<leader>", "r", "g"],
       "commands": ["workbench.action.tasks.showTasks"]
     },
-    // [t]ask [x] terminate
+    // [x] terminate
     {
-      "before": ["<leader>", "t", "x"],
+      "before": ["<leader>", "r", "x"],
       "commands": ["workbench.action.tasks.terminate"]
     },
-    // [t]ask [l]og
+    // [l]og
     {
-      "before": ["<leader>", "t", "l"],
+      "before": ["<leader>", "r", "l"],
       "commands": ["workbench.action.tasks.showLog"]
     },
-    // [t]ask [t]est
+    // [t]est
     {
-      "before": ["<leader>", "t", "t"],
+      "before": ["<leader>", "r", "t"],
       "commands": ["workbench.action.tasks.test"]
     },
-    // [t]ask [R]estart
+    // [R]estart
     {
-      "before": ["<leader>", "t", "R"],
+      "before": ["<leader>", "r", "R"],
       "commands": ["workbench.action.tasks.restartTask"]
     },
 
     //
-    // vscode testing keymaps
+    // VSCODE TESTING KEYMAPS
     //
-    // "<leader>;." Run last test
+    // use t as test
+    // "<leader>t." Run last test
     {
-      "before": ["<leader>", ";", "."],
+      "before": ["<leader>", "t", "."],
       "commands": ["testing.reRunLastRun"]
     },
-    // "<leader>;f" Run test in current [f]ile
+    // "<leader>tf" Run test in current [f]ile
     {
-      "before": ["<leader>", ";", "f"],
+      "before": ["<leader>", "t", "f"],
       "commands": ["testing.runCurrentFile"],
       "when": "editorTextFocus"
     },
-    // "<leader>;c" Run test at [c]ursor
+    // "<leader>tc" Run test at [c]ursor
     {
-      "before": ["<leader>", ";", "c"],
+      "before": ["<leader>", "t", "c"],
       "commands": ["testing.debugAtCursor"],
       "when": "editorTextFocus"
     }
