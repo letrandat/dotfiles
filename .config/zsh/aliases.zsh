@@ -21,4 +21,4 @@ alias python="/opt/homebrew/bin/python3"
 
 # set NVIM_APPNAME to nvim-kickstart
 # https://github.com/nvim-lua/kickstart.nvim?tab=readme-ov-file#FAQ
-alias nvim-kickstart='NVIM_APPNAME="nvim-kickstart" nvim'
+alias kick='NVIM_APPNAME="nvim-kickstart" nvim'
