@@ -47,7 +47,10 @@ function M.setup()
   vim.keymap.set('n', '<leader>,', ':Telescope buffers<CR>', { desc = 'Telescope active buffers' })
   vim.keymap.set('n', '<leader>fp', ':silent !echo %:p | pbcopy<CR>', { desc = 'Copy current buffer file path' })
 
+  -- Split
+  vim.keymap.set('n', '<leader>wv', ':vsplit<CR>', { desc = 'vsplit' })
+  vim.keymap.set('n', '<leader>ws', ':split<CR>', { desc = 'ssplit' })
+  vim.keymap.set('n', '<leader>wm', ':only<CR>', { desc = 'maximize current buffer' })
 end
 
 return M
-
