@@ -246,7 +246,9 @@
       "before": ["<C-c>"],
       "after": ["c", "i", "w"]
     },
-    // Vim Movement Configuration
+    //
+    // Editor Groups aka VIM SPLIT Movement Configuration
+    //
     {
       "before": ["Up"],
       "after": ["<C-w>", "k"]
@@ -262,6 +264,14 @@
     {
       "before": ["Right"],
       "after": ["<C-w>", "l"]
+    },
+    {
+      "before": ["C-w", "Left"],
+      "commands": ["workbench.action.moveActiveEditorGroupLeft"]
+    },
+    {
+      "before": ["C-w", "Right"],
+      "commands": ["workbench.action.moveActiveEditorGroupRight"]
     },
     // Move around editors with buffer prev and next
     {
