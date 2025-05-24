@@ -1,4 +1,5 @@
 // Place your key bindings in this file to override the defaults
+// NOTE: Keep this file super small, prefer to keep all the key bindings under vscodevim's scope
 [
   //
   // NAVIGATION SHORTCUTS STARTING WITH CMD
@@ -21,21 +22,20 @@
     "when": "workbench.panel.chat.view.copilot.active"
   },
 
-  // START: Core settings
-  // use ctrl+e to open recent folders
+  //
+  // FILE MENU
+  //
+  // use ctrl+e to open recent files / folders
   {
     "key": "ctrl+e",
     "command": "workbench.action.openRecent",
     "when": "!terminalFocus"
   },
-  // END: Core settings
-  // START: Window settings
   // use ctrl+q to close window
   {
     "key": "ctrl+q",
     "command": "workbench.action.closeWindow"
   },
-  // END: Window settings
 
   //
   // EXPLORER SHORTCUTS
@@ -75,7 +75,6 @@
   // GIT NAVIGATION SHORTCUTS
   // cmd+g = vscode built-in git. Mainly used for git commit and amend
   //
-
   {
     "key": "cmd+g c c",
     "command": "git.commit",
@@ -90,7 +89,7 @@
   //
   // TERMINAL SHORTCUTS
   //
-  // use CMD+shift+j to interact with terminal
+  // use CMD+shift+j for extra interaction with terminal
   // [n]ew profile [t]mux
   {
     "key": "cmd+shift+j n t",
@@ -106,7 +105,7 @@
   //
   // WINDOWS AND EDITORS SHORTCUTS
   // cmd+w = vscode built-in windows and editors
-  // it's equivalent to <leader> b in vim
+  // it's equivalent to <leader> b in vim, useful when I am not at an editor
   // focus on active editor and maximize it
   {
     "key": "cmd+w m",
@@ -116,11 +115,6 @@
   {
     "key": "cmd+w d",
     "command": "workbench.action.closeActiveEditor"
-  },
-  // close other editors
-  {
-    "key": "cmd+w o",
-    "command": "workbench.action.closeOtherEditors"
   },
   // simulate buffers list in vim, useful when I am at certain window that is not an editor
   {

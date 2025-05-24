@@ -474,20 +474,10 @@
       "commands": ["workbench.action.showAllSymbols"]
     },
     // END: LSP support
-    // START: git/lazygit
-    {
-      "before": ["g", "]"],
-      "commands": ["workbench.action.editor.nextChange"]
-    },
-    {
-      "before": ["g", "["],
-      "commands": ["workbench.action.editor.previousChange"]
-    },
-    // [g]it [l] pull (cmd+g l)
-    {
-      "before": ["<leader>", "g", "l"],
-      "commands": ["git.pull"]
-    },
+
+    //
+    // GIT/LAZYGIT CONFIGURATION
+    //
     // [g]it [o] open change (cmd+g o)
     {
       "before": ["<leader>", "g", "o"],
@@ -498,17 +488,6 @@
       "before": ["<leader>", "g", "O"],
       "commands": ["git.viewChanges"]
     },
-    // [g]it [s]tash (cmd+g s s)
-    {
-      "before": ["<leader>", "g", "s", "s"],
-      "commands": ["git.stash"]
-    },
-    // [g]it [s]tash [p]op (cmd+g s p)
-    {
-      "before": ["<leader>", "g", "s", "p"],
-      "commands": ["git.stashPop"]
-    },
-    // END: Git keybindings
 
     // Tasks Configuration
     // [t]ask [r]un
