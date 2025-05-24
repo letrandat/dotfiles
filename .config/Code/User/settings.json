@@ -196,14 +196,14 @@
       "before": ["<leader>", "c", "r"],
       "commands": ["editor.action.rename"]
     },
-    // [r]efactor
+    // "leader>ca" equivalent to refactor
     {
-      "before": ["<leader>", "r"],
+      "before": ["<leader>", "c", "a"],
       "commands": ["editor.action.refactor"]
     },
-    // [R]efactor but BIGGER
+    // "leader>cA" equivalent to refactor at source level
     {
-      "before": ["<leader>", "R"],
+      "before": ["<leader>", "c", "A"],
       "commands": ["editor.action.sourceAction"]
     },
     // END: LSP support
