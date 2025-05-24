@@ -23,6 +23,10 @@ Some applications (particularly GUI applications) on macOS require their configu
 ln -s ~/workspace/repo/dotfiles/.ideavimrc ~/.ideavimrc
 ln -s ~/workspace/repo/dotfiles/.tmux.conf ~/.tmux.conf
 
+# tmux-sessionizer
+mkdir -p ~/.local/bin
+ln -s /Users/dat/workspace/repo/dotfiles/.local/bin/tmux-sessionizer ~/.local/bin/
+
 ln -s ~/workspace/repo/dotfiles/.config/kitty/kitty.conf ~/.config/kitty/kitty.conf
 ln -s ~/workspace/repo/dotfiles/.config/ghostty/config ~/.config/ghostty/config
 ln -s ~/workspace/repo/dotfiles/.config/lazygit/.lazygit.config ~/.config/lazygit/.lazygit.config
