@@ -22,7 +22,7 @@
   // Editor Configuration
   "editor.fontSize": 12,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "editor.lineNumbers": "relative",
   "workbench.editor.showTabs": "none",
   "editor.rulers": [100],
@@ -70,7 +70,6 @@
   // Programming Languages Configuration
   // Go language Configuration
   "[go]": {
-    "editor.formatOnSave": true,
     "editor.defaultFormatter": "golang.go"
   },
   "gopls": {
@@ -88,13 +87,15 @@
 
   // Lua Configuration
   "[lua]": {
-    "editor.formatOnSave": true,
     "editor.defaultFormatter": "yinfei.luahelper"
   },
 
-  "[jsonc]": {
-    "editor.formatOnSave": true
+  // Shell script configuration
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
   },
+
+  "[jsonc]": {},
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
