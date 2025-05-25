@@ -28,8 +28,20 @@
   // use ctrl+e to open recent files / folders
   {
     "key": "ctrl+e",
-    "command": "workbench.action.openRecent",
-    "when": "!terminalFocus"
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": [
+        {
+          "command": "command-runner.run",
+          "args": { "command": "vscode-switcher" }
+        },
+        // focus on terminal after command-runner fail to focus
+        {
+          "command": "workbench.action.terminal.toggleTerminal",
+          "when": "terminal.active"
+        }
+      ]
+    }
   },
   // use ctrl+q to close window
   {

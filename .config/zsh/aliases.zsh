@@ -14,7 +14,6 @@ alias squash="git rebase -i master"
 alias lg="lazygit"
 alias ld="lazydocker"
 
-
 # set python to homebrew python3
 # this is going to create so many problem for me, #FIXME
 alias python="/opt/homebrew/bin/python3"
@@ -25,4 +24,7 @@ alias kick='NVIM_APPNAME="nvim-kickstart" nvim'
 
 # set alias for tmux-sessionizer
 alias tmux-sessionizer='bash ~/.local/bin/tmux-sessionizer'
-bindkey -s ^f "tmux-sessionizer\n"
+
+# set alias for vscode-switcher
+alias vscode-switcher='bash ~/.local/bin/vscode-switcher'
+bindkey -s ^f "vscode-switcher\n"

@@ -26,6 +26,7 @@ ln -s ~/workspace/repo/dotfiles/.tmux.conf ~/.tmux.conf
 # tmux-sessionizer
 mkdir -p ~/.local/bin
 ln -s /Users/dat/workspace/repo/dotfiles/.local/bin/tmux-sessionizer ~/.local/bin/
+ln -s /Users/dat/workspace/repo/dotfiles/.local/bin/vscode-switcher ~/.local/bin/
 
 ln -s ~/workspace/repo/dotfiles/.config/kitty/kitty.conf ~/.config/kitty/kitty.conf
 ln -s ~/workspace/repo/dotfiles/.config/ghostty/config ~/.config/ghostty/config
@@ -66,3 +67,60 @@ chmod +x ~/.config/Code/User/bin/vscode-tmux.sh
 # Remember to update ~/.gitconfig-local
 ln -s ~/workspace/repo/dotfiles/.gitconfig ~/.gitconfig
 ```
+
+## VSCode Switcher Utility
+
+The `vscode-switcher` script provides a fast way to fuzzy-search and open any project folder in VS Code from the terminal or directly within VS Code.
+
+### Features
+
+- **Fuzzy search** your project directories using `fzf`
+- Opens the selected folder in VS Code (`code`)
+- Configurable search paths and depth via `~/.config/vscode-switcher/vscode-switcher.conf`
+- Works from both terminal and VS Code
+
+### Setup
+
+1. **Script Installation**
+   The script is located at `.local/bin/vscode-switcher` and should be symlinked to `~/.local/bin/`:
+
+   ```bash
+   ln -s ~/workspace/repo/dotfiles/.local/bin/vscode-switcher ~/.local/bin/
+   ```
+
+2. **Alias and Keybinding (Terminal)**
+   Add to your shell config (e.g., `~/.zshrc`):
+
+   ```sh
+   alias vscode-switcher='bash ~/.local/bin/vscode-switcher'
+   bindkey -s ^f "vscode-switcher\n"   # Ctrl+F to trigger switcher in terminal
+   ```
+
+3. **VS Code Keybinding**
+   To trigger the switcher from within VS Code (e.g., with `Ctrl+E`), add this to your `keybindings.json`:
+   This configuration requires "multiCommand" and "command-runner"
+   ```json
+   {
+     "key": "ctrl+e",
+     "command": "extension.multiCommand.execute",
+     "args": {
+       "sequence": [
+         {
+           "command": "command-runner.run",
+           "args": { "command": "vscode-switcher" }
+         },
+         {
+           "command": "workbench.action.terminal.toggleTerminal",
+           "when": "terminal.active"
+         }
+       ]
+     }
+   }
+   ```
+
+### Configuration
+
+You can customize search paths and depth by creating `~/.config/vscode-switcher/vscode-switcher.conf`.
+See the top of the script for an example config.
+
+---
