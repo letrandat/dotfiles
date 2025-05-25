@@ -1,5 +1,7 @@
 // Place your key bindings in this file to override the defaults
-// NOTE: Keep this file super small, prefer to keep all the key bindings under vscodevim's scope
+// NOTE: Keep this file super small,
+// prefer to keep all the key bindings under vscodevim's scope
+// unless the keybindings need to run when !textEditorFocus
 [
   //
   // NAVIGATION SHORTCUTS STARTING WITH CMD
@@ -25,7 +27,7 @@
   //
   // FILE MENU
   //
-  // use ctrl+e to open recent files / folders
+  // use ctrl+e to switch to new folder
   {
     "key": "ctrl+e",
     "command": "extension.multiCommand.execute",
@@ -42,11 +44,6 @@
         }
       ]
     }
-  },
-  // use ctrl+q to close window
-  {
-    "key": "ctrl+q",
-    "command": "workbench.action.closeWindow"
   },
 
   //
