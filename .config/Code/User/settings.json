@@ -1,8 +1,9 @@
 {
   // workbench
   // https://code.visualstudio.com/api/extension-capabilities/extending-workbench
-  // I don't need activity bar
+  // I don't need activity bar and status bar either
   "workbench.activityBar.location": "hidden",
+  "workbench.statusBar.visible": false,
   "workbench.colorTheme": "GitHub Light Default",
   "workbench.iconTheme": "material-icon-theme",
   // Try either of the following themes for dark mode
