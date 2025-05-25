@@ -124,3 +124,10 @@ You can customize search paths and depth by creating `~/.config/vscode-switcher/
 See the top of the script for an example config.
 
 ---
+
+## Tmux Terminal
+
+To open a new tmux terminal, use the shortcut: **Shift + Cmd + J, then N, then T**.
+
+- This sequence stands for **[N]ew [T]mux Terminal**.
+- Use this shortcut to quickly start a fresh tmux session after switching to a new folder/workspace

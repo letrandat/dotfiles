@@ -5,19 +5,14 @@
 
 # Check if we are in a VS Code integrated terminal
 if [ "$TERM_PROGRAM" = "vscode" ]; then
-    SESSION_NAME="vscode"
     # Capture the current directory of the VS Code terminal
     VSCODE_CWD="$PWD"
+    SESSION_NAME=$(basename "$VSCODE_CWD" | tr . _)
 
     # check if the target session exists
     tmux has-session -t "$SESSION_NAME" 2>/dev/null
     if [ $? -eq 0 ]; then
         # Session exists, attach to it.
-        # Send the cd command to the current pane of the current window in the session.
-        # Use double quotes around $VSCODE_CWD to handle spaces or special characters in the path.
-        # C-m simulates pressing Enter.
-        # This command is sent *before* the attach happens.
-        tmux send-keys -t "$SESSION_NAME:." "cd \"$VSCODE_CWD\"" C-m
         # 'exec' replaces the current shell process with tmux.
         exec tmux attach -t "$SESSION_NAME"
     else
