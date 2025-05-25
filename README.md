@@ -41,6 +41,7 @@ ln -s ~/workspace/repo/dotfiles/.config/nvim-kickstart ~/.config/
 ln -s ~/workspace/repo/dotfiles/.config/Code/User/settings.json ~/Library/Application\ Support/Code/User/settings.json
 ln -s ~/workspace/repo/dotfiles/.config/Code/User/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
 ln -s ~/workspace/repo/dotfiles/.config/Code/User/prompts/code-gen.instructions.md ~/Library/Application\ Support/Code/User/prompts/code-gen.instructions.md
+ln -s ~/workspace/repo/dotfiles/.config/Code/User/tasks.json ~/Library/Application\ Support/Code/User/tasks.json
 
 # Windsurf
 ln -s ~/workspace/repo/dotfiles/.config/Windsurf/User/settings.json ~/Library/Application\ Support/Windsurf/User/settings.json
