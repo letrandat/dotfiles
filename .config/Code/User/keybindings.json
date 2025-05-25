@@ -130,6 +130,19 @@
     "key": "cmd+w ,",
     "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
   },
+  // shortcuts
+  // jumpto dotfiles
+  {
+    "key": "cmd+w .",
+    "command": "command-runner.run",
+    "args": { "command": "code ~/workspace/repo/dotfiles" }
+  },
+  //Jump to  [G]o project
+  {
+    "key": "cmd+w shift+g",
+    "command": "command-runner.run",
+    "args": { "command": "code ~/workspace/repo/learn-go-with-tests" }
+  },
 
   //
   // HARPOON SHORTCUTS

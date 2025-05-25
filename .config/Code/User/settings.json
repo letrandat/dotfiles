@@ -597,28 +597,6 @@
     {
       "before": ["<leader>", "t", "g", "f"],
       "commands": ["go.toggle.test.file"]
-    },
-
-    // <leader>v prefix for anything high level from vscode
-    // vscode dotfiles
-    {
-      "before": ["<leader>", "v", "."],
-      "commands": [
-        {
-          "command": "command-runner.run",
-          "args": { "command": "code ~/workspace/repo/dotfiles" }
-        }
-      ]
-    },
-    // [G]o project
-    {
-      "before": ["<leader>", "v", "G"],
-      "commands": [
-        {
-          "command": "command-runner.run",
-          "args": { "command": "code ~/workspace/repo/learn-go-with-tests" }
-        }
-      ]
     }
   ],
   // lazygit-vscode
