@@ -131,7 +131,9 @@
   "git.verboseCommit": true,
   "git.enableSmartCommit": true,
 
+  //
   // MultiCommand Configuration
+  //
   "multiCommand.commands": [
     {
       "command": "extension.multiCommand.maximizeAndFocusActiveEditorGroup",
@@ -150,6 +152,16 @@
       ]
     }
   ],
+
+  //
+  // Command Runner Configuration
+  //
+  "command-runner.terminal.name": "runCommand",
+  "command-runner.terminal.autoClear": true,
+  "command-runner.terminal.autoFocus": true,
+  "command-runner.commands": {
+    "vscode-switcher": "vscode-switcher"
+  },
 
   // vscode-neovim Configuration
   "vscode-neovim.NVIM_APPNAME": "nvim-kickstart",
