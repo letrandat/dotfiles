@@ -391,14 +391,30 @@
       "before": ["<leader>", ","],
       "commands": ["workbench.action.showAllEditorsByMostRecentlyUsed"]
     },
-    // "<leader>wv" vertical split right
+    // "<leader>wv" vertical split right, stay focused
     {
       "before": ["<leader>", "w", "v"],
+      "commands": [
+        "workbench.action.splitEditorRight",
+        "workbench.action.focusLeftGroup"
+      ]
+    },
+    // "<leader>wv" vertical split right, move focus
+    {
+      "before": ["<leader>", "w", "V"],
       "commands": ["workbench.action.splitEditorRight"]
     },
-    // "<leader>w" normal split down
+    // "<leader>w" normal split down, stay focused
     {
       "before": ["<leader>", "w", "s"],
+      "commands": [
+        "workbench.action.splitEditorDown",
+        "workbench.action.focusAboveGroup"
+      ]
+    },
+    // "<leader>w" normal split down, move focus
+    {
+      "before": ["<leader>", "w", "S"],
       "commands": ["workbench.action.splitEditorDown"]
     },
     // "leader>wm" [m]aximize the active editor
