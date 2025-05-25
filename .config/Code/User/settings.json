@@ -65,7 +65,6 @@
     }
   },
   "terminal.integrated.defaultProfile.osx": "zsh",
-  "workbench.panel.opensMaximized": "always",
 
   // Programming Languages Configuration
   // Go language Configuration
