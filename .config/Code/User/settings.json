@@ -65,6 +65,7 @@
     }
   },
   "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.hideOnStartup": "always",
 
   // Programming Languages Configuration
   // Go language Configuration
