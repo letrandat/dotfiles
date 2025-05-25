@@ -202,5 +202,13 @@
     "key": "escape",
     "command": "workbench.action.focusActiveEditorGroup",
     "when": "!inlineChatFocused && inChat"
+  },
+
+  //
+  // TESTING KEYBINDINGS
+  //
+  {
+    "key": "cmd+; .",
+    "command": "testing.reRunLastRun"
   }
 ]
