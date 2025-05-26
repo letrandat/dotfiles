@@ -532,15 +532,15 @@
       "commands": ["git.viewChanges"]
     },
 
-    // go specific start with prefix `tg` (test go)
-    // <leader>tgpc" Run go package coverage
+    // go specific start with prefix `g` (go)
+    // <leader>gc" Run go package coverage
     {
-      "before": ["<leader>", "t", "g", "c"],
+      "before": ["<leader>", "G", "c"],
       "commands": ["go.test.coverage"]
     },
-    // <leader>tgtf" go test file
+    // <leader>gf" go test file
     {
-      "before": ["<leader>", "t", "g", "f"],
+      "before": ["<leader>", "G", "f"],
       "commands": ["go.toggle.test.file"]
     }
   ],
