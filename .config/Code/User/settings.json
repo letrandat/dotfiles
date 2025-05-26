@@ -427,10 +427,6 @@
       "before": ["<leader>", "w", "m"],
       "commands": ["extension.multiCommand.maximizeAndFocusActiveEditorGroup"]
     },
-    {
-      "before": ["<leader>", "w", "r"],
-      "commands": ["workbench.action.reloadWindow"]
-    },
 
     // START: LSP support
     // gr (go to references)

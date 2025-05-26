@@ -132,6 +132,12 @@
     "key": "cmd+w ,",
     "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
   },
+  // reload window
+  {
+    "key": "cmd+w r",
+    "command": "workbench.action.reloadWindow"
+  },
+
   // shortcuts
   // jumpto dotfiles
   {
