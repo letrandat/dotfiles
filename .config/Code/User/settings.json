@@ -532,26 +532,6 @@
       "commands": ["git.viewChanges"]
     },
 
-    //
-    // VSCODE TESTING KEYMAPS
-    //
-    // use t as test
-    // "<leader>t." Run last test
-    {
-      "before": ["<leader>", "t", "."],
-      "commands": ["testing.reRunLastRun"]
-    },
-    // "<leader>tf" Run test in current [f]ile
-    {
-      "before": ["<leader>", "t", "f"],
-      "commands": ["testing.runCurrentFile"]
-    },
-    // "<leader>tc" Run test at [c]ursor
-    {
-      "before": ["<leader>", "t", "c"],
-      "commands": ["testing.debugAtCursor"]
-    },
-
     // go specific start with prefix `tg` (test go)
     // <leader>tgpc" Run go package coverage
     {
