@@ -223,5 +223,55 @@
   {
     "key": "cmd+; .",
     "command": "testing.reRunLastRun"
+  },
+
+  //
+  // TASKS RUN CONFIGURATION
+  //
+  // [r]un
+  {
+    "key": "cmd+t r",
+    "command": "workbench.action.tasks.runTask"
+  },
+  // rerun last
+  {
+    "key": "cmd+t .",
+    "command": "workbench.action.tasks.reRunTask"
+  },
+  // [b]uild
+  {
+    "key": "cmd+t b",
+    "command": "workbench.action.tasks.build",
+    "when": "taskCommandsRegistered"
+  },
+  // [c]onfigure
+  {
+    "key": "cmd+t c",
+    "command": "workbench.action.tasks.configureTaskRunner"
+  },
+  // [g]et running tasks
+  {
+    "key": "cmd+t g",
+    "command": "workbench.action.tasks.showTasks"
+  },
+  // [x] terminate
+  {
+    "key": "cmd+t x",
+    "command": "workbench.action.tasks.terminate"
+  },
+  // [l]og
+  {
+    "key": "cmd+t l",
+    "command": "workbench.action.tasks.showLog"
+  },
+  // [t]est
+  {
+    "key": "cmd+t t",
+    "command": "workbench.action.tasks.test"
+  },
+  // [R]estart
+  {
+    "key": "cmd+t shift+r",
+    "command": "workbench.action.tasks.restartTask"
   }
 ]

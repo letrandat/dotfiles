@@ -532,53 +532,6 @@
       "commands": ["git.viewChanges"]
     },
 
-    // Tasks RUN Configuration
-    // [r]un
-    {
-      "before": ["<leader>", "r", "r"],
-      "commands": ["workbench.action.tasks.runTask"]
-    },
-    // rerun last
-    {
-      "before": ["<leader>", "r", "."],
-      "commands": ["workbench.action.tasks.reRunTask"]
-    },
-    // [b]uild
-    {
-      "before": ["<leader>", "r", "b"],
-      "commands": ["workbench.action.tasks.build"]
-    },
-    // [c]onfigure
-    {
-      "before": ["<leader>", "r", "c"],
-      "commands": ["workbench.action.tasks.configureTaskRunner"]
-    },
-    // [g]et running tasks
-    {
-      "before": ["<leader>", "r", "g"],
-      "commands": ["workbench.action.tasks.showTasks"]
-    },
-    // [x] terminate
-    {
-      "before": ["<leader>", "r", "x"],
-      "commands": ["workbench.action.tasks.terminate"]
-    },
-    // [l]og
-    {
-      "before": ["<leader>", "r", "l"],
-      "commands": ["workbench.action.tasks.showLog"]
-    },
-    // [t]est
-    {
-      "before": ["<leader>", "r", "t"],
-      "commands": ["workbench.action.tasks.test"]
-    },
-    // [R]estart
-    {
-      "before": ["<leader>", "r", "R"],
-      "commands": ["workbench.action.tasks.restartTask"]
-    },
-
     //
     // VSCODE TESTING KEYMAPS
     //
