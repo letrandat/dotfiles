@@ -98,17 +98,19 @@ The `vscode-switcher` script provides a fast way to fuzzy-search and open any pr
 
 3. **VS Code Keybinding**
    To trigger the switcher from within VS Code (e.g., with `Ctrl+E`), add this to your `keybindings.json`:
-   This configuration requires "multiCommand" and "command-runner"
    ```json
    {
      "key": "ctrl+e",
      "command": "extension.multiCommand.execute",
      "args": {
        "sequence": [
+         // send ctrl+u to terminal to clear terminal before running command
          {
-           "command": "command-runner.run",
-           "args": { "command": "vscode-switcher" }
+           "key": "cmd+w shift+V",
+           "command": "workbench.action.terminal.sendSequence",
+           "args": { "text": "\u0015vscode-switcher\u000D" }
          },
+         // focus on terminal to select the folder
          {
            "command": "workbench.action.terminal.toggleTerminal",
            "when": "terminal.active"

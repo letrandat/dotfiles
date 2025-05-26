@@ -153,16 +153,6 @@
     }
   ],
 
-  //
-  // Command Runner Configuration
-  //
-  "command-runner.terminal.name": "runCommand",
-  "command-runner.terminal.autoClear": true,
-  "command-runner.terminal.autoFocus": true,
-  "command-runner.commands": {
-    "vscode-switcher": "vscode-switcher"
-  },
-
   // vscode-neovim Configuration
   "vscode-neovim.NVIM_APPNAME": "nvim-kickstart",
 

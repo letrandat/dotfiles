@@ -33,11 +33,13 @@
     "command": "extension.multiCommand.execute",
     "args": {
       "sequence": [
+        // send ctrl+u to terminal to clear terminal before running command
         {
-          "command": "command-runner.run",
-          "args": { "command": "vscode-switcher" }
+          "key": "cmd+w shift+V",
+          "command": "workbench.action.terminal.sendSequence",
+          "args": { "text": "\u0015vscode-switcher\u000D" }
         },
-        // focus on terminal after command-runner fail to focus
+        // focus on terminal to select the folder
         {
           "command": "workbench.action.terminal.toggleTerminal",
           "when": "terminal.active"
@@ -134,14 +136,16 @@
   // jumpto dotfiles
   {
     "key": "cmd+w .",
-    "command": "command-runner.run",
-    "args": { "command": "code ~/workspace/repo/dotfiles" }
+    // send ctrl+u to terminal to clear terminal before running command
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": "\u0015code ~/workspace/repo/dotfiles\u000D" }
   },
   //Jump to  [G]o project
   {
     "key": "cmd+w shift+g",
-    "command": "command-runner.run",
-    "args": { "command": "code ~/workspace/repo/learn-go-with-tests" }
+    // send ctrl+u to terminal to clear terminal before running command
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": "\u0015code ~/workspace/repo/learn-go-with-tests\u000D" }
   },
 
   //
