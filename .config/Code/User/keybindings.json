@@ -140,9 +140,9 @@
     "command": "workbench.action.terminal.sendSequence",
     "args": { "text": "\u0015code ~/workspace/repo/dotfiles\u000D" }
   },
-  //Jump to  [G]o project
+  //Jump to project 1: currently go
   {
-    "key": "cmd+w shift+g",
+    "key": "cmd+w 1",
     // send ctrl+u to terminal to clear terminal before running command
     "command": "workbench.action.terminal.sendSequence",
     "args": { "text": "\u0015code ~/workspace/repo/learn-go-with-tests\u000D" }
