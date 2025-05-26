@@ -60,7 +60,7 @@
   "terminal.integrated.profiles.osx": {
     "vscode-tmux": {
       "path": "zsh",
-      "args": ["-c", "~/.config/Code/User/bin/vscode-tmux.sh"],
+      "args": ["-c", "~/.local/bin/vscode-tmux.sh"],
       "icon": "terminal-tmux"
     }
   },
