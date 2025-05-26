@@ -98,6 +98,7 @@ The `vscode-switcher` script provides a fast way to fuzzy-search and open any pr
 
 3. **VS Code Keybinding**
    To trigger the switcher from within VS Code (e.g., with `Ctrl+E`), add this to your `keybindings.json`:
+
    ```json
    {
      "key": "ctrl+e",
@@ -133,3 +134,17 @@ To open a new tmux terminal, use the shortcut: **Shift + Cmd + J, then N, then T
 
 - This sequence stands for **[N]ew [T]mux Terminal**.
 - Use this shortcut to quickly start a fresh tmux session after switching to a new folder/workspace
+
+## VSCode Extensions
+
+### Track installed extensions
+
+```bash
+code --list-extensions > vscode-extensions.txt
+```
+
+### re-install extensions
+
+```bash
+cat vscode-extensions.txt | xargs -L 1 code --install-extension
+```
