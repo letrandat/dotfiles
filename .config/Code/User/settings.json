@@ -298,10 +298,10 @@
       "before": ["<leader>", "u", "w"],
       "commands": ["editor.action.toggleWordWrap"]
     },
-    // [u]i toggle [z]en mode
+    // [u]i toggle [z]en mode, my zen mode is actually the centered layout, I don't like full screen
     {
       "before": ["<leader>", "u", "z"],
-      "commands": ["workbench.action.toggleZenMode"]
+      "commands": ["workbench.action.toggleCenteredLayout"]
     },
     // [u]i [v]iew markdown preview to the side
     {
