@@ -606,6 +606,21 @@
     {
       "before": ["`", "N"],
       "commands": ["bookmarks.jumpToPrevious"]
+    },
+    // `l to list
+    {
+      "before": ["`", "l"],
+      "commands": ["bookmarks.listFromAllFiles"]
+    },
+    // `d to delete bookmarks current file
+    {
+      "before": ["`", "d"],
+      "commands": ["bookmarks.clear"]
+    },
+    // `D to delete bookmarks all files
+    {
+      "before": ["`", "D"],
+      "commands": ["bookmarks.clearFromAllFiles"]
     }
   ],
   // lazygit-vscode
