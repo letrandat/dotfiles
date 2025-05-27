@@ -138,10 +138,10 @@
     {
       "command": "extension.multiCommand.maximizeAndFocusActiveEditorGroup",
       "sequence": [
-        "workbench.action.focusActiveEditorGroup",
         "workbench.action.maximizeEditorHideSidebar",
         "workbench.action.closePanel",
-        "workbench.action.joinAllGroups"
+        "workbench.action.joinAllGroups",
+        "workbench.action.focusFirstEditorGroup"
       ]
     },
     {
@@ -302,6 +302,37 @@
     {
       "before": ["<leader>", "u", "z"],
       "commands": ["workbench.action.toggleCenteredLayout"]
+    },
+    // create split windows with left, right are harpoon 1 and 2
+    // focus left
+    {
+      "before": ["<leader>", "u", "2"],
+      "commands": [
+        "extension.multiCommand.maximizeAndFocusActiveEditorGroup",
+        "vscode-harpoon.gotoEditor1",
+        "workbench.action.closeOtherEditors",
+        "workbench.action.splitEditorRight",
+        "vscode-harpoon.gotoEditor2",
+        "workbench.action.closeOtherEditors",
+        "workbench.action.focusLeftGroup"
+      ]
+    },
+    // create split windows with left, mid and right are harpoon 1, 2 and 3
+    // focus middle
+    {
+      "before": ["<leader>", "u", "3"],
+      "commands": [
+        "extension.multiCommand.maximizeAndFocusActiveEditorGroup",
+        "vscode-harpoon.gotoEditor1",
+        "workbench.action.closeOtherEditors",
+        "workbench.action.splitEditorRight",
+        "vscode-harpoon.gotoEditor2",
+        "workbench.action.closeOtherEditors",
+        "workbench.action.splitEditorRight",
+        "vscode-harpoon.gotoEditor3",
+        "workbench.action.closeOtherEditors",
+        "workbench.action.focusLeftGroup"
+      ]
     },
     // [u]i [v]iew markdown preview to the side
     {
