@@ -563,12 +563,6 @@
     },
     // END: LSP support
 
-    // go to mark with M as I can't type ` that fast
-    {
-      "before": ["M"],
-      "after": ["`"]
-    },
-
     //
     // GIT/LAZYGIT CONFIGURATION
     //
