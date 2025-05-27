@@ -5,7 +5,7 @@ CONFIG_FILE="$CONFIG_DIR/vscode-switcher.conf"
 # config file example
 # ------------------------
 # # file: ~/.config/vscode-switcher/vscode-switcher.conf
-# # If set this override the default VS_SEARCH_PATHS (~/workspace/repo)
+# # If set this override the default VS_SEARCH_PATHS (~/personal ~/workspace/repo ~/workspace/repo/playground)
 # VS_SEARCH_PATHS=(~/workspace/repo)
 # # If set this add additional search paths to the default VS_SEARCH_PATHS
 # # The number prefix is the depth for the Path [OPTIONAL]
@@ -53,7 +53,7 @@ find_dirs() {
 sanity_check
 
 # if VS_SEARCH_PATHS is not set use default
-[[ -n "$VS_SEARCH_PATHS" ]] || VS_SEARCH_PATHS=(~/workspace/repo ~/workspace/repo/playground)
+[[ -n "$VS_SEARCH_PATHS" ]] || VS_SEARCH_PATHS=(~/personal ~/workspace/repo ~/workspace/repo/playground)
 
 # Add any extra search paths to the VS_SEARCH_PATHS array
 # e.g : VS_EXTRA_SEARCH_PATHS=("$HOME/extra1:4" "$HOME/extra2")
