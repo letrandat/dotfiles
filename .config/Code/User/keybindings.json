@@ -35,7 +35,6 @@
       "sequence": [
         // send ctrl+u to terminal to clear terminal before running command
         {
-          "key": "cmd+w shift+V",
           "command": "workbench.action.terminal.sendSequence",
           "args": { "text": "\u0015vscode-switcher\u000D" }
         },
