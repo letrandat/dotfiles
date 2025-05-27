@@ -303,6 +303,15 @@
       "before": ["<leader>", "u", "z"],
       "commands": ["workbench.action.toggleCenteredLayout"]
     },
+    // equivalent to cmd+w m but focus on harpoon 1
+    {
+      "before": ["<leader>", "u", "1"],
+      "commands": [
+        "extension.multiCommand.maximizeAndFocusActiveEditorGroup",
+        "vscode-harpoon.gotoEditor1",
+        "workbench.action.closeOtherEditors"
+      ]
+    },
     // create split windows with left, right are harpoon 1 and 2
     // focus left
     {
@@ -331,6 +340,25 @@
         "workbench.action.splitEditorRight",
         "vscode-harpoon.gotoEditor3",
         "workbench.action.closeOtherEditors",
+        "workbench.action.focusLeftGroup"
+      ]
+    },
+    // create split windows with left, mid and right(top/bottom) are harpoon 1, 2, 3 and 4
+    // focus middle
+    {
+      "before": ["<leader>", "u", "4"],
+      "commands": [
+        "extension.multiCommand.maximizeAndFocusActiveEditorGroup",
+        "vscode-harpoon.gotoEditor1",
+        "workbench.action.closeOtherEditors",
+        "workbench.action.splitEditorRight",
+        "vscode-harpoon.gotoEditor2",
+        "workbench.action.closeOtherEditors",
+        "workbench.action.splitEditorRight",
+        "vscode-harpoon.gotoEditor3",
+        "workbench.action.closeOtherEditors",
+        "workbench.action.splitEditorDown",
+        "vscode-harpoon.gotoEditor4",
         "workbench.action.focusLeftGroup"
       ]
     },
