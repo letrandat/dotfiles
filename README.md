@@ -25,8 +25,8 @@ ln -s ~/workspace/repo/dotfiles/.tmux.conf ~/.tmux.conf
 
 # tmux-sessionizer
 mkdir -p ~/.local/bin
-ln -s /Users/dat/workspace/repo/dotfiles/.local/bin/tmux-sessionizer ~/.local/bin/
-ln -s /Users/dat/workspace/repo/dotfiles/.local/bin/vscode-switcher ~/.local/bin/
+ln -s ~/workspace/repo/dotfiles/.local/bin/tmux-sessionizer ~/.local/bin/
+ln -s ~/workspace/repo/dotfiles/.local/bin/vscode-switcher ~/.local/bin/
 
 ln -s ~/workspace/repo/dotfiles/.config/kitty/kitty.conf ~/.config/kitty/kitty.conf
 ln -s ~/workspace/repo/dotfiles/.config/ghostty/config ~/.config/ghostty/config
