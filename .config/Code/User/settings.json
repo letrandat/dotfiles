@@ -587,6 +587,19 @@
     {
       "before": ["<leader>", "G", "f"],
       "commands": ["go.toggle.test.file"]
+    },
+
+    //
+    // BOOKMARKS PLUGINS CONFIGURATION
+    //
+    {
+      "before": ["`", "n"],
+      "commands": ["bookmarks.jumpToNext"]
+    },
+    {
+      "before": ["`", "n"],
+
+      "commands": ["bookmarks.jumpToPrevious"]
     }
   ],
   // lazygit-vscode
