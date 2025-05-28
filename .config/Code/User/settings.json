@@ -592,19 +592,19 @@
     //
     // BOOKMARKS PLUGINS CONFIGURATION
     //
-    // `` to toggle bookmarks
+    // `j to toggle bookmarks
     {
-      "before": ["`", "`"],
+      "before": ["`", "j"],
       "commands": ["bookmarks.toggle"]
     },
-    // `n to go next
+    // `` to go next
     {
-      "before": ["`", "n"],
+      "before": ["`", "`"],
       "commands": ["bookmarks.jumpToNext"]
     },
-    // `N to go previous
+    // `~ to go previous
     {
-      "before": ["`", "N"],
+      "before": ["`", "~"],
       "commands": ["bookmarks.jumpToPrevious"]
     },
     // `l to list
