@@ -592,24 +592,24 @@
     //
     // BOOKMARKS PLUGINS CONFIGURATION
     //
-    // `j to toggle bookmarks
+    // mm to toggle bookmarks
     {
-      "before": ["`", "j"],
+      "before": ["m", "m"],
       "commands": ["bookmarks.toggle"]
     },
-    // `` to go next
+    // mf to go next
     {
-      "before": ["`", "`"],
+      "before": ["m", "f"],
       "commands": ["bookmarks.jumpToNext"]
     },
-    // `~ to go previous
+    // mF to go previous
     {
-      "before": ["`", "~"],
+      "before": ["m", "F"],
       "commands": ["bookmarks.jumpToPrevious"]
     },
-    // `l to list
+    // ml to list
     {
-      "before": ["`", "l"],
+      "before": ["m", "l"],
       "commands": ["bookmarks.listFromAllFiles"]
     }
   ],
