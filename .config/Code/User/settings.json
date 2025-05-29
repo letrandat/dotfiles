@@ -384,6 +384,11 @@
       "before": [":"],
       "commands": ["vim.showQuickpickCmdLine"]
     },
+    // trigger vscode find with /
+    {
+      "before": ["/"],
+      "commands": ["actions.find"]
+    },
     // END: Core settings
     // START: easymotion
     {
