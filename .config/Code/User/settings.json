@@ -574,7 +574,7 @@
     // [g]it [o] open change (cmd+g o)
     {
       "before": ["<leader>", "g", "o"],
-      "commands": ["git.openChange"]
+      "commands": ["git.openChange", "workbench.action.focusFirstEditorGroup"]
     },
     // [g]it [O] open all changes (cmd+g shift+o)
     {
