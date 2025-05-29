@@ -170,7 +170,7 @@
     "command": "vscode-harpoon.editorQuickPick"
   },
   {
-    "key": "alt+0",
+    "key": "alt+-",
     "command": "vscode-harpoon.gotoGlobalEditor1"
   },
   {
