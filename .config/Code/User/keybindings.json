@@ -157,12 +157,12 @@
   // HARPOON SHORTCUTS
   //
   {
-    "key": "alt+a",
+    "key": "alt+,",
     "command": "vscode-harpoon.addEditor"
   },
-  // [v]iew editors
+  // [o]pen editors
   {
-    "key": "alt+v",
+    "key": "alt+o",
     "command": "vscode-harpoon.editEditors"
   },
   {
