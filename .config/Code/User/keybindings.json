@@ -156,8 +156,9 @@
   //
   // HARPOON SHORTCUTS
   //
+  // mark file to harpoon
   {
-    "key": "alt+,",
+    "key": "alt+m",
     "command": "vscode-harpoon.addEditor"
   },
   // [o]pen editors
