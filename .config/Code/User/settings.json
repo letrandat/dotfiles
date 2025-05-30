@@ -301,7 +301,7 @@
     // [u]i toggle [s]tatus menu
     {
       "before": ["<leader>", "u", "s"],
-      "commands": ["github.copilot.toggleStatusMenu"]
+      "commands": ["workbench.action.toggleStatusbarVisibility"]
     },
     // [u]i toggle [z]en mode, my zen mode is actually the centered layout, I don't like full screen
     {
