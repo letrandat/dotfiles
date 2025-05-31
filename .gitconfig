@@ -21,3 +21,5 @@
 [include]
 	# Update .gitconfig-local with local config
     path = ~/.gitconfig-local
+[push]
+	default = current

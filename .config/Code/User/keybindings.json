@@ -1,7 +1,9 @@
 // Place your key bindings in this file to override the defaults
 // NOTE: Keep this file super small,
 // prefer to keep all the key bindings under vscodevim's scope
-// unless the keybindings need to run when !textEditorFocus
+// unless
+// 1. the keybindings need to run when !textEditorFocus
+// 2. the keybindings is vscode level and not VIM
 [
   //
   // NAVIGATION SHORTCUTS STARTING WITH CMD
@@ -27,18 +29,23 @@
   //
   // FILE MENU
   //
-  // use ctrl+e to switch to new folder
+  // use ctrl+e to switch to a new dir
   {
     "key": "ctrl+e",
     "command": "extension.multiCommand.execute",
     "args": {
       "sequence": [
+        // quit lazygit if it's running
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": { "text": "q" }
+        },
         // send ctrl+u to terminal to clear terminal before running command
         {
           "command": "workbench.action.terminal.sendSequence",
           "args": { "text": "\u0015vscode-switcher\u000D" }
         },
-        // focus on terminal to select the folder
+        // focus on terminal to select the new dir
         {
           "command": "workbench.action.terminal.toggleTerminal",
           "when": "terminal.active"
@@ -75,11 +82,6 @@
     "command": "renameFile",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
-  {
-    "key": "ctrl+v",
-    "command": "explorer.openToSide",
-    "when": "explorerViewletFocus && foldersViewVisible && !inputFocus"
-  },
 
   //
   // GIT NAVIGATION SHORTCUTS
@@ -94,63 +96,6 @@
     "key": "cmd+g c a",
     "command": "git.commitAmend",
     "when": "!operationInProgress"
-  },
-
-  //
-  // TERMINAL SHORTCUTS
-  //
-  // use CMD+shift+j for extra interaction with terminal
-  // [n]ew profile [t]mux
-  {
-    "key": "cmd+shift+j n t",
-    "command": "workbench.action.terminal.newWithProfile",
-    "args": { "profileName": "vscode-tmux" }
-  },
-  // [m]aximize terminal
-  {
-    "key": "cmd+shift+j m",
-    "command": "extension.multiCommand.maximizeAndFocusPanel"
-  },
-
-  //
-  // WINDOWS AND EDITORS SHORTCUTS
-  // cmd+w = vscode built-in windows and editors
-  // it's equivalent to <leader> b in vim, useful when I am not at an editor
-  // focus on active editor and maximize it
-  {
-    "key": "cmd+w m",
-    "command": "extension.multiCommand.maximizeAndFocusActiveEditorGroup"
-  },
-  // [d]elete active editor
-  {
-    "key": "cmd+w d",
-    "command": "workbench.action.closeActiveEditor"
-  },
-  // simulate buffers list in vim, useful when I am at certain window that is not an editor
-  {
-    "key": "cmd+w ,",
-    "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
-  },
-  // reload window
-  {
-    "key": "cmd+w r",
-    "command": "workbench.action.reloadWindow"
-  },
-
-  // shortcuts
-  // jumpto dotfiles
-  {
-    "key": "cmd+w .",
-    // send ctrl+u to terminal to clear terminal before running command
-    "command": "workbench.action.terminal.sendSequence",
-    "args": { "text": "\u0015code ~/workspace/repo/dotfiles\u000D" }
-  },
-  //Jump to project 1: currently go
-  {
-    "key": "cmd+w 1",
-    // send ctrl+u to terminal to clear terminal before running command
-    "command": "workbench.action.terminal.sendSequence",
-    "args": { "text": "\u0015code ~/workspace/repo/learn-go-with-tests\u000D" }
   },
 
   //
@@ -171,44 +116,78 @@
     "command": "vscode-harpoon.editorQuickPick"
   },
   {
-    "key": "alt+-",
+    "key": "alt+9",
     "command": "vscode-harpoon.gotoGlobalEditor1"
   },
   {
-    "key": "alt+1",
+    "key": "alt+j",
     "command": "vscode-harpoon.gotoEditor1"
   },
   {
-    "key": "alt+2",
+    "key": "alt+k",
     "command": "vscode-harpoon.gotoEditor2"
   },
   {
-    "key": "alt+3",
+    "key": "alt+l",
     "command": "vscode-harpoon.gotoEditor3"
   },
   {
-    "key": "alt+4",
+    "key": "alt+;",
     "command": "vscode-harpoon.gotoEditor4"
   },
+
+  //
+  // TERMINAL SHORTCUTS
+  //
+  // use CMD+shift+j for extra interaction with terminal
+  // [n]ew profile [t]mux
   {
-    "key": "alt+5",
-    "command": "vscode-harpoon.gotoEditor5"
+    "key": "cmd+shift+j n t",
+    "command": "workbench.action.terminal.newWithProfile",
+    "args": { "profileName": "vscode-tmux" }
   },
+  // [m]aximize terminal
   {
-    "key": "alt+6",
-    "command": "vscode-harpoon.gotoEditor6"
+    "key": "cmd+shift+j m",
+    "command": "extension.multiCommand.maximizeAndFocusPanel"
   },
+
+  //
+  // WINDOWS MANAGEMENT
+  // ctrl+w = window management in vim
+  // useful when I am at certain window that is not an editor
+  // [d]elete active editor
   {
-    "key": "alt+7",
-    "command": "vscode-harpoon.gotoEditor7"
+    "key": "ctrl+w d",
+    "command": "workbench.action.closeActiveEditor"
   },
+  // simulate buffers list in vim
   {
-    "key": "alt+8",
-    "command": "vscode-harpoon.gotoEditor8"
+    "key": "ctrl+w ,",
+    "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
   },
+
+  //
+  // VSCODE level shortcut
+  // cmd+w = higher level than editor/window, focus on the entire vscode
+  // reload window
   {
-    "key": "alt+9",
-    "command": "vscode-harpoon.gotoEditor9"
+    "key": "cmd+w r",
+    "command": "workbench.action.reloadWindow"
+  },
+  // jumpto dotfiles
+  {
+    "key": "cmd+w .",
+    // send ctrl+u to terminal to clear terminal before running command
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": "\u0015code ~/workspace/repo/dotfiles\u000D" }
+  },
+  //Jump to project 1: currently go
+  {
+    "key": "cmd+w 1",
+    // send ctrl+u to terminal to clear terminal before running command
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": "\u0015code ~/workspace/repo/learn-go-with-tests\u000D" }
   },
 
   //
@@ -217,13 +196,13 @@
   // escape to focus on editor from explorer
   {
     "key": "escape",
-    "command": "workbench.action.focusActiveEditorGroup",
+    "command": "workbench.action.focusFirstEditorGroup",
     "when": "explorerViewletFocus"
   },
   // escape to focus on editor from chat
   {
     "key": "escape",
-    "command": "workbench.action.focusActiveEditorGroup",
+    "command": "workbench.action.focusFirstEditorGroup",
     "when": "!inlineChatFocused && inChat"
   },
 

@@ -121,7 +121,7 @@
   // MultiCommand Configuration
   "multiCommand.commands": [
     {
-      "command": "extension.multiCommand.maximizeAndFocusActiveEditorGroup",
+      "command": "extension.multiCommand.maximizeAndFocusFirstEditorGroup",
       "sequence": [
         "workbench.action.focusActiveEditorGroup",
         "workbench.action.maximizeEditorHideSidebar",
@@ -367,7 +367,7 @@
     // [m]aximize the active editor
     {
       "before": ["<leader>", "w", "m"],
-      "commands": ["extension.multiCommand.maximizeAndFocusActiveEditorGroup"]
+      "commands": ["extension.multiCommand.maximizeAndFocusFirstEditorGroup"]
     },
     // simulate buffers list in vim
     {
@@ -562,5 +562,5 @@
   "chat.agent.enabled": true,
   "chat.mcp.discovery.enabled": true,
   // mcp servers
-  "mcp": {},
+  "mcp": {}
 }

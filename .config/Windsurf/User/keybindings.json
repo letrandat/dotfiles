@@ -132,7 +132,7 @@
   // focus on active editor and maximize it
   {
     "key": "cmd+w m",
-    "command": "extension.multiCommand.maximizeAndFocusActiveEditorGroup"
+    "command": "extension.multiCommand.maximizeAndFocusFirstEditorGroup"
   },
   // [d]elete active editor
   {
@@ -230,5 +230,5 @@
     "key": "ctrl+l",
     "command": "windsurf.prioritized.chat.openNewConversation",
     "when": "!terminalFocus && !editorTextFocus"
-  },
+  }
 ]
