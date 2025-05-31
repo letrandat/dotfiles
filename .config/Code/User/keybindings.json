@@ -6,25 +6,44 @@
 // 2. the keybindings is vscode level and not VIM
 [
   //
-  // NAVIGATION SHORTCUTS STARTING WITH CMD
+  // VSCODE TOP-LEVEL SHORTCUT
   //
-  // use CMD+e to open explorer
+  // cmd+w = higher level than editor/window, focus on the entire vscode
+  // reload window
   {
-    "key": "cmd+e",
-    "command": "workbench.action.toggleSidebarVisibility",
-    "when": "explorerViewletFocus"
+    "key": "cmd+w r",
+    "command": "workbench.action.reloadWindow"
   },
+  // jumpto dotfiles
   {
-    "key": "cmd+e",
-    "command": "workbench.view.explorer",
-    "when": "viewContainer.workbench.view.explorer.enabled && !explorerViewletFocus"
+    "key": "cmd+w .",
+    // send ctrl+u to terminal to clear terminal before running command
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": "\u0015code ~/workspace/repo/dotfiles\u000D" }
   },
-  // use CMD+L to open copilot
+  //Jump to project 1: currently go
   {
-    "key": "cmd+l",
-    "command": "workbench.panel.chat",
-    "when": "workbench.panel.chat.view.copilot.active"
+    "key": "cmd+w 1",
+    // send ctrl+u to terminal to clear terminal before running command
+    "command": "workbench.action.terminal.sendSequence",
+    "args": { "text": "\u0015code ~/workspace/repo/learn-go-with-tests\u000D" }
   },
+
+  //
+  // WINDOWS MANAGEMENT
+  // ctrl+w = window management in vim
+  // useful when I am at certain window that is not an editor
+  // [d]elete active editor
+  {
+    "key": "ctrl+w d",
+    "command": "workbench.action.closeActiveEditor"
+  },
+  // simulate buffers list in vim
+  {
+    "key": "ctrl+w ,",
+    "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
+  },
+
 
   //
   // FILE MENU
@@ -57,6 +76,17 @@
   //
   // EXPLORER SHORTCUTS
   //
+  // use CMD+e to open explorer
+  {
+    "key": "cmd+e",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "explorerViewletFocus"
+  },
+  {
+    "key": "cmd+e",
+    "command": "workbench.view.explorer",
+    "when": "viewContainer.workbench.view.explorer.enabled && !explorerViewletFocus"
+  },
   {
     "key": "a",
     "command": "workbench.files.action.createFileFromExplorer",
@@ -81,6 +111,37 @@
     "key": "r",
     "command": "renameFile",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+
+  //
+  // ESCAPE KEYBINDINGS
+  //
+  // escape to focus to editor from explorer, terminal
+  {
+    "key": "escape",
+    "command": "workbench.action.focusFirstEditorGroup",
+    "when": "explorerViewletFocus || terminalFocus"
+  },
+  // escape to focus to editor from chat
+  {
+    "key": "escape",
+    "command": "workbench.action.focusFirstEditorGroup",
+    "when": "!inlineChatFocused && inChat"
+  },
+
+  //
+  // GITHUB COPILOT
+  //
+  // use CMD+L to open copilot
+  {
+    "key": "cmd+l",
+    "command": "workbench.panel.chat",
+    "when": "workbench.panel.chat.view.copilot.active"
+  },
+  {
+    "key": "cmd+shift+l",
+    "command": "workbench.action.chat.newChat",
+    "when": "chatEditingParticipantRegistered && chatIsEnabled && inChat"
   },
 
   //
@@ -150,60 +211,6 @@
   {
     "key": "cmd+shift+j m",
     "command": "extension.multiCommand.maximizeAndFocusPanel"
-  },
-
-  //
-  // WINDOWS MANAGEMENT
-  // ctrl+w = window management in vim
-  // useful when I am at certain window that is not an editor
-  // [d]elete active editor
-  {
-    "key": "ctrl+w d",
-    "command": "workbench.action.closeActiveEditor"
-  },
-  // simulate buffers list in vim
-  {
-    "key": "ctrl+w ,",
-    "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
-  },
-
-  //
-  // VSCODE level shortcut
-  // cmd+w = higher level than editor/window, focus on the entire vscode
-  // reload window
-  {
-    "key": "cmd+w r",
-    "command": "workbench.action.reloadWindow"
-  },
-  // jumpto dotfiles
-  {
-    "key": "cmd+w .",
-    // send ctrl+u to terminal to clear terminal before running command
-    "command": "workbench.action.terminal.sendSequence",
-    "args": { "text": "\u0015code ~/workspace/repo/dotfiles\u000D" }
-  },
-  //Jump to project 1: currently go
-  {
-    "key": "cmd+w 1",
-    // send ctrl+u to terminal to clear terminal before running command
-    "command": "workbench.action.terminal.sendSequence",
-    "args": { "text": "\u0015code ~/workspace/repo/learn-go-with-tests\u000D" }
-  },
-
-  //
-  // ESCAPE KEYBINDINGS
-  //
-  // escape to focus on editor from explorer
-  {
-    "key": "escape",
-    "command": "workbench.action.focusFirstEditorGroup",
-    "when": "explorerViewletFocus"
-  },
-  // escape to focus on editor from chat
-  {
-    "key": "escape",
-    "command": "workbench.action.focusFirstEditorGroup",
-    "when": "!inlineChatFocused && inChat"
   },
 
   //

@@ -25,7 +25,6 @@
   "editor.formatOnSave": true,
   "editor.lineNumbers": "relative",
   "workbench.editor.showTabs": "none",
-  "editor.rulers": [100],
   // Enable bracket pair colorization for better readability
   "editor.bracketPairColorization.enabled": true,
   // Show vertical lines for bracket pairs
@@ -38,6 +37,9 @@
   // Enable font Ligatures
   "editor.fontLigatures": true,
   "editor.fontFamily": "JetBrainsMono Nerd Font",
+
+  // Diff Editor Configuration
+  "diffEditor.hideUnchangedRegions.enabled": true,
 
   // Search Configuration
   "search.searchEditor.focusResultsOnSearch": true,
@@ -582,7 +584,10 @@
     // [g]it vew [S]tage changes
     {
       "before": ["<leader>", "g", "S"],
-      "commands": ["git.viewStagedChanges", "workbench.action.focusFirstEditorGroup"]
+      "commands": [
+        "git.viewStagedChanges",
+        "workbench.action.focusFirstEditorGroup"
+      ]
     },
 
     //
@@ -630,7 +635,7 @@
     {
       "before": ["<leader>", "G", "f"],
       "commands": ["go.toggle.test.file"]
-    },
+    }
   ],
   // lazygit-vscode
   "lazygit-vscode.autoMaximizeWindow": true,
@@ -658,5 +663,5 @@
   "chat.agent.enabled": true,
   "chat.mcp.discovery.enabled": true,
   // mcp servers
-  "mcp": {}
+  "mcp": {},
 }
