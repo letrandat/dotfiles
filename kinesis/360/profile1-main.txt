@@ -6,5 +6,9 @@
 [rctr]>[rwin]
 <keypad>
 <function1>
+[p]>[prnt]
+[j]>[vol-]
+[k]>[vol+]
+[m]>[mute]
 <function2>
 <function3>
