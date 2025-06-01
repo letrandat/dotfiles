@@ -7,8 +7,11 @@
 <keypad>
 <function1>
 [p]>[prnt]
+[h]>[prev]
 [j]>[vol-]
 [k]>[vol+]
+[l]>[next]
 [m]>[mute]
+[spc]>[plpa]
 <function2>
 <function3>
