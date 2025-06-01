@@ -1,0 +1,10 @@
+<base>
+[caps]>[lalt]
+[lctr]>[lwin]
+[lalt]>[lctr]
+[rwin]>[rctr]
+[rctr]>[rwin]
+<keypad>
+<function1>
+<function2>
+<function3>
