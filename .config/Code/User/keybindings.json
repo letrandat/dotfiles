@@ -133,11 +133,6 @@
     "command": "workbench.panel.chat",
     "when": "workbench.panel.chat.view.copilot.active"
   },
-  {
-    "key": "cmd+shift+l",
-    "command": "workbench.action.chat.newChat",
-    "when": "chatEditingParticipantRegistered && chatIsEnabled && inChat"
-  },
 
   //
   // GIT NAVIGATION SHORTCUTS
