@@ -23,7 +23,6 @@
   "editor.fontSize": 12,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "editor.formatOnSaveMode": "modifications",
   "editor.lineNumbers": "relative",
   "workbench.editor.showTabs": "none",
   // Enable bracket pair colorization for better readability
@@ -688,5 +687,5 @@
   "chat.agent.enabled": true,
   "chat.mcp.discovery.enabled": true,
   // mcp servers
-  "mcp": {},
+  "mcp": {}
 }
