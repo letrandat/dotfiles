@@ -613,6 +613,11 @@
         "workbench.action.focusFirstEditorGroup"
       ]
     },
+    // [g]it [b]lame
+    {
+      "before": ["<leader>", "g", "b"],
+      "commands": ["git.blame.toggleEditorDecoration"]
+    },
 
     //
     // easymotion
