@@ -60,7 +60,13 @@
   // [d]elete active editor
   {
     "key": "ctrl+w d",
-    "command": "workbench.action.closeActiveEditor"
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": [
+        { "command": "workbench.action.closeActiveEditor" },
+        { "command": "workbench.action.focusFirstEditorGroup" }
+      ]
+    }
   },
   // simulate buffers list in vim
   {

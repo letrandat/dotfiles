@@ -259,11 +259,6 @@
       "before": [":"],
       "commands": ["vim.showQuickpickCmdLine"]
     },
-    // trigger vscode find with /
-    {
-      "before": ["/"],
-      "commands": ["actions.find"]
-    },
 
     //
     // Editor Groups aka VIM SPLIT Movement Configuration
@@ -593,7 +588,7 @@
     },
 
     //
-    // GIT/LAZYGIT CONFIGURATION
+    // GIT/LAZYGIT/GITLENS CONFIGURATION
     //
     // [g]it [o] open change (cmd+g o)
     {
@@ -613,10 +608,15 @@
         "workbench.action.focusFirstEditorGroup"
       ]
     },
-    // [g]it [b]lame
+    // gitlens: [g]it [b]lame
     {
       "before": ["<leader>", "g", "b"],
-      "commands": ["git.blame.toggleEditorDecoration"]
+      "commands": ["gitlens.toggleLineBlame"]
+    },
+    // gitlens: [g]it file [B]lame
+    {
+      "before": ["<leader>", "g", "B"],
+      "commands": ["gitlens.toggleFileBlame"]
     },
 
     //
