@@ -443,6 +443,47 @@ function M.setup()
         desc = 'Split: Harpoon 1, 2, 3, 4 (left, mid-focus, right, bottom)'
     })
 
+    --
+    -- GIT/LAZYGIT/GITLENS CONFIGURATION
+    --
+
+    -- [g]it [o] open change
+    vim.keymap.set('n', '<leader>go', function()
+        vscode.call('git.openChange')
+        vscode.call('workbench.action.focusFirstEditorGroup')
+    end, {
+        desc = 'Git: Open change and focus first editor group'
+    })
+
+    -- [g]it [O] open all changes
+    vim.keymap.set('n', '<leader>gO', function()
+        vscode.call('git.viewChanges')
+    end, {
+        desc = 'Git: View all changes'
+    })
+
+    -- [g]it view [S]tage changes
+    vim.keymap.set('n', '<leader>gS', function()
+        vscode.call('git.viewStagedChanges')
+        vscode.call('workbench.action.focusFirstEditorGroup')
+    end, {
+        desc = 'Git: View staged changes and focus first editor group'
+    })
+
+    -- gitlens: [g]it [b]lame
+    vim.keymap.set('n', '<leader>gb', function()
+        vscode.call('gitlens.toggleLineBlame')
+    end, {
+        desc = 'GitLens: Toggle line blame'
+    })
+
+    -- gitlens: [g]it file [B]lame
+    vim.keymap.set('n', '<leader>gB', function()
+        vscode.call('gitlens.toggleFileBlame')
+    end, {
+        desc = 'GitLens: Toggle file blame'
+    })
+
 end
 
 return M
