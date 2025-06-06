@@ -110,14 +110,18 @@ function M.setup()
 
     -- [u]i [v]iew markdown preview to the side
     vim.keymap.set('n', '<leader>uv', function()
-        vscode.call('markdown.showPreviewToSide')
+        if vim.bo.filetype == "markdown" then
+            vscode.call('markdown.showPreviewToSide')
+        end
     end, {
         desc = 'Markdown: Show preview to side'
     })
 
     -- [u]i [V]iew (BIGGER) markdown preview
     vim.keymap.set('n', '<leader>uV', function()
-        vscode.call('markdown.showPreview')
+        if vim.bo.filetype == "markdown" then
+            vscode.call('markdown.showPreview')
+        end
     end, {
         desc = 'Markdown: Show preview'
     })
