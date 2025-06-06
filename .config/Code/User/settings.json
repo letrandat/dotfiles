@@ -156,7 +156,7 @@
   ],
 
   // vscode-neovim Configuration
-  "vscode-neovim.NVIM_APPNAME": "nvim-kickstart",
+  "vscode-neovim.NVIM_APPNAME": "nvim-vscode",
 
   // Vim Configuration
   // vim.core
