@@ -85,6 +85,30 @@ function M.setup()
     })
 
     --
+    -- Vim UI Configuration
+    --
+    -- [u]i toggle [w]rap
+    vim.keymap.set('n', '<leader>uw', function()
+        vscode.call('editor.action.toggleWordWrap')
+    end, {
+        desc = 'Toggle word wrap'
+    })
+
+    -- [u]i toggle [s]tatus menu
+    vim.keymap.set('n', '<leader>us', function()
+        vscode.call('workbench.action.toggleStatusbarVisibility')
+    end, {
+        desc = 'Toggle status bar visibility'
+    })
+
+    -- [u]i toggle [z]en mode (centered layout)
+    vim.keymap.set('n', '<leader>uz', function()
+        vscode.call('workbench.action.toggleCenteredLayout')
+    end, {
+        desc = 'Toggle centered layout (Zen mode)'
+    })
+
+    --
     -- SEARCH CONFIGURATION
     --
     vim.keymap.set('n', '<leader>sk', function()
