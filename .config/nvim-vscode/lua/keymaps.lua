@@ -100,7 +100,7 @@ function M.setup()
 
     -- gr (go to references)
     vim.keymap.set('n', 'gr', function()
-        vscode.call('editor.action.goToReferences')
+        vscode.call('editor.action.referenceSearch.trigger')
     end, {
         desc = 'Go to references'
     })
