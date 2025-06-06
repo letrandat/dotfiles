@@ -15,6 +15,20 @@ function M.setup()
         desc = 'Paste without yanking replaced text'
     })
 
+    -- Undo
+    vim.keymap.set('n', 'u', function()
+        vscode.call('undo')
+    end, {
+        desc = 'Undo'
+    })
+
+    -- Redo
+    vim.keymap.set('n', '<C-r>', function()
+        vscode.call('redo')
+    end, {
+        desc = 'Redo'
+    })
+
     -- Move lines up and down in normal mode with `J` and `K`
     vim.keymap.set('n', 'K', function()
         vscode.call('editor.action.moveLinesUpAction')
