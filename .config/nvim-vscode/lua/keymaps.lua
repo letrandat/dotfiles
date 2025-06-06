@@ -5,6 +5,10 @@ function M.setup()
     --  See `:help hlsearch`
     vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+    vim.keymap.set('x', 'p', '"_dP', {
+        desc = 'Paste without yanking replaced text'
+    })
+
     local vscode = require('vscode')
     vim.keymap.set("n", "<leader>ff", function()
         vscode.call("workbench.action.quickOpen")
