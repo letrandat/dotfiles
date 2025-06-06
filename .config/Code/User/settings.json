@@ -157,6 +157,9 @@
 
   // vscode-neovim Configuration
   "vscode-neovim.NVIM_APPNAME": "nvim-vscode",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
 
   // Vim Configuration
   // vim.core
