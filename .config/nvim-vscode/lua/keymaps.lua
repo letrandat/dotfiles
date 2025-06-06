@@ -85,7 +85,7 @@ function M.setup()
     })
 
     --
-    -- Vim UI Configuration
+    -- UI Configuration
     --
     -- [u]i toggle [w]rap
     vim.keymap.set('n', '<leader>uw', function()
