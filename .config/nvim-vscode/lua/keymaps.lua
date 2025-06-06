@@ -1,6 +1,10 @@
 local M = {}
 
 function M.setup()
+    --
+    -- CORE CONFIGURATION
+    --
+
     -- Clear highlights on search when pressing <Esc> in normal mode
     --  See `:help hlsearch`
     vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
@@ -8,6 +12,18 @@ function M.setup()
     -- `p` in visual mode delete the selected text to the black hole register (`"_d`), then put (`P`) the contents of the default register
     vim.keymap.set('x', 'p', '"_dP', {
         desc = 'Paste without yanking replaced text'
+    })
+
+    -- Move lines up and down in normal mode with `J` and `K`
+    vim.keymap.set('n', 'K', function()
+        vscode.call('editor.action.moveLinesUpAction')
+    end, {
+        desc = 'Move line up'
+    })
+    vim.keymap.set('n', 'J', function()
+        vscode.call('editor.action.moveLinesDownAction')
+    end, {
+        desc = 'Move line down'
     })
 
     local vscode = require('vscode')
