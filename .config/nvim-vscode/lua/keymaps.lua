@@ -84,6 +84,20 @@ function M.setup()
         desc = 'Source action'
     })
 
+    -- [f]ormat code
+    vim.keymap.set('n', '<leader>cf', function()
+        vscode.call('editor.action.formatDocument')
+    end, {
+        desc = 'Format document'
+    })
+
+    -- [o]rganize imports
+    vim.keymap.set('n', '<leader>o', function()
+        vscode.call('editor.action.organizeImports')
+    end, {
+        desc = 'Organize imports'
+    })
+
     --
     -- UI Configuration
     --
