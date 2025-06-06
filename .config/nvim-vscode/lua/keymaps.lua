@@ -33,6 +33,27 @@ function M.setup()
         desc = "VSCode Quick Open"
     })
 
+    -- Move to next and previous editor in group with 'L' and 'H'
+    vim.keymap.set('n', 'L', function()
+        vscode.call('workbench.action.nextEditorInGroup')
+    end, {
+        desc = 'Next editor in group'
+    })
+    vim.keymap.set('n', 'H', function()
+        vscode.call('workbench.action.previousEditorInGroup')
+    end, {
+        desc = 'Previous editor in group'
+    })
+
+    --
+    -- SEARCH CONFIGURATION
+    --
+    vim.keymap.set('n', '<leader>sk', function()
+        vscode.call('workbench.action.openGlobalKeybindings')
+    end, {
+        desc = 'Open Global Keybindings'
+    })
+
     --
     -- BUFFER/WORKBENCH/WINDOWS CONFIGURATION
     --
