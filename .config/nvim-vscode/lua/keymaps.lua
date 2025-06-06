@@ -5,6 +5,7 @@ function M.setup()
     --  See `:help hlsearch`
     vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+    -- `p` in visual mode delete the selected text to the black hole register (`"_d`), then put (`P`) the contents of the default register
     vim.keymap.set('x', 'p', '"_dP', {
         desc = 'Paste without yanking replaced text'
     })
