@@ -108,6 +108,60 @@ function M.setup()
         desc = 'Toggle centered layout (Zen mode)'
     })
 
+    vim.keymap.set('n', '<leader>u1', function()
+        vscode.call('extension.multiCommand.maximizeAndFocusFirstEditorGroup')
+        vscode.call('vscode-harpoon.gotoEditor1')
+        vscode.call('workbench.action.closeOtherEditors')
+    end, {
+        desc = 'Maximize, go to Harpoon 1, close others'
+    })
+
+    vim.keymap.set('n', '<leader>u2', function()
+        vscode.call('extension.multiCommand.maximizeAndFocusFirstEditorGroup')
+        vscode.call('vscode-harpoon.gotoEditor1')
+        vscode.call('workbench.action.closeOtherEditors')
+        vscode.call('workbench.action.splitEditorRight')
+        vscode.call('vscode-harpoon.gotoEditor2')
+        vscode.call('workbench.action.closeOtherEditors')
+        vscode.call('workbench.action.focusLeftGroup')
+    end, {
+        desc = 'Split: Harpoon 1 (left-focus), 2 (right)'
+    })
+
+    -- Create split windows with left, mid, and right as harpoon 1, 2, and 3, focus middle
+    vim.keymap.set('n', '<leader>u3', function()
+        vscode.call('extension.multiCommand.maximizeAndFocusFirstEditorGroup')
+        vscode.call('vscode-harpoon.gotoEditor1')
+        vscode.call('workbench.action.closeOtherEditors')
+        vscode.call('workbench.action.splitEditorRight')
+        vscode.call('vscode-harpoon.gotoEditor2')
+        vscode.call('workbench.action.closeOtherEditors')
+        vscode.call('workbench.action.splitEditorRight')
+        vscode.call('vscode-harpoon.gotoEditor3')
+        vscode.call('workbench.action.closeOtherEditors')
+        vscode.call('workbench.action.focusLeftGroup')
+    end, {
+        desc = 'Split: Harpoon 1, 2, 3 (left, mid, right), focus middle'
+    })
+
+    -- Create split windows with left, mid, right (top/bottom) as harpoon 1, 2, 3, and 4, focus middle
+    vim.keymap.set('n', '<leader>u4', function()
+        vscode.call('extension.multiCommand.maximizeAndFocusFirstEditorGroup')
+        vscode.call('vscode-harpoon.gotoEditor1')
+        vscode.call('workbench.action.closeOtherEditors')
+        vscode.call('workbench.action.splitEditorRight')
+        vscode.call('vscode-harpoon.gotoEditor2')
+        vscode.call('workbench.action.closeOtherEditors')
+        vscode.call('workbench.action.splitEditorRight')
+        vscode.call('vscode-harpoon.gotoEditor3')
+        vscode.call('workbench.action.closeOtherEditors')
+        vscode.call('workbench.action.splitEditorDown')
+        vscode.call('vscode-harpoon.gotoEditor4')
+        vscode.call('workbench.action.focusLeftGroup')
+    end, {
+        desc = 'Split: Harpoon 1, 2, 3, 4 (left, mid, right, bottom), focus middle'
+    })
+
     --
     -- SEARCH CONFIGURATION
     --
