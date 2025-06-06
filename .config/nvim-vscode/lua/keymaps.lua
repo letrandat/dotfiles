@@ -41,10 +41,28 @@ function M.setup()
         desc = 'Move line down'
     })
 
+    --
+    -- FILES
+    --
+    -- List [f]ile
     vim.keymap.set("n", "<leader>ff", function()
         vscode.call("workbench.action.quickOpen")
     end, {
         desc = "VSCode Quick Open"
+    })
+
+    -- Copy [f]ile [p]ath (relative)
+    vim.keymap.set("n", "<leader>fp", function()
+        vscode.call("copyRelativeFilePath")
+    end, {
+        desc = "Copy relative file path"
+    })
+
+    -- Copy [f]ile [P]ath (absolute)
+    vim.keymap.set("n", "<leader>fP", function()
+        vscode.call("copyFilePath")
+    end, {
+        desc = "Copy absolute file path"
     })
 
     -- Move to next and previous editor in group with 'L' and 'H'
