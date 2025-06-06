@@ -33,4 +33,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.opt.timeoutlen = 3000
 
 -- [[ Basic Keymaps ]]
-require('keymaps').setup()
+if vim.g.vscode then
+    require('keymaps').setup()
+else
+    -- ordinary Neovim
+end
