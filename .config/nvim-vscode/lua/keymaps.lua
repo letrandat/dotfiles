@@ -46,6 +46,31 @@ function M.setup()
     })
 
     --
+    -- CODE ACTIONS
+    --
+
+    -- Rename symbol
+    vim.keymap.set({'n', 'v'}, '<leader>cr', function()
+        vscode.call('editor.action.rename')
+    end, {
+        desc = 'Rename symbol'
+    })
+
+    -- Refactor
+    vim.keymap.set({'n', 'v'}, '<leader>ca', function()
+        vscode.call('editor.action.refactor')
+    end, {
+        desc = 'Refactor'
+    })
+
+    -- Source action (refactor at source level)
+    vim.keymap.set({'n', 'v'}, '<leader>cA', function()
+        vscode.call('editor.action.sourceAction')
+    end, {
+        desc = 'Source action'
+    })
+
+    --
     -- SEARCH CONFIGURATION
     --
     vim.keymap.set('n', '<leader>sk', function()
