@@ -365,27 +365,6 @@ function M.setup()
     })
 
     --
-    -- GIT CONFIGURATION
-    --
-    vim.keymap.set('v', '<leader>gr', function()
-        vscode.call('git.revertSelectedRanges')
-    end, {
-        desc = 'Git: Revert selected ranges'
-    })
-
-    vim.keymap.set('v', '<leader>gs', function()
-        vscode.call('git.stageSelectedRanges')
-    end, {
-        desc = 'Git: Stage selected ranges'
-    })
-
-    vim.keymap.set('v', '<leader>gu', function()
-        vscode.call('git.unstageSelectedRanges')
-    end, {
-        desc = 'Git: Unstage selected ranges'
-    })
-
-    --
     -- HARPOON CONFIGURATION
     --
 
@@ -446,6 +425,24 @@ function M.setup()
     --
     -- GIT/LAZYGIT/GITLENS CONFIGURATION
     --
+
+    vim.keymap.set('v', '<leader>gr', function()
+        vscode.call('git.revertSelectedRanges')
+    end, {
+        desc = 'Git: Revert selected ranges'
+    })
+
+    vim.keymap.set('v', '<leader>gs', function()
+        vscode.call('git.stageSelectedRanges')
+    end, {
+        desc = 'Git: Stage selected ranges'
+    })
+
+    vim.keymap.set('v', '<leader>gu', function()
+        vscode.call('git.unstageSelectedRanges')
+    end, {
+        desc = 'Git: Unstage selected ranges'
+    })
 
     -- [g]it [o] open change
     vim.keymap.set('n', '<leader>go', function()
