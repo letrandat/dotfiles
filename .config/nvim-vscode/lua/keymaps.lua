@@ -164,6 +164,28 @@ function M.setup()
         desc = 'Maximize active editor'
     })
 
+    -- Use arrow keys to move between editor groups (splits)
+    vim.keymap.set('n', '<Up>', function()
+        vscode.call('workbench.action.focusAboveGroup')
+    end, {
+        desc = 'Move to split above'
+    })
+    vim.keymap.set('n', '<Down>', function()
+        vscode.call('workbench.action.focusBelowGroup')
+    end, {
+        desc = 'Move to split below'
+    })
+    vim.keymap.set('n', '<Left>', function()
+        vscode.call('workbench.action.focusLeftGroup')
+    end, {
+        desc = 'Move to split left'
+    })
+    vim.keymap.set('n', '<Right>', function()
+        vscode.call('workbench.action.focusRightGroup')
+    end, {
+        desc = 'Move to split right'
+    })
+
     --
     -- BOOKMARKS PLUGINS CONFIGURATION
     --
