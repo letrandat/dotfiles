@@ -32,7 +32,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- allowing more breathing room when using vim keybindings
 vim.opt.timeoutlen = 3000
 
--- [[ Basic Keymaps ]]
+-- [[ Keymaps ]]
 if vim.g.vscode then
     require('keymaps').setup()
 else
