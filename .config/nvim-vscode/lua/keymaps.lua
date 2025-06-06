@@ -150,6 +150,27 @@ function M.setup()
         desc = 'List bookmarks from all files'
     })
 
+    --
+    -- GIT CONFIGURATION (Visual mode)
+    --
+    vim.keymap.set('v', '<leader>gr', function()
+        vscode.call('git.revertSelectedRanges')
+    end, {
+        desc = 'Git: Revert selected ranges'
+    })
+
+    vim.keymap.set('v', '<leader>gs', function()
+        vscode.call('git.stageSelectedRanges')
+    end, {
+        desc = 'Git: Stage selected ranges'
+    })
+
+    vim.keymap.set('v', '<leader>gu', function()
+        vscode.call('git.unstageSelectedRanges')
+    end, {
+        desc = 'Git: Unstage selected ranges'
+    })
+
 end
 
 return M
