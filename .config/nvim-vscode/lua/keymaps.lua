@@ -41,6 +41,23 @@ function M.setup()
         desc = 'Move line down'
     })
 
+    -- g; (go to next change)
+    vim.keymap.set('n', 'g;', function()
+        vscode.call('workbench.action.editor.nextChange')
+        vscode.call('workbench.action.compareEditor.nextChange')
+        vscode.call('chatEditor.action.navigateNext')
+    end, {
+        desc = 'Go to next change'
+    })
+    -- g: (go to previous change)
+    vim.keymap.set('n', 'g:', function()
+        vscode.call('workbench.action.editor.previousChange')
+        vscode.call('workbench.action.compareEditor.previousChange')
+        vscode.call('chatEditor.action.navigatePrevious')
+    end, {
+        desc = 'Go to previous change'
+    })
+
     --
     -- FILES
     --
