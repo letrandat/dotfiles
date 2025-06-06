@@ -108,6 +108,20 @@ function M.setup()
         desc = 'Toggle centered layout (Zen mode)'
     })
 
+    -- [u]i [v]iew markdown preview to the side
+    vim.keymap.set('n', '<leader>uv', function()
+        vscode.call('markdown.showPreviewToSide')
+    end, {
+        desc = 'Markdown: Show preview to side'
+    })
+
+    -- [u]i [V]iew (BIGGER) markdown preview
+    vim.keymap.set('n', '<leader>uV', function()
+        vscode.call('markdown.showPreview')
+    end, {
+        desc = 'Markdown: Show preview'
+    })
+
     --
     -- SEARCH CONFIGURATION
     --
