@@ -16,12 +16,12 @@ function M.setup()
     })
 
     -- Move lines up and down in normal mode with `J` and `K`
-    vim.keymap.set('x', 'K', function()
+    vim.keymap.set('n', 'K', function()
         vscode.call('editor.action.moveLinesUpAction')
     end, {
         desc = 'Move line up'
     })
-    vim.keymap.set('x', 'J', function()
+    vim.keymap.set('n', 'J', function()
         vscode.call('editor.action.moveLinesDownAction')
     end, {
         desc = 'Move line down'
