@@ -151,7 +151,7 @@ function M.setup()
     })
 
     --
-    -- GIT CONFIGURATION (Visual mode)
+    -- GIT CONFIGURATION
     --
     vim.keymap.set('v', '<leader>gr', function()
         vscode.call('git.revertSelectedRanges')
