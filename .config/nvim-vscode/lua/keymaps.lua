@@ -1,6 +1,7 @@
 local M = {}
 
 function M.setup()
+    local vscode = require('vscode')
     --
     -- CORE CONFIGURATION
     --
@@ -15,18 +16,17 @@ function M.setup()
     })
 
     -- Move lines up and down in normal mode with `J` and `K`
-    vim.keymap.set('n', 'K', function()
+    vim.keymap.set('x', 'K', function()
         vscode.call('editor.action.moveLinesUpAction')
     end, {
         desc = 'Move line up'
     })
-    vim.keymap.set('n', 'J', function()
+    vim.keymap.set('x', 'J', function()
         vscode.call('editor.action.moveLinesDownAction')
     end, {
         desc = 'Move line down'
     })
 
-    local vscode = require('vscode')
     vim.keymap.set("n", "<leader>ff", function()
         vscode.call("workbench.action.quickOpen")
     end, {
