@@ -484,6 +484,21 @@ function M.setup()
         desc = 'GitLens: Toggle file blame'
     })
 
+    --
+    -- GO LANG CONFIGURATION
+    --
+    vim.keymap.set('n', '<leader><leader>gc', function()
+        vscode.call('go.test.coverage')
+    end, {
+        desc = 'Go: Run package coverage'
+    })
+
+    vim.keymap.set('n', '<leader><leader>gf', function()
+        vscode.call('go.toggle.test.file')
+    end, {
+        desc = 'Go: Toggle test file'
+    })
+
 end
 
 return M
