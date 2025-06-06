@@ -34,7 +34,7 @@ vim.opt.timeoutlen = 3000
 
 -- [[ Keymaps ]]
 if vim.g.vscode then
-    require('keymaps').setup()
+    require('vscode-keymaps').setup()
 else
     -- ordinary Neovim
 end
