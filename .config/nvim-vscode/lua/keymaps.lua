@@ -78,6 +78,93 @@ function M.setup()
     })
 
     --
+    -- LSP support
+    --
+
+    -- gr (go to references)
+    vim.keymap.set('n', 'gr', function()
+        vscode.call('editor.action.goToReferences')
+    end, {
+        desc = 'Go to references'
+    })
+
+    -- gD (go to source definition)
+    vim.keymap.set('n', 'gD', function()
+        vscode.call('typescript.goToSourceDefinition')
+    end, {
+        desc = 'Go to source definition'
+    })
+
+    -- gI (go to Implementation)
+    vim.keymap.set('n', 'gI', function()
+        vscode.call('editor.action.goToImplementation')
+    end, {
+        desc = 'Go to implementation'
+    })
+
+    -- gA (go to [A]ll implementations)
+    vim.keymap.set('n', 'gA', function()
+        vscode.call('references-view.findImplementations')
+    end, {
+        desc = 'Find all implementations'
+    })
+
+    -- gf (alias for gd)
+    vim.keymap.set('n', 'gf', 'gd', {
+        remap = true,
+        desc = 'Go to definition (alias)'
+    })
+
+    -- gy (go to t[y]pe definition)
+    vim.keymap.set('n', 'gy', function()
+        vscode.call('editor.action.goToTypeDefinition')
+    end, {
+        desc = 'Go to type definition'
+    })
+
+    -- gK (go to params hint)
+    vim.keymap.set('n', 'gK', function()
+        vscode.call('editor.action.triggerParameterHints')
+    end, {
+        desc = 'Trigger parameter hints'
+    })
+
+    -- gch (go to [c]all [h]ierarchy)
+    vim.keymap.set('n', 'gch', function()
+        vscode.call('editor.showCallHierarchy')
+    end, {
+        desc = 'Show call hierarchy'
+    })
+
+    -- go to previous [W]arning
+    vim.keymap.set('n', 'gW', function()
+        vscode.call('editor.action.marker.prevInFiles')
+    end, {
+        desc = 'Go to previous warning'
+    })
+
+    -- go to next [w]arning
+    vim.keymap.set('n', 'gw', function()
+        vscode.call('editor.action.marker.nextInFiles')
+    end, {
+        desc = 'Go to next warning'
+    })
+
+    -- go to [s]ymbol in file
+    vim.keymap.set('n', '<leader>ss', function()
+        vscode.call('workbench.action.gotoSymbol')
+    end, {
+        desc = 'Go to symbol in file'
+    })
+
+    -- go to [S]ymbol in workspace
+    vim.keymap.set('n', '<leader>sS', function()
+        vscode.call('workbench.action.showAllSymbols')
+    end, {
+        desc = 'Go to symbol in workspace'
+    })
+
+    --
     -- CODE ACTIONS
     --
 
