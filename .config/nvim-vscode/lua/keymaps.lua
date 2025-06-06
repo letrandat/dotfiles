@@ -141,7 +141,7 @@ function M.setup()
         vscode.call('workbench.action.closeOtherEditors')
         vscode.call('workbench.action.focusLeftGroup')
     end, {
-        desc = 'Split: Harpoon 1, 2, 3 (left, mid, right), focus middle'
+        desc = 'Split: Harpoon 1, 2, 3 (left, mid-focus, right)'
     })
 
     -- Create split windows with left, mid, right (top/bottom) as harpoon 1, 2, 3, and 4, focus middle
@@ -159,7 +159,7 @@ function M.setup()
         vscode.call('vscode-harpoon.gotoEditor4')
         vscode.call('workbench.action.focusLeftGroup')
     end, {
-        desc = 'Split: Harpoon 1, 2, 3, 4 (left, mid, right, bottom), focus middle'
+        desc = 'Split: Harpoon 1, 2, 3, 4 (left, mid-focus, right, bottom)'
     })
 
     --
