@@ -12,10 +12,6 @@ function M.setup()
     }
     local keymap = vim.api.nvim_set_keymap
 
-    keymap('n', '<Tab>', ':Tabnext<CR>', opts)
-    keymap('n', '<S-Tab>', ':Tabprev<CR>', opts)
-    keymap('', '<Space>', '<Nop>', opts)
-
     -- Better Scrolling
     keymap('n', '<C-d>', '12jzz', opts)
     keymap('n', '<C-u>', '12kzz', opts)
