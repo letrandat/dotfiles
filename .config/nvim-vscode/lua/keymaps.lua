@@ -509,6 +509,7 @@ function M.setup()
     --
 
     -- Open vsnetrw with "-" (like netrw in Vim)
+    -- https://marketplace.visualstudio.com/items?itemName=danprince.vsnetrw
     keymap('n', '-', function()
         if vim.bo.filetype ~= "vsnetrw" then
             vscode.call('vsnetrw.open')
