@@ -37,6 +37,8 @@
   // Enable font Ligatures
   "editor.fontLigatures": true,
   "editor.fontFamily": "JetBrainsMono Nerd Font",
+  // Minimal number of screen lines to keep above and below the cursor.
+  "editor.cursorSurroundingLines": 10,
 
   // Diff Editor Configuration
   "diffEditor.hideUnchangedRegions.enabled": true,
