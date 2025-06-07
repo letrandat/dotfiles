@@ -208,6 +208,24 @@
     "key": "cmd+shift+j m",
     "command": "extension.multiCommand.maximizeAndFocusPanel"
   },
+  // focus [t]erminal
+  {
+    "key": "cmd+shift+j t",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  // focus [o]utput
+  {
+    "key": "cmd+shift+j o",
+    "command": "workbench.action.output.toggleOutput",
+    "when": "workbench.panel.output.active"
+  },
+  // focus [p]roblem
+  {
+    "key": "cmd+shift+j p",
+    "command": "workbench.actions.view.problems",
+    "when": "workbench.panel.markers.view.active"
+  },
 
   //
   // TESTING KEYBINDINGS
