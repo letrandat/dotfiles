@@ -1,3 +1,4 @@
+local vscode = require('vscode')
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -19,13 +20,10 @@ vim.opt.timeoutlen = 3000
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+-- [[ Basic Configuration ]]
 if vim.g.vscode then
-    -- VSCode configuration
-    local vscode = require('vscode')
     -- set vscode.notify as default notify function.
     vim.notify = vscode.notify
-    -- [[ Keymaps ]]
-    require('vscode-keymaps').setup()
 else
     -- Set to true if you have a Nerd Font installed and selected in the terminal
     vim.g.have_nerd_font = true
@@ -91,6 +89,13 @@ else
     -- instead raise a dialog asking if you wish to save the current file(s)
     -- See `:help 'confirm'`
     vim.o.confirm = true
+end
+
+-- [[ Keymaps ]]
+if vim.g.vscode then
+    require('vscode-keymaps').setup()
+else
+    require('nvim-keymaps').setup()
 end
 
 -- [[ Basic Autocommands ]]
