@@ -238,7 +238,7 @@ function M.setup()
     })
 
     -- [o]rganize imports
-    keymap('n', '<leader>o', function()
+    keymap('n', '<leader>co', function()
         vscode.call('editor.action.organizeImports')
     end, {
         desc = 'Organize imports'
