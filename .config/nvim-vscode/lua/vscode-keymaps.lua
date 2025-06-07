@@ -6,6 +6,22 @@ function M.setup()
     -- CORE CONFIGURATION
     --
 
+    local opts = {
+        noremap = true,
+        silent = true
+    }
+    local keymap = vim.api.nvim_set_keymap
+
+    keymap('n', '<Tab>', ':Tabnext<CR>', opts)
+    keymap('n', '<S-Tab>', ':Tabprev<CR>', opts)
+    keymap('', '<Space>', '<Nop>', opts)
+
+    -- Better Scrolling
+    keymap('n', '<C-d>', '12jzz', opts)
+    keymap('n', '<C-u>', '12kzz', opts)
+    keymap('n', '<C-f>', '24jzz', opts)
+    keymap('n', '<C-b>', '24kzz', opts)
+
     -- Clear highlights on search when pressing <Esc> in normal mode
     --  See `:help hlsearch`
     vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
