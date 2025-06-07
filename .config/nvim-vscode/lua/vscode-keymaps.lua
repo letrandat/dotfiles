@@ -363,6 +363,11 @@ function M.setup()
     end, {
         desc = 'List bookmarks from all files'
     })
+    vim.keymap.set('n', 'mc', function()
+        vscode.call('bookmarks.clearFromAllFiles')
+    end, {
+        desc = 'Clear all bookmarks'
+    })
 
     --
     -- HARPOON CONFIGURATION
