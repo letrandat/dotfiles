@@ -194,9 +194,9 @@
   },
 
   //
-  // TERMINAL SHORTCUTS
+  // PANEL SHORTCUTS
   //
-  // use CMD+shift+j for extra interaction with terminal
+  // use CMD+shift+j for extra interaction with panel
   // [n]ew profile [t]mux
   {
     "key": "cmd+shift+j n t",
