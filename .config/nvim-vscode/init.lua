@@ -28,6 +28,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- allowing more breathing room when using vim keybindings
 vim.opt.timeoutlen = 3000
 
+-- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
+vim.o.ignorecase = true
+vim.o.smartcase = true
+
 if vim.g.vscode then
     local vscode = require('vscode')
     -- set vscode.notify as default notify function.
