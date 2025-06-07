@@ -1,7 +1,3 @@
-local vscode = require('vscode')
--- set vscode.notify as default notify function.
-vim.notify = vscode.notify
-
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -32,8 +28,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- allowing more breathing room when using vim keybindings
 vim.opt.timeoutlen = 3000
 
--- [[ Keymaps ]]
 if vim.g.vscode then
+    local vscode = require('vscode')
+    -- set vscode.notify as default notify function.
+    vim.notify = vscode.notify
+    -- [[ Keymaps ]]
     require('vscode-keymaps').setup()
 else
     -- ordinary Neovim
