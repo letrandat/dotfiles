@@ -31,6 +31,7 @@ vim.notify = vscode.notify
 --
 -- [[ Keymaps ]]
 --
+
 if vim.g.vscode then
     require('keymaps_vscode').setup()
 end
