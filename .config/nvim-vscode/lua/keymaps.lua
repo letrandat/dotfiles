@@ -522,7 +522,8 @@ function M.setup()
     -- GO LANG CONFIGURATION
     --
     keymap('n', '<leader><leader>gc', function()
-        vscode.call('go.test.coverage')
+        vscode.notify('Running Go package coverage...')
+        vscode.action('go.test.coverage')
     end, {
         desc = 'Go: Run package coverage'
     })
