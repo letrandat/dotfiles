@@ -686,9 +686,6 @@
   // removed the plugin but keep this configuration in case I installed it again
   "gitlens.currentLine.enabled": false,
 
-  // Oil Configuration
-  "oil-code.disableVimKeymaps": true,
-
   // GITHUB.COPILOT CONFIGURATION
   "github.copilot.chat.agent.thinkingTool": true,
   "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
