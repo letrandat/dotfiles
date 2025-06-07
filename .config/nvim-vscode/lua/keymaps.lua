@@ -70,6 +70,12 @@ function M.setup()
         desc = 'Go to previous change'
     })
 
+    keymap('n', 'za', function()
+        vscode.call('editor.toggleFold')
+    end, {
+        desc = 'Toggle fold code'
+    })
+
     --
     -- FILES
     --
