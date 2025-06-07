@@ -102,7 +102,7 @@ if vim.g.vscode then
             map("n", "-", function()
                 vscode.action('oil-code.openParent')
             end)
-            map("n", "p", function()
+            map("n", "v", function()
                 vscode.action('oil-code.preview')
             end)
             map("n", "<CR>", function()
