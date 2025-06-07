@@ -2,15 +2,16 @@ local M = {}
 
 function M.setup()
     local vscode = require('vscode')
-    --
-    -- CORE CONFIGURATION
-    --
-
+    local vscode_async = require('vscode').action
     local opts = {
         noremap = true,
         silent = true
     }
     local keymap = vim.keymap.set
+
+    --
+    -- CORE CONFIGURATION
+    --
 
     -- Better Scrolling
     keymap('n', '<C-d>', '12jzz', opts)
@@ -523,7 +524,7 @@ function M.setup()
     --
     keymap('n', '<leader><leader>gc', function()
         vscode.notify('Running Go package coverage...')
-        vscode.action('go.test.coverage')
+        vscode_async('go.test.coverage')
     end, {
         desc = 'Go: Run package coverage'
     })
