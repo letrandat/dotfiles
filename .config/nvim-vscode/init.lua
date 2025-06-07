@@ -1,4 +1,9 @@
 local vscode = require('vscode')
+
+--
+-- SHARE CONFIGURATION
+--
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -20,7 +25,9 @@ vim.opt.timeoutlen = 3000
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+--
 -- [[ Basic Configuration ]]
+--
 if vim.g.vscode then
     -- set vscode.notify as default notify function.
     vim.notify = vscode.notify
@@ -91,14 +98,18 @@ else
     vim.o.confirm = true
 end
 
+--
 -- [[ Keymaps ]]
+--
 if vim.g.vscode then
     require('vscode-keymaps').setup()
 else
     require('nvim-keymaps').setup()
 end
 
+--
 -- [[ Basic Autocommands ]]
+--
 --  See `:help lua-guide-autocommands`
 
 -- Highlight when yanking (copying) text
