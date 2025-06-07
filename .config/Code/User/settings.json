@@ -665,12 +665,12 @@
     // go specific start with prefix `g` (go)
     // <leader>gc" Run go package coverage
     {
-      "before": ["<leader>", "G", "c"],
+      "before": ["<leader>", "<leader>", "g", "c"],
       "commands": ["go.test.coverage"]
     },
     // <leader>gf" go test file
     {
-      "before": ["<leader>", "G", "f"],
+      "before": ["<leader>", "<leader>", "g", "f"],
       "commands": ["go.toggle.test.file"]
     }
   ],
