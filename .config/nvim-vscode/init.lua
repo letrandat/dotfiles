@@ -31,10 +31,7 @@ vim.notify = vscode.notify
 --
 -- [[ Keymaps ]]
 --
-
-if vim.g.vscode then
-    require('keymaps_vscode').setup()
-end
+require('keymaps_vscode').setup()
 
 --
 -- [[ Basic Autocommands ]]
@@ -82,10 +79,6 @@ rtp:prepend(lazypath)
 --    :Lazy update
 --
 -- NOTE: Here is where you install your plugins.
-local function hascode()
-    return vim.g.vscode
-end
 require("lazy").setup({{
-    import = "user.plugins_vscode",
-    cond = hascode
+    import = "user.plugins_vscode"
 }})
