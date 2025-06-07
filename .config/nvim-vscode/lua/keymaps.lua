@@ -505,8 +505,18 @@ function M.setup()
     })
 
     --
-    -- oil.code
+    -- vsnetrw
     --
+
+    -- Open vsnetrw with "-" (like netrw in Vim)
+    -- https://marketplace.visualstudio.com/items?itemName=danprince.vsnetrw
+    keymap('n', '-', function()
+        if vim.bo.filetype ~= "vsnetrw" then
+            vscode.call('vsnetrw.open')
+        end
+    end, {
+        desc = 'Open vsnetrw'
+    })
 
     --
     -- GO LANG CONFIGURATION
