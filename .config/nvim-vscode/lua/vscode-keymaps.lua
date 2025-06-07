@@ -10,7 +10,7 @@ function M.setup()
         noremap = true,
         silent = true
     }
-    local keymap = vim.api.nvim_set_keymap
+    local keymap = vim.keymap.set
 
     -- Better Scrolling
     keymap('n', '<C-d>', '12jzz', opts)
