@@ -47,13 +47,13 @@ function M.setup()
         desc = 'Redo'
     })
 
-    -- Move lines up and down in normal mode with `J` and `K`
-    keymap('n', 'K', function()
+    -- Move lines up and down in normal mode
+    keymap('n', '<c-k>', function()
         vscode.call('editor.action.moveLinesUpAction')
     end, {
         desc = 'Move line up'
     })
-    keymap('n', 'J', function()
+    keymap('n', '<c-j>', function()
         vscode.call('editor.action.moveLinesDownAction')
     end, {
         desc = 'Move line down'
