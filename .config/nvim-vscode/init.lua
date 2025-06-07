@@ -32,12 +32,6 @@ vim.opt.timeoutlen = 3000
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
--- Keep signcolumn on by default
-vim.o.signcolumn = 'yes'
-
--- Decrease update time
-vim.o.updatetime = 250
-
 if vim.g.vscode then
     -- VSCode configuration
     local vscode = require('vscode')
@@ -65,6 +59,18 @@ else
 
     -- Don't show the mode, since it's already in the status line
     vim.o.showmode = false
+
+    -- Enable break indent
+    vim.o.breakindent = true
+
+    -- Save undo history
+    vim.o.undofile = true
+
+    -- Keep signcolumn on by default
+    vim.o.signcolumn = 'yes'
+
+    -- Decrease update time
+    vim.o.updatetime = 250
 
     -- Configure how new splits should be opened
     vim.o.splitright = true
