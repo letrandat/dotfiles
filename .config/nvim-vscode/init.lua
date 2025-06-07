@@ -32,6 +32,9 @@ vim.opt.timeoutlen = 3000
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+-- Keep signcolumn on by default
+vim.o.signcolumn = 'yes'
+
 if vim.g.vscode then
     local vscode = require('vscode')
     -- set vscode.notify as default notify function.
