@@ -653,6 +653,11 @@
       "before": ["m", "l"],
       "commands": ["bookmarks.listFromAllFiles"]
     },
+    // mc to clear all bookmarks
+    {
+      "before": ["m", "c"],
+      "commands": ["bookmarks.clearFromAllFiles"]
+    },
 
     //
     // GO LANG CONFIGURATION
