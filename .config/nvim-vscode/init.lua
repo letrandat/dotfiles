@@ -153,3 +153,9 @@ rtp:prepend(lazypath)
 --    :Lazy update
 --
 -- NOTE: Here is where you install your plugins.
+require("lazy").setup({{
+    import = "user.plugins_vscode",
+    cond = (function()
+        return vim.g.vscode
+    end)
+}})
