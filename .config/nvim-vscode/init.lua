@@ -1,4 +1,4 @@
-local vscode = require('vscode')
+local hascode = vim.g.vscode
 
 --
 -- [[ Basic Configuration ]]
@@ -25,13 +25,17 @@ vim.opt.timeoutlen = 3000
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
--- set vscode.notify as default notify function.
-vim.notify = vscode.notify
+if hascode then
+    -- set vscode.notify as default notify function.
+    vim.notify = require('vscode').notify
+end
 
 --
 -- [[ Keymaps ]]
 --
-require('keymaps').setup()
+if hascode then
+    require('keymaps').setup()
+end
 
 --
 -- [[ Basic Autocommands ]]
