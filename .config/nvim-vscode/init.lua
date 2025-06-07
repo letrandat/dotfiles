@@ -35,12 +35,50 @@ vim.o.smartcase = true
 -- Keep signcolumn on by default
 vim.o.signcolumn = 'yes'
 
+-- Decrease update time
+vim.o.updatetime = 250
+
 if vim.g.vscode then
+    -- VSCode configuration
     local vscode = require('vscode')
     -- set vscode.notify as default notify function.
     vim.notify = vscode.notify
     -- [[ Keymaps ]]
     require('vscode-keymaps').setup()
 else
-    -- ordinary Neovim
+    -- Set to true if you have a Nerd Font installed and selected in the terminal
+    vim.g.have_nerd_font = true
+
+    -- [[ Setting options ]]
+    -- See `:help vim.o`
+    -- NOTE: You can change these options as you wish!
+    --  For more options, you can see `:help option-list`
+
+    -- Make line numbers default
+    vim.o.number = true
+    -- You can also add relative line numbers, to help with jumping.
+    --  Experiment for yourself to see if you like it!
+    vim.o.relativenumber = true
+
+    -- Enable mouse mode, can be useful for resizing splits for example!
+    vim.o.mouse = 'a'
+
+    -- Don't show the mode, since it's already in the status line
+    vim.o.showmode = false
+
+    -- Sets how neovim will display certain whitespace characters in the editor.
+    --  See `:help 'list'`
+    --  and `:help 'listchars'`
+    --
+    --  Notice listchars is set using `vim.opt` instead of `vim.o`.
+    --  It is very similar to `vim.o` but offers an interface for conveniently interacting with tables.
+    --   See `:help lua-options`
+    --   and `:help lua-options-guide`
+    vim.o.list = true
+    vim.opt.listchars = {
+        tab = '» ',
+        trail = '·',
+        nbsp = '␣'
+    }
+
 end
