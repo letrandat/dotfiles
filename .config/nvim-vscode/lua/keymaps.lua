@@ -499,6 +499,19 @@ function M.setup()
     })
 
     --
+    -- vsnetrw
+    --
+
+    -- Open vsnetrw with "-" (like netrw in Vim)
+    keymap('n', '-', function()
+        if vim.bo.filetype ~= "vsnetrw" then
+            vscode.call('vsnetrw.open')
+        end
+    end, {
+        desc = 'Open vsnetrw'
+    })
+
+    --
     -- GO LANG CONFIGURATION
     --
     keymap('n', '<leader><leader>gc', function()
