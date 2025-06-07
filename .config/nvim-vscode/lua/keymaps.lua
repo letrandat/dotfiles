@@ -289,8 +289,15 @@ function M.setup()
     --
     -- SEARCH CONFIGURATION
     --
+    --
     keymap('n', '<leader>sk', function()
         vscode.call('workbench.action.openGlobalKeybindings')
+    end, {
+        desc = 'Open Global Keybindings'
+    })
+
+    keymap('n', '<leader>sK', function()
+        vscode.call('workbench.action.openDefaultKeybindingsFile')
     end, {
         desc = 'Open Global Keybindings'
     })
