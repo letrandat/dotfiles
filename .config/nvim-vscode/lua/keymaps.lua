@@ -529,14 +529,18 @@ function M.setup()
     -- GO LANG CONFIGURATION
     --
     keymap('n', '<leader><leader>gc', function()
-        vscode.notify('Running Go package coverage...')
-        vscode_async('go.test.coverage')
+        if vim.bo.filetype == "go" then
+            vscode.notify('Running Go package coverage...')
+            vscode_async('go.test.coverage')
+        end
     end, {
         desc = 'Go: Run package coverage'
     })
 
     keymap('n', '<leader><leader>gf', function()
-        vscode.call('go.toggle.test.file')
+        if vim.bo.filetype == "go" then
+            vscode.call('go.toggle.test.file')
+        end
     end, {
         desc = 'Go: Toggle test file'
     })
