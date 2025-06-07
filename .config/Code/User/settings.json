@@ -313,7 +313,7 @@
     },
     // equivalent to cmd+w m but focus on harpoon 1
     {
-      "before": ["<leader>", "u", "1"],
+      "before": ["<leader>", "h", "1"],
       "commands": [
         "extension.multiCommand.maximizeAndFocusFirstEditorGroup",
         "vscode-harpoon.gotoEditor1",
@@ -323,7 +323,7 @@
     // create split windows with left, right are harpoon 1 and 2
     // focus left
     {
-      "before": ["<leader>", "u", "2"],
+      "before": ["<leader>", "h", "2"],
       "commands": [
         "extension.multiCommand.maximizeAndFocusFirstEditorGroup",
         "vscode-harpoon.gotoEditor1",
@@ -337,7 +337,7 @@
     // create split windows with left, mid and right are harpoon 1, 2 and 3
     // focus middle
     {
-      "before": ["<leader>", "u", "3"],
+      "before": ["<leader>", "h", "3"],
       "commands": [
         "extension.multiCommand.maximizeAndFocusFirstEditorGroup",
         "vscode-harpoon.gotoEditor1",
@@ -354,7 +354,7 @@
     // create split windows with left, mid and right(top/bottom) are harpoon 1, 2, 3 and 4
     // focus middle
     {
-      "before": ["<leader>", "u", "4"],
+      "before": ["<leader>", "h", "4"],
       "commands": [
         "extension.multiCommand.maximizeAndFocusFirstEditorGroup",
         "vscode-harpoon.gotoEditor1",
