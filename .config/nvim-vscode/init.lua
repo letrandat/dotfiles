@@ -102,9 +102,9 @@ end
 -- [[ Keymaps ]]
 --
 if vim.g.vscode then
-    require('vscode-keymaps').setup()
+    require('keymaps_vscode').setup()
 else
-    require('nvim-keymaps').setup()
+    require('keymaps_nvim').setup()
 end
 
 --
