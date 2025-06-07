@@ -12,19 +12,6 @@ vim.schedule(function()
     vim.o.clipboard = 'unnamedplus'
 end)
 
--- Highlight when yanking (copying) text
---  Try it with `yap` in normal mode
---  See `:help vim.hl.on_yank()`
-vim.api.nvim_create_autocmd('TextYankPost', {
-    desc = 'Highlight when yanking (copying) text',
-    group = vim.api.nvim_create_augroup('kickstart-highlight-yank', {
-        clear = true
-    }),
-    callback = function()
-        vim.hl.on_yank()
-    end
-})
-
 -- allowing more breathing room when using vim keybindings
 vim.opt.timeoutlen = 3000
 
@@ -105,3 +92,19 @@ else
     -- See `:help 'confirm'`
     vim.o.confirm = true
 end
+
+-- [[ Basic Autocommands ]]
+--  See `:help lua-guide-autocommands`
+
+-- Highlight when yanking (copying) text
+--  Try it with `yap` in normal mode
+--  See `:help vim.hl.on_yank()`
+vim.api.nvim_create_autocmd('TextYankPost', {
+    desc = 'Highlight when yanking (copying) text',
+    group = vim.api.nvim_create_augroup('kickstart-highlight-yank', {
+        clear = true
+    }),
+    callback = function()
+        vim.hl.on_yank()
+    end
+})
