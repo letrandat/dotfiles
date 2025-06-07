@@ -22,6 +22,11 @@ function M.setup()
     -- Clear highlights on search when pressing <Esc> in normal mode
     --  See `:help hlsearch`
     keymap('n', '<Esc>', '<cmd>nohlsearch<CR>')
+    keymap('n', '<Esc>', function()
+        vscode.call('notifications.clearAll')
+    end, {
+        desc = 'Clear notifications'
+    })
 
     -- `p` in visual mode delete the selected text to the black hole register (`"_d`), then put (`P`) the contents of the default register
     keymap('x', 'p', '"_dP', {
