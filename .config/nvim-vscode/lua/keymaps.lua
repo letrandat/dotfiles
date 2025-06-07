@@ -299,7 +299,7 @@ function M.setup()
     keymap('n', '<leader>sK', function()
         vscode.call('workbench.action.openDefaultKeybindingsFile')
     end, {
-        desc = 'Open Global Keybindings'
+        desc = 'Open Default Global Keybindings (JSON)'
     })
 
     --
