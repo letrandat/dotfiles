@@ -1,7 +1,10 @@
 alefragnani.bookmarks
+asvetliakov.vscode-neovim
 christian-kohler.npm-intellisense
+danprince.vsnetrw
 davidanson.vscode-markdownlint
 dbaeumer.vscode-eslint
+eamodio.gitlens
 esbenp.prettier-vscode
 foxundermoon.shell-format
 github.copilot
@@ -19,5 +22,6 @@ ryuta46.multi-command
 sonarsource.sonarlint-vscode
 tobias-z.vscode-harpoon
 tompollak.lazygit-vscode
+tomrijndorp.find-it-faster
 vscodevim.vim
 yinfei.luahelper

@@ -37,6 +37,8 @@
   // Enable font Ligatures
   "editor.fontLigatures": true,
   "editor.fontFamily": "JetBrainsMono Nerd Font",
+  // Minimal number of screen lines to keep above and below the cursor.
+  "editor.cursorSurroundingLines": 10,
 
   // Diff Editor Configuration
   "diffEditor.hideUnchangedRegions.enabled": true,
@@ -47,6 +49,7 @@
   // files Configuration
   "files.trimTrailingWhitespace": true,
   "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 300,
 
   // Zen Mode Configuration
   "zenMode.hideLineNumbers": false,
@@ -156,7 +159,10 @@
   ],
 
   // vscode-neovim Configuration
-  "vscode-neovim.NVIM_APPNAME": "nvim-kickstart",
+  "vscode-neovim.NVIM_APPNAME": "nvim-vscode",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
 
   // Vim Configuration
   // vim.core
@@ -180,14 +186,6 @@
       // gv: Reselect the text that was just pasted.
       // y: Yank the reselected text back
       "after": ["p", "g", "v", "y"]
-    },
-    {
-      "before": ["K"],
-      "commands": ["editor.action.moveLinesUpAction"]
-    },
-    {
-      "before": ["J"],
-      "commands": ["editor.action.moveLinesDownAction"]
     },
     // END: Core settings
 
@@ -259,6 +257,14 @@
       "before": [":"],
       "commands": ["vim.showQuickpickCmdLine"]
     },
+    {
+      "before": ["K"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    },
+    {
+      "before": ["J"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    },
 
     //
     // Editor Groups aka VIM SPLIT Movement Configuration
@@ -310,7 +316,7 @@
     },
     // equivalent to cmd+w m but focus on harpoon 1
     {
-      "before": ["<leader>", "u", "1"],
+      "before": ["<leader>", "h", "1"],
       "commands": [
         "extension.multiCommand.maximizeAndFocusFirstEditorGroup",
         "vscode-harpoon.gotoEditor1",
@@ -320,7 +326,7 @@
     // create split windows with left, right are harpoon 1 and 2
     // focus left
     {
-      "before": ["<leader>", "u", "2"],
+      "before": ["<leader>", "h", "2"],
       "commands": [
         "extension.multiCommand.maximizeAndFocusFirstEditorGroup",
         "vscode-harpoon.gotoEditor1",
@@ -334,7 +340,7 @@
     // create split windows with left, mid and right are harpoon 1, 2 and 3
     // focus middle
     {
-      "before": ["<leader>", "u", "3"],
+      "before": ["<leader>", "h", "3"],
       "commands": [
         "extension.multiCommand.maximizeAndFocusFirstEditorGroup",
         "vscode-harpoon.gotoEditor1",
@@ -351,7 +357,7 @@
     // create split windows with left, mid and right(top/bottom) are harpoon 1, 2, 3 and 4
     // focus middle
     {
-      "before": ["<leader>", "u", "4"],
+      "before": ["<leader>", "h", "4"],
       "commands": [
         "extension.multiCommand.maximizeAndFocusFirstEditorGroup",
         "vscode-harpoon.gotoEditor1",
@@ -650,6 +656,11 @@
       "before": ["m", "l"],
       "commands": ["bookmarks.listFromAllFiles"]
     },
+    // mc to clear all bookmarks
+    {
+      "before": ["m", "c"],
+      "commands": ["bookmarks.clearFromAllFiles"]
+    },
 
     //
     // GO LANG CONFIGURATION
@@ -657,12 +668,12 @@
     // go specific start with prefix `g` (go)
     // <leader>gc" Run go package coverage
     {
-      "before": ["<leader>", "G", "c"],
+      "before": ["<leader>", "<leader>", "g", "c"],
       "commands": ["go.test.coverage"]
     },
     // <leader>gf" go test file
     {
-      "before": ["<leader>", "G", "f"],
+      "before": ["<leader>", "<leader>", "g", "f"],
       "commands": ["go.toggle.test.file"]
     }
   ],
@@ -676,13 +687,20 @@
   // removed the plugin but keep this configuration in case I installed it again
   "gitlens.currentLine.enabled": false,
 
+  // find-it-faster
+  "find-it-faster.general.restoreFocusTerminal": true,
+  "find-it-faster.general.showMaximizedTerminal": true,
+
   // GITHUB.COPILOT CONFIGURATION
   "github.copilot.chat.agent.thinkingTool": true,
   "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
 
   // next edit suggestions
-  "github.copilot.nextEditSuggestions.enabled": true,
-  "github.copilot.nextEditSuggestions.fixes": true,
+  "github.copilot.nextEditSuggestions.enabled": false,
+  "github.copilot.nextEditSuggestions.fixes": false,
+  "github.copilot.enable": {
+    "*": false
+  },
 
   // copilot chat configuration
   "github.copilot.chat.search.keywordSuggestions": true,

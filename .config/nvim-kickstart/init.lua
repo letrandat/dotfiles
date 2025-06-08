@@ -168,9 +168,6 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
--- [[ Basic Keymaps ]]
-require('keymaps').setup()
-
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -1045,3 +1042,6 @@ require('lazy').setup({ -- NOTE: Plugins can be added with a link (or for a gith
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
+-- [[ Basic Keymaps ]]
+require('keymaps').setup()

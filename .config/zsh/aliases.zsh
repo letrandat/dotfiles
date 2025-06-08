@@ -22,6 +22,10 @@ alias python="/opt/homebrew/bin/python3"
 # https://github.com/nvim-lua/kickstart.nvim?tab=readme-ov-file#FAQ
 alias kick='NVIM_APPNAME="nvim-kickstart" nvim'
 
+# set NVIM_APPNAME to nvim-vscode
+# https://github.com/nvim-lua/kickstart.nvim?tab=readme-ov-file#FAQ
+alias nvim-vscode='NVIM_APPNAME="nvim-vscode" nvim'
+
 # set alias for tmux-sessionizer
 alias tmux-sessionizer='bash ~/.local/bin/tmux-sessionizer'
 

@@ -1,56 +1,159 @@
 local M = {}
 
 function M.setup()
-  -- [[ Basic Keymaps ]]
-  --  See `:help vim.keymap.set()`
+    local keymap = vim.keymap.set
+    --
+    -- CORE CONFIGURATION
+    --
 
-  -- Clear highlights on search when pressing <Esc> in normal mode
-  --  See `:help hlsearch`
-  vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+    -- Clear highlights on search when pressing <Esc> in normal mode
+    --  See `:help hlsearch`
+    keymap('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
-  -- Diagnostic keymaps
-  vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+    -- quit nvim
+    keymap('n', '<leader>qq', ':q<CR>', {
+        desc = ':q<CR>'
+    })
 
-  -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
-  -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
-  -- is not what someone will guess without a bit more experience.
-  --
-  -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
-  -- or just use <C-\><C-n> to exit terminal mode
-  vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+    -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
+    -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
+    -- is not what someone will guess without a bit more experience.
+    --
+    -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
+    -- or just use <C-\><C-n> to exit terminal mode
+    keymap('t', '<Esc><Esc>', '<C-\\><C-n>', {
+        desc = 'Exit terminal mode'
+    })
 
-  -- TIP: Disable arrow keys in normal mode
-  -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
-  -- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
-  -- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
-  -- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
+    --
+    -- LINES
+    --
+    -- Move lines up and down in normal mode
+    keymap('n', '<c-k>', ':m .-2<CR>==', {
+        desc = 'Move line up'
+    })
+    keymap('n', '<c-j>', ':m .+1<CR>==', {
+        desc = 'Move line down'
+    })
 
-  -- Keybinds to make split navigation easier.
-  --  Use CTRL+<hjkl> to switch between windows
-  --
-  --  See `:help wincmd` for a list of all window commands
-  vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-  vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-  vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-  vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+    -- Move lines up and down in visual mode (multi-line support)
+    keymap('v', '<c-k>', ":m '<-2<CR>gv=gv", {
+        desc = 'Move selected lines up'
+    })
+    keymap('v', '<c-j>', ":m '>+1<CR>gv=gv", {
+        desc = 'Move selected lines down'
+    })
 
-  -- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
-  -- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })
-  -- vim.keymap.set("n", "<C-S-l>", "<C-w>L", { desc = "Move window to the right" })
-  -- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
-  -- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
+    -- Go to next/previous git hunk
+    keymap('n', 'g;', function()
+        vim.cmd('Gitsigns next_hunk')
+    end, {
+        desc = 'Go to next git hunk'
+    })
+    keymap('n', 'g:', function()
+        vim.cmd('Gitsigns prev_hunk')
+    end, {
+        desc = 'Go to previous git hunk'
+    })
 
-  -- Keybinds to work with buffers
-  vim.keymap.set('n', '<S-h>', ':bprev<CR>', { desc = 'Previous buffer' })
-  vim.keymap.set('n', '<S-l>', ':bnext<CR>', { desc = 'Next buffer' })
-  vim.keymap.set('n', '<leader>bd', ':bdelete<CR>', { desc = 'Delete current buffer' })
-  vim.keymap.set('n', '<leader>,', ':Telescope buffers<CR>', { desc = 'Telescope active buffers' })
-  vim.keymap.set('n', '<leader>fp', ':silent !echo %:p | pbcopy<CR>', { desc = 'Copy current buffer file path' })
+    --
+    -- FILES
+    --
 
-  -- Split
-  vim.keymap.set('n', '<leader>wv', ':vsplit<CR>', { desc = 'vsplit' })
-  vim.keymap.set('n', '<leader>ws', ':split<CR>', { desc = 'ssplit' })
-  vim.keymap.set('n', '<leader>wm', ':only<CR>', { desc = 'maximize current buffer' })
+    -- Keybinds to work with buffers
+    keymap('n', '<S-h>', ':bprev<CR>', {
+        desc = 'Previous buffer'
+    })
+    keymap('n', '<S-l>', ':bnext<CR>', {
+        desc = 'Next buffer'
+    })
+
+    keymap('n', '<leader>fp', ':silent !echo %:p | pbcopy<CR>', {
+        desc = 'Copy current buffer file path'
+    })
+
+    -- with telescope
+
+    require('telescope').setup {
+        -- You can put your default mappings / updates / etc. in here
+        --  All the info you're looking for is in `:help telescope.setup()`
+        --
+        -- defaults = {
+        --   mappings = {
+        --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
+        --   },
+        -- },
+        -- pickers = {}
+        extensions = {
+            ['ui-select'] = {require('telescope.themes').get_dropdown()}
+        }
+    }
+
+    -- Enable Telescope extensions if they are installed
+    pcall(require('telescope').load_extension, 'fzf')
+    pcall(require('telescope').load_extension, 'ui-select')
+
+    -- See `:help telescope.builtin`
+    local builtin = require 'telescope.builtin'
+    vim.keymap.set('n', '<leader>ff', function()
+        builtin.find_files({
+            hidden = true,
+            find_command = {'rg', '--files', '--hidden', '--glob', '!.git/*'}
+        })
+    end, {
+        desc = '[S]earch [F]iles'
+    })
+
+    --
+    -- BUFFER/WORKBENCH/WINDOWS CONFIGURATION
+    --
+
+    keymap('n', '<leader>wo', ':%bdelete|edit #|bdelete #<CR>', {
+        desc = 'Close other buffers'
+    })
+
+    keymap('n', '<leader>wd', ':bdelete<CR>', {
+        desc = 'Delete current buffer'
+    })
+
+    keymap('n', '<leader>,', ':Telescope buffers<CR>', {
+        desc = 'Telescope active buffers'
+    })
+
+    keymap('n', '<leader>wv', ':vsplit<CR>', {
+        desc = 'vsplit'
+    })
+
+    keymap('n', '<leader>ws', ':split<CR>', {
+        desc = 'ssplit'
+    })
+
+    keymap('n', '<leader>wm', ':only<CR>', {
+        desc = 'maximize current buffer'
+    })
+
+    -- Move focus between splits using arrow keys
+    keymap('n', '<Up>', '<C-w>k', {
+        desc = 'Focus split up'
+    })
+    keymap('n', '<Down>', '<C-w>j', {
+        desc = 'Focus split down'
+    })
+    keymap('n', '<Left>', '<C-w>h', {
+        desc = 'Focus split left'
+    })
+    keymap('n', '<Right>', '<C-w>l', {
+        desc = 'Focus split right'
+    })
+
+    --
+    -- netrw
+    --
+
+    -- Open netrw in the current file's directory
+    keymap('n', '-', ':Ex<CR>', {
+        desc = 'Open netrw in current directory'
+    })
 end
 
 return M

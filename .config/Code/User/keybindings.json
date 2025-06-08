@@ -129,6 +129,12 @@
     "command": "workbench.action.focusFirstEditorGroup",
     "when": "!inlineChatFocused && inChat"
   },
+  // quickly jump to editor 1 from anywhere, this is equivalent to alt+j
+  // so I may not need this key
+  {
+    "key": "ctrl+escape",
+    "command": "vscode-harpoon.gotoEditor1"
+  },
 
   //
   // GITHUB COPILOT
@@ -194,9 +200,9 @@
   },
 
   //
-  // TERMINAL SHORTCUTS
+  // PANEL SHORTCUTS
   //
-  // use CMD+shift+j for extra interaction with terminal
+  // use CMD+shift+j for extra interaction with panel
   // [n]ew profile [t]mux
   {
     "key": "cmd+shift+j n t",
@@ -207,6 +213,24 @@
   {
     "key": "cmd+shift+j m",
     "command": "extension.multiCommand.maximizeAndFocusPanel"
+  },
+  // focus [t]erminal
+  {
+    "key": "cmd+shift+j t",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  // focus [o]utput
+  {
+    "key": "cmd+shift+j o",
+    "command": "workbench.action.output.toggleOutput",
+    "when": "workbench.panel.output.active"
+  },
+  // focus [p]roblem
+  {
+    "key": "cmd+shift+j p",
+    "command": "workbench.actions.view.problems",
+    "when": "workbench.panel.markers.view.active"
   },
 
   //
@@ -265,5 +289,22 @@
   {
     "key": "cmd+t shift+r",
     "command": "workbench.action.tasks.restartTask"
+  },
+
+  //
+  // find-it-faster
+  //
+  // disable default keybinds
+  {
+    "key": "shift+cmd+j",
+    "command": "-find-it-faster.findFiles"
+  },
+  {
+    "key": "shift+cmd+u",
+    "command": "-find-it-faster.findWithinFiles"
+  },
+  {
+    "key": "ctrl+shift+cmd+u",
+    "command": "-find-it-faster.findWithinFilesWithType"
   }
 ]
