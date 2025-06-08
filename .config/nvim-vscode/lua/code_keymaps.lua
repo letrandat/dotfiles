@@ -95,6 +95,7 @@ function M.setup()
     --
     -- List [f]ile
     keymap("n", "<leader>ff", function()
+        -- NON-EDITOR-FOCUS
         vscode.call("workbench.action.quickOpen")
     end, {
         desc = "VSCode Quick Open"
@@ -126,7 +127,7 @@ function M.setup()
         desc = 'Previous editor in group'
     })
 
-    --
+    -- NON-EDITOR-FOCUS
     -- SEARCH
     -- with find-it-faster
 
@@ -152,6 +153,21 @@ function M.setup()
         vscode.call('find-it-faster.resumeSearch')
     end, {
         desc = '[S]earch [R]esume'
+    })
+
+    -- NON-EDITOR-FOCUS
+    -- SEARCH CONFIGURATION
+    --
+    keymap('n', '<leader>sk', function()
+        vscode.call('workbench.action.openGlobalKeybindings')
+    end, {
+        desc = 'Open Global Keybindings'
+    })
+
+    keymap('n', '<leader>sK', function()
+        vscode.call('workbench.action.openDefaultKeybindingsFile')
+    end, {
+        desc = 'Open Default Global Keybindings (JSON)'
     })
 
     --
@@ -323,22 +339,6 @@ function M.setup()
     })
 
     --
-    -- SEARCH CONFIGURATION
-    --
-    --
-    keymap('n', '<leader>sk', function()
-        vscode.call('workbench.action.openGlobalKeybindings')
-    end, {
-        desc = 'Open Global Keybindings'
-    })
-
-    keymap('n', '<leader>sK', function()
-        vscode.call('workbench.action.openDefaultKeybindingsFile')
-    end, {
-        desc = 'Open Default Global Keybindings (JSON)'
-    })
-
-    --
     -- BUFFER/WORKBENCH/WINDOWS CONFIGURATION
     --
 
@@ -356,6 +356,7 @@ function M.setup()
     })
 
     keymap('n', '<leader>,', function()
+        -- NON-EDITOR-FOCUS
         vscode.call('workbench.action.showAllEditorsByMostRecentlyUsed')
     end, {
         desc = 'Show all editors by MRU'
@@ -441,7 +442,7 @@ function M.setup()
         desc = 'Clear all bookmarks'
     })
 
-    --
+    -- NON-EDITOR-FOCUS
     -- HARPOON CONFIGURATION
     --
 

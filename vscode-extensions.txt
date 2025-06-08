@@ -24,4 +24,5 @@ tobias-z.vscode-harpoon
 tompollak.lazygit-vscode
 tomrijndorp.find-it-faster
 vscodevim.vim
+vspacecode.whichkey
 yinfei.luahelper

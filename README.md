@@ -149,3 +149,12 @@ code --list-extensions > vscode-extensions.txt
 ```bash
 cat vscode-extensions.txt | xargs -L 1 code --install-extension
 ```
+
+## Experiment with Which-Key
+
+- In Neovim, I use leader as normal.
+- Outside of Neovim (e.g., in VS Code), I use Alt+Space to trigger Which-Key.
+- From there, I can get back to neovim's keybinds as if I was in neovim and typed leader.
+
+**Benefit:**
+This setup lets me use a consistent set of keybindings across both Neovim and VS Code. I don't have to relearn shortcuts for each editor. Which-Key also helps me discover and remember keybinds more easily.

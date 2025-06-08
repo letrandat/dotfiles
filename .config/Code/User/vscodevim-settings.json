@@ -1,0 +1,516 @@
+{
+  // backup for vscodevim settings
+  // Vim Configuration
+  // vim.core
+  "vim.useSystemClipboard": true,
+  "vim.leader": "<space>",
+  // Enable and configure yank highlighting
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.duration": 200,
+  // allowing more breathing room when using vim keybindings
+  "vim.timeout": 3000,
+  // vim.easymotion
+  "vim.easymotion": false,
+  "vim.easymotionKeys": "hklyuiopnm,qwertzxcvbasdgjf",
+  "vim.insertModeKeyBindings": [],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    // START: Core settings
+    // prevent copying the selected text after pasting
+    {
+      "before": ["p"],
+      // p: Paste the text.
+      // gv: Reselect the text that was just pasted.
+      // y: Yank the reselected text back
+      "after": ["p", "g", "v", "y"]
+    },
+    // END: Core settings
+
+    //
+    // easymotion
+    //
+    {
+      "before": ["s"], // read: use s to jump to anywhere with easymotion
+      "after": ["<leader>", "<leader>", "s"]
+    },
+
+    //
+    // CODE ACTION
+    //
+    // rename symbol (code, rename)
+    {
+      "before": ["<leader>", "c", "r"],
+      "commands": ["editor.action.rename"]
+    },
+    // "<leader>ca" equivalent to refactor
+    {
+      "before": ["<leader>", "c", "a"],
+      "commands": ["editor.action.refactor"]
+    },
+    // "<leader>cA" equivalent to refactor at source level
+    {
+      "before": ["<leader>", "c", "A"],
+      "commands": ["editor.action.sourceAction"]
+    },
+
+    //
+    // GIT
+    //
+    // [g]it [r]evert (cmd+g r)
+    {
+      "before": ["<leader>", "g", "r"],
+      "commands": ["git.revertSelectedRanges"]
+    },
+    // [g]it [s]tage (cmd+g s)
+    {
+      "before": ["<leader>", "g", "s"],
+      "commands": ["git.stageSelectedRanges"]
+    },
+    // [g]it [u]nstage (cmd+g u)
+    {
+      "before": ["<leader>", "g", "u"],
+      "commands": ["git.unstageSelectedRanges"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    //
+    // Core settings
+    //
+    // use vscode undo/redo
+    {
+      "before": ["u"],
+      "commands": ["undo"]
+    },
+    {
+      "before": ["<C-r>"],
+      "commands": ["redo"]
+    },
+    {
+      "before": ["Y"], // usage: Y to yank from start to end
+      "after": ["y", "$"]
+    },
+    // open vim command line with :
+    {
+      "before": [":"],
+      "commands": ["vim.showQuickpickCmdLine"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    },
+    {
+      "before": ["J"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    },
+
+    //
+    // Editor Groups aka VIM SPLIT Movement Configuration
+    //
+    // note: always use arrow keys to interact with editor groups
+    {
+      "before": ["Up"],
+      "after": ["<C-w>", "k"]
+    },
+    {
+      "before": ["Down"],
+      "after": ["<C-w>", "j"]
+    },
+    {
+      "before": ["Left"],
+      "after": ["<C-w>", "h"]
+    },
+    {
+      "before": ["Right"],
+      "after": ["<C-w>", "l"]
+    },
+    // Move around editors with buffer prev and next
+    {
+      "before": ["H"],
+      "commands": [":bp"]
+    },
+    {
+      "before": ["L"],
+      "commands": [":bn"]
+    },
+
+    //
+    // Vim UI Configuration
+    //
+    // [u]i toggle [w]rap
+    {
+      "before": ["<leader>", "u", "w"],
+      "commands": ["editor.action.toggleWordWrap"]
+    },
+    // [u]i toggle [s]tatus menu
+    {
+      "before": ["<leader>", "u", "s"],
+      "commands": ["workbench.action.toggleStatusbarVisibility"]
+    },
+    // [u]i toggle [z]en mode, my zen mode is actually the centered layout, I don't like full screen
+    {
+      "before": ["<leader>", "u", "z"],
+      "commands": ["workbench.action.toggleCenteredLayout"]
+    },
+    // equivalent to cmd+w m but focus on harpoon 1
+    {
+      "before": ["<leader>", "h", "1"],
+      "commands": [
+        "extension.multiCommand.maximizeAndFocusFirstEditorGroup",
+        "vscode-harpoon.gotoEditor1",
+        "workbench.action.closeOtherEditors"
+      ]
+    },
+    // create split windows with left, right are harpoon 1 and 2
+    // focus left
+    {
+      "before": ["<leader>", "h", "2"],
+      "commands": [
+        "extension.multiCommand.maximizeAndFocusFirstEditorGroup",
+        "vscode-harpoon.gotoEditor1",
+        "workbench.action.closeOtherEditors",
+        "workbench.action.splitEditorRight",
+        "vscode-harpoon.gotoEditor2",
+        "workbench.action.closeOtherEditors",
+        "workbench.action.focusLeftGroup"
+      ]
+    },
+    // create split windows with left, mid and right are harpoon 1, 2 and 3
+    // focus middle
+    {
+      "before": ["<leader>", "h", "3"],
+      "commands": [
+        "extension.multiCommand.maximizeAndFocusFirstEditorGroup",
+        "vscode-harpoon.gotoEditor1",
+        "workbench.action.closeOtherEditors",
+        "workbench.action.splitEditorRight",
+        "vscode-harpoon.gotoEditor2",
+        "workbench.action.closeOtherEditors",
+        "workbench.action.splitEditorRight",
+        "vscode-harpoon.gotoEditor3",
+        "workbench.action.closeOtherEditors",
+        "workbench.action.focusLeftGroup"
+      ]
+    },
+    // create split windows with left, mid and right(top/bottom) are harpoon 1, 2, 3 and 4
+    // focus middle
+    {
+      "before": ["<leader>", "h", "4"],
+      "commands": [
+        "extension.multiCommand.maximizeAndFocusFirstEditorGroup",
+        "vscode-harpoon.gotoEditor1",
+        "workbench.action.closeOtherEditors",
+        "workbench.action.splitEditorRight",
+        "vscode-harpoon.gotoEditor2",
+        "workbench.action.closeOtherEditors",
+        "workbench.action.splitEditorRight",
+        "vscode-harpoon.gotoEditor3",
+        "workbench.action.closeOtherEditors",
+        "workbench.action.splitEditorDown",
+        "vscode-harpoon.gotoEditor4",
+        "workbench.action.focusLeftGroup"
+      ]
+    },
+    // [u]i [v]iew markdown preview to the side
+    {
+      "before": ["<leader>", "u", "v"],
+      "commands": ["markdown.showPreviewToSide"]
+    },
+    // [u]i [V]iew (BIGGER) markdown preview
+    {
+      "before": ["<leader>", "u", "V"],
+      "commands": ["markdown.showPreview"]
+    },
+
+    //
+    // SEARCH CONFIGURATION
+    //
+    // search keybindings
+    {
+      "before": ["<leader>", "s", "k"],
+      "commands": ["workbench.action.openGlobalKeybindings"]
+    },
+
+    //
+    // CODE ACTION
+    //
+    // rename symbol (code, rename)
+    {
+      "before": ["<leader>", "c", "r"],
+      "commands": ["editor.action.rename"]
+    },
+    // [f]ormat code
+    {
+      "before": ["<leader>", "c", "f"],
+      "commands": ["editor.action.formatDocument"]
+    },
+    // [o]rganize imports
+    {
+      "before": ["<leader>", "o"],
+      "commands": ["editor.action.organizeImports"]
+    },
+    // "<leader>ca" equivalent to refactor
+    {
+      "before": ["<leader>", "c", "a"],
+      "commands": ["editor.action.refactor"]
+    },
+    // "<leader>cA" equivalent to refactor at source level
+    {
+      "before": ["<leader>", "c", "A"],
+      "commands": ["editor.action.sourceAction"]
+    },
+
+    //
+    // FILES
+    //
+    // list [f]ile
+    {
+      "before": ["leader", "f", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    // copy [f]ile [p]ath
+    {
+      "before": ["<leader>", "f", "p"],
+      "commands": ["copyRelativeFilePath"]
+    },
+    // copy [f]ile [p]ath but BIGGER
+    {
+      "before": ["<leader>", "f", "P"],
+      "commands": ["copyFilePath"]
+    },
+
+    //
+    // BUFFER/WORKBENCH/WINDOWS CONFIGURATION
+    //
+    // "<leader>wo" close other buffers/windows
+    {
+      "before": ["<leader>", "w", "o"],
+      "commands": ["workbench.action.closeOtherEditors"]
+    },
+    // "<leader>wo" delete current buffer/window
+    {
+      "before": ["<leader>", "w", "d"],
+      "commands": [
+        "workbench.action.closeActiveEditor",
+        "workbench.action.focusFirstEditorGroup"
+      ]
+    },
+    // "<leader>," simulate buffers list in vim
+    {
+      "before": ["<leader>", ","],
+      "commands": ["workbench.action.showAllEditorsByMostRecentlyUsed"]
+    },
+    // "<leader>wv" vertical split right, stay focused
+    {
+      "before": ["<leader>", "w", "v"],
+      "commands": [
+        "workbench.action.splitEditorRight",
+        "workbench.action.focusLeftGroup"
+      ]
+    },
+    // "<leader>wv" vertical split right, move focus
+    {
+      "before": ["<leader>", "w", "V"],
+      "commands": ["workbench.action.splitEditorRight"]
+    },
+    // "<leader>w" normal split down, stay focused
+    {
+      "before": ["<leader>", "w", "s"],
+      "commands": [
+        "workbench.action.splitEditorDown",
+        "workbench.action.focusAboveGroup"
+      ]
+    },
+    // "<leader>w" normal split down, move focus
+    {
+      "before": ["<leader>", "w", "S"],
+      "commands": ["workbench.action.splitEditorDown"]
+    },
+    // "leader>wm" [m]aximize the active editor
+    {
+      "before": ["<leader>", "w", "m"],
+      "commands": ["extension.multiCommand.maximizeAndFocusFirstEditorGroup"]
+    },
+
+    // START: LSP support
+    // gr (go to references)
+    {
+      "before": ["g", "r"],
+      "commands": ["editor.action.goToReferences"]
+    },
+    // gd (go to definition) is already supported by default
+    // gD (go to source definition)
+    {
+      "before": ["g", "D"],
+      "commands": ["typescript.goToSourceDefinition"]
+    },
+    // gi (go to last insert) is already taken by default
+    // gI (go to Implementation)
+    {
+      "before": ["g", "I"],
+      "commands": ["editor.action.goToImplementation"]
+    },
+    // gA (go to [A]ll implementations)
+    {
+      "before": ["g", "A"],
+      "commands": ["references-view.findImplementations"]
+    },
+    // gf (go to f) is similar to gd
+    {
+      "before": ["g", "f"],
+      "after": ["g", "d"]
+    },
+    // gy (go to t[y]pe definition)
+    {
+      "before": ["g", "y"],
+      "commands": ["editor.action.goToTypeDefinition"]
+    },
+    // gK (go to params hint)
+    {
+      "before": ["g", "K"],
+      "commands": ["editor.action.triggerParameterHints"]
+    },
+    // gch (go to [c]all [h]ierachy)
+    {
+      "before": ["g", "c", "h"],
+      "commands": ["editor.showCallHierarchy"]
+    },
+    // go to prev/next problem in files
+    // go to previous [W]arning
+    {
+      "before": ["g", "W"],
+      "commands": ["editor.action.marker.prevInFiles"]
+    },
+    // go to next [w]arning
+    {
+      "before": ["g", "w"],
+      "commands": ["editor.action.marker.nextInFiles"]
+    },
+    // go to [s]ymbol in file
+    {
+      "before": ["<leader>", "s", "s"],
+      "commands": ["workbench.action.gotoSymbol"]
+    },
+    // go to [S]ymbol but bigger, to workspace
+    {
+      "before": ["<leader>", "s", "S"],
+      "commands": ["workbench.action.showAllSymbols"]
+    },
+    {
+      "before": ["g", ";"],
+      "commands": [
+        {
+          "command": "workbench.action.editor.nextChange",
+          "when": "editorTextFocus && !textCompareEditorActive && quickDiffDecorationCount != '0'"
+        },
+        {
+          "command": "workbench.action.compareEditor.nextChange",
+          "when": "textCompareEditorVisible"
+        },
+        {
+          "command": "chatEditor.action.navigateNext",
+          "when": "chatEdits.hasEditorModifications && chatIsEnabled && editorFocus || chatEdits.hasEditorModifications && chatIsEnabled && notebookCellListFocused"
+        }
+      ]
+    },
+    {
+      "before": ["g", ":"],
+      "commands": [
+        {
+          "command": "workbench.action.editor.previousChange",
+          "when": "editorTextFocus && !textCompareEditorActive && quickDiffDecorationCount != '0'"
+        },
+        {
+          "command": "workbench.action.compareEditor.previousChange",
+          "when": "textCompareEditorVisible"
+        },
+        {
+          "command": "chatEditor.action.navigatePrevious",
+          "when": "chatEdits.hasEditorModifications && chatIsEnabled && editorFocus || chatEdits.hasEditorModifications && chatIsEnabled && notebookCellListFocused"
+        }
+      ]
+    },
+
+    //
+    // GIT/LAZYGIT/GITLENS CONFIGURATION
+    //
+    // [g]it [o] open change (cmd+g o)
+    {
+      "before": ["<leader>", "g", "o"],
+      "commands": ["git.openChange", "workbench.action.focusFirstEditorGroup"]
+    },
+    // [g]it [O] open all changes (cmd+g shift+o)
+    {
+      "before": ["<leader>", "g", "O"],
+      "commands": ["git.viewChanges"]
+    },
+    // [g]it vew [S]tage changes
+    {
+      "before": ["<leader>", "g", "S"],
+      "commands": [
+        "git.viewStagedChanges",
+        "workbench.action.focusFirstEditorGroup"
+      ]
+    },
+    // gitlens: [g]it [b]lame
+    {
+      "before": ["<leader>", "g", "b"],
+      "commands": ["gitlens.toggleLineBlame"]
+    },
+    // gitlens: [g]it file [B]lame
+    {
+      "before": ["<leader>", "g", "B"],
+      "commands": ["gitlens.toggleFileBlame"]
+    },
+
+    //
+    // easymotion
+    //
+    {
+      "before": ["s"], // read: use s to jump to anywhere with easymotion
+      "after": ["<leader>", "<leader>", "s"]
+    },
+
+    //
+    // BOOKMARKS PLUGINS CONFIGURATION
+    //
+    // mm to toggle bookmarks
+    {
+      "before": ["m", "m"],
+      "commands": ["bookmarks.toggle"]
+    },
+    // mf to go next
+    {
+      "before": ["m", "f"],
+      "commands": ["bookmarks.jumpToNext"]
+    },
+    // mF to go previous
+    {
+      "before": ["m", "F"],
+      "commands": ["bookmarks.jumpToPrevious"]
+    },
+    // ml to list
+    {
+      "before": ["m", "l"],
+      "commands": ["bookmarks.listFromAllFiles"]
+    },
+    // mc to clear all bookmarks
+    {
+      "before": ["m", "c"],
+      "commands": ["bookmarks.clearFromAllFiles"]
+    },
+
+    //
+    // GO LANG CONFIGURATION
+    //
+    // go specific start with prefix `g` (go)
+    // <leader>gc" Run go package coverage
+    {
+      "before": ["<leader>", "<leader>", "g", "c"],
+      "commands": ["go.test.coverage"]
+    },
+    // <leader>gf" go test file
+    {
+      "before": ["<leader>", "<leader>", "g", "f"],
+      "commands": ["go.toggle.test.file"]
+    }
+  ]
+}

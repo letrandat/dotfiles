@@ -169,12 +169,6 @@
     "command": "workbench.action.focusFirstEditorGroup",
     "when": "hasSearchResult || inSearchEditor"
   },
-  // quickly jump to editor 1 from anywhere, this is equivalent to alt+j
-  // so I may not need this key
-  {
-    "key": "ctrl+escape",
-    "command": "vscode-harpoon.gotoEditor1"
-  },
 
   //
   // GITHUB COPILOT
@@ -346,5 +340,13 @@
   {
     "key": "ctrl+shift+cmd+u",
     "command": "-find-it-faster.findWithinFilesWithType"
+  },
+
+  //
+  // WHICH KEY
+  //
+  {
+    "key": "alt+space",
+    "command": "whichkey.show"
   }
 ]
