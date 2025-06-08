@@ -28,6 +28,16 @@ vim.o.smartcase = true
 if hascode then
     -- set vscode.notify as default notify function.
     vim.notify = require('vscode').notify
+else
+    -- Set to true if you have a Nerd Font installed and selected in the terminal
+    vim.g.have_nerd_font = true
+
+    -- Make line numbers default
+    vim.o.number = true
+
+    -- You can also add relative line numbers, to help with jumping.
+    --  Experiment for yourself to see if you like it!
+    vim.o.relativenumber = true
 end
 
 --
@@ -77,12 +87,21 @@ rtp:prepend(lazypath)
 --
 -- NOTE: Here is where you install your plugins.
 require("lazy").setup({{
-    import = "plugins"
+    import = "code_plugins",
+    cond = hascode
+}, {
+    import = "plugins",
+    cond = true
+}, {
+    import = "nocode_plugins",
+    cond = not hascode
 }})
 
 --
 -- [[ Keymaps ]]
 --
 if hascode then
-    require('keymaps').setup()
+    require('code_keymaps').setup()
+else
+    require('nvim_keymaps').setup()
 end

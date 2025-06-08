@@ -1,4 +1,4 @@
-return {{'tpope/vim-repeat'}, {'tpope/vim-surround'}, {
+return {{
     "chrisgrieser/nvim-various-textobjs",
     event = "VeryLazy",
     opts = {
@@ -6,4 +6,13 @@ return {{'tpope/vim-repeat'}, {'tpope/vim-surround'}, {
             useDefaults = true
         }
     }
+}, {
+    "kylechui/nvim-surround",
+    version = "^3.0.0", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
 }}
