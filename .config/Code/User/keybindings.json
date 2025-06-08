@@ -54,6 +54,40 @@
   },
 
   //
+  // F4, Shift-F4 replacement
+  //
+  // use ctrl+j and ctrl+k instead
+  {
+    "key": "ctrl+j",
+    "command": "search.action.focusNextSearchResult",
+    "when": "hasSearchResult || inSearchEditor"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "search.action.focusPreviousSearchResult",
+    "when": "hasSearchResult || inSearchEditor"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "references-view.next",
+    "when": "reference-list.hasResult && references-view.canNavigate"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "references-view.prev",
+    "when": "reference-list.hasResult && references-view.canNavigate"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "goToNextReference",
+    "when": "inReferenceSearchEditor || referenceSearchVisible"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "goToPreviousReference",
+    "when": "inReferenceSearchEditor || referenceSearchVisible"
+  },
+
   // WINDOWS MANAGEMENT
   // ctrl+w = window management in vim
   // useful when I am at certain window that is not an editor
@@ -128,6 +162,12 @@
     "key": "escape",
     "command": "workbench.action.focusFirstEditorGroup",
     "when": "!inlineChatFocused && inChat"
+  },
+  // escape to focus to editor from search
+  {
+    "key": "escape",
+    "command": "workbench.action.focusFirstEditorGroup",
+    "when": "hasSearchResult || inSearchEditor"
   },
   // quickly jump to editor 1 from anywhere, this is equivalent to alt+j
   // so I may not need this key
