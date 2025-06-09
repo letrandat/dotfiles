@@ -669,89 +669,6 @@
       "type": "bindings",
       "bindings": [
         {
-          "key": "A",
-          "name": "Coverage All",
-          "type": "command",
-          "command": "testing.coverageAll"
-        },
-        {
-          "key": "C",
-          "name": "Coverage at Cursor",
-          "type": "command",
-          "command": "testing.coverageAtCursor",
-          "when": "editorTextFocus"
-        },
-        {
-          "key": "F",
-          "name": "Coverage Current File",
-          "type": "command",
-          "command": "testing.coverageCurrentFile",
-          "when": "editorTextFocus"
-        },
-        {
-          "key": "L",
-          "name": "Coverage Last Run",
-          "type": "command",
-          "command": "testing.coverageLastRun"
-        },
-        {
-          "key": "a",
-          "name": "Debug All",
-          "type": "command",
-          "command": "testing.debugAll"
-        },
-        {
-          "key": "c",
-          "name": "Debug at Cursor",
-          "type": "command",
-          "command": "testing.debugAtCursor",
-          "when": "editorTextFocus"
-        },
-        {
-          "key": "e",
-          "name": "Debug Fail Tests",
-          "type": "command",
-          "command": "testing.debugFailTests"
-        },
-        {
-          "key": "f",
-          "name": "Debug Current File",
-          "type": "command",
-          "command": "testing.debugCurrentFile",
-          "when": "editorTextFocus"
-        },
-        {
-          "key": "l",
-          "name": "Debug Last Run",
-          "type": "command",
-          "command": "testing.debugLastRun"
-        },
-        {
-          "key": "m",
-          "name": "Open Output Peek",
-          "type": "command",
-          "command": "testing.openOutputPeek"
-        },
-        {
-          "key": "e",
-          "name": "Re-Run Fail Tests",
-          "type": "command",
-          "command": "testing.reRunFailTests"
-        },
-        {
-          "key": "l",
-          "name": "Re-Run Last Run",
-          "type": "command",
-          "command": "testing.reRunLastRun"
-        },
-        {
-          "key": "r",
-          "name": "Refresh Tests",
-          "type": "command",
-          "command": "testing.refreshTests",
-          "when": "testing.canRefresh"
-        },
-        {
           "key": "a",
           "name": "Run All",
           "type": "command",
@@ -765,6 +682,90 @@
           "when": "editorTextFocus"
         },
         {
+          "key": "C",
+          "name": "Coverage...",
+          "type": "bindings",
+          "bindings": [
+            {
+              "key": "A",
+              "name": "Coverage All",
+              "type": "command",
+              "command": "testing.coverageAll"
+            },
+            {
+              "key": "C",
+              "name": "Coverage at Cursor",
+              "type": "command",
+              "command": "testing.coverageAtCursor",
+              "when": "editorTextFocus"
+            },
+            {
+              "key": "F",
+              "name": "Coverage Current File",
+              "type": "command",
+              "command": "testing.coverageCurrentFile",
+              "when": "editorTextFocus"
+            },
+            {
+              "key": "i",
+              "name": "Toggle Inline Coverage",
+              "type": "command",
+              "command": "testing.toggleInlineCoverage"
+            },
+            {
+              "key": "L",
+              "name": "Coverage Last Run",
+              "type": "command",
+              "command": "testing.coverageLastRun"
+            }
+          ]
+        },
+        {
+          "key": "d",
+          "name": "Debug...",
+          "type": "bindings",
+          "bindings": [
+            {
+              "key": "a",
+              "name": "Debug All",
+              "type": "command",
+              "command": "testing.debugAll"
+            },
+            {
+              "key": "c",
+              "name": "Debug at Cursor",
+              "type": "command",
+              "command": "testing.debugAtCursor",
+              "when": "editorTextFocus"
+            },
+            {
+              "key": "e",
+              "name": "Debug Fail Tests",
+              "type": "command",
+              "command": "testing.debugFailTests"
+            },
+            {
+              "key": "f",
+              "name": "Debug Current File",
+              "type": "command",
+              "command": "testing.debugCurrentFile",
+              "when": "editorTextFocus"
+            },
+            {
+              "key": "l",
+              "name": "Debug Last Run",
+              "type": "command",
+              "command": "testing.debugLastRun"
+            }
+          ]
+        },
+        {
+          "key": "e",
+          "name": "Re-Run Fail Tests",
+          "type": "command",
+          "command": "testing.reRunFailTests"
+        },
+        {
           "key": "f",
           "name": "Run Current File",
           "type": "command",
@@ -772,30 +773,50 @@
           "when": "editorTextFocus"
         },
         {
+          "key": "l",
+          "name": "Re-Run Last Run",
+          "type": "command",
+          "command": "testing.reRunLastRun"
+        },
+        {
           "key": "o",
-          "name": "Show Most Recent Output",
-          "type": "command",
-          "command": "testing.showMostRecentOutput",
-          "when": "testing.hasAnyResults"
+          "name": "Output...",
+          "type": "bindings",
+          "bindings": [
+            {
+              "key": "h",
+              "name": "Toggle Testing Peek History",
+              "type": "command",
+              "command": "testing.toggleTestingPeekHistory",
+              "when": "testing.isPeekVisible"
+            },
+            {
+              "key": "I",
+              "name": "Toggle Inline Test Output",
+              "type": "command",
+              "command": "testing.toggleInlineTestOutput"
+            },
+            {
+              "key": "m",
+              "name": "Open Output Peek",
+              "type": "command",
+              "command": "testing.openOutputPeek"
+            },
+            {
+              "key": "o",
+              "name": "Show Most Recent Output",
+              "type": "command",
+              "command": "testing.showMostRecentOutput",
+              "when": "testing.hasAnyResults"
+            }
+          ]
         },
         {
-          "key": "i",
-          "name": "Toggle Inline Coverage",
+          "key": "r",
+          "name": "Refresh Tests",
           "type": "command",
-          "command": "testing.toggleInlineCoverage"
-        },
-        {
-          "key": "I",
-          "name": "Toggle Inline Test Output",
-          "type": "command",
-          "command": "testing.toggleInlineTestOutput"
-        },
-        {
-          "key": "h",
-          "name": "Toggle Testing Peek History",
-          "type": "command",
-          "command": "testing.toggleTestingPeekHistory",
-          "when": "testing.isPeekVisible"
+          "command": "testing.refreshTests",
+          "when": "testing.canRefresh"
         },
         {
           "key": "x",
