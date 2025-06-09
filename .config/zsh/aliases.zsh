@@ -35,4 +35,6 @@ bindkey -s ^f "vscode-switcher\n"
 
 # windsurf
 # incase surf is not in the path or not detected
-alias surf='~/.codeium/windsurf/bin/surf'
+if ! which surf &> /dev/null; then
+    alias surf='~/.codeium/windsurf/bin/surf'
+fi
