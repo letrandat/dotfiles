@@ -945,6 +945,55 @@
           ]
         }
       ]
+    },
+    {
+      "key": "z",
+      "name": "Fold...",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "1",
+          "name": "Fold Level 1",
+          "type": "command",
+          "command": "editor.foldLevel1"
+        },
+        {
+          "key": "2",
+          "name": "Fold Level 2",
+          "type": "command",
+          "command": "editor.foldLevel2"
+        },
+        {
+          "key": "M",
+          "name": "[M]ore: Close All Folds",
+          "type": "command",
+          "command": "editor.foldAll"
+        },
+        {
+          "key": "R",
+          "name": "[R]educe: Open All Folds",
+          "type": "command",
+          "command": "editor.unfoldAll"
+        },
+        {
+          "key": "a",
+          "name": "Toggle Fold",
+          "type": "command",
+          "command": "editor.toggleFold"
+        },
+        {
+          "key": "c",
+          "name": "Close Fold",
+          "type": "command",
+          "command": "editor.fold"
+        },
+        {
+          "key": "o",
+          "name": "Open Fold",
+          "type": "command",
+          "command": "editor.unfold"
+        }
+      ]
     }
   ],
 
