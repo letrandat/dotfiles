@@ -155,6 +155,26 @@
         "workbench.action.maximizeEditorHideSidebar", // use this to maximize the editor to actually hide all other panels
         "workbench.action.toggleMaximizedPanel"
       ]
+    },
+    {
+      "command": "extension.multiCommand.vscodeSwitcher",
+      "sequence": [
+        // quit lazygit if it's running
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": { "text": "q" }
+        },
+        // send ctrl+u to terminal to clear terminal before running command
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": { "text": "\u0015vscode-switcher\u000D" }
+        },
+        // focus on terminal to select the new dir
+        {
+          "command": "workbench.action.terminal.toggleTerminal",
+          "when": "terminal.active"
+        }
+      ]
     }
   ],
 
@@ -191,37 +211,46 @@
       "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
     },
     {
-      "key": "h",
-      "name": "Harpoon...",
+      "key": "?",
+      "name": "View All References",
+      "type": "command",
+      "command": "references-view.find",
+      "when": "editorHasReferenceProvider"
+    },
+    {
+      "key": "c",
+      "name": "Code Actions...",
       "type": "bindings",
       "bindings": [
         {
-          "key": "1",
-          "name": "Harpoon 1 view",
+          "key": "a",
+          "name": "Refactor",
           "type": "command",
-          "command": "vscode-neovim.send",
-          "args": "<space>h1"
+          "command": "editor.action.refactor"
         },
         {
-          "key": "2",
-          "name": "Harpoon 2 view",
+          "key": "A",
+          "name": "Source Action",
           "type": "command",
-          "command": "vscode-neovim.send",
-          "args": "<space>h2"
+          "command": "editor.action.sourceAction"
         },
         {
-          "key": "3",
-          "name": "Harpoon 3 view",
+          "key": "f",
+          "name": "Format Document",
           "type": "command",
-          "command": "vscode-neovim.send",
-          "args": "<space>h3"
+          "command": "editor.action.formatDocument"
         },
         {
-          "key": "4",
-          "name": "Harpoon 4 view",
+          "key": "o",
+          "name": "Organize Imports",
           "type": "command",
-          "command": "vscode-neovim.send",
-          "args": "<space>h4"
+          "command": "editor.action.organizeImports"
+        },
+        {
+          "key": "r",
+          "name": "Rename Symbol",
+          "type": "command",
+          "command": "editor.action.rename"
         }
       ]
     },
@@ -231,10 +260,342 @@
       "type": "bindings",
       "bindings": [
         {
+          "key": "P",
+          "name": "Copy Absolute File Path",
+          "type": "command",
+          "command": "copyFilePath"
+        },
+        {
           "key": "f",
           "name": "Files",
           "type": "command",
           "command": "workbench.action.quickOpen"
+        },
+        {
+          "key": "p",
+          "name": "Copy Relative File Path",
+          "type": "command",
+          "command": "copyRelativeFilePath"
+        }
+      ]
+    },
+    {
+      "key": "g",
+      "name": "Git...",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "a",
+          "name": "Git: Commit Amend",
+          "type": "command",
+          "command": "git.commitAmend",
+          "when": "!operationInProgress"
+        },
+        {
+          "key": "b",
+          "name": "GitLens: Toggle Line Blame",
+          "type": "command",
+          "command": "gitlens.toggleLineBlame"
+        },
+        {
+          "key": "B",
+          "name": "GitLens: Toggle File Blame",
+          "type": "command",
+          "command": "gitlens.toggleFileBlame"
+        },
+        {
+          "key": "c",
+          "name": "Git: Commit",
+          "type": "command",
+          "command": "git.commit",
+          "when": "!operationInProgress"
+        },
+        {
+          "key": "g",
+          "name": "Lazygit: Toggle",
+          "type": "command",
+          "command": "lazygit-vscode.toggle",
+          "when": "!operationInProgress"
+        },
+        {
+          "key": "o",
+          "name": "Git: Open Change and Focus First Editor Group",
+          "type": "commands",
+          "commands": [
+            "git.openChange",
+            "workbench.action.focusFirstEditorGroup"
+          ]
+        },
+        {
+          "key": "O",
+          "name": "Git: View All Changes",
+          "type": "command",
+          "command": "git.viewChanges"
+        },
+        {
+          "key": "r",
+          "name": "Git: Revert Selected Ranges",
+          "type": "command",
+          "command": "git.revertSelectedRanges",
+          "when": "editorHasSelection"
+        },
+        {
+          "key": "s",
+          "name": "Git: Stage Selected Ranges",
+          "type": "command",
+          "command": "git.stageSelectedRanges",
+          "when": "editorHasSelection"
+        },
+        {
+          "key": "S",
+          "name": "Git: View Staged Changes and Focus First Editor Group",
+          "type": "commands",
+          "commands": [
+            "git.viewStagedChanges",
+            "workbench.action.focusFirstEditorGroup"
+          ]
+        },
+        {
+          "key": "u",
+          "name": "Git: Unstage Selected Ranges",
+          "type": "command",
+          "command": "git.unstageSelectedRanges",
+          "when": "editorHasSelection"
+        }
+      ]
+    },
+    {
+      "key": "h",
+      "name": "Harpoon...",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "1",
+          "name": "Maximize, go to Harpoon 1, close others",
+          "type": "commands",
+          "commands": [
+            "extension.multiCommand.maximizeAndFocusFirstEditorGroup",
+            "vscode-harpoon.gotoEditor1",
+            "workbench.action.closeOtherEditors"
+          ]
+        },
+        {
+          "key": "2",
+          "name": "Split: Harpoon 1 (left-focus), 2 (right)",
+          "type": "commands",
+          "commands": [
+            "extension.multiCommand.maximizeAndFocusFirstEditorGroup",
+            "vscode-harpoon.gotoEditor1",
+            "workbench.action.closeOtherEditors",
+            "workbench.action.splitEditorRight",
+            "vscode-harpoon.gotoEditor2",
+            "workbench.action.closeOtherEditors",
+            "workbench.action.focusLeftGroup"
+          ]
+        },
+        {
+          "key": "3",
+          "name": "Split: Harpoon 1, 2, 3 (left, mid-focus, right)",
+          "type": "commands",
+          "commands": [
+            "extension.multiCommand.maximizeAndFocusFirstEditorGroup",
+            "vscode-harpoon.gotoEditor1",
+            "workbench.action.closeOtherEditors",
+            "workbench.action.splitEditorRight",
+            "vscode-harpoon.gotoEditor2",
+            "workbench.action.closeOtherEditors",
+            "workbench.action.splitEditorRight",
+            "vscode-harpoon.gotoEditor3",
+            "workbench.action.closeOtherEditors",
+            "workbench.action.focusLeftGroup"
+          ]
+        },
+        {
+          "key": "4",
+          "name": "Split: Harpoon 1, 2, 3, 4 (left, mid-focus, right, bottom)",
+          "type": "commands",
+          "commands": [
+            "extension.multiCommand.maximizeAndFocusFirstEditorGroup",
+            "vscode-harpoon.gotoEditor1",
+            "workbench.action.closeOtherEditors",
+            "workbench.action.splitEditorRight",
+            "vscode-harpoon.gotoEditor2",
+            "workbench.action.closeOtherEditors",
+            "workbench.action.splitEditorRight",
+            "vscode-harpoon.gotoEditor3",
+            "workbench.action.closeOtherEditors",
+            "workbench.action.splitEditorDown",
+            "vscode-harpoon.gotoEditor4",
+            "workbench.action.focusLeftGroup"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "m",
+      "name": "Bookmarks...",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "c",
+          "name": "Clear all bookmarks",
+          "type": "command",
+          "command": "bookmarks.clearFromAllFiles"
+        },
+        {
+          "key": "f",
+          "name": "Jump to next bookmark",
+          "type": "command",
+          "command": "bookmarks.jumpToNext"
+        },
+        {
+          "key": "F",
+          "name": "Jump to previous bookmark",
+          "type": "command",
+          "command": "bookmarks.jumpToPrevious"
+        },
+        {
+          "key": "l",
+          "name": "List bookmarks from all files",
+          "type": "command",
+          "command": "bookmarks.listFromAllFiles"
+        },
+        {
+          "key": "m",
+          "name": "Toggle bookmark",
+          "type": "command",
+          "command": "bookmarks.toggle"
+        }
+      ]
+    },
+    {
+      "key": "j",
+      "name": "Panel Shortcuts...",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "=",
+          "name": "New Terminal (vscode-tmux profile)",
+          "type": "command",
+          "command": "workbench.action.terminal.newWithProfile",
+          "args": { "profileName": "vscode-tmux" }
+        },
+        {
+          "key": "m",
+          "name": "Maximize Terminal Panel",
+          "type": "command",
+          "command": "extension.multiCommand.maximizeAndFocusPanel"
+        },
+        {
+          "key": "o",
+          "name": "Focus Output Panel",
+          "type": "command",
+          "command": "workbench.action.output.toggleOutput",
+          "when": "workbench.panel.output.active"
+        },
+        {
+          "key": "p",
+          "name": "Focus Problems Panel",
+          "type": "command",
+          "command": "workbench.actions.view.problems",
+          "when": "workbench.panel.markers.view.active"
+        },
+        {
+          "key": "t",
+          "name": "Focus Terminal",
+          "type": "command",
+          "command": "workbench.action.terminal.toggleTerminal",
+          "when": "terminal.active"
+        }
+      ]
+    },
+    {
+      "key": "k",
+      "name": "Tasks...",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": ".",
+          "name": "Rerun Last Task",
+          "type": "command",
+          "command": "workbench.action.tasks.reRunTask"
+        },
+        {
+          "key": "R",
+          "name": "Restart Task",
+          "type": "command",
+          "command": "workbench.action.tasks.restartTask"
+        },
+        {
+          "key": "b",
+          "name": "Build Task",
+          "type": "command",
+          "command": "workbench.action.tasks.build",
+          "when": "taskCommandsRegistered"
+        },
+        {
+          "key": "c",
+          "name": "Configure Task Runner",
+          "type": "command",
+          "command": "workbench.action.tasks.configureTaskRunner"
+        },
+        {
+          "key": "g",
+          "name": "Show Running Tasks",
+          "type": "command",
+          "command": "workbench.action.tasks.showTasks"
+        },
+        {
+          "key": "l",
+          "name": "Show Task Log",
+          "type": "command",
+          "command": "workbench.action.tasks.showLog"
+        },
+        {
+          "key": "r",
+          "name": "Run Task",
+          "type": "command",
+          "command": "workbench.action.tasks.runTask"
+        },
+        {
+          "key": "t",
+          "name": "Test Task",
+          "type": "command",
+          "command": "workbench.action.tasks.test"
+        },
+        {
+          "key": "x",
+          "name": "Terminate Task",
+          "type": "command",
+          "command": "workbench.action.tasks.terminate"
+        }
+      ]
+    },
+    {
+      "key": "l",
+      "name": "Lang...",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "g",
+          "name": "Go...",
+          "type": "bindings",
+          "bindings": [
+            {
+              "key": "c",
+              "name": "Go: Run package coverage",
+              "type": "command",
+              "command": "go.test.coverage",
+              "when": "editorLangId == go"
+            },
+            {
+              "key": "f",
+              "name": "Go: Toggle test file",
+              "type": "command",
+              "command": "go.toggle.test.file",
+              "when": "editorLangId == go"
+            }
+          ]
         }
       ]
     },
@@ -262,12 +623,6 @@
           "command": "find-it-faster.findWithinFilesWithType"
         },
         {
-          "key": "r",
-          "name": "Resume Search",
-          "type": "command",
-          "command": "find-it-faster.resumeSearch"
-        },
-        {
           "key": "k",
           "name": "Open Global Keybindings",
           "type": "command",
@@ -278,6 +633,165 @@
           "name": "Open Default Global Keybindings (JSON)",
           "type": "command",
           "command": "workbench.action.openDefaultKeybindingsFile"
+        },
+        {
+          "key": "r",
+          "name": "Resume Search",
+          "type": "command",
+          "command": "find-it-faster.resumeSearch"
+        },
+        {
+          "key": "s",
+          "name": "Go to Symbol in File",
+          "type": "command",
+          "command": "workbench.action.gotoSymbol"
+        },
+        {
+          "key": "S",
+          "name": "Go to Symbol in Workspace",
+          "type": "command",
+          "command": "workbench.action.showAllSymbols"
+        }
+      ]
+    },
+    {
+      "key": "u",
+      "name": "UI...",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "w",
+          "name": "Toggle Word Wrap",
+          "type": "command",
+          "command": "editor.action.toggleWordWrap"
+        },
+        {
+          "key": "s",
+          "name": "Toggle Status Bar Visibility",
+          "type": "command",
+          "command": "workbench.action.toggleStatusbarVisibility"
+        },
+        {
+          "key": "z",
+          "name": "Toggle Centered Layout (Zen mode)",
+          "type": "command",
+          "command": "workbench.action.toggleCenteredLayout"
+        },
+        {
+          "key": "v",
+          "name": "Markdown: Show Preview to Side",
+          "type": "command",
+          "command": "markdown.showPreviewToSide",
+          "when": "editorLangId == markdown"
+        },
+        {
+          "key": "V",
+          "name": "Markdown: Show Preview",
+          "type": "command",
+          "command": "markdown.showPreview",
+          "when": "editorLangId == markdown"
+        }
+      ]
+    },
+    {
+      "key": "w",
+      "name": "Buffer/Window Management...",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": ".",
+          "name": "Jump to dotfiles",
+          "type": "command",
+          "command": "workbench.action.terminal.sendSequence",
+          "args": { "text": "\u0015code ~/workspace/repo/dotfiles\u000D" }
+        },
+        {
+          "key": "1",
+          "name": "Jump to Project 1",
+          "type": "command",
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "\u0015code ~/workspace/repo/learn-go-with-tests\u000D"
+          }
+        },
+        {
+          "key": "d",
+          "name": "Delete Current Buffer/Window",
+          "type": "commands",
+          "commands": [
+            "workbench.action.closeActiveEditor",
+            "workbench.action.focusFirstEditorGroup"
+          ]
+        },
+        {
+          "key": "f",
+          "name": "Find Dirs (Switcher in Terminal)",
+          "type": "command",
+          "command": "extension.multiCommand.vscodeSwitcher"
+        },
+        {
+          "key": "m",
+          "name": "Maximize active editor",
+          "type": "command",
+          "command": "extension.multiCommand.maximizeAndFocusFirstEditorGroup"
+        },
+        {
+          "key": "o",
+          "name": "Close Other Editors",
+          "type": "command",
+          "command": "workbench.action.closeOtherEditors"
+        },
+        {
+          "key": "r",
+          "name": "Reload Window",
+          "type": "command",
+          "command": "workbench.action.reloadWindow"
+        },
+        {
+          "key": "s",
+          "name": "Split down, stay focused",
+          "type": "commands",
+          "commands": [
+            "workbench.action.splitEditorDown",
+            "workbench.action.focusAboveGroup"
+          ]
+        },
+        {
+          "key": "S",
+          "name": "Split down, move focus",
+          "type": "command",
+          "command": "workbench.action.splitEditorDown"
+        },
+        {
+          "key": "T",
+          "name": "Reopen Closed Editor",
+          "type": "command",
+          "command": "workbench.action.reopenClosedEditor"
+        },
+        {
+          "key": "v",
+          "name": "Vertical split right, stay focused",
+          "type": "commands",
+          "commands": [
+            "workbench.action.splitEditorRight",
+            "workbench.action.focusLeftGroup"
+          ]
+        },
+        {
+          "key": "V",
+          "name": "Vertical split right, move focus",
+          "type": "command",
+          "command": "workbench.action.splitEditorRight"
+        },
+        {
+          "key": "y",
+          "name": "Copy buffer to clipboard",
+          "type": "commands",
+          "commands": [
+            "editor.action.selectAll",
+            "editor.action.clipboardCopyAction",
+            "cancelSelection"
+          ]
         }
       ]
     }

@@ -101,7 +101,7 @@ require("lazy").setup({{
 -- [[ Keymaps ]]
 --
 if hascode then
-    require('code_keymaps').setup()
+    require('code_keymaps')
 else
-    require('nvim_keymaps').setup()
+    require('nvim_keymaps')
 end

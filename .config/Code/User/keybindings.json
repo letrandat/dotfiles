@@ -1,56 +1,40 @@
-// Place your key bindings in this file to override the defaults
 // NOTE: Keep this file super small,
-// prefer to keep all the key bindings under vscodevim's scope
+// prefer to keep all the key bindings under whichkey or neovim's keybindings
 // unless
-// 1. the keybindings need to run when !textEditorFocus
-// 2. the keybindings is vscode level and not VIM
+// The keybindings need to run when !textEditorFocus andit does not make sense to have it in whichkey
 [
-  //
-  // VSCODE TOP-LEVEL SHORTCUT
-  //
-  // cmd+w = higher level than editor/window, focus on the entire vscode
-  // reload window
+  // emergency reload window, in case whichkey is broken
   {
     "key": "cmd+w r",
     "command": "workbench.action.reloadWindow"
   },
-  // find dirs
+
+  //
+  // CTRL+U/CTRL+D to scroll up/down
+  //
+  // Disable the default VS Code Ctrl+u/Ctrl+d if it's interfering
   {
-    "key": "cmd+w f",
-    "command": "extension.multiCommand.execute",
-    "args": {
-      "sequence": [
-        // quit lazygit if it's running
-        {
-          "command": "workbench.action.terminal.sendSequence",
-          "args": { "text": "q" }
-        },
-        // send ctrl+u to terminal to clear terminal before running command
-        {
-          "command": "workbench.action.terminal.sendSequence",
-          "args": { "text": "\u0015vscode-switcher\u000D" }
-        },
-        // focus on terminal to select the new dir
-        {
-          "command": "workbench.action.terminal.toggleTerminal",
-          "when": "terminal.active"
-        }
-      ]
-    }
+    "key": "ctrl+u",
+    "command": "-vscode-neovim.ctrl-u",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'"
   },
-  // jumpto dotfiles
   {
-    "key": "cmd+w .",
-    // send ctrl+u to terminal to clear terminal before running command
-    "command": "workbench.action.terminal.sendSequence",
-    "args": { "text": "\u0015code ~/workspace/repo/dotfiles\u000D" }
+    "key": "ctrl+d",
+    "command": "-vscode-neovim.ctrl-d",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'"
   },
-  //Jump to project 1: currently go
+  // Remap to send the command directly to Neovim
   {
-    "key": "cmd+w 1",
-    // send ctrl+u to terminal to clear terminal before running command
-    "command": "workbench.action.terminal.sendSequence",
-    "args": { "text": "\u0015code ~/workspace/repo/learn-go-with-tests\u000D" }
+    "key": "ctrl+u",
+    "command": "vscode-neovim.send",
+    "when": "editorTextFocus",
+    "args": "<C-u>"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "vscode-neovim.send",
+    "when": "editorTextFocus",
+    "args": "<C-d>"
   },
 
   //
@@ -86,26 +70,6 @@
     "key": "ctrl+k",
     "command": "goToPreviousReference",
     "when": "inReferenceSearchEditor || referenceSearchVisible"
-  },
-
-  // WINDOWS MANAGEMENT
-  // ctrl+w = window management in vim
-  // useful when I am at certain window that is not an editor
-  // [d]elete active editor
-  {
-    "key": "ctrl+w d",
-    "command": "extension.multiCommand.execute",
-    "args": {
-      "sequence": [
-        { "command": "workbench.action.closeActiveEditor" },
-        { "command": "workbench.action.focusFirstEditorGroup" }
-      ]
-    }
-  },
-  // simulate buffers list in vim
-  {
-    "key": "ctrl+w ,",
-    "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
   },
 
   //
@@ -169,6 +133,12 @@
     "command": "workbench.action.focusFirstEditorGroup",
     "when": "hasSearchResult || inSearchEditor"
   },
+  // escape to focus to editor from references
+  {
+    "key": "escape",
+    "command": "workbench.action.focusFirstEditorGroup",
+    "when": "reference-list.hasResult && references-view.canNavigate"
+  },
 
   //
   // GITHUB COPILOT
@@ -178,21 +148,6 @@
     "key": "cmd+l",
     "command": "workbench.panel.chat",
     "when": "workbench.panel.chat.view.copilot.active"
-  },
-
-  //
-  // GIT NAVIGATION SHORTCUTS
-  // cmd+g = vscode built-in git. Mainly used for git commit and amend
-  //
-  {
-    "key": "cmd+g c c",
-    "command": "git.commit",
-    "when": "!operationInProgress"
-  },
-  {
-    "key": "cmd+g c a",
-    "command": "git.commitAmend",
-    "when": "!operationInProgress"
   },
 
   //
@@ -234,95 +189,11 @@
   },
 
   //
-  // PANEL SHORTCUTS
-  //
-  // use CMD+shift+j for extra interaction with panel
-  // [n]ew profile [t]mux
-  {
-    "key": "cmd+shift+j n t",
-    "command": "workbench.action.terminal.newWithProfile",
-    "args": { "profileName": "vscode-tmux" }
-  },
-  // [m]aximize terminal
-  {
-    "key": "cmd+shift+j m",
-    "command": "extension.multiCommand.maximizeAndFocusPanel"
-  },
-  // focus [t]erminal
-  {
-    "key": "cmd+shift+j t",
-    "command": "workbench.action.terminal.toggleTerminal",
-    "when": "terminal.active"
-  },
-  // focus [o]utput
-  {
-    "key": "cmd+shift+j o",
-    "command": "workbench.action.output.toggleOutput",
-    "when": "workbench.panel.output.active"
-  },
-  // focus [p]roblem
-  {
-    "key": "cmd+shift+j p",
-    "command": "workbench.actions.view.problems",
-    "when": "workbench.panel.markers.view.active"
-  },
-
-  //
   // TESTING KEYBINDINGS
   //
   {
     "key": "cmd+; .",
     "command": "testing.reRunLastRun"
-  },
-
-  //
-  // TASKS RUN CONFIGURATION
-  //
-  // [r]un
-  {
-    "key": "cmd+t r",
-    "command": "workbench.action.tasks.runTask"
-  },
-  // rerun last
-  {
-    "key": "cmd+t .",
-    "command": "workbench.action.tasks.reRunTask"
-  },
-  // [b]uild
-  {
-    "key": "cmd+t b",
-    "command": "workbench.action.tasks.build",
-    "when": "taskCommandsRegistered"
-  },
-  // [c]onfigure
-  {
-    "key": "cmd+t c",
-    "command": "workbench.action.tasks.configureTaskRunner"
-  },
-  // [g]et running tasks
-  {
-    "key": "cmd+t g",
-    "command": "workbench.action.tasks.showTasks"
-  },
-  // [x] terminate
-  {
-    "key": "cmd+t x",
-    "command": "workbench.action.tasks.terminate"
-  },
-  // [l]og
-  {
-    "key": "cmd+t l",
-    "command": "workbench.action.tasks.showLog"
-  },
-  // [t]est
-  {
-    "key": "cmd+t t",
-    "command": "workbench.action.tasks.test"
-  },
-  // [R]estart
-  {
-    "key": "cmd+t shift+r",
-    "command": "workbench.action.tasks.restartTask"
   },
 
   //
@@ -348,5 +219,14 @@
   {
     "key": "alt+space",
     "command": "whichkey.show"
+  },
+
+  //
+  // TERMINAL
+  //
+  {
+    "key": "ctrl+=",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
   }
 ]
