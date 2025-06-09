@@ -32,3 +32,7 @@ alias tmux-sessionizer='bash ~/.local/bin/tmux-sessionizer'
 # set alias for vscode-switcher
 alias vscode-switcher='bash ~/.local/bin/vscode-switcher'
 bindkey -s ^f "vscode-switcher\n"
+
+# windsurf
+# incase surf is not in the path or not detected
+alias surf='~/.codeium/windsurf/bin/surf'

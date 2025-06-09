@@ -18,8 +18,8 @@ vim.schedule(function()
     vim.o.clipboard = 'unnamedplus'
 end)
 
--- allowing more breathing room when using vim keybindings
-vim.opt.timeoutlen = 3000
+-- Decrease mapped sequence wait time
+vim.o.timeoutlen = 300
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.o.ignorecase = true

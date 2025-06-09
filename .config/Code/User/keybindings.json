@@ -113,34 +113,6 @@
   },
 
   //
-  // ESCAPE KEYBINDINGS
-  //
-  // escape to focus to editor from explorer
-  {
-    "key": "escape",
-    "command": "workbench.action.focusFirstEditorGroup",
-    "when": "explorerViewletFocus"
-  },
-  // escape to focus to editor from chat
-  {
-    "key": "escape",
-    "command": "workbench.action.focusFirstEditorGroup",
-    "when": "!inlineChatFocused && inChat"
-  },
-  // escape to focus to editor from search
-  {
-    "key": "escape",
-    "command": "workbench.action.focusFirstEditorGroup",
-    "when": "hasSearchResult || inSearchEditor"
-  },
-  // escape to focus to editor from references
-  {
-    "key": "escape",
-    "command": "workbench.action.focusFirstEditorGroup",
-    "when": "reference-list.hasResult && references-view.canNavigate"
-  },
-
-  //
   // GITHUB COPILOT
   //
   // use CMD+L to open copilot

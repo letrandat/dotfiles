@@ -148,6 +148,7 @@ code --list-extensions > vscode-extensions.txt
 
 ```bash
 cat vscode-extensions.txt | xargs -L 1 code --install-extension
+cat vscode-extensions.txt | xargs -L 1 windsurf --install-extension
 ```
 
 ## Experiment with Which-Key

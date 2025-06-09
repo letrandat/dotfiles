@@ -600,6 +600,15 @@
       ]
     },
     {
+      "key": "q",
+      "name": "Delete Current Buffer/Window",
+      "type": "commands",
+      "commands": [
+        "workbench.action.closeActiveEditor",
+        "workbench.action.focusFirstEditorGroup"
+      ]
+    },
+    {
       "key": "s",
       "name": "Search...",
       "type": "bindings",
@@ -655,6 +664,148 @@
       ]
     },
     {
+      "key": "t",
+      "name": "Testing...",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "A",
+          "name": "Coverage All",
+          "type": "command",
+          "command": "testing.coverageAll"
+        },
+        {
+          "key": "C",
+          "name": "Coverage at Cursor",
+          "type": "command",
+          "command": "testing.coverageAtCursor",
+          "when": "editorTextFocus"
+        },
+        {
+          "key": "F",
+          "name": "Coverage Current File",
+          "type": "command",
+          "command": "testing.coverageCurrentFile",
+          "when": "editorTextFocus"
+        },
+        {
+          "key": "L",
+          "name": "Coverage Last Run",
+          "type": "command",
+          "command": "testing.coverageLastRun"
+        },
+        {
+          "key": "a",
+          "name": "Debug All",
+          "type": "command",
+          "command": "testing.debugAll"
+        },
+        {
+          "key": "c",
+          "name": "Debug at Cursor",
+          "type": "command",
+          "command": "testing.debugAtCursor",
+          "when": "editorTextFocus"
+        },
+        {
+          "key": "e",
+          "name": "Debug Fail Tests",
+          "type": "command",
+          "command": "testing.debugFailTests"
+        },
+        {
+          "key": "f",
+          "name": "Debug Current File",
+          "type": "command",
+          "command": "testing.debugCurrentFile",
+          "when": "editorTextFocus"
+        },
+        {
+          "key": "l",
+          "name": "Debug Last Run",
+          "type": "command",
+          "command": "testing.debugLastRun"
+        },
+        {
+          "key": "m",
+          "name": "Open Output Peek",
+          "type": "command",
+          "command": "testing.openOutputPeek"
+        },
+        {
+          "key": "e",
+          "name": "Re-Run Fail Tests",
+          "type": "command",
+          "command": "testing.reRunFailTests"
+        },
+        {
+          "key": "l",
+          "name": "Re-Run Last Run",
+          "type": "command",
+          "command": "testing.reRunLastRun"
+        },
+        {
+          "key": "r",
+          "name": "Refresh Tests",
+          "type": "command",
+          "command": "testing.refreshTests",
+          "when": "testing.canRefresh"
+        },
+        {
+          "key": "a",
+          "name": "Run All",
+          "type": "command",
+          "command": "testing.runAll"
+        },
+        {
+          "key": "c",
+          "name": "Run at Cursor",
+          "type": "command",
+          "command": "testing.runAtCursor",
+          "when": "editorTextFocus"
+        },
+        {
+          "key": "f",
+          "name": "Run Current File",
+          "type": "command",
+          "command": "testing.runCurrentFile",
+          "when": "editorTextFocus"
+        },
+        {
+          "key": "o",
+          "name": "Show Most Recent Output",
+          "type": "command",
+          "command": "testing.showMostRecentOutput",
+          "when": "testing.hasAnyResults"
+        },
+        {
+          "key": "i",
+          "name": "Toggle Inline Coverage",
+          "type": "command",
+          "command": "testing.toggleInlineCoverage"
+        },
+        {
+          "key": "I",
+          "name": "Toggle Inline Test Output",
+          "type": "command",
+          "command": "testing.toggleInlineTestOutput"
+        },
+        {
+          "key": "h",
+          "name": "Toggle Testing Peek History",
+          "type": "command",
+          "command": "testing.toggleTestingPeekHistory",
+          "when": "testing.isPeekVisible"
+        },
+        {
+          "key": "x",
+          "name": "Cancel Run",
+          "type": "command",
+          "command": "testing.cancelRun"
+        }
+      ]
+    },
+    {
       "key": "u",
       "name": "UI...",
       "type": "bindings",
@@ -699,13 +850,6 @@
       "type": "bindings",
       "bindings": [
         {
-          "key": ".",
-          "name": "Jump to dotfiles",
-          "type": "command",
-          "command": "workbench.action.terminal.sendSequence",
-          "args": { "text": "\u0015code ~/workspace/repo/dotfiles\u000D" }
-        },
-        {
           "key": "1",
           "name": "Jump to Project 1",
           "type": "command",
@@ -713,6 +857,13 @@
           "args": {
             "text": "\u0015code ~/workspace/repo/learn-go-with-tests\u000D"
           }
+        },
+        {
+          "key": "9",
+          "name": "Jump to dotfiles",
+          "type": "command",
+          "command": "workbench.action.terminal.sendSequence",
+          "args": { "text": "\u0015code ~/workspace/repo/dotfiles\u000D" }
         },
         {
           "key": "d",

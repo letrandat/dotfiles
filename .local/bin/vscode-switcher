@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/vscode-switcher"
 CONFIG_FILE="$CONFIG_DIR/vscode-switcher.conf"
+DEFAULT_EDITOR="${EDITOR:-code}"
+EDITOR_CMD="code"
 
 # config file example
 # ------------------------
@@ -63,9 +65,37 @@ if [[ ${#VS_EXTRA_SEARCH_PATHS[@]} -gt 0 ]]; then
     TS_SEARCH_PATHS+=("${VS_EXTRA_SEARCH_PATHS[@]}")
 fi
 
-if [[ $# -eq 1 ]]; then
-    selected="$1"
-else
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --code)
+            EDITOR_CMD="code"
+            shift
+            ;;
+        --surf)
+            EDITOR_CMD="surf"
+            shift
+            ;;
+        --help)
+            echo "Usage: $0 [--code|--surf] [directory]"
+            echo "  --code    Open in VS Code (default)"
+            echo "  --surf    Open in Windsurf"
+            echo "  --help    Show this help message"
+            exit 0
+            ;;
+        *)
+            if [[ -d "$1" ]]; then
+                selected="$1"
+            else
+                echo "Unknown option: $1"
+                echo "Use --help for usage information"
+                exit 1
+            fi
+            shift
+            ;;
+    esac
+done
+
+if [[ -z "$selected" ]]; then
     selected=$(find_dirs | fzf)
 fi
 
@@ -75,5 +105,5 @@ fi
 
 selected_name=$(basename "$selected" | tr . _)
 
-echo "switch to: $selected_name"
-code $selected
+echo "Opening $selected_name with $EDITOR_CMD"
+"$EDITOR_CMD" "$selected"
