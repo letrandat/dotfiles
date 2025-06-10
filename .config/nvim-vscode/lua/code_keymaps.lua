@@ -206,7 +206,7 @@ end, {
 -- BOOKMARKS PLUGINS CONFIGURATION
 --
 -- Map 'm' as a WhichKey prefix using whichkey.triggerKey
-keymap('n', 'm', function()
+keymap({'n', 'v'}, 'm', function()
     vscode.call('whichkey.show')
     vscode.call('whichkey.triggerKey', {
         args = {'m'}
