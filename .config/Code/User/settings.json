@@ -368,6 +368,25 @@
           "when": "editorTextFocus && !operationInProgress && resourceScheme == 'file'"
         },
         {
+          "key": "t",
+          "name": "GitLens: Worktrees...",
+          "type": "bindings",
+          "bindings": [
+            {
+              "key": "v",
+              "name": "GitLens: Show Worktrees View",
+              "type": "command",
+              "command": "gitlens.showWorktreesView"
+            },
+            {
+              "key": "w",
+              "name": "GitLens: Worktree...",
+              "type": "command",
+              "command": "gitlens.gitCommands.worktree"
+            }
+          ]
+        },
+        {
           "key": "u",
           "name": "Git: Unstage Selected Ranges",
           "type": "command",
