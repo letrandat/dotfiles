@@ -9,6 +9,13 @@
     "command": "workbench.action.reloadWindow"
   },
 
+  // down to editor as vscode lost focus a lot
+  {
+    "key": "cmd+d",
+    "command": "workbench.action.focusFirstEditorGroup",
+    "when": "!editorTextFocus"
+  },
+
   //
   // CTRL+U/CTRL+D to scroll up/down
   //

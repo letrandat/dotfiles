@@ -285,31 +285,11 @@
       "type": "bindings",
       "bindings": [
         {
-          "key": " ",
-          "name": "Git: Stage Selected Ranges",
-          "type": "command",
-          "command": "git.stageSelectedRanges",
-          "when": "editorTextFocus && !operationInProgress && resourceScheme == 'file'"
-        },
-        {
           "key": "/",
           "name": "Search Commits",
           "type": "command",
           "command": "gitlens.showCommitSearch",
           "when": "gitlens:enabled && config.gitlens.keymap == 'alternate'"
-        },
-        {
-          "key": "a",
-          "name": "Git: Commit Amend",
-          "type": "command",
-          "command": "git.commitAmend",
-          "when": "!operationInProgress"
-        },
-        {
-          "key": "b",
-          "name": "GitLens: Toggle Line Blame",
-          "type": "command",
-          "command": "gitlens.toggleLineBlame"
         },
         {
           "key": "B",
@@ -318,24 +298,38 @@
           "command": "gitlens.toggleFileBlame"
         },
         {
-          "key": "c",
-          "name": "Git: Commit",
+          "key": "O",
+          "name": "Git: View All Changes",
           "type": "command",
-          "command": "git.commit",
-          "when": "!operationInProgress"
+          "command": "git.viewChanges"
         },
         {
-          "key": "d",
-          "name": "Git: Revert Selected Ranges",
+          "key": "F",
+          "name": "Open File in Remote",
           "type": "command",
-          "command": "git.revertSelectedRanges",
-          "when": "editorHasSelection"
+          "command": "gitlens.openFileInRemote"
+        },
+        {
+          "key": "S",
+          "name": "Git: View Staged Changes and Focus First Editor Group",
+          "type": "commands",
+          "commands": [
+            "git.viewStagedChanges",
+            "workbench.action.focusFirstEditorGroup"
+          ]
+        },
+        {
+          "key": "b",
+          "name": "GitLens: Toggle Line Blame",
+          "type": "command",
+          "command": "gitlens.toggleLineBlame"
         },
         {
           "key": "e",
           "name": "Git: Open File",
           "type": "command",
-          "command": "git.openFile"
+          "command": "gitlens.openWorkingFile",
+          "when": "gitlens:enabled && resourceScheme =~ /^(gitlens|pr)$/"
         },
         {
           "key": "f",
@@ -360,25 +354,18 @@
           ]
         },
         {
-          "key": "O",
-          "name": "Git: View All Changes",
+          "key": "r",
+          "name": "Git: Revert Selected Ranges",
           "type": "command",
-          "command": "git.viewChanges"
+          "command": "git.revertSelectedRanges",
+          "when": "editorHasSelection"
         },
         {
-          "key": "R",
-          "name": "Open File in Remote",
+          "key": "s",
+          "name": "Git: Stage Selected Ranges",
           "type": "command",
-          "command": "gitlens.openFileInRemote"
-        },
-        {
-          "key": "S",
-          "name": "Git: View Staged Changes and Focus First Editor Group",
-          "type": "commands",
-          "commands": [
-            "git.viewStagedChanges",
-            "workbench.action.focusFirstEditorGroup"
-          ]
+          "command": "git.stageSelectedRanges",
+          "when": "editorTextFocus && !operationInProgress && resourceScheme == 'file'"
         },
         {
           "key": "u",
@@ -387,6 +374,28 @@
           "command": "git.unstageSelectedRanges",
           "when": "editorTextFocus && isInDiffEditor && isInDiffRightEditor && !operationInProgress && resourceScheme == 'git'"
         },
+        {
+          "key": "w",
+          "name": "GitLens: Compare...",
+          "type": "bindings",
+          "bindings": [
+            {
+              "key": "v",
+              "name": "GitLens: Show Search and Compare View",
+              "type": "commands",
+              "commands": [
+                "gitlens.views.searchAndCompare.focus",
+                "gitlens.views.searchAndCompare.refresh"
+              ]
+            },
+            {
+              "key": "w",
+              "name": "GitLens: Compare Working with",
+              "type": "command",
+              "command": "gitlens.compareWorkingWith"
+            }
+          ]
+        }
       ]
     },
     {
