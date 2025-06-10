@@ -285,6 +285,20 @@
       "type": "bindings",
       "bindings": [
         {
+          "key": " ",
+          "name": "Git: Stage Selected Ranges",
+          "type": "command",
+          "command": "git.stageSelectedRanges",
+          "when": "editorTextFocus && !operationInProgress && resourceScheme == 'file'"
+        },
+        {
+          "key": "/",
+          "name": "Search Commits",
+          "type": "command",
+          "command": "gitlens.showCommitSearch",
+          "when": "gitlens:enabled && config.gitlens.keymap == 'alternate'"
+        },
+        {
           "key": "a",
           "name": "Git: Commit Amend",
           "type": "command",
@@ -311,6 +325,25 @@
           "when": "!operationInProgress"
         },
         {
+          "key": "d",
+          "name": "Git: Revert Selected Ranges",
+          "type": "command",
+          "command": "git.revertSelectedRanges",
+          "when": "editorHasSelection"
+        },
+        {
+          "key": "e",
+          "name": "Git: Open File",
+          "type": "command",
+          "command": "git.openFile"
+        },
+        {
+          "key": "f",
+          "name": "Open File Revision",
+          "type": "command",
+          "command": "gitlens.openFileRevision"
+        },
+        {
           "key": "g",
           "name": "Lazygit: Toggle",
           "type": "command",
@@ -333,18 +366,10 @@
           "command": "git.viewChanges"
         },
         {
-          "key": "r",
-          "name": "Git: Revert Selected Ranges",
+          "key": "R",
+          "name": "Open File in Remote",
           "type": "command",
-          "command": "git.revertSelectedRanges",
-          "when": "editorHasSelection"
-        },
-        {
-          "key": "s",
-          "name": "Git: Stage Selected Ranges",
-          "type": "command",
-          "command": "git.stageSelectedRanges",
-          "when": "editorHasSelection"
+          "command": "gitlens.openFileInRemote"
         },
         {
           "key": "S",
@@ -360,8 +385,8 @@
           "name": "Git: Unstage Selected Ranges",
           "type": "command",
           "command": "git.unstageSelectedRanges",
-          "when": "editorHasSelection"
-        }
+          "when": "editorTextFocus && isInDiffEditor && isInDiffRightEditor && !operationInProgress && resourceScheme == 'git'"
+        },
       ]
     },
     {

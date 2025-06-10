@@ -30,7 +30,7 @@ ln -s ~/workspace/repo/dotfiles/.local/bin/vscode-switcher ~/.local/bin/
 
 ln -s ~/workspace/repo/dotfiles/.config/kitty/kitty.conf ~/.config/kitty/kitty.conf
 ln -s ~/workspace/repo/dotfiles/.config/ghostty/config ~/.config/ghostty/config
-ln -s ~/workspace/repo/dotfiles/.config/lazygit/.lazygit.config ~/.config/lazygit/.lazygit.config
+ln -s ~/workspace/repo/dotfiles/.config/lazygit/config.yml ~/.config/lazygit/config.yml
 
 
 # Create symbolic links for folders

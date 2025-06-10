@@ -20,7 +20,7 @@ export NVM_DIR="$HOME/.nvm"
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
 # Added by Windsurf
-export PATH="~/.codeium/windsurf/bin:$PATH"
+export PATH="$HOME/.codeium/windsurf/bin:$PATH"
 
 # Created by `pipx` on 2025-03-29 15:42:54
 export PATH="$PATH:~/.local/bin"
