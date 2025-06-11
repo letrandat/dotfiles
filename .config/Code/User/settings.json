@@ -323,6 +323,12 @@
           "command": "gitlens.toggleLineBlame"
         },
         {
+          "key": "c",
+          "name": "Commit",
+          "type": "command",
+          "command": "git.commit"
+        },
+        {
           "key": "e",
           "name": "Git: Open File",
           "type": "command",
