@@ -214,8 +214,7 @@
       "key": "?",
       "name": "View All References",
       "type": "command",
-      "command": "references-view.find",
-      "when": "editorHasReferenceProvider"
+      "command": "references-view.find"
     },
     {
       "key": "c",
@@ -288,8 +287,7 @@
           "key": "/",
           "name": "Search Commits",
           "type": "command",
-          "command": "gitlens.showCommitSearch",
-          "when": "gitlens:enabled && config.gitlens.keymap == 'alternate'"
+          "command": "gitlens.showCommitSearch"
         },
         {
           "key": "B",
@@ -328,8 +326,7 @@
           "key": "e",
           "name": "Git: Open File",
           "type": "command",
-          "command": "gitlens.openWorkingFile",
-          "when": "gitlens:enabled && resourceScheme =~ /^(gitlens|pr)$/"
+          "command": "gitlens.openWorkingFile"
         },
         {
           "key": "f",
@@ -341,8 +338,7 @@
           "key": "g",
           "name": "Lazygit: Toggle",
           "type": "command",
-          "command": "lazygit-vscode.toggle",
-          "when": "!operationInProgress"
+          "command": "lazygit-vscode.toggle"
         },
         {
           "key": "o",
@@ -357,63 +353,31 @@
           "key": "r",
           "name": "Git: Revert Selected Ranges",
           "type": "command",
-          "command": "git.revertSelectedRanges",
-          "when": "editorHasSelection"
+          "command": "git.revertSelectedRanges"
         },
         {
           "key": "s",
           "name": "Git: Stage Selected Ranges",
           "type": "command",
-          "command": "git.stageSelectedRanges",
-          "when": "editorTextFocus && !operationInProgress && resourceScheme == 'file'"
+          "command": "git.stageSelectedRanges"
         },
         {
           "key": "t",
-          "name": "GitLens: Worktrees...",
-          "type": "bindings",
-          "bindings": [
-            {
-              "key": "v",
-              "name": "GitLens: Show Worktrees View",
-              "type": "command",
-              "command": "gitlens.showWorktreesView"
-            },
-            {
-              "key": "w",
-              "name": "GitLens: Worktree...",
-              "type": "command",
-              "command": "gitlens.gitCommands.worktree"
-            }
-          ]
+          "name": "GitLens: Worktree...",
+          "type": "command",
+          "command": "gitlens.gitCommands.worktree"
         },
         {
           "key": "u",
           "name": "Git: Unstage Selected Ranges",
           "type": "command",
-          "command": "git.unstageSelectedRanges",
-          "when": "editorTextFocus && isInDiffEditor && isInDiffRightEditor && !operationInProgress && resourceScheme == 'git'"
+          "command": "git.unstageSelectedRanges"
         },
         {
           "key": "w",
-          "name": "GitLens: Compare...",
-          "type": "bindings",
-          "bindings": [
-            {
-              "key": "v",
-              "name": "GitLens: Show Search and Compare View",
-              "type": "commands",
-              "commands": [
-                "gitlens.views.searchAndCompare.focus",
-                "gitlens.views.searchAndCompare.refresh"
-              ]
-            },
-            {
-              "key": "w",
-              "name": "GitLens: Compare Working with",
-              "type": "command",
-              "command": "gitlens.compareWorkingWith"
-            }
-          ]
+          "name": "GitLens: Compare Working with",
+          "type": "command",
+          "command": "gitlens.compareWorkingWith"
         }
       ]
     },
@@ -549,22 +513,19 @@
           "key": "o",
           "name": "Focus Output Panel",
           "type": "command",
-          "command": "workbench.action.output.toggleOutput",
-          "when": "workbench.panel.output.active"
+          "command": "workbench.action.output.toggleOutput"
         },
         {
           "key": "p",
           "name": "Focus Problems Panel",
           "type": "command",
-          "command": "workbench.actions.view.problems",
-          "when": "workbench.panel.markers.view.active"
+          "command": "workbench.actions.view.problems"
         },
         {
           "key": "t",
           "name": "Focus Terminal",
           "type": "command",
-          "command": "workbench.action.terminal.toggleTerminal",
-          "when": "terminal.active"
+          "command": "workbench.action.terminal.toggleTerminal"
         }
       ]
     },
@@ -583,8 +544,7 @@
           "key": "b",
           "name": "Build Task",
           "type": "command",
-          "command": "workbench.action.tasks.build",
-          "when": "taskCommandsRegistered"
+          "command": "workbench.action.tasks.build"
         },
         {
           "key": "c",
@@ -638,15 +598,13 @@
               "key": "c",
               "name": "Go: Run package coverage",
               "type": "command",
-              "command": "go.test.coverage",
-              "when": "editorLangId == go"
+              "command": "go.test.coverage"
             },
             {
               "key": "f",
               "name": "Go: Toggle test file",
               "type": "command",
-              "command": "go.toggle.test.file",
-              "when": "editorLangId == go"
+              "command": "go.toggle.test.file"
             }
           ]
         }
@@ -654,13 +612,13 @@
     },
     {
       "key": "p",
-      "name": "Delete Current Buffer/Window",
+      "name": "Command Palette",
       "type": "command",
       "command": "workbench.action.showCommands"
     },
     {
       "key": "q",
-      "name": "Delete Current Buffer/Window",
+      "name": "Close Current Buffer/Window",
       "type": "commands",
       "commands": [
         "workbench.action.closeActiveEditor",
@@ -737,8 +695,7 @@
           "key": "c",
           "name": "Run at Cursor",
           "type": "command",
-          "command": "testing.runAtCursor",
-          "when": "editorTextFocus"
+          "command": "testing.runAtCursor"
         },
         {
           "key": "C",
@@ -755,15 +712,13 @@
               "key": "C",
               "name": "Coverage at Cursor",
               "type": "command",
-              "command": "testing.coverageAtCursor",
-              "when": "editorTextFocus"
+              "command": "testing.coverageAtCursor"
             },
             {
               "key": "F",
               "name": "Coverage Current File",
               "type": "command",
-              "command": "testing.coverageCurrentFile",
-              "when": "editorTextFocus"
+              "command": "testing.coverageCurrentFile"
             },
             {
               "key": "i",
@@ -794,8 +749,7 @@
               "key": "c",
               "name": "Debug at Cursor",
               "type": "command",
-              "command": "testing.debugAtCursor",
-              "when": "editorTextFocus"
+              "command": "testing.debugAtCursor"
             },
             {
               "key": "e",
@@ -807,8 +761,7 @@
               "key": "f",
               "name": "Debug Current File",
               "type": "command",
-              "command": "testing.debugCurrentFile",
-              "when": "editorTextFocus"
+              "command": "testing.debugCurrentFile"
             },
             {
               "key": "l",
@@ -828,8 +781,7 @@
           "key": "f",
           "name": "Run Current File",
           "type": "command",
-          "command": "testing.runCurrentFile",
-          "when": "editorTextFocus"
+          "command": "testing.runCurrentFile"
         },
         {
           "key": "l",
@@ -846,8 +798,7 @@
               "key": "h",
               "name": "Toggle Testing Peek History",
               "type": "command",
-              "command": "testing.toggleTestingPeekHistory",
-              "when": "testing.isPeekVisible"
+              "command": "testing.toggleTestingPeekHistory"
             },
             {
               "key": "I",
@@ -865,8 +816,7 @@
               "key": "o",
               "name": "Show Most Recent Output",
               "type": "command",
-              "command": "testing.showMostRecentOutput",
-              "when": "testing.hasAnyResults"
+              "command": "testing.showMostRecentOutput"
             }
           ]
         },
@@ -874,8 +824,7 @@
           "key": "r",
           "name": "Refresh Tests",
           "type": "command",
-          "command": "testing.refreshTests",
-          "when": "testing.canRefresh"
+          "command": "testing.refreshTests"
         },
         {
           "key": "x",
@@ -912,15 +861,13 @@
           "key": "v",
           "name": "Markdown: Show Preview to Side",
           "type": "command",
-          "command": "markdown.showPreviewToSide",
-          "when": "editorLangId == markdown"
+          "command": "markdown.showPreviewToSide"
         },
         {
           "key": "V",
           "name": "Markdown: Show Preview",
           "type": "command",
-          "command": "markdown.showPreview",
-          "when": "editorLangId == markdown"
+          "command": "markdown.showPreview"
         }
       ]
     },

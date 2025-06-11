@@ -100,6 +100,10 @@ require("lazy").setup({{
 --
 -- [[ Keymaps ]]
 --
+
+-- default keymaps
+require('keymaps')
+
 if hascode then
     require('code_keymaps')
 else
