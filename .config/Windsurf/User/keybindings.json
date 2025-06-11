@@ -168,14 +168,6 @@
   },
 
   //
-  // TESTING KEYBINDINGS
-  //
-  {
-    "key": "cmd+; .",
-    "command": "testing.reRunLastRun"
-  },
-
-  //
   // find-it-faster
   //
   // disable default keybinds

@@ -534,6 +534,12 @@
           "args": { "profileName": "vscode-tmux" }
         },
         {
+          "key": "c",
+          "name": "Copy Last Command and Last Command Output",
+          "type": "command",
+          "command": "workbench.action.terminal.copyLastCommandAndLastCommandOutput"
+        },
+        {
           "key": "m",
           "name": "Maximize Terminal Panel",
           "type": "command",
@@ -568,16 +574,10 @@
       "type": "bindings",
       "bindings": [
         {
-          "key": ".",
+          "key": "l",
           "name": "Rerun Last Task",
           "type": "command",
           "command": "workbench.action.tasks.reRunTask"
-        },
-        {
-          "key": "R",
-          "name": "Restart Task",
-          "type": "command",
-          "command": "workbench.action.tasks.restartTask"
         },
         {
           "key": "b",
@@ -599,7 +599,7 @@
           "command": "workbench.action.tasks.showTasks"
         },
         {
-          "key": "l",
+          "key": "o",
           "name": "Show Task Log",
           "type": "command",
           "command": "workbench.action.tasks.showLog"
