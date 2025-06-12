@@ -259,6 +259,12 @@
       "type": "bindings",
       "bindings": [
         {
+          "key": "d",
+          "name": "compare With Clipboard",
+          "type": "command",
+          "command": "workbench.files.action.compareWithClipboard"
+        },
+        {
           "key": "P",
           "name": "Copy Absolute File Path",
           "type": "command",
@@ -329,6 +335,12 @@
           "command": "git.commit"
         },
         {
+          "key": "d",
+          "name": "GitLens: (Diff) Compare Working with",
+          "type": "command",
+          "command": "gitlens.compareWorkingWith"
+        },
+        {
           "key": "e",
           "name": "Git: Open File",
           "type": "command",
@@ -368,22 +380,29 @@
           "command": "git.stageSelectedRanges"
         },
         {
-          "key": "t",
+          "key": "w",
           "name": "GitLens: Worktree...",
-          "type": "command",
-          "command": "gitlens.gitCommands.worktree"
+          "type": "bindings",
+          "bindings": [
+            {
+              "key": "c",
+              "name": "GitLens: Create Worktree",
+              "type": "command",
+              "command": "gitlens.gitCommands.worktree.create"
+            },
+            {
+              "key": "s",
+              "name": "GitLens: Switch Worktree",
+              "type": "command",
+              "command": "gitlens.gitCommands.worktree.open"
+            }
+          ]
         },
         {
           "key": "u",
           "name": "Git: Unstage Selected Ranges",
           "type": "command",
           "command": "git.unstageSelectedRanges"
-        },
-        {
-          "key": "w",
-          "name": "GitLens: Compare Working with",
-          "type": "command",
-          "command": "gitlens.compareWorkingWith"
         }
       ]
     },
