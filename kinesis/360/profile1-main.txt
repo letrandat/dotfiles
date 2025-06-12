@@ -14,15 +14,15 @@
 [rctr]>[rwin]
 <function1>
 [p]>[prnt]
-[h]>[prev]
-[j]>[vol-]
-[k]>[vol+]
-[l]>[next]
+[k]>[sdmo]
+[j]>[sumo]
 [m]>[mute]
 [lfn]>[lctr]
 [caps]>[defs]
-[up]>[sdmo]
-[down]>[sumo]
+[left]>[prev]
+[rght]>[next]
+[up]>[vol+]
+[down]>[vol-]
 [rfn]>[rctr]
 [lctr]>[lwin]
 [rwin]>[ralt]
@@ -31,3 +31,4 @@
 [spc]>[plpa]
 <function2>
 <function3>
+
