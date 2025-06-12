@@ -7,3 +7,8 @@ local keymap = vim.keymap.set
 keymap({'o', 'x'}, "ae", function()
     require("various-textobjs").entireBuffer()
 end, opts)
+
+-- O (go to next closing bracket)
+keymap({'o', 'x'}, "O", function()
+    require("various-textobjs").toNextClosingBracket()
+end, opts)
