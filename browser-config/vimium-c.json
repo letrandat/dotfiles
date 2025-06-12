@@ -1,0 +1,21 @@
+{
+  "name": "Vimium C",
+  "@time": "6/12/2025, 4:20:36 PM",
+  "time": 1749770436804,
+  "environment": {
+    "extension": "2.12.2",
+    "platform": "mac",
+    "chromium": 137
+  },
+  "exclusionRules": [],
+  "keyLayout": 2,
+  "keyMappings": [
+    "#!no-check",
+    "map <c-i> openUrl url=\"vimium://status/toggle/^\\u0020<c-i>\"",
+    "# PAGES (NOT HISTORY)",
+    "map H previousTab",
+    "map L nextTab",
+    ""
+  ],
+  "vimSync": true
+}
