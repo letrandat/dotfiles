@@ -1,7 +1,7 @@
 {
   "name": "Vimium C",
-  "@time": "6/12/2025, 10:17:01 PM",
-  "time": 1749791821397,
+  "@time": "6/13/2025, 9:39:06 AM",
+  "time": 1749832746161,
   "environment": {
     "extension": "2.12.2",
     "platform": "mac",
@@ -50,7 +50,18 @@
     "map gU goToRoot",
     "map p togglePinTab",
     "map gs toggleViewSource",
+    "map P autoOpen $else=\"openCopiedUrlInNewTab\" # open selection, and if no selection, open the URL from the clipboard",
+    "# SCROLLING",
+    "map J scrollDown count=3",
+    "map K scrollUp count=3",
     ""
   ],
-  "vimSync": true
+  "vimSync": true,
+  "vomnibarOptions": {
+    "actions": "",
+    "maxMatches": 15,
+    "queryInterval": 333,
+    "sizes": "77,3,44,0.8,1944",
+    "styles": "time"
+  }
 }
