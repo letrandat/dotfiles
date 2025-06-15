@@ -229,6 +229,7 @@ end, {
 keymap("n", "gc", function()
 	local lang = vim.bo.filetype
 	if lang == "go" then
+		vim.notify(string.format('Running test coverage for "%s"', lang))
 		vscode.call("go.test.coverage")
 	else
 		vim.notify(string.format('Toggle test coverage is not supported for file type "%s"', lang))
