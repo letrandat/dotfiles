@@ -93,7 +93,7 @@
 
   // Lua Configuration
   "[lua]": {
-    "editor.defaultFormatter": "yinfei.luahelper"
+    "editor.defaultFormatter": "JohnnyMorganz.stylua"
   },
 
   // Shell script configuration
@@ -637,14 +637,7 @@
           "key": "g",
           "name": "Go...",
           "type": "bindings",
-          "bindings": [
-            {
-              "key": "c",
-              "name": "Go: Run package coverage",
-              "type": "command",
-              "command": "go.test.coverage"
-            }
-          ]
+          "bindings": []
         }
       ]
     },
