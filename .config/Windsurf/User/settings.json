@@ -9,7 +9,7 @@
   // Try either of the following themes for dark mode
   // "workbench.preferredDarkColorTheme": "Dracula Theme",
   "workbench.preferredDarkColorTheme": "GitHub Dark Dimmed",
-  "workbench.preferredLightColorTheme": "GitHub Light Default",
+  "workbench.preferredLightColorTheme": "GitHub Dark Dimmed",
 
   // Accessibility Configuration
   // Disable auto-send messages in voice chat
@@ -54,6 +54,7 @@
   // Zen Mode Configuration
   "zenMode.hideLineNumbers": false,
   "zenMode.showTabs": "none",
+  "workbench.editor.centeredLayoutFixedWidth": true,
 
   // Terminal Configuration
   "terminal.integrated.copyOnSelection": true,
@@ -551,6 +552,24 @@
           "name": "Focus Terminal",
           "type": "command",
           "command": "workbench.action.terminal.toggleTerminal"
+        },
+        {
+          "key": "w",
+          "name": "WASD: Resize Pane Up",
+          "type": "commands",
+          "commands": [
+            "workbench.action.terminal.resizePaneUp",
+            "workbench.action.terminal.resizePaneUp"
+          ]
+        },
+        {
+          "key": "s",
+          "name": "WASD: Resize Pane Down",
+          "type": "commands",
+          "commands": [
+            "workbench.action.terminal.resizePaneDown",
+            "workbench.action.terminal.resizePaneDown"
+          ]
         }
       ]
     },
@@ -624,12 +643,6 @@
               "name": "Go: Run package coverage",
               "type": "command",
               "command": "go.test.coverage"
-            },
-            {
-              "key": "f",
-              "name": "Go: Toggle test file",
-              "type": "command",
-              "command": "go.toggle.test.file"
             }
           ]
         }
@@ -686,6 +699,12 @@
           "command": "workbench.action.openDefaultKeybindingsFile"
         },
         {
+          "key": "o",
+          "name": "Show outline",
+          "type": "command",
+          "command": "outline.focus"
+        },
+        {
           "key": "r",
           "name": "Resume Search",
           "type": "command",
@@ -702,6 +721,12 @@
           "name": "Go to Symbol in Workspace",
           "type": "command",
           "command": "workbench.action.showAllSymbols"
+        },
+        {
+          "key": "t",
+          "name": "Show Timeline",
+          "type": "command",
+          "command": "timeline.focus"
         }
       ]
     },
@@ -893,6 +918,19 @@
           "name": "Markdown: Show Preview",
           "type": "command",
           "command": "markdown.showPreview"
+        }
+      ]
+    },
+    {
+      "key": "v",
+      "name": "Neovim...",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "r",
+          "name": "Restart Neovim",
+          "type": "command",
+          "command": "vscode-neovim.restart"
         }
       ]
     },

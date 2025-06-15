@@ -43,6 +43,28 @@
     "when": "editorTextFocus",
     "args": "<C-d>"
   },
+  {
+    "key": "ctrl+b",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        { "command": "vscode-neovim.send", "args": "<C-b>" },
+        { "command": "editorScroll", "args": { "to": "up", "by": "page" } }
+      ]
+    },
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+f",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        { "command": "vscode-neovim.send", "args": "<C-f>" },
+        { "command": "editorScroll", "args": { "to": "down", "by": "page" } }
+      ]
+    },
+    "when": "editorTextFocus"
+  },
 
   //
   // F4, Shift-F4 replacement

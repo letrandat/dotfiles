@@ -24,7 +24,7 @@ alias kick='NVIM_APPNAME="nvim-kickstart" nvim'
 
 # set NVIM_APPNAME to nvim-vscode
 # https://github.com/nvim-lua/kickstart.nvim?tab=readme-ov-file#FAQ
-alias nvim-vscode='NVIM_APPNAME="nvim-vscode" nvim'
+alias ncode='NVIM_APPNAME="nvim-vscode" nvim'
 
 # set alias for tmux-sessionizer
 alias tmux-sessionizer='bash ~/.local/bin/tmux-sessionizer'

@@ -6,9 +6,48 @@ local opts = {
 }
 local keymap = vim.keymap.set
 
+-- the rendering is handle by vscode, so we need this func to simulate zz
+local function simulate_zz()
+    local curline = vim.fn.line('.')
+    vscode.call('revealLine', { args = {lineNumber = curline, at = 'center'}})
+end
+
 --
 -- CORE CONFIGURATION
 --
+
+--
+-- Center cursor on ctrl-u and ctrl-d
+--
+keymap("n", "<c-d>", function()
+  local jump_size = math.floor(vim.fn.winheight(0) / 2)
+  vim.cmd(":norm! " .. jump_size .. "j")
+  simulate_zz()
+end, opts)
+
+keymap("n", "<c-u>", function()
+  local jump_size = math.floor(vim.fn.winheight(0) / 2)
+  vim.cmd(":norm! " .. jump_size .. "k")
+  simulate_zz()
+end, opts)
+
+--
+-- Center cursor on search
+--
+keymap("n", "*", function()
+  vim.cmd(":norm! *")
+  simulate_zz()
+end, opts)
+
+keymap("n", "n", function()
+	vim.cmd(":norm! n")
+	simulate_zz()
+end, opts)
+
+keymap("n", "N", function()
+	vim.cmd(":norm! N")
+	simulate_zz()
+end, opts)
 
 -- Use Space to open Which Key
 keymap({'n', 'v'}, '<Space>', function()
@@ -87,12 +126,6 @@ keymap('n', 'g:', function()
     vscode.call('chatEditor.action.navigatePrevious')
 end, {
     desc = 'Go to previous change'
-})
-
-keymap('n', 'za', function()
-    vscode.call('editor.toggleFold')
-end, {
-    desc = 'Toggle fold code'
 })
 
 -- Move to next and previous editor in group with 'L' and 'H'
@@ -180,6 +213,16 @@ end, {
     desc = 'Go to next warning'
 })
 
+-- toggle test file
+keymap('n', 'gt', function()
+    local lang = vim.bo.filetype
+    if lang == 'go' then
+        vscode.call('go.toggle.test.file')
+    end
+end, {
+    desc = 'Toggle test file'
+})
+
 -- Use arrow keys to move between editor groups (splits)
 keymap('n', '<Up>', function()
     vscode.call('workbench.action.focusAboveGroup')
@@ -236,7 +279,7 @@ end, {
 
 -- Open vsnetrw with "-" (like netrw in Vim)
 -- https://marketplace.visualstudio.com/items?itemName=danprince.vsnetrw
-keymap('n', '-', function()
+keymap('n', '\\', function()
     if vim.bo.filetype ~= "vsnetrw" then
         vscode.call('vsnetrw.open')
     end

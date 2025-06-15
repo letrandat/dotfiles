@@ -15,4 +15,17 @@ return {{
             -- Configuration here, or leave empty to use defaults
         })
     end
+}, {
+    "m4xshen/hardtime.nvim",
+    lazy = false,
+    dependencies = {"MunifTanjim/nui.nvim"},
+    opts = {
+        restricted_keys = {
+            -- ["k"] = false,
+            -- ["j"] = false
+        }
+    }
+}, {
+    "chrisgrieser/nvim-spider",
+    lazy = true
 }}

@@ -16,6 +16,11 @@ keymap('n', '<leader>qq', ':q<CR>', {
     desc = ':q<CR>'
 })
 
+keymap("n", "<C-d>", "<C-d>zz")
+keymap("n", "<C-u>", "<C-u>zz")
+keymap("n", "n", "nzzzv")
+keymap("n", "N", "Nzzzv")
+
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.
@@ -152,6 +157,21 @@ keymap('n', '<Right>', '<C-w>l', {
 --
 
 -- Open netrw in the current file's directory
-keymap('n', '-', ':Ex<CR>', {
+keymap('n', '\\', ':Ex<CR>', {
     desc = 'Open netrw in current directory'
+})
+
+--
+-- Zen
+--
+vim.api.nvim_set_keymap('n', '<leader>uz', "<cmd>lua require'centerpad'.toggle{ leftpad = 30, rightpad = 30 }<cr>", opts)
+
+
+--
+-- Format
+--
+keymap("n", "<leader>cf", function()
+    require("conform").format({ bufnr = 0 })
+end, {
+    desc = 'Format current buffer'
 })
