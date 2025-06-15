@@ -96,7 +96,7 @@ require("lazy").setup({
 		cond = true,
 	},
 	{
-		import = "nocode_plugins",
+		import = "nvim_plugins",
 		cond = not hascode,
 	},
 })
