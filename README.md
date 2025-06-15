@@ -159,3 +159,10 @@ cat vscode-extensions.txt | xargs -L 1 windsurf --install-extension
 
 **Benefit:**
 This setup lets me use a consistent set of keybindings across both Neovim and VS Code. I don't have to relearn shortcuts for each editor. Which-Key also helps me discover and remember keybinds more easily.
+
+## Experiment with zoom level
+
+I want to see if I limit the amount of code i am seeing at one point, does it help me focus better?
+
+- enable zoom level 3 (with 3 cmd++)
+- set ruler to 80 column

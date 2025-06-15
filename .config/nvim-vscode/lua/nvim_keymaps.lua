@@ -21,6 +21,8 @@ keymap("n", "<C-u>", "<C-u>zz")
 keymap("n", "n", "nzzzv")
 keymap("n", "N", "Nzzzv")
 
+keymap("n", "gs", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.

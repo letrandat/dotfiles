@@ -9,7 +9,12 @@ local keymap = vim.keymap.set
 -- the rendering is handle by vscode, so we need this func to simulate zz
 local function simulate_zz()
 	local curline = vim.fn.line(".")
-	vscode.call("revealLine", { args = { lineNumber = curline, at = "center" } })
+	vscode.call("revealLine", {
+		args = {
+			lineNumber = curline,
+			at = "center",
+		},
+	})
 end
 
 --
@@ -89,6 +94,19 @@ keymap("n", "s", function()
 	-- do nothing
 end, {
 	desc = "Redo",
+})
+
+--
+-- replace with gs
+-- Copy word under cursor to clipboard and trigger cmd with search/replace
+keymap("n", "gs", function()
+	-- Get the word under cursor
+	local word = vim.fn.expand("<cword>")
+	local replace = "%s/\\<" .. word .. "\\>/" .. word .. "/gI"
+	-- Open command line with the replace command
+	vim.api.nvim_feedkeys(":" .. replace .. "", "n", false)
+end, {
+	desc = "Copy word to clipboard and trigger search/replace",
 })
 
 --
