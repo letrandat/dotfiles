@@ -1,15 +1,17 @@
 {
   // workbench
   // https://code.visualstudio.com/api/extension-capabilities/extending-workbench
-  // I don't need activity bar and status bar either
+  // I don't need activity bar
   "workbench.activityBar.location": "hidden",
-  "workbench.statusBar.visible": false,
   "workbench.colorTheme": "GitHub Light Default",
   "workbench.iconTheme": "material-icon-theme",
   // Try either of the following themes for dark mode
   // "workbench.preferredDarkColorTheme": "Dracula Theme",
   "workbench.preferredDarkColorTheme": "GitHub Dark Dimmed",
   "workbench.preferredLightColorTheme": "GitHub Dark Dimmed",
+
+  // Breadcrumbs Configuration
+  "breadcrumbs.enabled": false,
 
   // Accessibility Configuration
   // Disable auto-send messages in voice chat
@@ -39,6 +41,8 @@
   "editor.fontFamily": "JetBrainsMono Nerd Font",
   // Minimal number of screen lines to keep above and below the cursor.
   "editor.cursorSurroundingLines": 10,
+  // show extra status bar for editor suggestions
+  "editor.suggest.showStatusBar": true,
   "editor.rulers": [80],
 
   // Diff Editor Configuration
@@ -1089,18 +1093,6 @@
           "type": "command",
           "command": "editor.toggleFold"
         },
-        {
-          "key": "c",
-          "name": "Close Fold",
-          "type": "command",
-          "command": "editor.fold"
-        },
-        {
-          "key": "o",
-          "name": "Open Fold",
-          "type": "command",
-          "command": "editor.unfold"
-        }
       ]
     }
   ],

@@ -304,6 +304,12 @@ end, {
 	desc = "WhichKey: fold",
 })
 
+keymap("n", "za", function()
+	vscode.call("editor.toggleFold")
+end, {
+	desc = "Toggle fold",
+})
+
 --
 -- vsnetrw
 --

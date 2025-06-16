@@ -164,5 +164,7 @@ This setup lets me use a consistent set of keybindings across both Neovim and VS
 
 I want to see if I limit the amount of code i am seeing at one point, does it help me focus better?
 
-- enable zoom level 3 (with 3 cmd++)
+- enable zoom level 2 (with 2 cmd+=)
 - set ruler to 80 column
+
+note: change to zoom level 2 and also whenever I want to see more, just temporary zoom out
