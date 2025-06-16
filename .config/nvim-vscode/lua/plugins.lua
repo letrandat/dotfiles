@@ -24,8 +24,8 @@ return {
 		dependencies = { "MunifTanjim/nui.nvim" },
 		opts = {
 			restricted_keys = {
-				-- ["k"] = false,
-				-- ["j"] = false
+				["j"] = false,
+				["k"] = false,
 			},
 			disabled_keys = {
 				["<Up>"] = false, -- Allow <Up> key
