@@ -43,6 +43,8 @@
 
   // Diff Editor Configuration
   "diffEditor.hideUnchangedRegions.enabled": true,
+  "diffEditor.renderSideBySide": false,
+  "diffEditor.experimental.useTrueInlineView": true,
 
   // Search Configuration
   "search.searchEditor.focusResultsOnSearch": true,
@@ -55,7 +57,6 @@
   // Zen Mode Configuration
   "zenMode.hideLineNumbers": false,
   "zenMode.showTabs": "none",
-  "workbench.editor.centeredLayoutFixedWidth": true,
 
   // Terminal Configuration
   "terminal.integrated.copyOnSelection": true,
@@ -203,6 +204,8 @@
   //
   // whichkey
   //
+  // Some of the whichkey settings are only here to help me remember the keybindings
+  // such as gt, gc, mm, mc, mf, ml etc...
   "whichkey.sortOrder": "alphabetically",
   "whichkey.delay": 0,
   "whichkey.bindings": [
@@ -721,6 +724,27 @@
           "name": "Show Timeline",
           "type": "command",
           "command": "timeline.focus"
+        }
+      ]
+    },
+    {
+      "key": "T",
+      "name": "Toggle...",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "c",
+          "name": "Coverage",
+          "type": "command",
+          "command": "vscode-neovim.send",
+          "args": "gc"
+        },
+        {
+          "key": "t",
+          "name": "Test File",
+          "type": "command",
+          "command": "vscode-neovim.send",
+          "args": "gt"
         }
       ]
     },

@@ -7,7 +7,7 @@ local opts = {
 local keymap = vim.keymap.set
 
 -- the rendering is handle by vscode, so we need this func to simulate zz
-local function simulate_zz()
+local function vscode_zz()
 	local curline = vim.fn.line(".")
 	vscode.call("revealLine", {
 		args = {
@@ -27,13 +27,13 @@ end
 keymap("n", "<c-d>", function()
 	local jump_size = math.floor(vim.fn.winheight(0) / 2)
 	vim.cmd(":norm! " .. jump_size .. "j")
-	simulate_zz()
+	vscode_zz()
 end, opts)
 
 keymap("n", "<c-u>", function()
 	local jump_size = math.floor(vim.fn.winheight(0) / 2)
 	vim.cmd(":norm! " .. jump_size .. "k")
-	simulate_zz()
+	vscode_zz()
 end, opts)
 
 --
@@ -41,17 +41,17 @@ end, opts)
 --
 keymap("n", "*", function()
 	vim.cmd(":norm! *")
-	simulate_zz()
+	vscode_zz()
 end, opts)
 
 keymap("n", "n", function()
 	vim.cmd(":norm! n")
-	simulate_zz()
+	vscode_zz()
 end, opts)
 
 keymap("n", "N", function()
 	vim.cmd(":norm! N")
-	simulate_zz()
+	vscode_zz()
 end, opts)
 
 -- Use Space to open Which Key
