@@ -107,13 +107,8 @@
   // use CMD+e to open explorer
   {
     "key": "cmd+e",
-    "command": "workbench.action.toggleSidebarVisibility",
-    "when": "explorerViewletFocus"
-  },
-  {
-    "key": "cmd+e",
     "command": "workbench.view.explorer",
-    "when": "viewContainer.workbench.view.explorer.enabled && !explorerViewletFocus"
+    "when": "viewContainer.workbench.view.explorer.enabled"
   },
   {
     "key": "a",

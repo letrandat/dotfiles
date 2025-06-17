@@ -110,6 +110,11 @@ end, {
 })
 
 --
+-- mark current file as executable
+-- usually i will map <leader>x to this but since I use whichkey, I will use gx
+keymap("n", "gx", "<cmd>!chmod +x %<CR>", { silent = true })
+
+--
 -- LINES
 --
 
@@ -244,7 +249,7 @@ end, {
 })
 
 -- toggle test coverage
-keymap("n", "gc", function()
+keymap("n", "gC", function()
 	local lang = vim.bo.filetype
 	if lang == "go" then
 		vim.notify(string.format('Toggle test coverage for "%s"', lang))
@@ -304,6 +309,7 @@ end, {
 	desc = "WhichKey: fold",
 })
 
+-- For faster access to toggle fold
 keymap("n", "za", function()
 	vscode.call("editor.toggleFold")
 end, {

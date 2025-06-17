@@ -737,11 +737,11 @@
       "type": "bindings",
       "bindings": [
         {
-          "key": "c",
+          "key": "C",
           "name": "Coverage",
           "type": "command",
           "command": "vscode-neovim.send",
-          "args": "gc"
+          "args": "gC"
         },
         {
           "key": "t",
