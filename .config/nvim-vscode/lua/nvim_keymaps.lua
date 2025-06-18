@@ -80,38 +80,6 @@ keymap("n", "<leader>fp", ":silent !echo %:p | pbcopy<CR>", {
 	desc = "Copy current buffer file path",
 })
 
--- with telescope
-
-require("telescope").setup({
-	-- You can put your default mappings / updates / etc. in here
-	--  All the info you're looking for is in `:help telescope.setup()`
-	--
-	-- defaults = {
-	--   mappings = {
-	--     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-	--   },
-	-- },
-	-- pickers = {}
-	extensions = {
-		["ui-select"] = { require("telescope.themes").get_dropdown() },
-	},
-})
-
--- Enable Telescope extensions if they are installed
-pcall(require("telescope").load_extension, "fzf")
-pcall(require("telescope").load_extension, "ui-select")
-
--- See `:help telescope.builtin`
-local builtin = require("telescope.builtin")
-vim.keymap.set("n", "<leader>ff", function()
-	builtin.find_files({
-		hidden = true,
-		find_command = { "rg", "--files", "--hidden", "--glob", "!.git/*" },
-	})
-end, {
-	desc = "[S]earch [F]iles",
-})
-
 --
 -- BUFFER/WORKBENCH/WINDOWS CONFIGURATION
 --
