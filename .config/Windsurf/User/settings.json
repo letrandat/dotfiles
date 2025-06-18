@@ -666,9 +666,15 @@
     },
     {
       "key": "s",
-      "name": "Search...",
+      "name": "Show/Search...",
       "type": "bindings",
       "bindings": [
+        {
+          "key": "c",
+          "name": "Search and Compare",
+          "type": "command",
+          "command": "gitlens.views.searchAndCompare.focus"
+        },
         {
           "key": "f",
           "name": "Files",
@@ -962,8 +968,8 @@
       "type": "bindings",
       "bindings": [
         {
-          "key": "1",
-          "name": "Jump to Project 1",
+          "key": "j",
+          "name": "Jump to Project j",
           "type": "command",
           "command": "workbench.action.terminal.sendSequence",
           "args": {
@@ -1092,7 +1098,7 @@
           "name": "Toggle Fold",
           "type": "command",
           "command": "editor.toggleFold"
-        },
+        }
       ]
     }
   ],
