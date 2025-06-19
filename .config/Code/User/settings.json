@@ -5,8 +5,6 @@
   "workbench.activityBar.location": "hidden",
   "workbench.colorTheme": "GitHub Light Default",
   "workbench.iconTheme": "material-icon-theme",
-  // Try either of the following themes for dark mode
-  // "workbench.preferredDarkColorTheme": "Dracula Theme",
   "workbench.preferredDarkColorTheme": "GitHub Dark Dimmed",
   "workbench.preferredLightColorTheme": "GitHub Dark Dimmed",
 
@@ -20,6 +18,8 @@
   // Window Configuration
   "window.openFoldersInNewWindow": "off",
   "window.autoDetectColorScheme": true,
+  // Use active editor medium for the window title
+  "window.title": "${activeEditorMedium}${separator}${rootName}${separator}${profileName}",
 
   // Editor Configuration
   "editor.fontSize": 12,
@@ -532,12 +532,6 @@
           "args": { "profileName": "vscode-tmux" }
         },
         {
-          "key": "c",
-          "name": "Copy Last Command and Last Command Output",
-          "type": "command",
-          "command": "workbench.action.terminal.copyLastCommandAndLastCommandOutput"
-        },
-        {
           "key": "m",
           "name": "Maximize Terminal Panel",
           "type": "command",
@@ -554,30 +548,6 @@
           "name": "Focus Problems Panel",
           "type": "command",
           "command": "workbench.actions.view.problems"
-        },
-        {
-          "key": "t",
-          "name": "Focus Terminal",
-          "type": "command",
-          "command": "workbench.action.terminal.toggleTerminal"
-        },
-        {
-          "key": "w",
-          "name": "WASD: Resize Pane Up",
-          "type": "commands",
-          "commands": [
-            "workbench.action.terminal.resizePaneUp",
-            "workbench.action.terminal.resizePaneUp"
-          ]
-        },
-        {
-          "key": "s",
-          "name": "WASD: Resize Pane Down",
-          "type": "commands",
-          "commands": [
-            "workbench.action.terminal.resizePaneDown",
-            "workbench.action.terminal.resizePaneDown"
-          ]
         }
       ]
     },
@@ -743,13 +713,6 @@
       "type": "bindings",
       "bindings": [
         {
-          "key": "C",
-          "name": "Coverage",
-          "type": "command",
-          "command": "vscode-neovim.send",
-          "args": "gC"
-        },
-        {
           "key": "t",
           "name": "Test File",
           "type": "command",
@@ -777,40 +740,10 @@
         },
         {
           "key": "C",
-          "name": "Coverage...",
-          "type": "bindings",
-          "bindings": [
-            {
-              "key": "A",
-              "name": "Coverage All",
-              "type": "command",
-              "command": "testing.coverageAll"
-            },
-            {
-              "key": "C",
-              "name": "Coverage at Cursor",
-              "type": "command",
-              "command": "testing.coverageAtCursor"
-            },
-            {
-              "key": "F",
-              "name": "Coverage Current File",
-              "type": "command",
-              "command": "testing.coverageCurrentFile"
-            },
-            {
-              "key": "i",
-              "name": "Toggle Inline Coverage",
-              "type": "command",
-              "command": "testing.toggleInlineCoverage"
-            },
-            {
-              "key": "L",
-              "name": "Coverage Last Run",
-              "type": "command",
-              "command": "testing.coverageLastRun"
-            }
-          ]
+          "name": "Coverage",
+          "type": "command",
+          "command": "vscode-neovim.send",
+          "args": "gC"
         },
         {
           "key": "d",
@@ -857,9 +790,10 @@
         },
         {
           "key": "f",
-          "name": "Run Current File",
+          "name": "Test File",
           "type": "command",
-          "command": "testing.runCurrentFile"
+          "command": "vscode-neovim.send",
+          "args": "gt"
         },
         {
           "key": "l",
@@ -905,6 +839,12 @@
           "command": "testing.refreshTests"
         },
         {
+          "key": "t",
+          "name": "Run Current File",
+          "type": "command",
+          "command": "testing.runCurrentFile"
+        },
+        {
           "key": "x",
           "name": "Cancel Run",
           "type": "command",
@@ -914,7 +854,7 @@
     },
     {
       "key": "u",
-      "name": "UI...",
+      "name": "Toggle/UI...",
       "type": "bindings",
       "bindings": [
         {
@@ -1051,16 +991,6 @@
           "name": "Vertical split right, move focus",
           "type": "command",
           "command": "workbench.action.splitEditorRight"
-        },
-        {
-          "key": "y",
-          "name": "Copy buffer to clipboard",
-          "type": "commands",
-          "commands": [
-            "editor.action.selectAll",
-            "editor.action.clipboardCopyAction",
-            "cancelSelection"
-          ]
         }
       ]
     },
