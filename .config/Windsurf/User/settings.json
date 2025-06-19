@@ -249,6 +249,12 @@
           "command": "editor.action.formatDocument"
         },
         {
+          "key": "F",
+          "name": "Format Document with...",
+          "type": "command",
+          "command": "editor.action.formatDocument.multiple"
+        },
+        {
           "key": "o",
           "name": "Organize Imports",
           "type": "command",
@@ -479,6 +485,30 @@
             "vscode-harpoon.gotoEditor4",
             "workbench.action.focusLeftGroup"
           ]
+        },
+        {
+          "key": "j",
+          "name": "Replace Harpoon 1",
+          "type": "command",
+          "command": "vscode-harpoon.addEditor1"
+        },
+        {
+          "key": "k",
+          "name": "Replace Harpoon 2",
+          "type": "command",
+          "command": "vscode-harpoon.addEditor2"
+        },
+        {
+          "key": "l",
+          "name": "Replace Harpoon 3",
+          "type": "command",
+          "command": "vscode-harpoon.addEditor3"
+        },
+        {
+          "key": ";",
+          "name": "Replace Harpoon 4",
+          "type": "command",
+          "command": "vscode-harpoon.addEditor4"
         }
       ]
     },
