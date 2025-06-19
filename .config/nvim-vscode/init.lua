@@ -88,10 +88,6 @@ rtp:prepend(lazypath)
 -- NOTE: Here is where you install your plugins.
 require("lazy").setup({
 	{
-		import = "code_plugins",
-		cond = hascode,
-	},
-	{
 		import = "plugins",
 		cond = true,
 	},
