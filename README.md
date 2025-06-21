@@ -162,6 +162,8 @@ This setup lets me use a consistent set of keybindings across both Neovim and VS
 
 ## Experiment with zoom level
 
+Update Jun 20: it's still working very well for me. Most of the time I stay in zoom level 2 and only zoom out when I need to see more.
+
 I want to see if I limit the amount of code i am seeing at one point, does it help me focus better?
 
 - enable zoom level 2 (with 2 cmd+=)
