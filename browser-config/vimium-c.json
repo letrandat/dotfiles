@@ -1,0 +1,60 @@
+{
+  "name": "Vimium C",
+  "@time": "6/20/2025, 6:28:17 PM",
+  "time": 1750469297489,
+  "environment": {
+    "extension": "2.12.2",
+    "platform": "mac",
+    "chromium": 137
+  },
+  "exclusionRules": [
+    {
+      "passKeys": "0 1 2 3 4 5 6 7 8 9 ? c j k l m",
+      "pattern": ":https://www.youtube.com/"
+    }
+  ],
+  "keyLayout": 2,
+  "keyMappings": [
+    "#!no-check",
+    "map <c-i> openUrl url=\"vimium://status/toggle/^\\u0020<c-i>\"",
+    "map g, focusOrLaunch url=\"chrome-extension://hfjbmagddngcpeloejdejnfgbamkjaeg/pages/options.html\"",
+    "# MODES",
+    "map i passNextKey",
+    "map I enterInsertMode",
+    "map gi focusInput select=\"end\"",
+    "# LINK MODE -- just don't use it",
+    "unmap f",
+    "# HISTORY",
+    "map H goBack",
+    "map L goForward",
+    "map gr Vomnibar.activateHistoryInNewTab",
+    "# TABS",
+    "map t Vomnibar.activateTabSelection",
+    "map ( closeTabsOnLeft",
+    "map ) closeTabsOnRight",
+    "map T restoreTab",
+    "map wo closeOtherTabs",
+    "# For vertical tabs",
+    "map <c-k> moveTabLeft",
+    "map <c-j> moveTabRight",
+    "# INTERACTION",
+    "map c Vomnibar.activateEditUrl",
+    "map gu goUp",
+    "map gU goToRoot",
+    "map p togglePinTab",
+    "map gs toggleViewSource",
+    "map P autoOpen $else=\"openCopiedUrlInNewTab\" # open selection, and if no selection, open the URL from the clipboard",
+    "# SCROLLING",
+    "map J scrollDown count=3",
+    "map K scrollUp count=3",
+    ""
+  ],
+  "vimSync": true,
+  "vomnibarOptions": {
+    "actions": "",
+    "maxMatches": 15,
+    "queryInterval": 333,
+    "sizes": "77,3,44,0.8,1944",
+    "styles": "time"
+  }
+}
