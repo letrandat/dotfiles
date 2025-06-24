@@ -45,7 +45,6 @@
     "map gu goUp",
     "map gU goToRoot",
     "map p togglePinTab",
-    "map gs toggleViewSource",
     "map P autoOpen $else=\"openCopiedUrlInNewTab\" # open selection, and if no selection, open the URL from the clipboard",
     "# SCROLLING",
     "map J scrollDown count=3",
