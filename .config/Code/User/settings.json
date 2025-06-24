@@ -80,10 +80,16 @@
   "terminal.integrated.hideOnStartup": "always",
 
   // Programming Languages Configuration
+  // HTML Configuration
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+
   // Go language Configuration
   "[go]": {
     "editor.defaultFormatter": "golang.go"
   },
+  "go.toolsManagement.autoUpdate": true,
   "gopls": {
     "ui.semanticTokens": true
   },

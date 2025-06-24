@@ -67,41 +67,6 @@
   },
 
   //
-  // F4, Shift-F4 replacement
-  //
-  // use ctrl+j and ctrl+k instead
-  {
-    "key": "ctrl+j",
-    "command": "search.action.focusNextSearchResult",
-    "when": "hasSearchResult || inSearchEditor"
-  },
-  {
-    "key": "ctrl+k",
-    "command": "search.action.focusPreviousSearchResult",
-    "when": "hasSearchResult || inSearchEditor"
-  },
-  {
-    "key": "ctrl+j",
-    "command": "references-view.next",
-    "when": "reference-list.hasResult && references-view.canNavigate"
-  },
-  {
-    "key": "ctrl+k",
-    "command": "references-view.prev",
-    "when": "reference-list.hasResult && references-view.canNavigate"
-  },
-  {
-    "key": "ctrl+j",
-    "command": "goToNextReference",
-    "when": "inReferenceSearchEditor || referenceSearchVisible"
-  },
-  {
-    "key": "ctrl+k",
-    "command": "goToPreviousReference",
-    "when": "inReferenceSearchEditor || referenceSearchVisible"
-  },
-
-  //
   // EXPLORER SHORTCUTS
   //
   // use CMD+e to open explorer
