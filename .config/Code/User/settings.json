@@ -370,6 +370,20 @@
           "type": "bindings",
           "bindings": [
             {
+              "key": "c",
+              "name": "Print: Reset Counter",
+              "type": "command",
+              "command": "vscode-neovim.send",
+              "args": "gprc"
+            },
+            {
+              "key": "d",
+              "name": "Print: Delete Debug Prints",
+              "type": "command",
+              "command": "vscode-neovim.send",
+              "args": "gpdd"
+            },
+            {
               "key": "p",
               "name": "Print: Plain below",
               "type": "command",
@@ -730,7 +744,20 @@
       "type": "bindings",
       "bindings": [
         {
-          "key": "=",
+          // use asdf style here, a is the first panel, s is the second panel, etc
+          "key": "a",
+          "name": "Focus Problems Panel",
+          "type": "command",
+          "command": "workbench.actions.view.problems"
+        },
+        {
+          "key": "j",
+          "name": "Toggle Terminal",
+          "type": "command",
+          "command": "workbench.action.terminal.toggleTerminal"
+        },
+        {
+          "key": "J",
           "name": "New Terminal (vscode-tmux profile)",
           "type": "command",
           "command": "workbench.action.terminal.newWithProfile",
@@ -743,16 +770,11 @@
           "command": "extension.multiCommand.maximizeAndFocusPanel"
         },
         {
-          "key": "o",
+          // use asdf style here, a is the first panel, s is the second panel, etc
+          "key": "s",
           "name": "Focus Output Panel",
           "type": "command",
           "command": "workbench.action.output.toggleOutput"
-        },
-        {
-          "key": "p",
-          "name": "Focus Problems Panel",
-          "type": "command",
-          "command": "workbench.actions.view.problems"
         }
       ]
     },

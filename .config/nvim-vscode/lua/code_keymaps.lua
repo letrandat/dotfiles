@@ -342,3 +342,20 @@ keymap("n", "\\", function()
 end, {
 	desc = "Open vsnetrw",
 })
+
+--
+-- debugprint
+--
+-- reset debug prints counter
+keymap("n", "gprc", function()
+	vim.cmd("ResetDebugPrintsCounter")
+end, {
+	desc = "Reset Debug Prints Counter",
+})
+
+-- delete debug prints
+keymap("n", "gpdd", function()
+	vim.cmd("DeleteDebugPrints")
+end, {
+	desc = "Delete Debug Prints",
+})
