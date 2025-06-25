@@ -220,16 +220,95 @@
   "whichkey.delay": 0,
   "whichkey.bindings": [
     {
+      "key": " ",
+      "name": "Command Palette",
+      "type": "command",
+      "command": "workbench.action.showCommands"
+    },
+    {
+      "key": "\t",
+      "name": "Last buffer",
+      "type": "command",
+      "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
+    },
+    {
       "key": ",",
       "name": "Show all editors by MRU",
       "type": "command",
       "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
     },
     {
-      "key": "?",
-      "name": "View All References",
+      "key": ":",
+      "name": "Tasks...",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": ":",
+          "name": "Run Task",
+          "type": "command",
+          "command": "workbench.action.tasks.runTask"
+        },
+        {
+          "key": ".",
+          "name": "Rerun Last Task",
+          "type": "command",
+          "command": "workbench.action.tasks.reRunTask"
+        },
+        {
+          "key": "b",
+          "name": "Build Task",
+          "type": "command",
+          "command": "workbench.action.tasks.build"
+        },
+        {
+          "key": "c",
+          "name": "Configure Task Runner",
+          "type": "command",
+          "command": "workbench.action.tasks.configureTaskRunner"
+        },
+        {
+          "key": "g",
+          "name": "Show Running Tasks",
+          "type": "command",
+          "command": "workbench.action.tasks.showTasks"
+        },
+        {
+          "key": "l",
+          "name": "Show Task Log",
+          "type": "command",
+          "command": "workbench.action.tasks.showLog"
+        },
+        {
+          "key": "t",
+          "name": "Test Task",
+          "type": "command",
+          "command": "workbench.action.tasks.test"
+        },
+        {
+          "key": "x",
+          "name": "Terminate Task",
+          "type": "command",
+          "command": "workbench.action.tasks.terminate"
+        }
+      ]
+    },
+    {
+      "key": ".",
+      "name": "Repeat Most Recent Command",
       "type": "command",
-      "command": "references-view.find"
+      "command": "whichkey.repeatMostRecent"
+    },
+    {
+      "key": "/",
+      "name": "Search keybindings",
+      "type": "command",
+      "command": "whichkey.searchBindings"
+    },
+    {
+      "key": "$",
+      "name": "Run Recent Command in Terminal",
+      "type": "command",
+      "command": "workbench.action.terminal.runRecentCommand"
     },
     {
       "key": "c",
@@ -238,9 +317,9 @@
       "bindings": [
         {
           "key": "a",
-          "name": "Refactor",
+          "name": "Code Action",
           "type": "command",
-          "command": "editor.action.refactor"
+          "command": "editor.action.codeAction"
         },
         {
           "key": "A",
@@ -265,6 +344,12 @@
           "name": "Organize Imports",
           "type": "command",
           "command": "editor.action.organizeImports"
+        },
+        {
+          "key": "q",
+          "name": "Quick Fix",
+          "type": "command",
+          "command": "editor.action.quickFix"
         },
         {
           "key": "r",
@@ -672,61 +757,6 @@
       ]
     },
     {
-      "key": "k",
-      "name": "Tasks...",
-      "type": "bindings",
-      "bindings": [
-        {
-          "key": "l",
-          "name": "Rerun Last Task",
-          "type": "command",
-          "command": "workbench.action.tasks.reRunTask"
-        },
-        {
-          "key": "b",
-          "name": "Build Task",
-          "type": "command",
-          "command": "workbench.action.tasks.build"
-        },
-        {
-          "key": "c",
-          "name": "Configure Task Runner",
-          "type": "command",
-          "command": "workbench.action.tasks.configureTaskRunner"
-        },
-        {
-          "key": "g",
-          "name": "Show Running Tasks",
-          "type": "command",
-          "command": "workbench.action.tasks.showTasks"
-        },
-        {
-          "key": "o",
-          "name": "Show Task Log",
-          "type": "command",
-          "command": "workbench.action.tasks.showLog"
-        },
-        {
-          "key": "r",
-          "name": "Run Task",
-          "type": "command",
-          "command": "workbench.action.tasks.runTask"
-        },
-        {
-          "key": "t",
-          "name": "Test Task",
-          "type": "command",
-          "command": "workbench.action.tasks.test"
-        },
-        {
-          "key": "x",
-          "name": "Terminate Task",
-          "type": "command",
-          "command": "workbench.action.tasks.terminate"
-        }
-      ]
-    },
-    {
       "key": "l",
       "name": "Lang...",
       "type": "bindings",
@@ -738,12 +768,6 @@
           "bindings": []
         }
       ]
-    },
-    {
-      "key": "p",
-      "name": "Command Palette",
-      "type": "command",
-      "command": "workbench.action.showCommands"
     },
     {
       "key": "q",

@@ -176,16 +176,21 @@ end, {
 
 -- gD (go to source definition)
 keymap("n", "gD", function()
-	vscode.call("typescript.goToSourceDefinition")
+	local lang = vim.bo.filetype
+	if string.find(lang, "typescript") ~= nil then
+		vscode.call("typescript.goToSourceDefinition")
+	else
+		vscode.call("editor.action.revealDefinition")
+	end
 end, {
 	desc = "Go to source definition",
 })
 
--- gI (go to Implementation)
+-- gI (peek Implementation)
 keymap("n", "gI", function()
-	vscode.call("editor.action.goToImplementation")
+	vscode.call("editor.action.peekImplementation")
 end, {
-	desc = "Go to implementation",
+	desc = "Peek implementation",
 })
 
 -- gA (go to [A]ll implementations)
@@ -208,6 +213,13 @@ end, {
 	desc = "Go to type definition",
 })
 
+-- gY (peak t[y]pe definition)
+keymap("n", "gY", function()
+	vscode.call("editor.action.peekTypeDefinition")
+end, {
+	desc = "Peek type definition",
+})
+
 -- gK (go to params hint)
 keymap("n", "gK", function()
 	vscode.call("editor.action.triggerParameterHints")
@@ -215,8 +227,9 @@ end, {
 	desc = "Trigger parameter hints",
 })
 
--- gh (go to [h]ierarchy)
-keymap("n", "gh", function()
+-- gh (go to [H]ierarchy)
+-- gh is already used for show hover
+keymap("n", "gH", function()
 	vscode.call("editor.showCallHierarchy")
 end, {
 	desc = "Show call hierarchy",
