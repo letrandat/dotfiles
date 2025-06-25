@@ -18,8 +18,7 @@ vim.schedule(function()
 	vim.o.clipboard = "unnamedplus"
 end)
 
--- Decrease mapped sequence wait time
-vim.o.timeoutlen = 300
+vim.o.timeoutlen = 1000
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.o.ignorecase = true
