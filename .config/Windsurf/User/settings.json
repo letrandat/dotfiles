@@ -275,6 +275,90 @@
       ]
     },
     {
+      "key": "d",
+      "name": "Debug...",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "p",
+          "name": "Print...",
+          "type": "bindings",
+          "bindings": [
+            {
+              "key": "p",
+              "name": "Print: Plain below",
+              "type": "command",
+              "command": "vscode-neovim.send",
+              "args": "gpp"
+            },
+            {
+              "key": "P",
+              "name": "Print: Plain above",
+              "type": "command",
+              "command": "vscode-neovim.send",
+              "args": "gpP"
+            },
+            {
+              "key": "v",
+              "name": "Print: Variable below",
+              "type": "command",
+              "command": "vscode-neovim.send",
+              "args": "gpv"
+            },
+            {
+              "key": "V",
+              "name": "Print: Variable above",
+              "type": "command",
+              "command": "vscode-neovim.send",
+              "args": "gpV"
+            },
+            {
+              "key": "s",
+              "name": "Surround...",
+              "type": "bindings",
+              "bindings": [
+                {
+                  "key": "p",
+                  "name": "Print: surround plain",
+                  "type": "command",
+                  "command": "vscode-neovim.send",
+                  "args": "gpsp"
+                },
+                {
+                  "key": "v",
+                  "name": "Print: surround variable",
+                  "type": "command",
+                  "command": "vscode-neovim.send",
+                  "args": "gpsv"
+                },
+                {
+                  "key": "o",
+                  "name": "Print: surround text obj",
+                  "type": "command",
+                  "command": "vscode-neovim.send",
+                  "args": "gpso"
+                }
+              ]
+            },
+            {
+              "key": "o",
+              "name": "Print: Text Obj below",
+              "type": "command",
+              "command": "vscode-neovim.send",
+              "args": "gpo"
+            },
+            {
+              "key": "O",
+              "name": "Print: Text Obj above",
+              "type": "command",
+              "command": "vscode-neovim.send",
+              "args": "gpO"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "key": "f",
       "name": "Files...",
       "type": "bindings",
