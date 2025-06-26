@@ -76,7 +76,7 @@
       "icon": "terminal-tmux"
     }
   },
-  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.defaultProfile.osx": "vscode-tmux",
   "terminal.integrated.hideOnStartup": "always",
 
   // Programming Languages Configuration
@@ -425,7 +425,8 @@
                   "args": "gpsp"
                 },
                 {
-                  "key": "v",
+                  // this is the most often used, so i use s to trigger it
+                  "key": "s",
                   "name": "Print: surround variable",
                   "type": "command",
                   "command": "vscode-neovim.send",
@@ -1093,7 +1094,7 @@
           ]
         },
         {
-          "key": "f",
+          "key": "w",
           "name": "Find Dirs (Switcher in Terminal)",
           "type": "command",
           "command": "extension.multiCommand.vscodeSwitcher"
