@@ -365,8 +365,8 @@
       "type": "bindings",
       "bindings": [
         {
-          "key": "p",
-          "name": "Print...",
+          "key": "f",
+          "name": "Printf...",
           "type": "bindings",
           "bindings": [
             {
@@ -398,7 +398,8 @@
               "args": "gpP"
             },
             {
-              "key": "v",
+              // this is the most often used, so i use f to trigger it
+              "key": "f",
               "name": "Print: Variable below",
               "type": "command",
               "command": "vscode-neovim.send",
