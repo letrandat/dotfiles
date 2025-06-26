@@ -812,22 +812,15 @@
           "command": "gitlens.views.searchAndCompare.focus"
         },
         {
-          "key": "f",
-          "name": "Files",
-          "type": "command",
-          "command": "find-it-faster.findFiles"
-        },
-        {
           "key": "g",
-          "name": "Find Within Files",
+          "icon": "search",
+          "name": "Search in project with selection",
           "type": "command",
-          "command": "find-it-faster.findWithinFiles"
-        },
-        {
-          "key": "G",
-          "name": "Find Within Files With Type",
-          "type": "command",
-          "command": "find-it-faster.findWithinFilesWithType"
+          "commands": [
+            "editor.action.addSelectionToNextFindMatch",
+            "workbench.action.findInFiles",
+            "search.action.focusSearchList"
+          ]
         },
         {
           "key": "k",
