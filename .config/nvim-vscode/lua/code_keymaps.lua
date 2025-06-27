@@ -359,3 +359,20 @@ keymap("n", "gpdd", function()
 end, {
 	desc = "Delete Debug Prints",
 })
+
+--
+-- search in project
+--
+keymap({ "n", "v" }, "sg", function()
+	hasSelection = vim.fn.mode() == "v" or vim.fn.mode() == "V"
+	if hasSelection then
+		vscode.call("editor.action.addSelectionToNextFindMatch")
+		vscode.call("workbench.action.findInFiles")
+		vscode.call("search.action.focusSearchList")
+	else
+		vscode.call("search.action.clearSearchResults")
+		vscode.call("workbench.action.findInFiles")
+	end
+end, {
+	desc = "Search in project",
+})

@@ -69,36 +69,10 @@
   //
   // EXPLORER SHORTCUTS
   //
-  // use CMD+e to open explorer
-  {
-    "key": "cmd+e",
-    "command": "workbench.view.explorer",
-    "when": "viewContainer.workbench.view.explorer.enabled"
-  },
   {
     "key": "a",
     "command": "workbench.files.action.createFileFromExplorer",
     "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
-  },
-  {
-    "key": "d",
-    "command": "moveFileToTrash",
-    "when": "explorerResourceMoveableToTrash && explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
-  },
-  {
-    "key": "y",
-    "command": "filesExplorer.copy",
-    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
-  },
-  {
-    "key": "p",
-    "command": "filesExplorer.paste",
-    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
-  },
-  {
-    "key": "r",
-    "command": "renameFile",
-    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
   },
 
   //
@@ -150,23 +124,6 @@
   },
 
   //
-  // find-it-faster
-  //
-  // disable default keybinds
-  {
-    "key": "shift+cmd+j",
-    "command": "-find-it-faster.findFiles"
-  },
-  {
-    "key": "shift+cmd+u",
-    "command": "-find-it-faster.findWithinFiles"
-  },
-  {
-    "key": "ctrl+shift+cmd+u",
-    "command": "-find-it-faster.findWithinFilesWithType"
-  },
-
-  //
   // WHICH KEY
   //
   {
@@ -191,5 +148,15 @@
     "key": "ctrl+pageup",
     "command": "workbench.action.terminal.focusPrevious",
     "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+  },
+
+  //
+  // Buffer Management
+  //
+  {
+    "key": "alt+h",
+    "name": "Buffer History",
+    "type": "commands",
+    "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
   }
 ]
