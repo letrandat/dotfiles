@@ -1078,7 +1078,7 @@
           }
         },
         {
-          "key": "9",
+          "key": "k",
           "name": "Jump to dotfiles",
           "type": "command",
           "command": "workbench.action.terminal.sendSequence",
