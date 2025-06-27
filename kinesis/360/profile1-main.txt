@@ -8,14 +8,14 @@
 [rwin]>[rctr]
 [rctr]>[rwin]
 <keypad>
+[up]>[down]
+[down]>[up]
 [lctr]>[lwin]
 [lalt]>[lctr]
 [rwin]>[rctr]
 [rctr]>[rwin]
 <function1>
 [p]>[prnt]
-[j]>[sumo]
-[k]>[sdmo]
 [m]>[mute]
 [left]>[prev]
 [rght]>[next]
