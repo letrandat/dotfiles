@@ -158,5 +158,29 @@
     "name": "Buffer History",
     "type": "commands",
     "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
+  },
+
+  //
+  // vsnetrw
+  //
+  {
+    "key": "a",
+    "command": "vsnetrw.create",
+    "when": "editorTextFocus && editorLangId == 'vsnetrw' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+  },
+  {
+    "key": "d",
+    "command": "-vsnetrw.createDir",
+    "when": "editorTextFocus && editorLangId == 'vsnetrw' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+  },
+  {
+    "key": "d",
+    "command": "vsnetrw.delete",
+    "when": "editorTextFocus && editorLangId == 'vsnetrw' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+  },
+  {
+    "key": "r",
+    "command": "vsnetrw.rename",
+    "when": "editorTextFocus && editorLangId == 'vsnetrw' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
   }
 ]
