@@ -1,12 +1,11 @@
 <base>
-[z]>[z][t&h200][lalt]
-[fsls]>[fsls][t&h200][ralt]
 [up]>[down]
 [down]>[up]
 [lctr]>[lwin]
 [lalt]>[lctr]
 [rwin]>[rctr]
 [rctr]>[rwin]
+[del]>[lalt]
 <keypad>
 [up]>[down]
 [down]>[up]
@@ -14,6 +13,7 @@
 [lalt]>[lctr]
 [rwin]>[rctr]
 [rctr]>[rwin]
+[del]>[lalt]
 <function1>
 [p]>[prnt]
 [m]>[mute]
@@ -25,7 +25,6 @@
 [lalt]>[lctr]
 [rwin]>[rctr]
 [rctr]>[rwin]
-[ent]>[lmou]
 [spc]>[plpa]
 <function2>
 <function3>
