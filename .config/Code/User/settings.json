@@ -76,7 +76,7 @@
       "icon": "terminal-tmux"
     }
   },
-  "terminal.integrated.defaultProfile.osx": "vscode-tmux",
+  "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.hideOnStartup": "always",
 
   // Programming Languages Configuration
@@ -1245,7 +1245,7 @@
         {
           "key": "e",
           "name": "Focus Problems Panel",
-          "icon": "error",
+          "icon": "warning",
           "type": "command",
           "command": "workbench.actions.view.problems"
         },
@@ -1257,12 +1257,11 @@
           "command": "workbench.action.terminal.toggleTerminal"
         },
         {
-          "key": "J",
-          "name": "New Terminal (vscode-tmux profile)",
-          "icon": "terminal",
+          "key": "k",
+          "name": "Kill all terminals",
+          "icon": "trash",
           "type": "command",
-          "command": "workbench.action.terminal.newWithProfile",
-          "args": { "profileName": "vscode-tmux" }
+          "command": "workbench.action.terminal.killAll"
         },
         {
           "key": "m",
@@ -1270,6 +1269,14 @@
           "icon": "screen-full",
           "type": "command",
           "command": "extension.multiCommand.maximizeAndFocusPanel"
+        },
+        {
+          "key": "n",
+          "name": "New Terminal (vscode-tmux profile)",
+          "icon": "add",
+          "type": "command",
+          "command": "workbench.action.terminal.newWithProfile",
+          "args": { "profileName": "vscode-tmux" }
         },
         {
           "key": "o",
