@@ -939,30 +939,42 @@
     },
     {
       "key": "f",
-      "name": "Files...",
+      "name": "+File",
+      "icon": "file",
       "type": "bindings",
       "bindings": [
         {
           "key": "d",
           "name": "compare With Clipboard",
+          "icon": "diff",
           "type": "command",
           "command": "workbench.files.action.compareWithClipboard"
         },
         {
+          "key": "D",
+          "name": "+Compare active file with",
+          "icon": "diff",
+          "type": "command",
+          "command": "workbench.files.action.compareFileWith"
+        },
+        {
           "key": "P",
           "name": "Copy Absolute File Path",
+          "icon": "go-to-file",
           "type": "command",
           "command": "copyFilePath"
         },
         {
           "key": "f",
           "name": "Files",
+          "icon": "file",
           "type": "command",
           "command": "workbench.action.quickOpen"
         },
         {
           "key": "p",
           "name": "Copy Relative File Path",
+          "icon": "go-to-file",
           "type": "command",
           "command": "copyRelativeFilePath"
         }
@@ -1224,9 +1236,16 @@
       "type": "bindings",
       "bindings": [
         {
-          // use asdf style here, a is the first panel, s is the second panel, etc
-          "key": "a",
+          "key": "d",
+          "name": "Show debug console",
+          "icon": "debug-console",
+          "type": "command",
+          "command": "workbench.debug.action.toggleRepl"
+        },
+        {
+          "key": "e",
           "name": "Focus Problems Panel",
+          "icon": "error",
           "type": "command",
           "command": "workbench.actions.view.problems"
         },
@@ -1240,6 +1259,7 @@
         {
           "key": "J",
           "name": "New Terminal (vscode-tmux profile)",
+          "icon": "terminal",
           "type": "command",
           "command": "workbench.action.terminal.newWithProfile",
           "args": { "profileName": "vscode-tmux" }
@@ -1247,13 +1267,14 @@
         {
           "key": "m",
           "name": "Maximize Terminal Panel",
+          "icon": "screen-full",
           "type": "command",
           "command": "extension.multiCommand.maximizeAndFocusPanel"
         },
         {
-          // use asdf style here, a is the first panel, s is the second panel, etc
-          "key": "s",
+          "key": "o",
           "name": "Focus Output Panel",
+          "icon": "output",
           "type": "command",
           "command": "workbench.action.output.toggleOutput"
         }
@@ -1284,13 +1305,22 @@
     {
       "key": "s",
       "name": "Show/Search...",
+      "icon": "info",
       "type": "bindings",
       "bindings": [
         {
           "key": "c",
           "name": "Search and Compare",
+          "icon": "diff",
           "type": "command",
           "command": "gitlens.views.searchAndCompare.focus"
+        },
+        {
+          "key": "f",
+          "name": "Focus on files explorer",
+          "icon": "list-tree",
+          "type": "command",
+          "command": "workbench.files.action.showActiveFileInExplorer"
         },
         {
           "key": "g",
@@ -1301,20 +1331,30 @@
           "args": "sg"
         },
         {
+          "key": "j",
+          "name": "Open settings (JSON)",
+          "icon": "settings",
+          "type": "command",
+          "command": "workbench.action.openSettingsJson"
+        },
+        {
           "key": "k",
           "name": "Open Global Keybindings",
+          "icon": "settings",
           "type": "command",
           "command": "workbench.action.openGlobalKeybindings"
         },
         {
           "key": "K",
           "name": "Open Default Global Keybindings (JSON)",
+          "icon": "settings",
           "type": "command",
           "command": "workbench.action.openDefaultKeybindingsFile"
         },
         {
           "key": "o",
           "name": "Show outline",
+          "icon": "symbol-class",
           "type": "command",
           "command": "outline.focus"
         },
@@ -1331,34 +1371,23 @@
         {
           "key": "s",
           "name": "Go to Symbol in File",
+          "icon": "symbol-class",
           "type": "command",
           "command": "workbench.action.gotoSymbol"
         },
         {
           "key": "S",
           "name": "Go to Symbol in Workspace",
+          "icon": "project",
           "type": "command",
           "command": "workbench.action.showAllSymbols"
         },
         {
           "key": "t",
           "name": "Show Timeline",
+          "icon": "history",
           "type": "command",
           "command": "timeline.focus"
-        }
-      ]
-    },
-    {
-      "key": "T",
-      "name": "Toggle...",
-      "type": "bindings",
-      "bindings": [
-        {
-          "key": "t",
-          "name": "Test File",
-          "type": "command",
-          "command": "vscode-neovim.send",
-          "args": "gt"
         }
       ]
     },
@@ -1496,6 +1525,7 @@
     {
       "key": "u",
       "name": "Toggle/UI...",
+      "icon": "settings",
       "type": "bindings",
       "bindings": [
         {
@@ -1582,6 +1612,13 @@
           "name": "Close Other Editors",
           "type": "command",
           "command": "workbench.action.closeOtherEditors"
+        },
+        {
+          "key": "Q",
+          "name": "Quit application",
+          "icon": "log-out",
+          "type": "command",
+          "command": "workbench.action.quit"
         },
         {
           "key": "r",

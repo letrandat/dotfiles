@@ -167,11 +167,18 @@ end, {
 -- LSP support
 --
 
--- gr (go to references)
-keymap("n", "gr", function()
+-- grr (show references on the side)
+keymap("n", "grr", function()
+	vscode.call("references-view.find")
+end, {
+	desc = "Show references",
+})
+
+-- grR (peek references)
+keymap("n", "grR", function()
 	vscode.call("editor.action.referenceSearch.trigger")
 end, {
-	desc = "Go to references",
+	desc = "Peek references",
 })
 
 -- gD (go to source definition)
@@ -186,15 +193,8 @@ end, {
 	desc = "Go to source definition",
 })
 
--- gI (peek Implementation)
+-- gI (Show All Implementation)
 keymap("n", "gI", function()
-	vscode.call("editor.action.peekImplementation")
-end, {
-	desc = "Peek implementation",
-})
-
--- gA (go to [A]ll implementations)
-keymap("n", "gA", function()
 	vscode.call("references-view.findImplementations")
 end, {
 	desc = "Find all implementations",
@@ -227,10 +227,10 @@ end, {
 	desc = "Trigger parameter hints",
 })
 
--- gh (go to [H]ierarchy)
+-- gH (show [H]ierarchy)
 -- gh is already used for show hover
 keymap("n", "gH", function()
-	vscode.call("editor.showCallHierarchy")
+	vscode.call("references-view.showCallHierarchy")
 end, {
 	desc = "Show call hierarchy",
 })
