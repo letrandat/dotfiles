@@ -1323,6 +1323,13 @@
           "command": "gitlens.views.searchAndCompare.focus"
         },
         {
+          "key": "e",
+          "name": "Show vsnetrw",
+          "icon": "list-tree",
+          "type": "command",
+          "command": "vsnetrw.open"
+        },
+        {
           "key": "f",
           "name": "Focus on files explorer",
           "icon": "list-tree",
