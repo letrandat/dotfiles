@@ -25,6 +25,8 @@
 [lalt]>[lctr]
 [rwin]>[rctr]
 [rctr]>[rwin]
+[del]>[lalt]
+[ent]>[ralt]
 [spc]>[plpa]
 <function2>
 <function3>
