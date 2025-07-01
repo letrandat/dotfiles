@@ -1649,12 +1649,6 @@
           "command": "extension.multiCommand.maximizeAndFocusFirstEditorGroup"
         },
         {
-          "key": "o",
-          "name": "Close Other Editors",
-          "type": "command",
-          "command": "workbench.action.closeOtherEditors"
-        },
-        {
           "key": "Q",
           "name": "Quit application",
           "icon": "log-out",
