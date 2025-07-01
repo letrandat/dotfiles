@@ -49,6 +49,9 @@ ln -s ~/workspace/repo/dotfiles/.config/Code/User/tasks.json ~/Library/Applicati
 ln -s ~/workspace/repo/dotfiles/.config/Windsurf/User/settings.json ~/Library/Application\ Support/Windsurf/User/settings.json
 ln -s ~/workspace/repo/dotfiles/.config/Windsurf/User/keybindings.json ~/Library/Application\ Support/Windsurf/User/keybindings.json
 
+# Intellij
+ln -s ~/workspace/repo/dotfiles/.config/intellimacs ~/.config/
+
 # config zsh
 # add more *.zsh files under ~/.config/zsh to extend functionality
 mkdir -p ~/.config/zsh

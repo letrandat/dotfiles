@@ -1,265 +1,40 @@
 """ NOTES """
 " to reload vimrc :action IdeaVim.ReloadVimRc.reload
 
-""" CORE SETTINGS """
-" Yank to system clipboard
-set clipboard+=unnamed
-" Stop Vim from yanking visual selected text
-xnoremap p pgvy
-set number
-set relativenumber
+source ~/.config/intellimacs/spacemacs.vim
 
-""" REMAP """
-" Map leader to space
-let mapleader=" "
-" Y to copy from current to $
-nmap Y y$
+" (Optional) Enable other Intellimacs modules
+source ~/.config/intellimacs/extra.vim
+" source ~/.config/intellimacs/major.vim
 
-"""" General """"
-nmap <leader>wm <Action>(HideAllWindows)
-" Action Go to File
-nmap <leader>ff <Action>(GotoFile)
-" Action Go to recent files
-nmap <leader>fr <Action>(RecentFiles)
+" (Optional) Enable which-key plugin
+source ~/.config/intellimacs/which-key.vim
 
-" Toggle Breakpoint
-nmap <leader>db <Action>(ToggleLineBreakpoint)
+" (Optional) My own vim commands
+nnoremap Y y$
 
-"""" Browsing code """"
-" re-map gd to GotoDeclaration (and usages)
-nmap gd <Action>(GotoDeclaration)
-nmap gf <Action>(GotoDeclaration)
-" re-map gI to implementation
-nmap gI <Action>(GotoImplementation)
-" map gr to find usages/references
-nmap gr <Action>(FindUsages)
-" gy (go to t[y]pe definition)
-nmap gy <Action>(GotoTypeDeclaration)
-" map C-k to ParameterInfo which is equivalent to Signature Help in lazyvim
-nmap gK <Action>(ParameterInfo)
-" gch (go to [c]all [h]ierachy)
-nmap gch <Action>(CallHierarchy)
-" go to next and previous error
-nmap gw <Action>(GotoNextError)
-nmap gW <Action>(GotoPreviousError)
+" (Optional) Add/edit actions
 
-" re-map C-o/C-i to go back(out) and forward(in)
-nmap <C-o> <Action>(Back)
-nmap <C-i> <Action>(Forward)
-" re-map `. to JumpToLastChange because default ideavim only jump to the same buffer
-nmap `. <Action>(JumpToLastChange)
+" Clear search highlights.
+nnoremap <Esc>    :nohlsearch<CR>
+vnoremap <Esc>    <Esc>:nohlsearch<CR>
 
-" Splitter
-nmap <C-h> <Action>(NextSplitter)
-nmap <C-l> <Action>(PrevSplitter)
+" Execute an action. Like <M-x>
+nnoremap <leader><leader>    :action GotoAction<CR>
+vnoremap <leader><leader>    :action GotoAction<CR>
+inoremap <leader><leader>    <Esc>:action GotoAction<CR>
 
-" Tab
-nmap L <Action>(NextTab)
-nmap H <Action>(PreviousTab)
+" Move lines down
+let g:WhichKeyDesc_Text_MoveLinesDown = "<C-j> move-lines-down"
+nnoremap <C-j>    $:action MoveLineDown<CR>
+vnoremap <C-j>    $:action MoveLineDown<CR>
 
-"""" Buffer """"
-" Buffer: close(bo) all others
-nmap <leader>bo <Action>(CloseAllEditorsButActive)
-" Buffer: close(bd) active editor
-nmap <leader>bd <Action>(CloseContent)
-" Split and move right
-nmap <leader>wv <Action>(MoveTabRight)
+" Move lines up
+let g:WhichKeyDesc_Text_MoveLinesUp = "<C-k> move-lines-up"
+nnoremap <C-k>    $:action MoveLineUp<CR>
+vnoremap <C-k>    $:action MoveLineUp<CR>
 
-"""" Code Format """"
-" ReformatCode
-nmap <leader>cf <Action>(ReformatCode)
-" OptimizeImports
-nmap <leader>o <Action>(OptimizeImports)
-
-vmap J <action>(MoveLineDown)
-vmap K <action>(MoveLineUp)
-
-"""" Refactor """"
-" Show Refactor QuickListPopupAction
-" Default IntelliJ keybinding is <C-t> which can be used in insert mode
-nmap <leader>t <Action>(Refactorings.QuickListPopupAction)
-
-""" PLUGINS """
-"""" easymotion start """"
-set easymotion
-" s<char> to jump to anywhere, to be similar to sneak
-map s <Plug>(easymotion-jumptoanywhere)
-"""" easymotion end """"
-
-"""" NERDTree start """"
-set NERDTree
-"""" NERDTree end """"
-
-"""" sethandler start """"
-sethandler <C-2> a:ide
-sethandler <C-S-2> a:ide
-sethandler <C-6> a:ide
-sethandler <C-S-6> a:ide
-sethandler <C-;> a:ide
-sethandler <C-S-;> a:ide
-sethandler <M-;> a:ide
-sethandler <M-S-;> a:ide
-sethandler <C-A> a:ide
-sethandler <C-B> a:ide
-sethandler <C-C> a:vim
-sethandler <C-E> a:ide
-sethandler <C-F> a:ide
-sethandler <C-G> a:ide
-sethandler <C-J> a:ide
-sethandler <C-K> a:ide
-sethandler <C-M> a:ide
-sethandler <C-N> a:ide
-sethandler <C-P> a:ide
-sethandler <C-S> a:ide
-sethandler <C-T> a:ide
-""" Ace Jump tend to take over, so reassign the shortcuts to the IDE.
-sethandler <C-;> a:ide
-sethandler <C-S-;> a:ide
-sethandler <M-;> a:ide
-sethandler <M-S-;> a:ide
-sethandler <C-Q> a:ide
-""" Use these keybinding for Vim
-sethandler <C-H> a:vim
-sethandler <C-L> a:vim
-sethandler <C-D> a:vim
-sethandler <C-W> a:vim
-sethandler <C-I> a:vim
-sethandler <C-O> a:vim
-sethandler <C-V> a:vim
-sethandler <C-R> a:vim
-"""" sethandler end """"
-
-""" VS Code Vim Parity Section: Mappings and settings added to match VS Code Vim configuration as closely as possible. """
-
-""" --- Core Vim Settings --- """
-" Use system clipboard for all yanks, deletes, changes and puts (already set above)
-" Highlight yanked text (no direct IdeaVim equivalent, so add a comment)
-" NOTE: IdeaVim does not support highlightedyank natively.
-
-" Set timeout for mappings (no direct IdeaVim equivalent, so add a comment)
-" NOTE: IdeaVim does not support custom mapping timeout.
-
-""" --- Movement and Window Navigation --- """
-" Smooth j/k over wrapped lines
-nmap j gj
-nmap k gk
-
-" Arrow keys for window navigation
-nmap <Up> <C-w>k
-nmap <Down> <C-w>j
-nmap <Left> <C-w>h
-nmap <Right> <C-w>l
-
-" H/L for previous/next editor (already mapped to tabs, so add a comment)
-" NOTE: In VS Code, H/L move between editors; in IntelliJ, they move between tabs.
-
-""" --- Editing and Formatting --- """
-" Y to yank to end of line (already present)
-" <C-c> to change inner word
-nmap <C-c> ciw
-
-" Undo/Redo mapped to VS Code actions (no direct equivalent, but add comment)
-" NOTE: IdeaVim uses u and <C-r> for undo/redo by default; cannot remap to IDE actions.
-
-" Format selection/document (closest: ReformatCode)
-nmap <leader>cf <Action>(ReformatCode)
-nmap <leader>cF <Action>(ReformatCode)
-
-" Organize imports
-nmap <leader>o <Action>(OptimizeImports)
-
-""" --- LSP/Code Navigation --- """
-" gr: Find usages
-" map gr <Action>(FindUsages) (already present)
-" gd: Go to declaration (already present)
-" gD: Go to source definition (no direct equivalent, use GotoDeclaration)
-" map gD <Action>(GotoDeclaration) (already present)
-" gI: Go to implementation (already present)
-" gf: Go to declaration (already present)
-" gy: Go to type definition (already present)
-" gK: Parameter info (already present)
-" gch: Call hierarchy (already present)
-
-" <leader>r: Refactor
-nmap <leader>r <Action>(Refactorings.QuickListPopupAction)
-" <leader>R: Source action (no direct equivalent, use Refactorings.QuickListPopupAction)
-nmap <leader>R <Action>(Refactorings.QuickListPopupAction)
-
-" <leader>ss: Go to symbol in file
-nmap <leader>ss <Action>(GotoSymbol)
-" <leader>sS: Go to symbol in workspace (no direct equivalent, use SearchEverywhere)
-nmap <leader>sS <Action>(GotoSymbol)
-" <leader>sa: Go to action
-nmap <leader>sa <Action>(GotoAction)
-" <leader>sA: search All
-nmap <leader>sA <Action>(SearchEverywhere)
-
-""" --- Files and Buffers --- """
-" <leader>ff: Go to file (already present)
-" <leader>fr: Recent files (already present)
-" <leader>fp: Copy relative file path (no direct equivalent, add comment)
-" NOTE: No direct mapping for copying file path in IdeaVim; use IDE shortcut.
-" <leader>fP: Copy absolute file path (no direct equivalent, add comment)
-nmap <leader>fp <Action>(CopyAbsolutePath)
-" NOTE: No direct mapping for copying file path in IdeaVim; use IDE shortcut.
-nmap <leader>fP <Action>(CopyReferencePopupGroup)
-
-" <leader>bo: Close all editors but active (already present)
-" <leader>bd: Close active editor (already present)
-" <leader>ws: Split editor down
-nmap <leader>ws <Action>(SplitHorizontally)
-" <leader>ws: Split editor right
-nmap <leader>wv <Action>(SplitVertically)
-" <leader>,: Show all editors by most recently used (no direct equivalent, use RecentFiles)
-nmap <leader>, <Action>(RecentFiles)
-
-""" --- Git Integration --- """
-" Visual mode git commands
-" [g]it [r]evert selection
-vmap <leader>gr <Action>(Vcs.RollbackChangedLines)
-
-" Normal mode git commands
-" [g]it [l] pull
-nmap <leader>gl <Action>(Vcs.UpdateProject)
-" [g]it [o]pen change
-nmap <leader>go <Action>(Compare.SameVersion)
-" [g]it [s]tash
-nmap <leader>gss <Action>(Git.Stash)
-" [g]it [s]tash [p]op
-nmap <leader>gsp <Action>(Git.Unstash)
-" [g]it [c]ommit
-nmap <leader>gcc <Action>(CheckinProject)
-
-" gh/gH: Next/previous change (no direct equivalent, use NextChange/PreviousChange)
-nmap gh <Action>(VcsShowNextChangeMarker)
-nmap gH <Action>(VcsShowPrevChangeMarker)
-
-""" --- Tasks --- """
-" <leader>tr: Run task (no direct equivalent, use RunAnything)
-nmap <leader>tr <Action>(ChooseRunConfiguration)
-" <leader>t.: Rerun last task (no direct equivalent, add comment)
-" NOTE: No direct mapping for rerun last task in IdeaVim; use IDE shortcut.
-" <leader>tb: Build (use BuildProject)
-nmap <leader>tb <Action>(CompileDirty)
-" <leader>tc: Configure tasks
-nmap <leader>tc <Action>(editRunConfigurations)
-" <leader>tg: Show running tasks (no direct equivalent, add comment)
-" NOTE: No direct mapping for show running tasks in IdeaVim; use IDE shortcut.
-" <leader>tx: Terminate task (no direct equivalent, add comment)
-" NOTE: No direct mapping for terminate task in IdeaVim; use IDE shortcut.
-" <leader>tl: Show task log (no direct equivalent, add comment)
-" NOTE: No direct mapping for show task log in IdeaVim; use IDE shortcut.
-" <leader>tt: Test (use RunContextTest) (no direct equivalent, add comment)
-" <leader>tR: Restart task (no direct equivalent, add comment)
-" NOTE: No direct mapping for restart task in IdeaVim; use IDE shortcut.
-
-""" --- EasyMotion --- """
-" s to jump anywhere (already present)
-
-""" --- Miscellaneous --- """
-" <leader>uw: Toggle word wrap (no direct equivalent, add comment)
-" NOTE: No direct mapping for toggle word wrap in IdeaVim; use IDE shortcut.
-
-""" --- End of VS Code Vim Parity Section --- """
-
-" All mappings above are designed to maximize parity with VS Code Vim configuration. Some commands do not have direct equivalents in IntelliJ/IdeaVim and are noted above. For those, use the closest available IDE shortcut or plugin.
+" Find usages
+let g:WhichKeyDesc_SearchSymbol_FindUsages = "<leader>grr find-usages"
+nnoremap <leader>grr    :action FindUsages<CR>
+vnoremap <leader>grr    :action FindUsages<CR>
