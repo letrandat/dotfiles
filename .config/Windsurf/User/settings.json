@@ -315,6 +315,17 @@
       "command": "whichkey.repeatMostRecent"
     },
     {
+      "key": "*",
+      "name": "Search in project with selection",
+      "icon": "search",
+      "type": "commands",
+      "commands": [
+        "editor.action.addSelectionToNextFindMatch",
+        "workbench.action.findInFiles",
+        "search.action.focusSearchList"
+      ]
+    },
+    {
       "key": "/",
       "name": "Search in project",
       "icon": "search",
@@ -1302,11 +1313,27 @@
     },
     {
       "key": "q",
-      "name": "Close Current Buffer/Window",
-      "type": "commands",
-      "commands": [
-        "workbench.action.closeActiveEditor",
-        "workbench.action.focusFirstEditorGroup"
+      "name": "+Quit",
+      "icon": "x",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "q",
+          "name": "Close Current Buffer/Window",
+          "icon": "x",
+          "type": "commands",
+          "commands": [
+            "workbench.action.closeActiveEditor",
+            "workbench.action.focusFirstEditorGroup"
+          ]
+        },
+        {
+          "key": "Q",
+          "name": "Quit application",
+          "icon": "log-out",
+          "type": "command",
+          "command": "workbench.action.quit"
+        }
       ]
     },
     {
