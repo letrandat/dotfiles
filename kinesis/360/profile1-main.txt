@@ -13,6 +13,7 @@
 [rwin]>[rctr]
 [rctr]>[rwin]
 <function1>
+[p]>[plpa]
 [m]>[mute]
 [left]>[prev]
 [rght]>[next]
@@ -24,7 +25,6 @@
 [rctr]>[rwin]
 [del]>[lalt]
 [ent]>[ralt]
-[spc]>[plpa]
 <function2>
 <function3>
 
