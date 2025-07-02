@@ -5,7 +5,6 @@
 [lalt]>[lctr]
 [rwin]>[rctr]
 [rctr]>[rwin]
-[del]>[lalt]
 <keypad>
 [up]>[down]
 [down]>[up]
@@ -13,9 +12,7 @@
 [lalt]>[lctr]
 [rwin]>[rctr]
 [rctr]>[rwin]
-[del]>[lalt]
 <function1>
-[p]>[prnt]
 [m]>[mute]
 [left]>[prev]
 [rght]>[next]
