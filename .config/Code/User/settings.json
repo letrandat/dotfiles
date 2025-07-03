@@ -483,13 +483,6 @@
           "command": "editor.action.codeAction"
         },
         {
-          "key": "s",
-          "name": "Source action",
-          "icon": "lightbulb",
-          "type": "command",
-          "command": "editor.action.sourceAction"
-        },
-        {
           "key": "f",
           "name": "Format buffer",
           "icon": "file",
@@ -523,6 +516,20 @@
           "icon": "symbol-keyword",
           "type": "command",
           "command": "editor.action.rename"
+        },
+        {
+          "key": "R",
+          "name": "Refactor",
+          "icon": "edit",
+          "type": "command",
+          "command": "editor.action.refactor"
+        },
+        {
+          "key": "s",
+          "name": "Source action",
+          "icon": "lightbulb",
+          "type": "command",
+          "command": "editor.action.sourceAction"
         }
       ]
     },
