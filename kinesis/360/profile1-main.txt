@@ -1,17 +1,9 @@
 <base>
 [up]>[down]
 [down]>[up]
-[lctr]>[lwin]
-[lalt]>[lctr]
-[rwin]>[rctr]
-[rctr]>[rwin]
 <keypad>
 [up]>[down]
 [down]>[up]
-[lctr]>[lwin]
-[lalt]>[lctr]
-[rwin]>[rctr]
-[rctr]>[rwin]
 <function1>
 [p]>[plpa]
 [m]>[mute]
@@ -19,12 +11,6 @@
 [rght]>[next]
 [up]>[vol-]
 [down]>[vol+]
-[lctr]>[lwin]
-[lalt]>[lctr]
-[rwin]>[rctr]
-[rctr]>[rwin]
-[del]>[lalt]
-[ent]>[ralt]
 <function2>
 <function3>
 
