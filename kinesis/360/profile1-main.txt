@@ -1,6 +1,15 @@
 <base>
+[hk1]>[home]
+[hk2]>[end]
+[hk3]>[pgup]
+[hk4]>[pgdn]
 [up]>[down]
 [down]>[up]
+[lalt]>[lwin]
+[home]>[fn2s]
+[pgup]>[fn3s]
+[end]>[lalt]
+[pgdn]>[ralt]
 <keypad>
 [up]>[down]
 [down]>[up]
@@ -12,5 +21,7 @@
 [up]>[vol-]
 [down]>[vol+]
 <function2>
+[home]>[defs]
 <function3>
+[pgup]>[defs]
 
