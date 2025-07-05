@@ -107,10 +107,6 @@
     "command": "vscode-harpoon.gotoGlobalEditor1"
   },
   {
-    "key": "alt+f9",
-    "command": "vscode-harpoon.gotoGlobalEditor1"
-  },
-  {
     "key": "alt+j",
     "command": "vscode-harpoon.gotoEditor1"
   },
