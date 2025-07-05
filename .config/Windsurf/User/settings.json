@@ -1368,7 +1368,7 @@
           "name": "Focus on files explorer",
           "icon": "list-tree",
           "type": "command",
-          "command": "workbench.files.action.showActiveFileInExplorer"
+          "command": "workbench.view.explorer"
         },
         {
           "key": "g",
