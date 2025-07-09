@@ -24,6 +24,8 @@
     "map g, focusOrLaunch url=\"chrome-extension://aibcglbfblnogfjhbcmmpobjhnomhcdo/pages/options.html\"",
     "# Goto",
     "map gs focusOrLaunch url=\"https://www.youtube.com/feed/subscriptions\"",
+    "# HISTORY",
+    "map gr Vomnibar.activateHistoryInNewTab",
     "# MODES",
     "map i passNextKey",
     "map I enterInsertMode",
