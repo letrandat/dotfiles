@@ -38,7 +38,7 @@
     "map ( closeTabsOnLeft",
     "map ) closeTabsOnRight",
     "map T restoreTab",
-    "map wo closeOtherTabs",
+    "map bo closeOtherTabs",
     "# For vertical tabs",
     "map <c-k> moveTabLeft",
     "map <c-j> moveTabRight",
