@@ -1,6 +1,6 @@
 # Description: Fix/rewrite text
 pppf
-Can you improve the grammar and clarify the meaning. Provide three distinct examples with different approaches, where Example 1 adopts a friendly tone, and Examples 2 and 3 can explore any writing style. For all three examples, feel free to rearrange the ideas or present them in a different order if it leads to better clarity and flow. Each example should have a title summarizing the approach, include a brief analysis explaining the changes made and why, and omit the original text.
+Can you improve the grammar and clarify the meaning. Provide three distinct examples with different approaches, where Example 1 adopts a friendly tone, and Examples 2 and 3 can explore any writing style. For all three examples, feel free to rearrange the ideas or present them in a different order if it leads to better clarity and flow. Prioritize keeping my original writing style. Each example should have a title summarizing the approach, include a brief analysis explaining the changes made and why, and omit the original text.
 # Description: Write design doc.md
 pppdd
 I need your help designing a system and preparing a design document in .md format. The document should contain: A high-level Overview, Functional and Non-functional Requirements. Both High-Level Design and a Detailed Design, including changes to the front end and back end. An evaluation of Alternative Approaches, with a focus on trade-offs. A review of Risks and Mitigations. When possible, include data flow, and API design.
