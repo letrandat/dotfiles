@@ -1,11 +1,11 @@
 {
   "name": "Vimium C",
-  "@time": "6/22/2025, 8:57:26 AM",
-  "time": 1750607846026,
+  "@time": "7/24/2025, 9:26:34 PM",
+  "time": 1753417594266,
   "environment": {
     "extension": "2.12.3",
     "platform": "mac",
-    "chromium": 137
+    "chromium": 138
   },
   "exclusionRules": [
     {
@@ -21,7 +21,7 @@
   "keyMappings": [
     "#!no-check",
     "map <c-i> openUrl url=\"vimium://status/toggle/^\\u0020<c-i>\"",
-    "map g, focusOrLaunch url=\"chrome-extension://aibcglbfblnogfjhbcmmpobjhnomhcdo/pages/options.html\"",
+    "map g, focusOrLaunch url=\"extension://aibcglbfblnogfjhbcmmpobjhnomhcdo/pages/options.html\"",
     "# Goto",
     "map gs focusOrLaunch url=\"https://www.youtube.com/feed/subscriptions\"",
     "# HISTORY",
@@ -39,6 +39,7 @@
     "map ) closeTabsOnRight",
     "map T restoreTab",
     "map bo closeOtherTabs",
+    "map w visitPreviousTab",
     "# For vertical tabs",
     "map <c-k> moveTabLeft",
     "map <c-j> moveTabRight",
