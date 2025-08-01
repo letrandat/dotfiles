@@ -136,7 +136,7 @@
     "editor.defaultFormatter": "Grafana.vscode-jsonnet"
   },
   "jsonnet.languageServer.formatting": {
-    "StringStyle": "double"
+    "StringStyle": "single"
   },
   "[helm]": {
     "editor.formatOnSave": false,
