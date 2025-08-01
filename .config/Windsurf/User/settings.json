@@ -138,6 +138,9 @@
   "jsonnet.languageServer.formatting": {
     "StringStyle": "double"
   },
+  "[helm]": {
+    "editor.formatOnSave": false,
+  },
   // plugins
 
   // Sonarlint Configuration
