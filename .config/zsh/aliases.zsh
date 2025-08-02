@@ -13,6 +13,7 @@ alias b="git checkout"
 alias squash="git rebase -i master"
 alias lg="lazygit"
 alias ld="lazydocker"
+alias k="kubectl"
 
 # set python to homebrew python3
 # this is going to create so many problem for me, #FIXME
