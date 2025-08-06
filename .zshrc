@@ -74,6 +74,7 @@ ZSH_CUSTOM=~/.config/zsh
 plugins=(
   git
   z
+  kubectl
 )
 
 source $ZSH/oh-my-zsh.sh
