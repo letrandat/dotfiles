@@ -75,6 +75,7 @@ plugins=(
   git
   z
   kubectl
+  helm
 )
 
 source $ZSH/oh-my-zsh.sh
