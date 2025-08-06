@@ -76,6 +76,7 @@ plugins=(
   z
   kubectl
   helm
+  aliases
 )
 
 source $ZSH/oh-my-zsh.sh
