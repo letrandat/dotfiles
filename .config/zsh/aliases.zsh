@@ -16,7 +16,7 @@ alias ld="lazydocker"
 
 # set python to homebrew python3
 # this is going to create so many problem for me, #FIXME
-alias python="/opt/homebrew/bin/python3"
+# alias python="/opt/homebrew/bin/python3"
 
 # set NVIM_APPNAME to nvim-kickstart
 # https://github.com/nvim-lua/kickstart.nvim?tab=readme-ov-file#FAQ
