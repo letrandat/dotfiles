@@ -85,6 +85,9 @@
     "editor.defaultFormatter": "vscode.html-language-features"
   },
 
+  // Python Configuration
+  "python.defaultInterpreterPath": "/opt/homebrew/bin/python3",
+
   // Go language Configuration
   "[go]": {
     "editor.defaultFormatter": "golang.go"
@@ -139,7 +142,7 @@
     "StringStyle": "single"
   },
   "[helm]": {
-    "editor.formatOnSave": false,
+    "editor.formatOnSave": false
   },
   // plugins
 
@@ -1763,6 +1766,5 @@
   "github.copilot.chat.codeGeneration.instructions": [],
   "chat.agent.enabled": true,
   "chat.mcp.discovery.enabled": true,
-  // mcp servers
   "mcp": {}
 }
