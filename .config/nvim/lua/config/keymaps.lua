@@ -4,7 +4,7 @@
 
 -- Map Ctrl+q to quit all
 vim.keymap.set("n", "<C-q>", "<cmd>qa<cr>", { desc = "Quit all" })
--- Map Ctrl+e to select session
-vim.keymap.set("n", "<C-e>", function()
+-- Map <leader>wr to select recent session
+vim.keymap.set("n", "<leader>wr", function()
   require("persistence").select()
-end, { desc = "Select Session" })
+end, { desc = "Select Recent Session" })
