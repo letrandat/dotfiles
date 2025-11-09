@@ -1630,6 +1630,22 @@
       "type": "bindings",
       "bindings": [
         {
+          "key": "j",
+          "name": "Jump to Project j",
+          "type": "command",
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "\u0015code ~/workspace/repo/learn-go-with-tests\u000D"
+          }
+        },
+        {
+          "key": "k",
+          "name": "Jump to dotfiles",
+          "type": "command",
+          "command": "workbench.action.terminal.sendSequence",
+          "args": { "text": "\u0015code ~/workspace/repo/dotfiles\u000D" }
+        },
+        {
           "key": "w",
           "name": "Find Dirs (Switcher in Terminal)",
           "type": "command",
