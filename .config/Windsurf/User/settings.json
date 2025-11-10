@@ -1216,7 +1216,7 @@
     },
     {
       "key": "m",
-      "name": "Bookmarks...",
+      "name": "Bookmarks/Maps...",
       "type": "bindings",
       "bindings": [
         {
@@ -1248,6 +1248,12 @@
           "name": "Toggle bookmark",
           "type": "command",
           "command": "bookmarks.toggle"
+        },
+        {
+          "key": "s",
+          "name": "Show Code Maps",
+          "type": "command",
+          "command": "windsurf.openCodeMapView"
         }
       ]
     },
