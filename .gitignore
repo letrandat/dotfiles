@@ -4,7 +4,3 @@ workspaceStorage/
 History/
 *.log
 .DS_Store
-
-# Backups
-*.bak
-*.backup_*
