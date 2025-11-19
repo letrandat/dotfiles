@@ -20,51 +20,53 @@
   // CTRL+U/CTRL+D to scroll up/down
   //
   // Disable the default VS Code Ctrl+u/Ctrl+d if it's interfering
-  {
-    "key": "ctrl+u",
-    "command": "-vscode-neovim.ctrl-u",
-    "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'"
-  },
-  {
-    "key": "ctrl+d",
-    "command": "-vscode-neovim.ctrl-d",
-    "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'"
-  },
+  // COMMENTED OUT FOR VSCODEVIM - vscode-neovim specific
+  // {
+  //   "key": "ctrl+u",
+  //   "command": "-vscode-neovim.ctrl-u",
+  //   "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'"
+  // },
+  // {
+  //   "key": "ctrl+d",
+  //   "command": "-vscode-neovim.ctrl-d",
+  //   "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'"
+  // },
   // Remap to send the command directly to Neovim
-  {
-    "key": "ctrl+u",
-    "command": "vscode-neovim.send",
-    "when": "editorTextFocus",
-    "args": "<C-u>"
-  },
-  {
-    "key": "ctrl+d",
-    "command": "vscode-neovim.send",
-    "when": "editorTextFocus",
-    "args": "<C-d>"
-  },
-  {
-    "key": "ctrl+b",
-    "command": "runCommands",
-    "args": {
-      "commands": [
-        { "command": "vscode-neovim.send", "args": "<C-b>" },
-        { "command": "editorScroll", "args": { "to": "up", "by": "page" } }
-      ]
-    },
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+f",
-    "command": "runCommands",
-    "args": {
-      "commands": [
-        { "command": "vscode-neovim.send", "args": "<C-f>" },
-        { "command": "editorScroll", "args": { "to": "down", "by": "page" } }
-      ]
-    },
-    "when": "editorTextFocus"
-  },
+  // COMMENTED OUT FOR VSCODEVIM - vscode-neovim specific
+  // {
+  //   "key": "ctrl+u",
+  //   "command": "vscode-neovim.send",
+  //   "when": "editorTextFocus",
+  //   "args": "<C-u>"
+  // },
+  // {
+  //   "key": "ctrl+d",
+  //   "command": "vscode-neovim.send",
+  //   "when": "editorTextFocus",
+  //   "args": "<C-d>"
+  // },
+  // {
+  //   "key": "ctrl+b",
+  //   "command": "runCommands",
+  //   "args": {
+  //     "commands": [
+  //       { "command": "vscode-neovim.send", "args": "<C-b>" },
+  //       { "command": "editorScroll", "args": { "to": "up", "by": "page" } }
+  //     ]
+  //   },
+  //   "when": "editorTextFocus"
+  // },
+  // {
+  //   "key": "ctrl+f",
+  //   "command": "runCommands",
+  //   "args": {
+  //     "commands": [
+  //       { "command": "vscode-neovim.send", "args": "<C-f>" },
+  //       { "command": "editorScroll", "args": { "to": "down", "by": "page" } }
+  //     ]
+  //   },
+  //   "when": "editorTextFocus"
+  // },
 
   //
   // EXPLORER SHORTCUTS
@@ -130,10 +132,11 @@
     "key": "alt+space",
     "command": "whichkey.show"
   },
-
-  //
-  // TERMINAL
-  //
+  {
+    "key": "space",
+    "command": "whichkey.show",
+    "when": "editorTextFocus && vim.mode != 'Insert'"
+  },
   {
     "key": "ctrl+=",
     "command": "workbench.action.terminal.toggleTerminal",
