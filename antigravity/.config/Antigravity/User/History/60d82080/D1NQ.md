@@ -30,35 +30,18 @@ The script will:
 
 ## Repository Structure (GNU Stow)
 
-This repository is organized into **Stow packages**. Each top-level directory corresponds to an application and contains the exact folder structure that should be mirrored in your home directory.
+This repository is organized into **Stow packages**. Each top-level directory corresponds to an application:
 
-### How Stow Works
-Stow acts as a symlink farm manager. It takes a package directory and "folds" it onto the target directory (your home folder).
+- `zsh/` -> `~/.zshrc`, `~/.config/zsh`
+- `nvim/` -> `~/.config/nvim`
+- `git/` -> `~/.gitconfig`
+- `antigravity/` -> `~/.config/Antigravity`
 
-**Example: `zsh` package**
+To manually restow a specific package (e.g., after adding a new file):
+
+```bash
+stow -R zsh
 ```
-dotfiles/
-└── zsh/
-    ├── .zshrc                -> symlinks to ~/.zshrc
-    └── .config/
-        └── zsh/
-            └── aliases.zsh   -> symlinks to ~/.config/zsh/aliases.zsh
-```
-
-### Package List
-- `zsh/`: Shell configuration (`.zshrc`, aliases)
-- `nvim/`: Neovim configuration (`.config/nvim`)
-- `git/`: Git configuration (`.gitconfig`)
-- `antigravity/`: Antigravity Agent configuration (`.config/Antigravity`)
-- `vscode/`: VS Code settings (`.config/Code`)
-- `windsurf/`: Windsurf settings (`.config/Windsurf`)
-
-### Managing Dotfiles
-To add a new configuration file:
-1. Create the file inside the appropriate package folder in `dotfiles/`.
-   *Example: `dotfiles/zsh/.config/zsh/my-new-script.zsh`*
-2. Run `stow -R <package>` to refresh the links.
-   *Example: `stow -R zsh`*
 
 
 ## VSCode Switcher Utility
