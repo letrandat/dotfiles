@@ -204,10 +204,6 @@
   "gitlens.currentLine.enabled": false,
   "gitlens.codeLens.enabled": false,
 
-  // find-it-faster
-  "find-it-faster.general.restoreFocusTerminal": true,
-  "find-it-faster.general.showMaximizedTerminal": true,
-
   //
   // whichkey
   //
