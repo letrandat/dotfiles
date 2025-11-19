@@ -113,3 +113,6 @@ fi
 
 # starship
 eval "$(starship init zsh)"
+
+# Added by Antigravity
+export PATH="/Users/dat/.antigravity/antigravity/bin:$PATH"

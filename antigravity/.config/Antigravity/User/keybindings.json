@@ -1,0 +1,189 @@
+// NOTE: Keep this file super small,
+// prefer to keep all the key bindings under whichkey or neovim's keybindings
+// unless
+// The keybindings need to run when !textEditorFocus andit does not make sense to have it in whichkey
+[
+  // emergency reload window, in case whichkey is broken
+  {
+    "key": "cmd+w r",
+    "command": "workbench.action.reloadWindow"
+  },
+
+  // down to editor as vscode lost focus a lot
+  {
+    "key": "cmd+d",
+    "command": "workbench.action.focusFirstEditorGroup",
+    "when": "!editorTextFocus"
+  },
+
+  //
+  // CTRL+U/CTRL+D to scroll up/down
+  //
+  // Disable the default VS Code Ctrl+u/Ctrl+d if it's interfering
+  // COMMENTED OUT FOR VSCODEVIM - vscode-neovim specific
+  // {
+  //   "key": "ctrl+u",
+  //   "command": "-vscode-neovim.ctrl-u",
+  //   "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'"
+  // },
+  // {
+  //   "key": "ctrl+d",
+  //   "command": "-vscode-neovim.ctrl-d",
+  //   "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'"
+  // },
+  // Remap to send the command directly to Neovim
+  // COMMENTED OUT FOR VSCODEVIM - vscode-neovim specific
+  // {
+  //   "key": "ctrl+u",
+  //   "command": "vscode-neovim.send",
+  //   "when": "editorTextFocus",
+  //   "args": "<C-u>"
+  // },
+  // {
+  //   "key": "ctrl+d",
+  //   "command": "vscode-neovim.send",
+  //   "when": "editorTextFocus",
+  //   "args": "<C-d>"
+  // },
+  // {
+  //   "key": "ctrl+b",
+  //   "command": "runCommands",
+  //   "args": {
+  //     "commands": [
+  //       { "command": "vscode-neovim.send", "args": "<C-b>" },
+  //       { "command": "editorScroll", "args": { "to": "up", "by": "page" } }
+  //     ]
+  //   },
+  //   "when": "editorTextFocus"
+  // },
+  // {
+  //   "key": "ctrl+f",
+  //   "command": "runCommands",
+  //   "args": {
+  //     "commands": [
+  //       { "command": "vscode-neovim.send", "args": "<C-f>" },
+  //       { "command": "editorScroll", "args": { "to": "down", "by": "page" } }
+  //     ]
+  //   },
+  //   "when": "editorTextFocus"
+  // },
+
+  //
+  // EXPLORER SHORTCUTS
+  //
+  {
+    "key": "a",
+    "command": "workbench.files.action.createFileFromExplorer",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
+
+  //
+  // GITHUB COPILOT
+  //
+  // use CMD+L to open copilot
+  {
+    "key": "cmd+l",
+    "command": "workbench.panel.chat",
+    "when": "workbench.panel.chat.view.copilot.active"
+  },
+
+  //
+  // HARPOON SHORTCUTS
+  //
+  // mark file to harpoon
+  {
+    "key": "alt+m",
+    "command": "cursor-harpoon.addEditor"
+  },
+  // [o]pen editors
+  {
+    "key": "alt+o",
+    "command": "cursor-harpoon.editEditors"
+  },
+  {
+    "key": "alt+p",
+    "command": "cursor-harpoon.editorQuickPick"
+  },
+  {
+    "key": "alt+8",
+    "command": "cursor-harpoon.gotoGlobalEditor1"
+  },
+  {
+    "key": "alt+j",
+    "command": "cursor-harpoon.gotoEditor1"
+  },
+  {
+    "key": "alt+k",
+    "command": "cursor-harpoon.gotoEditor2"
+  },
+  {
+    "key": "alt+l",
+    "command": "cursor-harpoon.gotoEditor3"
+  },
+  {
+    "key": "alt+;",
+    "command": "cursor-harpoon.gotoEditor4"
+  },
+
+  //
+  // WHICH KEY
+  //
+  {
+    "key": "alt+space",
+    "command": "whichkey.show"
+  },
+  {
+    "key": "space",
+    "command": "whichkey.show",
+    "when": "editorTextFocus && vim.mode != 'Insert'"
+  },
+  // Trigger WhichKey with 'm' prefix to show bookmarks menu
+  {
+    "key": "m",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "whichkey.show",
+        {
+          "command": "whichkey.triggerKey",
+          "args": "m"
+        }
+      ]
+    },
+    "when": "editorTextFocus && vim.mode != 'Insert' && vim.mode != 'SearchInProgressMode' && vim.mode != 'CommandlineInProgress'"
+  },
+  {
+    "key": "ctrl+pagedown",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+  },
+  {
+    "key": "ctrl+pageup",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+  },
+
+  //
+  // vsnetrw
+  //
+  {
+    "key": "a",
+    "command": "vsnetrw.create",
+    "when": "editorTextFocus && editorLangId == 'vsnetrw' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+  },
+  {
+    "key": "d",
+    "command": "-vsnetrw.createDir",
+    "when": "editorTextFocus && editorLangId == 'vsnetrw' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+  },
+  {
+    "key": "d",
+    "command": "vsnetrw.delete",
+    "when": "editorTextFocus && editorLangId == 'vsnetrw' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+  },
+  {
+    "key": "r",
+    "command": "vsnetrw.rename",
+    "when": "editorTextFocus && editorLangId == 'vsnetrw' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+  }
+]

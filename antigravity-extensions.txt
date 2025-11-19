@@ -1,0 +1,11 @@
+alefragnani.bookmarks
+danprince.vsnetrw
+eamodio.gitlens
+esbenp.prettier-vscode
+github.github-vscode-theme
+pkief.material-icon-theme
+przybylski.cursor-harpoon
+ryuta46.multi-command
+tompollak.lazygit-vscode
+vscodevim.vim
+vspacecode.whichkey

@@ -19,58 +19,47 @@ Some applications (particularly GUI applications) on macOS require their configu
 ### Manual Setup Instructions
 
 ```bash
-# Create symbolic links for standard dotfiles
-ln -s ~/workspace/repo/dotfiles/.ideavimrc ~/.ideavimrc
-ln -s ~/workspace/repo/dotfiles/.tmux.conf ~/.tmux.conf
-
-# tmux-sessionizer
-mkdir -p ~/.local/bin
-ln -s ~/workspace/repo/dotfiles/.local/bin/tmux-sessionizer ~/.local/bin/
-ln -s ~/workspace/repo/dotfiles/.local/bin/vscode-switcher ~/.local/bin/
-
-ln -s ~/workspace/repo/dotfiles/.config/kitty/kitty.conf ~/.config/kitty/kitty.conf
-ln -s ~/workspace/repo/dotfiles/.config/ghostty/config ~/.config/ghostty/config
-ln -s ~/workspace/repo/dotfiles/.config/lazygit/config.yml ~/.config/lazygit/config.yml
-
-
-# Create symbolic links for folders
-ln -s ~/workspace/repo/dotfiles/.config/nvim ~/.config/
-ln -s ~/workspace/repo/dotfiles/.config/nvim-kickstart ~/.config/
-ln -s ~/workspace/repo/dotfiles/.config/nvim-vscode ~/.config/
-
-# Create symbolic links for macOS Application Support
-# VS Code
-ln -s ~/workspace/repo/dotfiles/.config/Code/User/settings.json ~/Library/Application\ Support/Code/User/settings.json
-ln -s ~/workspace/repo/dotfiles/.config/Code/User/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
-ln -s ~/workspace/repo/dotfiles/.config/Code/User/prompts/code-gen.instructions.md ~/Library/Application\ Support/Code/User/prompts/code-gen.instructions.md
-ln -s ~/workspace/repo/dotfiles/.config/Code/User/tasks.json ~/Library/Application\ Support/Code/User/tasks.json
-
-# Windsurf
-ln -s ~/workspace/repo/dotfiles/.config/Windsurf/User/settings.json ~/Library/Application\ Support/Windsurf/User/settings.json
-ln -s ~/workspace/repo/dotfiles/.config/Windsurf/User/keybindings.json ~/Library/Application\ Support/Windsurf/User/keybindings.json
-
-# Intellij
-ln -s ~/workspace/repo/dotfiles/.config/intellimacs ~/.config/
-
-# config zsh
-# add more *.zsh files under ~/.config/zsh to extend functionality
-mkdir -p ~/.config/zsh
-ln -s ~/workspace/repo/dotfiles/.config/zsh/aliases.zsh ~/.config/zsh/aliases.zsh
-chmod +x ~/.config/zsh/aliases.zsh
-ln -s ~/workspace/repo/dotfiles/.config/zsh/env.zsh ~/.config/zsh/env.zsh
-chmod +x ~/.config/zsh/env.zsh
-ln -s ~/workspace/repo/dotfiles/.config/zsh/vscode-tmux.zsh ~/.config/zsh/vscode-tmux.zsh
-chmod +x ~/.config/zsh/vscode-tmux.zsh
-ln -s ~/workspace/repo/dotfiles/.zshrc ~/.zshrc
-
-# config vscode profiles
-mkdir -p ~/.config/Code/User/bin
-ln -s ~/workspace/repo/dotfiles/.local/bin/vscode-tmux.sh ~/.local/bin/vscode-tmux.sh
-chmod +x ~/.local/bin/vscode-tmux.sh
-
-# Remember to update ~/.gitconfig-local
-ln -s ~/workspace/repo/dotfiles/.gitconfig ~/.gitconfig
+# Run the automated setup script
+./setup.sh
 ```
+
+The script will:
+1. Install **GNU Stow** (via Homebrew) if missing.
+2. Automatically symlink all configuration packages (zsh, nvim, git, etc.) to your home directory.
+3. Handle macOS-specific "Application Support" paths (VS Code, Antigravity) by linking them to `~/.config`, allowing Stow to manage them centrally.
+
+## Repository Structure (GNU Stow)
+
+This repository is organized into **Stow packages**. Each top-level directory corresponds to an application and contains the exact folder structure that should be mirrored in your home directory.
+
+### How Stow Works
+Stow acts as a symlink farm manager. It takes a package directory and "folds" it onto the target directory (your home folder).
+
+**Example: `zsh` package**
+```
+dotfiles/
+└── zsh/
+    ├── .zshrc                -> symlinks to ~/.zshrc
+    └── .config/
+        └── zsh/
+            └── aliases.zsh   -> symlinks to ~/.config/zsh/aliases.zsh
+```
+
+### Package List
+- `zsh/`: Shell configuration (`.zshrc`, aliases)
+- `nvim/`: Neovim configuration (`.config/nvim`)
+- `git/`: Git configuration (`.gitconfig`)
+- `antigravity/`: Antigravity Agent configuration (`.config/Antigravity`)
+- `vscode/`: VS Code settings (`.config/Code`)
+- `windsurf/`: Windsurf settings (`.config/Windsurf`)
+
+### Managing Dotfiles
+To add a new configuration file:
+1. Create the file inside the appropriate package folder in `dotfiles/`.
+   *Example: `dotfiles/zsh/.config/zsh/my-new-script.zsh`*
+2. Run `stow -R <package>` to refresh the links.
+   *Example: `stow -R zsh`*
+
 
 ## VSCode Switcher Utility
 

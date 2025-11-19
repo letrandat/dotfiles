@@ -1,3 +1,6 @@
-/.idea/
---log
-asvetliakov.vscode-neovim=info
+# Sensitive / Auto-generated
+globalStorage/
+workspaceStorage/
+History/
+*.log
+.DS_Store
