@@ -191,12 +191,6 @@
     }
   ],
 
-  // vscode-neovim Configuration
-  "vscode-neovim.NVIM_APPNAME": "nvim-vscode",
-  "extensions.experimental.affinity": {
-    "asvetliakov.vscode-neovim": 1
-  },
-
   // vscode-vim Configuration
   "vim.useSystemClipboard": true,
 
