@@ -1,5 +1,7 @@
 # TODO
 
+- [ ] install lazygit
+- [ ] Review and remove unused plugins
 - [ ] Explore Antigravity features
 - [ ] Create more custom workflows
 - [ ] install which key / manage keybindings / extensions
