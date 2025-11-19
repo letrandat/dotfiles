@@ -137,10 +137,19 @@
     "command": "whichkey.show",
     "when": "editorTextFocus && vim.mode != 'Insert'"
   },
-  // Direct mm to toggle bookmarks (without space prefix)
+  // Trigger WhichKey with 'm' prefix to show bookmarks menu
   {
-    "key": "m m",
-    "command": "bookmarks.toggle",
+    "key": "m",
+    "command": "runCommands",
+    "args": {
+      "commands": [
+        "whichkey.show",
+        {
+          "command": "whichkey.triggerKey",
+          "args": "m"
+        }
+      ]
+    },
     "when": "editorTextFocus && vim.mode != 'Insert'"
   },
   {
