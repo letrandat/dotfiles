@@ -180,7 +180,7 @@
         // send ctrl+u to terminal to clear terminal before running command
         {
           "command": "workbench.action.terminal.sendSequence",
-          "args": { "text": "\u0015vscode-switcher\u000D" }
+          "args": { "text": "\u0015vscode-switcher --antigravity\u000D" }
         },
         // focus on terminal to select the new dir
         {

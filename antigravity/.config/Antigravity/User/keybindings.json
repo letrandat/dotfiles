@@ -137,6 +137,12 @@
     "command": "whichkey.show",
     "when": "editorTextFocus && vim.mode != 'Insert'"
   },
+  // Direct mm to toggle bookmarks (without space prefix)
+  {
+    "key": "m m",
+    "command": "bookmarks.toggle",
+    "when": "editorTextFocus && vim.mode != 'Insert'"
+  },
   {
     "key": "ctrl+=",
     "command": "workbench.action.terminal.toggleTerminal",
