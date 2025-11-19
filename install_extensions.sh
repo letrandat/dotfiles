@@ -7,13 +7,6 @@
 #          ./install_extensions.sh windsurf
 #          ./install_extensions.sh antigravity
 
-EXTENSIONS_FILE="vscode-extensions.txt"
-
-if [ ! -f "$EXTENSIONS_FILE" ]; then
-    echo "Error: $EXTENSIONS_FILE not found!"
-    exit 1
-fi
-
 # Determine which editor to use
 CMD="$1"
 
@@ -29,6 +22,18 @@ if [ -z "$CMD" ]; then
         3) CMD="antigravity" ;;
         *) echo "Invalid choice"; exit 1 ;;
     esac
+fi
+
+# Select extensions file based on editor
+if [ "$CMD" = "antigravity" ]; then
+    EXTENSIONS_FILE="antigravity-extensions.txt"
+else
+    EXTENSIONS_FILE="vscode-extensions.txt"
+fi
+
+if [ ! -f "$EXTENSIONS_FILE" ]; then
+    echo "Error: $EXTENSIONS_FILE not found!"
+    exit 1
 fi
 
 # Verify the command exists
