@@ -150,7 +150,7 @@
         }
       ]
     },
-    "when": "editorTextFocus && vim.mode != 'Insert'"
+    "when": "editorTextFocus && vim.mode != 'Insert' && vim.mode != 'SearchInProgressMode' && vim.mode != 'CommandlineInProgress'"
   },
   {
     "key": "ctrl+pagedown",
