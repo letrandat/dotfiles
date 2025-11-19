@@ -6,7 +6,7 @@
   "workbench.colorTheme": "GitHub Light Default",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.editor.showTabs": "none",
-  "workbench.preferredDarkColorTheme": "GitHub Dark Dimmed",
+  "workbench.preferredDarkColorTheme": "GitHub Light Default",
   "workbench.preferredLightColorTheme": "GitHub Light Default",
 
   // Breadcrumbs Configuration
@@ -199,6 +199,9 @@
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
+
+  // vscode-vim Configuration
+  "vim.useSystemClipboard": true,
 
   // lazygit-vscode
   "lazygit-vscode.autoMaximizeWindow": true,
