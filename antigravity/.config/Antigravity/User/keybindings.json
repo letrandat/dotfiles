@@ -164,16 +164,6 @@
   },
 
   //
-  // Buffer Management
-  //
-  {
-    "key": "alt+h",
-    "name": "Buffer History",
-    "type": "commands",
-    "command": "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
-  },
-
-  //
   // vsnetrw
   //
   {
