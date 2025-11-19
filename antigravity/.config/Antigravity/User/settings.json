@@ -41,6 +41,7 @@
   // show extra status bar for editor suggestions
   "editor.suggest.showStatusBar": true,
   "editor.rulers": [80],
+  "editor.accessibilitySupport": "off",
 
   // Diff Editor Configuration
   "diffEditor.hideUnchangedRegions.enabled": true,
@@ -1368,8 +1369,7 @@
           "icon": "search",
           "name": "Search in project",
           "type": "command",
-          "command": "vscode-neovim.send",
-          "args": "sg"
+          "command": "workbench.action.findInFiles"
         },
         {
           "key": "j",
@@ -1736,28 +1736,5 @@
         }
       ]
     }
-  ],
-
-  // GITHUB.COPILOT CONFIGURATION
-  "github.copilot.chat.agent.thinkingTool": true,
-  "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
-
-  // next edit suggestions
-  "github.copilot.nextEditSuggestions.enabled": true,
-  "github.copilot.nextEditSuggestions.fixes": true,
-
-  // copilot chat configuration
-  "github.copilot.chat.search.keywordSuggestions": true,
-  "github.copilot.chat.commitMessageGeneration.instructions": [],
-  "github.copilot.chat.testGeneration.instructions": [],
-  "github.copilot.chat.codeGeneration.instructions": [],
-  "chat.agent.enabled": true,
-  "chat.mcp.discovery.enabled": {
-    "claude-desktop": true,
-    "antigravity": true,
-    "cursor-global": true,
-    "cursor-workspace": true
-  },
-  "mcp": {},
-  "editor.accessibilitySupport": "off"
+  ]
 }
