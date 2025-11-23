@@ -1765,6 +1765,11 @@
   "github.copilot.chat.testGeneration.instructions": [],
   "github.copilot.chat.codeGeneration.instructions": [],
   "chat.agent.enabled": true,
-  "chat.mcp.discovery.enabled": true,
+  "chat.mcp.discovery.enabled": {
+    "claude-desktop": true,
+    "windsurf": true,
+    "cursor-global": true,
+    "cursor-workspace": true
+  },
   "mcp": {}
 }
