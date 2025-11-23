@@ -6,7 +6,7 @@
   "workbench.colorTheme": "GitHub Light Default",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.editor.showTabs": "none",
-  "workbench.preferredDarkColorTheme": "GitHub Light Default",
+  "workbench.preferredDarkColorTheme": "Solarized Light",
   "workbench.preferredLightColorTheme": "GitHub Light Default",
 
   // Breadcrumbs Configuration
@@ -142,9 +142,17 @@
   "[helm]": {
     "editor.formatOnSave": false
   },
-  // plugins
 
+  //
+  // Plugins
+  //
+
+  // Redhat telemetry
+  "redhat.telemetry.enabled": true,
+
+  //
   // Git Configuration
+  //
   "git.openRepositoryInParentFolders": "always",
   "git.autofetch": true,
   "git.verboseCommit": true,

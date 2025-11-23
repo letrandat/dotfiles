@@ -20,6 +20,9 @@ export NVM_DIR="$HOME/.nvm"
 # RUBY
 export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 
+# Added by Antigravity
+export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
+
 # Added by Windsurf
 export PATH="$HOME/.codeium/windsurf/bin:$PATH"
 

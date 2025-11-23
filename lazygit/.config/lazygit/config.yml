@@ -1,12 +1,19 @@
 os:
-  editPreset: "vscode"
+  edit: "windsurf {{filename}}"
+  editAtLine: "windsurf --goto {{filename}}:{{line}}"
 promptToReturnFromSubprocess: false # removes "press enter to return to lazygit" popup
 gui:
   showIcons: true
 
-customCommands:
-  - key: '<c-k>'
-    command: '~/.codeium/windsurf/bin/surf {{ .SelectedFile.Name }}'
-    context: 'global'
-    description: 'Open selected file with Windsurf'
-    loadingText: 'Opening with Windsurf...'
+keybinding:
+  universal:
+    prevBlock-alt: "" # This will unbind 'h'
+    nextBlock-alt: "" # This will unbind 'l'
+    prevTab: "h"
+    nextTab: "l"
+    gotoTop-alt: "" # This will unbind 'home'
+    gotoBottom-alt: "" # This will unbind 'end'
+    prevPage: <home> # With my keyboard layout, home is equivalent to 'page up'
+    nextPage: <end> # With my keyboard layout, end is equivalent to 'page down'
+    extrasMenu: "9" # I like to use '9' as the extras
+    goInto: "I" # I like to use 'I' instead of 'Enter' to go into a file, a commit, etc

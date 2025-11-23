@@ -10,3 +10,4 @@
 - [ ] Search for "toggle changes panel" hotkey in Antigravity
 - [ ] Find way to hide everything and maximize chat window in Agent Manager
 - [ ] g; to next changes
+- [ ] look like windsurf and vscode configuration stopped working.. need to fix

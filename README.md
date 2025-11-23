@@ -16,6 +16,16 @@ Repository path                    -> Home directory path
 
 Some applications (particularly GUI applications) on macOS require their configuration files to be stored in `~/Library/Application Support/`. For these applications, I have to create customized symbolic links.
 
+### XDG Base Directory Standard
+
+To keep the home directory clean and cross-platform compatible, I enforce the **XDG Base Directory Specification** by setting:
+
+```bash
+export XDG_CONFIG_HOME="$HOME/.config"
+```
+
+This ensures that compliant applications (like `lazygit`, `nvim`, `alacritty`) look for their configuration in `~/.config/` instead of cluttering the home directory or using macOS-specific paths.
+
 ### Manual Setup Instructions
 
 ```bash
@@ -24,6 +34,7 @@ Some applications (particularly GUI applications) on macOS require their configu
 ```
 
 The script will:
+
 1. Install **GNU Stow** (via Homebrew) if missing.
 2. Automatically symlink all configuration packages (zsh, nvim, git, etc.) to your home directory.
 3. Handle macOS-specific "Application Support" paths (VS Code, Antigravity) by linking them to `~/.config`, allowing Stow to manage them centrally.
@@ -33,9 +44,11 @@ The script will:
 This repository is organized into **Stow packages**. Each top-level directory corresponds to an application and contains the exact folder structure that should be mirrored in your home directory.
 
 ### How Stow Works
+
 Stow acts as a symlink farm manager. It takes a package directory and "folds" it onto the target directory (your home folder).
 
 **Example: `zsh` package**
+
 ```
 dotfiles/
 └── zsh/
@@ -46,6 +59,7 @@ dotfiles/
 ```
 
 ### Package List
+
 - `zsh/`: Shell configuration (`.zshrc`, aliases)
 - `nvim/`: Neovim configuration (`.config/nvim`)
 - `git/`: Git configuration (`.gitconfig`)
@@ -54,12 +68,13 @@ dotfiles/
 - `windsurf/`: Windsurf settings (`.config/Windsurf`)
 
 ### Managing Dotfiles
-To add a new configuration file:
-1. Create the file inside the appropriate package folder in `dotfiles/`.
-   *Example: `dotfiles/zsh/.config/zsh/my-new-script.zsh`*
-2. Run `stow -R <package>` to refresh the links.
-   *Example: `stow -R zsh`*
 
+To add a new configuration file:
+
+1. Create the file inside the appropriate package folder in `dotfiles/`.
+   _Example: `dotfiles/zsh/.config/zsh/my-new-script.zsh`_
+2. Run `stow -R <package>` to refresh the links.
+   _Example: `stow -R zsh`_
 
 ## VSCode Switcher Utility
 
