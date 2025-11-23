@@ -141,6 +141,9 @@
   "[helm]": {
     "editor.formatOnSave": false
   },
+  // Python language settings
+  "python.terminal.activateEnvironment": false,
+
   // plugins
 
   // Sonarlint Configuration
@@ -1774,5 +1777,5 @@
     "cursor-global": true,
     "cursor-workspace": true
   },
-  "mcp": {}
+  "mcp": {},
 }
