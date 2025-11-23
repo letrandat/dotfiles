@@ -12,8 +12,8 @@ keybinding:
     nextBlock: "<down>"
     prevBlock-alt: "" # This will unbind 'h'
     nextBlock-alt: "" # This will unbind 'l'
-    prevTab: "h"
-    nextTab: "l"
+    prevTab: "<left>"
+    nextTab: "<right>"
     gotoTop-alt: "" # This will unbind 'home'
     gotoBottom-alt: "" # This will unbind 'end'
     prevPage: "<home>" # With my keyboard layout, home is equivalent to 'page up'
