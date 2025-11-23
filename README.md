@@ -167,13 +167,35 @@ cat vscode-extensions.txt | xargs -L 1 windsurf --install-extension
 **Benefit:**
 This setup lets me use a consistent set of keybindings across both Neovim and VS Code. I don't have to relearn shortcuts for each editor. Which-Key also helps me discover and remember keybinds more easily.
 
-## Experiment with zoom level
+## Git Worktree Workflow
 
-Update Jun 20: it's still working very well for me. Most of the time I stay in zoom level 2 and only zoom out when I need to see more.
+I use Git worktrees to work on multiple branches simultaneously without switching contexts in my main repository.
 
-I want to see if I limit the amount of code i am seeing at one point, does it help me focus better?
+### Creating a New Worktree
 
-- enable zoom level 2 (with 2 cmd+=)
-- set ruler to 80 column
+1. **Use Which-Key + GitLens**: Press `Alt+Space` (Which-Key), then `gw` (Git worktree)
 
-note: change to zoom level 2 and also whenever I want to see more, just temporary zoom out
+   - **Naming**: Branch names can be anything - use descriptive names like `feature-name-branchname` or `bugfix-description`
+
+2. **Add to current workspace**: After the worktree is created, add the new worktree folder to your current VS Code/Windsurf workspace
+
+3. **Save workspace**: Save the updated workspace to your `vscode.workspaces` folder for future use
+
+4. **Work with the new worktree**: The new worktree is now available in your workspace where you can work independently
+
+### Cleaning Up
+
+When you're finished with the worktree:
+
+1. **Delete the worktree**: Press `Alt+Space` (Which-Key), then `gw` then `d` (Git worktree delete)
+   - This removes the worktree and cleans up the local repository
+
+### Workspace Management
+
+- **Edit workspace**: Use `Alt+Space` (Which-Key), then `w` then `o` to edit and manage workspaces
+- **Workspace location**: Save workspaces in the `vscode.workspaces` folder for easy access
+
+### Committing Changes
+
+- **Use LazyGit**: Open LazyGit to manage commits for your worktree
+- **Select correct worktree**: In LazyGit mode, remember to select the correct worktree directory before committing

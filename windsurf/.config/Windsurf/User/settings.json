@@ -1100,7 +1100,7 @@
         },
         {
           "key": "w",
-          "name": "GitLens: Worktree...",
+          "name": "Worktree...",
           "type": "bindings",
           "bindings": [
             {
@@ -1114,6 +1114,12 @@
               "name": "GitLens: Switch Worktree",
               "type": "command",
               "command": "gitlens.gitCommands.worktree.open"
+            },
+            {
+              "key": "d",
+              "name": "Git: Delete Worktree",
+              "type": "command",
+              "command": "git.deleteWorktreeFromPalette"
             }
           ]
         },
@@ -1634,7 +1640,7 @@
     },
     {
       "key": "w",
-      "name": "Buffer/Window Management...",
+      "name": "Workspace/Buffer/Window Management...",
       "type": "bindings",
       "bindings": [
         {
@@ -1665,6 +1671,12 @@
           "icon": "screen-full",
           "type": "command",
           "command": "extension.multiCommand.maximizeAndFocusFirstEditorGroup"
+        },
+        {
+          "key": "o",
+          "name": "Open Workspace Config File",
+          "type": "command",
+          "command": "workbench.action.openWorkspaceConfigFile"
         },
         {
           "key": "Q",
