@@ -4,3 +4,10 @@ os:
 promptToReturnFromSubprocess: false # removes "press enter to return to lazygit" popup
 gui:
   showIcons: true
+
+keybinding:
+  universal:
+    prevBlock-alt: "" # This will unbind 'h'
+    nextBlock-alt: "" # This will unbind 'l'
+    prevTab: "h"
+    nextTab: "l"
