@@ -16,3 +16,4 @@ keybinding:
     prevPage: <home> # With my keyboard layout, home is equivalent to 'page up'
     nextPage: <end> # With my keyboard layout, end is equivalent to 'page down'
     extrasMenu: "9" # I like to use '9' as the extras
+    goInto: "I" # I like to use 'I' instead of 'Enter' to go into a file, a commit, etc
