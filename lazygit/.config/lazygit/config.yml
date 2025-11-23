@@ -1,7 +1,6 @@
 os:
   edit: "windsurf {{filename}}"
   editAtLine: "windsurf --goto {{filename}}:{{line}}"
-promptToReturnFromSubprocess: false # removes "press enter to return to lazygit" popup
 gui:
   showIcons: true
 
