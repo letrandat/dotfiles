@@ -42,10 +42,6 @@ keybinding:
 
 ## Intermediate Usage Tips
 
-### Navigation
-
-- **`h` / `l`**: Navigate left/right between panels (Status, Files, Local Branches, Commits, Stash).
-
 ### Common Actions
 
 - **Stage/Unstage**: `Space` on a file.
