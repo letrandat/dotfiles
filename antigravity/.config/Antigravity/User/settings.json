@@ -1688,7 +1688,7 @@
           "type": "command",
           "command": "workbench.action.terminal.sendSequence",
           "args": {
-            "text": "\u0015code ~/workspace/repo/learn-go-with-tests\u000D"
+            "text": "\u0015antigravity ~/workspace/repo/dotfiles\u000D"
           }
         },
         {
@@ -1696,7 +1696,7 @@
           "name": "Jump to dotfiles",
           "type": "command",
           "command": "workbench.action.terminal.sendSequence",
-          "args": { "text": "\u0015code ~/workspace/repo/dotfiles\u000D" }
+          "args": { "text": "\u0015antigravity ~/workspace/repo/dotfiles\u000D" }
         },
         {
           "key": "w",
