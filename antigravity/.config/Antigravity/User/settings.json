@@ -203,6 +203,61 @@
   // vscode-vim Configuration
   "vim.useSystemClipboard": true,
 
+  // replace with gs
+  // Copy word under cursor to clipboard and trigger cmd with search/replace
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["g", "s"],
+      "after": [
+        ":",
+        "%",
+        "s",
+        "/",
+        "\\",
+        "<",
+        "<C-r>",
+        "<C-w>",
+        "\\",
+        ">",
+        "/",
+        "<C-r>",
+        "<C-w>",
+        "/",
+        "g",
+        "I",
+        "<Left>",
+        "<Left>",
+        "<Left>"
+      ]
+    }
+  ],
+
+  // replace with gs
+  // Copy word under cursor to clipboard and trigger cmd with search/replace
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["g", "s"],
+      "after": [
+        "y",
+        ":",
+        "%",
+        "s",
+        "/",
+        "<C-r>",
+        "\"",
+        "/",
+        "<C-r>",
+        "\"",
+        "/",
+        "g",
+        "I",
+        "<Left>",
+        "<Left>",
+        "<Left>"
+      ]
+    }
+  ],
+
   // lazygit-vscode
   "lazygit-vscode.autoMaximizeWindow": true,
   "lazygit-vscode.panels": {
@@ -1133,7 +1188,7 @@
           "type": "commands",
           "commands": [
             "extension.multiCommand.maximizeAndFocusFirstEditorGroup",
-            "vscode-harpoon.gotoEditor1",
+            "cursor-harpoon.gotoEditor1",
             "workbench.action.closeOtherEditors"
           ]
         },
@@ -1143,10 +1198,10 @@
           "type": "commands",
           "commands": [
             "extension.multiCommand.maximizeAndFocusFirstEditorGroup",
-            "vscode-harpoon.gotoEditor1",
+            "cursor-harpoon.gotoEditor1",
             "workbench.action.closeOtherEditors",
             "workbench.action.splitEditorRight",
-            "vscode-harpoon.gotoEditor2",
+            "cursor-harpoon.gotoEditor2",
             "workbench.action.closeOtherEditors",
             "workbench.action.focusLeftGroup"
           ]
@@ -1157,13 +1212,13 @@
           "type": "commands",
           "commands": [
             "extension.multiCommand.maximizeAndFocusFirstEditorGroup",
-            "vscode-harpoon.gotoEditor1",
+            "cursor-harpoon.gotoEditor1",
             "workbench.action.closeOtherEditors",
             "workbench.action.splitEditorRight",
-            "vscode-harpoon.gotoEditor2",
+            "cursor-harpoon.gotoEditor2",
             "workbench.action.closeOtherEditors",
             "workbench.action.splitEditorRight",
-            "vscode-harpoon.gotoEditor3",
+            "cursor-harpoon.gotoEditor3",
             "workbench.action.closeOtherEditors",
             "workbench.action.focusLeftGroup"
           ]
@@ -1174,16 +1229,16 @@
           "type": "commands",
           "commands": [
             "extension.multiCommand.maximizeAndFocusFirstEditorGroup",
-            "vscode-harpoon.gotoEditor1",
+            "cursor-harpoon.gotoEditor1",
             "workbench.action.closeOtherEditors",
             "workbench.action.splitEditorRight",
-            "vscode-harpoon.gotoEditor2",
+            "cursor-harpoon.gotoEditor2",
             "workbench.action.closeOtherEditors",
             "workbench.action.splitEditorRight",
-            "vscode-harpoon.gotoEditor3",
+            "cursor-harpoon.gotoEditor3",
             "workbench.action.closeOtherEditors",
             "workbench.action.splitEditorDown",
-            "vscode-harpoon.gotoEditor4",
+            "cursor-harpoon.gotoEditor4",
             "workbench.action.focusLeftGroup"
           ]
         },
@@ -1191,25 +1246,25 @@
           "key": "j",
           "name": "Replace Harpoon 1",
           "type": "command",
-          "command": "vscode-harpoon.addEditor1"
+          "command": "cursor-harpoon.addEditor1"
         },
         {
           "key": "k",
           "name": "Replace Harpoon 2",
           "type": "command",
-          "command": "vscode-harpoon.addEditor2"
+          "command": "cursor-harpoon.addEditor2"
         },
         {
           "key": "l",
           "name": "Replace Harpoon 3",
           "type": "command",
-          "command": "vscode-harpoon.addEditor3"
+          "command": "cursor-harpoon.addEditor3"
         },
         {
           "key": ";",
           "name": "Replace Harpoon 4",
           "type": "command",
-          "command": "vscode-harpoon.addEditor4"
+          "command": "cursor-harpoon.addEditor4"
         }
       ]
     },
