@@ -1,12 +1,6 @@
 os:
-  editPreset: "vscode"
+  edit: "windsurf {{filename}}"
+  editAtLine: "windsurf --goto {{filename}}:{{line}}"
 promptToReturnFromSubprocess: false # removes "press enter to return to lazygit" popup
 gui:
   showIcons: true
-
-customCommands:
-  - key: '<c-k>'
-    command: '~/.codeium/windsurf/bin/surf {{ .SelectedFile.Name }}'
-    context: 'global'
-    description: 'Open selected file with Windsurf'
-    loadingText: 'Opening with Windsurf...'
