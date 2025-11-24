@@ -91,36 +91,36 @@
   // mark file to harpoon
   {
     "key": "alt+m",
-    "command": "vscode-harpoon.addEditor"
+    "command": "cursor-harpoon.addEditor"
   },
   // [o]pen editors
   {
     "key": "alt+o",
-    "command": "vscode-harpoon.editEditors"
+    "command": "cursor-harpoon.editEditors"
   },
   {
     "key": "alt+p",
-    "command": "vscode-harpoon.editorQuickPick"
+    "command": "cursor-harpoon.editorQuickPick"
   },
   {
     "key": "alt+8",
-    "command": "vscode-harpoon.gotoGlobalEditor1"
+    "command": "cursor-harpoon.gotoGlobalEditor1"
   },
   {
     "key": "alt+j",
-    "command": "vscode-harpoon.gotoEditor1"
+    "command": "cursor-harpoon.gotoEditor1"
   },
   {
     "key": "alt+k",
-    "command": "vscode-harpoon.gotoEditor2"
+    "command": "cursor-harpoon.gotoEditor2"
   },
   {
     "key": "alt+l",
-    "command": "vscode-harpoon.gotoEditor3"
+    "command": "cursor-harpoon.gotoEditor3"
   },
   {
     "key": "alt+;",
-    "command": "vscode-harpoon.gotoEditor4"
+    "command": "cursor-harpoon.gotoEditor4"
   },
 
   //
