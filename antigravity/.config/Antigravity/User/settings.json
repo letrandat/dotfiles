@@ -1683,16 +1683,16 @@
       "type": "bindings",
       "bindings": [
         {
-          "key": "j",
-          "name": "Jump to Project j",
+          "key": "8",
+          "name": "Jump to vscode.workspaces",
           "type": "command",
           "command": "workbench.action.terminal.sendSequence",
           "args": {
-            "text": "\u0015antigravity ~/workspace/repo/dotfiles\u000D"
+            "text": "\u0015antigravity ~/workspace/repo/vscode.workspaces\u000D"
           }
         },
         {
-          "key": "k",
+          "key": "j",
           "name": "Jump to dotfiles",
           "type": "command",
           "command": "workbench.action.terminal.sendSequence",
