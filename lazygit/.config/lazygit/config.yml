@@ -1,8 +1,9 @@
 os:
   edit: "windsurf {{filename}}"
   editAtLine: "windsurf --goto {{filename}}:{{line}}"
+
 gui:
-  showIcons: true
+  nerdFontsVersion: "3"
 
 keybinding:
   universal:
