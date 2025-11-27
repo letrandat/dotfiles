@@ -11,8 +11,6 @@ keybinding:
     nextItem: "j"
     prevBlock: "<up>"
     nextBlock: "<down>"
-    prevBlock-alt: "" # This will unbind 'h'
-    nextBlock-alt: "" # This will unbind 'l'
     prevTab: "<left>"
     nextTab: "<right>"
     gotoTop-alt: "" # This will unbind 'home'
