@@ -203,6 +203,7 @@
   // vscode-vim Configuration
   "vim.useSystemClipboard": true,
   "vim.hlsearch": true,
+  "vim.statusBarCursor": "_",
 
   // replace with gs
   // Copy word under cursor to clipboard and trigger cmd with search/replace
