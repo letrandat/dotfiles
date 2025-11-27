@@ -145,9 +145,6 @@
 
   // plugins
 
-  // Sonarlint Configuration
-  "sonarlint.pathToNodeExecutable": "/Users/dat/.nvm/versions/node/v22.13.1/bin/node",
-
   // Git Configuration
   "git.openRepositoryInParentFolders": "always",
   "git.autofetch": true,

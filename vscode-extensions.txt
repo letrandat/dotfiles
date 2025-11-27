@@ -19,7 +19,6 @@ ms-vscode.makefile-tools
 ms-vscode.vscode-speech
 pkief.material-icon-theme
 ryuta46.multi-command
-sonarsource.sonarlint-vscode
 tobias-z.vscode-harpoon
 tompollak.lazygit-vscode
 tomrijndorp.find-it-faster
