@@ -135,7 +135,7 @@
   {
     "key": "space",
     "command": "whichkey.show",
-    "when": "editorTextFocus && vim.mode != 'Insert'"
+    "when": "editorTextFocus && vim.mode == 'Normal'"
   },
   // Trigger WhichKey with 'm' prefix to show bookmarks menu
   {
@@ -150,7 +150,7 @@
         }
       ]
     },
-    "when": "editorTextFocus && vim.mode != 'Insert' && vim.mode != 'SearchInProgressMode' && vim.mode != 'CommandlineInProgress'"
+    "when": "editorTextFocus && vim.mode == 'Normal' && vim.mode != 'SearchInProgressMode' && vim.mode != 'CommandlineInProgress'"
   },
   {
     "key": "ctrl+pagedown",
