@@ -202,6 +202,7 @@
 
   // vscode-vim Configuration
   "vim.useSystemClipboard": true,
+  "vim.hlsearch": true,
 
   // replace with gs
   // Copy word under cursor to clipboard and trigger cmd with search/replace
@@ -1696,7 +1697,9 @@
           "name": "Jump to dotfiles",
           "type": "command",
           "command": "workbench.action.terminal.sendSequence",
-          "args": { "text": "\u0015antigravity ~/workspace/repo/dotfiles\u000D" }
+          "args": {
+            "text": "\u0015antigravity ~/workspace/repo/dotfiles\u000D"
+          }
         },
         {
           "key": "w",
