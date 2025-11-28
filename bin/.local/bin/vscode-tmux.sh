@@ -7,7 +7,10 @@
 if [ "$TERM_PROGRAM" = "vscode" ]; then
     # Capture the current directory of the VS Code terminal
     VSCODE_CWD="$PWD"
-    SESSION_NAME=$(basename "$VSCODE_CWD" | tr . _)
+    PARENT_DIR=$(basename "$(dirname "$VSCODE_CWD")")
+    PROJECT_DIR=$(basename "$VSCODE_CWD")
+    SESSION_NAME="${PARENT_DIR}-${PROJECT_DIR}"
+    SESSION_NAME=$(echo "$SESSION_NAME" | tr . _)
 
     # check if the target session exists
     tmux has-session -t "$SESSION_NAME" 2>/dev/null
