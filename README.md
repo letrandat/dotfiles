@@ -89,14 +89,7 @@ The `vscode-switcher` script provides a fast way to fuzzy-search and open any pr
 
 ### Setup
 
-1. **Script Installation**
-   The script is located at `.local/bin/vscode-switcher` and should be symlinked to `~/.local/bin/`:
-
-   ```bash
-   ln -s ~/workspace/repo/dotfiles/.local/bin/vscode-switcher ~/.local/bin/
-   ```
-
-2. **Alias and Keybinding (Terminal)**
+1. **Alias and Keybinding (Terminal)**
    Add to your shell config (e.g., `~/.zshrc`):
 
    ```sh
@@ -104,7 +97,7 @@ The `vscode-switcher` script provides a fast way to fuzzy-search and open any pr
    bindkey -s ^f "vscode-switcher\n"   # Ctrl+F to trigger switcher in terminal
    ```
 
-3. **VS Code Keybinding**
+2. **VS Code Keybinding**
    To trigger the switcher from within VS Code (e.g., with `Ctrl+E`), add this to your `keybindings.json`:
 
    ```json
