@@ -5,7 +5,7 @@ CONFIG_FILE="$CONFIG_DIR/tmux-sessionizer.conf"
 # config file example
 # ------------------------
 # # file: ~/.config/tmux-sessionizer/tmux-sessionizer.conf
-# # If set this override the default TS_SEARCH_PATHS (~/ ~/personal ~/personal/dev/env/.config)
+# # If set this override the default TS_SEARCH_PATHS (~/workspace ~/personal)
 # TS_SEARCH_PATHS=(~/)
 # # If set this add additional search paths to the default TS_SEARCH_PATHS
 # # The number prefix is the depth for the Path [OPTIONAL]
@@ -44,6 +44,8 @@ has_session() {
     tmux list-sessions | grep -q "^$1:"
 }
 
+# hydrate sources the .tmux-sessionizer config file if it exists
+# priority: project specific > global
 hydrate() {
     if [ -f "$2/.tmux-sessionizer" ]; then
         tmux send-keys -t "$1" "source $2/.tmux-sessionizer" c-M
@@ -55,7 +57,7 @@ hydrate() {
 sanity_check
 
 # if TS_SEARCH_PATHS is not set use default
-[[ -n "$TS_SEARCH_PATHS" ]] || TS_SEARCH_PATHS=(~/ ~/personal ~/personal/dev/env/.config)
+[[ -n "$TS_SEARCH_PATHS" ]] || TS_SEARCH_PATHS=(~/workspace ~/personal)
 
 # Add any extra search paths to the TS_SEARCH_PATHS array
 # e.g : EXTRA_SEARCH_PATHS=("$HOME/extra1:4" "$HOME/extra2")
@@ -103,9 +105,14 @@ fi
 
 if [[ "$selected" =~ ^\[TMUX\]\ (.+)$ ]]; then
     selected="${BASH_REMATCH[1]}"
+    selected_name=$(basename "$selected" | tr . _)
+elif [[ -d "$selected" ]]; then
+    parent=$(basename "$(dirname "$selected")" | tr . _)
+    child=$(basename "$selected" | tr . _)
+    selected_name="${parent}_${child}"
+else
+    selected_name=$(basename "$selected" | tr . _)
 fi
-
-selected_name=$(basename "$selected" | tr . _)
 tmux_running=$(pgrep tmux)
 
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
