@@ -1,5 +1,4 @@
 alias ws="cd ~/workspace"
-alias repo="cd ~/workspace/repo"
 alias dc="git reset --hard"
 alias st="git stash"
 alias ust="git stash pop"

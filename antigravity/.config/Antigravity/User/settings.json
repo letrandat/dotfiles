@@ -1690,7 +1690,7 @@
           "type": "command",
           "command": "workbench.action.terminal.sendSequence",
           "args": {
-            "text": "\u0015antigravity ~/workspace/repo/vscode.workspaces\u000D"
+            "text": "\u0015antigravity ~/workspace/vscode.workspaces\u000D"
           }
         },
         {
@@ -1699,7 +1699,7 @@
           "type": "command",
           "command": "workbench.action.terminal.sendSequence",
           "args": {
-            "text": "\u0015antigravity ~/workspace/repo/dotfiles\u000D"
+            "text": "\u0015antigravity ~/workspace/dotfiles\u000D"
           }
         },
         {

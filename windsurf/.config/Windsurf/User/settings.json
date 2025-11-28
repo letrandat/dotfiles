@@ -1646,7 +1646,7 @@
           "type": "command",
           "command": "workbench.action.terminal.sendSequence",
           "args": {
-            "text": "\u0015surf ~/workspace/repo/vscode.workspaces\u000D"
+            "text": "\u0015surf ~/workspace/vscode.workspaces\u000D"
           }
         },
         {
@@ -1654,7 +1654,7 @@
           "name": "Jump to dotfiles",
           "type": "command",
           "command": "workbench.action.terminal.sendSequence",
-          "args": { "text": "\u0015surf ~/workspace/repo/dotfiles\u000D" }
+          "args": { "text": "\u0015surf ~/workspace/dotfiles\u000D" }
         },
         {
           "key": "w",
