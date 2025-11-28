@@ -1676,13 +1676,6 @@
       "type": "bindings",
       "bindings": [
         {
-          "key": "j",
-          "name": "Jump to dotfiles",
-          "type": "command",
-          "command": "workbench.action.terminal.sendSequence",
-          "args": { "text": "\u0015surf ~/workspace/dotfiles\u000D" }
-        },
-        {
           "key": "m",
           "name": "Maximize window",
           "icon": "screen-full",

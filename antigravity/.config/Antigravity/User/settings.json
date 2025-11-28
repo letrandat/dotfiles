@@ -1718,39 +1718,21 @@
     },
     {
       "key": "w",
-      "name": "Buffer/Window Management...",
+      "name": "Workspace/Buffer/Window Management...",
       "type": "bindings",
       "bindings": [
-        {
-          "key": "8",
-          "name": "Jump to vscode.workspaces",
-          "type": "command",
-          "command": "workbench.action.terminal.sendSequence",
-          "args": {
-            "text": "\u0015antigravity ~/workspace/vscode.workspaces\u000D"
-          }
-        },
-        {
-          "key": "j",
-          "name": "Jump to dotfiles",
-          "type": "command",
-          "command": "workbench.action.terminal.sendSequence",
-          "args": {
-            "text": "\u0015antigravity ~/workspace/dotfiles\u000D"
-          }
-        },
-        {
-          "key": "w",
-          "name": "Find Dirs (Switcher in Terminal)",
-          "type": "command",
-          "command": "extension.multiCommand.vscodeSwitcher"
-        },
         {
           "key": "m",
           "name": "Maximize window",
           "icon": "screen-full",
           "type": "command",
           "command": "extension.multiCommand.maximizeAndFocusFirstEditorGroup"
+        },
+        {
+          "key": "o",
+          "name": "Open Workspace Config File",
+          "type": "command",
+          "command": "workbench.action.openWorkspaceConfigFile"
         },
         {
           "key": "Q",
@@ -1800,6 +1782,12 @@
           "name": "Vertical split right, move focus",
           "type": "command",
           "command": "workbench.action.splitEditorRight"
+        },
+        {
+          "key": "w",
+          "name": "Save Workspace",
+          "type": "command",
+          "command": "workbench.action.saveWorkspaceAs"
         }
       ]
     },
