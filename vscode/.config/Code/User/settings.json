@@ -1695,6 +1695,12 @@
           "command": "extension.multiCommand.maximizeAndFocusFirstEditorGroup"
         },
         {
+          "key": "o",
+          "name": "Open Workspace Config File",
+          "type": "command",
+          "command": "workbench.action.openWorkspaceConfigFile"
+        },
+        {
           "key": "Q",
           "name": "Quit application",
           "icon": "log-out",
