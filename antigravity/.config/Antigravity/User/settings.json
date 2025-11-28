@@ -147,6 +147,12 @@
   // Plugins
   //
 
+
+  // Project Manager
+  "projectManager.any.baseFolders": ["~/personal", "~/workspace"],
+  "projectManager.sortList": "Recent",
+  "projectManager.removeCurrentProjectFromList": false,
+
   // Redhat telemetry
   "redhat.telemetry.enabled": true,
 
@@ -1304,6 +1310,37 @@
           "name": "Toggle bookmark",
           "type": "command",
           "command": "bookmarks.toggle"
+        }
+      ]
+    },
+    {
+      "key": "p",
+      "name": "Project Manager...",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "a",
+          "name": "Add to Workspace",
+          "type": "command",
+          "command": "projectManager.addToWorkspace"
+        },
+        {
+          "key": "e",
+          "name": "Edit Projects",
+          "type": "command",
+          "command": "projectManager.editProjects"
+        },
+        {
+          "key": "p",
+          "name": "Project Manager: List Projects",
+          "type": "command",
+          "command": "projectManager.listProjects"
+        },
+        {
+          "key": "s",
+          "name": "Save Project",
+          "type": "command",
+          "command": "projectManager.saveProject"
         }
       ]
     },
