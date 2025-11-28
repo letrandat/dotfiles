@@ -147,7 +147,6 @@
   // Plugins
   //
 
-
   // Project Manager
   "projectManager.any.baseFolders": ["~/personal", "~/workspace"],
   "projectManager.sortList": "Recent",
@@ -237,6 +236,22 @@
         "<Left>",
         "<Left>"
       ]
+    },
+    {
+      "before": ["<Left>"],
+      "commands": ["workbench.action.navigateLeft"]
+    },
+    {
+      "before": ["<Right>"],
+      "commands": ["workbench.action.navigateRight"]
+    },
+    {
+      "before": ["<Up>"],
+      "commands": ["workbench.action.navigateUp"]
+    },
+    {
+      "before": ["<Down>"],
+      "commands": ["workbench.action.navigateDown"]
     }
   ],
 
