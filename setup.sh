@@ -77,23 +77,6 @@ PACKAGES=(
     antigravity
 )
 
-# 4. Run Stow for all packages
-PACKAGES=(
-    zsh
-    git
-    tmux
-    ideavim
-    nvim
-    kitty
-    ghostty
-    lazygit
-    intellimacs
-    bin
-    vscode
-    windsurf
-    antigravity
-)
-
 # Cleanup legacy links that might block stow
 cleanup_legacy() {
     local target="$1"
