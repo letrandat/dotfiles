@@ -213,9 +213,9 @@
   "vim.highlightedyank.enable": true,
   "vim.highlightedyank.duration": 200,
 
-  // replace with gs
-  // Copy word under cursor to clipboard and trigger cmd with search/replace
   "vim.normalModeKeyBindings": [
+    // replace with gs
+    // Copy word under cursor to clipboard and trigger cmd with search/replace
     {
       "before": ["g", "s"],
       "after": [
@@ -255,11 +255,30 @@
     {
       "before": ["<Down>"],
       "commands": ["workbench.action.navigateDown"]
+    },
+    //
+    // Core settings
+    //
+    // use vscode undo/redo
+    {
+      "before": ["u"],
+      "commands": ["undo"]
+    },
+    {
+      "before": ["<C-r>"],
+      "commands": ["redo"]
+    },
+    {
+      "before": ["Y"], // usage: Y to yank from start to end
+      "after": ["y", "$"]
+    },
+    // open vim command line with :
+    {
+      "before": [":"],
+      "commands": ["vim.showQuickpickCmdLine"]
     }
   ],
 
-  // replace with gs
-  // Copy word under cursor to clipboard and trigger cmd with search/replace
   "vim.visualModeKeyBindings": [
     // START: Core settings
     // prevent copying the selected text after pasting
@@ -271,6 +290,8 @@
       "after": ["p", "g", "v", "y"]
     },
     // END: Core settings
+    // replace with gs
+    // Copy word under cursor to clipboard and trigger cmd with search/replace
     {
       "before": ["g", "s"],
       "after": [
