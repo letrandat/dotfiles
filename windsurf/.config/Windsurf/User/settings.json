@@ -1676,26 +1676,11 @@
       "type": "bindings",
       "bindings": [
         {
-          "key": "8",
-          "name": "Jump to vscode.workspaces",
-          "type": "command",
-          "command": "workbench.action.terminal.sendSequence",
-          "args": {
-            "text": "\u0015surf ~/workspace/vscode.workspaces\u000D"
-          }
-        },
-        {
           "key": "j",
           "name": "Jump to dotfiles",
           "type": "command",
           "command": "workbench.action.terminal.sendSequence",
           "args": { "text": "\u0015surf ~/workspace/dotfiles\u000D" }
-        },
-        {
-          "key": "w",
-          "name": "Find Dirs (Switcher in Terminal)",
-          "type": "command",
-          "command": "extension.multiCommand.vscodeSwitcher"
         },
         {
           "key": "m",
