@@ -3,7 +3,7 @@
   // https://code.visualstudio.com/api/extension-capabilities/extending-workbench
   // I don't need activity bar
   "workbench.activityBar.location": "hidden",
-  "workbench.colorTheme": "GitHub Light Default",
+  "workbench.colorTheme": "Solarized Light",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.preferredDarkColorTheme": "GitHub Dark Dimmed",
 
@@ -16,7 +16,6 @@
 
   // Window Configuration
   "window.openFoldersInNewWindow": "off",
-  "window.autoDetectColorScheme": true,
   // Use active editor medium for the window title
   "window.title": "${activeEditorMedium}${separator}${rootName}${separator}${profileName}",
 
