@@ -1758,6 +1758,12 @@
           "name": "Vertical split right, move focus",
           "type": "command",
           "command": "workbench.action.splitEditorRight"
+        },
+        {
+          "key": "w",
+          "name": "Save Workspace",
+          "type": "command",
+          "command": "workbench.action.saveWorkspaceAs"
         }
       ]
     },
