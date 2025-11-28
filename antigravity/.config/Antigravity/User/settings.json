@@ -209,6 +209,9 @@
   "vim.useSystemClipboard": true,
   "vim.hlsearch": true,
   "vim.statusBarCursor": "_",
+  // Enable and configure yank highlighting
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.duration": 200,
 
   // replace with gs
   // Copy word under cursor to clipboard and trigger cmd with search/replace
@@ -258,6 +261,16 @@
   // replace with gs
   // Copy word under cursor to clipboard and trigger cmd with search/replace
   "vim.visualModeKeyBindings": [
+    // START: Core settings
+    // prevent copying the selected text after pasting
+    {
+      "before": ["p"],
+      // p: Paste the text.
+      // gv: Reselect the text that was just pasted.
+      // y: Yank the reselected text back
+      "after": ["p", "g", "v", "y"]
+    },
+    // END: Core settings
     {
       "before": ["g", "s"],
       "after": [
