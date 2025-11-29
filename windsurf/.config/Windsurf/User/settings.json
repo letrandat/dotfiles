@@ -3,9 +3,8 @@
   // https://code.visualstudio.com/api/extension-capabilities/extending-workbench
   // I don't need activity bar
   "workbench.activityBar.location": "hidden",
-  "workbench.colorTheme": "GitHub Light",
+  "workbench.colorTheme": "Just Black",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.preferredDarkColorTheme": "GitHub Dark Dimmed",
 
   // Breadcrumbs Configuration
   "breadcrumbs.enabled": false,
