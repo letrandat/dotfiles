@@ -3,8 +3,8 @@
   // https://code.visualstudio.com/api/extension-capabilities/extending-workbench
   // This is the activity bar on the editor itself
   "workbench.activityBar.location": "hidden",
-  "workbench.colorTheme": "Just Black",
   "workbench.iconTheme": "material-icon-theme",
+  "workbench.colorTheme": "Quiet Light",
   "workbench.editor.showTabs": "none",
 
   // Breadcrumbs Configuration

@@ -5,6 +5,7 @@
   "workbench.activityBar.location": "hidden",
   "workbench.colorTheme": "Quiet Light",
   "workbench.iconTheme": "material-icon-theme",
+  "workbench.editor.showTabs": "none",
 
   // Breadcrumbs Configuration
   "breadcrumbs.enabled": false,
@@ -23,7 +24,6 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "editor.lineNumbers": "relative",
-  "workbench.editor.showTabs": "none",
   // Enable bracket pair colorization for better readability
   "editor.bracketPairColorization.enabled": true,
   // Show vertical lines for bracket pairs
