@@ -6,6 +6,7 @@
   "workbench.colorTheme": "Quiet Light",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.editor.showTabs": "none",
+  "workbench.statusBar.visible": false,
 
   // Breadcrumbs Configuration
   "breadcrumbs.enabled": false,

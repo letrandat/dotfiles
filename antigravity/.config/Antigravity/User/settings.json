@@ -6,6 +6,8 @@
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Quiet Light",
   "workbench.editor.showTabs": "none",
+  // needed status bar for vscodevim only
+  "workbench.statusBar.visible": true,
 
   // Breadcrumbs Configuration
   "breadcrumbs.enabled": false,
