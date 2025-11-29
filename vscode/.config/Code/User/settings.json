@@ -3,10 +3,9 @@
   // https://code.visualstudio.com/api/extension-capabilities/extending-workbench
   // I don't need activity bar
   "workbench.activityBar.location": "hidden",
-  "workbench.colorTheme": "GitHub Light Default",
+  "workbench.colorTheme": "Quiet Light",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.preferredDarkColorTheme": "GitHub Dark Dimmed",
-  "workbench.preferredLightColorTheme": "GitHub Dark Dimmed",
+  "workbench.editor.showTabs": "none",
 
   // Breadcrumbs Configuration
   "breadcrumbs.enabled": false,
@@ -26,7 +25,6 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "editor.lineNumbers": "relative",
-  "workbench.editor.showTabs": "none",
   // Enable bracket pair colorization for better readability
   "editor.bracketPairColorization.enabled": true,
   // Show vertical lines for bracket pairs
