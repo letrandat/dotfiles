@@ -22,7 +22,7 @@
   "window.title": "${activeEditorMedium}${separator}${rootName}${separator}${profileName}",
 
   // Editor Configuration
-  "editor.fontSize": 12,
+  "editor.fontSize": 13,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "editor.lineNumbers": "relative",
@@ -46,6 +46,7 @@
   "editor.snippetSuggestions": "top",
   "editor.suggestSelection": "first",
   "editor.linkedEditing": true,
+  "editor.tabSize": 2,
 
   // Diff Editor Configuration
   "diffEditor.hideUnchangedRegions.enabled": true,
