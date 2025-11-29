@@ -43,6 +43,7 @@
   "editor.suggest.showStatusBar": true,
   "editor.rulers": [80],
   "editor.snippetSuggestions": "top",
+  "editor.suggestSelection": "first",
   "editor.linkedEditing": true,
 
   // Diff Editor Configuration

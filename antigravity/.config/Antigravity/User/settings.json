@@ -41,6 +41,7 @@
   "editor.rulers": [80],
   "editor.accessibilitySupport": "off",
   "editor.snippetSuggestions": "top",
+  "editor.suggestSelection": "first",
   "editor.linkedEditing": true,
 
   // Diff Editor Configuration
