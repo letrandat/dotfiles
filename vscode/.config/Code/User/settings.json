@@ -44,6 +44,7 @@
   "editor.suggest.showStatusBar": true,
   "editor.rulers": [80],
   "editor.snippetSuggestions": "top",
+  "editor.linkedEditing": true,
 
   // Diff Editor Configuration
   "diffEditor.hideUnchangedRegions.enabled": true,
