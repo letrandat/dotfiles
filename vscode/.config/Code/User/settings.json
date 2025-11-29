@@ -43,6 +43,7 @@
   // show extra status bar for editor suggestions
   "editor.suggest.showStatusBar": true,
   "editor.rulers": [80],
+  "editor.snippetSuggestions": "top",
 
   // Diff Editor Configuration
   "diffEditor.hideUnchangedRegions.enabled": true,

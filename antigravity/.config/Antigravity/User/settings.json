@@ -40,6 +40,7 @@
   "editor.suggest.showStatusBar": true,
   "editor.rulers": [80],
   "editor.accessibilitySupport": "off",
+  "editor.snippetSuggestions": "top",
 
   // Diff Editor Configuration
   "diffEditor.hideUnchangedRegions.enabled": true,
