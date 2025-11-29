@@ -1,6 +1,7 @@
 alefragnani.bookmarks
 alefragnani.project-manager
 asvetliakov.vscode-neovim
+bradlc.vscode-tailwindcss
 codeium.windsurfpyright
 danprince.vsnetrw
 dbaeumer.vscode-eslint
