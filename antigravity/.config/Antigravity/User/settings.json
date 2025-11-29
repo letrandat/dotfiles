@@ -3,19 +3,15 @@
   // https://code.visualstudio.com/api/extension-capabilities/extending-workbench
   // This is the activity bar on the editor itself
   "workbench.activityBar.location": "hidden",
-  "workbench.colorTheme": "GitHub Light Default",
+  "workbench.colorTheme": "Just Black",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.editor.showTabs": "none",
-  "workbench.preferredDarkColorTheme": "Solarized Light",
-  "workbench.preferredLightColorTheme": "GitHub Light Default",
 
   // Breadcrumbs Configuration
   "breadcrumbs.enabled": false,
 
   // Window Configuration
   "window.openFoldersInNewWindow": "off",
-  // Automatically switch between Light/Dark themes based on macOS system setting
-  "window.autoDetectColorScheme": true,
   // Use active editor medium for the window title
   "window.title": "${activeEditorMedium}${separator}${rootName}${separator}${profileName}",
 
