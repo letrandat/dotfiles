@@ -276,6 +276,16 @@
     {
       "before": [":"],
       "commands": ["vim.showQuickpickCmdLine"]
+    },
+    // move line up
+    {
+      "before": ["K"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    },
+    // move line down
+    {
+      "before": ["J"],
+      "commands": ["editor.action.moveLinesDownAction"]
     }
   ],
 
@@ -312,6 +322,16 @@
         "<Left>",
         "<Left>"
       ]
+    },
+    // move line up
+    {
+      "before": ["K"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    },
+    // move line down
+    {
+      "before": ["J"],
+      "commands": ["editor.action.moveLinesDownAction"]
     }
   ],
 
