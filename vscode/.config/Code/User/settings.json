@@ -1283,6 +1283,12 @@
           "command": "projectManager.listProjects"
         },
         {
+          "key": "r",
+          "name": "Refresh Projects",
+          "type": "command",
+          "command": "projectManager.refreshAnyProjects"
+        },
+        {
           "key": "s",
           "name": "Save Project",
           "type": "command",
