@@ -3,9 +3,10 @@
   // https://code.visualstudio.com/api/extension-capabilities/extending-workbench
   // I don't need activity bar
   "workbench.activityBar.location": "hidden",
-  "workbench.colorTheme": "Solarized Light",
+  "workbench.colorTheme": "Quiet Light",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.preferredDarkColorTheme": "GitHub Dark Dimmed",
+  "workbench.editor.showTabs": "none",
+  "workbench.statusBar.visible": false,
 
   // Breadcrumbs Configuration
   "breadcrumbs.enabled": false,
@@ -20,11 +21,10 @@
   "window.title": "${activeEditorMedium}${separator}${rootName}${separator}${profileName}",
 
   // Editor Configuration
-  "editor.fontSize": 12,
+  "editor.fontSize": 13,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "editor.lineNumbers": "relative",
-  "workbench.editor.showTabs": "none",
   // Enable bracket pair colorization for better readability
   "editor.bracketPairColorization.enabled": true,
   // Show vertical lines for bracket pairs
@@ -42,6 +42,10 @@
   // show extra status bar for editor suggestions
   "editor.suggest.showStatusBar": true,
   "editor.rulers": [80],
+  "editor.snippetSuggestions": "top",
+  "editor.suggestSelection": "first",
+  "editor.linkedEditing": true,
+  "editor.tabSize": 2,
 
   // Diff Editor Configuration
   "diffEditor.hideUnchangedRegions.enabled": true,
@@ -116,7 +120,7 @@
 
   "[jsonc]": {},
   "[typescript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
   // Java language settings
@@ -1288,6 +1292,12 @@
           "name": "Project Manager: List Projects",
           "type": "command",
           "command": "projectManager.listProjects"
+        },
+        {
+          "key": "r",
+          "name": "Refresh Projects",
+          "type": "command",
+          "command": "projectManager.refreshAnyProjects"
         },
         {
           "key": "s",
