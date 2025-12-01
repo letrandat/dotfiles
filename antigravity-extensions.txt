@@ -1,5 +1,6 @@
 alefragnani.bookmarks
 alefragnani.project-manager
+bradlc.vscode-tailwindcss
 danprince.vsnetrw
 dbaeumer.vscode-eslint
 eamodio.gitlens
@@ -8,10 +9,16 @@ github.github-vscode-theme
 mechatroner.rainbow-csv
 ms-azuretools.vscode-containers
 ms-azuretools.vscode-docker
+ms-python.debugpy
+ms-python.python
+ms-python.vscode-python-envs
 pkief.material-icon-theme
 przybylski.cursor-harpoon
+rangav.vscode-thunder-client
 redhat.vscode-yaml
 ryuta46.multi-command
+streetsidesoftware.code-spell-checker
 tompollak.lazygit-vscode
 vscodevim.vim
 vspacecode.whichkey
+yoavbls.pretty-ts-errors

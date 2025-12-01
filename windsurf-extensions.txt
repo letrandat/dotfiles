@@ -1,6 +1,7 @@
 alefragnani.bookmarks
 alefragnani.project-manager
 asvetliakov.vscode-neovim
+bradlc.vscode-tailwindcss
 codeium.windsurfpyright
 danprince.vsnetrw
 dbaeumer.vscode-eslint
@@ -15,7 +16,10 @@ ms-python.python
 ms-python.vscode-python-envs
 pkief.material-icon-theme
 przybylski.cursor-harpoon
+rangav.vscode-thunder-client
 redhat.vscode-yaml
 ryuta46.multi-command
+streetsidesoftware.code-spell-checker
 tompollak.lazygit-vscode
 vspacecode.whichkey
+yoavbls.pretty-ts-errors
