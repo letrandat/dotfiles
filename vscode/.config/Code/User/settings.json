@@ -19,7 +19,7 @@
   "window.openFoldersInNewWindow": "off",
   "window.autoDetectColorScheme": true,
   // Use active editor medium for the window title
-  "window.title": "${activeEditorMedium}${separator}${rootName}${separator}${profileName}",
+  "window.title": "${rootName} @ ${activeRepositoryBranchName} > ${activeEditorShort} [${activeFolderMedium}]",
 
   // Editor Configuration
   "editor.fontSize": 13,
@@ -207,6 +207,7 @@
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
+  "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
 
   // lazygit-vscode
   "lazygit-vscode.autoMaximizeWindow": true,
