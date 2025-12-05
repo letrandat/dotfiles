@@ -15,7 +15,7 @@
   // Window Configuration
   "window.openFoldersInNewWindow": "off",
   // Use active editor medium for the window title
-  "window.title": "${rootName} @ ${activeRepositoryBranchName} > ${activeEditorShort} [${activeFolderMedium}]",
+  "window.title": "${folderName} @ ${activeRepositoryBranchName} > ${activeEditorShort} [${activeFolderMedium}]",
 
   // Editor Configuration
   "editor.fontSize": 13,
