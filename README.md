@@ -66,6 +66,7 @@ dotfiles/
 - `antigravity/`: Antigravity Agent configuration (`.config/Antigravity`)
 - `vscode/`: VS Code settings (`.config/Code`)
 - `windsurf/`: Windsurf settings (`.config/Windsurf`)
+- `codeium/`: Codeium configuration (`.codeium`)
 
 ### Managing Dotfiles
 

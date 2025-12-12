@@ -75,6 +75,7 @@ PACKAGES=(
     vscode
     windsurf
     antigravity
+    codeium
 )
 
 # Cleanup legacy links that might block stow

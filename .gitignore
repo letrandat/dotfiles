@@ -4,3 +4,21 @@ workspaceStorage/
 History/
 *.log
 .DS_Store
+
+# Codeium
+codeium/.codeium/windsurf/bin
+codeium/.codeium/windsurf/brain
+codeium/.codeium/windsurf/cascade
+codeium/.codeium/windsurf/code_tracker
+codeium/.codeium/windsurf/codemaps
+codeium/.codeium/windsurf/database
+codeium/.codeium/windsurf/implicit
+codeium/.codeium/windsurf/memories
+codeium/.codeium/windsurf/ws-browser
+codeium/.codeium/windsurf/ws-browser-extension
+codeium/.codeium/windsurf/ws-browser-profile
+codeium/.codeium/windsurf/installation_id
+codeium/.codeium/windsurf/mcp_config.json
+codeium/.codeium/windsurf/onboarding.json
+codeium/.codeium/windsurf/onboarding.json.lock
+codeium/.codeium/windsurf/user_settings.pb
