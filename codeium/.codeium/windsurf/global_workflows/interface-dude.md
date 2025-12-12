@@ -1,5 +1,5 @@
 ---
-description: Two Phase Interface-First Development Workflow, START
+description: Interface-First, START
 auto_execution_mode: 0
 ---
 
