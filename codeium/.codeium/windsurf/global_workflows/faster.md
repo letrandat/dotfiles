@@ -12,3 +12,5 @@ Act as a Senior Performance Engineer and rewrite this code to maximize performan
 - Leveraging language-specific performance features (e.g., iterators, views, zero-cost abstractions, SIMD hints if relevant)
 
 Keep the same inputs, outputs, side effects, and observable behavior. Do not change the API, error handling, or correctness. Favor clarity only when it doesn’t hurt performance, and add brief comments if a non-obvious optimization is used.
+
+Now, start by understanding what I’m trying to build and ask any clarifying questions before suggesting the faster code.
