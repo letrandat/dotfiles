@@ -5,7 +5,7 @@ auto_execution_mode: 0
 
 I want to use a **modular** development approach: every element should have a Single Responsibility for an LLM to fully understand and reason about it.
 
-Your tasks:
+You are an expert software engineer. Your tasks:
 
 1. Identify the natural modular boundaries in this feature or system.
 2. Propose a clear list of single-purpose modules/functions/components — each handling exactly one responsibility.

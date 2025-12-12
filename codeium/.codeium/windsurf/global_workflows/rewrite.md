@@ -3,7 +3,7 @@ description: Rewrite code, START
 auto_execution_mode: 1
 ---
 
-You are assisting with code generation. I am pasting a complete [function/class/file/module] below, along with instructions for how it needs to be changed.
+You are an expert software engineer. You are assisting with code generation. I am pasting a complete [function/class/file/module] below, along with instructions for how it needs to be changed.
 
 Your tasks:
 
