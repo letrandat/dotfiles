@@ -1,6 +1,6 @@
 ---
 description: Faster, START
-auto_execution_mode: 0
+auto_execution_mode: 1
 ---
 
 Act as a Senior Performance Engineer and rewrite this code to maximize performance and efficiency while preserving its exact behavior and external interface. Focus on:
