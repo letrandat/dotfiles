@@ -31,3 +31,6 @@ alias tmux-sessionizer='bash ~/.local/bin/tmux-sessionizer'
 # set alias for vscode-switcher
 alias vscode-switcher='bash ~/.local/bin/vscode-switcher'
 bindkey -s ^f "vscode-switcher\n"
+
+# amp with free mode as default
+alias af='amp --mode free'
