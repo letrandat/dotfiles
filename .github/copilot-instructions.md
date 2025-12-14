@@ -1,10 +1,13 @@
 # GitHub Copilot Instructions
 
+**Before starting any work, run 'bd onboard' to understand the current project state and available issues.**
+
 ## Issue Tracking with bd
 
 This project uses **bd (beads)** for issue tracking - a Git-backed tracker designed for AI-supervised coding workflows.
 
 **Key Features:**
+
 - Dependency-aware issue tracking
 - Auto-sync with Git via JSONL
 - AI-optimized CLI with JSON output
@@ -60,6 +63,7 @@ bd sync  # Force immediate export/commit/push
 ### MCP Server (Recommended)
 
 For MCP-compatible clients (Claude Desktop, etc.), install the beads MCP server:
+
 - Install: `pip install beads-mcp`
 - Functions: `mcp__beads__ready()`, `mcp__beads__create()`, etc.
 
