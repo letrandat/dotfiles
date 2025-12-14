@@ -2,6 +2,104 @@
 
 **Before starting any work, run 'bd onboard' to understand the current project state and available issues.**
 
+## Repository Overview
+
+This is a dotfiles repository managed as a set of **GNU Stow packages**. Each top-level package folder contains files laid out to mirror their intended location under `$HOME`.
+
+### XDG Base Directory
+
+This repo assumes XDG-style config locations:
+
+```bash
+export XDG_CONFIG_HOME="$HOME/.config"
+```
+
+Most configs live under `~/.config/...` and are stowed there via package layout.
+
+### macOS Application Support exception
+
+Some GUI apps on macOS require config to live under:
+
+`~/Library/Application Support/<App>/User`
+
+This repo normalizes those configs back into `~/.config/...` via symlinks created by `setup.sh` (see below), so Stow can still manage them.
+
+## Primary entry points
+
+- **Bootstrap / symlinking**: `./setup.sh`
+- **Install editor extensions**: `./install_extensions.sh`
+
+### `setup.sh` behavior (authoritative)
+
+`setup.sh`:
+
+1. Ensures `stow` exists (installs via Homebrew on macOS if missing)
+2. Ensures `~/.config` exists
+3. On macOS, creates Application Support symlinks for:
+   - `~/Library/Application Support/Code/User -> ~/.config/Code/User`
+   - `~/Library/Application Support/Windsurf/User -> ~/.config/Windsurf/User`
+   - `~/Library/Application Support/Antigravity/User -> ~/.config/Antigravity/User`
+4. Removes a set of “legacy links” that may block stow
+5. Runs `stow -d <repo> -t $HOME <package>` for all packages in the list
+
+## Stow package map
+
+Packages currently stowed by `setup.sh`:
+
+- `zsh`
+- `git`
+- `tmux`
+- `ideavim`
+- `nvim` (includes `nvim`, `nvim-kickstart`, `nvim-vscode` appnames)
+- `kitty`
+- `ghostty`
+- `lazygit`
+- `intellimacs`
+- `bin` (scripts in `~/.local/bin`)
+- `vscode` (VS Code user config under `~/.config/Code/User`)
+- `windsurf` (Windsurf user config under `~/.config/Windsurf/User`)
+- `antigravity` (Antigravity user config under `~/.config/Antigravity/User`)
+- `codeium` (Windsurf/Codeium assistant state and workflows under `.codeium/...`)
+- `amp`
+
+## Key workflow utilities (bin package)
+
+These scripts are stowed into `~/.local/bin`:
+
+- **`vscode-switcher`**: fzf-based directory picker to open a project in `code` / `windsurf` / `antigravity`.
+  - Config: `~/.config/vscode-switcher/vscode-switcher.conf`
+- **`tmux-sessionizer`**: fzf-based tmux session switcher/creator.
+  - Config: `~/.config/tmux-sessionizer/tmux-sessionizer.conf`
+  - Supports per-project hydration: `.tmux-sessionizer` file in the project root.
+- **`vscode-tmux.sh`**: auto-attaches/creates a tmux session when launched inside an integrated VS Code terminal.
+
+## Editor integration conventions
+
+### Windsurf / VS Code
+
+- Prefer keeping `keybindings.json` **small** and putting most “discoverable” keymaps under Which-Key.
+- Which-Key is bound to `alt+space` (Windsurf config).
+- `vscode-neovim` is configured to use appname `nvim-vscode`.
+
+### Lazygit
+
+Lazygit is configured to open files in Windsurf:
+
+- Config: `lazygit/.config/lazygit/config.yml`
+- Documentation: `lazygit/README.md`
+
+### IntelliJ (IdeaVim + Intellimacs)
+
+- Config entrypoint: `ideavim/.ideavimrc`
+- Loads Intellimacs modules from `~/.config/intellimacs/*` (stowed from `intellimacs/` package)
+
+## Git + repo hygiene
+
+- Do not commit sensitive or machine-specific data.
+- Use `.gitconfig-local` (not `.gitconfig`) for machine-specific overrides.
+- Editor state folders (e.g. `History/`, `globalStorage/`, `workspaceStorage/`) are intentionally ignored.
+- The beads SQLite DB should not be committed (ignored by `.beads/.gitignore`).
+
 ## Issue Tracking with bd (beads)
 
 **IMPORTANT**: This project uses **bd (beads)** for ALL issue tracking. Do NOT use markdown TODOs, task lists, or other tracking methods.
