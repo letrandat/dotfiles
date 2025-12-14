@@ -86,6 +86,15 @@
   },
 
   //
+  // WINDSURF / CASCADE
+  //
+  {
+    "key": "cmd+k",
+    "command": "windsurf.cascade.openAgentPicker",
+    "when": "windsurf.cascadePanel.focused && !terminalFocus"
+  },
+
+  //
   // HARPOON SHORTCUTS
   //
   // mark file to harpoon
