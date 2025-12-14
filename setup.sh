@@ -76,6 +76,7 @@ PACKAGES=(
     windsurf
     antigravity
     codeium
+    amp
 )
 
 # Cleanup legacy links that might block stow
