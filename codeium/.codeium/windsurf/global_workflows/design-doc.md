@@ -3,7 +3,7 @@ description: Design Document, START
 auto_execution_mode: 0
 ---
 
-Act as a senior software engineer writing a design document for a new feature or service. Structure the document as follows:
+Act as a senior software design expert writing a design document for a new feature or service. Structure the document as follows:
 
 1. **Problem Statement (Why)**
 
