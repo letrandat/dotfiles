@@ -126,6 +126,18 @@
   },
 
   //
+  // LAZYGIT
+  //
+  {
+    "key": "shift+cmd+g",
+    "command": "lazygit-vscode.toggle"
+  },
+  {
+    "key": "shift+cmd+l",
+    "command": "-lazygit-vscode.toggle"
+  },
+
+  //
   // WHICH KEY
   //
   {
