@@ -55,7 +55,7 @@ Packages currently stowed by `setup.sh`:
 - `ghostty`
 - `lazygit`
 - `intellimacs`
-- `bin` (scripts in `~/.local/bin`)
+- `bin` (scripts in `~/.local/dotfiles-bin` — separate from external binaries in `~/.local/bin`)
 - `vscode` (VS Code user config under `~/.config/Code/User`)
 - `windsurf` (Windsurf user config under `~/.config/Windsurf/User`)
 - `antigravity` (Antigravity user config under `~/.config/Antigravity/User`)
