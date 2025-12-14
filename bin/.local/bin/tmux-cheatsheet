@@ -28,7 +28,7 @@ Session | Detach from session | {prefix} d
 Session | List sessions | {prefix} s
 Session | Rename session | {prefix} $
 Window | Create new window | {prefix} c
-Window | Close current window | {prefix} &
+Window | Close or kill current window | {prefix} &
 Window | Rename window | {prefix} ,
 Window | Next window | {prefix} n
 Window | Previous window | {prefix} p
