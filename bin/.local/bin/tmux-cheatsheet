@@ -1,0 +1,85 @@
+#!/usr/bin/env bash
+
+# tmux-cheatsheet
+# specific steps on how to run this workflow
+# A fuzzy-searchable cheatsheet for tmux keybindings.
+
+set -e
+
+# dependency check
+if ! command -v fzf &> /dev/null; then
+    echo "Error: fzf is not installed. Please install it first."
+    exit 1
+fi
+
+# Detect tmux prefix (default to C-b if not found or not in tmux)
+PREFIX=$(tmux show-option -g prefix 2>/dev/null | cut -d' ' -f2)
+if [ -z "$PREFIX" ]; then
+    PREFIX="C-b"
+fi
+
+# Key binding database
+# Format: Category | Description | Keys
+# We use {prefix} placeholder to be replaced dynamically
+get_keys() {
+    cat <<EOF
+Session | Create new session | command: new -s name
+Session | Detach from session | {prefix} d
+Session | List sessions | {prefix} s
+Session | Rename session | {prefix} $
+Window | Create new window | {prefix} c
+Window | Close current window | {prefix} &
+Window | Rename window | {prefix} ,
+Window | Next window | {prefix} n
+Window | Previous window | {prefix} p
+Window | Select window 0-9 | {prefix} 0-9
+Window | List windows | {prefix} w
+Pane | Split vertical | {prefix} %
+Pane | Split horizontal | {prefix} "
+Pane | Toggle zoom | {prefix} z
+Pane | Kill pane | {prefix} x
+Pane | Switch to pane | {prefix} arrow
+Pane | Move pane left | {prefix} {
+Pane | Move pane right | {prefix} }
+Pane | Show pane numbers | {prefix} q
+Pane | Convert pane to window | {prefix} !
+Resize | Resize pane (arrow) | {prefix} C-arrow
+Copy Mode | Enter copy mode | {prefix} [ or {prefix} k
+Copy Mode | Paste buffer | {prefix} ]
+Copy Mode | Begin selection | v (in copy mode)
+Copy Mode | Copy to clipboard | y (in copy mode)
+Misc | List keys | {prefix} ?
+Misc | Reload config | {prefix} r (custom)
+EOF
+}
+
+# 1. Get keys
+# 2. Replace {prefix} with actual prefix
+# 3. Format nicely with column
+# 4. Pass to fzf
+# 5. Extract keys and copy to clipboard (macOS pbcopy)
+
+SELECTED=$(get_keys \
+    | sed "s/{prefix}/$PREFIX/g" \
+    | column -t -s '|' \
+    | fzf --header="Tmux Cheatsheet (Prefix: $PREFIX) | Enter to copy keys" \
+          --reverse --height=40% --border)
+
+if [ -n "$SELECTED" ]; then
+    # Extract the last column (Keys) using sed.
+    # We assume 'column' adds at least 2 spaces between columns.
+    # sed 's/.*  //' greedily matches up to the LAST occurrence of 2 spaces,
+    # leaving only the last column.
+    KEYS=$(echo "$SELECTED" | sed 's/.*  //')
+
+    # Copy to clipboard
+    if command -v pbcopy &> /dev/null; then
+        printf "%s" "$KEYS" | pbcopy
+        echo "Copied to clipboard: $KEYS"
+    elif command -v xclip &> /dev/null; then
+        printf "%s" "$KEYS" | xclip -selection clipboard
+        echo "Copied to clipboard: $KEYS"
+    else
+        echo "Selection: $KEYS (Install pbcopy or xclip to auto-copy)"
+    fi
+fi
