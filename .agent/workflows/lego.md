@@ -1,5 +1,5 @@
 ---
-description: Modular Building Blocks
+description: Building blocks, END
 ---
 
 I want to use a **modular** development approach: every element should have a Single Responsibility for an LLM to fully understand and reason about it.

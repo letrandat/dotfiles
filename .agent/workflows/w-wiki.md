@@ -1,5 +1,5 @@
 ---
-description: Search Confluence Wiki
+description: Search Confluence Wiki, START
 ---
 
 You must use Confluence MCP for all knowledge retrieval, documentation lookup, and content extraction.

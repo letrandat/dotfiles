@@ -1,5 +1,5 @@
 ---
-description: Rewrite Documentation
+description: Rewrite documentation, START
 ---
 
 You are an expert software architect and technical writer. I will provide a design document, README, specification, or architecture description that needs to be rewritten or improved.
