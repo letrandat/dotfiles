@@ -1,93 +1,87 @@
 #!/usr/bin/env bash
 
 # tmux-cheatsheet
-# specific steps on how to run this workflow
 # A fuzzy-searchable cheatsheet for tmux keybindings.
+#
+# Each entry has an action type visible in fzf:
+#   [exec]  - Will execute the command on selection
+#   [info]  - Will print the instruction on selection
 
 set -e
 
-# dependency check
+# --- Dependency Check ---
 if ! command -v fzf &> /dev/null; then
     echo "Error: fzf is not installed. Please install it first."
     exit 1
 fi
 
-# Detect tmux prefix (default to C-b if not found or not in tmux)
+# --- Detect Tmux Prefix ---
 PREFIX=$(tmux show-option -g prefix 2>/dev/null | cut -d' ' -f2)
 if [ -z "$PREFIX" ]; then
     PREFIX="C-b"
 fi
 
-# Key binding database
-# Format: Category | Description | Keys
-# We use {prefix} placeholder to be replaced dynamically
+# --- Key Binding Database ---
+# Format: Category | Description | Keys | Action (exec/info)
 get_keys() {
     cat <<EOF
-Session | Create new session | command: new -s name
-Session | Detach from session | {prefix} d
-Session | List sessions | {prefix} s
-Session | Rename session | {prefix} $
-Window | Create new window | {prefix} c
-Window | Close or kill current window | {prefix} &
-Window | Rename window | {prefix} ,
-Window | Next window | {prefix} n
-Window | Previous window | {prefix} p
-Window | Select window 0-9 | {prefix} 0-9
-Window | List windows | {prefix} w
-Pane | Split vertical | {prefix} %
-Pane | Split horizontal | {prefix} "
-Pane | Toggle zoom | {prefix} z
-Pane | Kill pane | {prefix} x
-Pane | Switch to pane | {prefix} arrow
-Pane | Move pane left | {prefix} {
-Pane | Move pane right | {prefix} }
-Pane | Show pane numbers | {prefix} q
-Pane | Convert pane to window | {prefix} !
-Resize | Resize pane (arrow) | {prefix} C-arrow
-Copy Mode | Enter copy mode | {prefix} [ or {prefix} k
-Copy Mode | Paste buffer | {prefix} ]
-Copy Mode | Begin selection | v (in copy mode)
-Copy Mode | Copy to clipboard | y (in copy mode)
-Misc | List keys | {prefix} ?
-Misc | Reload config | {prefix} r (custom)
-Misc | View or cat config | cat ~/.tmux.conf
-Misc | Edit config | $EDITOR ~/.tmux.conf
+Session | Create new session | tmux new -s <name> | info
+Session | Detach from session | {prefix} d | info
+Session | List sessions | {prefix} s | info
+Session | Rename session | {prefix} $ | info
+Window | Create new window | {prefix} c | info
+Window | Close or kill current window | {prefix} & | info
+Window | Rename window | {prefix} , | info
+Window | Next window | {prefix} n | info
+Window | Previous window | {prefix} p | info
+Window | Select window 0-9 | {prefix} 0-9 | info
+Window | List windows | {prefix} w | info
+Pane | Split vertical | {prefix} % | info
+Pane | Split horizontal | {prefix} " | info
+Pane | Toggle zoom | {prefix} z | info
+Pane | Kill pane | {prefix} x | info
+Pane | Switch to pane | {prefix} arrow | info
+Pane | Move pane left | {prefix} { | info
+Pane | Move pane right | {prefix} } | info
+Pane | Show pane numbers | {prefix} q | info
+Pane | Convert pane to window | {prefix} ! | info
+Resize | Resize pane (arrow) | {prefix} C-arrow | info
+Copy Mode | Enter copy mode | {prefix} [ or {prefix} k | info
+Copy Mode | Paste buffer | {prefix} ] | info
+Copy Mode | Begin selection | v (in copy mode) | info
+Copy Mode | Copy to clipboard | y (in copy mode) | info
+Misc | List keys | {prefix} ? | info
+Misc | Reload config | {prefix} r (custom) | info
+Misc | View config | cat ~/.tmux.conf | exec
+Misc | Edit config | \$EDITOR ~/.tmux.conf | exec
 EOF
 }
 
-# 1. Get keys
-# 2. Replace {prefix} with actual prefix
-# 3. Format nicely with column
-# 4. Pass to fzf
-# 5. Extract keys and copy to clipboard (macOS pbcopy)
-
+# --- Main ---
 SELECTED=$(get_keys \
     | sed "s/{prefix}/$PREFIX/g" \
-    | column -t -s '|' \
-    | fzf --header="Tmux Cheatsheet (Prefix: $PREFIX) | Enter to copy keys" \
+    | awk -F'|' '{
+        # Trim whitespace and format with action tag
+        gsub(/^[ \t]+|[ \t]+$/, "", $1)
+        gsub(/^[ \t]+|[ \t]+$/, "", $2)
+        gsub(/^[ \t]+|[ \t]+$/, "", $3)
+        gsub(/^[ \t]+|[ \t]+$/, "", $4)
+        printf "[%s] %-10s | %-30s | %s\n", $4, $1, $2, $3
+    }' \
+    | fzf --header="Tmux Cheatsheet (Prefix: $PREFIX)" \
           --reverse --height=40% --border)
 
 if [ -n "$SELECTED" ]; then
-    # Extract the last column (Keys) using sed.
-    # We assume 'column' adds at least 2 spaces between columns.
-    # sed 's/.*  //' greedily matches up to the LAST occurrence of 2 spaces,
-    # leaving only the last column.
-    KEYS=$(echo "$SELECTED" | sed 's/.*  //')
+    # Extract action type [exec] or [info]
+    ACTION=$(echo "$SELECTED" | grep -o '^\[[a-z]*\]' | tr -d '[]')
 
-    # Check if it's an executable command (starts with cat, $EDITOR, etc.)
-    if [[ "$KEYS" =~ ^(cat|less|\$EDITOR|vim|nvim|nano) ]]; then
-        echo "Executing: $KEYS"
+    # Extract keys (last column after the last |)
+    KEYS=$(echo "$SELECTED" | sed 's/.*| //')
+
+    if [ "$ACTION" = "exec" ]; then
+        echo "executing → $KEYS"
         eval "$KEYS"
     else
-        # Copy to clipboard
-        if command -v pbcopy &> /dev/null; then
-            printf "%s" "$KEYS" | pbcopy
-            echo "Copied to clipboard: $KEYS"
-        elif command -v xclip &> /dev/null; then
-            printf "%s" "$KEYS" | xclip -selection clipboard
-            echo "Copied to clipboard: $KEYS"
-        else
-            echo "Selection: $KEYS (Install pbcopy or xclip to auto-copy)"
-        fi
+        echo "→ $KEYS"
     fi
 fi
