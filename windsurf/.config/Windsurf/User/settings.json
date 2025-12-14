@@ -2,7 +2,7 @@
   // workbench
   // https://code.visualstudio.com/api/extension-capabilities/extending-workbench
   // I don't need activity bar
-  "workbench.activityBar.location": "hidden",
+  "workbench.activityBar.location": "top",
   "workbench.colorTheme": "Quiet Light",
   "workbench.preferredLightColorTheme": "Quiet Light",
   "workbench.preferredDarkColorTheme": "GitHub Dark Dimmed",
