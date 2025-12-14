@@ -46,10 +46,9 @@ Pane | Move pane right | {prefix} } | info
 Pane | Show pane numbers | {prefix} q | info
 Pane | Convert pane to window | {prefix} ! | info
 Resize | Resize pane (arrow) | {prefix} C-arrow | info
-Copy Mode | Enter copy mode | {prefix} [ or {prefix} k | info
-Copy Mode | Paste buffer | {prefix} ] | info
-Copy Mode | Begin selection | v (in copy mode) | info
-Copy Mode | Copy to clipboard | y (in copy mode) | info
+Copy / Vim Mode | Enter copy mode | {prefix} [ or {prefix} k or page-up / page-down | info
+Copy / Vim Mode | Begin selection | v (in copy mode) | info
+Copy / Vim Mode | Copy to clipboard | y (in copy mode) | info
 Misc | List keys | {prefix} ? | info
 Misc | Reload config | {prefix} r (custom) | info
 Misc | View config | cat ~/.tmux.conf | exec
