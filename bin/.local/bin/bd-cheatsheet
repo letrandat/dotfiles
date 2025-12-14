@@ -1,0 +1,138 @@
+#!/usr/bin/env bash
+
+# bd-cheatsheet
+# A fuzzy-searchable cheatsheet for the beads ecosystem:
+# - bd CLI commands for issue tracking
+# - bv (beads_viewer) TUI keybindings and CLI
+# - beads-ui web interface
+#
+# Each entry has an action type visible in fzf:
+#   [exec]  - Will execute the command on selection
+#   [info]  - Will print the instruction on selection
+
+set -e
+
+# --- Dependency Check ---
+if ! command -v fzf &> /dev/null; then
+    echo "Error: fzf is not installed. Please install it first."
+    exit 1
+fi
+
+# --- Key Binding / Command Database ---
+# Format: Category | Description | Command/Keys | Action (exec/info)
+get_entries() {
+    cat <<EOF
+# ══════════════════════════════════════════════════════════════════════════════
+# BD CLI - Issue Tracking
+# ══════════════════════════════════════════════════════════════════════════════
+bd CLI | Onboard - show setup instructions | bd onboard | exec
+bd CLI | Show ready (unblocked) issues | bd ready --json | exec
+bd CLI | List all open issues | bd list --status open --json | exec
+bd CLI | List issues by priority | bd list --priority 1 --json | exec
+bd CLI | Show issue details | bd show <id> --json | info
+bd CLI | Create new issue | bd create "<title>" -t feature -p 2 --json | info
+bd CLI | Create bug | bd create "<title>" -t bug -p 1 --json | info
+bd CLI | Create task | bd create "<title>" -t task -p 2 --json | info
+bd CLI | Create epic | bd create "<title>" -t epic -p 1 --json | info
+bd CLI | Create subtask under epic | bd create "<title>" --parent <epic-id> --json | info
+bd CLI | Create with dependency | bd create "<title>" --deps discovered-from:<id> --json | info
+bd CLI | Update issue status | bd update <id> --status in_progress --json | info
+bd CLI | Update issue priority | bd update <id> --priority 1 --json | info
+bd CLI | Close issue | bd close <id> --reason "Done" --json | info
+bd CLI | Add dependency (blocks) | bd dep add <issue> <blocker> --type blocks | info
+bd CLI | Show dependency tree | bd dep tree <id> | info
+bd CLI | Check for dependency cycles | bd dep cycles | exec
+bd CLI | Sync issues to git | bd sync | exec
+bd CLI | Run health check | bd doctor | exec
+bd CLI | List templates | bd template list | exec
+bd CLI | Create from template | bd create --from-template feature "<title>" --json | info
+bd CLI | Show stale issues (30+ days) | bd stale --days 30 --json | exec
+bd CLI | Get help for any command | bd <command> --help | info
+# ══════════════════════════════════════════════════════════════════════════════
+# BV - Beads Viewer (TUI)
+# ══════════════════════════════════════════════════════════════════════════════
+bv Install | Install via curl (one-liner) | curl -fsSL 'https://raw.githubusercontent.com/Dicklesworthstone/beads_viewer/main/install.sh' \| bash | info
+bv Install | Clone and build from source | git clone https://github.com/Dicklesworthstone/beads_viewer.git && cd beads_viewer && go install ./cmd/bv | info
+bv CLI | Launch interactive TUI | bv | exec
+bv CLI | Show help | bv --help | exec
+bv CLI | Show version | bv --version | exec
+bv CLI | Get robot insights (JSON) | bv --robot-insights | exec
+bv CLI | Get execution plan (JSON) | bv --robot-plan | exec
+bv CLI | Get priority recommendations | bv --robot-priority | exec
+bv CLI | List available recipes | bv --robot-recipes | exec
+bv CLI | Apply recipe: actionable | bv --recipe actionable | exec
+bv CLI | Apply recipe: high-impact | bv --recipe high-impact | exec
+bv CLI | Apply recipe: stale | bv --recipe stale | exec
+bv CLI | Apply recipe: blocked | bv --recipe blocked | exec
+bv CLI | Time-travel: 10 commits ago | bv --as-of HEAD~10 | info
+bv CLI | Time-travel: at tag | bv --as-of v1.0.0 | info
+bv CLI | Diff since commits | bv --diff-since HEAD~5 --robot-diff | info
+bv CLI | Export Markdown report | bv --export-md report.md | info
+bv Keys | Move down | j | info
+bv Keys | Move up | k | info
+bv Keys | Go to top | g | info
+bv Keys | Go to bottom | G | info
+bv Keys | Page down | Ctrl+D | info
+bv Keys | Page up | Ctrl+U | info
+bv Keys | Toggle panels | Tab | info
+bv Keys | Select / expand | Enter | info
+bv Keys | Quit | q | info
+bv Keys | Close / back | Esc | info
+bv Keys | Open issue | o | info
+bv Keys | Refresh | r | info
+bv Keys | Close issue | c | info
+bv Keys | Search | / | info
+bv Keys | Board view | b | info
+bv Keys | Insights dashboard | i | info
+bv Keys | Graph view | g (in list) | info
+bv Keys | Archive view | a | info
+bv Keys | Help overlay | ? | info
+bv Keys | Recipe menu | R | info
+# ══════════════════════════════════════════════════════════════════════════════
+# BEADS-UI - Web Interface
+# ══════════════════════════════════════════════════════════════════════════════
+beads-ui Install | Install globally via npm | npm i beads-ui -g | info
+beads-ui | Start web UI | bdui start | exec
+beads-ui | Start and open browser | bdui start --open | exec
+beads-ui | Show help | bdui --help | exec
+beads-ui | Stop daemon | bdui stop | exec
+beads-ui Env | Set bd binary path | export BD_BIN=/path/to/bd | info
+beads-ui Env | Set runtime directory | export BDUI_RUNTIME_DIR=/path | info
+beads-ui Env | Set port (default 3000) | export PORT=3000 | info
+beads-ui Features | Issues view | Filter and search issues, edit inline | info
+beads-ui Features | Epics view | Show progress per epic, expand rows | info
+beads-ui Features | Board view | Blocked / Ready / In Progress / Closed columns | info
+beads-ui Features | Keyboard navigation | Navigate and edit without mouse | info
+EOF
+}
+
+# --- Main ---
+SELECTED=$(get_entries \
+    | grep -v '^#' \
+    | grep -v '^$' \
+    | awk -F'|' '{
+        # Trim whitespace and format with action tag
+        gsub(/^[ \t]+|[ \t]+$/, "", $1)
+        gsub(/^[ \t]+|[ \t]+$/, "", $2)
+        gsub(/^[ \t]+|[ \t]+$/, "", $3)
+        gsub(/^[ \t]+|[ \t]+$/, "", $4)
+        printf "[%s] %-18s | %-35s | %s\n", $4, $1, $2, $3
+    }' \
+    | fzf --header="BD Cheatsheet (bd CLI | bv TUI | beads-ui)" \
+          --reverse --height=50% --border \
+          --preview-window=hidden)
+
+if [ -n "$SELECTED" ]; then
+    # Extract action type [exec] or [info]
+    ACTION=$(echo "$SELECTED" | grep -o '^\[[a-z]*\]' | tr -d '[]')
+
+    # Extract command (last column after the last |)
+    CMD=$(echo "$SELECTED" | sed 's/.*| //')
+
+    if [ "$ACTION" = "exec" ]; then
+        echo "executing → $CMD"
+        eval "$CMD"
+    else
+        echo "→ $CMD"
+    fi
+fi
