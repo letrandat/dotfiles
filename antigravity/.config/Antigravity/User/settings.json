@@ -5,6 +5,8 @@
   "workbench.activityBar.location": "hidden",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Quiet Light",
+  "workbench.preferredLightColorTheme": "Quiet Light",
+  "workbench.preferredDarkColorTheme": "GitHub Dark Dimmed",
   "workbench.editor.showTabs": "none",
   // needed status bar for vscodevim only
   "workbench.statusBar.visible": true,
@@ -13,6 +15,7 @@
   "breadcrumbs.enabled": false,
 
   // Window Configuration
+  "window.autoDetectColorScheme": true,
   "window.openFoldersInNewWindow": "off",
   // Use active editor medium for the window title
   "window.title": "${folderName} @ ${activeRepositoryBranchName} > ${activeEditorShort} [${activeFolderMedium}]",
