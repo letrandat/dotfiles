@@ -9,7 +9,7 @@
   "workbench.preferredDarkColorTheme": "GitHub Dark Dimmed",
   "workbench.editor.showTabs": "none",
   // needed status bar for vscodevim only
-  "workbench.statusBar.visible": true,
+  "workbench.statusBar.visible": false,
 
   // Breadcrumbs Configuration
   "breadcrumbs.enabled": false,
