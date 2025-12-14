@@ -16,6 +16,16 @@
     "when": "!editorTextFocus"
   },
 
+  // Secondary Bar
+  {
+    "key": "cmd+shift+h",
+    "command": "workbench.action.toggleMaximizedAuxiliaryBar"
+  },
+  {
+    "key": "shift+cmd+h",
+    "command": "-workbench.action.replaceInFiles"
+  },
+
   //
   // CTRL+U/CTRL+D to scroll up/down
   //
@@ -130,6 +140,16 @@
   {
     "key": "alt+;",
     "command": "cursor-harpoon.gotoEditor4"
+  },
+
+  // LAZYGIT
+  {
+    "key": "shift+cmd+g",
+    "command": "lazygit-vscode.toggle"
+  },
+  {
+    "key": "shift+cmd+l",
+    "command": "-lazygit-vscode.toggle"
   },
 
   //
