@@ -50,6 +50,8 @@ Copy Mode | Begin selection | v (in copy mode)
 Copy Mode | Copy to clipboard | y (in copy mode)
 Misc | List keys | {prefix} ?
 Misc | Reload config | {prefix} r (custom)
+Misc | View or cat config | cat ~/.tmux.conf
+Misc | Edit config | $EDITOR ~/.tmux.conf
 EOF
 }
 
@@ -72,14 +74,20 @@ if [ -n "$SELECTED" ]; then
     # leaving only the last column.
     KEYS=$(echo "$SELECTED" | sed 's/.*  //')
 
-    # Copy to clipboard
-    if command -v pbcopy &> /dev/null; then
-        printf "%s" "$KEYS" | pbcopy
-        echo "Copied to clipboard: $KEYS"
-    elif command -v xclip &> /dev/null; then
-        printf "%s" "$KEYS" | xclip -selection clipboard
-        echo "Copied to clipboard: $KEYS"
+    # Check if it's an executable command (starts with cat, $EDITOR, etc.)
+    if [[ "$KEYS" =~ ^(cat|less|\$EDITOR|vim|nvim|nano) ]]; then
+        echo "Executing: $KEYS"
+        eval "$KEYS"
     else
-        echo "Selection: $KEYS (Install pbcopy or xclip to auto-copy)"
+        # Copy to clipboard
+        if command -v pbcopy &> /dev/null; then
+            printf "%s" "$KEYS" | pbcopy
+            echo "Copied to clipboard: $KEYS"
+        elif command -v xclip &> /dev/null; then
+            printf "%s" "$KEYS" | xclip -selection clipboard
+            echo "Copied to clipboard: $KEYS"
+        else
+            echo "Selection: $KEYS (Install pbcopy or xclip to auto-copy)"
+        fi
     fi
 fi
