@@ -2,17 +2,20 @@
   // workbench
   // https://code.visualstudio.com/api/extension-capabilities/extending-workbench
   // This is the activity bar on the editor itself
-  "workbench.activityBar.location": "hidden",
+  "workbench.activityBar.location": "top",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Quiet Light",
+  "workbench.preferredLightColorTheme": "Quiet Light",
+  "workbench.preferredDarkColorTheme": "GitHub Dark Dimmed",
   "workbench.editor.showTabs": "none",
   // needed status bar for vscodevim only
-  "workbench.statusBar.visible": true,
+  "workbench.statusBar.visible": false,
 
   // Breadcrumbs Configuration
   "breadcrumbs.enabled": false,
 
   // Window Configuration
+  "window.autoDetectColorScheme": true,
   "window.openFoldersInNewWindow": "off",
   // Use active editor medium for the window title
   "window.title": "${folderName} @ ${activeRepositoryBranchName} > ${activeEditorShort} [${activeFolderMedium}]",

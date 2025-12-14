@@ -36,7 +36,8 @@ export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 export PATH="$HOME/.codeium/windsurf/bin:$PATH"
 
 # Created by `pipx` on 2025-03-29 15:42:54
-export PATH="$PATH:~/.local/bin"
+export PATH="$PATH:$HOME/.local/dotfiles-bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 # JAVA
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!

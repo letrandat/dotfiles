@@ -1,0 +1,91 @@
+#!/usr/bin/env bash
+
+# tmux-cheatsheet
+# A fuzzy-searchable cheatsheet for tmux keybindings.
+#
+# Each entry has an action type visible in fzf:
+#   [exec]  - Will execute the command on selection
+#   [info]  - Will print the instruction on selection
+
+set -e
+
+# --- Dependency Check ---
+if ! command -v fzf &> /dev/null; then
+    echo "Error: fzf is not installed. Please install it first."
+    exit 1
+fi
+
+# --- Detect Tmux Prefix ---
+PREFIX=$(tmux show-option -g prefix 2>/dev/null | cut -d' ' -f2)
+if [ -z "$PREFIX" ]; then
+    PREFIX="C-b"
+fi
+
+# --- Key Binding Database ---
+# Format: Category | Description | Keys | Action (exec/info)
+get_keys() {
+    cat <<EOF
+Session | Create new session | tmux new -s <name> | info
+Session | Detach from session | {prefix} d | info
+Session | List sessions | {prefix} s | info
+Session | Rename session | {prefix} $ | info
+Window | Create new window | {prefix} c | info
+Window | Close or kill current window | {prefix} & | info
+Window | Rename window | {prefix} , | info
+Window | Next window | {prefix} n | info
+Window | Previous window | {prefix} p | info
+Window | Select window 0-9 | {prefix} 0-9 | info
+Window | List windows | {prefix} w | info
+Pane | Split vertical | {prefix} % | info
+Pane | Split horizontal | {prefix} " | info
+Pane | Toggle zoom | {prefix} z | info
+Pane | Kill pane | {prefix} x | info
+Pane | Switch to pane | {prefix} arrow | info
+Pane | Move pane left | {prefix} { | info
+Pane | Move pane right | {prefix} } | info
+Pane | Show pane numbers | {prefix} q | info
+Pane | Convert pane to window | {prefix} ! | info
+Resize | Resize pane (arrow) | {prefix} C-arrow | info
+Copy / Vim Mode | Enter copy mode | {prefix} [ or {prefix} k or page-up / page-down | info
+Copy / Vim Mode | Begin selection | v (in copy mode) | info
+Copy / Vim Mode | Copy to clipboard | y (in copy mode) | info
+Copy / Vim Mode | Search forward | / (in copy mode) | info
+Copy / Vim Mode | Search backward | ? (in copy mode) | info
+Copy / Vim Mode | Jump to top of screen | H (in copy mode) | info
+Copy / Vim Mode | Jump to middle of screen | M (in copy mode) | info
+Copy / Vim Mode | Jump to bottom of screen | L (in copy mode) | info
+Misc | List keys | {prefix} ? | info
+Misc | Reload config | {prefix} r (custom) | info
+Misc | View config | cat ~/.tmux.conf | exec
+Misc | Edit config | \$EDITOR ~/.tmux.conf | exec
+EOF
+}
+
+# --- Main ---
+SELECTED=$(get_keys \
+    | sed "s/{prefix}/$PREFIX/g" \
+    | awk -F'|' '{
+        # Trim whitespace and format with action tag
+        gsub(/^[ \t]+|[ \t]+$/, "", $1)
+        gsub(/^[ \t]+|[ \t]+$/, "", $2)
+        gsub(/^[ \t]+|[ \t]+$/, "", $3)
+        gsub(/^[ \t]+|[ \t]+$/, "", $4)
+        printf "[%s] %-10s | %-30s | %s\n", $4, $1, $2, $3
+    }' \
+    | fzf --header="Tmux Cheatsheet (Prefix: $PREFIX)" \
+          --reverse --height=40% --border)
+
+if [ -n "$SELECTED" ]; then
+    # Extract action type [exec] or [info]
+    ACTION=$(echo "$SELECTED" | grep -o '^\[[a-z]*\]' | tr -d '[]')
+
+    # Extract keys (last column after the last |)
+    KEYS=$(echo "$SELECTED" | sed 's/.*| //')
+
+    if [ "$ACTION" = "exec" ]; then
+        echo "executing → $KEYS"
+        eval "$KEYS"
+    else
+        echo "→ $KEYS"
+    fi
+fi

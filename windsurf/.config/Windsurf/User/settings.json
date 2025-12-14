@@ -2,8 +2,10 @@
   // workbench
   // https://code.visualstudio.com/api/extension-capabilities/extending-workbench
   // I don't need activity bar
-  "workbench.activityBar.location": "hidden",
+  "workbench.activityBar.location": "top",
   "workbench.colorTheme": "Quiet Light",
+  "workbench.preferredLightColorTheme": "Quiet Light",
+  "workbench.preferredDarkColorTheme": "GitHub Dark Dimmed",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.editor.showTabs": "none",
   "workbench.statusBar.visible": false,
@@ -16,6 +18,7 @@
   "accessibility.voice.speechTimeout": 0,
 
   // Window Configuration
+  "window.autoDetectColorScheme": true,
   "window.openFoldersInNewWindow": "off",
   // Use active editor medium for the window title
   "window.title": "${folderName} @ ${activeRepositoryBranchName} > ${activeEditorShort} [${activeFolderMedium}]",

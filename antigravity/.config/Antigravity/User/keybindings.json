@@ -16,6 +16,16 @@
     "when": "!editorTextFocus"
   },
 
+  // Secondary Bar
+  {
+    "key": "cmd+shift+h",
+    "command": "workbench.action.toggleMaximizedAuxiliaryBar"
+  },
+  {
+    "key": "shift+cmd+h",
+    "command": "-workbench.action.replaceInFiles"
+  },
+
   //
   // CTRL+U/CTRL+D to scroll up/down
   //
@@ -126,6 +136,18 @@
   },
 
   //
+  // LAZYGIT
+  //
+  {
+    "key": "shift+cmd+g",
+    "command": "lazygit-vscode.toggle"
+  },
+  {
+    "key": "shift+cmd+l",
+    "command": "-lazygit-vscode.toggle"
+  },
+
+  //
   // WHICH KEY
   //
   {
@@ -151,6 +173,25 @@
       ]
     },
     "when": "editorTextFocus && vim.mode == 'Normal' && vim.mode != 'SearchInProgressMode' && vim.mode != 'CommandlineInProgress'"
+  },
+  {
+    "key": "ctrl+pagedown",
+    "command": "workbench.action.terminal.focusNext",
+    "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+  },
+  {
+    "key": "ctrl+pageup",
+    "command": "workbench.action.terminal.focusPrevious",
+    "when": "terminalFocus && terminalHasBeenCreated && !terminalEditorFocus || terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+  },
+
+  //
+  // TERMINAL
+  //
+  {
+    "key": "ctrl+=",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
   },
   {
     "key": "ctrl+pagedown",

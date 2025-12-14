@@ -1,0 +1,7 @@
+{
+  "name": "beads",
+  "description": "Git-backed issue tracker for AI-supervised coding workflows",
+  "command": "beads-mcp",
+  "args": [],
+  "type": "mcp"
+}
