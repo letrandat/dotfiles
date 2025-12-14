@@ -49,6 +49,11 @@ Resize | Resize pane (arrow) | {prefix} C-arrow | info
 Copy / Vim Mode | Enter copy mode | {prefix} [ or {prefix} k or page-up / page-down | info
 Copy / Vim Mode | Begin selection | v (in copy mode) | info
 Copy / Vim Mode | Copy to clipboard | y (in copy mode) | info
+Copy / Vim Mode | Search forward | / (in copy mode) | info
+Copy / Vim Mode | Search backward | ? (in copy mode) | info
+Copy / Vim Mode | Jump to top of screen | H (in copy mode) | info
+Copy / Vim Mode | Jump to middle of screen | M (in copy mode) | info
+Copy / Vim Mode | Jump to bottom of screen | L (in copy mode) | info
 Misc | List keys | {prefix} ? | info
 Misc | Reload config | {prefix} r (custom) | info
 Misc | View config | cat ~/.tmux.conf | exec
