@@ -232,6 +232,36 @@ history/
 - ✅ Preserves planning history for archeological research
 - ✅ Reduces noise when browsing the project
 
+## GitHub CLI for Pull Requests
+
+Use GitHub CLI (`gh`) to manage pull requests. Due to deprecated Projects Classic warnings, update title and description separately using the API:
+
+**Update PR title:**
+
+```bash
+gh api repos/{owner}/{repo}/pulls/{pr_number} -X PATCH -f title="Your PR title"
+```
+
+**Update PR description:**
+
+```bash
+gh api repos/{owner}/{repo}/pulls/{pr_number} -X PATCH -f body="Your PR description"
+```
+
+**Update both together:**
+
+```bash
+gh api repos/{owner}/{repo}/pulls/{pr_number} -X PATCH \
+  -f title="Your PR title" \
+  -f body="Your PR description in markdown"
+```
+
+**View PR details:**
+
+```bash
+gh pr view {pr_number} --json title,body
+```
+
 ### CLI Help
 
 Run `bd <command> --help` to see all available flags for any command.
