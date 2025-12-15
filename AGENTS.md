@@ -71,7 +71,7 @@ These scripts are stowed into `~/.local/bin`:
 - **`tmux-sessionizer`**: fzf-based tmux session switcher/creator.
   - Config: `~/.config/tmux-sessionizer/tmux-sessionizer.conf`
   - Supports per-project hydration: `.tmux-sessionizer` file in the project root.
-- **`vscode-tmux.sh`**: auto-attaches/creates a tmux session when launched inside an integrated VS Code terminal.
+- **`tmux-autoattach.sh`**: auto-attaches/creates a tmux session when launched in supported terminals (VS Code-like editors, Ghostty).
 
 ## Editor integration conventions
 
