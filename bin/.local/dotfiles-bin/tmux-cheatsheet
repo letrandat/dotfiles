@@ -25,9 +25,14 @@ fi
 # Format: Category | Description | Keys | Action (exec/info)
 get_keys() {
     cat <<EOF
+Session | List sessions (outside tmux) | tmux ls | info
+Session | Attach to session (outside tmux) | tmux attach -t <name> | info
 Session | Create new session | tmux new -s <name> | info
 Session | Detach from session | {prefix} d | info
-Session | List sessions | {prefix} s | info
+Session | List sessions (in tmux) | {prefix} s | info
+Session | Next session | {prefix} ) | info
+Session | Previous session | {prefix} ( | info
+Session | Switch to last session | {prefix} L | info
 Session | Rename session | {prefix} $ | info
 Window | Create new window | {prefix} c | info
 Window | Close or kill current window | {prefix} & | info
