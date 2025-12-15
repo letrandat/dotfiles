@@ -195,3 +195,24 @@ When you're finished with the worktree:
 
 - **Use LazyGit**: Open LazyGit to manage commits for your worktree
 - **Select correct worktree**: In LazyGit mode, remember to select the correct worktree directory before committing
+
+## Agent Skills
+
+This repository includes portable agent skills that can be installed on any machine using `openskills`.
+
+### Installing Skills from this Repository
+
+```bash
+# Install a specific skill globally
+openskills install letrandat/dotfiles/skills/<skill-name> -g --universal
+
+# Example: Install all skills from this repo
+openskills install letrandat/dotfiles/skills -g --universal
+```
+
+### Bootstrap Workflow
+
+Start any conversation with full context by running `/bootstrap`, which:
+
+1. Runs `bd onboard` to load issue tracking instructions
+2. Runs `openskills list` to show available skills
