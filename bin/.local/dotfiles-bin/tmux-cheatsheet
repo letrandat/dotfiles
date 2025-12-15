@@ -63,6 +63,10 @@ Misc | List keys | {prefix} ? | info
 Misc | Reload config | {prefix} r (custom) | info
 Misc | View config | cat ~/.tmux.conf | exec
 Misc | Edit config | \$EDITOR ~/.tmux.conf | exec
+Sessionizer | Switch/create session (fzf) | tmux-sessionizer | exec
+Sessionizer | About: auto-attach on terminal spawn | tmux-autoattach.sh (vscode/ghostty) | info
+Sessionizer | View sessionizer config | cat ~/.config/tmux-sessionizer/tmux-sessionizer.conf | exec
+Sessionizer | Edit sessionizer config | \$EDITOR ~/.config/tmux-sessionizer/tmux-sessionizer.conf | exec
 EOF
 }
 

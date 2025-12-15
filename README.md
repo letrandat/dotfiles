@@ -77,12 +77,67 @@ To add a new configuration file:
 2. Run `stow -R <package>` to refresh the links.
    _Example: `stow -R zsh`_
 
-## Tmux Terminal
+## Tmux Sessionizer Ecosystem
 
-To open a new tmux terminal, use the shortcut: **Shift + Cmd + J, then N, then T**.
+A unified terminal session management system that works across editors (VS Code, Windsurf, Antigravity) and standalone terminals (Ghostty).
 
-- This sequence stands for **[N]ew [T]mux Terminal**.
-- Use this shortcut to quickly start a fresh tmux session after switching to a new folder/workspace
+### Session Naming Convention
+
+Sessions follow a `parent_child` pattern based on the working directory:
+
+```
+~/workspace/dotfiles  →  workspace_dotfiles
+~/personal/myproject  →  personal_myproject
+```
+
+This ensures the same session is accessible from any terminal, regardless of entry point.
+
+### Auto-Attach (Terminal Integration)
+
+When opening a terminal in VS Code-like editors or Ghostty, `tmux-autoattach.sh` automatically:
+
+1. Creates a new tmux session if one doesn't exist for the current directory
+2. Attaches to an existing session if it matches the `parent_child` pattern
+
+**Supported terminals:** `$TERM_PROGRAM = vscode | ghostty`
+
+### Session Switching
+
+| Context                   | Keybinding          | Action                                  |
+| ------------------------- | ------------------- | --------------------------------------- |
+| Editor (VS Code/Windsurf) | `Alt+Space → j → n` | Launch `tmux-sessionizer` via Which-Key |
+| Tmux (any terminal)       | `prefix + f`        | Launch `tmux-sessionizer` popup         |
+
+`tmux-sessionizer` provides an fzf-powered interface to:
+
+- View existing tmux sessions
+- Create new sessions from project directories
+- Switch between sessions instantly
+
+### Configuration
+
+**Config file:** `~/.config/tmux-sessionizer/tmux-sessionizer.conf`
+
+```bash
+# Override default search paths (~/workspace ~/personal)
+TS_SEARCH_PATHS=(~/workspace ~/personal ~/.config)
+
+# Add extra paths with optional depth limit (path:depth)
+TS_EXTRA_SEARCH_PATHS=(~/ghq:3 ~/Git:3)
+
+# Override default max depth (1)
+TS_MAX_DEPTH=2
+```
+
+**Per-project hydration:** Create a `.tmux-sessionizer` file in your project root to run commands when that session is created.
+
+### Quick Reference
+
+| Script               | Purpose                               |
+| -------------------- | ------------------------------------- |
+| `tmux-sessionizer`   | fzf session picker/creator            |
+| `tmux-autoattach.sh` | Auto-attach on terminal spawn         |
+| `tmux-cheatsheet`    | Interactive tmux keybinding reference |
 
 ## VSCode Extensions
 
