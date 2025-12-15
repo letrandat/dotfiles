@@ -64,13 +64,12 @@ Packages currently stowed by `setup.sh`:
 
 ## Key workflow utilities (bin package)
 
-These scripts are stowed into `~/.local/bin`:
+These scripts are stowed into `~/.local/dotfiles-bin`:
 
-- **`vscode-switcher`**: fzf-based directory picker to open a project in `code` / `windsurf` / `antigravity`.
-  - Config: `~/.config/vscode-switcher/vscode-switcher.conf`
 - **`tmux-sessionizer`**: fzf-based tmux session switcher/creator.
   - Config: `~/.config/tmux-sessionizer/tmux-sessionizer.conf`
   - Supports per-project hydration: `.tmux-sessionizer` file in the project root.
+  - Keybindings: `Ctrl+F` in terminal
 - **`tmux-autoattach.sh`**: auto-attaches/creates a tmux session when launched in supported terminals (VS Code-like editors, Ghostty).
 
 ## Editor integration conventions
