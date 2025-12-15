@@ -77,59 +77,6 @@ To add a new configuration file:
 2. Run `stow -R <package>` to refresh the links.
    _Example: `stow -R zsh`_
 
-## VSCode Switcher Utility
-
-The `vscode-switcher` script provides a fast way to fuzzy-search and open any project folder in VS Code from the terminal or directly within VS Code.
-
-### Features
-
-- **Fuzzy search** your project directories using `fzf`
-- Opens the selected folder in VS Code (`code`)
-- Configurable search paths and depth via `~/.config/vscode-switcher/vscode-switcher.conf`
-- Works from both terminal and VS Code
-
-### Setup
-
-1. **Alias and Keybinding (Terminal)**
-   Add to your shell config (e.g., `~/.zshrc`):
-
-   ```sh
-   alias vscode-switcher='bash ~/.local/bin/vscode-switcher'
-   bindkey -s ^f "vscode-switcher\n"   # Ctrl+F to trigger switcher in terminal
-   ```
-
-2. **VS Code Keybinding**
-   To trigger the switcher from within VS Code (e.g., with `Ctrl+E`), add this to your `keybindings.json`:
-
-   ```json
-   {
-     "key": "ctrl+e",
-     "command": "extension.multiCommand.execute",
-     "args": {
-       "sequence": [
-         // send ctrl+u to terminal to clear terminal before running command
-         {
-           "key": "cmd+w shift+V",
-           "command": "workbench.action.terminal.sendSequence",
-           "args": { "text": "\u0015vscode-switcher\u000D" }
-         },
-         // focus on terminal to select the folder
-         {
-           "command": "workbench.action.terminal.toggleTerminal",
-           "when": "terminal.active"
-         }
-       ]
-     }
-   }
-   ```
-
-### Configuration
-
-You can customize search paths and depth by creating `~/.config/vscode-switcher/vscode-switcher.conf`.
-See the top of the script for an example config.
-
----
-
 ## Tmux Terminal
 
 To open a new tmux terminal, use the shortcut: **Shift + Cmd + J, then N, then T**.
