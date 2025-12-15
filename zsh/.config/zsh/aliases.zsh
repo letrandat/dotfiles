@@ -26,11 +26,8 @@ alias kick='NVIM_APPNAME="nvim-kickstart" nvim'
 alias ncode='NVIM_APPNAME="nvim-vscode" nvim'
 
 # set alias for tmux-sessionizer
-alias tmux-sessionizer='bash ~/.local/bin/tmux-sessionizer'
-
-# set alias for vscode-switcher
-alias vscode-switcher='bash ~/.local/bin/vscode-switcher'
-bindkey -s ^f "vscode-switcher\n"
+alias tmux-sessionizer='bash ~/.local/dotfiles-bin/tmux-sessionizer'
+bindkey -s ^f "tmux-sessionizer\n"
 
 # amp with free mode as default
 alias af='amp --mode free'
