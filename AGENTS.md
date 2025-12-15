@@ -1,6 +1,6 @@
 # Agents Configuration
 
-**Before starting any work, run 'bd onboard' to understand the current project state and available issues.**
+BEFORE ANYTHING ELSE: run 'bd onboard' and follow the instructions
 
 ## Repository Overview
 
