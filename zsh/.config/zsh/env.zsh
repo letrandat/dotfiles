@@ -43,3 +43,6 @@ export PATH="$PATH:$HOME/.local/bin"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Terminal -> tmux auto-attach (Ghostty, editors)
+[ -f "$HOME/.local/dotfiles-bin/tmux-autoattach.sh" ] && source "$HOME/.local/dotfiles-bin/tmux-autoattach.sh"

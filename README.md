@@ -77,65 +77,67 @@ To add a new configuration file:
 2. Run `stow -R <package>` to refresh the links.
    _Example: `stow -R zsh`_
 
-## VSCode Switcher Utility
+## Tmux Sessionizer Ecosystem
 
-The `vscode-switcher` script provides a fast way to fuzzy-search and open any project folder in VS Code from the terminal or directly within VS Code.
+A unified terminal session management system that works across editors (VS Code, Windsurf, Antigravity) and standalone terminals (Ghostty).
 
-### Features
+### Session Naming Convention
 
-- **Fuzzy search** your project directories using `fzf`
-- Opens the selected folder in VS Code (`code`)
-- Configurable search paths and depth via `~/.config/vscode-switcher/vscode-switcher.conf`
-- Works from both terminal and VS Code
+Sessions follow a `parent_child` pattern based on the working directory:
 
-### Setup
+```
+~/workspace/dotfiles  →  workspace_dotfiles
+~/personal/myproject  →  personal_myproject
+```
 
-1. **Alias and Keybinding (Terminal)**
-   Add to your shell config (e.g., `~/.zshrc`):
+This ensures the same session is accessible from any terminal, regardless of entry point.
 
-   ```sh
-   alias vscode-switcher='bash ~/.local/bin/vscode-switcher'
-   bindkey -s ^f "vscode-switcher\n"   # Ctrl+F to trigger switcher in terminal
-   ```
+### Auto-Attach (Terminal Integration)
 
-2. **VS Code Keybinding**
-   To trigger the switcher from within VS Code (e.g., with `Ctrl+E`), add this to your `keybindings.json`:
+When opening a terminal in VS Code-like editors or Ghostty, `tmux-autoattach.sh` automatically:
 
-   ```json
-   {
-     "key": "ctrl+e",
-     "command": "extension.multiCommand.execute",
-     "args": {
-       "sequence": [
-         // send ctrl+u to terminal to clear terminal before running command
-         {
-           "key": "cmd+w shift+V",
-           "command": "workbench.action.terminal.sendSequence",
-           "args": { "text": "\u0015vscode-switcher\u000D" }
-         },
-         // focus on terminal to select the folder
-         {
-           "command": "workbench.action.terminal.toggleTerminal",
-           "when": "terminal.active"
-         }
-       ]
-     }
-   }
-   ```
+1. Creates a new tmux session if one doesn't exist for the current directory
+2. Attaches to an existing session if it matches the `parent_child` pattern
+
+**Supported terminals:** `$TERM_PROGRAM = vscode | ghostty`
+
+### Session Switching
+
+| Context                   | Keybinding          | Action                                  |
+| ------------------------- | ------------------- | --------------------------------------- |
+| Editor (VS Code/Windsurf) | `Alt+Space → j → n` | Launch `tmux-sessionizer` via Which-Key |
+| Tmux (any terminal)       | `prefix + f`        | Launch `tmux-sessionizer` popup         |
+
+`tmux-sessionizer` provides an fzf-powered interface to:
+
+- View existing tmux sessions
+- Create new sessions from project directories
+- Switch between sessions instantly
 
 ### Configuration
 
-You can customize search paths and depth by creating `~/.config/vscode-switcher/vscode-switcher.conf`.
-See the top of the script for an example config.
+**Config file:** `~/.config/tmux-sessionizer/tmux-sessionizer.conf`
 
----
+```bash
+# Override default search paths (~/workspace ~/personal)
+TS_SEARCH_PATHS=(~/workspace ~/personal ~/.config)
 
-## Tmux Terminal
+# Add extra paths with optional depth limit (path:depth)
+TS_EXTRA_SEARCH_PATHS=(~/ghq:3 ~/Git:3)
 
-To open a new tmux terminal, use the shortcut: **Shift + Cmd + J, then N, then T**.
+# Override default max depth (1)
+TS_MAX_DEPTH=2
+```
 
-- This sequence stands for **[N]ew [T]mux Terminal**.
-- Use this shortcut to quickly start a fresh tmux session after switching to a new folder/workspace
+**Per-project hydration:** Create a `.tmux-sessionizer` file in your project root to run commands when that session is created.
+
+### Quick Reference
+
+| Script               | Purpose                               |
+| -------------------- | ------------------------------------- |
+| `tmux-sessionizer`   | fzf session picker/creator            |
+| `tmux-autoattach.sh` | Auto-attach on terminal spawn         |
+| `tmux-cheatsheet`    | Interactive tmux keybinding reference |
 
 ## VSCode Extensions
 
@@ -193,3 +195,24 @@ When you're finished with the worktree:
 
 - **Use LazyGit**: Open LazyGit to manage commits for your worktree
 - **Select correct worktree**: In LazyGit mode, remember to select the correct worktree directory before committing
+
+## Agent Skills
+
+This repository includes portable agent skills that can be installed on any machine using `openskills`.
+
+### Installing Skills from this Repository
+
+```bash
+# Install a specific skill globally
+openskills install letrandat/dotfiles/skills/<skill-name> -g --universal
+
+# Example: Install all skills from this repo
+openskills install letrandat/dotfiles/skills -g --universal
+```
+
+### Bootstrap Workflow
+
+Start any conversation with full context by running `/bootstrap`, which:
+
+1. Runs `bd onboard` to load issue tracking instructions
+2. Runs `openskills list` to show available skills

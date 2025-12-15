@@ -77,7 +77,7 @@
   "terminal.integrated.profiles.osx": {
     "vscode-tmux": {
       "path": "zsh",
-      "args": ["-c", "~/.local/bin/vscode-tmux.sh"],
+      "args": ["-c", "source ~/.local/dotfiles-bin/tmux-autoattach.sh"],
       "icon": "terminal-tmux"
     }
   },

@@ -26,6 +26,8 @@ get_entries() {
 # BD CLI - Issue Tracking
 # ══════════════════════════════════════════════════════════════════════════════
 bd CLI | Onboard - show setup instructions | bd onboard | exec
+bd CLI | Init stealth mode (local-only, no git changes) | bd init --stealth | info
+bd CLI | Init quiet mode (suppress output) | bd init --quiet | info
 bd CLI | Show ready (unblocked) issues | bd ready --json | exec
 bd CLI | List all open issues | bd list --status open --json | exec
 bd CLI | List issues by priority | bd list --priority 1 --json | exec
