@@ -66,3 +66,22 @@ map("n", "<Up>", "<C-w>k", { desc = "Focus split up" })
 map("n", "<Down>", "<C-w>j", { desc = "Focus split down" })
 map("n", "<Left>", "<C-w>h", { desc = "Focus split left" })
 map("n", "<Right>", "<C-w>l", { desc = "Focus split right" })
+
+-- ============================================================================
+-- Git Hunk Navigation (Alternative to ]h/[h)
+-- ============================================================================
+map("n", "g;", function()
+  if vim.wo.diff then
+    vim.cmd.normal({ "g;", bang = true })
+  else
+    require("gitsigns").nav_hunk("next")
+  end
+end, { desc = "Next hunk" })
+
+map("n", "g:", function()
+  if vim.wo.diff then
+    vim.cmd.normal({ "g:", bang = true })
+  else
+    require("gitsigns").nav_hunk("prev")
+  end
+end, { desc = "Previous hunk" })
