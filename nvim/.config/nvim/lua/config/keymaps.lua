@@ -43,12 +43,32 @@ map("n", "<leader>fp", function()
   vim.notify("Copied: " .. path, vim.log.levels.INFO)
 end, { desc = "Copy relative file path" })
 
+-- Copy relative path with line range in visual mode
+map("v", "<leader>fp", function()
+  local path = vim.fn.expand("%:.")
+  local start_line = vim.fn.line("'<")
+  local end_line = vim.fn.line("'>")
+  local ref = "@" .. path .. "#L" .. start_line .. "-" .. end_line
+  vim.fn.setreg("+", ref)
+  vim.notify("Copied: " .. ref, vim.log.levels.INFO)
+end, { desc = "Copy relative file path with line range" })
+
 -- Copy absolute path
 map("n", "<leader>fP", function()
   local path = vim.fn.expand("%:p")
   vim.fn.setreg("+", path)
   vim.notify("Copied: " .. path, vim.log.levels.INFO)
 end, { desc = "Copy absolute file path" })
+
+-- Copy absolute path with line range in visual mode
+map("v", "<leader>fP", function()
+  local path = vim.fn.expand("%:p")
+  local start_line = vim.fn.line("'<")
+  local end_line = vim.fn.line("'>")
+  local ref = "@" .. path .. "#L" .. start_line .. "-" .. end_line
+  vim.fn.setreg("+", ref)
+  vim.notify("Copied: " .. ref, vim.log.levels.INFO)
+end, { desc = "Copy absolute file path with line range" })
 
 -- ============================================================================
 -- Search and Replace
