@@ -10,7 +10,7 @@ alias ss="git status"
 alias m="git checkout master"
 alias b="git checkout"
 alias squash="git rebase -i master"
-alias lg="lazygit"
+alias lg="lazygit -ucf ~/.config/lazygit/config-nvim.yml"
 alias ld="lazydocker"
 
 # set python to homebrew python3

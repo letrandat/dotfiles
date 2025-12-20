@@ -212,6 +212,7 @@
   "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
 
   // lazygit-vscode
+  "lazygit-vscode.configPath": "~/.config/lazygit/config-windsurf.yml",
   "lazygit-vscode.autoMaximizeWindow": true,
   "lazygit-vscode.panels": {
     "sidebar": "hide"
