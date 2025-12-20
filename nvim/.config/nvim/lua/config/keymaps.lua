@@ -20,3 +20,8 @@ end, { desc = "Show Explorer (mini.files)" })
 map("n", "<leader><leader>", function()
   Snacks.picker.commands()
 end, { desc = "Command Palette" })
+
+-- Open working memory file
+map("n", "<A-8>", function()
+  vim.cmd.edit("~/workspace/working_memory.txt")
+end, { desc = "Working Memory" })

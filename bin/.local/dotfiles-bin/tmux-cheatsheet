@@ -41,6 +41,8 @@ Window | Next window | {prefix} n | info
 Window | Previous window | {prefix} p | info
 Window | Select window 0-9 | {prefix} 0-9 | info
 Window | List windows | {prefix} w | info
+Window | Go to window 1 (terminal) | {prefix} j j | info
+Window | Go to window 2 (lazygit) | {prefix} g g | info
 Pane | Split vertical (side-by-side) | {prefix} w v | info
 Pane | Split horizontal (stacked) | {prefix} w s | info
 Pane | Kill pane | {prefix} q | info
