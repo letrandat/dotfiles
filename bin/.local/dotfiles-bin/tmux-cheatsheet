@@ -31,18 +31,19 @@ Session | Create new session | tmux new -s <name> | info
 Session | Detach from session | {prefix} d | info
 Session | List sessions (in tmux) | {prefix} s | info
 Session | Rename session | {prefix} $ | info
-Window | Create new window | {prefix} c | info
-Window | Close or kill current window | {prefix} & | info
-Window | Rename window | {prefix} , | info
-Window | Go to window 1 (terminal) | {prefix} j j | info
-Window | Go to window 2 (lazygit) | {prefix} g g | info
+Window | Create new window | {prefix} t | info
+Window | Close or kill current window | {prefix} w d | info
+Window | Rename window | {prefix} R | info
+Window | Search/switch windows | {prefix} a | info
 Pane | Split/New vertical (side-by-side) | {prefix} w v | info
 Pane | Split/New horizontal (stacked) | {prefix} w s | info
-Pane | Kill pane | {prefix} q | info
+Pane | Kill pane | {prefix} b d | info
 Pane | Switch to pane | {prefix} arrow | info
+Pane | Pick/choose panes (tree view) | {prefix} , | info
 Zoom | Toggle zoom (current pane) | {prefix} z | info
-Zoom | Focus left pane + zoom (editor) | {prefix} w m | info
-Zoom | Focus right pane + zoom (AI chat) | {prefix} . or Cmd+L (Ghostty) | info
+Zoom | Focus pane 1 + zoom | {prefix} w m | info
+Zoom | Toggle pane 2/last pane + zoom | {prefix} . or Cmd+L (Ghostty) | info
+Zoom | Focus pane 2 + zoom (AI chat) | {prefix} H or Cmd+Shift+H (Ghostty) | info
 Copy / Vim Mode | Enter copy mode | {prefix} v or {prefix} [ or page-up | info
 Copy / Vim Mode | Begin selection | v (in copy mode) | info
 Copy / Vim Mode | Copy to clipboard | y (in copy mode) | info
@@ -54,7 +55,7 @@ Copy / Vim Mode | Jump to top of screen | H (in copy mode) | info
 Copy / Vim Mode | Jump to middle of screen | M (in copy mode) | info
 Copy / Vim Mode | Jump to bottom of screen | L (in copy mode) | info
 Misc | List keys | {prefix} ? | info
-Misc | Reload config | {prefix} r | info
+Misc | Reload config | {prefix} l | info
 Misc | View config | cat ~/.tmux.conf | exec
 Misc | Edit config | \$EDITOR ~/.tmux.conf | exec
 Sessionizer | Switch/create session (fzf) | tmux-sessionizer | exec
