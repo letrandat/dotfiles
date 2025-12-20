@@ -1,14 +1,11 @@
 {
-  "$schema": "https://code.claude.com/schemas/settings.schema.json",
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
 
   "permissions": {
     "allow": [
-      // Core file operations - needed for most tasks
       "Read",
       "Edit",
       "Write",
-
-      // Safe git operations
       "Bash(git status:*)",
       "Bash(git diff:*)",
       "Bash(git log:*)",
@@ -19,8 +16,6 @@
       "Bash(git branch:*)",
       "Bash(git checkout:*)",
       "Bash(git worktree:*)",
-
-      // File system inspection (read-only)
       "Bash(ls:*)",
       "Bash(find:*)",
       "Bash(tree:*)",
@@ -28,31 +23,22 @@
       "Bash(head:*)",
       "Bash(tail:*)",
       "Bash(grep:*)",
-
-      // Safe file system modifications
       "Bash(mkdir:*)",
       "Bash(touch:*)",
       "Bash(ln:*)",
-
-      // Package managers
       "Bash(npm:*)",
       "Bash(pip:*)",
       "Bash(pip3:*)",
-
-      // Test runners
       "Bash(pytest:*)",
       "Bash(jest:*)",
       "Bash(vitest:*)",
       "Bash(npm test:*)",
       "Bash(npm run test:*)",
-
-      // Web access for docs/research
       "WebFetch(domain:github.com)",
       "WebSearch"
     ],
 
     "deny": [
-      // Protect sensitive files
       "Read(.env)",
       "Read(.env.*)",
       "Read(**/.env)",
@@ -60,8 +46,6 @@
       "Read(**/secrets/**)",
       "Read(**/*.key)",
       "Read(**/*.pem)",
-
-      // Prevent destructive operations
       "Bash(rm:*)",
       "Bash(dd:*)",
       "Bash(mkfs:*)",
