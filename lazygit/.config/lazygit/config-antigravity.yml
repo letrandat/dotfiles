@@ -1,0 +1,21 @@
+os:
+  edit: "antigravity {{filename}}"
+  editAtLine: "antigravity --goto {{filename}}:{{line}}"
+
+gui:
+  nerdFontsVersion: "3"
+
+keybinding:
+  universal:
+    prevItem: "k"
+    nextItem: "j"
+    prevBlock: "<up>"
+    nextBlock: "<down>"
+    prevTab: "<left>"
+    nextTab: "<right>"
+    gotoTop-alt: "" # This will unbind 'home'
+    gotoBottom-alt: "" # This will unbind 'end'
+    prevPage: "<home>" # With my keyboard layout, home is equivalent to 'page up'
+    nextPage: "<end>" # With my keyboard layout, end is equivalent to 'page down'
+    extrasMenu: "9" # I like to use '9' as the extras
+    goInto: "I" # I like to use 'I' instead of 'Enter' to go into a file, a commit, etc

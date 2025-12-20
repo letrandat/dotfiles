@@ -341,6 +341,7 @@
   ],
 
   // lazygit-vscode
+  "lazygit-vscode.configPath": "~/.config/lazygit/config-antigravity.yml",
   "lazygit-vscode.autoMaximizeWindow": true,
   "lazygit-vscode.panels": {
     "sidebar": "hide"
