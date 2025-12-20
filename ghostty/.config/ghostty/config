@@ -43,7 +43,8 @@
 # resize-overlay-duration = 4s 200ms
 
 # ============ Keybindings ============
-# Cmd+L to focus right pane and zoom (sends prefix ,)
-keybind = super+l=text:\x02,
+# Note: Cmd+Shift+, to reload Ghostty settings
+# Cmd+L to focus right pane and zoom (sends prefix .)
+keybind = super+l=text:\x02.
 # Opt+Space as alternative tmux prefix (sends Ctrl+Space)
 keybind = alt+space=text:\x00
