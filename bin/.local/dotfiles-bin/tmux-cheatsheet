@@ -41,26 +41,28 @@ Window | Next window | {prefix} n | info
 Window | Previous window | {prefix} p | info
 Window | Select window 0-9 | {prefix} 0-9 | info
 Window | List windows | {prefix} w | info
-Pane | Split vertical | {prefix} % | info
-Pane | Split horizontal | {prefix} " | info
-Pane | Toggle zoom | {prefix} z | info
-Pane | Kill pane | {prefix} x | info
+Pane | Split vertical (side-by-side) | {prefix} w v | info
+Pane | Split horizontal (stacked) | {prefix} w s | info
+Pane | Kill pane | {prefix} q | info
 Pane | Switch to pane | {prefix} arrow | info
 Pane | Move pane left | {prefix} { | info
 Pane | Move pane right | {prefix} } | info
-Pane | Show pane numbers | {prefix} q | info
 Pane | Convert pane to window | {prefix} ! | info
-Resize | Resize pane (arrow) | {prefix} C-arrow | info
-Copy / Vim Mode | Enter copy mode | {prefix} [ or {prefix} k or page-up / page-down | info
+Zoom | Toggle zoom (current pane) | {prefix} z | info
+Zoom | Focus left pane + zoom (editor) | {prefix} w m | info
+Zoom | Focus right pane + zoom (AI chat) | {prefix} , or Cmd+L (Ghostty) | info
+Copy / Vim Mode | Enter copy mode | {prefix} v or {prefix} [ or page-up | info
 Copy / Vim Mode | Begin selection | v (in copy mode) | info
 Copy / Vim Mode | Copy to clipboard | y (in copy mode) | info
+Copy / Vim Mode | Copy to end of line | Y (in copy mode) | info
+Copy / Vim Mode | Exit copy mode | Escape (in copy mode) | info
 Copy / Vim Mode | Search forward | / (in copy mode) | info
 Copy / Vim Mode | Search backward | ? (in copy mode) | info
 Copy / Vim Mode | Jump to top of screen | H (in copy mode) | info
 Copy / Vim Mode | Jump to middle of screen | M (in copy mode) | info
 Copy / Vim Mode | Jump to bottom of screen | L (in copy mode) | info
 Misc | List keys | {prefix} ? | info
-Misc | Reload config | {prefix} r (custom) | info
+Misc | Reload config | {prefix} r | info
 Misc | View config | cat ~/.tmux.conf | exec
 Misc | Edit config | \$EDITOR ~/.tmux.conf | exec
 Sessionizer | Switch/create session (fzf) | tmux-sessionizer | exec
