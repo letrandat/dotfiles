@@ -9,7 +9,14 @@ map("n", "<leader>sf", function()
   Snacks.explorer()
 end, { desc = "Show Files (sidebar explorer)" })
 
+
 -- [S]how [E]xplorer - netrw-like buffer editing (mini.files)
 map("n", "<leader>se", function()
   require("mini.files").open(vim.api.nvim_buf_get_name(0), true)
 end, { desc = "Show Explorer (mini.files)" })
+
+
+-- Command Palette (similar to VS Code Ctrl+Shift+P)
+map("n", "<leader><leader>", function()
+  Snacks.picker.commands()
+end, { desc = "Command Palette" })
