@@ -1,5 +1,6 @@
+-- LazyVim language extras
+-- These are imported in lazy.lua before custom plugins
 return {
-  -- Import LazyVim language extras
   { import = "lazyvim.plugins.extras.lang.typescript" },
   { import = "lazyvim.plugins.extras.lang.go" },
   { import = "lazyvim.plugins.extras.lang.python" },

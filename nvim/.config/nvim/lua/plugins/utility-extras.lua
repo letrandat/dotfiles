@@ -1,5 +1,6 @@
+-- LazyVim utility extras
+-- These are imported in lazy.lua before custom plugins
 return {
-  -- Import LazyVim utility extras
   { import = "lazyvim.plugins.extras.editor.mini-files" },
   { import = "lazyvim.plugins.extras.editor.dial" },
   { import = "lazyvim.plugins.extras.editor.inc-rename" },
