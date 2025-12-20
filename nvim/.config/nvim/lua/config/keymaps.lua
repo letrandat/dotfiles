@@ -25,3 +25,48 @@ end, { desc = "Command Palette" })
 map("n", "<A-8>", function()
   vim.cmd.edit("~/workspace/working_memory.txt")
 end, { desc = "Working Memory" })
+
+-- ============================================================================
+-- Line Movement (VS Code style)
+-- ============================================================================
+-- Move lines up and down in normal mode
+map("n", "<C-k>", ":m .-2<CR>==", { desc = "Move line up" })
+map("n", "<C-j>", ":m .+1<CR>==", { desc = "Move line down" })
+
+-- Move lines up and down in visual mode (multi-line support)
+map("v", "<C-k>", ":m '<-2<CR>gv=gv", { desc = "Move selected lines up" })
+map("v", "<C-j>", ":m '>+1<CR>gv=gv", { desc = "Move selected lines down" })
+
+-- ============================================================================
+-- File Path Copying
+-- ============================================================================
+-- Copy relative path from project root
+map("n", "<leader>fp", function()
+  local path = vim.fn.expand("%:.")
+  vim.fn.setreg("+", path)
+  vim.notify("Copied: " .. path, vim.log.levels.INFO)
+end, { desc = "Copy relative file path" })
+
+-- Copy absolute path
+map("n", "<leader>fP", function()
+  local path = vim.fn.expand("%:p")
+  vim.fn.setreg("+", path)
+  vim.notify("Copied: " .. path, vim.log.levels.INFO)
+end, { desc = "Copy absolute file path" })
+
+-- ============================================================================
+-- Search and Replace
+-- ============================================================================
+-- Normal mode: replace word under cursor
+map("n", "gs", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace word under cursor" })
+
+-- Visual mode: replace selected text
+map("v", "gs", [["zy:%s/<C-r>z/<C-r>z/gI<Left><Left><Left>]], { desc = "Replace selected text" })
+
+-- ============================================================================
+-- Split Navigation (Arrow Keys)
+-- ============================================================================
+map("n", "<Up>", "<C-w>k", { desc = "Focus split up" })
+map("n", "<Down>", "<C-w>j", { desc = "Focus split down" })
+map("n", "<Left>", "<C-w>h", { desc = "Focus split left" })
+map("n", "<Right>", "<C-w>l", { desc = "Focus split right" })
