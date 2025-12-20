@@ -1,6 +1,10 @@
+# Default lazygit config (terminal with nvim as editor)
+# IDE-specific configs: config-windsurf.yml, config-antigravity.yml
+
 os:
-  edit: "windsurf {{filename}}"
-  editAtLine: "windsurf --goto {{filename}}:{{line}}"
+  editPreset: "nvim"
+
+promptToReturnFromSubprocess: false
 
 gui:
   nerdFontsVersion: "3"

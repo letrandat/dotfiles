@@ -1,6 +1,11 @@
+# Lazygit config for Antigravity
+# Usage: lazygit -ucf ~/.config/lazygit/config-antigravity.yml
+
 os:
   edit: "antigravity {{filename}}"
   editAtLine: "antigravity --goto {{filename}}:{{line}}"
+
+promptToReturnFromSubprocess: false
 
 gui:
   nerdFontsVersion: "3"

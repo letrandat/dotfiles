@@ -1,6 +1,11 @@
+# Lazygit config for Windsurf
+# Usage: lazygit -ucf ~/.config/lazygit/config-windsurf.yml
+
 os:
   edit: "windsurf {{filename}}"
   editAtLine: "windsurf --goto {{filename}}:{{line}}"
+
+promptToReturnFromSubprocess: false
 
 gui:
   nerdFontsVersion: "3"
