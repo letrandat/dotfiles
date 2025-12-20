@@ -252,6 +252,13 @@
       ]
     },
     {
+      "key": ",",
+      "name": "Show all buffers",
+      "icon": "files",
+      "type": "command",
+      "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
+    },
+    {
       "key": ":",
       "name": "+Tasks",
       "icon": "tasklist",
@@ -362,10 +369,13 @@
       "bindings": [
         {
           "key": "b",
-          "name": "Show all buffers",
-          "icon": "files",
-          "type": "command",
-          "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
+          "name": "Switch to other buffer",
+          "icon": "arrow-swap",
+          "type": "commands",
+          "commands": [
+            "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
+            "list.select"
+          ]
         },
         {
           "key": "d",
