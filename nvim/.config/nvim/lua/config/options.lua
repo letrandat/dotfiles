@@ -6,3 +6,5 @@
 vim.g.autoformat = false
 -- Disable tabs
 vim.opt.showtabline = 0
+-- Keep cursor centered with minimum lines above/below
+vim.opt.scrolloff = 10
