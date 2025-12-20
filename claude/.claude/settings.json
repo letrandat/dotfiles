@@ -58,5 +58,10 @@
       "name": "Claude Sonnet 4.5",
       "email": "noreply@anthropic.com"
     }
+  },
+
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh"
   }
 }
