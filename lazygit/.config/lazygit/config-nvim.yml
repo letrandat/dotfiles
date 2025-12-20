@@ -1,6 +1,8 @@
 os:
   editPreset: "nvim"
 
+promptToReturnFromSubprocess: false
+
 gui:
   nerdFontsVersion: "3"
 
