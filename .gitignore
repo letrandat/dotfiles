@@ -24,4 +24,6 @@ codeium/.codeium/windsurf/onboarding.json.lock
 codeium/.codeium/windsurf/user_settings.pb
 .beads/issues.jsonl
 .claude/skills
+.claude/*.local.*
+.claude/settings.local.json
 .agent/skills
