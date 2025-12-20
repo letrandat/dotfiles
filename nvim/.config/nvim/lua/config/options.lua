@@ -4,3 +4,5 @@
 
 -- Disable auto format
 vim.g.autoformat = false
+-- Disable tabs
+vim.opt.showtabline = 0
