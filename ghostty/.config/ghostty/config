@@ -48,5 +48,3 @@
 keybind = alt+space=text:\x00
 # Cmd+L to focus pane 2 (AI/aux pane) (sends prefix .)
 keybind = super+l=text:\x02.
-# Cmd+Shift+H to focus pane 2 and zoom (sends prefix H)
-keybind = super+shift+h=text:\x02H
