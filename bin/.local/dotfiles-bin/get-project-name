@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# get-project-name - Extract project name from git remote URL
+# Usage: get-project-name [remote-name]
+#   remote-name: Git remote to query (default: origin)
+# Returns: Repository name (e.g., "dotfiles" from "github.com/user/dotfiles.git")
+#          Empty string if not in git repo or remote not found
+
+set -euo pipefail
+
+get_project_name() {
+    local remote="${1:-origin}"
+
+    # Check if in git repo
+    if ! git rev-parse --git-dir &>/dev/null; then
+        return 0
+    fi
+
+    # Get remote URL
+    local url
+    url=$(git remote get-url "$remote" 2>/dev/null || echo "")
+
+    if [[ -z "$url" ]]; then
+        return 0
+    fi
+
+    # Extract repo name from various URL formats:
+    # - git@github.com:user/dotfiles.git → dotfiles
+    # - https://github.com/user/my-app.git → my-app
+    # - https://github.com/user/repo → repo
+    echo "$url" | sed -E 's#.*/([^/]+)(\.git)?$#\1#' | sed 's/\.git$//'
+}
+
+# If sourced, export function; if executed, run it
+if [[ "${BASH_SOURCE[0]:-}" == "${0}" ]]; then
+    get_project_name "$@"
+else
+    export -f get_project_name 2>/dev/null || true
+fi
