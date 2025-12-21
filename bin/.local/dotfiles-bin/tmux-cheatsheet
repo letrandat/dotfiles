@@ -35,12 +35,11 @@ Window | Create new window | {prefix} t | info
 Window | Close or kill current window | {prefix} w d | info
 Window | Rename window | {prefix} R | info
 Window | Search/switch windows | {prefix} a | info
-Window | Previous window | {prefix} H | info
-Window | Next window | {prefix} L | info
+Window | Previous window | {prefix} Left | info
+Window | Next window | {prefix} Right | info
 Pane | Split/New vertical (side-by-side) | {prefix} w v | info
 Pane | Split/New horizontal (stacked) | {prefix} w s | info
 Pane | Kill pane | {prefix} b d | info
-Pane | Switch to pane | {prefix} arrow | info
 Pane | Pick/choose panes (tree view) | {prefix} , | info
 Zoom | Toggle zoom (current pane) | {prefix} z | info
 Zoom | Focus pane 1 + zoom | {prefix} w m | info
