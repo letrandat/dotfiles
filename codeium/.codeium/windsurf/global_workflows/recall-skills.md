@@ -1,29 +1,27 @@
 ---
-description: Mid-conversation reminder to check available skills for the current situation
+description: Mid-conversation reminder to check available workflows/skills for the current situation
 auto_execution_mode: 1
 ---
 
-**STOP.** You may have forgotten to use available skills. Before continuing:
+**STOP.** You may have forgotten to use available workflows. Before continuing:
 
-1. List available skills:
+1. **Check if a core workflow applies** (invoke via Cascade menu or @workflow):
+
+   - Debugging? → `@workflow systematic-debugging`
+   - Writing code? → Did you use `@workflow brainstorming` first?
+   - About to claim done? → `@workflow verification-before-completion`
+   - Creating tasks? → `bd` (never markdown TODOs)
+   - Writing tests? → `@workflow test-driven-development`
+   - Making a plan? → `@workflow writing-plans`
+   - Code review? → `@workflow requesting-code-review` or `@workflow receiving-code-review`
+   - Starting feature? → `@workflow using-git-worktrees`
+   - Finishing work? → `@workflow finishing-a-development-branch`
+
+2. **For specialized skills not listed above**, use openskills:
 
    ```bash
    openskills list
-   ```
-
-2. **Identify applicable skills** for your current situation:
-
-   - Debugging? → `systematic-debugging`, `root-cause-tracing`
-   - Writing code? → Did you use `brainstorming` first?
-   - About to claim done? → `verification-before-completion`
-   - Creating tasks? → `bd` (never markdown TODOs)
-   - Writing tests? → `test-driven-development`, `testing-anti-patterns`
-   - Making a plan? → `writing-plans`
-
-3. Load and apply the relevant skill:
-
-   ```bash
    openskills read <skill-name>
    ```
 
-4. Resume your work using the skill's methodology.
+3. Apply the workflow/skill methodology and resume your work.

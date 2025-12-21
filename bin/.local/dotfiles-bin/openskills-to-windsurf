@@ -1,0 +1,110 @@
+#!/usr/bin/env node
+
+const fs = require('fs');
+const path = require('path');
+
+// Core skills to sync (manual invoke only)
+const CORE_SKILLS = [
+  'brainstorming',
+  'systematic-debugging',
+  'verification-before-completion',
+  'test-driven-development',
+  'writing-plans',
+  'requesting-code-review',
+  'receiving-code-review',
+  'using-git-worktrees',
+  'finishing-a-development-branch',
+];
+
+// Paths
+const SKILLS_DIR = path.join(process.env.HOME, 'workspace/dotfiles/.agent/skills');
+const WORKFLOWS_DIR = path.join(process.env.HOME, 'workspace/dotfiles/codeium/.codeium/windsurf/global_workflows');
+
+function parseSkillFile(filePath) {
+  const content = fs.readFileSync(filePath, 'utf8');
+
+  // Extract frontmatter
+  const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+  if (!frontmatterMatch) {
+    throw new Error(`Invalid skill format: ${filePath}`);
+  }
+
+  const frontmatter = frontmatterMatch[1];
+  const body = frontmatterMatch[2];
+
+  // Parse frontmatter fields
+  const nameMatch = frontmatter.match(/^name:\s*(.+)$/m);
+  const descMatch = frontmatter.match(/^description:\s*"(.+)"$/m) ||
+                    frontmatter.match(/^description:\s*(.+)$/m);
+
+  return {
+    name: nameMatch ? nameMatch[1].trim() : null,
+    description: descMatch ? descMatch[1].trim() : null,
+    body: body.trim(),
+  };
+}
+
+function generateWorkflow(skill) {
+  return `---
+description: ${skill.description}
+auto_execution_mode: 0
+---
+
+${skill.body}
+`;
+}
+
+function syncSkills() {
+  console.log('🔄 Syncing openskills → Windsurf workflows...\n');
+
+  if (!fs.existsSync(SKILLS_DIR)) {
+    console.error(`❌ Skills directory not found: ${SKILLS_DIR}`);
+    process.exit(1);
+  }
+
+  if (!fs.existsSync(WORKFLOWS_DIR)) {
+    fs.mkdirSync(WORKFLOWS_DIR, { recursive: true });
+  }
+
+  let synced = 0;
+  let skipped = 0;
+
+  for (const skillName of CORE_SKILLS) {
+    const skillPath = path.join(SKILLS_DIR, skillName, 'SKILL.md');
+    const workflowPath = path.join(WORKFLOWS_DIR, `${skillName}.md`);
+
+    if (!fs.existsSync(skillPath)) {
+      console.log(`⚠️  Skipped ${skillName} (not found)`);
+      skipped++;
+      continue;
+    }
+
+    try {
+      const skill = parseSkillFile(skillPath);
+      const workflow = generateWorkflow(skill);
+
+      fs.writeFileSync(workflowPath, workflow, 'utf8');
+      console.log(`✅ Synced ${skillName}`);
+      synced++;
+    } catch (error) {
+      console.error(`❌ Failed to sync ${skillName}: ${error.message}`);
+      skipped++;
+    }
+  }
+
+  console.log(`\n📊 Summary: ${synced} synced, ${skipped} skipped`);
+  console.log(`📁 Workflows: ${WORKFLOWS_DIR}`);
+}
+
+// CLI
+const args = process.argv.slice(2);
+const command = args[0];
+
+if (command === 'sync') {
+  syncSkills();
+} else {
+  console.log(`Usage: openskills-to-windsurf sync`);
+  console.log(`\nSyncs core openskills to Windsurf workflows.`);
+  console.log(`\nCore skills: ${CORE_SKILLS.join(', ')}`);
+  process.exit(1);
+}
