@@ -1,5 +1,23 @@
 # Dotfiles Project Instructions
 
+## Task Management Policy (ALL AGENTS)
+
+### Critical Rules
+
+**NEVER auto-close, update, or delete tasks without explicit user confirmation.**
+
+This applies to:
+- ✅ Creating tasks: Allowed without confirmation
+- ✅ Listing/viewing tasks: Allowed without confirmation
+- ❌ Closing tasks: **REQUIRES USER CONFIRMATION**
+- ❌ Updating task status: **REQUIRES USER CONFIRMATION**
+- ❌ Deleting tasks: **REQUIRES USER CONFIRMATION**
+
+### Workflow
+1. Agent completes work → Report to user
+2. **User explicitly requests to close the task**
+3. Agent then closes the task
+
 ## Claude Code Settings Management
 
 ### Overview
