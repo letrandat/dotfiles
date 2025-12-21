@@ -13,7 +13,8 @@ codeium/.codeium/windsurf/code_tracker
 codeium/.codeium/windsurf/codemaps
 codeium/.codeium/windsurf/database
 codeium/.codeium/windsurf/implicit
-codeium/.codeium/windsurf/memories
+codeium/.codeium/windsurf/memories/*
+!codeium/.codeium/windsurf/memories/*.md
 codeium/.codeium/windsurf/ws-browser
 codeium/.codeium/windsurf/ws-browser-extension
 codeium/.codeium/windsurf/ws-browser-profile

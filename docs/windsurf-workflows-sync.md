@@ -1,141 +1,47 @@
-# Windsurf Workflows Sync
+# Windsurf Native Workflows
 
 ## Overview
 
-This system syncs **openskills** (used by Claude Code) to **native Windsurf workflows**, solving the invocation problem where Windsurf AI doesn't reliably run `openskills read <skill-name>`.
+Windsurf uses native **Workflows** to implement high-quality development patterns (Superpowers). These are direct, reliable, and accessible via the `@workflow` command or the Cascade menu.
 
-**Problem solved**: Windsurf agents now have direct access to core skills as native workflows, eliminating the need for the AI to remember to run Bash commands.
+## Available Superpowers
 
-## Architecture
+| Workflow | Usage |
+|----------|-------|
+| `superpowers-using-superpowers` | **MANDATORY** at start of every session |
+| `superpowers-brainstorming` | Use BEFORE any new feature or design work |
+| `superpowers-systematic-debugging` | Use for any bug, error, or test failure |
+| `superpowers-test-driven-development` | Use when implementing features or fixes |
+| `superpowers-verification-before-completion` | Use BEFORE claiming anything is "done" |
+| `superpowers-writing-plans` | Use to create detailed implementation plans |
+| `superpowers-executing-plans` | Use when executing a previously written plan |
+| `superpowers-requesting-code-review` | Use before merging major work |
+| `superpowers-receiving-code-review` | Use when processing review feedback |
+| `superpowers-using-git-worktrees` | Use for isolated workspace management |
+| `superpowers-finishing-a-development-branch` | Use to finalize and merge work |
 
+## How to Use
+
+### 1. In Conversation
+Mention the workflow directly to the agent:
 ```
-┌─────────────────────────────────────────────────────────────┐
-│ Single Source of Truth: openskills                         │
-│ Location: .agent/skills/                                    │
-└─────────────────────────────────────────────────────────────┘
-                          │
-                          │ openskills-to-windsurf sync
-                          ▼
-┌─────────────────────────────────────────────────────────────┐
-│ Generated Workflows (auto-updated)                          │
-│ Location: .codeium/windsurf/global_workflows/              │
-└─────────────────────────────────────────────────────────────┘
-                          │
-                          │ Windsurf AI reads directly
-                          ▼
-┌─────────────────────────────────────────────────────────────┐
-│ Windsurf Agent (reliable invocation)                        │
-│ Invocation: @workflow <skill-name> or Cascade menu         │
-└─────────────────────────────────────────────────────────────┘
+@workflow superpowers-brainstorming
 ```
 
-## Core Skills Synced
+### 2. From Menu
+Click the Cascade menu icon and select "Workflows" to see the full list of superpowers.
 
-The following 9 critical skills are synced as native Windsurf workflows:
+## Auto-Suggestions
+Windsurf is configured with **Global Rules** to automatically suggest the correct superpower based on your message (e.g., if you mention a bug, it will ask if you want to run `superpowers-systematic-debugging`).
 
-1. **brainstorming** - Use BEFORE any creative/implementation work
-2. **systematic-debugging** - When encountering bugs or test failures
-3. **test-driven-development** - When implementing features/bugfixes
-4. **verification-before-completion** - BEFORE claiming work is complete
-5. **writing-plans** - When creating implementation plans
-6. **requesting-code-review** - Before merging/completing major features
-7. **receiving-code-review** - When processing code review feedback
-8. **using-git-worktrees** - When starting isolated feature work
-9. **finishing-a-development-branch** - When implementation is complete
+---
 
-All workflows use `auto_execution_mode: 0` (manual invoke only).
+## Maintenance (Internal Only)
 
-## Usage
+The workflows are managed via a sync tool that ensures parity across different agent environments.
 
-### Running the Sync
-
-When you update skills in openskills or pull new skills:
-
+**Update workflows:**
 ```bash
 openskills-to-windsurf sync
 ```
-
-This will:
-- Read all core skills from `.agent/skills/*/SKILL.md`
-- Generate/update workflow files in `.codeium/windsurf/global_workflows/`
-- Report sync status
-
-### Invoking Workflows in Windsurf
-
-**Method 1: @workflow mention**
-```
-@workflow brainstorming
-```
-
-**Method 2: Cascade menu**
-- Click Cascade menu in Windsurf
-- Select "Workflows"
-- Choose the skill
-
-**Method 3: Direct file reference**
-The AI can also read workflows directly from `.codeium/windsurf/global_workflows/`
-
-## Relationship with openskills
-
-**Hybrid approach**:
-- **Core skills** (9 most critical) → Native Windsurf workflows (reliable)
-- **Specialized skills** (remaining) → openskills via `openskills read` (advanced use)
-
-This gives you:
-- ✅ Reliable invocation for critical workflows
-- ✅ Full openskills ecosystem for specialized skills
-- ✅ Single source of truth (openskills)
-- ✅ Automatic sync via generator
-
-## When to Sync
-
-Run `openskills-to-windsurf sync` when:
-
-1. **After updating skills** in openskills
-2. **After pulling** new skills from upstream
-3. **When skills seem out of sync** between Claude Code and Windsurf
-4. **When adding new core skills** to the sync list
-
-## Modifying Core Skills List
-
-Edit the `CORE_SKILLS` array in `/Users/dat/workspace/dotfiles/bin/.local/dotfiles-bin/openskills-to-windsurf`:
-
-```javascript
-const CORE_SKILLS = [
-  'brainstorming',
-  'systematic-debugging',
-  // ... add/remove skills here
-];
-```
-
-Then run `openskills-to-windsurf sync` to regenerate workflows.
-
-## Comparison: Claude Code vs Windsurf
-
-| Aspect | Claude Code | Windsurf (before) | Windsurf (after sync) |
-|--------|-------------|-------------------|----------------------|
-| Invocation | Native `Skill` tool | `openskills read` (Bash) | Native workflows |
-| Reliability | ✅ Structured, tracked | ⚠️ AI must remember | ✅ Direct access |
-| Discovery | Automatic | Via AGENTS.md | Cascade menu + @workflow |
-| Maintenance | Built-in updates | Manual sync | Auto-sync tool |
-
-## Troubleshooting
-
-**Workflows not appearing in Windsurf:**
-- Restart Windsurf after running sync
-- Check `.codeium/windsurf/global_workflows/` for generated files
-
-**Skill content outdated:**
-- Run `openskills-to-windsurf sync` to regenerate
-
-**New skill not syncing:**
-- Add to `CORE_SKILLS` list in sync tool
-- Run sync command
-
-## Files
-
-- **Sync tool**: `bin/.local/dotfiles-bin/openskills-to-windsurf`
-- **Skills source**: `.agent/skills/*/SKILL.md`
-- **Generated workflows**: `.codeium/windsurf/global_workflows/*.md`
-- **Bootstrap workflow**: `.codeium/windsurf/global_workflows/bootstrap.md` (auto-executes)
-- **Recall workflow**: `.codeium/windsurf/global_workflows/recall-skills.md` (auto-executes)
+*Run this only if you have modified the source skill definitions.*

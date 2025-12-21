@@ -5,11 +5,13 @@ const path = require('path');
 
 // Core skills to sync (manual invoke only)
 const CORE_SKILLS = [
+  'using-superpowers',
   'brainstorming',
   'systematic-debugging',
   'verification-before-completion',
   'test-driven-development',
   'writing-plans',
+  'executing-plans',
   'requesting-code-review',
   'receiving-code-review',
   'using-git-worktrees',
@@ -71,7 +73,8 @@ function syncSkills() {
 
   for (const skillName of CORE_SKILLS) {
     const skillPath = path.join(SKILLS_DIR, skillName, 'SKILL.md');
-    const workflowPath = path.join(WORKFLOWS_DIR, `${skillName}.md`);
+    // Prefix all skills with 'superpowers-' to group them in Windsurf and match documentation style
+    const workflowPath = path.join(WORKFLOWS_DIR, `superpowers-${skillName}.md`);
 
     if (!fs.existsSync(skillPath)) {
       console.log(`⚠️  Skipped ${skillName} (not found)`);
