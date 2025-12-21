@@ -144,7 +144,24 @@ check_updates() {
         echo "" >&2
     fi
 }
-get_project_prefix() { :; }
+get_project_prefix() {
+    # Use the shared library
+    local script_dir
+    script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+    if [[ -x "${script_dir}/get-project-name" ]]; then
+        "${script_dir}/get-project-name"
+    elif command -v get-project-name &>/dev/null; then
+        get-project-name
+    else
+        # Fallback: inline implementation
+        if git rev-parse --git-dir &>/dev/null; then
+            git remote get-url origin 2>/dev/null | \
+                sed -E 's#.*/([^/]+)(\.git)?$#\1#' | \
+                sed 's/\.git$//'
+        fi
+    fi
+}
 expand_hash() { echo "$1"; }
 
 # Main entry point
