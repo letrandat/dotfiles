@@ -59,7 +59,54 @@ load_config() {
 
     # Environment variables already override via ${VAR:-default} pattern
 }
-first_run_setup() { :; }
+first_run_setup() {
+    # Already initialized?
+    [[ -f "$CONFIG_FILE" ]] && return 0
+
+    # Detect cloud/agent environment (no TTY)
+    local is_cloud=false
+    [[ ! -t 0 ]] && is_cloud=true
+
+    # Create directories
+    mkdir -p "$CONFIG_DIR" "$BEADS_LOCATION" "$CACHE_DIR"
+
+    # Create default config
+    cat > "$CONFIG_FILE" <<EOF
+# b2 configuration
+# See: https://github.com/yourusername/dotfiles/blob/main/docs/plans/2025-12-21-b2-wrapper-design.md
+
+BEADS_LOCATION="${BEADS_LOCATION}"
+STEALTH_MODE=true
+CHECK_UPDATES=true
+UPDATE_CHECK_INTERVAL=86400
+BD_INSTALL_URL="${BD_INSTALL_URL}"
+BD_REPO="${BD_REPO}"
+DEFAULT_LABELS="${DEFAULT_LABELS}"
+EOF
+
+    # Check for bd, install if missing
+    if ! command -v bd &>/dev/null; then
+        $is_cloud || log_info "bd not found, installing..."
+        if command -v curl &>/dev/null; then
+            curl -fsSL "$BD_INSTALL_URL" | bash
+        else
+            log_error "curl not found. Please install curl or bd manually."
+        fi
+    fi
+
+    # Welcome message (unless cloud)
+    if ! $is_cloud; then
+        cat >&2 <<EOF
+
+${GREEN}✓ b2 initialized successfully!${NC}
+  Config: $CONFIG_FILE
+  Beads:  $BEADS_LOCATION
+
+Run 'b2 create "My first task"' to get started.
+
+EOF
+    fi
+}
 check_updates() { :; }
 get_project_prefix() { :; }
 expand_hash() { echo "$1"; }
