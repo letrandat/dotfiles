@@ -12,7 +12,7 @@ Co-Authored-By: Gemini <noreply@google.com>
 
 ### Critical Rules
 
-**NEVER auto-close or delete tasks without explicit user confirmation.**
+**NEVER auto-close or delete tasks, OR commit and push changes without explicit user confirmation.**
 
 This applies to:
 - ✅ Creating tasks: Allowed without confirmation
@@ -20,6 +20,8 @@ This applies to:
 - ✅ Listing/viewing tasks: Allowed without confirmation
 - ❌ Closing tasks: **REQUIRES USER CONFIRMATION**
 - ❌ Deleting tasks: **REQUIRES USER CONFIRMATION**
+- ❌ Committing changes: **REQUIRES USER CONFIRMATION**
+- ❌ Pushing changes: **REQUIRES USER CONFIRMATION**
 
 ### Workflow
 1. Agent completes work → Report to user
