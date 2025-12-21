@@ -106,6 +106,10 @@ Run `bd prime` for workflow context, or install hooks (`bd hooks install`) for a
 - `bd close <id>` - Complete work
 - `bd sync` - Sync with git (run at session end)
 
+**Setup on New Machine:**
+1. `bd init` - Initialize local database and hooks
+2. `bd sync` - Pull tasks from the `beads-sync` branch
+
 For full workflow details: `bd prime`
 
 <skills_system priority="1">
