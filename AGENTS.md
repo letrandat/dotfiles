@@ -114,20 +114,18 @@ type(scope): subject
 
 ## Issue Tracking
 
-This project uses **bd (beads)** for issue tracking.
-Run `bd prime` for workflow context, or install hooks (`bd hooks install`) for auto-injection.
+This project uses **[beads](https://github.com/steveyegge/beads)** for issue tracking, with a custom stealth-first wrapper called **b2**.
 
 **Quick reference:**
-- `bd ready` - Find unblocked work
-- `bd create "Title" --type task --priority 2` - Create issue
-- `bd close <id>` - Complete work
-- `bd sync` - Sync with git (run at session end)
+- `b2 ready` - Find unblocked work
+- `b2 create "Title" --type task --priority 2` - Create issue
+- `b2 show <id>` - Show issue details (supports short hashes like `5jp`)
+- `b2 close <id>` - Complete work
+- `b2 --no-stealth sync` - Sync with git (run at session end)
 
 **Setup on New Machine:**
-1. `bd init` - Initialize local database and hooks
-2. `bd sync` - Pull tasks from the `beads-sync` branch
-
-For full workflow details: `bd prime`
+1. `b2 init` - Initialize (auto-installs bd if missing)
+2. `b2 --no-stealth sync` - Pull tasks from the `beads-sync` branch
 
 <skills_system priority="1">
 
@@ -311,7 +309,7 @@ Usage notes:
 4. **PUSH TO REMOTE** - This is MANDATORY:
    ```bash
    git pull --rebase
-   bd sync
+   b2 --no-stealth sync
    git push
    git status  # MUST show "up to date with origin"
    ```
