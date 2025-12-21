@@ -35,6 +35,8 @@ Window | Create new window | {prefix} t | info
 Window | Close or kill current window | {prefix} w d | info
 Window | Rename window | {prefix} R | info
 Window | Search/switch windows | {prefix} a | info
+Window | Previous window | {prefix} H | info
+Window | Next window | {prefix} L | info
 Pane | Split/New vertical (side-by-side) | {prefix} w v | info
 Pane | Split/New horizontal (stacked) | {prefix} w s | info
 Pane | Kill pane | {prefix} b d | info
@@ -43,7 +45,6 @@ Pane | Pick/choose panes (tree view) | {prefix} , | info
 Zoom | Toggle zoom (current pane) | {prefix} z | info
 Zoom | Focus pane 1 + zoom | {prefix} w m | info
 Zoom | Toggle pane 2/last pane + zoom | {prefix} . or Cmd+L (Ghostty) | info
-Zoom | Focus pane 2 + zoom (AI chat) | {prefix} H or Cmd+Shift+H (Ghostty) | info
 Copy / Vim Mode | Enter copy mode | mouse scroll or {prefix} [ or page-up | info
 Copy / Vim Mode | Begin selection | v (in copy mode) | info
 Copy / Vim Mode | Copy to clipboard | y (in copy mode) | info
