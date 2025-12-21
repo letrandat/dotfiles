@@ -44,11 +44,10 @@ Zoom | Toggle zoom (current pane) | {prefix} z | info
 Zoom | Focus pane 1 + zoom | {prefix} w m | info
 Zoom | Toggle pane 2/last pane + zoom | {prefix} . or Cmd+L (Ghostty) | info
 Zoom | Focus pane 2 + zoom (AI chat) | {prefix} H or Cmd+Shift+H (Ghostty) | info
-Copy / Vim Mode | Enter copy mode | {prefix} v or {prefix} [ or page-up | info
+Copy / Vim Mode | Enter copy mode | mouse scroll or {prefix} [ or page-up | info
 Copy / Vim Mode | Begin selection | v (in copy mode) | info
 Copy / Vim Mode | Copy to clipboard | y (in copy mode) | info
 Copy / Vim Mode | Copy to end of line | Y (in copy mode) | info
-Copy / Vim Mode | Exit copy mode | Escape (in copy mode) | info
 Copy / Vim Mode | Search forward | / (in copy mode) | info
 Copy / Vim Mode | Search backward | ? (in copy mode) | info
 Copy / Vim Mode | Jump to top of screen | H (in copy mode) | info
