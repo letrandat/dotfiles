@@ -107,7 +107,43 @@ Run 'b2 create "My first task"' to get started.
 EOF
     fi
 }
-check_updates() { :; }
+check_updates() {
+    # Check cache age
+    if [[ -f "$UPDATE_CACHE" ]]; then
+        local cache_age=$(($(date +%s) - $(stat -f %m "$UPDATE_CACHE" 2>/dev/null || stat -c %Y "$UPDATE_CACHE" 2>/dev/null || echo 0)))
+        [[ $cache_age -lt $UPDATE_CHECK_INTERVAL ]] && return 0
+    fi
+
+    # Get current version
+    local current
+    current=$(bd --version 2>/dev/null | awk '{print $3}' || echo "unknown")
+
+    # Get latest version from GitHub API
+    local latest
+    if command -v curl &>/dev/null; then
+        latest=$(curl -fsSL "https://api.github.com/repos/${BD_REPO}/releases/latest" 2>/dev/null | \
+                 grep '"tag_name"' | sed -E 's/.*"tag_name": "([^"]+)".*/\1/' || echo "unknown")
+    elif command -v wget &>/dev/null; then
+        latest=$(wget -qO- "https://api.github.com/repos/${BD_REPO}/releases/latest" 2>/dev/null | \
+                 grep '"tag_name"' | sed -E 's/.*"tag_name": "([^"]+)".*/\1/' || echo "unknown")
+    else
+        return 0  # Skip if no curl/wget
+    fi
+
+    # Strip 'v' prefix from latest
+    latest="${latest#v}"
+
+    # Update cache
+    mkdir -p "$CACHE_DIR"
+    echo "$(date +%s)|${current}|${latest}" > "$UPDATE_CACHE"
+
+    # Compare versions (simple string comparison)
+    if [[ "$current" != "unknown" ]] && [[ "$latest" != "unknown" ]] && [[ "$current" != "$latest" ]]; then
+        log_warn "bd update available: ${current} → ${latest}"
+        echo "  Run: curl -fsSL ${BD_INSTALL_URL} | bash" >&2
+        echo "" >&2
+    fi
+}
 get_project_prefix() { :; }
 expand_hash() { echo "$1"; }
 
