@@ -181,8 +181,54 @@ main() {
     first_run_setup
     [[ "$CHECK_UPDATES" == "true" ]] && check_updates
 
-    # For now, just pass through to bd
-    exec bd "$@"
+    # Build bd flags
+    local bd_flags=()
+    local filtered_args=()
+    local no_stealth=false
+
+    # Check for --no-stealth in args
+    for arg in "$@"; do
+        if [[ "$arg" == "--no-stealth" ]]; then
+            no_stealth=true
+        fi
+    done
+
+    # Add stealth mode (unless --no-stealth)
+    if [[ "$STEALTH_MODE" == "true" ]] && [[ "$no_stealth" == "false" ]]; then
+        bd_flags+=(--stealth)
+    fi
+
+    # Always add no-daemon
+    bd_flags+=(--no-daemon)
+
+    # Point to shared beads location
+    bd_flags+=(--db "${BEADS_LOCATION}/beads.db")
+
+    # Process arguments
+    local is_create=false
+    [[ "$1" == "create" ]] && is_create=true
+
+    for arg in "$@"; do
+        case "$arg" in
+            --no-stealth)
+                # Consumed by b2, don't pass to bd
+                ;;
+            *)
+                # Expand hashes and add to filtered args
+                filtered_args+=("$(expand_hash "$arg")")
+                ;;
+        esac
+    done
+
+    # Add needs-project label for create in non-git repo
+    if [[ "$is_create" == "true" ]] && [[ -z "$(get_project_prefix)" ]]; then
+        log_warn "Not in a git repo - creating ticket without project prefix"
+        echo "   Add '${DEFAULT_LABELS}' label to update later" >&2
+        filtered_args+=(--label "$DEFAULT_LABELS")
+    fi
+
+    # Execute bd
+    exec bd "${bd_flags[@]}" "${filtered_args[@]}"
 }
 
 main "$@"
