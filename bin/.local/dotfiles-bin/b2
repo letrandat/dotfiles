@@ -162,7 +162,18 @@ get_project_prefix() {
         fi
     fi
 }
-expand_hash() { echo "$1"; }
+expand_hash() {
+    local arg="$1"
+    local project
+    project=$(get_project_prefix)
+
+    # Short hash: alphanumeric, no dash, 3-6 chars
+    if [[ "$arg" =~ ^[a-z0-9]{3,6}$ ]] && [[ -n "$project" ]]; then
+        echo "${project}-${arg}"
+    else
+        echo "$arg"  # Pass through unchanged
+    fi
+}
 
 # Main entry point
 main() {
