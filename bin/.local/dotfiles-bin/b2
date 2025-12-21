@@ -1,14 +1,35 @@
 #!/usr/bin/env bash
 # b2 - Beads wrapper with stealth mode, hash expansion, and auto-setup
-# Usage: b2 [bd-commands...]
 #
-# Features:
-# - Stealth mode by default (--no-stealth to enable git sync)
-# - Short hash expansion (8jk → dotfiles-8jk)
-# - Shared beads location (~/.local/share/b2)
-# - Auto-install bd if missing
-# - Auto-setup on first run
-# - Update checking (24hr cache)
+# USAGE:
+#   b2 [options] <bd-command> [args...]
+#
+# OPTIONS:
+#   --no-stealth    Enable git sync (default: stealth mode)
+#   --help          Show this help
+#   --version       Show b2 version
+#
+# EXAMPLES:
+#   b2 create "My task"              # Create task (stealth mode)
+#   b2 list                          # List tasks
+#   b2 close 8jk                     # Close task (hash expansion)
+#   b2 --no-stealth sync             # Enable git sync for this command
+#
+# FEATURES:
+#   - Stealth mode by default (no git commits)
+#   - Short hash expansion (8jk → dotfiles-8jk)
+#   - Shared beads location (~/.local/share/b2)
+#   - Auto-install bd if missing
+#   - Auto-setup on first run
+#   - Update checking (24hr cache)
+#
+# CONFIG:
+#   Global: ~/.config/b2/config
+#   Per-repo: .b2rc (overrides global)
+#   Environment: B2_* variables (overrides all)
+#
+# DESIGN:
+#   See: docs/plans/2025-12-21-b2-wrapper-design.md
 
 set -euo pipefail
 
@@ -230,5 +251,17 @@ main() {
     # Execute bd
     exec bd "${bd_flags[@]}" "${filtered_args[@]}"
 }
+
+# Handle --help and --version before main
+if [[ "${1:-}" == "--help" ]] || [[ "${1:-}" == "-h" ]]; then
+    grep '^#' "$0" | grep -v '#!/usr/bin/env bash' | sed 's/^# \?//'
+    exit 0
+fi
+
+if [[ "${1:-}" == "--version" ]] || [[ "${1:-}" == "-v" ]]; then
+    echo "b2 version ${B2_VERSION}"
+    bd --version 2>/dev/null || echo "  (bd not installed)"
+    exit 0
+fi
 
 main "$@"
