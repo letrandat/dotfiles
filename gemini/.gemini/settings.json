@@ -6,6 +6,7 @@
   },
   "general": {
     "previewFeatures": true,
-    "vimMode": true
+    "vimMode": false,
+    "preferredEditor": "neovim"
   }
 }
