@@ -31,6 +31,33 @@ When I need to create a worktree:
 2. Use the returned path for all work
 3. After work is complete, use finishing-a-development-branch skill
 
+## Dotfiles-bin Convention
+
+### Overview
+
+Custom scripts in this repo are stored in `bin/.local/dotfiles-bin/` and stowed to `~/.local/bin/` for execution.
+
+### Structure
+```
+
+bin/.local/dotfiles-bin/    # Source location in repo
+  ├── script-name           # Custom scripts
+  ├── get-project-name      # Shared libraries/utilities
+  └── ...
+
+~/.local/bin/               # Installed location (via stow)
+  ├── script-name           # Symlinked from dotfiles-bin
+  └── ...
+```
+
+### Usage
+
+- Install: `stow bin` (from repo root)
+- All scripts must be executable: `chmod +x bin/.local/dotfiles-bin/script-name`
+- Ensure both paths are in PATH:
+  - `~/.local/dotfiles-bin` (direct execution from repo)
+  - `~/.local/bin` (stowed scripts)
+
 ## Windsurf Workflows Sync
 
 ### Overview
