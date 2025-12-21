@@ -99,3 +99,31 @@ return {
 - Keep README.md up to date at repository root
 - Use `docs/` for design documents and plans
 - Include setup instructions and workflow documentation
+
+## Git Commit Messages
+
+### Format
+Follow the Conventional Commits specification with a bulleted body for details:
+
+```text
+type(scope): subject
+
+- Detail 1
+- Detail 2
+- Detail 3
+```
+
+### Types
+- **feat**: A new feature
+- **fix**: A bug fix
+- **docs**: Documentation only changes
+- **style**: Changes that do not affect the meaning of the code (white-space, formatting, etc)
+- **refactor**: A code change that neither fixes a bug nor adds a feature
+- **perf**: A code change that improves performance
+- **test**: Adding missing tests or correcting existing tests
+- **chore**: Changes to the build process or auxiliary tools and libraries such as documentation generation
+
+### Guidelines
+- **Subject**: Imperative, present tense ("add" not "added"), no capitalization, no period.
+- **Body**: Use a bulleted list (`- `) to explain *what* and *why* vs. *how*.
+
