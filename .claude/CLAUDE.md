@@ -58,6 +58,57 @@ bin/.local/dotfiles-bin/    # Source location in repo
   - `~/.local/dotfiles-bin` (direct execution from repo)
   - `~/.local/bin` (stowed scripts)
 
+## Claude Code Settings Management
+
+### Overview
+Claude Code settings are version-controlled in this repo and stowed to the home directory.
+
+### Structure
+```
+claude/.claude/                 # Source location in repo
+  ├── settings.json            # Claude Code settings
+  ├── CLAUDE.md               # Project-specific instructions
+  └── statusline.sh           # Custom status line script
+
+~/.claude/                     # Installed location (via stow)
+  ├── settings.json           # Symlinked from repo
+  ├── CLAUDE.md              # Symlinked from repo
+  └── statusline.sh          # Symlinked from repo
+```
+
+### Installation
+```bash
+# From repo root
+stow claude
+```
+
+### Settings Configuration
+
+**Allowed Commands:**
+- Read, Edit, Write (file operations)
+- Git commands (status, diff, log, add, commit, push, etc.)
+- Package managers (npm, pip)
+- Testing (pytest, jest, vitest)
+- View-only bd/b2 commands (--help, --version, list, show, create)
+- Utilities (shellcheck, stow)
+
+**Denied Commands (require confirmation):**
+- Destructive operations (rm, dd, mkfs, sudo)
+- Secret files (.env, *.key, *.pem)
+- Task modification (b2/bd close, update, delete)
+
+### Modifying Settings
+
+1. Edit `claude/.claude/settings.json` in the repo
+2. Re-stow: `stow -R claude`
+3. Restart Claude Code session for changes to take effect
+
+### Important Notes
+- All Claude Code config changes MUST happen in this repo
+- Never edit `~/.claude/settings.json` directly (it's a symlink)
+- Use `stow -R claude` to update after changes
+- Settings apply to all projects when using Claude Code
+
 ## Windsurf Workflows Sync
 
 ### Overview

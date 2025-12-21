@@ -35,7 +35,19 @@
       "Bash(npm test:*)",
       "Bash(npm run test:*)",
       "WebFetch(domain:github.com)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(bd --help:*)",
+      "Bash(bd --version:*)",
+      "Bash(bd create:*)",
+      "Bash(bd list:*)",
+      "Bash(bd show:*)",
+      "Bash(b2 --help:*)",
+      "Bash(b2 --version:*)",
+      "Bash(b2 create:*)",
+      "Bash(b2 list:*)",
+      "Bash(b2 show:*)",
+      "Bash(shellcheck:*)",
+      "Bash(stow:*)"
     ],
 
     "deny": [
@@ -49,7 +61,13 @@
       "Bash(rm:*)",
       "Bash(dd:*)",
       "Bash(mkfs:*)",
-      "Bash(sudo:*)"
+      "Bash(sudo:*)",
+      "Bash(bd close:*)",
+      "Bash(bd update:*)",
+      "Bash(bd delete:*)",
+      "Bash(b2 close:*)",
+      "Bash(b2 update:*)",
+      "Bash(b2 delete:*)"
     ]
   },
 

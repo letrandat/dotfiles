@@ -1,4 +1,21 @@
-# Git Worktree Workflow
+# Dotfiles Project Instructions
+
+## Claude Code Settings Management
+
+### Overview
+This directory contains Claude Code settings that are version-controlled and stowed to `~/.claude/`.
+
+### Important
+- **Never edit `~/.claude/settings.json` directly** - it's a symlink to this repo
+- All config changes must happen in `claude/.claude/settings.json`
+- After editing, run `stow -R claude` to update symlinks
+- Restart Claude Code session for changes to take effect
+
+### Permissions Summary
+- **Allowed**: Read-only bd/b2 commands (--help, --version, list, show, create)
+- **Denied**: Task modifications (close, update, delete) - these require confirmation
+
+## Git Worktree Workflow
 
 ## Directory Structure
 - Main branch: `~/workspace/<repo-name>`
