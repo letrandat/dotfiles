@@ -95,6 +95,23 @@ Lazygit is configured to open files in Windsurf:
 - Editor state folders (e.g. `History/`, `globalStorage/`, `workspaceStorage/`) are intentionally ignored.
 - The beads SQLite DB should not be committed (ignored by `.beads/.gitignore`).
 
+### Commit Messages
+
+Follow the **Conventional Commits** specification with a bulleted body for details. A `.gitmessage` template is provided and configured.
+
+```text
+type(scope): subject
+
+- Detail 1
+- Detail 2
+- Detail 3
+```
+
+- **Types**: `feat`, `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `chore`
+- **Subject**: Imperative, present tense, no capitalization, no period.
+- **Body**: Use a bulleted list (`- `) to explain *what* and *why*.
+- **Task IDs**: Reference beads task IDs in the subject or body (e.g., `fix(b2): expand short hashes (close 5jp)`).
+
 ## Issue Tracking
 
 This project uses **bd (beads)** for issue tracking.

@@ -189,7 +189,7 @@ expand_hash() {
     project=$(get_project_prefix)
 
     # Known bd commands, types and keywords that should not be expanded
-    local bd_protected="list ready show create update close delete dep sync doctor onboard prime stats help version task bug feature epic bugfix"
+    local bd_protected="blocked clean cleanup close comment comments compact completion config count create create-form daemon daemons delete dep detect-pollution doctor duplicate duplicates edit epic export graph help hooks import info init jira label list mail merge migrate migrate-hash-ids migrate-issues migrate-sync migrate-tombstones onboard prime q quickstart ready relate rename-prefix reopen repair-deps repo reset restore search setup show stale stats status supersede sync template thanks unrelate update upgrade validate version task bug feature epic bugfix tree add remove cycles mermaid get set"
 
     # Short hash: alphanumeric, no dash, 3-6 chars
     if [[ "$arg" =~ ^[a-z0-9]{3,6}$ ]] && [[ -n "$project" ]]; then
