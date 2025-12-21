@@ -6,7 +6,7 @@ When making commits in this repository, always append the following footer to th
 
 🤖 Generated with [Gemini](https://gemini.google.com)
 
-Co-Authored-By: Gemini <noreply@google.com>
+Co-Authored-By: Gemini <gemini@google.com>
 
 ## Task Management Policy
 
