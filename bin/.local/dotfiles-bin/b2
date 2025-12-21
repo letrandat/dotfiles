@@ -188,8 +188,18 @@ expand_hash() {
     local project
     project=$(get_project_prefix)
 
+    # Known bd commands that should not be expanded
+    local bd_commands="list ready show create update close delete dep sync doctor onboard prime stats help version"
+
     # Short hash: alphanumeric, no dash, 3-6 chars
     if [[ "$arg" =~ ^[a-z0-9]{3,6}$ ]] && [[ -n "$project" ]]; then
+        # Don't expand if it's a known command
+        for cmd in $bd_commands; do
+            if [[ "$arg" == "$cmd" ]]; then
+                echo "$arg"
+                return
+            fi
+        done
         echo "${project}-${arg}"
     else
         echo "$arg"  # Pass through unchanged
