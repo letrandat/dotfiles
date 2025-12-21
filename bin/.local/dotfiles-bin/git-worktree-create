@@ -1,0 +1,109 @@
+#!/usr/bin/env bash
+
+set -e
+
+# Usage: git-worktree-create <short-name> [full-branch-name]
+#
+# Creates a git worktree at ~/worktree/<repo-name>/<short-name>
+# Auto-detects home vs work and generates appropriate branch names
+
+sanity_check() {
+    if ! command -v git &>/dev/null; then
+        echo "Error: git is not installed" >&2
+        exit 1
+    fi
+
+    if ! git rev-parse --git-dir &>/dev/null 2>&1; then
+        echo "Error: not in a git repository" >&2
+        exit 1
+    fi
+}
+
+detect_location() {
+    if [[ "$(pwd)" == /Users/dat/* ]]; then
+        echo "home"
+    else
+        echo "work"
+    fi
+}
+
+get_repo_name() {
+    local remote_url
+    remote_url=$(git remote get-url origin 2>/dev/null)
+
+    if [[ -z "$remote_url" ]]; then
+        echo "Error: no remote origin found" >&2
+        exit 1
+    fi
+
+    # Parse repo name from GitHub URL
+    # Handles: git@github.com:owner/repo.git
+    #          https://github.com/owner/repo.git
+    local repo_name
+    if [[ "$remote_url" =~ github\.com[:/]([^/]+)/([^/]+)(\.git)?$ ]]; then
+        repo_name="${BASH_REMATCH[2]}"
+        # Remove .git suffix if present
+        repo_name="${repo_name%.git}"
+        echo "$repo_name"
+    else
+        echo "Error: could not parse GitHub repo name from remote URL: $remote_url" >&2
+        exit 1
+    fi
+}
+
+generate_branch_name() {
+    local short_name="$1"
+    local location="$2"
+
+    if [[ "$location" == "home" ]]; then
+        echo "feat/$short_name"
+    else
+        echo "usr/dat/$short_name"
+    fi
+}
+
+main() {
+    if [[ $# -lt 1 ]]; then
+        echo "Usage: git-worktree-create <short-name> [full-branch-name]" >&2
+        exit 1
+    fi
+
+    local short_name="$1"
+    local branch_name="$2"
+
+    sanity_check
+
+    local location
+    location=$(detect_location)
+
+    local repo_name
+    repo_name=$(get_repo_name)
+
+    # Generate branch name if not provided
+    if [[ -z "$branch_name" ]]; then
+        branch_name=$(generate_branch_name "$short_name" "$location")
+    fi
+
+    # Construct worktree path
+    local worktree_path="$HOME/worktree/$repo_name/$short_name"
+
+    # Check if worktree already exists
+    if [[ -d "$worktree_path" ]]; then
+        echo "Error: worktree directory already exists: $worktree_path" >&2
+        exit 1
+    fi
+
+    # Create parent directory
+    mkdir -p "$HOME/worktree/$repo_name"
+
+    # Create the worktree
+    if ! git worktree add "$worktree_path" -b "$branch_name" 2>&1; then
+        echo "Error: failed to create git worktree" >&2
+        exit 1
+    fi
+
+    # Print the worktree path to stdout
+    echo "$worktree_path"
+}
+
+main "$@"
