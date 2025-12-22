@@ -131,7 +131,9 @@ EOF
 check_updates() {
     # Check cache age
     if [[ -f "$UPDATE_CACHE" ]]; then
-        local cache_age=$(($(date +%s) - $(stat -f %m "$UPDATE_CACHE" 2>/dev/null || stat -c %Y "$UPDATE_CACHE" 2>/dev/null || echo 0)))
+        local mtime
+        mtime=$(stat -c %Y "$UPDATE_CACHE" 2>/dev/null || echo 0)
+        local cache_age=$(($(date +%s) - mtime))
         [[ $cache_age -lt $UPDATE_CHECK_INTERVAL ]] && return 0
     fi
 
@@ -225,8 +227,10 @@ main() {
     done
 
     # Add stealth mode (unless --no-stealth)
+    # Note: bd doesn't have --stealth flag, using --sandbox mode instead
+    # --sandbox disables daemon and auto-sync (similar to stealth)
     if [[ "$STEALTH_MODE" == "true" ]] && [[ "$no_stealth" == "false" ]]; then
-        bd_flags+=(--stealth)
+        bd_flags+=(--sandbox)
     fi
 
     # Always add no-daemon
