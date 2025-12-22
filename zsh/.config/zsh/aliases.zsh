@@ -18,12 +18,8 @@ alias cc="claude"
 # this is going to create so many problem for me, #FIXME
 # alias python="/opt/homebrew/bin/python3"
 
-# set NVIM_APPNAME to nvim-kickstart
-# https://github.com/nvim-lua/kickstart.nvim?tab=readme-ov-file#FAQ
-alias kick='NVIM_APPNAME="nvim-kickstart" nvim'
 
 # set NVIM_APPNAME to nvim-vscode
-# https://github.com/nvim-lua/kickstart.nvim?tab=readme-ov-file#FAQ
 alias ncode='NVIM_APPNAME="nvim-vscode" nvim'
 
 # set alias for tmux-sessionizer
