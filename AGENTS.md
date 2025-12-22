@@ -149,38 +149,20 @@ Usage notes:
 <available_skills>
 
 <skill>
-<name>bd</name>
-<description>Use when tracking issues, creating tasks, or managing work items for a project - replaces markdown TODOs and external issue trackers with dependency-aware, git-friendly issue tracking using the bd (beads) CLI tool.</description>
-<location>project</location>
-</skill>
-
-<skill>
 <name>brainstorming</name>
-<description>Use when creating or developing, before writing code or implementation plans - refines rough ideas into fully-formed designs through collaborative questioning, alternative exploration, and incremental validation. Don't use during clear 'mechanical' processes</description>
-<location>project</location>
-</skill>
-
-<skill>
-<name>condition-based-waiting</name>
-<description>Use when tests have race conditions, timing dependencies, or inconsistent pass/fail behavior - replaces arbitrary timeouts with condition polling to wait for actual state changes, eliminating flaky tests from timing guesses</description>
-<location>project</location>
-</skill>
-
-<skill>
-<name>defense-in-depth</name>
-<description>Use when invalid data causes failures deep in execution, requiring validation at multiple system layers - validates at every layer data passes through to make bugs structurally impossible</description>
+<description>"You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation."</description>
 <location>project</location>
 </skill>
 
 <skill>
 <name>dispatching-parallel-agents</name>
-<description>Use when facing 3+ independent failures that can be investigated without shared state or dependencies - dispatches multiple Claude agents to investigate and fix independent problems concurrently</description>
+<description>Use when facing 2+ independent tasks that can be worked on without shared state or sequential dependencies</description>
 <location>project</location>
 </skill>
 
 <skill>
 <name>executing-plans</name>
-<description>Use when partner provides a complete implementation plan to execute in controlled batches with review checkpoints - loads plan, reviews critically, executes tasks in batches, reports for review between batches</description>
+<description>Use when you have a written implementation plan to execute in a separate session with review checkpoints</description>
 <location>project</location>
 </skill>
 
@@ -198,49 +180,25 @@ Usage notes:
 
 <skill>
 <name>requesting-code-review</name>
-<description>Use when completing tasks, implementing major features, or before merging to verify work meets requirements - dispatches superpowers:code-reviewer subagent to review implementation against plan or requirements before proceeding</description>
-<location>project</location>
-</skill>
-
-<skill>
-<name>root-cause-tracing</name>
-<description>Use when errors occur deep in execution and you need to trace back to find the original trigger - systematically traces bugs backward through call stack, adding instrumentation when needed, to identify source of invalid data or incorrect behavior</description>
-<location>project</location>
-</skill>
-
-<skill>
-<name>sharing-skills</name>
-<description>Use when you've developed a broadly useful skill and want to contribute it upstream via pull request - guides process of branching, committing, pushing, and creating PR to contribute skills back to upstream repository</description>
+<description>Use when completing tasks, implementing major features, or before merging to verify work meets requirements</description>
 <location>project</location>
 </skill>
 
 <skill>
 <name>subagent-driven-development</name>
-<description>Use when executing implementation plans with independent tasks in the current session - dispatches fresh subagent for each task with code review between tasks, enabling fast iteration with quality gates</description>
+<description>Use when executing implementation plans with independent tasks in the current session</description>
 <location>project</location>
 </skill>
 
 <skill>
 <name>systematic-debugging</name>
-<description>Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes - four-phase framework (root cause investigation, pattern analysis, hypothesis testing, implementation) that ensures understanding before attempting solutions</description>
+<description>Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes</description>
 <location>project</location>
 </skill>
 
 <skill>
 <name>test-driven-development</name>
-<description>Use when implementing any feature or bugfix, before writing implementation code - write the test first, watch it fail, write minimal code to pass; ensures tests actually verify behavior by requiring failure first</description>
-<location>project</location>
-</skill>
-
-<skill>
-<name>testing-anti-patterns</name>
-<description>Use when writing or changing tests, adding mocks, or tempted to add test-only methods to production code - prevents testing mock behavior, production pollution with test-only methods, and mocking without understanding dependencies</description>
-<location>project</location>
-</skill>
-
-<skill>
-<name>testing-skills-with-subagents</name>
-<description>Use when creating or editing skills, before deployment, to verify they work under pressure and resist rationalization - applies RED-GREEN-REFACTOR cycle to process documentation by running baseline without skill, writing to address failures, iterating to close loopholes</description>
+<description>Use when implementing any feature or bugfix, before writing implementation code</description>
 <location>project</location>
 </skill>
 
@@ -252,7 +210,7 @@ Usage notes:
 
 <skill>
 <name>using-superpowers</name>
-<description>Use when starting any conversation - establishes mandatory workflows for finding and using skills, including using Skill tool before announcing usage, following brainstorming before coding, and creating TodoWrite todos for checklists</description>
+<description>Use when starting any conversation - establishes how to find and use skills, requiring Skill tool invocation before ANY response including clarifying questions</description>
 <location>project</location>
 </skill>
 
@@ -264,31 +222,13 @@ Usage notes:
 
 <skill>
 <name>writing-plans</name>
-<description>Use when design is complete and you need detailed implementation tasks for engineers with zero codebase context - creates comprehensive implementation plans with exact file paths, complete code examples, and verification steps assuming engineer has minimal domain knowledge</description>
+<description>Use when you have a spec or requirements for a multi-step task, before touching code</description>
 <location>project</location>
 </skill>
 
 <skill>
 <name>writing-skills</name>
-<description>Use when creating new skills, editing existing skills, or verifying skills work before deployment - applies TDD to process documentation by testing with subagents before writing, iterating until bulletproof against rationalization</description>
-<location>project</location>
-</skill>
-
-<skill>
-<name>frontend-design</name>
-<description>Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, artifacts, posters, or applications (examples include websites, landing pages, dashboards, React components, HTML/CSS layouts, or when styling/beautifying any web UI). Generates creative, polished code and UI design that avoids generic AI aesthetics.</description>
-<location>project</location>
-</skill>
-
-<skill>
-<name>skill-creator</name>
-<description>Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations.</description>
-<location>project</location>
-</skill>
-
-<skill>
-<name>template</name>
-<description>Replace with description of the skill and when Claude should use it.</description>
+<description>Use when creating new skills, editing existing skills, or verifying skills work before deployment</description>
 <location>project</location>
 </skill>
 
