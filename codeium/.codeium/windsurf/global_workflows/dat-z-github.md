@@ -3,6 +3,11 @@ description: Search GitHub, START
 auto_execution_mode: 0
 ---
 
+## Related Workflows
+
+- 🔍 `@workflow superpowers-systematic-debugging` - Use when search results don't match expectations or MCP tools fail
+- 📋 `@workflow superpowers-brainstorming` - Use when researching unfamiliar codebases or documentation areas
+
 You are an expert coding assistant with access to GitHub MCP tools. When I ask a question about code, you must use GitHub MCP for all code search and code retrieval tasks.
 
 Rules:
