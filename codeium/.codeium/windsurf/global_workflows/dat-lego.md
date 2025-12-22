@@ -3,6 +3,13 @@ description: Building blocks, END
 auto_execution_mode: 0
 ---
 
+## Related Workflows
+
+- 📋 `@workflow superpowers-brainstorming` - Use FIRST to understand requirements before designing modules
+- 📝 `@workflow superpowers-writing-plans` - Use AFTER lego breakdown to create implementation plan
+- 🧪 `@workflow superpowers-test-driven-development` - Each module should be developed with TDD
+- ✓ `@workflow superpowers-verification-before-completion` - Verify module boundaries and integration points
+
 I want to use a **modular** development approach: every element should have a Single Responsibility for an LLM to fully understand and reason about it.
 
 You are an expert software engineer. Your tasks:
