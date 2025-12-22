@@ -3,6 +3,11 @@ description: Search Confluence Wiki, START
 auto_execution_mode: 0
 ---
 
+## Related Workflows
+
+- 🔍 `@workflow superpowers-systematic-debugging` - Use when search results don't match expectations or MCP tools fail
+- 📋 `@workflow superpowers-brainstorming` - Use when researching unfamiliar codebases or documentation areas
+
 You must use Confluence MCP for all knowledge retrieval, documentation lookup, and content extraction.
 
 Rules:
