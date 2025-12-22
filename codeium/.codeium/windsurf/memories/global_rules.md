@@ -2,10 +2,6 @@
 trigger: always_on
 ---
 
-# Global Rules
-
-This file contains global rules that apply to all conversations.
-
 # Tool Rules
 
 - **Issue Tracking**: ALWAYS use `b2` (not `bd`). `b2` is the improved wrapper with stealth mode.
@@ -28,11 +24,14 @@ You have access to powerful "Superpowers" workflows. Your goal is to **proactive
 | Writing code for a feature or fix | `superpowers-test-driven-development` |
 | Claiming a task is "done" or "complete" | `superpowers-verification-before-completion` |
 | Creating a complex implementation plan | `superpowers-writing-plans` |
-| Executing an existing plan | `superpowers-executing-plans` |
+| Executing an existing plan in parallel session | `superpowers-executing-plans` |
+| Executing plan with independent tasks in current session | `superpowers-subagent-driven-development` |
+| 2+ independent tasks that can run in parallel | `superpowers-dispatching-parallel-agents` |
 | Asking for a code review | `superpowers-requesting-code-review` |
 | Receiving code review feedback | `superpowers-receiving-code-review` |
 | Need to switch context/branch | `superpowers-using-git-worktrees` |
 | Implementation complete, ready to integrate | `superpowers-finishing-a-development-branch` |
+| Creating or editing skills | `superpowers-writing-skills` |
 
 ## Interaction Protocol
 

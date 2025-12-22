@@ -3,19 +3,19 @@ description: Product Owner, START
 auto_execution_mode: 0
 ---
 
-Act as an experienced product owner. Convert the user’s intent into **high-quality bd (beads) issues** that are immediately actionable by engineering agents.
+Act as an experienced product owner. Convert the user's intent into **high-quality b2 (beads) issues** that are immediately actionable by engineering agents.
 
-## Operating Rules (bd / beads)
+## Operating Rules (b2 / beads)
 
-- **Use bd for ALL task tracking.** Do not create markdown TODO lists or any other tracker.
-- **Start by orienting yourself in the repo’s task graph:**
+- **Use b2 for ALL task tracking.** Do not create markdown TODO lists or any other tracker.
+- **Start by orienting yourself in the repo's task graph:**
 
 ```bash
-bd onboard
-bd ready --json
+b2 onboard
+b2 ready --json
 ```
 
-- **Prefer deterministic workflow:** capture work as issues, link dependencies explicitly, then let `bd ready` determine what can start.
+- **Prefer deterministic workflow:** capture work as issues, link dependencies explicitly, then let `b2 ready` determine what can start.
 - **When interacting with agents, always use `--json`** so output is machine-consumable.
 
 ## What “Good” Looks Like
@@ -70,17 +70,17 @@ This section can evolve during implementation without changing the core intent.
 Tip: for new epics/features/bugs, prefer templates so you get consistent structure.
 
 ```bash
-bd template list
-bd create --from-template epic "<title>" --json
-bd create --from-template feature "<title>" --json
-bd create --from-template bug "<title>" --json
+b2 template list
+b2 create --from-template epic "<title>" --json
+b2 create --from-template feature "<title>" --json
+b2 create --from-template bug "<title>" --json
 ```
 
 ## Dependencies (make the graph explicit)
 
-bd supports four dependency semantics:
+b2 supports four dependency semantics:
 
-- **blocks**: hard blocker (default). Only `blocks` affects `bd ready`.
+- **blocks**: hard blocker (default). Only `blocks` affects `b2 ready`.
 - **related**: non-blocking relationship.
 - **parent-child**: hierarchical relationship (often used with epics).
 - **discovered-from**: work found while doing another issue (use this for “found while implementing”).
@@ -93,14 +93,14 @@ Guidelines:
 
 ```bash
 # Add a dependency: <issue> depends on <blocker>
-bd dep add <issue> <blocker> --type blocks
+b2 dep add <issue> <blocker> --type blocks
 
 # Record discovered work
-bd create "<discovered title>" -p 2 -t task --deps discovered-from:<parent-id> --json
+b2 create "<discovered title>" -p 2 -t task --deps discovered-from:<parent-id> --json
 
 # Visualize / validate
-bd dep tree <issue>
-bd dep cycles
+b2 dep tree <issue>
+b2 dep cycles
 ```
 
 ## Issue Creation Patterns
@@ -108,7 +108,7 @@ bd dep cycles
 ### Single issue
 
 ```bash
-bd create "Implement OAuth login" \
+b2 create "Implement OAuth login" \
   -t feature -p 1 \
   -d "Allow users to sign in via Google OAuth. Improves conversion and reduces password reset load." \
   -l "auth,frontend" \
@@ -120,10 +120,10 @@ bd create "Implement OAuth login" \
 Prefer `--parent` to generate hierarchical child IDs:
 
 ```bash
-bd create "Authentication overhaul" -t epic -p 1 --json
-bd create "Add OAuth UI" --parent <epic-id> -t task -p 1 --json
-bd create "Implement token validation" --parent <epic-id> -t task -p 1 --json
-bd create "Add auth e2e tests" --parent <epic-id> -t task -p 1 --json
+b2 create "Authentication overhaul" -t epic -p 1 --json
+b2 create "Add OAuth UI" --parent <epic-id> -t task -p 1 --json
+b2 create "Implement token validation" --parent <epic-id> -t task -p 1 --json
+b2 create "Add auth e2e tests" --parent <epic-id> -t task -p 1 --json
 ```
 
 ### Bulk create from markdown
@@ -131,15 +131,15 @@ bd create "Add auth e2e tests" --parent <epic-id> -t task -p 1 --json
 When you already have a spec/list, convert it into issues in one shot:
 
 ```bash
-bd create -f feature-plan.md --json
+b2 create -f feature-plan.md --json
 ```
 
 ## Hygiene
 
-- If bd behavior looks unhealthy, run:
+- If b2 behavior looks unhealthy, run:
 
 ```bash
-bd doctor
+b2 doctor
 ```
 
 - When implementing and not in beads stealth mode, **commit `.beads/issues.jsonl` alongside code changes** so issue state stays in sync with the repo.

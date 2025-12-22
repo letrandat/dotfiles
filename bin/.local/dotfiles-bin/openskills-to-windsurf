@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const path = require('path');
+const { execSync } = require('child_process');
 
 // Core skills to sync (manual invoke only)
 const CORE_SKILLS = [
@@ -12,10 +13,13 @@ const CORE_SKILLS = [
   'test-driven-development',
   'writing-plans',
   'executing-plans',
+  'dispatching-parallel-agents',
+  'subagent-driven-development',
   'requesting-code-review',
   'receiving-code-review',
   'using-git-worktrees',
   'finishing-a-development-branch',
+  'writing-skills',
 ];
 
 // Paths
@@ -57,6 +61,15 @@ ${skill.body}
 }
 
 function syncSkills() {
+  // First, sync latest skills from openskills
+  console.log('📥 Syncing latest skills from openskills...\n');
+  try {
+    execSync('openskills sync', { stdio: 'inherit' });
+    console.log('\n');
+  } catch (error) {
+    console.error('⚠️  Warning: openskills sync failed, continuing with existing skills...\n');
+  }
+
   console.log('🔄 Syncing openskills → Windsurf workflows...\n');
 
   if (!fs.existsSync(SKILLS_DIR)) {

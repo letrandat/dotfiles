@@ -15,10 +15,13 @@ Windsurf uses native **Workflows** to implement high-quality development pattern
 | `superpowers-verification-before-completion` | Use BEFORE claiming anything is "done" |
 | `superpowers-writing-plans` | Use to create detailed implementation plans |
 | `superpowers-executing-plans` | Use when executing a previously written plan |
+| `superpowers-dispatching-parallel-agents` | Use for 2+ independent tasks that can run in parallel |
+| `superpowers-subagent-driven-development` | Use when executing plans with independent tasks in current session |
 | `superpowers-requesting-code-review` | Use before merging major work |
 | `superpowers-receiving-code-review` | Use when processing review feedback |
 | `superpowers-using-git-worktrees` | Use for isolated workspace management |
 | `superpowers-finishing-a-development-branch` | Use to finalize and merge work |
+| `superpowers-writing-skills` | Use when creating or editing skills |
 
 ## How to Use
 
@@ -42,6 +45,11 @@ The workflows are managed via a sync tool that ensures parity across different a
 
 **Update workflows:**
 ```bash
+# Sync latest skills from upstream first
+openskills sync
+
+# Then sync to Windsurf workflows
 openskills-to-windsurf sync
 ```
-*Run this only if you have modified the source skill definitions.*
+
+**Note:** The `openskills-to-windsurf sync` command will automatically run `openskills sync` first to ensure you have the latest skill definitions before syncing to Windsurf.
