@@ -1,0 +1,107 @@
+#!/usr/bin/env node
+
+const fs = require('fs');
+const path = require('path');
+
+// Source: Windsurf workflows (already synced from openskills)
+const WINDSURF_WORKFLOWS_DIR = path.join(process.env.HOME, 'workspace/dotfiles/codeium/.codeium/windsurf/global_workflows');
+
+// Target: Gemini CLI commands
+const GEMINI_COMMANDS_DIR = path.join(process.env.HOME, 'workspace/dotfiles/gemini/.gemini/commands');
+
+function parseMarkdownWorkflow(content) {
+  // Extract frontmatter and body
+  const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+  if (!frontmatterMatch) {
+    throw new Error('Invalid workflow format: no frontmatter');
+  }
+
+  const frontmatter = frontmatterMatch[1];
+  const body = frontmatterMatch[2].trim();
+
+  // Parse description from frontmatter
+  const descMatch = frontmatter.match(/^description:\s*(.+)$/m);
+  const description = descMatch ? descMatch[1].trim() : 'No description';
+
+  return { description, body };
+}
+
+function escapeTomlString(str) {
+  // For multi-line strings in TOML, we use triple quotes
+  // We need to escape any triple quotes in the content
+  return str.replace(/"""/g, '\\"\\"\\"');
+}
+
+function convertToToml(workflow) {
+  const escapedBody = escapeTomlString(workflow.body);
+
+  return `description = "${workflow.description}"
+prompt = """
+${escapedBody}
+"""
+`;
+}
+
+function syncWorkflows() {
+  console.log('🔄 Syncing Windsurf → Gemini CLI commands...\n');
+
+  if (!fs.existsSync(WINDSURF_WORKFLOWS_DIR)) {
+    console.error(`❌ Windsurf workflows not found: ${WINDSURF_WORKFLOWS_DIR}`);
+    console.log('   Run "openskills-to-windsurf sync" first.');
+    process.exit(1);
+  }
+
+  if (!fs.existsSync(GEMINI_COMMANDS_DIR)) {
+    fs.mkdirSync(GEMINI_COMMANDS_DIR, { recursive: true });
+  }
+
+  const files = fs.readdirSync(WINDSURF_WORKFLOWS_DIR)
+    .filter(f => f.endsWith('.md'));
+
+  let synced = 0;
+  let skipped = 0;
+
+  for (const file of files) {
+    const srcPath = path.join(WINDSURF_WORKFLOWS_DIR, file);
+    // Convert .md to .toml
+    const tomlFile = file.replace(/\.md$/, '.toml');
+    const dstPath = path.join(GEMINI_COMMANDS_DIR, tomlFile);
+
+    try {
+      const content = fs.readFileSync(srcPath, 'utf8');
+      const workflow = parseMarkdownWorkflow(content);
+      const toml = convertToToml(workflow);
+      fs.writeFileSync(dstPath, toml, 'utf8');
+      console.log(`✅ ${file} → ${tomlFile}`);
+      synced++;
+    } catch (error) {
+      console.error(`❌ ${file}: ${error.message}`);
+      skipped++;
+    }
+  }
+
+  return { synced, skipped };
+}
+
+function runSync() {
+  const result = syncWorkflows();
+
+  console.log('\n📊 Summary:');
+  console.log(`   Commands: ${result.synced} synced, ${result.skipped} skipped`);
+  console.log(`\n📁 Commands: ${GEMINI_COMMANDS_DIR}`);
+  console.log('\n💡 Run "stow gemini" to symlink to ~/.gemini/commands/');
+}
+
+// CLI
+const args = process.argv.slice(2);
+const command = args[0];
+
+if (command === 'sync') {
+  runSync();
+} else {
+  console.log('Usage: openskills-to-gemini sync');
+  console.log('\nSyncs Windsurf workflows to Gemini CLI commands.');
+  console.log('\nFlow: openskills → Windsurf → Gemini CLI');
+  console.log('\nOutput: ~/.gemini/commands/<skill>.toml');
+  process.exit(1);
+}

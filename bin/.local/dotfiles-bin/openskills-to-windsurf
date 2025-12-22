@@ -124,27 +124,56 @@ function syncSkills() {
   console.log(`📁 Workflows: ${WORKFLOWS_DIR}`);
 }
 
-function promptAntigravitySync() {
+function promptDownstreamSyncs() {
   const readline = require("readline");
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
   });
 
-  console.log("\n🔗 Downstream: Antigravity");
-  rl.question("   Sync to Antigravity? [Y/n] ", (answer) => {
-    rl.close();
-    if (answer.toLowerCase() !== "n") {
-      console.log("");
-      try {
-        execSync("openskills-to-antigravity sync", { stdio: "inherit" });
-      } catch (error) {
-        console.error("⚠️  Antigravity sync failed:", error.message);
-      }
-    } else {
-      console.log('   Skipped. Run "openskills-to-antigravity sync" manually.');
-    }
-  });
+  const promptAntigravity = () => {
+    return new Promise((resolve) => {
+      console.log("\n🔗 Downstream: Antigravity");
+      rl.question("   Sync to Antigravity? [Y/n] ", (answer) => {
+        if (answer.toLowerCase() !== "n") {
+          console.log("");
+          try {
+            execSync("openskills-to-antigravity sync", { stdio: "inherit" });
+          } catch (error) {
+            console.error("⚠️  Antigravity sync failed:", error.message);
+          }
+        } else {
+          console.log(
+            '   Skipped. Run "openskills-to-antigravity sync" manually.'
+          );
+        }
+        resolve();
+      });
+    });
+  };
+
+  const promptGemini = () => {
+    return new Promise((resolve) => {
+      console.log("\n🔗 Downstream: Gemini CLI");
+      rl.question("   Sync to Gemini CLI? [Y/n] ", (answer) => {
+        if (answer.toLowerCase() !== "n") {
+          console.log("");
+          try {
+            execSync("openskills-to-gemini sync", { stdio: "inherit" });
+          } catch (error) {
+            console.error("⚠️  Gemini CLI sync failed:", error.message);
+          }
+        } else {
+          console.log('   Skipped. Run "openskills-to-gemini sync" manually.');
+        }
+        resolve();
+      });
+    });
+  };
+
+  promptAntigravity()
+    .then(() => promptGemini())
+    .then(() => rl.close());
 }
 
 // CLI
@@ -153,7 +182,7 @@ const command = args[0];
 
 if (command === "sync") {
   syncSkills();
-  promptAntigravitySync();
+  promptDownstreamSyncs();
 } else {
   console.log(`Usage: openskills-to-windsurf sync`);
   console.log(`\nSyncs core openskills to Windsurf workflows.`);
