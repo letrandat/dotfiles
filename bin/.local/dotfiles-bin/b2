@@ -237,22 +237,46 @@ main() {
 
     # Process arguments
     local is_create=false
+    local project_prefix
+    project_prefix=$(get_project_prefix)
     [[ "$1" == "create" ]] && is_create=true
+
+    local seen_create=false
+    local title_added=false
 
     for arg in "$@"; do
         case "$arg" in
             --no-stealth)
                 # Consumed by b2, don't pass to bd
                 ;;
+            create)
+                seen_create=true
+                filtered_args+=("$arg")
+                ;;
+            --*)
+                # Pass through flags
+                filtered_args+=("$arg")
+                ;;
             *)
-                # Expand hashes and add to filtered args
-                filtered_args+=("$(expand_hash "$arg")")
+                # If this is the first positional arg after create, it's the title
+                if [[ "$seen_create" == "true" ]] && [[ "$title_added" == "false" ]]; then
+                    # This is the title - add project prefix if we have one
+                    if [[ -n "$project_prefix" ]]; then
+                        filtered_args+=("[$project_prefix] $arg")
+                    else
+                        filtered_args+=("$arg")
+                    fi
+                    title_added=true
+                else
+                    # Expand hashes for other args
+                    filtered_args+=("$(expand_hash "$arg")")
+                fi
                 ;;
         esac
     done
 
     # Add needs-project label for create in non-git repo
-    if [[ "$is_create" == "true" ]] && [[ -z "$(get_project_prefix)" ]]; then
+    if [[ "$is_create" == "true" ]] && [[ -z "$project_prefix" ]]; then
         log_warn "Not in a git repo - creating ticket without project prefix"
         echo "   Add '${DEFAULT_LABELS}' label to update later" >&2
         filtered_args+=(--label "$DEFAULT_LABELS")
