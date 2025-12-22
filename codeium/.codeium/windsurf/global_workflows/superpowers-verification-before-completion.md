@@ -137,3 +137,5 @@ From 24 failure memories:
 Run the command. Read the output. THEN claim the result.
 
 This is non-negotiable.
+
+<!-- WORKFLOW-STATE: verification-complete -->

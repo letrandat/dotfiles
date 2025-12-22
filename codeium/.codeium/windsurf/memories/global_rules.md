@@ -93,3 +93,27 @@ Agent: "I see you're dealing with an error. That sounds like a job for our syste
 
 - Do NOT run the workflow automatically without asking.
 - Do NOT ignore the workflows when the intent is clear.
+
+## State-Based Workflow Progression
+
+**Priority:** State-based suggestions override intent-based when both apply.
+
+**Detection:** Scan conversation for most recent `<!-- WORKFLOW-STATE: ... -->` marker.
+
+### State Transition Table
+
+| Current State | Next Suggestion | Prompt Template |
+|---------------|-----------------|-----------------|
+| `brainstorming-complete` | `superpowers-using-git-worktrees` + `superpowers-writing-plans` | "Design complete! Ready to set up for implementation?<br><br>I can:<br>1. Create an isolated workspace (worktree)<br>2. Write a detailed implementation plan<br><br>Would you like me to proceed?" |
+| `plan-complete` | `superpowers-executing-plans` OR `superpowers-subagent-driven-development` | "Plan ready! Two execution options:<br><br>1. **Batch execution** (separate session) - executing-plans workflow<br>2. **Task-by-task** (this session) - subagent-driven-development<br><br>Which approach?" |
+| `execution-complete` | `superpowers-verification-before-completion` | "Implementation complete! Before we call this done, let's verify everything works. Run the verification workflow?" |
+| `verification-complete` | `superpowers-requesting-code-review` | "All tests passing! Ready to request code review before merging?" |
+| `code-review-complete` | `superpowers-finishing-a-development-branch` | "Review feedback addressed! Let's finalize this work (merge/PR/cleanup)." |
+
+### Interaction Protocol
+
+1. Detect most recent state marker in conversation
+2. Check if matching state in transition table
+3. If match: Present suggestion using prompt template
+4. Wait for user confirmation
+5. If confirmed: Invoke suggested workflow(s)

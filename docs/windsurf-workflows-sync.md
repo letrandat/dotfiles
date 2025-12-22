@@ -35,7 +35,24 @@ Mention the workflow directly to the agent:
 Click the Cascade menu icon and select "Workflows" to see the full list of superpowers.
 
 ## Auto-Suggestions
-Windsurf is configured with **Global Rules** to automatically suggest the correct superpower based on your message (e.g., if you mention a bug, it will ask if you want to run `superpowers-systematic-debugging`).
+
+Windsurf uses a two-tier suggestion system:
+
+### 1. Intent-Based Triggers
+Suggests workflows based on your message content (e.g., mentioning a bug triggers `superpowers-systematic-debugging`).
+
+### 2. State-Based Workflow Progression (New)
+Automatically suggests the next logical workflow based on completion state. When a workflow completes, it emits a state marker, and Windsurf suggests the next step in the development lifecycle:
+
+```
+brainstorming complete → suggest: worktrees + writing-plans
+plan complete → suggest: executing-plans
+execution complete → suggest: verification-before-completion
+verification complete → suggest: requesting-code-review
+code-review complete → suggest: finishing-a-development-branch
+```
+
+**Priority:** State-based suggestions override intent-based when both apply.
 
 ---
 
@@ -53,3 +70,13 @@ openskills-to-windsurf sync
 ```
 
 **Note:** The `openskills-to-windsurf sync` command will automatically run `openskills sync` first to ensure you have the latest skill definitions before syncing to Windsurf.
+
+### State Machine Maintenance
+
+After syncing, agents MUST verify:
+- State marker integrity (`<!-- WORKFLOW-STATE: ... -->` comments)
+- State transition flow compatibility
+- Whether new workflows need to be added to the state machine
+- Accuracy of `global_rules.md` state transition table
+
+The sync script will remind agents to perform this validation.
