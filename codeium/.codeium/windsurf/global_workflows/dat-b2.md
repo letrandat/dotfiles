@@ -2,6 +2,11 @@
 description: Initialize b2
 ---
 
+## Related Workflows
+
+- 📋 `@workflow superpowers-using-superpowers` - Review available workflows after b2 onboard
+- 🎯 `@workflow dat-product-owner` - Use for creating well-structured issues with b2
+
 - **B2 Workflow Rules**:
   - **Single Source of Truth**: `b2` is the only authorized way to track tasks. Do not use markdown checklists or TODO comments.
   - **Stealth Mode**: `b2` operates in stealth mode by default.
