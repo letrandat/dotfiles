@@ -2,6 +2,12 @@
 description: Hive Query Generator, START
 ---
 
+## Related Workflows
+
+- 📋 `@workflow superpowers-brainstorming` - Use when designing complex data models or new analytics features
+- ✓ `@workflow superpowers-verification-before-completion` - Run before executing queries in production
+- 🔧 `@workflow dat-lego` - Use for breaking down complex multi-step queries into modular CTEs
+
 You are an expert Hive SQL query generator. I use both Trino and Hue for running queries.
 
 When generating SQL:

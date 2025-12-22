@@ -1,33 +1,39 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
-const { execSync } = require('child_process');
+const fs = require("fs");
+const path = require("path");
+const { execSync } = require("child_process");
 
 // Core skills to sync (manual invoke only)
 const CORE_SKILLS = [
-  'using-superpowers',
-  'brainstorming',
-  'systematic-debugging',
-  'verification-before-completion',
-  'test-driven-development',
-  'writing-plans',
-  'executing-plans',
-  'dispatching-parallel-agents',
-  'subagent-driven-development',
-  'requesting-code-review',
-  'receiving-code-review',
-  'using-git-worktrees',
-  'finishing-a-development-branch',
-  'writing-skills',
+  "using-superpowers",
+  "brainstorming",
+  "systematic-debugging",
+  "verification-before-completion",
+  "test-driven-development",
+  "writing-plans",
+  "executing-plans",
+  "dispatching-parallel-agents",
+  "subagent-driven-development",
+  "requesting-code-review",
+  "receiving-code-review",
+  "using-git-worktrees",
+  "finishing-a-development-branch",
+  "writing-skills",
 ];
 
 // Paths
-const SKILLS_DIR = path.join(process.env.HOME, 'workspace/dotfiles/.agent/skills');
-const WORKFLOWS_DIR = path.join(process.env.HOME, 'workspace/dotfiles/codeium/.codeium/windsurf/global_workflows');
+const SKILLS_DIR = path.join(
+  process.env.HOME,
+  "workspace/dotfiles/.agent/skills"
+);
+const WORKFLOWS_DIR = path.join(
+  process.env.HOME,
+  "workspace/dotfiles/codeium/.codeium/windsurf/global_workflows"
+);
 
 function parseSkillFile(filePath) {
-  const content = fs.readFileSync(filePath, 'utf8');
+  const content = fs.readFileSync(filePath, "utf8");
 
   // Extract frontmatter
   const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
@@ -40,8 +46,9 @@ function parseSkillFile(filePath) {
 
   // Parse frontmatter fields
   const nameMatch = frontmatter.match(/^name:\s*(.+)$/m);
-  const descMatch = frontmatter.match(/^description:\s*"(.+)"$/m) ||
-                    frontmatter.match(/^description:\s*(.+)$/m);
+  const descMatch =
+    frontmatter.match(/^description:\s*"(.+)"$/m) ||
+    frontmatter.match(/^description:\s*(.+)$/m);
 
   return {
     name: nameMatch ? nameMatch[1].trim() : null,
@@ -62,15 +69,17 @@ ${skill.body}
 
 function syncSkills() {
   // First, sync latest skills from openskills
-  console.log('📥 Syncing latest skills from openskills...\n');
+  console.log("📥 Syncing latest skills from openskills...\n");
   try {
-    execSync('openskills sync', { stdio: 'inherit' });
-    console.log('\n');
+    execSync("openskills sync", { stdio: "inherit" });
+    console.log("\n");
   } catch (error) {
-    console.error('⚠️  Warning: openskills sync failed, continuing with existing skills...\n');
+    console.error(
+      "⚠️  Warning: openskills sync failed, continuing with existing skills...\n"
+    );
   }
 
-  console.log('🔄 Syncing openskills → Windsurf workflows...\n');
+  console.log("🔄 Syncing openskills → Windsurf workflows...\n");
 
   if (!fs.existsSync(SKILLS_DIR)) {
     console.error(`❌ Skills directory not found: ${SKILLS_DIR}`);
@@ -85,9 +94,12 @@ function syncSkills() {
   let skipped = 0;
 
   for (const skillName of CORE_SKILLS) {
-    const skillPath = path.join(SKILLS_DIR, skillName, 'SKILL.md');
+    const skillPath = path.join(SKILLS_DIR, skillName, "SKILL.md");
     // Prefix all skills with 'superpowers-' to group them in Windsurf and match documentation style
-    const workflowPath = path.join(WORKFLOWS_DIR, `superpowers-${skillName}.md`);
+    const workflowPath = path.join(
+      WORKFLOWS_DIR,
+      `superpowers-${skillName}.md`
+    );
 
     if (!fs.existsSync(skillPath)) {
       console.log(`⚠️  Skipped ${skillName} (not found)`);
@@ -99,7 +111,7 @@ function syncSkills() {
       const skill = parseSkillFile(skillPath);
       const workflow = generateWorkflow(skill);
 
-      fs.writeFileSync(workflowPath, workflow, 'utf8');
+      fs.writeFileSync(workflowPath, workflow, "utf8");
       console.log(`✅ Synced ${skillName}`);
       synced++;
     } catch (error) {
@@ -112,15 +124,39 @@ function syncSkills() {
   console.log(`📁 Workflows: ${WORKFLOWS_DIR}`);
 }
 
+function promptAntigravitySync() {
+  const readline = require("readline");
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+  });
+
+  console.log("\n🔗 Downstream: Antigravity");
+  rl.question("   Sync to Antigravity? [Y/n] ", (answer) => {
+    rl.close();
+    if (answer.toLowerCase() !== "n") {
+      console.log("");
+      try {
+        execSync("openskills-to-antigravity sync", { stdio: "inherit" });
+      } catch (error) {
+        console.error("⚠️  Antigravity sync failed:", error.message);
+      }
+    } else {
+      console.log('   Skipped. Run "openskills-to-antigravity sync" manually.');
+    }
+  });
+}
+
 // CLI
 const args = process.argv.slice(2);
 const command = args[0];
 
-if (command === 'sync') {
+if (command === "sync") {
   syncSkills();
+  promptAntigravitySync();
 } else {
   console.log(`Usage: openskills-to-windsurf sync`);
   console.log(`\nSyncs core openskills to Windsurf workflows.`);
-  console.log(`\nCore skills: ${CORE_SKILLS.join(', ')}`);
+  console.log(`\nCore skills: ${CORE_SKILLS.join(", ")}`);
   process.exit(1);
 }
