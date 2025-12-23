@@ -44,7 +44,7 @@ map("n", "<leader>fp", function()
 end, { desc = "Copy relative file path" })
 
 -- Copy relative path with line range in visual mode
-map("v", "<leader>fp", function()
+local copy_path_with_range = function()
   local path = vim.fn.expand("%:.")
   local start_line = vim.fn.line("v")
   local end_line = vim.fn.line(".")
@@ -54,7 +54,10 @@ map("v", "<leader>fp", function()
   local ref = "@" .. path .. "#L" .. start_line .. "-" .. end_line
   vim.fn.setreg("+", ref)
   vim.notify("Copied: " .. ref, vim.log.levels.INFO)
-end, { desc = "Copy relative file path with line range" })
+end
+
+map("v", "<leader>fp", copy_path_with_range, { desc = "Copy relative file path with line range" })
+map("v", "Y", copy_path_with_range, { desc = "Copy relative file path with line range" })
 
 -- Copy absolute path
 map("n", "<leader>fP", function()
