@@ -79,7 +79,7 @@ function syncSkills() {
     );
   }
 
-  console.log("🔄 Syncing openskills → Windsurf workflows...\n");
+  console.log("🔄 Syncing superpowers → Windsurf workflows...\n");
 
   if (!fs.existsSync(SKILLS_DIR)) {
     console.error(`❌ Skills directory not found: ${SKILLS_DIR}`);
@@ -95,7 +95,7 @@ function syncSkills() {
 
   for (const skillName of CORE_SKILLS) {
     const skillPath = path.join(SKILLS_DIR, skillName, "SKILL.md");
-    // Prefix all skills with 'superpowers-' to group them in Windsurf and match documentation style
+    // Prefix all skills with 'superpowers-' to group them in Windsurf
     const workflowPath = path.join(
       WORKFLOWS_DIR,
       `superpowers-${skillName}.md`
@@ -130,68 +130,15 @@ function syncSkills() {
   console.log('   - global_rules.md state transition table accuracy');
 }
 
-function promptDownstreamSyncs() {
-  const readline = require("readline");
-  const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-  });
-
-  const promptAntigravity = () => {
-    return new Promise((resolve) => {
-      console.log("\n🔗 Downstream: Antigravity");
-      rl.question("   Sync to Antigravity? [Y/n] ", (answer) => {
-        if (answer.toLowerCase() !== "n") {
-          console.log("");
-          try {
-            execSync("openskills-to-antigravity sync", { stdio: "inherit" });
-          } catch (error) {
-            console.error("⚠️  Antigravity sync failed:", error.message);
-          }
-        } else {
-          console.log(
-            '   Skipped. Run "openskills-to-antigravity sync" manually.'
-          );
-        }
-        resolve();
-      });
-    });
-  };
-
-  const promptGemini = () => {
-    return new Promise((resolve) => {
-      console.log("\n🔗 Downstream: Gemini CLI");
-      rl.question("   Sync to Gemini CLI? [Y/n] ", (answer) => {
-        if (answer.toLowerCase() !== "n") {
-          console.log("");
-          try {
-            execSync("openskills-to-gemini sync", { stdio: "inherit" });
-          } catch (error) {
-            console.error("⚠️  Gemini CLI sync failed:", error.message);
-          }
-        } else {
-          console.log('   Skipped. Run "openskills-to-gemini sync" manually.');
-        }
-        resolve();
-      });
-    });
-  };
-
-  promptAntigravity()
-    .then(() => promptGemini())
-    .then(() => rl.close());
-}
-
 // CLI
 const args = process.argv.slice(2);
 const command = args[0];
 
 if (command === "sync") {
   syncSkills();
-  promptDownstreamSyncs();
 } else {
-  console.log(`Usage: openskills-to-windsurf sync`);
-  console.log(`\nSyncs core openskills to Windsurf workflows.`);
+  console.log(`Usage: superpowers-sync sync`);
+  console.log(`\nSyncs core superpowers to Windsurf workflows.`);
   console.log(`\nCore skills: ${CORE_SKILLS.join(", ")}`);
   process.exit(1);
 }
