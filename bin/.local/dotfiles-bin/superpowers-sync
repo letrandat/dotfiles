@@ -22,6 +22,46 @@ const CORE_SKILLS = [
   "writing-skills",
 ];
 
+// Workflow state markers to inject (from state machine design)
+// Format: { workflow: { marker: "state-name", insertAfter: "pattern to find" } }
+const WORKFLOW_STATE_MARKERS = {
+  brainstorming: {
+    marker: "brainstorming-complete",
+    // Insert after "Use superpowers:writing-plans" section
+    insertAfter: /Use superpowers:writing-plans[^\n]*\n/,
+  },
+  "using-git-worktrees": {
+    marker: "worktree-setup-complete",
+    // Insert at end of file
+    insertAfter: null, // null = append to end
+  },
+  "writing-plans": {
+    marker: "plan-complete",
+    // Insert at end of file (after execution handoff)
+    insertAfter: null,
+  },
+  "executing-plans": {
+    marker: "execution-complete",
+    // Insert before finishing-a-development-branch reference
+    insertAfter: null,
+  },
+  "verification-before-completion": {
+    marker: "verification-complete",
+    // Insert at end of file
+    insertAfter: null,
+  },
+  "requesting-code-review": {
+    marker: "code-review-complete",
+    // Insert at end of file
+    insertAfter: null,
+  },
+  "finishing-a-development-branch": {
+    marker: "branch-finished",
+    // Insert at end of file
+    insertAfter: null,
+  },
+};
+
 // Paths
 const SKILLS_DIR = path.join(
   process.env.HOME,
@@ -65,6 +105,59 @@ auto_execution_mode: 0
 
 ${skill.body}
 `;
+}
+
+function injectStateMarkers() {
+  console.log("\n🔧 Injecting workflow state markers...\n");
+
+  let injected = 0;
+
+  for (const [skillName, config] of Object.entries(WORKFLOW_STATE_MARKERS)) {
+    const workflowPath = path.join(
+      WORKFLOWS_DIR,
+      `superpowers-${skillName}.md`
+    );
+
+    if (!fs.existsSync(workflowPath)) {
+      console.log(`⚠️  Skipped ${skillName} (workflow not found)`);
+      continue;
+    }
+
+    let content = fs.readFileSync(workflowPath, "utf8");
+
+    // Skip if marker already exists
+    const markerComment = `<!-- WORKFLOW-STATE: ${config.marker} -->`;
+    if (content.includes(markerComment)) {
+      console.log(`⏭️  ${skillName} (marker already present)`);
+      continue;
+    }
+
+    // Inject marker
+    const markerBlock = `\nAfter completing this workflow, emit completion state:\n\n${markerComment}\n`;
+
+    if (config.insertAfter === null) {
+      // Append to end of file
+      content = content.trimEnd() + "\n" + markerBlock;
+    } else {
+      // Insert after pattern match
+      const match = content.match(config.insertAfter);
+      if (match) {
+        const insertPos = match.index + match[0].length;
+        content =
+          content.slice(0, insertPos) + markerBlock + content.slice(insertPos);
+      } else {
+        // Fallback: append to end
+        console.log(`⚠️  ${skillName}: pattern not found, appending to end`);
+        content = content.trimEnd() + "\n" + markerBlock;
+      }
+    }
+
+    fs.writeFileSync(workflowPath, content, "utf8");
+    console.log(`✅ Injected ${skillName} → ${config.marker}`);
+    injected++;
+  }
+
+  console.log(`\n📊 State markers: ${injected} injected`);
 }
 
 function syncSkills() {
@@ -123,11 +216,11 @@ function syncSkills() {
   console.log(`\n📊 Summary: ${synced} synced, ${skipped} skipped`);
   console.log(`📁 Workflows: ${WORKFLOWS_DIR}`);
 
-  console.log('\n⚠️  AGENT REQUIRED: Review synced workflows for:');
-  console.log('   - State marker integrity (<!-- WORKFLOW-STATE: ... -->)');
-  console.log('   - State transition flow compatibility');
-  console.log('   - New workflows requiring state machine updates');
-  console.log('   - global_rules.md state transition table accuracy');
+  console.log("\n⚠️  AGENT REQUIRED: Review synced workflows for:");
+  console.log("   - State marker integrity (<!-- WORKFLOW-STATE: ... -->)");
+  console.log("   - State transition flow compatibility");
+  console.log("   - New workflows requiring state machine updates");
+  console.log("   - global_rules.md state transition table accuracy");
 }
 
 // CLI
@@ -136,6 +229,7 @@ const command = args[0];
 
 if (command === "sync") {
   syncSkills();
+  injectStateMarkers();
 } else {
   console.log(`Usage: superpowers-sync sync`);
   console.log(`\nSyncs core superpowers to Windsurf workflows.`);

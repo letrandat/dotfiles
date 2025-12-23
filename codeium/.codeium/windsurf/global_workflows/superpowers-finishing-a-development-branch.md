@@ -199,4 +199,6 @@ git worktree remove <worktree-path>
 **Pairs with:**
 - **using-git-worktrees** - Cleans up worktree created by that skill
 
+After completing this workflow, emit completion state:
+
 <!-- WORKFLOW-STATE: branch-finished -->

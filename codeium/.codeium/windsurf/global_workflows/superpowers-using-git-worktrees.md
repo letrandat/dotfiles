@@ -212,4 +212,6 @@ Ready to implement auth feature
 - **finishing-a-development-branch** - REQUIRED for cleanup after work complete
 - **executing-plans** or **subagent-driven-development** - Work happens in this worktree
 
+After completing this workflow, emit completion state:
+
 <!-- WORKFLOW-STATE: worktree-setup-complete -->

@@ -115,4 +115,6 @@ After saving the plan, offer execution choice:
 - Guide them to open new session in worktree
 - **REQUIRED SUB-SKILL:** New session uses superpowers:executing-plans
 
+After completing this workflow, emit completion state:
+
 <!-- WORKFLOW-STATE: plan-complete -->

@@ -104,4 +104,6 @@ You: [Fix progress indicators]
 
 See template at: requesting-code-review/code-reviewer.md
 
+After completing this workflow, emit completion state:
+
 <!-- WORKFLOW-STATE: code-review-complete -->

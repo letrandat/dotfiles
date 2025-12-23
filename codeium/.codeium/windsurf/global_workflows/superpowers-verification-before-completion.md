@@ -138,4 +138,6 @@ Run the command. Read the output. THEN claim the result.
 
 This is non-negotiable.
 
+After completing this workflow, emit completion state:
+
 <!-- WORKFLOW-STATE: verification-complete -->
