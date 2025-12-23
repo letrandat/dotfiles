@@ -56,19 +56,6 @@ map("v", "<leader>fp", function()
   vim.notify("Copied: " .. ref, vim.log.levels.INFO)
 end, { desc = "Copy relative file path with line range" })
 
--- Quick shortcut for copying file reference in visual mode
-map("v", "gy", function()
-  local path = vim.fn.expand("%:.")
-  local start_line = vim.fn.line("v")
-  local end_line = vim.fn.line(".")
-  if start_line > end_line then
-    start_line, end_line = end_line, start_line
-  end
-  local ref = "@" .. path .. "#L" .. start_line .. "-" .. end_line
-  vim.fn.setreg("+", ref)
-  vim.notify("Copied: " .. ref, vim.log.levels.INFO)
-end, { desc = "Copy file reference (quick)" })
-
 -- Copy absolute path
 map("n", "<leader>fP", function()
   local path = vim.fn.expand("%:p")
