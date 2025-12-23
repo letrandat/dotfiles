@@ -112,31 +112,3 @@ map("n", "g:", function()
   end
 end, { desc = "Previous hunk" })
 
--- ============================================================================
--- Ctrl+C + Ctrl+C to Quit
--- ============================================================================
-local ctrl_c_state = {
-  waiting_for_second_press = false,
-  timer = nil,
-}
-
-local function handle_ctrl_c()
-  if ctrl_c_state.waiting_for_second_press then
-    -- Second press: quit entire nvim instance
-    vim.cmd("qa")
-  else
-    -- First press: notify and start timer
-    ctrl_c_state.waiting_for_second_press = true
-    vim.notify("Press Ctrl+C again to quit", vim.log.levels.INFO)
-
-    -- Reset after 1 second
-    ctrl_c_state.timer = vim.defer_fn(function()
-      ctrl_c_state.waiting_for_second_press = false
-    end, 1000)
-  end
-end
-
--- Map Ctrl+C in all modes
-map("n", "<C-c>", handle_ctrl_c, { desc = "Quit nvim (press twice)" })
-map("i", "<C-c>", handle_ctrl_c, { desc = "Quit nvim (press twice)" })
-map("v", "<C-c>", handle_ctrl_c, { desc = "Quit nvim (press twice)" })
