@@ -1,0 +1,103 @@
+#!/usr/bin/env bash
+
+# nvim-cheatsheet
+# A fuzzy-searchable cheatsheet for LazyVim keybindings.
+#
+# Each entry has an action type visible in fzf:
+#   [exec]  - Will execute the command on selection
+#   [info]  - Will print the instruction on selection
+
+set -e
+
+# --- Dependency Check ---
+if ! command -v fzf &> /dev/null; then
+    echo "Error: fzf is not installed. Please install it first."
+    exit 1
+fi
+
+# --- Detect Leader Key ---
+LEADER="<space>"
+
+# --- Key Binding Database ---
+# Format: Category | Description | Keys | Action (exec/info)
+get_keys() {
+    cat <<EOF
+Marks | Set local mark (a-z) | m{a-z} | info
+Marks | Jump to mark line | '{a-z} | info
+Marks | Jump to exact mark position | \`{a-z} | info
+Marks | Search all marks (picker) | {leader}sm | info
+Marks | View all marks | :marks | info
+Marks | Delete specific marks | :delmarks {marks} | info
+Marks | Delete all lowercase marks | :delmarks! | info
+Marks | Jump to last position | '' or \`\` | info
+Marks | Jump to last change | '. or \`. | info
+Marks | Jump to last insert | '^ or \`^ | info
+Harpoon | Add file to harpoon | Alt+m | info
+Harpoon | Toggle quick menu | Alt+o | info
+Harpoon | Jump to slot 1 | Alt+j | info
+Harpoon | Jump to slot 2 | Alt+k | info
+Harpoon | Jump to slot 3 | Alt+l | info
+Harpoon | Jump to slot 4 | Alt+; | info
+Harpoon | Replace slot 1 | {leader}hj | info
+Harpoon | Replace slot 2 | {leader}hk | info
+Harpoon | Replace slot 3 | {leader}hl | info
+Harpoon | Replace slot 4 | {leader}h; | info
+Files | Show files (sidebar explorer) | {leader}sf | info
+Files | Show explorer (netrw) | {leader}se | info
+Files | Copy relative file path | {leader}fp | info
+Files | Copy relative path with line range | {leader}fp (visual) | info
+Files | Copy absolute file path | {leader}fP | info
+Files | Copy absolute path with line range | {leader}fP (visual) | info
+Navigation | Focus split up | Up | info
+Navigation | Focus split down | Down | info
+Navigation | Focus split left | Left | info
+Navigation | Focus split right | Right | info
+Navigation | Next git hunk | g; | info
+Navigation | Previous git hunk | g: | info
+Editing | Move line up | Ctrl+k | info
+Editing | Move line down | Ctrl+j | info
+Editing | Move selected lines up | Ctrl+k (visual) | info
+Editing | Move selected lines down | Ctrl+j (visual) | info
+Editing | Replace word under cursor | gs | info
+Editing | Replace selected text | gs (visual) | info
+System | Command palette | {leader}{leader} | info
+System | Working memory file | Alt+8 | info
+System | Quit nvim (press twice) | Ctrl+c Ctrl+c | info
+LazyVim | LazyVim keymaps reference | :help LazyVim | info
+LazyVim | View LazyVim keymaps online | https://www.lazyvim.org/keymaps | info
+Config | View nvim config | cat ~/.config/nvim/init.lua | exec
+Config | Edit nvim config | \$EDITOR ~/.config/nvim | exec
+Config | View options | cat ~/.config/nvim/lua/config/options.lua | exec
+Config | View keymaps | cat ~/.config/nvim/lua/config/keymaps.lua | exec
+Config | View plugins | ls ~/.config/nvim/lua/plugins/ | exec
+EOF
+}
+
+# --- Main ---
+SELECTED=$(get_keys \
+    | sed "s/{leader}/$LEADER/g" \
+    | awk -F'|' '{
+        # Trim whitespace and format with action tag
+        gsub(/^[ \t]+|[ \t]+$/, "", $1)
+        gsub(/^[ \t]+|[ \t]+$/, "", $2)
+        gsub(/^[ \t]+|[ \t]+$/, "", $3)
+        gsub(/^[ \t]+|[ \t]+$/, "", $4)
+        printf "[%s] %-10s | %-40s | %s\n", $4, $1, $2, $3
+    }' \
+    | fzf --header="LazyVim Cheatsheet (Leader: $LEADER)" \
+          --reverse --height=40% --border)
+
+if [ -n "$SELECTED" ]; then
+    # Extract action type [exec] or [info]
+    ACTION=$(echo "$SELECTED" | grep -o '^\[[a-z]*\]' | tr -d '[]')
+
+    # Extract keys (last column after the last |)
+    KEYS=$(echo "$SELECTED" | sed 's/.*| //')
+
+    if [ "$ACTION" = "exec" ]; then
+        echo "executing → $KEYS"
+        eval "$KEYS"
+    else
+        echo "→ $KEYS"
+    fi
+fi
