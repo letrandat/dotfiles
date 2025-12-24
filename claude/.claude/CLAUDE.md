@@ -2,16 +2,6 @@
 
 ## Task Management Policy (ALL AGENTS)
 
-### Critical Rules
-
-**NEVER auto-close or delete tasks without explicit user confirmation.**
-
-This applies to:
-- ✅ Creating tasks: Allowed without confirmation
-- ✅ Listing/viewing tasks: Allowed without confirmation
-- ❌ Closing tasks: **REQUIRES USER CONFIRMATION**
-- ❌ Deleting tasks: **REQUIRES USER CONFIRMATION**
-
 ### Workflow
 1. Agent completes work → Report to user
 2. **User explicitly requests to close the task**
@@ -19,7 +9,7 @@ This applies to:
 
 ### Beads (bd) Usage
 
-This project uses beads with OSS contributor pattern (planning repo: ~/.beads-planning).
+This project uses beads for Task Management.
 
 **Creating Tasks:**
 - Use `bd create "Title" -p 1 --description "Detailed description"`
@@ -38,21 +28,6 @@ This project uses beads with OSS contributor pattern (planning repo: ~/.beads-pl
 - When work is complete, ASK: "Should I close task plan-abc?"
 - Only close after explicit user confirmation
 - Agents frequently misjudge completion - always verify first
-
-## Claude Code Settings Management
-
-### Overview
-This directory contains Claude Code settings that are version-controlled and stowed to `~/.claude/`.
-
-### Important
-- **Never edit `~/.claude/settings.json` directly** - it's a symlink to this repo
-- All config changes must happen in `claude/.claude/settings.json`
-- After editing, run `stow -R claude` to update symlinks
-- Restart Claude Code session for changes to take effect
-
-### Permissions Summary
-- **Allowed**: Read-only bd/b2 commands (--help, --version, list, show, create)
-- **Denied**: Task modifications (close, update, delete) - these require confirmation
 
 ## Git Worktree Workflow
 
