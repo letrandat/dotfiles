@@ -1,25 +1,29 @@
 [user]
-	name = Tran Dat, Le
+	name = Dat
 [core]
 	autocrlf = input
-	# use vscode as editor
-	editor = code --wait
+	editor = nvim
+	pager = delta
 	excludesfile = ~/.gitignore_global
-[pull]
-	rebase = true
-
-# use code as diff and merge tool
-[diff]
-    tool = default-difftool
-[difftool "default-difftool"]
-    cmd = code --wait --diff $LOCAL $REMOTE
-[merge]
-    tool = code
-[mergetool "code"]
-    cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED
-
 [include]
 	# Update .gitconfig-local with local config
-    path = ~/.gitconfig-local
+	path = ~/.gitconfig-local
+[pull]
+	rebase = true
 [push]
 	default = current
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	line-numbers = true
+[merge]
+	tool = nvimdiff
+	conflictStyle = zdiff3
+[mergetool "nvimdiff"]
+	# This layout shows: LOCAL | REMOTE | BASE (hidden)
+	# And the MERGED result at the bottom
+	layout = "LOCAL,REMOTE / MERGED"
+[diff]
+	tool = nvimdiff
+	# This ensures 'git diff' doesn't launch a separate window instantly
+	guitool = nvimdiff

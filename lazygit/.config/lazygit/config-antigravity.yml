@@ -9,6 +9,17 @@ promptToReturnFromSubprocess: false
 
 gui:
   nerdFontsVersion: "3"
+  # Automatically increases the height of the focused side panel
+  expandFocusedSidePanel: true
+  # Determines how much taller the focused panel is compared to others
+  expandedSidePanelWeight: 2
+  # default is 0.3333
+  sidePanelWidth: 0.25
+
+git:
+  pagers:
+    - pager: delta --dark --paging=never
+      colorArg: always
 
 keybinding:
   universal:
