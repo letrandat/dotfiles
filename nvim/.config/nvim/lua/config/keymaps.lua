@@ -36,15 +36,8 @@ map("v", "<C-j>", ":m '>+1<CR>gv=gv", { desc = "Move selected lines down" })
 -- ============================================================================
 -- File Path Copying
 -- ============================================================================
--- Copy relative path from project root
-map("n", "<leader>fp", function()
-  local path = vim.fn.expand("%:.")
-  vim.fn.setreg("+", path)
-  vim.notify("Copied: " .. path, vim.log.levels.INFO)
-end, { desc = "Copy relative file path" })
-
 -- Copy relative path with line range in visual mode
-local copy_path_with_range = function()
+map("v", "Y", function()
   local path = vim.fn.expand("%:.")
   local start_line = vim.fn.line("v")
   local end_line = vim.fn.line(".")
@@ -54,30 +47,7 @@ local copy_path_with_range = function()
   local ref = "@" .. path .. "#L" .. start_line .. "-" .. end_line
   vim.fn.setreg("+", ref)
   vim.notify("Copied: " .. ref, vim.log.levels.INFO)
-end
-
-map("v", "<leader>fp", copy_path_with_range, { desc = "Copy relative file path with line range" })
-map("v", "Y", copy_path_with_range, { desc = "Copy relative file path with line range" })
-
--- Copy absolute path
-map("n", "<leader>fP", function()
-  local path = vim.fn.expand("%:p")
-  vim.fn.setreg("+", path)
-  vim.notify("Copied: " .. path, vim.log.levels.INFO)
-end, { desc = "Copy absolute file path" })
-
--- Copy absolute path with line range in visual mode
-map("v", "<leader>fP", function()
-  local path = vim.fn.expand("%:p")
-  local start_line = vim.fn.line("v")
-  local end_line = vim.fn.line(".")
-  if start_line > end_line then
-    start_line, end_line = end_line, start_line
-  end
-  local ref = "@" .. path .. "#L" .. start_line .. "-" .. end_line
-  vim.fn.setreg("+", ref)
-  vim.notify("Copied: " .. ref, vim.log.levels.INFO)
-end, { desc = "Copy absolute file path with line range" })
+end, { desc = "Copy relative file path with line range" })
 
 -- ============================================================================
 -- Search and Replace
@@ -114,4 +84,3 @@ map("n", "g:", function()
     require("gitsigns").nav_hunk("prev")
   end
 end, { desc = "Previous hunk" })
-
