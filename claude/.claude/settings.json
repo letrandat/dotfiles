@@ -11,7 +11,6 @@
       "Bash(git log:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(git push:*)",
       "Bash(git pull:*)",
       "Bash(git branch:*)",
       "Bash(git checkout:*)",
@@ -25,7 +24,6 @@
       "Bash(grep:*)",
       "Bash(mkdir:*)",
       "Bash(touch:*)",
-      "Bash(ln:*)",
       "Bash(npm:*)",
       "Bash(pip:*)",
       "Bash(pip3:*)",
@@ -62,10 +60,6 @@
       "Bash(dd:*)",
       "Bash(mkfs:*)",
       "Bash(sudo:*)",
-      "Bash(bd close:*)",
-      "Bash(bd delete:*)",
-      "Bash(b2 close:*)",
-      "Bash(b2 delete:*)"
     ]
   },
 
