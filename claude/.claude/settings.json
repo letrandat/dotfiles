@@ -39,11 +39,6 @@
       "Bash(bd create:*)",
       "Bash(bd list:*)",
       "Bash(bd show:*)",
-      "Bash(b2 --help:*)",
-      "Bash(b2 --version:*)",
-      "Bash(b2 create:*)",
-      "Bash(b2 list:*)",
-      "Bash(b2 show:*)",
       "Bash(shellcheck:*)",
       "Bash(stow:*)"
     ],
