@@ -1,4 +1,4 @@
-local toggle_key = "<M-,>" -- Alt/Meta + comma
+local toggle_key = "<M-e>" -- Alt + e
 return {
   {
     "coder/claudecode.nvim",
