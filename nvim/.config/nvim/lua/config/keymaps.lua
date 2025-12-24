@@ -9,8 +9,8 @@ map("n", "<leader>sf", function()
   Snacks.explorer()
 end, { desc = "Show Files (sidebar explorer)" })
 
--- [S]how [E]xplorer - netrw
-map("n", "<leader>se", ":Ex<CR>", { desc = "Show Explorer (netrw)" })
+-- [S]how [E]xplorer - oil.nvim
+map("n", "<leader>se", ":Oil<CR>", { desc = "Show Explorer (netrw)" })
 
 -- Command Palette (similar to VS Code Ctrl+Shift+P)
 map("n", "<leader><leader>", function()
