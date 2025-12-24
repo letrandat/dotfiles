@@ -8,7 +8,7 @@ Antigravity (Gemini) uses native **Workflows** from `.agent/workflows/`. These a
 
 ```
 openskills (source of truth)
-    ↓ openskills-to-windsurf sync
+    ↓ superpowers-sync sync
 Windsurf workflows
     ↓ openskills-to-antigravity sync
 Antigravity workflows (.agent/workflows/)
@@ -45,12 +45,12 @@ openskills-to-antigravity sync
 **Full sync (from openskills):**
 
 ```bash
-openskills-to-windsurf sync
+superpowers-sync sync
 # → Will prompt to sync to Antigravity
 ```
 
 > [!NOTE]
-> The `openskills-to-windsurf sync` command will automatically prompt to sync to Antigravity after completing Windsurf sync.
+> The `superpowers-sync sync` command will automatically prompt to sync to Antigravity after completing Windsurf sync.
 
 ## Files
 

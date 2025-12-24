@@ -57,7 +57,7 @@ This lives in `memories/` (not `global_workflows/`) because it's a meta-rule abo
 
 ### 3. Sync Architecture
 
-The `openskills-to-windsurf` script automates one-way sync from openskills → Windsurf:
+The `superpowers-sync` script automates one-way sync from openskills → Windsurf:
 
 **Source of Truth:**
 - `.agent/skills/*/SKILL.md` - Openskills format
@@ -73,7 +73,7 @@ The `openskills-to-windsurf` script automates one-way sync from openskills → W
 
 **One Command:**
 ```bash
-openskills-to-windsurf sync
+superpowers-sync sync
 ```
 
 **When to Sync:**
@@ -85,7 +85,7 @@ openskills-to-windsurf sync
 
 ### Files Modified
 
-1. **`bin/.local/dotfiles-bin/openskills-to-windsurf`**
+1. **`bin/.local/dotfiles-bin/superpowers-sync`**
    - Added 2 new skills: `using-superpowers`, `executing-plans`
    - Added `superpowers-` prefix to all generated filenames
    - Now syncs 11 total workflows
@@ -120,7 +120,7 @@ openskills-to-windsurf sync
 
 To update workflows after changing skills:
 ```bash
-openskills-to-windsurf sync
+superpowers-sync sync
 ```
 
 The sync script ensures Windsurf always has the latest skill content without manual copying.

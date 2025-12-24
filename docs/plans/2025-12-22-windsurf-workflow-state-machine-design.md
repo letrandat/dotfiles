@@ -204,7 +204,7 @@ After completing the design documentation, emit completion state:
    - Error mid-workflow - marker not emitted, state doesn't advance
 
 4. **Sync validation (REQUIRED):**
-   - **After every `openskills-to-windsurf sync`**, agent MUST:
+   - **After every `superpowers-sync sync`**, agent MUST:
      - Review all changed workflow files
      - Verify state markers still present and correctly placed
      - Check if workflow changes break state transition flow
@@ -220,13 +220,13 @@ After completing the design documentation, emit completion state:
 
 **Maintenance:**
 
-- When syncing workflows via `openskills-to-windsurf sync`, markers must be manually verified (not auto-preserved)
+- When syncing workflows via `superpowers-sync sync`, markers must be manually verified (not auto-preserved)
 - Add reminder in sync script output: "⚠️  Agent: Review synced workflows for state marker integrity"
 - Any new workflow in the chain needs marker added to source skill AND state transition table updated
 
 ## 7. Sync Script Enhancement
 
-**Modification to `openskills-to-windsurf` script:**
+**Modification to `superpowers-sync` script:**
 
 Add post-sync reminder at end of `syncSkills()` function (after line 124):
 
@@ -252,7 +252,7 @@ This ensures agents are prompted to validate the state machine after every sync 
 - [ ] Read and add markers to superpowers-verification-before-completion.md
 - [ ] Read and add markers to superpowers-requesting-code-review.md
 - [ ] Add state markers to superpowers-finishing-a-development-branch.md
-- [ ] Update openskills-to-windsurf script with agent reminder
+- [ ] Update superpowers-sync script with agent reminder
 - [ ] Test unit transitions (each state → next suggestion)
 - [ ] Test full lifecycle integration
 - [ ] Test edge cases (skip workflow, multiple markers, errors)

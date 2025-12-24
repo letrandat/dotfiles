@@ -158,7 +158,7 @@ This repo uses an automated sync system to convert openskills (superpowers skill
 Run the sync command to regenerate Windsurf workflows from openskills:
 
 ```bash
-openskills-to-windsurf sync
+superpowers-sync sync
 ```
 
 ### What Gets Synced
@@ -176,12 +176,22 @@ openskills-to-windsurf sync
 ### Architecture
 - **Source of truth**: `.agent/skills/*/SKILL.md` (openskills)
 - **Generated workflows**: `.codeium/windsurf/global_workflows/*.md`
-- **Sync tool**: `bin/.local/dotfiles-bin/openskills-to-windsurf`
+- **Sync tool**: `bin/.local/dotfiles-bin/superpowers-sync`
 
 ### When to Sync
 - After updating skills via openskills
 - After pulling new skills from upstream
 - When skills seem out of sync between Claude Code and Windsurf
+
+### Plugin Skills Sync
+
+To sync official Claude plugin skills (like frontend-design) to Windsurf workflows:
+
+```bash
+claude-plugins-sync sync
+```
+
+This discovers and syncs all skills from `~/.claude/plugins/marketplaces/claude-plugins-official/plugins` to Windsurf workflows using the naming format `plugin-name:skill-name`.
 
 ### Documentation
 See `docs/windsurf-workflows-sync.md` for detailed usage and architecture.

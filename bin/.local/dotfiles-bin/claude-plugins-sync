@@ -1,0 +1,143 @@
+#!/usr/bin/env node
+
+const fs = require("fs");
+const path = require("path");
+
+// Paths
+const PLUGINS_DIR = path.join(
+  process.env.HOME,
+  ".claude/plugins/marketplaces/claude-plugins-official/plugins"
+);
+const WORKFLOWS_DIR = path.join(
+  process.env.HOME,
+  "workspace/dotfiles/codeium/.codeium/windsurf/global_workflows"
+);
+
+function parseSkillFile(filePath) {
+  const content = fs.readFileSync(filePath, "utf8");
+
+  // Extract frontmatter
+  const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
+  if (!frontmatterMatch) {
+    throw new Error(`Invalid skill format: ${filePath}`);
+  }
+
+  const frontmatter = frontmatterMatch[1];
+  const body = frontmatterMatch[2];
+
+  // Parse frontmatter fields
+  const nameMatch = frontmatter.match(/^name:\s*(.+)$/m);
+  const descMatch =
+    frontmatter.match(/^description:\s*"(.+)"$/m) ||
+    frontmatter.match(/^description:\s*(.+)$/m);
+
+  return {
+    name: nameMatch ? nameMatch[1].trim() : null,
+    description: descMatch ? descMatch[1].trim() : null,
+    body: body.trim(),
+  };
+}
+
+function generateWorkflow(skill) {
+  return `---
+description: ${skill.description}
+auto_execution_mode: 0
+---
+
+${skill.body}
+`;
+}
+
+function discoverPluginSkills() {
+  const skills = [];
+
+  if (!fs.existsSync(PLUGINS_DIR)) {
+    console.error(`❌ Plugins directory not found: ${PLUGINS_DIR}`);
+    return skills;
+  }
+
+  // Iterate through each plugin
+  const plugins = fs.readdirSync(PLUGINS_DIR, { withFileTypes: true })
+    .filter(dirent => dirent.isDirectory())
+    .map(dirent => dirent.name);
+
+  for (const pluginName of plugins) {
+    const pluginPath = path.join(PLUGINS_DIR, pluginName);
+    const skillsPath = path.join(pluginPath, "skills");
+
+    if (!fs.existsSync(skillsPath)) {
+      continue;
+    }
+
+    // Iterate through each skill in the plugin
+    const skillDirs = fs.readdirSync(skillsPath, { withFileTypes: true })
+      .filter(dirent => dirent.isDirectory())
+      .map(dirent => dirent.name);
+
+    for (const skillName of skillDirs) {
+      const skillFile = path.join(skillsPath, skillName, "SKILL.md");
+
+      if (fs.existsSync(skillFile)) {
+        skills.push({
+          pluginName,
+          skillName,
+          skillPath: skillFile,
+        });
+      }
+    }
+  }
+
+  return skills;
+}
+
+function syncPlugins() {
+  console.log("🔄 Syncing official Claude plugins → Windsurf workflows...\n");
+
+  if (!fs.existsSync(WORKFLOWS_DIR)) {
+    fs.mkdirSync(WORKFLOWS_DIR, { recursive: true });
+  }
+
+  const pluginSkills = discoverPluginSkills();
+
+  if (pluginSkills.length === 0) {
+    console.log("⚠️  No plugin skills found");
+    return;
+  }
+
+  let synced = 0;
+  let skipped = 0;
+
+  for (const { pluginName, skillName, skillPath } of pluginSkills) {
+    // Use format: plugin-name:skill-name for workflow filename
+    const workflowName = `${pluginName}:${skillName}`;
+    const workflowPath = path.join(WORKFLOWS_DIR, `${workflowName}.md`);
+
+    try {
+      const skill = parseSkillFile(skillPath);
+      const workflow = generateWorkflow(skill);
+
+      fs.writeFileSync(workflowPath, workflow, "utf8");
+      console.log(`✅ Synced ${workflowName}`);
+      synced++;
+    } catch (error) {
+      console.error(`❌ Failed to sync ${workflowName}: ${error.message}`);
+      skipped++;
+    }
+  }
+
+  console.log(`\n📊 Summary: ${synced} synced, ${skipped} skipped`);
+  console.log(`📁 Workflows: ${WORKFLOWS_DIR}`);
+}
+
+// CLI
+const args = process.argv.slice(2);
+const command = args[0];
+
+if (command === "sync") {
+  syncPlugins();
+} else {
+  console.log(`Usage: claude-plugins-sync sync`);
+  console.log(`\nSyncs official Claude plugins to Windsurf workflows.`);
+  console.log(`\nSource: ${PLUGINS_DIR}`);
+  process.exit(1);
+}

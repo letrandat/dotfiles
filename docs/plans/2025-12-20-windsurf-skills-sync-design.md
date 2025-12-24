@@ -25,7 +25,7 @@ Build an automated sync system that converts openskills to native Windsurf workf
 **New flow**:
 ```
 openskills (source of truth)
-  → openskills-to-windsurf sync (automated)
+  → superpowers-sync sync (automated)
   → Native Windsurf workflows (generated)
   → Windsurf AI invokes directly via @workflow
 ```
@@ -34,10 +34,10 @@ openskills (source of truth)
 
 ### Components
 
-1. **openskills-to-windsurf CLI tool**
+1. **superpowers-sync CLI tool**
    - Language: Node.js
-   - Location: `bin/.local/dotfiles-bin/openskills-to-windsurf`
-   - Command: `openskills-to-windsurf sync`
+   - Location: `bin/.local/dotfiles-bin/superpowers-sync`
+   - Command: `superpowers-sync sync`
 
 2. **Source: openskills**
    - Location: `.agent/skills/*/SKILL.md`
@@ -148,7 +148,7 @@ Only sync the most critical skills to keep the workflow list manageable:
 ### How to Sync
 
 ```bash
-openskills-to-windsurf sync
+superpowers-sync sync
 ```
 
 ### Customization
@@ -215,7 +215,7 @@ Tested with:
 
 - **Design doc**: `docs/plans/2025-12-20-windsurf-skills-sync-design.md`
 - **Usage doc**: `docs/windsurf-workflows-sync.md`
-- **Sync tool**: `bin/.local/dotfiles-bin/openskills-to-windsurf`
+- **Sync tool**: `bin/.local/dotfiles-bin/superpowers-sync`
 - **Generated workflows**: `.codeium/windsurf/global_workflows/*.md` (9 files)
 - **Updated bootstrap**: `.codeium/windsurf/global_workflows/bootstrap.md`
 - **Updated recall**: `.codeium/windsurf/global_workflows/recall-skills.md`

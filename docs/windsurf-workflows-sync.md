@@ -66,10 +66,10 @@ The workflows are managed via a sync tool that ensures parity across different a
 openskills sync
 
 # Then sync to Windsurf workflows
-openskills-to-windsurf sync
+superpowers-sync sync
 ```
 
-**Note:** The `openskills-to-windsurf sync` command will automatically run `openskills sync` first to ensure you have the latest skill definitions before syncing to Windsurf.
+**Note:** The `superpowers-sync sync` command will automatically run `openskills sync` first to ensure you have the latest skill definitions before syncing to Windsurf.
 
 ### State Machine Maintenance
 
@@ -80,3 +80,24 @@ After syncing, agents MUST verify:
 - Accuracy of `global_rules.md` state transition table
 
 The sync script will remind agents to perform this validation.
+
+## Plugin Skills Sync
+
+In addition to core superpowers, you can sync official Claude plugin skills to Windsurf workflows.
+
+**Sync plugin skills:**
+```bash
+claude-plugins-sync sync
+```
+
+**Plugin Workflow Naming:**
+Plugin workflows use the format `plugin-name:skill-name` (e.g., `frontend-design:frontend-design`) to distinguish them from core superpowers.
+
+**Source:**
+`~/.claude/plugins/marketplaces/claude-plugins-official/plugins/*/skills/*/SKILL.md`
+
+**Output:**
+`.codeium/windsurf/global_workflows/{plugin-name}:{skill-name}.md`
+
+**Sync tool:**
+`bin/.local/dotfiles-bin/claude-plugins-sync`
