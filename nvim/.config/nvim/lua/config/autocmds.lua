@@ -17,3 +17,11 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     vim.fn.setpos(".", save_cursor)
   end,
 })
+
+-- Map Esc to exit terminal mode (in terminal buffers)
+vim.api.nvim_create_autocmd("TermOpen", {
+  pattern = "*",
+  callback = function()
+    vim.keymap.set("t", "<C-q>", "<C-\\><C-n>", { buffer = 0 })
+  end,
+})
