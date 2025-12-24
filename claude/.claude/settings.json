@@ -54,7 +54,7 @@
       "Bash(rm:*)",
       "Bash(dd:*)",
       "Bash(mkfs:*)",
-      "Bash(sudo:*)",
+      "Bash(sudo:*)"
     ]
   },
 
