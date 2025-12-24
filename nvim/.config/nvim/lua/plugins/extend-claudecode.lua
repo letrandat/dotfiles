@@ -10,8 +10,8 @@ return {
       terminal = {
         snacks_win_opts = {
           position = "float",
-          width = 0.80,
-          height = 0.80,
+          width = 0.9,
+          height = 0.9,
           border = "rounded",
           keys = {
             claude_hide = {
