@@ -65,6 +65,7 @@ EOF
 **Problem:** Agents often think tasks are complete when they're not (tests fail, edge cases missed, user requirements not met).
 
 **Rules:**
+
 1. **NEVER** use `bd close` without asking first
 2. When you think a task is done:
    - Report what you completed
@@ -73,6 +74,7 @@ EOF
 3. Only after user says "yes" or "close it": `bd close task-abc`
 
 **Example:**
+
 ```
 Agent: "I've implemented user authentication with JWT. All tests pass.
         Should I close task task-abc?"
@@ -107,10 +109,12 @@ bd close task-abc --reason "Completed: implemented auth with tests"
 ## When to Use bd
 
 **DO use bd when:**
+
 - User explicitly asks to create/manage tasks
 - User references task IDs (task-abc, dotfiles-xyz)
 - User asks "what's ready?" or "show my tasks"
 
 **DON'T use bd when:**
+
 - Just implementing features (don't auto-create tasks)
 - User hasn't mentioned task management
