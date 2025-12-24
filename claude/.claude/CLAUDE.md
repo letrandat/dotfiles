@@ -4,19 +4,40 @@
 
 ### Critical Rules
 
-**NEVER auto-close, update, or delete tasks without explicit user confirmation.**
+**NEVER auto-close or delete tasks without explicit user confirmation.**
 
 This applies to:
 - ✅ Creating tasks: Allowed without confirmation
 - ✅ Listing/viewing tasks: Allowed without confirmation
 - ❌ Closing tasks: **REQUIRES USER CONFIRMATION**
-- ❌ Updating task status: **REQUIRES USER CONFIRMATION**
 - ❌ Deleting tasks: **REQUIRES USER CONFIRMATION**
 
 ### Workflow
 1. Agent completes work → Report to user
 2. **User explicitly requests to close the task**
 3. Agent then closes the task
+
+### Beads (bd) Usage
+
+This project uses beads with OSS contributor pattern (planning repo: ~/.beads-planning).
+
+**Creating Tasks:**
+- Use `bd create "Title" -p 1 --description "Detailed description"`
+- Always provide rich descriptions with context, scope, and success criteria
+- Structure like Jira: Title (short), Description (full body), Comments (updates)
+- Use --description flag for initial task body
+- Use `bd comment` for later updates/discussion
+
+**Updating Tasks:**
+- When implementation plan changes significantly, add comment: `bd comment plan-abc "Progress update..."`
+- Document major scope changes, discoveries, or blockers
+- Update description if task requirements fundamentally change
+
+**Closing Tasks:**
+- NEVER auto-close tasks
+- When work is complete, ASK: "Should I close task plan-abc?"
+- Only close after explicit user confirmation
+- Agents frequently misjudge completion - always verify first
 
 ## Claude Code Settings Management
 
