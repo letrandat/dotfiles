@@ -15,7 +15,8 @@ This project uses beads for task tracking.
 
 ```bash
 # Use --description or -d flag for the task body (like Jira description)
-bd create "Implement user authentication" -p 1 --description "$(cat <<'EOF'
+bd create "Implement user authentication" -p 1 --description "$(
+  cat <<'EOF'
 ## Context
 Currently no auth system exists. Need to add JWT-based authentication.
 
@@ -49,7 +50,8 @@ bd update task-abc --description "Detailed description here..."
 
 ```bash
 # Use comments for progress updates
-bd comment task-abc "$(cat <<'EOF'
+bd comment task-abc "$(
+  cat <<'EOF'
 ## Progress Update
 - Completed user registration endpoint
 - Discovered we need password hashing (adding bcrypt)
@@ -86,9 +88,9 @@ Agent: [runs bd close task-abc]
 
 ```bash
 # View tasks
-bd list              # All tasks
-bd ready             # Ready to work
-bd show task-abc     # Task details
+bd list          # All tasks
+bd ready         # Ready to work
+bd show task-abc # Task details
 
 # Create with description
 bd create "Title" -p 1 --description "Detailed description"
