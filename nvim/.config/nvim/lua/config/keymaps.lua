@@ -95,8 +95,6 @@ map("n", "<leader>go", function()
   require("gitsigns").diffthis()
 end, { desc = "Diff This (git)" })
 
--- <leader>gr -> <leader>ghr (git hunk reset)
-map("v", "<leader>gr", ":Gitsigns reset_hunk<CR>", { desc = "Reset Hunk" })
-
--- <leader>gs -> <leader>ghs (git hunk stage)
-map("v", "<leader>gs", ":Gitsigns stage_hunk<CR>", { desc = "Stage Hunk" })
+-- Shortcuts: <leader>gr -> <leader>ghr, <leader>gs -> <leader>ghs
+map("v", "<leader>gr", "<leader>ghr", { desc = "Reset Hunk", remap = true })
+map("v", "<leader>gs", "<leader>ghs", { desc = "Stage Hunk", remap = true })
