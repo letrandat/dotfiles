@@ -22,6 +22,9 @@ alias cc="claude"
 # set NVIM_APPNAME to nvim-vscode
 alias ncode='NVIM_APPNAME="nvim-vscode" nvim'
 
+# Use nvim as vim if available
+command -v nvim &> /dev/null && alias vim='nvim'
+
 # set alias for tmux-sessionizer
 alias tmux-sessionizer='bash ~/.local/dotfiles-bin/tmux-sessionizer'
 bindkey -s ^f "tmux-sessionizer\n"
