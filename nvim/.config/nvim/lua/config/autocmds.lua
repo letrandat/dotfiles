@@ -23,5 +23,6 @@ vim.api.nvim_create_autocmd("TermOpen", {
   pattern = "*",
   callback = function()
     vim.keymap.set("t", "<C-q>", "<C-\\><C-n>", { buffer = 0 })
+    vim.keymap.set("t", "<C-j>", "<C-\\><C-n>", { buffer = 0 })
   end,
 })
