@@ -96,21 +96,7 @@ map("n", "<leader>go", function()
 end, { desc = "Diff This (git)" })
 
 -- <leader>gr -> <leader>ghr (git hunk reset)
-map("v", "<leader>gr", function()
-  local start_line = vim.fn.line(".")
-  local end_line = vim.fn.line("v")
-  if start_line > end_line then
-    start_line, end_line = end_line, start_line
-  end
-  require("gitsigns").reset_hunk({ start_line, end_line })
-end, { desc = "Reset Hunk (git)" })
+map("v", "<leader>gr", ":Gitsigns reset_hunk<CR>", { desc = "Reset Hunk" })
 
 -- <leader>gs -> <leader>ghs (git hunk stage)
-map("v", "<leader>gs", function()
-  local start_line = vim.fn.line(".")
-  local end_line = vim.fn.line("v")
-  if start_line > end_line then
-    start_line, end_line = end_line, start_line
-  end
-  require("gitsigns").stage_hunk({ start_line, end_line })
-end, { desc = "Stage Hunk (git)" })
+map("v", "<leader>gs", ":Gitsigns stage_hunk<CR>", { desc = "Stage Hunk" })
