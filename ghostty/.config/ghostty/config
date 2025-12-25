@@ -50,7 +50,6 @@
 #
 # So the following config:
 # - \x1be = ESC + 'e' = Alt+e
-# - \x1b . = ESC + space = Alt+Space (then the . is sent separately)
 #
 # Cmd+e to toggle Claude Code (sends Alt+e to neovim)
 keybind = super+e=text:\x1be
