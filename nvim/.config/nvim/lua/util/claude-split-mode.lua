@@ -41,16 +41,12 @@ function M.return_to_editor()
     return
   end
 
-  -- Successfully moved to non-Claude buffer - zoom it
-  local Snacks = require("snacks")
-
   -- Close existing zoom on Claude Code terminal before creating new zoom on editor
-  -- (zen.win is global state - we're moving the zoom from Claude window to editor window)
   if zen.win and zen.win:valid() then
     zen.win:close()
   end
 
-  Snacks.zen.zoom()
+  zen.zoom()
 end
 
 -- Function to focus Claude Code terminal from editor with zoom
