@@ -85,19 +85,18 @@ function M.focus_claude()
   toggle_count = toggle_count + 1
   debug_print("[DEBUG] ========== Focus Claude #" .. toggle_count .. " ==========")
 
+  -- Close existing zoom BEFORE switching to Claude (from current editor context)
+  local zen = require("snacks.zen")
+  if zen.win and zen.win:valid() then
+    debug_print("[DEBUG] Closing existing zoom before focusing Claude")
+    zen.win:close()
+    debug_print("[DEBUG] Zoom closed, current window:", vim.fn.winnr())
+  end
+
   debug_print("[DEBUG] Focusing Claude Code terminal...")
   vim.cmd("ClaudeCodeFocus")
   vim.defer_fn(function()
     local Snacks = require("snacks")
-    local zen = require("snacks.zen")
-
-    -- Close existing zoom first to prevent window explosion
-    if zen.win and zen.win:valid() then
-      debug_print("[DEBUG] Closing existing zoom before focusing Claude")
-      zen.win:close()
-      debug_print("[DEBUG] Zoom closed, current window:", vim.fn.winnr())
-    end
-
     debug_print("[DEBUG] About to call Snacks.zen.zoom() on Claude")
     Snacks.zen.zoom()
     debug_print("[DEBUG] Snacks.zen.zoom() completed on Claude")
