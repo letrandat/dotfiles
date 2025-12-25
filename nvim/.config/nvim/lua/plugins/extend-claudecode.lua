@@ -7,6 +7,11 @@ local plugin_config = {
   dependencies = { "folke/snacks.nvim" },
   opts = {
     focus_after_send = true,
+    -- Diff Integration
+    diff_opts = {
+      open_in_new_tab = true, -- Open diffs in a new tab for clean review space
+      hide_terminal_in_new_tab = true, -- Keep Claude floating window in original tab only
+    },
   },
 }
 
