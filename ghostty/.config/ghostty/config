@@ -52,9 +52,7 @@
 # - \x1be = ESC + 'e' = Alt+e
 # - \x1b . = ESC + space = Alt+Space (then the . is sent separately)
 #
-# Cmd+e to toggle Claude Code (sends Alt+e to ,tmux then it get passed to, neovim)
+# Cmd+e to toggle Claude Code (sends Alt+e to neovim)
 keybind = super+e=text:\x1be
-# Cmd+l to focus pane 2 (AI/aux pane) (sends Alt+Space then . to tmux)
-keybind = super+l=text:\x1b .
 # use shift+enter to add line break in claudecode
 keybind = shift+enter=text:\x1b\r
