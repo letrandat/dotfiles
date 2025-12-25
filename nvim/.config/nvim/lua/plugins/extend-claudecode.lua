@@ -1,4 +1,5 @@
 local toggle_key = "<M-e>" -- Alt + e (cmd+e from ghostty)
+local USE_FLOATING_MODE = true -- true = floating window, false = split with zoom
 
 -- Helper function to toggle between Claude Code window and last window with zoom
 -- Mimics the tmux Cmd+L behavior: toggle between AI pane and main pane with zoom
@@ -20,40 +21,64 @@ local function toggle_claude_zoom()
       -- Create vsplit with new empty buffer on the left, Claude stays on right
       vim.cmd("leftabove vnew")
     else
-      -- Successfully moved to another window - maximize it
-      vim.cmd("wincmd |") -- Maximize width
-      vim.cmd("wincmd _") -- Maximize height
+      -- Successfully moved to another window - zoom it (LazyVim style)
+      vim.cmd("only") -- Closes other windows
     end
   else
-    -- Not in Claude terminal, focus it and maximize
+    -- Not in Claude terminal, focus it and zoom (LazyVim style)
     vim.cmd("ClaudeCodeFocus")
     vim.defer_fn(function()
-      vim.cmd("wincmd |") -- Maximize width
-      vim.cmd("wincmd _") -- Maximize height
+      vim.cmd("only") -- Closes other windows
     end, 50)
   end
 end
 
-return {
-  {
-    "coder/claudecode.nvim",
-    dependencies = { "folke/snacks.nvim" },
-    keys = {
-      -- Normal and visual mode: toggle with zoom
-      { toggle_key, toggle_claude_zoom, desc = "Claude Code (toggle/zoom)", mode = { "n", "x" } },
-      -- Terminal mode: exit terminal mode first, then toggle with zoom
-      {
-        toggle_key,
-        function()
-          vim.cmd("stopinsert")
-          vim.defer_fn(toggle_claude_zoom, 10)
-        end,
-        desc = "Claude Code (toggle/zoom)",
-        mode = "t",
-      },
-    },
-    opts = {
-      focus_after_send = true,
-    },
+-- Build base plugin configuration
+local plugin_config = {
+  "coder/claudecode.nvim",
+  dependencies = { "folke/snacks.nvim" },
+  opts = {
+    focus_after_send = true,
   },
 }
+
+-- Configure based on selected mode
+if USE_FLOATING_MODE then
+  -- Mode 1: Floating window overlay
+  plugin_config.opts.terminal = {
+    snacks_win_opts = {
+      position = "float",
+      width = 0.9,
+      height = 0.9,
+      border = "rounded",
+      keys = {
+        claude_hide = {
+          toggle_key,
+          function(self)
+            self:hide()
+          end,
+          mode = "t",
+          desc = "Hide",
+        },
+      },
+    },
+  }
+else
+  -- Mode 2: Split with LazyVim-style zoom
+  plugin_config.keys = {
+    -- Normal and visual mode: toggle with zoom
+    { toggle_key, toggle_claude_zoom, desc = "Claude Code (toggle/zoom)", mode = { "n", "x" } },
+    -- Terminal mode: exit terminal mode first, then toggle with zoom
+    {
+      toggle_key,
+      function()
+        vim.cmd("stopinsert")
+        vim.defer_fn(toggle_claude_zoom, 10)
+      end,
+      desc = "Claude Code (toggle/zoom)",
+      mode = "t",
+    },
+  }
+end
+
+return { plugin_config }
