@@ -73,6 +73,7 @@ map("n", "g;", function()
   if vim.wo.diff then
     vim.cmd.normal({ "g;", bang = true })
   else
+    ---@diagnostic disable-next-line: param-type-mismatch
     require("gitsigns").nav_hunk("next")
   end
 end, { desc = "Next hunk" })
@@ -81,6 +82,7 @@ map("n", "g:", function()
   if vim.wo.diff then
     vim.cmd.normal({ "g:", bang = true })
   else
+    ---@diagnostic disable-next-line: param-type-mismatch
     require("gitsigns").nav_hunk("prev")
   end
 end, { desc = "Previous hunk" })
