@@ -65,6 +65,21 @@ if USE_FLOATING_MODE then
       },
     },
   }
+  -- Global keybindings for floating mode (show/hide/focus)
+  plugin_config.keys = {
+    { toggle_key, "<cmd>ClaudeCodeFocus<cr>", desc = "Claude Code (toggle)", mode = { "n", "x" } },
+    {
+      toggle_key,
+      function()
+        vim.cmd("stopinsert")
+        vim.defer_fn(function()
+          vim.cmd("ClaudeCodeFocus")
+        end, 10)
+      end,
+      desc = "Claude Code (toggle)",
+      mode = "t",
+    },
+  }
 else
   -- Mode 2: Split with LazyVim-style zoom
   plugin_config.keys = {
