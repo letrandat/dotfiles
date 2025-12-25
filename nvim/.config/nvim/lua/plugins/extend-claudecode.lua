@@ -1,5 +1,5 @@
 local toggle_key = "<M-e>" -- Alt + e (cmd+e from ghostty)
-local USE_FLOATING_MODE = false -- true = floating window, false = split with zoom
+local USE_FLOATING_MODE = true -- true = floating window, false = split with zoom
 
 -- Helper function to toggle between Claude Code window and last window with zoom
 -- Mimics the tmux Cmd+L behavior: toggle between AI pane and main pane with zoom
@@ -11,17 +11,7 @@ local function toggle_claude_zoom()
   local is_claude_term = bufname:match("term://.*claude") ~= nil
 
   if is_claude_term then
-    -- In Claude terminal: exit terminal mode, disable zoom, go to previous window
-    -- 1. Exit terminal mode
-    vim.cmd([[normal! \<C-\>\<C-n>]])
-
-    -- 2. Disable zoom mode if active (LazyVim style)
-    local zen = require("snacks.zen")
-    if zen.win and zen.win:valid() then
-      zen.win:close()
-    end
-
-    -- 3. Go back to previous window
+    -- In Claude terminal, go back to previous window
     local current_win = vim.fn.winnr()
     vim.cmd("wincmd p")
 
@@ -30,13 +20,17 @@ local function toggle_claude_zoom()
       -- Still in same window - Claude is the only window
       -- Create vsplit with new empty buffer on the left, Claude stays on right
       vim.cmd("leftabove vnew")
+    else
+      -- Successfully moved to another window - maximize it
+      vim.cmd("wincmd |") -- Maximize width
+      vim.cmd("wincmd _") -- Maximize height
     end
   else
-    -- Not in Claude terminal, focus it and zoom (LazyVim style)
+    -- Not in Claude terminal, focus it and maximize
     vim.cmd("ClaudeCodeFocus")
     vim.defer_fn(function()
-      local Snacks = require("snacks")
-      Snacks.zen.zoom()
+      vim.cmd("wincmd |") -- Maximize width
+      vim.cmd("wincmd _") -- Maximize height
     end, 50)
   end
 end
