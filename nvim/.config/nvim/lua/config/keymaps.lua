@@ -23,6 +23,12 @@ map("n", "<A-8>", function()
 end, { desc = "Working Memory" })
 
 -- ============================================================================
+-- Tab Management
+-- ============================================================================
+-- List all tabs (similar to <leader>, for buffers)
+map("n", "<leader><tab>,", ":tabs<CR>", { desc = "List all tabs" })
+
+-- ============================================================================
 -- Line Movement (VS Code style)
 -- ============================================================================
 -- Move lines up and down in normal mode
