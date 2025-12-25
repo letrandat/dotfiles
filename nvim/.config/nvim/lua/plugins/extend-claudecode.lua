@@ -10,10 +10,21 @@ local function toggle_claude_zoom()
   local is_claude_term = bufname:match("term://.*claude") ~= nil
 
   if is_claude_term then
-    -- In Claude terminal, go back to previous window and maximize it
+    -- In Claude terminal, go back to previous window
+    local current_win = vim.fn.winnr()
     vim.cmd("wincmd p")
-    vim.cmd("wincmd |") -- Maximize width
-    vim.cmd("wincmd _") -- Maximize height
+
+    -- Check if wincmd p actually moved us
+    if vim.fn.winnr() == current_win then
+      -- Still in same window - Claude is the only window
+      -- Create vsplit with new empty buffer
+      vim.cmd("vnew")
+      vim.cmd("wincmd p") -- Focus the new buffer (left side)
+    else
+      -- Successfully moved to another window - maximize it
+      vim.cmd("wincmd |") -- Maximize width
+      vim.cmd("wincmd _") -- Maximize height
+    end
   else
     -- Not in Claude terminal, focus it and maximize
     vim.cmd("ClaudeCodeFocus")
