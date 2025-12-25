@@ -26,8 +26,6 @@ vim.api.nvim_create_autocmd("TermOpen", {
     local is_claude_term = bufname:match("term://.*claude") ~= nil
 
     if is_claude_term then
-      vim.keymap.set("t", "<C-q>", "<C-\\><C-n>", { buffer = 0 })
-      vim.keymap.set("t", "<C-Space>", "<C-\\><C-n>", { buffer = 0 })
       vim.keymap.set("t", "<M-Esc>", "<C-\\><C-n>", { buffer = 0 })
     end
   end,
