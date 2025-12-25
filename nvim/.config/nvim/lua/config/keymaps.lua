@@ -84,3 +84,11 @@ map("n", "g:", function()
     require("gitsigns").nav_hunk("prev")
   end
 end, { desc = "Previous hunk" })
+
+-- ============================================================================
+-- Git Diff Shortcut
+-- ============================================================================
+-- <leader>go -> <leader>ghd (git diff this)
+map("n", "<leader>go", function()
+  require("gitsigns").diffthis()
+end, { desc = "Diff This (git)" })
