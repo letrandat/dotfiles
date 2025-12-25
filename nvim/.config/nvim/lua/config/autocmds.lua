@@ -18,11 +18,10 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   end,
 })
 
--- Map Esc to exit terminal mode (in terminal buffers)
+-- Map Ctrl+Q to exit terminal mode (in terminal buffers)
 vim.api.nvim_create_autocmd("TermOpen", {
   pattern = "*",
   callback = function()
     vim.keymap.set("t", "<C-q>", "<C-\\><C-n>", { buffer = 0 })
-    vim.keymap.set("t", "<C-j>", "<C-\\><C-n>", { buffer = 0 })
   end,
 })
