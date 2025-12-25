@@ -17,9 +17,8 @@ local function toggle_claude_zoom()
     -- Check if wincmd p actually moved us
     if vim.fn.winnr() == current_win then
       -- Still in same window - Claude is the only window
-      -- Create vsplit with new empty buffer
-      vim.cmd("vnew")
-      vim.cmd("wincmd p") -- Focus the new buffer (left side)
+      -- Create vsplit with new empty buffer on the left, Claude stays on right
+      vim.cmd("leftabove vnew")
     else
       -- Successfully moved to another window - maximize it
       vim.cmd("wincmd |") -- Maximize width
