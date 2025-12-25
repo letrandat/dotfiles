@@ -20,13 +20,22 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 
 -- Exit terminal mode keybindings (in Claude Code terminal buffers only)
 vim.api.nvim_create_autocmd("TermOpen", {
-  pattern = "*",
+  pattern = "term://*claude*", -- Only match Claude Code terminals
   callback = function()
-    local bufname = vim.api.nvim_buf_get_name(0)
-    local is_claude_term = bufname:match("term://.*claude") ~= nil
-
-    if is_claude_term then
-      vim.keymap.set("t", "<M-Esc>", "<C-\\><C-n>", { buffer = 0 })
+    -- Try to load module first
+    local ok, claude_toggle = pcall(require, "util.claude-toggle")
+    if not ok then
+      vim.notify(
+        "Failed to load util.claude-toggle module for Claude Code keybindings",
+        vim.log.levels.WARN
+      )
+      return
     end
+
+    -- Set keybindings for Claude terminal
+    vim.keymap.set("t", "<M-Esc>", "<C-\\><C-n>", { buffer = 0, desc = "Exit terminal mode" })
+    vim.keymap.set("t", "<M-e>", function()
+      vim.defer_fn(claude_toggle.return_to_editor, 10)
+    end, { buffer = 0, desc = "Return to editor" })
   end,
 })
