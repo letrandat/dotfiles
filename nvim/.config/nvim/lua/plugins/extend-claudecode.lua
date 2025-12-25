@@ -21,14 +21,16 @@ local function toggle_claude_zoom()
       -- Create vsplit with new empty buffer on the left, Claude stays on right
       vim.cmd("leftabove vnew")
     else
-      -- Successfully moved to another window - zoom it (LazyVim style)
-      vim.cmd("only") -- Closes other windows
+      -- Successfully moved to another window - maximize it
+      vim.cmd("wincmd |") -- Maximize width
+      vim.cmd("wincmd _") -- Maximize height
     end
   else
-    -- Not in Claude terminal, focus it and zoom (LazyVim style)
+    -- Not in Claude terminal, focus it and maximize
     vim.cmd("ClaudeCodeFocus")
     vim.defer_fn(function()
-      vim.cmd("only") -- Closes other windows
+      vim.cmd("wincmd |") -- Maximize width
+      vim.cmd("wincmd _") -- Maximize height
     end, 50)
   end
 end
