@@ -1,6 +1,6 @@
 -- Configuration options
 local toggle_key = "<M-e>" -- Alt + e (cmd+e from ghostty)
-local USE_FLOATING_MODE = false -- true = floating window, false = split with zoom
+local USE_FLOATING_MODE = true -- true = floating window, false = split with zoom
 
 -- Load utility functions
 local claude_toggle = require("util.claude-toggle")
