@@ -25,10 +25,7 @@ vim.api.nvim_create_autocmd("TermOpen", {
     -- Try to load module first
     local ok, claude_toggle = pcall(require, "util.claude-toggle")
     if not ok then
-      vim.notify(
-        "Failed to load util.claude-toggle module for Claude Code keybindings",
-        vim.log.levels.WARN
-      )
+      vim.notify("Failed to load util.claude-toggle module for Claude Code keybindings", vim.log.levels.WARN)
       return
     end
 

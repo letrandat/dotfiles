@@ -45,7 +45,7 @@ function M.return_to_editor()
 
   -- Search for a non-Claude window
   local found_editor = false
-  for i = 1, vim.fn.winnr('$') do
+  for i = 1, vim.fn.winnr("$") do
     if i ~= current_win then
       vim.cmd(i .. "wincmd w")
       local buf = vim.api.nvim_buf_get_name(vim.api.nvim_get_current_buf())
