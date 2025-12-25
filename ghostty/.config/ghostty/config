@@ -44,7 +44,7 @@
 
 # ============ Keybindings ============
 # Note: Cmd+Shift+, to reload Ghostty settings
-# Cmd+L to focus pane 2 (AI/aux pane) (sends Alt+Space then . to tmux)
-keybind = super+l=text:\x1b .
 # Cmd+E to toggle Claude Code (sends Alt+e to ..tmux then.. neovim)
 keybind = super+e=text:\x1be
+# Cmd+L to focus pane 2 (AI/aux pane) (sends Alt+Space then . to tmux)
+keybind = super+l=text:\x1b .
