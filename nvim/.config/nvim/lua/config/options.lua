@@ -10,3 +10,7 @@ vim.opt.showtabline = 0
 vim.opt.scrolloff = 10
 -- Enable relativenumber
 vim.opt.relativenumber = true
+
+-- Claude Code Configuration (shared settings)
+vim.g.claude_use_floating_mode = true -- true = floating window, false = split with zoom
+vim.g.claude_toggle_key = "<M-e>" -- Alt + e (cmd+e from ghostty)

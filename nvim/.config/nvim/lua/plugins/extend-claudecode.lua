@@ -1,6 +1,5 @@
--- Configuration options
-local toggle_key = "<M-e>" -- Alt + e (cmd+e from ghostty)
-local USE_FLOATING_MODE = true -- true = floating window, false = split with zoom
+-- Load shared configuration from options.lua
+local toggle_key = vim.g.claude_toggle_key
 
 -- Load utility functions
 local claude_toggle = require("util.claude-toggle")
@@ -15,7 +14,7 @@ local plugin_config = {
 }
 
 -- Configure based on selected mode
-if USE_FLOATING_MODE then
+if vim.g.claude_use_floating_mode then
   -- Mode 1: Floating window overlay
   plugin_config.opts.terminal = {
     snacks_win_opts = {

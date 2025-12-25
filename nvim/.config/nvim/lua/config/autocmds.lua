@@ -22,6 +22,14 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 vim.api.nvim_create_autocmd("TermOpen", {
   pattern = "term://*claude*", -- Only match Claude Code terminals
   callback = function()
+    -- Set keybindings for Claude terminal
+    vim.keymap.set("t", "<M-Esc>", "<C-\\><C-n>", { buffer = 0, desc = "Exit terminal mode" })
+    vim.keymap.set("t", "<C-q>", "<C-\\><C-n>", { buffer = 0, desc = "Exit terminal mode" })
+    -- Skip keymap setup if using floating mode (handled in plugin config)
+    if vim.g.claude_use_floating_mode then
+      return
+    end
+
     -- Try to load module first
     local ok, claude_toggle = pcall(require, "util.claude-toggle")
     if not ok then
@@ -29,8 +37,6 @@ vim.api.nvim_create_autocmd("TermOpen", {
       return
     end
 
-    -- Set keybindings for Claude terminal
-    vim.keymap.set("t", "<M-Esc>", "<C-\\><C-n>", { buffer = 0, desc = "Exit terminal mode" })
     vim.keymap.set("t", "<M-e>", function()
       vim.defer_fn(claude_toggle.return_to_editor, 10)
     end, { buffer = 0, desc = "Return to editor" })
