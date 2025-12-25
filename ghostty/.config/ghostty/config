@@ -56,3 +56,5 @@
 keybind = super+e=text:\x1be
 # Cmd+l to focus pane 2 (AI/aux pane) (sends Alt+Space then . to tmux)
 keybind = super+l=text:\x1b .
+# use shift+enter to add line break in claudecode
+keybind = shift+enter=text:\x1b\r
