@@ -97,9 +97,7 @@ end, { desc = "Previous hunk" })
 -- Git Diff Shortcut
 -- ============================================================================
 -- <leader>go -> <leader>ghd (git diff this)
-map("n", "<leader>go", function()
-  require("gitsigns").diffthis()
-end, { desc = "Diff This (git)" })
+map("n", "<leader>go", "<leader>ghd", { desc = "Diff This (git)", remap = true })
 
 -- Shortcuts: <leader>gr -> <leader>ghr, <leader>gs -> <leader>ghs
 map("v", "<leader>gr", "<leader>ghr", { desc = "Reset Hunk", remap = true })
