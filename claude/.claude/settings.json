@@ -1,11 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
-
   "permissions": {
     "allow": [
       "Read",
-      "Edit",
-      "Write",
       "Bash(git status:*)",
       "Bash(git diff:*)",
       "Bash(git log:*)",
@@ -42,7 +39,6 @@
       "Bash(shellcheck:*)",
       "Bash(stow:*)"
     ],
-
     "deny": [
       "Read(.env)",
       "Read(.env.*)",
@@ -54,23 +50,22 @@
       "Bash(rm:*)",
       "Bash(dd:*)",
       "Bash(mkfs:*)",
-      "Bash(sudo:*)",
+      "Bash(sudo:*)"
     ]
   },
-
   "attribution": {
     "git": {
       "name": "Claude Sonnet 4.5",
       "email": "noreply@anthropic.com"
     }
   },
-
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh"
   },
   "enabledPlugins": {
     "github@claude-plugins-official": true,
-    "context7@claude-plugins-official": true
+    "context7@claude-plugins-official": true,
+    "lua-lsp@claude-plugins-official": true
   }
 }

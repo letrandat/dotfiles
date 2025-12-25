@@ -16,6 +16,5 @@ Rules for organizing plugin files in `lua/plugins/`.
 
 ## Adding New Plugins
 
-1. **LazyVim extra**: Add to `lazyvim.json` extras array
-2. **Extend existing**: Create `extend-<plugin>.lua` with opts overrides
-3. **New plugin**: Create `<plugin-name>.lua` with full spec
+1. **Extend existing**: Create `extend-<plugin>.lua` with opts overrides
+2. **New plugin**: Create `<plugin-name>.lua` with full spec

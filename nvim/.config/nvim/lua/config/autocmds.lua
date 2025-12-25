@@ -17,3 +17,27 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     vim.fn.setpos(".", save_cursor)
   end,
 })
+
+-- Exit terminal mode keybindings (in Claude Code terminal buffers only)
+vim.api.nvim_create_autocmd("TermOpen", {
+  pattern = "term://*claude*", -- Only match Claude Code terminals
+  callback = function()
+    -- Set keybindings for Claude terminal
+    vim.keymap.set("t", "<C-q>", "<C-\\><C-n>", { buffer = 0, desc = "Exit terminal mode" })
+    -- Skip keymap setup if using floating mode (handled in plugin config)
+    if vim.g.claude_use_floating_mode then
+      return
+    end
+
+    -- Try to load split mode module first
+    local ok, split_mode = pcall(require, "util.claude-split-mode")
+    if not ok then
+      vim.notify("Failed to load util.claude-split-mode module for Claude Code keybindings", vim.log.levels.WARN)
+      return
+    end
+
+    vim.keymap.set("t", "<M-e>", function()
+      vim.defer_fn(split_mode.return_to_editor, 10)
+    end, { buffer = 0, desc = "Return to editor" })
+  end,
+})

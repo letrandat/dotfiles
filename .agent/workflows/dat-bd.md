@@ -15,7 +15,8 @@ This project uses beads for task tracking.
 
 ```bash
 # Use --description or -d flag for the task body (like Jira description)
-bd create "Implement user authentication" -p 1 --description "$(cat <<'EOF'
+bd create "Implement user authentication" -p 1 --description "$(
+  cat <<'EOF'
 ## Context
 Currently no auth system exists. Need to add JWT-based authentication.
 
@@ -49,7 +50,8 @@ bd update task-abc --description "Detailed description here..."
 
 ```bash
 # Use comments for progress updates
-bd comment task-abc "$(cat <<'EOF'
+bd comment task-abc "$(
+  cat <<'EOF'
 ## Progress Update
 - Completed user registration endpoint
 - Discovered we need password hashing (adding bcrypt)
@@ -65,6 +67,7 @@ EOF
 **Problem:** Agents often think tasks are complete when they're not (tests fail, edge cases missed, user requirements not met).
 
 **Rules:**
+
 1. **NEVER** use `bd close` without asking first
 2. When you think a task is done:
    - Report what you completed
@@ -73,6 +76,7 @@ EOF
 3. Only after user says "yes" or "close it": `bd close task-abc`
 
 **Example:**
+
 ```
 Agent: "I've implemented user authentication with JWT. All tests pass.
         Should I close task task-abc?"
@@ -84,9 +88,9 @@ Agent: [runs bd close task-abc]
 
 ```bash
 # View tasks
-bd list              # All tasks
-bd ready             # Ready to work
-bd show task-abc     # Task details
+bd list          # All tasks
+bd ready         # Ready to work
+bd show task-abc # Task details
 
 # Create with description
 bd create "Title" -p 1 --description "Detailed description"
@@ -107,10 +111,12 @@ bd close task-abc --reason "Completed: implemented auth with tests"
 ## When to Use bd
 
 **DO use bd when:**
+
 - User explicitly asks to create/manage tasks
 - User references task IDs (task-abc, dotfiles-xyz)
 - User asks "what's ready?" or "show my tasks"
 
 **DON'T use bd when:**
+
 - Just implementing features (don't auto-create tasks)
 - User hasn't mentioned task management

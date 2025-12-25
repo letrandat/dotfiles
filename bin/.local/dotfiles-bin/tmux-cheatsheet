@@ -42,8 +42,6 @@ Pane | Split/New horizontal (stacked) | {prefix} w s | info
 Pane | Kill pane | {prefix} b d | info
 Pane | Pick/choose panes (tree view) | {prefix} , | info
 Zoom | Toggle zoom (current pane) | {prefix} z | info
-Zoom | Focus pane 1 + zoom | {prefix} w m | info
-Zoom | Toggle pane 2/last pane + zoom | {prefix} . or Cmd+L (Ghostty) | info
 Copy / Vim Mode | Enter copy mode | mouse scroll or {prefix} [ or page-up | info
 Copy / Vim Mode | Begin selection | v (in copy mode) | info
 Copy / Vim Mode | Copy to clipboard | y (in copy mode) | info

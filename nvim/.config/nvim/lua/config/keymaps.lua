@@ -9,8 +9,8 @@ map("n", "<leader>sf", function()
   Snacks.explorer()
 end, { desc = "Show Files (sidebar explorer)" })
 
--- [S]how [E]xplorer - netrw
-map("n", "<leader>se", ":Ex<CR>", { desc = "Show Explorer (netrw)" })
+-- [S]how [E]xplorer - oil.nvim
+map("n", "<leader>se", ":Oil<CR>", { desc = "Show Explorer (netrw)" })
 
 -- Command Palette (similar to VS Code Ctrl+Shift+P)
 map("n", "<leader><leader>", function()
@@ -21,6 +21,12 @@ end, { desc = "Command Palette" })
 map("n", "<A-8>", function()
   vim.cmd.edit("~/workspace/working_memory.txt")
 end, { desc = "Working Memory" })
+
+-- ============================================================================
+-- Tab Management
+-- ============================================================================
+-- List all tabs (similar to <leader>, for buffers)
+map("n", "<leader><tab>,", ":tabs<CR>", { desc = "List all tabs" })
 
 -- ============================================================================
 -- Line Movement (VS Code style)
@@ -73,6 +79,7 @@ map("n", "g;", function()
   if vim.wo.diff then
     vim.cmd.normal({ "g;", bang = true })
   else
+    ---@diagnostic disable-next-line: param-type-mismatch
     require("gitsigns").nav_hunk("next")
   end
 end, { desc = "Next hunk" })
@@ -81,6 +88,16 @@ map("n", "g:", function()
   if vim.wo.diff then
     vim.cmd.normal({ "g:", bang = true })
   else
+    ---@diagnostic disable-next-line: param-type-mismatch
     require("gitsigns").nav_hunk("prev")
   end
 end, { desc = "Previous hunk" })
+
+-- ============================================================================
+-- Git Diff Shortcut
+-- ============================================================================
+-- <leader>go -> <leader>ghd (git diff this)
+map("n", "<leader>go", "<leader>ghd", { desc = "Diff This (git)", remap = true })
+-- Shortcuts: <leader>gr -> <leader>ghr, <leader>gs -> <leader>ghs
+map("v", "<leader>gr", "<leader>ghr", { desc = "Reset Hunk", remap = true })
+map("v", "<leader>gs", "<leader>ghs", { desc = "Stage Hunk", remap = true })
