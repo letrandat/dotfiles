@@ -1,4 +1,4 @@
-local toggle_key = "<M-e>" -- Alt + e
+local toggle_key = "<M-e>" -- Alt + e (cmd+e from ghostty)
 
 -- Helper function to toggle between Claude Code window and last window with zoom
 -- Mimics the tmux Cmd+L behavior: toggle between AI pane and main pane with zoom
@@ -42,6 +42,8 @@ return {
         mode = "t",
       },
     },
-    opts = {},
+    opts = {
+      focus_after_send = true,
+    },
   },
 }
