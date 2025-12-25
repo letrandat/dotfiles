@@ -3,7 +3,7 @@ local USE_FLOATING_MODE = false -- true = floating window, false = split with zo
 
 -- Helper function to toggle between Claude Code window and last window with zoom
 -- Mimics the tmux Cmd+L behavior: toggle between AI pane and main pane with zoom
-local function toggle_claude_zoom()
+local function toggle_claude_term()
   local current_buf = vim.api.nvim_get_current_buf()
   local bufname = vim.api.nvim_buf_get_name(current_buf)
 
@@ -84,13 +84,13 @@ else
   -- Mode 2: Split with LazyVim-style zoom
   plugin_config.keys = {
     -- Normal and visual mode: toggle with zoom
-    { toggle_key, toggle_claude_zoom, desc = "Claude Code (toggle/zoom)", mode = { "n", "x" } },
+    { toggle_key, toggle_claude_term, desc = "Claude Code (toggle/zoom)", mode = { "n", "x" } },
     -- Terminal mode: exit terminal mode first, then toggle with zoom
     {
       toggle_key,
       function()
         vim.cmd("stopinsert")
-        vim.defer_fn(toggle_claude_zoom, 10)
+        vim.defer_fn(toggle_claude_term, 10)
       end,
       desc = "Claude Code (toggle/zoom)",
       mode = "t",
