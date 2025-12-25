@@ -1,36 +1,5 @@
 # Dotfiles Project Instructions
 
-## Git Worktree Workflow
-
-### Directory Structure
-- Main branch: `~/workspace/<repo-name>`
-- Worktree branches: `~/worktree/<repo-name>/<short-name>`
-
-### Worktree Creation
-Use the `git-worktree-create` script:
-
-Usage:
-  git-worktree-create <short-name> [full-branch-name]
-
-Examples:
-  git-worktree-create ABC-123              # Auto: feat/ABC-123 (home) or usr/dat/ABC-123 (work)
-  git-worktree-create bugfix               # Auto: feat/bugfix (home) or usr/dat/bugfix (work)
-  git-worktree-create ABC-123 bug/auth-fix # Explicit branch name
-
-Branch Naming:
-- Home (pwd starts with /Users/dat/): feat/<name> or bug/<name>
-- Work (otherwise): usr/dat/<name>
-
-Path Conventions:
-- Keep short-name brief (prefer ticket numbers like ABC-123)
-- Git branch names can be longer and more descriptive
-- Worktree path: ~/worktree/<repo-name>/<short-name>
-
-When I need to create a worktree:
-1. Call git-worktree-create with appropriate short-name
-2. Use the returned path for all work
-3. After work is complete, use finishing-a-development-branch skill
-
 ## Dotfiles-bin Convention
 
 ### Overview
@@ -38,6 +7,7 @@ When I need to create a worktree:
 Custom scripts in this repo are stored in `bin/.local/dotfiles-bin/` and stowed to `~/.local/bin/` for execution.
 
 ### Structure
+
 ```
 
 bin/.local/dotfiles-bin/    # Source location in repo
@@ -65,6 +35,7 @@ bin/.local/dotfiles-bin/    # Source location in repo
 **NEVER auto-close, update, or delete tasks without explicit user confirmation.**
 
 This applies to:
+
 - ✅ Creating tasks: Allowed without confirmation
 - ✅ Listing/viewing tasks: Allowed without confirmation
 - ❌ Closing tasks: **REQUIRES USER CONFIRMATION**
@@ -72,6 +43,7 @@ This applies to:
 - ❌ Deleting tasks: **REQUIRES USER CONFIRMATION**
 
 ### Workflow
+
 1. Agent completes work
 2. Agent reports completion to user
 3. **User explicitly requests to close the task**
@@ -80,11 +52,13 @@ This applies to:
 ### Examples
 
 **❌ BAD (Auto-close):**
+
 ```
 Agent: "I've completed the feature. Closing task dotfiles-abc..."
 ```
 
 **✅ GOOD (Ask first):**
+
 ```
 Agent: "I've completed the feature. Would you like me to close task dotfiles-abc?"
 User: "Yes, close it"
@@ -92,6 +66,7 @@ Agent: "Closing task dotfiles-abc..."
 ```
 
 **✅ ALSO GOOD (User initiates):**
+
 ```
 Agent: "Implementation complete!"
 User: "Close task abc"
@@ -101,9 +76,11 @@ Agent: "Closing task dotfiles-abc..."
 ## Claude Code Settings Management
 
 ### Overview
+
 Claude Code settings are version-controlled in this repo and stowed to the home directory.
 
 ### Structure
+
 ```
 claude/.claude/                 # Source location in repo
   ├── settings.json            # Claude Code settings
@@ -117,6 +94,7 @@ claude/.claude/                 # Source location in repo
 ```
 
 ### Installation
+
 ```bash
 # From repo root
 stow claude
@@ -125,6 +103,7 @@ stow claude
 ### Settings Configuration
 
 **Allowed Commands:**
+
 - Read, Edit, Write (file operations)
 - Git commands (status, diff, log, add, commit, push, etc.)
 - Package managers (npm, pip)
@@ -133,8 +112,9 @@ stow claude
 - Utilities (shellcheck, stow)
 
 **Denied Commands (require confirmation):**
+
 - Destructive operations (rm, dd, mkfs, sudo)
-- Secret files (.env, *.key, *.pem)
+- Secret files (.env, *.key,*.pem)
 - Task modification (b2/bd close, update, delete)
 
 ### Modifying Settings
@@ -144,6 +124,7 @@ stow claude
 3. Restart Claude Code session for changes to take effect
 
 ### Important Notes
+
 - All Claude Code config changes MUST happen in this repo
 - Never edit `~/.claude/settings.json` directly (it's a symlink)
 - Use `stow -R claude` to update after changes
@@ -152,9 +133,11 @@ stow claude
 ## Windsurf Workflows Sync
 
 ### Overview
+
 This repo uses an automated sync system to convert openskills (superpowers skills) into native Windsurf workflows, ensuring reliable skill invocation in Windsurf.
 
 ### When Skills Update
+
 Run the sync command to regenerate Windsurf workflows from openskills:
 
 ```bash
@@ -162,7 +145,9 @@ superpowers-sync sync
 ```
 
 ### What Gets Synced
+
 9 core skills are automatically converted to native Windsurf workflows:
+
 - brainstorming
 - systematic-debugging
 - test-driven-development
@@ -174,11 +159,13 @@ superpowers-sync sync
 - finishing-a-development-branch
 
 ### Architecture
+
 - **Source of truth**: `.agent/skills/*/SKILL.md` (openskills)
 - **Generated workflows**: `.codeium/windsurf/global_workflows/*.md`
 - **Sync tool**: `bin/.local/dotfiles-bin/superpowers-sync`
 
 ### When to Sync
+
 - After updating skills via openskills
 - After pulling new skills from upstream
 - When skills seem out of sync between Claude Code and Windsurf
@@ -194,4 +181,25 @@ claude-plugins-sync sync
 This discovers and syncs all skills from `~/.claude/plugins/marketplaces/claude-plugins-official/plugins` to Windsurf workflows using the naming format `plugin-name:skill-name`.
 
 ### Documentation
+
 See `docs/windsurf-workflows-sync.md` for detailed usage and architecture.
+
+## Neovim/LazyVim Configuration
+
+### LazyVim Reference
+
+When looking for LazyVim configurations, keymaps, icons, or plugin settings:
+
+1. **Always check the local LazyVim installation FIRST:**
+   - Base path: `~/.local/share/nvim/lazy/LazyVim/`
+   - Plugin configs: `~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/`
+   - Core keymaps: `~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/config/keymaps.lua`
+
+2. **Only use web search/fetch if not found locally**
+
+### Common LazyVim Files
+
+- Editor plugins (gitsigns, telescope, neo-tree, etc.): `~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/editor.lua`
+- LSP configuration: `~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/lsp/init.lua`
+- UI plugins (bufferline, lualine, etc.): `~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/ui.lua`
+- Coding plugins (completion, snippets): `~/.local/share/nvim/lazy/LazyVim/lua/lazyvim/plugins/coding.lua`
