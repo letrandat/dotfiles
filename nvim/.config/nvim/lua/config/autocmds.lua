@@ -18,10 +18,17 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   end,
 })
 
--- Map Ctrl+Q to exit terminal mode (in terminal buffers)
+-- Exit terminal mode keybindings (in Claude Code terminal buffers only)
 vim.api.nvim_create_autocmd("TermOpen", {
   pattern = "*",
   callback = function()
-    vim.keymap.set("t", "<C-q>", "<C-\\><C-n>", { buffer = 0 })
+    local bufname = vim.api.nvim_buf_get_name(0)
+    local is_claude_term = bufname:match("term://.*claude") ~= nil
+
+    if is_claude_term then
+      vim.keymap.set("t", "<C-q>", "<C-\\><C-n>", { buffer = 0 })
+      vim.keymap.set("t", "<C-Space>", "<C-\\><C-n>", { buffer = 0 })
+      vim.keymap.set("t", "<M-Esc>", "<C-\\><C-n>", { buffer = 0 })
+    end
   end,
 })
