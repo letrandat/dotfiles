@@ -17,7 +17,7 @@ return {
 
       -- Exclude claudecode diff buffers by buffer name patterns
       local bufname = vim.api.nvim_buf_get_name(buf)
-      if bufname:match('%(proposed%)') or bufname:match('%(NEW FILE %- proposed%)') or bufname:match('%(New%)') then
+      if bufname:match("%(proposed%)") or bufname:match("%(NEW FILE %- proposed%)") or bufname:match("%(New%)") then
         return false
       end
 
@@ -31,8 +31,8 @@ return {
       end
 
       -- Exclude by buffer type (claudecode diff buffers use "acwrite")
-      local buftype = fn.getbufvar(buf, '&buftype')
-      if buftype == 'acwrite' then
+      local buftype = fn.getbufvar(buf, "&buftype")
+      if buftype == "acwrite" then
         return false
       end
 
