@@ -56,16 +56,24 @@ end
 -- Function to focus Claude Code terminal from editor with zoom
 -- Called from normal/visual mode when in editor
 function M.focus_claude()
+  -- Defensive check: only run from editor, not terminal mode
+  if vim.fn.mode() == "t" then
+    vim.notify("focus_claude() should not be called from terminal mode", vim.log.levels.WARN)
+    return
+  end
+
+  -- Require snacks once to avoid multiple requires
+  local Snacks = require("snacks")
+  local zen = Snacks.zen
+
   -- Close existing zoom BEFORE switching to Claude (from current editor context)
-  local zen = require("snacks.zen")
   if zen.win and zen.win:valid() then
     zen.win:close()
   end
 
   vim.cmd("ClaudeCodeFocus")
   vim.defer_fn(function()
-    local Snacks = require("snacks")
-    Snacks.zen.zoom()
+    zen.zoom()
   end, 50)
 end
 
