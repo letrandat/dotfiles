@@ -1,8 +1,8 @@
 -- Load shared configuration from options.lua
 local toggle_key = vim.g.claude_toggle_key
 
--- Load utility functions
-local claude_toggle = require("util.claude-toggle")
+-- Load utility functions for split mode
+local split_mode = require("util.claude-split-mode")
 
 -- Build base plugin configuration
 local plugin_config = {
@@ -53,7 +53,7 @@ else
   -- Mode 2: Split with LazyVim-style zoom
   plugin_config.keys = {
     -- Normal and visual mode: focus Claude from editor
-    { toggle_key, claude_toggle.focus_claude, desc = "Claude Code (focus)", mode = { "n", "x" } },
+    { toggle_key, split_mode.focus_claude, desc = "Claude Code (focus)", mode = { "n", "x" } },
     -- Note: Terminal mode keybinding is set in autocmds.lua (Claude-specific only)
   }
 end

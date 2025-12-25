@@ -30,15 +30,15 @@ vim.api.nvim_create_autocmd("TermOpen", {
       return
     end
 
-    -- Try to load module first
-    local ok, claude_toggle = pcall(require, "util.claude-toggle")
+    -- Try to load split mode module first
+    local ok, split_mode = pcall(require, "util.claude-split-mode")
     if not ok then
-      vim.notify("Failed to load util.claude-toggle module for Claude Code keybindings", vim.log.levels.WARN)
+      vim.notify("Failed to load util.claude-split-mode module for Claude Code keybindings", vim.log.levels.WARN)
       return
     end
 
     vim.keymap.set("t", "<M-e>", function()
-      vim.defer_fn(claude_toggle.return_to_editor, 10)
+      vim.defer_fn(split_mode.return_to_editor, 10)
     end, { buffer = 0, desc = "Return to editor" })
   end,
 })
