@@ -44,9 +44,7 @@
 
 # ============ Keybindings ============
 # Note: Cmd+Shift+, to reload Ghostty settings
-# Opt+Space as alternative tmux prefix (sends Ctrl+Space)
-keybind = alt+space=text:\x00
-# Cmd+L to focus pane 2 (AI/aux pane) (sends prefix .)
-keybind = super+l=text:\x02.
+# Cmd+L to focus pane 2 (AI/aux pane) (sends Alt+Space then .)
+keybind = super+l=text:\x1b .
 # Cmd+E to toggle Claude Code (sends Alt+e)
 keybind = super+e=text:\x1be
