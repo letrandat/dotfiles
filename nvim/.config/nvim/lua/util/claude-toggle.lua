@@ -32,13 +32,16 @@ function M.return_to_editor()
     return
   end
 
-  debug_print("[DEBUG] In Claude terminal, searching for editor window...")
   local zen = require("snacks.zen")
-  debug_print("[DEBUG] Zoom active BEFORE search?", zen.win and zen.win:valid() or false)
-
   local current_win = vim.fn.winnr()
-  debug_print("[DEBUG] Current window number:", current_win)
-  debug_print("[DEBUG] Total windows:", vim.fn.winnr('$'))
+  debug_print(
+    "[DEBUG] Searching for editor from window",
+    current_win,
+    "| Total:",
+    vim.fn.winnr("$"),
+    "| Zoom active:",
+    zen.win and zen.win:valid() or false
+  )
 
   -- Search for a non-Claude window
   local found_editor = false
@@ -57,7 +60,7 @@ function M.return_to_editor()
   if not found_editor then
     -- No non-Claude window found, go back to original
     vim.cmd(current_win .. "wincmd w")
-    debug_print("[DEBUG] No non-Claude window found, staying in Claude")
+    vim.notify("No editor window found to return to", vim.log.levels.WARN)
     return
   end
 
@@ -67,16 +70,17 @@ function M.return_to_editor()
   debug_print("[DEBUG] Moved to non-Claude buffer - zooming")
   local Snacks = require("snacks")
 
-  -- Close existing zoom first to prevent window explosion
+  -- Close existing zoom on Claude Code terminal before creating new zoom on editor
+  -- (zen.win is global state - we're moving the zoom from Claude window to editor window)
   if zen.win and zen.win:valid() then
-    debug_print("[DEBUG] Closing existing zoom before creating new one")
+    debug_print("[DEBUG] Closing Claude zoom before creating editor zoom")
     zen.win:close()
-    debug_print("[DEBUG] Zoom closed, current window:", vim.fn.winnr())
+    debug_print("[DEBUG] Claude zoom closed, current window:", vim.fn.winnr())
   end
 
-  debug_print("[DEBUG] About to call Snacks.zen.zoom()")
+  debug_print("[DEBUG] Creating zoom on editor window")
   Snacks.zen.zoom()
-  debug_print("[DEBUG] Snacks.zen.zoom() completed")
+  debug_print("[DEBUG] Editor zoom completed")
 end
 
 -- Function to focus Claude Code terminal from editor with zoom
