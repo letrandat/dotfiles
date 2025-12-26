@@ -42,7 +42,6 @@ if vim.g.claude_use_floating_mode then
     {
       toggle_key,
       function()
-        vim.cmd("stopinsert")
         vim.defer_fn(function()
           vim.cmd("ClaudeCodeFocus")
         end, 10)
