@@ -2,12 +2,15 @@ return {
   {
     "folke/tokyonight.nvim",
     opts = {
-      -- choose from: storm, moon, night, and day.
-      style = "moon",
+      style = "moon", -- storm, moon, night, and day.
     },
   },
-  -- add gruvbox
-  { "ellisonleao/gruvbox.nvim" },
+  {
+    "ellisonleao/gruvbox.nvim",
+    opts = {
+      background = "light", -- dark, light
+    },
+  },
   {
     "catppuccin/nvim",
     opts = {
