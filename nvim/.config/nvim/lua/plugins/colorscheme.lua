@@ -76,7 +76,6 @@ return {
       require("gruvbox").setup({
         contrast = "", -- hard, soft, or empty string
       })
-      vim.o.background = "light"
     end,
   },
 
