@@ -79,31 +79,6 @@ return {
     end,
   },
 
-  -- Catppuccin - Soothing pastel theme with four flavours
-  -- Variants:
-  --   latte: Light theme, soft pastels
-  --   frappe: Medium-dark, balanced pastels
-  --   macchiato: Dark with purple tones, warm feel
-  --   mocha: Darkest variant, deepest pastels
-  {
-    "catppuccin/nvim",
-    opts = {
-      flavour = "macchiato", -- latte, frappe, macchiato, mocha
-    },
-  },
-
-  -- Kanagawa - Inspired by "The Great Wave off Kanagawa" painting
-  -- Variants:
-  --   wave (default): Blue-green tones, balanced and warm
-  --   dragon: Deeper contrast, late-night coding sessions
-  --   lotus: Light variant, serene and elegant
-  {
-    "rebelot/kanagawa.nvim",
-    opts = {
-      theme = "dragon", -- wave, dragon, lotus
-    },
-  },
-
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
