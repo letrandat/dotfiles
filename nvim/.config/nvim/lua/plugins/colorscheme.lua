@@ -8,7 +8,7 @@ return {
   {
     "folke/tokyonight.nvim",
     opts = {
-      style = "night", -- storm, moon, night, day
+      style = "storm", -- storm, moon, night, day
 
       -- Custom high-contrast diff highlights (especially DiffText)
       on_highlights = function(hl, c)
@@ -91,7 +91,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox",
+      colorscheme = "tokyonight",
     },
   },
 }
