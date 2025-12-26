@@ -18,6 +18,9 @@ local plugin_config = {
 -- Configure based on selected mode
 if vim.g.claude_use_floating_mode then
   -- Mode 1: Floating window overlay
+  plugin_config.keys = {
+    { toggle_key, "<cmd>ClaudeCodeFocus<cr>", desc = "Claude Code Floating (toggle)", mode = { "n", "x" } },
+  }
   plugin_config.opts.terminal = {
     snacks_win_opts = {
       position = "float",
@@ -36,10 +39,6 @@ if vim.g.claude_use_floating_mode then
       },
     },
   }
-  -- Global keybindings for floating mode (show/hide/focus)
-  plugin_config.keys = {
-    { toggle_key, "<cmd>ClaudeCodeFocus<cr>", desc = "Claude Code (toggle)", mode = { "n", "x" } },
-  }
 else
   -- Mode 2: Split with LazyVim-style zoom
   plugin_config.keys = {
@@ -49,7 +48,7 @@ else
       function()
         require("util.claude-split-mode").focus_claude()
       end,
-      desc = "Claude Code (focus)",
+      desc = "Claude Code Split (toggle)",
       mode = { "n", "x" },
     },
     -- Note: Terminal mode keybinding is set in autocmds.lua (Claude-specific only)
