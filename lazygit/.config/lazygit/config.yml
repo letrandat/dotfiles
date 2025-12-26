@@ -15,11 +15,6 @@ gui:
   # default is 0.3333
   sidePanelWidth: 0.25
 
-# git:
-#   pagers:
-#     - pager: delta --dark --paging=never
-#       colorArg: always
-
 keybinding:
   universal:
     prevItem: "k"
