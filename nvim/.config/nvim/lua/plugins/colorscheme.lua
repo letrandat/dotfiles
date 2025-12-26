@@ -15,11 +15,18 @@ return {
     },
   },
 
+  {
+    "rebelot/kanagawa.nvim",
+    opts = {
+      theme = "dragon", -- wave, dragon, lotus
+    },
+  },
+
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      colorscheme = "kanagawa",
     },
   },
 }
