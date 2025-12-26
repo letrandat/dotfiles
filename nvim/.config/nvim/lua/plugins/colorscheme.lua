@@ -10,39 +10,57 @@ return {
     opts = {
       style = "storm", -- storm, moon, night, day
 
-      -- Custom high-contrast diff highlights (especially DiffText)
+      -- Custom high-contrast diff highlights for better visibility
+      -- Default tokyonight has very subtle diffs that blend with background
+      -- These customizations make diffs as visible as gruvbox while keeping tokyonight aesthetic
       on_highlights = function(hl, c)
-        -- DiffText: The most important - shows exact changed characters
-        -- Bold + underline + high contrast background for maximum visibility
+        -- DiffText: MOST IMPORTANT - highlights exact changed characters within a modified line
+        -- Default: Very subtle, hard to spot what actually changed
+        -- Custom: Bold + underline + bright background for instant visibility
+        -- Use case: When you modify "const x = 1" to "const x = 2", only the "2" is highlighted
         hl.DiffText = {
-          bg = c.blue, -- Bright blue background
-          fg = c.bg_dark, -- Dark foreground for contrast
-          bold = true,
-          underline = true,
+          bg = c.blue, -- Bright blue background (default uses subtle blue1)
+          fg = c.bg_dark, -- Dark foreground for strong contrast (default uses fg)
+          bold = true, -- Make it stand out (default: not bold)
+          underline = true, -- Extra visual cue (default: no underline)
         }
+        -- Adjustment options:
+        --   Less intense: c.blue1 or c.blue2 instead of c.blue
+        --   Remove underline: delete the underline line
+        --   Less bold: set bold = false
 
-        -- DiffAdd: Added lines (green, medium contrast)
+        -- DiffAdd: Entire lines that were added (new lines in git diff)
+        -- Default: Very faint green tint
+        -- Custom: Solid green background for clear visibility
         hl.DiffAdd = {
-          bg = c.green1,
-          fg = c.bg_dark,
+          bg = c.green1, -- Medium green (default uses dark_green which is too subtle)
+          fg = c.bg_dark, -- Dark text on green background (default uses normal fg)
         }
 
-        -- DiffDelete: Deleted lines (red, medium contrast)
+        -- DiffDelete: Entire lines that were deleted (removed lines in git diff)
+        -- Default: Very faint red tint
+        -- Custom: Solid red background for clear visibility
         hl.DiffDelete = {
-          bg = c.red1,
-          fg = c.bg_dark,
+          bg = c.red1, -- Medium red (default uses dark_red which is too subtle)
+          fg = c.bg_dark, -- Dark text on red background (default uses normal fg)
         }
 
-        -- DiffChange: Changed lines (orange/yellow, subtle)
+        -- DiffChange: Entire lines that were modified (but not the exact change)
+        -- Default: Very faint yellow/orange tint
+        -- Custom: Subtle yellow background - less intense than DiffText
+        -- Note: DiffText appears inside DiffChange regions to show exact changes
         hl.DiffChange = {
-          bg = c.yellow,
-          fg = c.bg_dark,
+          bg = c.yellow, -- Yellow background for changed lines (default uses dark_yellow)
+          fg = c.bg_dark, -- Dark text on yellow (default uses normal fg)
         }
 
-        -- GitSigns: Match the diff colors for consistency
-        hl.GitSignsAdd = { fg = c.green1 }
-        hl.GitSignsChange = { fg = c.yellow }
-        hl.GitSignsDelete = { fg = c.red1 }
+        -- GitSigns: Gutter indicators (+ - ~) shown by gitsigns.nvim plugin
+        -- Default: Uses tokyonight's default git colors (more muted)
+        -- Custom: Match the diff colors above for visual consistency
+        -- These appear in the left gutter when editing files with git changes
+        hl.GitSignsAdd = { fg = c.green1 } -- Green + for added lines
+        hl.GitSignsChange = { fg = c.yellow } -- Yellow ~ for changed lines
+        hl.GitSignsDelete = { fg = c.red1 } -- Red - for deleted lines
       end,
     },
   },
