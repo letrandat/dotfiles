@@ -42,9 +42,7 @@ if vim.g.claude_use_floating_mode then
     {
       toggle_key,
       function()
-        vim.defer_fn(function()
-          vim.cmd("ClaudeCodeFocus")
-        end, 10)
+        vim.cmd("ClaudeCodeFocus")
       end,
       desc = "Claude Code (toggle)",
       mode = "t",
