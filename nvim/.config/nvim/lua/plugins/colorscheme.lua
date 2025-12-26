@@ -34,9 +34,13 @@ return {
   --   mocha: Darkest variant, deepest pastels
   {
     "catppuccin/nvim",
-    opts = {
-      flavour = "macchiato", -- latte, frappe, macchiato, mocha
-    },
+    name = "catppuccin",
+    priority = 1000,
+    config = function()
+      require("catppuccin").setup({
+        auto_integrations = true,
+      })
+    end,
   },
 
   -- Kanagawa - Inspired by "The Great Wave off Kanagawa" painting
@@ -46,16 +50,13 @@ return {
   --   lotus: Light variant, serene and elegant
   {
     "rebelot/kanagawa.nvim",
-    opts = {
-      theme = "dragon", -- wave, dragon, lotus
-    },
   },
 
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox",
+      colorscheme = "catppuccin",
     },
   },
 }
