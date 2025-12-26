@@ -1,5 +1,5 @@
 return {
-  -- Tokyo Night - Clean, dark theme celebrating Tokyo's downtown lights
+  -- Tokyo Night (LazyVim's default) - Clean, dark theme celebrating Tokyo's downtown lights
   -- Variants:
   --   storm (default): Medium-dark blue (#24283b), balanced contrast
   --   moon: Purple-blue (#222436), unique accent colors
