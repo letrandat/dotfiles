@@ -43,15 +43,6 @@ return {
     end,
   },
 
-  -- Kanagawa - Inspired by "The Great Wave off Kanagawa" painting
-  -- Variants:
-  --   wave (default): Blue-green tones, balanced and warm
-  --   dragon: Deeper contrast, late-night coding sessions
-  --   lotus: Light variant, serene and elegant
-  {
-    "rebelot/kanagawa.nvim",
-  },
-
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
