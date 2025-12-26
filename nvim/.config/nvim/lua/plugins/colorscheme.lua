@@ -9,6 +9,41 @@ return {
     "folke/tokyonight.nvim",
     opts = {
       style = "night", -- storm, moon, night, day
+
+      -- Custom high-contrast diff highlights (especially DiffText)
+      on_highlights = function(hl, c)
+        -- DiffText: The most important - shows exact changed characters
+        -- Bold + underline + high contrast background for maximum visibility
+        hl.DiffText = {
+          bg = c.blue, -- Bright blue background
+          fg = c.bg_dark, -- Dark foreground for contrast
+          bold = true,
+          underline = true,
+        }
+
+        -- DiffAdd: Added lines (green, medium contrast)
+        hl.DiffAdd = {
+          bg = c.green1,
+          fg = c.bg_dark,
+        }
+
+        -- DiffDelete: Deleted lines (red, medium contrast)
+        hl.DiffDelete = {
+          bg = c.red1,
+          fg = c.bg_dark,
+        }
+
+        -- DiffChange: Changed lines (orange/yellow, subtle)
+        hl.DiffChange = {
+          bg = c.yellow,
+          fg = c.bg_dark,
+        }
+
+        -- GitSigns: Match the diff colors for consistency
+        hl.GitSignsAdd = { fg = c.green1 }
+        hl.GitSignsChange = { fg = c.yellow }
+        hl.GitSignsDelete = { fg = c.red1 }
+      end,
     },
   },
 
