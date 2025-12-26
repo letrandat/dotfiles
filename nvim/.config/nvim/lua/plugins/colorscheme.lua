@@ -12,6 +12,7 @@ return {
     },
   },
 
+  -- Optional theme for high contrast
   -- Gruvbox - Retro groove color scheme with warm, earthy tones
   -- Variants (controlled by vim.o.background):
   --   light: Warm light background, retro aesthetic
