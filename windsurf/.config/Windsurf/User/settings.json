@@ -3,9 +3,9 @@
   // https://code.visualstudio.com/api/extension-capabilities/extending-workbench
   // I don't need activity bar
   "workbench.activityBar.location": "top",
-  "workbench.colorTheme": "Quiet Light",
-  "workbench.preferredLightColorTheme": "Quiet Light",
-  "workbench.preferredDarkColorTheme": "GitHub Dark Dimmed",
+  "window.systemColorTheme": "auto",
+  "workbench.preferredLightColorTheme": "Catppuccin Latte",
+  "workbench.preferredDarkColorTheme": "Catppuccin Frappé",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.editor.showTabs": "none",
   "workbench.statusBar.visible": false,
@@ -1828,6 +1828,5 @@
     "windsurf": true,
     "cursor-global": true,
     "cursor-workspace": true
-  },
-  "mcp": {}
+  }
 }
