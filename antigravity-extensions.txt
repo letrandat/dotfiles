@@ -23,3 +23,4 @@ vscodevim.vim
 vspacecode.whichkey
 yoavbls.pretty-ts-errors
 Catppuccin.catppuccin-vsc
+sumneko.lua
