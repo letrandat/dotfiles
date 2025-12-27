@@ -135,31 +135,9 @@ TS_MAX_DEPTH=2
 
 | Script               | Purpose                               |
 | -------------------- | ------------------------------------- |
-| `b2`                 | Stealth-first beads wrapper (replaces `bd`) |
 | `tmux-sessionizer`   | fzf session picker/creator            |
 | `tmux-autoattach.sh` | Auto-attach on terminal spawn         |
 | `tmux-cheatsheet`    | Interactive tmux keybinding reference |
-
-## Beads (Task Tracking)
-
-This project uses **[beads](https://github.com/steveyegge/beads)** for issue tracking, with a custom stealth-first wrapper called **b2**.
-
-### b2 Wrapper Features
-
-- **Stealth Mode**: Enabled by default (no git pollution during task updates).
-- **Hash Expansion**: Use short hashes (e.g., `b2 show 5jp`) instead of full IDs.
-- **Shared DB**: Maintains a single task database across all repos in `~/.local/share/b2/`.
-- **Auto-Setup**: Automatically installs `bd` and configures the environment on first run.
-
-### Common Commands
-
-```bash
-b2 ready           # Find available work
-b2 show 5jp        # Show task details (with hash expansion)
-b2 create "Title"  # Create a new task
-b2 close 5jp       # Close a task
-b2 --no-stealth sync  # Sync tasks with git remote (beads-sync branch)
-```
 
 ## Git Conventions
 
@@ -253,5 +231,4 @@ openskills install letrandat/dotfiles/skills -g --universal
 
 Start any conversation with full context by running `/bootstrap`, which:
 
-1. Runs `bd onboard` to load issue tracking instructions
 2. Runs `openskills list` to show available skills

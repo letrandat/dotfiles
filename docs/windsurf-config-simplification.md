@@ -6,11 +6,11 @@ Simplified Windsurf configuration to use it as a lightweight UI wrapper for AI a
 
 ## Files Modified
 
-| File | Before | After | Change |
-|------|--------|-------|--------|
-| `windsurf-extensions.txt` | 25 extensions | 17 extensions | -8 |
-| `windsurf/.config/Windsurf/User/settings.json` | 1833 lines | ~1050 lines | -42% |
-| `windsurf/.config/Windsurf/User/keybindings.json` | 215 lines | 215 lines | No change (already minimal) |
+| File                                              | Before        | After         | Change                      |
+| ------------------------------------------------- | ------------- | ------------- | --------------------------- |
+| `windsurf-extensions.txt`                         | 25 extensions | 17 extensions | -8                          |
+| `windsurf/.config/Windsurf/User/settings.json`    | 1833 lines    | ~1050 lines   | -42%                        |
+| `windsurf/.config/Windsurf/User/keybindings.json` | 215 lines     | 215 lines     | No change (already minimal) |
 
 ## Extensions
 
@@ -28,6 +28,7 @@ Simplified Windsurf configuration to use it as a lightweight UI wrapper for AI a
 ### Kept
 
 **Core:**
+
 - `asvetliakov.vscode-neovim` - Neovim integration
 - `vspacecode.whichkey` - Spacemacs-style keybindings
 - `tompollak.lazygit-vscode` - Git UI
@@ -38,6 +39,7 @@ Simplified Windsurf configuration to use it as a lightweight UI wrapper for AI a
 - `ryuta46.multi-command` - Command sequences
 
 **Language Servers & Formatters:**
+
 - `codeium.windsurfpyright` - Python LSP
 - `ms-python.python` - Python support
 - `ms-python.debugpy` - Python debugging
@@ -52,40 +54,40 @@ Simplified Windsurf configuration to use it as a lightweight UI wrapper for AI a
 
 ### Which-key Groups Removed
 
-| Key | Group | Reason |
-|-----|-------|--------|
-| `Tab` | Last buffer | Replaced by `bb` |
-| `:` | Tasks | Not used |
-| `d` | Debug | Extensive, not used |
-| `m` | Bookmarks | Extension removed |
-| `l` | Lang | Empty submenu |
-| `t` | Testing | Not used |
-| `u` | Toggle/UI | Rarely used |
-| `v` | Neovim | Rarely used |
-| `z` | Fold | Rarely used |
+| Key   | Group       | Reason              |
+| ----- | ----------- | ------------------- |
+| `Tab` | Last buffer |                     |
+| `:`   | Tasks       | Not used            |
+| `d`   | Debug       | Extensive, not used |
+| `m`   | Bookmarks   | Extension removed   |
+| `l`   | Lang        | Empty submenu       |
+| `t`   | Testing     | Not used            |
+| `u`   | Toggle/UI   | Rarely used         |
+| `v`   | Neovim      | Rarely used         |
+| `z`   | Fold        | Rarely used         |
 
 ### Which-key Groups Kept
 
-| Key | Group | Purpose |
-|-----|-------|---------|
-| `Space` | Commands | Command palette |
-| `,` | Buffers | Show all buffers |
-| `?` | Search | Search keybindings |
-| `.` | Repeat | Repeat last action |
-| `*` | Search | Search with selection |
-| `/` | Search | Search in project |
-| `$` | Terminal | Run recent command |
-| `b` | Buffers | Buffer management (`bb` = last buffer) |
-| `c` | Code | Code actions, format, rename |
-| `e` | Errors | Error navigation and fixes |
-| `f` | File | File operations, copy path |
-| `g` | Git | Lazygit, stage/unstage, commit |
-| `h` | Harpoon | Harpoon layouts (1-4 splits) |
-| `j` | Panel | Terminal, output, problems |
-| `p` | Project | Project Manager |
-| `q` | Quit | Close buffer, quit app |
-| `s` | Show/Search | Explorer, symbols, settings |
-| `w` | Window | Splits, maximize, reload |
+| Key     | Group       | Purpose                        |
+| ------- | ----------- | ------------------------------ |
+| `Space` | Commands    | Command palette                |
+| `,`     | Buffers     | Show all buffers               |
+| `?`     | Search      | Search keybindings             |
+| `.`     | Repeat      | Repeat last action             |
+| `*`     | Search      | Search with selection          |
+| `/`     | Search      | Search in project              |
+| `$`     | Terminal    | Run recent command             |
+| `b`     | Buffers     | Buffer management              |
+| `c`     | Code        | Code actions, format, rename   |
+| `e`     | Errors      | Error navigation and fixes     |
+| `f`     | File        | File operations, copy path     |
+| `g`     | Git         | Lazygit, stage/unstage, commit |
+| `h`     | Harpoon     | Harpoon layouts (1-4 splits)   |
+| `j`     | Panel       | Terminal, output, problems     |
+| `p`     | Project     | Project Manager                |
+| `q`     | Quit        | Close buffer, quit app         |
+| `s`     | Show/Search | Explorer, symbols, settings    |
+| `w`     | Window      | Splits, maximize, reload       |
 
 ### Settings Removed
 
@@ -109,23 +111,23 @@ Simplified Windsurf configuration to use it as a lightweight UI wrapper for AI a
 
 Already minimal. Key bindings:
 
-| Keys | Purpose |
-|------|---------|
-| `cmd+w r` | Emergency reload |
-| `cmd+d` | Focus editor |
-| `cmd+shift+h` | Toggle secondary bar |
-| `ctrl+u/d/b/f` | Vim-style scrolling |
-| `alt+space` | Which-key menu |
-| `alt+j/k/l/;` | Harpoon slots 1-4 |
-| `alt+m/o/p` | Harpoon mark/edit/pick |
-| `shift+cmd+g` | Lazygit toggle |
-| `ctrl+=` | Terminal toggle |
-| `cmd+k` | Windsurf agent picker |
-| `cmd+l` | Chat panel |
+| Keys           | Purpose                |
+| -------------- | ---------------------- |
+| `cmd+w r`      | Emergency reload       |
+| `cmd+d`        | Focus editor           |
+| `cmd+shift+h`  | Toggle secondary bar   |
+| `ctrl+u/d/b/f` | Vim-style scrolling    |
+| `alt+space`    | Which-key menu         |
+| `alt+j/k/l/;`  | Harpoon slots 1-4      |
+| `alt+m/o/p`    | Harpoon mark/edit/pick |
+| `shift+cmd+g`  | Lazygit toggle         |
+| `ctrl+=`       | Terminal toggle        |
+| `cmd+k`        | Windsurf agent picker  |
+| `cmd+l`        | Chat panel             |
 
 ## Key Design Decisions
 
-1. **Last buffer: `bb` instead of `Tab`** - More consistent with Spacemacs-style `leader` key pattern
+1. **Last buffer: `Tab`** - More consistent with default key pattern
 2. **No debug/testing which-key** - Use Neovim or terminal for these
 3. **Keep language servers** - Essential for AI agents to see lint errors
 4. **Keep MCP discovery** - Enables AI agent integration across tools

@@ -19,9 +19,9 @@ Antigravity workflows (.agent/workflows/)
 | Prefix          | Usage                                                            |
 | --------------- | ---------------------------------------------------------------- |
 | `superpowers-*` | Core development workflows (brainstorming, debugging, TDD, etc.) |
-| `dat-*`         | Custom workflows (b2, hive-query, product-owner, etc.)           |
+| `dat-*`         | Custom workflows (hive-query, product-owner, etc.)               |
 
-Invoke via `/superpowers-brainstorming`, `/dat-b2`, etc.
+Invoke via `/superpowers-brainstorming`, etc.
 
 ## How to Use
 
