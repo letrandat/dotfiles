@@ -44,7 +44,9 @@
   "editor.cursorSurroundingLines": 10,
   // show extra status bar for editor suggestions
   "editor.suggest.showStatusBar": true,
-  "editor.rulers": [80],
+  "editor.rulers": [
+    80
+  ],
   "editor.snippetSuggestions": "top",
   "editor.suggestSelection": "first",
   "editor.linkedEditing": true,
@@ -77,7 +79,10 @@
   "terminal.integrated.profiles.osx": {
     "vscode-tmux": {
       "path": "zsh",
-      "args": ["-c", "source ~/.local/dotfiles-bin/tmux-autoattach.sh"],
+      "args": [
+        "-c",
+        "source ~/.local/dotfiles-bin/tmux-autoattach.sh"
+      ],
       "icon": "terminal-tmux"
     }
   },
@@ -152,7 +157,10 @@
   // plugins
 
   // Project Manager
-  "projectManager.any.baseFolders": ["~/personal", "~/workspace"],
+  "projectManager.any.baseFolders": [
+    "~/personal",
+    "~/workspace"
+  ],
   "projectManager.sortList": "Recent",
   "projectManager.removeCurrentProjectFromList": false,
 
@@ -180,26 +188,6 @@
       "sequence": [
         "workbench.action.maximizeEditorHideSidebar", // use this to maximize the editor to actually hide all other panels
         "workbench.action.toggleMaximizedPanel"
-      ]
-    },
-    {
-      "command": "extension.multiCommand.vscodeSwitcher",
-      "sequence": [
-        // quit lazygit if it's running
-        {
-          "command": "workbench.action.terminal.sendSequence",
-          "args": { "text": "q" }
-        },
-        // send ctrl+u to terminal to clear terminal before running command
-        {
-          "command": "workbench.action.terminal.sendSequence",
-          "args": { "text": "\u0015vscode-switcher --surf\u000D" }
-        },
-        // focus on terminal to select the new dir
-        {
-          "command": "workbench.action.terminal.toggleTerminal",
-          "when": "terminal.active"
-        }
       ]
     }
   ],
@@ -843,7 +831,9 @@
           "icon": "add",
           "type": "command",
           "command": "workbench.action.terminal.newWithProfile",
-          "args": { "profileName": "vscode-tmux" }
+          "args": {
+            "profileName": "vscode-tmux"
+          }
         },
         {
           "key": "o",
@@ -965,6 +955,45 @@
           "icon": "history",
           "type": "command",
           "command": "timeline.focus"
+        }
+      ]
+    },
+    {
+      "key": "u",
+      "name": "Toggle/UI...",
+      "icon": "settings",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "w",
+          "name": "Toggle Word Wrap",
+          "type": "command",
+          "command": "editor.action.toggleWordWrap"
+        },
+        {
+          "key": "s",
+          "name": "Toggle Status Bar Visibility",
+          "type": "command",
+          "command": "workbench.action.toggleStatusbarVisibility"
+        },
+        {
+          "key": "z",
+          "name": "Toggle Centered Layout (Zen mode)",
+          "type": "command",
+          "command": "workbench.action.toggleCenteredLayout"
+        }
+      ]
+    },
+    {
+      "key": "v",
+      "name": "Neovim...",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "r",
+          "name": "Restart Neovim",
+          "type": "command",
+          "command": "vscode-neovim.restart"
         }
       ]
     },
