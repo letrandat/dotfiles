@@ -623,27 +623,6 @@
           "command": "gitlens.openFileInRemote"
         },
         {
-          "key": "S",
-          "name": "Git: View Staged Changes and Focus First Editor Group",
-          "type": "commands",
-          "commands": [
-            "git.viewStagedChanges",
-            "workbench.action.focusFirstEditorGroup"
-          ]
-        },
-        {
-          "key": "c",
-          "name": "Commit",
-          "type": "command",
-          "command": "git.commit"
-        },
-        {
-          "key": "d",
-          "name": "GitLens: (Diff) Compare Working with",
-          "type": "command",
-          "command": "gitlens.compareWorkingWith"
-        },
-        {
           "key": "e",
           "name": "Git: Open File",
           "type": "command",
