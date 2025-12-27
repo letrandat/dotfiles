@@ -7,6 +7,7 @@ danprince.vsnetrw
 alefragnani.project-manager
 pkief.material-icon-theme
 ryuta46.multi-command
+catppuccin.catppuccin-vsc
 
 # Language Servers & Formatters
 codeium.windsurfpyright
