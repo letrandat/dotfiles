@@ -8,6 +8,7 @@ return {
         auto_load_code_workspace = true,
       })
     end,
+    cmd = "Workspaces",
     keys = {
       { "<leader>W", group = "workspaces" },
       { "<leader>Wa", "<cmd>Workspaces add<cr>", desc = "Add Workspace Folder" },
