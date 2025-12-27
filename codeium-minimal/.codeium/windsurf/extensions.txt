@@ -1,0 +1,23 @@
+# Minimal Windsurf Extensions
+
+# Core
+asvetliakov.vscode-neovim
+vspacecode.whichkey
+tompollak.lazygit-vscode
+przybylski.cursor-harpoon
+danprince.vsnetrw
+alefragnani.project-manager
+pkief.material-icon-theme
+
+# Language Servers
+codeium.windsurfpyright
+ms-python.python
+golang.go
+redhat.java
+redhat.vscode-yaml
+hashicorp.terraform
+
+# Formatters
+esbenp.prettier-vscode
+JohnnyMorganz.stylua
+foxundermoon.shell-format

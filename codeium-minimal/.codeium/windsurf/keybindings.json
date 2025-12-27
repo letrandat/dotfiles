@@ -1,0 +1,101 @@
+[
+  // Which-key
+  {
+    "key": "ctrl+space",
+    "command": "whichkey.show"
+  },
+
+  // Focus editor
+  {
+    "key": "cmd+d",
+    "command": "workbench.action.focusFirstEditorGroup",
+    "when": "!editorTextFocus"
+  },
+
+  // Terminal
+  {
+    "key": "ctrl+=",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+
+  // Lazygit
+  {
+    "key": "shift+cmd+g",
+    "command": "lazygit-vscode.toggle"
+  },
+
+  // Cascade agent picker
+  {
+    "key": "cmd+k",
+    "command": "windsurf.cascade.openAgentPicker",
+    "when": "windsurf.cascadePanel.focused && !terminalFocus"
+  },
+
+  // Neovim scroll
+  {
+    "key": "ctrl+u",
+    "command": "-vscode-neovim.ctrl-u",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "-vscode-neovim.ctrl-d",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'"
+  },
+  {
+    "key": "ctrl+u",
+    "command": "vscode-neovim.send",
+    "when": "editorTextFocus",
+    "args": "<C-u>"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "vscode-neovim.send",
+    "when": "editorTextFocus",
+    "args": "<C-d>"
+  },
+
+  // Harpoon
+  {
+    "key": "alt+m",
+    "command": "cursor-harpoon.addEditor"
+  },
+  {
+    "key": "alt+o",
+    "command": "cursor-harpoon.editEditors"
+  },
+  {
+    "key": "alt+j",
+    "command": "cursor-harpoon.gotoEditor1"
+  },
+  {
+    "key": "alt+k",
+    "command": "cursor-harpoon.gotoEditor2"
+  },
+  {
+    "key": "alt+l",
+    "command": "cursor-harpoon.gotoEditor3"
+  },
+  {
+    "key": "alt+;",
+    "command": "cursor-harpoon.gotoEditor4"
+  },
+
+  // vsnetrw file operations
+  {
+    "key": "a",
+    "command": "vsnetrw.create",
+    "when": "editorTextFocus && editorLangId == 'vsnetrw' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+  },
+  {
+    "key": "d",
+    "command": "vsnetrw.delete",
+    "when": "editorTextFocus && editorLangId == 'vsnetrw' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+  },
+  {
+    "key": "r",
+    "command": "vsnetrw.rename",
+    "when": "editorTextFocus && editorLangId == 'vsnetrw' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+  }
+]

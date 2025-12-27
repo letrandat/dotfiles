@@ -1,0 +1,339 @@
+{
+  // Workbench - minimal
+  "workbench.activityBar.location": "top",
+  "workbench.colorTheme": "Quiet Light",
+  "workbench.preferredLightColorTheme": "Quiet Light",
+  "workbench.preferredDarkColorTheme": "GitHub Dark Dimmed",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.editor.showTabs": "none",
+  "workbench.statusBar.visible": false,
+  "breadcrumbs.enabled": false,
+  "window.autoDetectColorScheme": true,
+
+  // Editor - minimal
+  "editor.fontSize": 13,
+  "editor.fontFamily": "JetBrainsMono Nerd Font",
+  "editor.fontLigatures": true,
+  "editor.lineNumbers": "relative",
+  "editor.minimap.enabled": false,
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.cursorSurroundingLines": 10,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "editor.linkedEditing": true,
+
+  // Files
+  "files.trimTrailingWhitespace": true,
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 300,
+
+  // Terminal - tmux
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.profiles.osx": {
+    "vscode-tmux": {
+      "path": "zsh",
+      "args": ["-c", "source ~/.local/dotfiles-bin/tmux-autoattach.sh"],
+      "icon": "terminal-tmux"
+    }
+  },
+  "terminal.integrated.defaultProfile.osx": "vscode-tmux",
+  "terminal.integrated.hideOnStartup": "always",
+
+  // Neovim
+  "vscode-neovim.NVIM_APPNAME": "nvim-windsurf",
+  "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
+  "extensions.experimental.affinity": {
+    "asvetliakov.vscode-neovim": 1
+  },
+
+  // Language Servers
+  // Go
+  "[go]": {
+    "editor.defaultFormatter": "golang.go"
+  },
+  "go.toolsManagement.autoUpdate": true,
+  "gopls": {
+    "ui.semanticTokens": true
+  },
+  "go.inlayHints.compositeLiteralFields": true,
+  "go.inlayHints.constantValues": true,
+  "go.inlayHints.parameterNames": true,
+
+  // Python
+  "python.terminal.activateEnvironment": false,
+
+  // Lua
+  "[lua]": {
+    "editor.defaultFormatter": "JohnnyMorganz.stylua"
+  },
+
+  // Shell
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+
+  // Java
+  "[java]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "redhat.java"
+  },
+  "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+  "java.format.settings.profile": "GoogleStyle",
+
+  // TypeScript/JavaScript
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // Git
+  "git.autofetch": true,
+  "git.verboseCommit": true,
+  "git.enableSmartCommit": true,
+
+  // Lazygit
+  "lazygit-vscode.configPath": "~/.config/lazygit/config-windsurf.yml",
+  "lazygit-vscode.autoMaximizeWindow": true,
+  "lazygit-vscode.panels": {
+    "sidebar": "hide"
+  },
+
+  // Project Manager
+  "projectManager.any.baseFolders": ["~/personal", "~/workspace"],
+  "projectManager.sortList": "Recent",
+
+  // Agent
+  "chat.agent.enabled": true,
+  "chat.mcp.discovery.enabled": {
+    "windsurf": true
+  },
+
+  // Which-Key - minimal
+  "whichkey.sortOrder": "alphabetically",
+  "whichkey.delay": 0,
+  "whichkey.bindings": [
+    {
+      "key": " ",
+      "name": "Commands",
+      "type": "command",
+      "command": "workbench.action.showCommands"
+    },
+    {
+      "key": ",",
+      "name": "Show all buffers",
+      "type": "command",
+      "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
+    },
+    {
+      "key": "f",
+      "name": "+File",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "f",
+          "name": "Find files",
+          "type": "command",
+          "command": "workbench.action.quickOpen"
+        },
+        {
+          "key": "p",
+          "name": "Copy relative path",
+          "type": "command",
+          "command": "copyRelativeFilePath"
+        },
+        {
+          "key": "P",
+          "name": "Copy absolute path",
+          "type": "command",
+          "command": "copyFilePath"
+        }
+      ]
+    },
+    {
+      "key": "g",
+      "name": "+Git",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "g",
+          "name": "Lazygit",
+          "type": "command",
+          "command": "lazygit-vscode.toggle"
+        },
+        {
+          "key": "s",
+          "name": "Stage selected",
+          "type": "command",
+          "command": "git.stageSelectedRanges"
+        },
+        {
+          "key": "u",
+          "name": "Unstage selected",
+          "type": "command",
+          "command": "git.unstageSelectedRanges"
+        },
+        {
+          "key": "r",
+          "name": "Revert selected",
+          "type": "command",
+          "command": "git.revertSelectedRanges"
+        }
+      ]
+    },
+    {
+      "key": "j",
+      "name": "+Panel",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "j",
+          "name": "Toggle terminal",
+          "type": "command",
+          "command": "workbench.action.terminal.toggleTerminal"
+        },
+        {
+          "key": "m",
+          "name": "Maximize panel",
+          "type": "command",
+          "command": "workbench.action.toggleMaximizedPanel"
+        },
+        {
+          "key": "n",
+          "name": "New terminal (tmux)",
+          "type": "command",
+          "command": "workbench.action.terminal.newWithProfile",
+          "args": { "profileName": "vscode-tmux" }
+        },
+        {
+          "key": "e",
+          "name": "Problems panel",
+          "type": "command",
+          "command": "workbench.actions.view.problems"
+        }
+      ]
+    },
+    {
+      "key": "p",
+      "name": "+Projects",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "p",
+          "name": "List projects",
+          "type": "command",
+          "command": "projectManager.listProjects"
+        },
+        {
+          "key": "s",
+          "name": "Save project",
+          "type": "command",
+          "command": "projectManager.saveProject"
+        }
+      ]
+    },
+    {
+      "key": "s",
+      "name": "+Show/Search",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "e",
+          "name": "vsnetrw",
+          "type": "command",
+          "command": "vsnetrw.open"
+        },
+        {
+          "key": "f",
+          "name": "Focus explorer",
+          "type": "command",
+          "command": "workbench.view.explorer"
+        },
+        {
+          "key": "s",
+          "name": "Go to symbol",
+          "type": "command",
+          "command": "workbench.action.gotoSymbol"
+        },
+        {
+          "key": "S",
+          "name": "Go to symbol (workspace)",
+          "type": "command",
+          "command": "workbench.action.showAllSymbols"
+        },
+        {
+          "key": "/",
+          "name": "Search in files",
+          "type": "command",
+          "command": "workbench.action.findInFiles"
+        }
+      ]
+    },
+    {
+      "key": "w",
+      "name": "+Window",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "m",
+          "name": "Maximize editor",
+          "type": "command",
+          "command": "workbench.action.maximizeEditorHideSidebar"
+        },
+        {
+          "key": "v",
+          "name": "Split right (stay)",
+          "type": "commands",
+          "commands": [
+            "workbench.action.splitEditorRight",
+            "workbench.action.focusLeftGroup"
+          ]
+        },
+        {
+          "key": "V",
+          "name": "Split right (move)",
+          "type": "command",
+          "command": "workbench.action.splitEditorRight"
+        },
+        {
+          "key": "s",
+          "name": "Split down (stay)",
+          "type": "commands",
+          "commands": [
+            "workbench.action.splitEditorDown",
+            "workbench.action.focusAboveGroup"
+          ]
+        },
+        {
+          "key": "S",
+          "name": "Split down (move)",
+          "type": "command",
+          "command": "workbench.action.splitEditorDown"
+        },
+        {
+          "key": "r",
+          "name": "Reload window",
+          "type": "command",
+          "command": "workbench.action.reloadWindow"
+        }
+      ]
+    },
+    {
+      "key": "q",
+      "name": "+Quit",
+      "type": "bindings",
+      "bindings": [
+        {
+          "key": "q",
+          "name": "Close buffer",
+          "type": "command",
+          "command": "workbench.action.closeActiveEditor"
+        }
+      ]
+    }
+  ]
+}

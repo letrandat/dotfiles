@@ -1,0 +1,9 @@
+{
+  "debugprint.nvim": { "branch": "main", "commit": "bc3008074c6fafce2f3bef8062cff424239ec4f8" },
+  "hardtime.nvim": { "branch": "main", "commit": "b9a989191b3a97c9316a0efea02341c4cdab845a" },
+  "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
+  "nui.nvim": { "branch": "main", "commit": "de740991c12411b663994b2860f1a4fd0937c130" },
+  "nvim-spider": { "branch": "main", "commit": "d4bdc45eac425e77108f068bd0706ff3ac20be7f" },
+  "nvim-surround": { "branch": "main", "commit": "8dd9150ca7eae5683660ea20cec86edcd5ca4046" },
+  "nvim-various-textobjs": { "branch": "main", "commit": "1a3e524c01c26e0174a1eeb69e45d0bd74b1ef94" }
+}
