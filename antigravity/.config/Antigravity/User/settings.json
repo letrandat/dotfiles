@@ -4,9 +4,8 @@
   // This is the activity bar on the editor itself
   "workbench.activityBar.location": "top",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "Quiet Light",
-  "workbench.preferredLightColorTheme": "Quiet Light",
-  "workbench.preferredDarkColorTheme": "GitHub Dark Dimmed",
+  "workbench.preferredLightColorTheme": "Catppuccin Latte",
+  "workbench.preferredDarkColorTheme": "Catppuccin Frappé",
   "workbench.editor.showTabs": "none",
   // needed status bar for vscodevim only
   "workbench.statusBar.visible": false,
