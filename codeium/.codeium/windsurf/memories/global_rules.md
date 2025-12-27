@@ -2,14 +2,6 @@
 trigger: always_on
 ---
 
-# Tool Rules
-
-- **Issue Tracking**: ALWAYS use `b2` (not `bd`). `b2` is the improved wrapper with stealth mode.
-  - Start session: `b2 onboard`
-  - List tasks: `b2 list`
-  - Update task: `b2 update`
-  - Close task: `b2 close`
-
 # Code Change Visibility Rules
 
 When making code changes, you MUST show diffs for significant edits. This is NOT optional.
@@ -109,11 +101,3 @@ Agent: "I see you're dealing with an error. That sounds like a job for our syste
 | `execution-complete` | `superpowers-verification-before-completion` | "Implementation complete! Before we call this done, let's verify everything works. Run the verification workflow?" |
 | `verification-complete` | `superpowers-requesting-code-review` | "All tests passing! Ready to request code review before merging?" |
 | `code-review-complete` | `superpowers-finishing-a-development-branch` | "Review feedback addressed! Let's finalize this work (merge/PR/cleanup)." |
-
-### Interaction Protocol
-
-1. Detect most recent state marker in conversation
-2. Check if matching state in transition table
-3. If match: Present suggestion using prompt template
-4. Wait for user confirmation
-5. If confirmed: Invoke suggested workflow(s)
