@@ -309,18 +309,7 @@ end, {
 	desc = "WhichKey: bookmarks",
 })
 
---
--- FOLD
---
--- Map 'z' as a WhichKey prefix using whichkey.triggerKey
-keymap("n", "z", function()
-	vscode.call("whichkey.show")
-	vscode.call("whichkey.triggerKey", {
-		args = { "z" },
-	})
-end, {
-	desc = "WhichKey: fold",
-})
+
 
 -- For faster access to toggle fold
 keymap("n", "za", function()
