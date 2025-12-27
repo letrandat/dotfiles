@@ -211,5 +211,9 @@
     "key": "r",
     "command": "vsnetrw.rename",
     "when": "editorTextFocus && editorLangId == 'vsnetrw' && vim.mode =~ /^(?!SearchInProgressMode|CommandlineInProgress).*$/"
+  },
+  {
+    "key": "z",
+    "command": ""
   }
 ]
