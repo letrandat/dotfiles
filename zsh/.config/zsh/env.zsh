@@ -33,7 +33,7 @@ export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
 export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
 # Added by Windsurf
-export PATH="$HOME/.codeium/windsurf/bin:$PATH"
+export PATH="/Users/dat/.codeium/windsurf/bin:$PATH"
 
 # Created by `pipx` on 2025-03-29 15:42:54
 export PATH="$PATH:$HOME/.local/dotfiles-bin"
