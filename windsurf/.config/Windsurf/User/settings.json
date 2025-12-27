@@ -1077,9 +1077,6 @@
   // MCP discovery for agent integration
   "chat.agent.enabled": true,
   "chat.mcp.discovery.enabled": {
-    "claude-desktop": true,
-    "windsurf": true,
-    "cursor-global": true,
-    "cursor-workspace": true
+    "windsurf": true
   }
 }
