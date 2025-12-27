@@ -218,14 +218,6 @@
     "sidebar": "hide"
   },
 
-  // GitLens Configuration
-  "gitlens.currentLine.enabled": false,
-  "gitlens.codeLens.enabled": false,
-
-  // find-it-faster
-  "find-it-faster.general.restoreFocusTerminal": true,
-  "find-it-faster.general.showMaximizedTerminal": true,
-
   //
   // whichkey
   //
@@ -242,85 +234,11 @@
       "command": "workbench.action.showCommands"
     },
     {
-      "key": "\t",
-      "name": "Last buffer",
-      "icon": "go-to-file",
-      "type": "commands",
-      "commands": [
-        "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup",
-        "list.select"
-      ]
-    },
-    {
       "key": ",",
       "name": "Show all buffers",
       "icon": "files",
       "type": "command",
       "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
-    },
-    {
-      "key": ":",
-      "name": "+Tasks",
-      "icon": "tasklist",
-      "type": "bindings",
-      "bindings": [
-        {
-          "key": ":",
-          "name": "Run task",
-          "icon": "play",
-          "type": "command",
-          "command": "workbench.action.tasks.runTask"
-        },
-        {
-          "key": ".",
-          "name": "Rerun last task",
-          "icon": "debug-rerun",
-          "type": "command",
-          "command": "workbench.action.tasks.reRunTask"
-        },
-        {
-          "key": "b",
-          "name": "Run build tasks",
-          "icon": "server-process",
-          "type": "command",
-          "command": "workbench.action.tasks.build"
-        },
-        {
-          "key": "c",
-          "name": "Configure task runner",
-          "icon": "gear",
-          "type": "command",
-          "command": "workbench.action.tasks.configureTaskRunner"
-        },
-        {
-          "key": "g",
-          "name": "Show running tasks",
-          "icon": "checklist",
-          "type": "command",
-          "command": "workbench.action.tasks.showTasks"
-        },
-        {
-          "key": "l",
-          "name": "Show task log",
-          "icon": "history",
-          "type": "command",
-          "command": "workbench.action.tasks.showLog"
-        },
-        {
-          "key": "t",
-          "name": "Run test task",
-          "icon": "beaker",
-          "type": "command",
-          "command": "workbench.action.tasks.test"
-        },
-        {
-          "key": "x",
-          "name": "Terminate task",
-          "icon": "trash",
-          "type": "command",
-          "command": "workbench.action.tasks.terminate"
-        }
-      ]
     },
     {
       "key": "?",
@@ -559,342 +477,6 @@
       ]
     },
     {
-      "key": "d",
-      "name": "+Debug",
-      "icon": "bug",
-      "type": "bindings",
-      "bindings": [
-        {
-          "key": "c",
-          "name": "Continue debug",
-          "icon": "debug-continue",
-          "type": "command",
-          "command": "workbench.action.debug.continue"
-        },
-        {
-          "key": "d",
-          "name": "Start debug",
-          "icon": "debug-start",
-          "type": "command",
-          "command": "workbench.action.debug.start"
-        },
-        {
-          "key": "i",
-          "name": "Step into",
-          "icon": "debug-step-into",
-          "type": "command",
-          "command": "workbench.action.debug.stepInto"
-        },
-        {
-          "key": "j",
-          "name": "Jump to cursor",
-          "icon": "whole-word",
-          "type": "command",
-          "command": "debug.jumpToCursor"
-        },
-        {
-          "key": "o",
-          "name": "Step out",
-          "icon": "debug-step-out",
-          "type": "command",
-          "command": "workbench.action.debug.stepOut"
-        },
-        {
-          "key": "p",
-          "name": "Pause debug",
-          "icon": "debug-pause",
-          "type": "command",
-          "command": "workbench.action.debug.pause"
-        },
-        {
-          "key": "s",
-          "name": "Step over",
-          "icon": "debug-step-over",
-          "type": "command",
-          "command": "workbench.action.debug.stepOver"
-        },
-        {
-          "key": "v",
-          "name": "REPL",
-          "icon": "debug-console",
-          "type": "command",
-          "command": "workbench.debug.action.toggleRepl"
-        },
-        {
-          "key": "w",
-          "name": "Focus on watch window",
-          "icon": "eye-watch",
-          "type": "command",
-          "command": "workbench.debug.action.focusWatchView"
-        },
-        {
-          "key": "C",
-          "name": "Continue to cursor",
-          "icon": "debug-continue",
-          "type": "command",
-          "command": "editor.debug.action.runToCursor"
-        },
-        {
-          "key": "D",
-          "name": "Run without debugging",
-          "icon": "run",
-          "type": "command",
-          "command": "workbench.action.debug.run"
-        },
-        {
-          "key": "R",
-          "name": "Restart debug",
-          "icon": "debug-restart",
-          "type": "command",
-          "command": "workbench.action.debug.restart"
-        },
-        {
-          "key": "S",
-          "name": "Stop debug",
-          "icon": "debug-stop",
-          "type": "command",
-          "command": "workbench.action.debug.stop"
-        },
-        {
-          "key": "W",
-          "name": "Add to watch",
-          "icon": "watch-expressions-add",
-          "type": "command",
-          "command": "editor.debug.action.selectionToWatch"
-        },
-        {
-          "key": "b",
-          "name": "+Breakpoint",
-          "icon": "debug-breakpoint",
-          "type": "bindings",
-          "bindings": [
-            {
-              "key": "b",
-              "name": "Toggle breakpoint",
-              "icon": "activate-breakpoints",
-              "type": "command",
-              "command": "editor.debug.action.toggleBreakpoint"
-            },
-            {
-              "key": "c",
-              "name": "Add conditional breakpoint",
-              "icon": "debug-breakpoint-conditional",
-              "type": "command",
-              "command": "editor.debug.action.conditionalBreakpoint"
-            },
-            {
-              "key": "d",
-              "name": "Delete breakpoint",
-              "icon": "trash",
-              "type": "command",
-              "command": "debug.removeBreakpoint"
-            },
-            {
-              "key": "e",
-              "name": "Enable breakpoint",
-              "icon": "debug-breakpoint",
-              "type": "command",
-              "command": "debug.enableOrDisableBreakpoint"
-            },
-            {
-              "key": "f",
-              "name": "Add function breakpoint",
-              "icon": "debug-breakpoint-function",
-              "type": "command",
-              "command": "workbench.debug.viewlet.action.addFunctionBreakpointAction"
-            },
-            {
-              "key": "i",
-              "name": "Toggle inline breakpoint",
-              "icon": "activate-breakpoints",
-              "type": "command",
-              "command": "editor.debug.action.toggleInlineBreakpoint"
-            },
-            {
-              "key": "n",
-              "name": "Next breakpoint",
-              "icon": "arrow-down",
-              "type": "transient",
-              "command": "editor.debug.action.goToNextBreakpoint",
-              "bindings": [
-                {
-                  "key": "n",
-                  "name": "Next breakpoint",
-                  "icon": "arrow-down",
-                  "type": "command",
-                  "command": "editor.debug.action.goToNextBreakpoint"
-                },
-                {
-                  "key": "p",
-                  "name": "Previous breakpoint",
-                  "icon": "arrow-up",
-                  "type": "command",
-                  "command": "editor.debug.action.goToPreviousBreakpoint"
-                }
-              ]
-            },
-            {
-              "key": "p",
-              "name": "Previous breakpoint",
-              "icon": "arrow-up",
-              "type": "transient",
-              "command": "editor.debug.action.goToPreviousBreakpoint",
-              "bindings": [
-                {
-                  "key": "n",
-                  "name": "Next breakpoint",
-                  "icon": "arrow-down",
-                  "type": "command",
-                  "command": "editor.debug.action.goToNextBreakpoint"
-                },
-                {
-                  "key": "p",
-                  "name": "Previous breakpoint",
-                  "icon": "arrow-up",
-                  "type": "command",
-                  "command": "editor.debug.action.goToPreviousBreakpoint"
-                }
-              ]
-            },
-            {
-              "key": "s",
-              "name": "Disable breakpoint",
-              "icon": "debug-breakpoint-disabled",
-              "type": "command",
-              "command": "debug.enableOrDisableBreakpoint"
-            },
-            {
-              "key": "D",
-              "name": "Delete all breakpoints",
-              "icon": "trash",
-              "type": "command",
-              "command": "workbench.debug.viewlet.action.removeAllBreakpoints"
-            },
-            {
-              "key": "E",
-              "name": "Enable all breakpoints",
-              "icon": "expand-all",
-              "type": "command",
-              "command": "workbench.debug.viewlet.action.enableAllBreakpoints"
-            },
-            {
-              "key": "S",
-              "name": "Disable all breakpoints",
-              "icon": "collapse-all",
-              "type": "command",
-              "command": "workbench.debug.viewlet.action.disableAllBreakpoints"
-            }
-          ]
-        },
-        {
-          "key": "f",
-          "name": "Printf...",
-          "icon": "output",
-          "type": "bindings",
-          "bindings": [
-            {
-              "key": "c",
-              "name": "Print: Reset Counter",
-              "icon": "history",
-              "type": "command",
-              "command": "vscode-neovim.send",
-              "args": "gprc"
-            },
-            {
-              "key": "d",
-              "name": "Print: Delete Debug Prints",
-              "icon": "trash",
-              "type": "command",
-              "command": "vscode-neovim.send",
-              "args": "gpdd"
-            },
-            {
-              "key": "p",
-              "name": "Print: Plain below",
-              "icon": "arrow-down",
-              "type": "command",
-              "command": "vscode-neovim.send",
-              "args": "gpp"
-            },
-            {
-              "key": "P",
-              "name": "Print: Plain above",
-              "icon": "arrow-up",
-              "type": "command",
-              "command": "vscode-neovim.send",
-              "args": "gpP"
-            },
-            {
-              // this is the most often used, so i use f to trigger it
-              "key": "f",
-              "name": "Print: Variable below",
-              "icon": "symbol-variable",
-              "type": "command",
-              "command": "vscode-neovim.send",
-              "args": "gpv"
-            },
-            {
-              "key": "V",
-              "name": "Print: Variable above",
-              "icon": "symbol-variable",
-              "type": "command",
-              "command": "vscode-neovim.send",
-              "args": "gpV"
-            },
-            {
-              "key": "s",
-              "name": "Surround...",
-              "icon": "bracket-dot",
-              "type": "bindings",
-              "bindings": [
-                {
-                  "key": "p",
-                  "name": "Print: surround plain",
-                  "icon": "output",
-                  "type": "command",
-                  "command": "vscode-neovim.send",
-                  "args": "gpsp"
-                },
-                {
-                  // this is the most often used, so i use s to trigger it
-                  "key": "s",
-                  "name": "Print: surround variable",
-                  "icon": "symbol-variable",
-                  "type": "command",
-                  "command": "vscode-neovim.send",
-                  "args": "gpsv"
-                },
-                {
-                  "key": "o",
-                  "name": "Print: surround text obj",
-                  "icon": "bracket-dot",
-                  "type": "command",
-                  "command": "vscode-neovim.send",
-                  "args": "gpso"
-                }
-              ]
-            },
-            {
-              "key": "o",
-              "name": "Print: Text Obj below",
-              "icon": "arrow-down",
-              "type": "command",
-              "command": "vscode-neovim.send",
-              "args": "gpo"
-            },
-            {
-              "key": "O",
-              "name": "Print: Text Obj above",
-              "icon": "arrow-up",
-              "type": "command",
-              "command": "vscode-neovim.send",
-              "args": "gpO"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "key": "e",
       "name": "+Errors",
       "icon": "error",
@@ -1029,18 +611,6 @@
       "type": "bindings",
       "bindings": [
         {
-          "key": "/",
-          "name": "Search Commits",
-          "type": "command",
-          "command": "gitlens.showCommitSearch"
-        },
-        {
-          "key": "b",
-          "name": "GitLens: Toggle File Blame",
-          "type": "command",
-          "command": "gitlens.toggleFileBlame"
-        },
-        {
           "key": "O",
           "name": "Git: View All Changes",
           "type": "command",
@@ -1060,12 +630,6 @@
             "git.viewStagedChanges",
             "workbench.action.focusFirstEditorGroup"
           ]
-        },
-        {
-          "key": "B",
-          "name": "GitLens: Toggle Line Blame",
-          "type": "command",
-          "command": "gitlens.toggleLineBlame"
         },
         {
           "key": "c",
@@ -1117,31 +681,6 @@
           "name": "Git: Stage Selected Ranges",
           "type": "command",
           "command": "git.stageSelectedRanges"
-        },
-        {
-          "key": "w",
-          "name": "Worktree...",
-          "type": "bindings",
-          "bindings": [
-            {
-              "key": "c",
-              "name": "GitLens: Create Worktree",
-              "type": "command",
-              "command": "gitlens.gitCommands.worktree.create"
-            },
-            {
-              "key": "s",
-              "name": "GitLens: Switch Worktree",
-              "type": "command",
-              "command": "gitlens.gitCommands.worktree.open"
-            },
-            {
-              "key": "d",
-              "name": "Git: Delete Worktree",
-              "type": "command",
-              "command": "git.deleteWorktreeFromPalette"
-            }
-          ]
         },
         {
           "key": "u",
@@ -1243,49 +782,6 @@
       ]
     },
     {
-      "key": "m",
-      "name": "Bookmarks/Maps...",
-      "type": "bindings",
-      "bindings": [
-        {
-          "key": "c",
-          "name": "Clear all bookmarks",
-          "type": "command",
-          "command": "bookmarks.clearFromAllFiles"
-        },
-        {
-          "key": "f",
-          "name": "Jump to next bookmark",
-          "type": "command",
-          "command": "bookmarks.jumpToNext"
-        },
-        {
-          "key": "F",
-          "name": "Jump to previous bookmark",
-          "type": "command",
-          "command": "bookmarks.jumpToPrevious"
-        },
-        {
-          "key": "l",
-          "name": "List bookmarks from all files",
-          "type": "command",
-          "command": "bookmarks.listFromAllFiles"
-        },
-        {
-          "key": "m",
-          "name": "Toggle bookmark",
-          "type": "command",
-          "command": "bookmarks.toggle"
-        },
-        {
-          "key": "s",
-          "name": "Show Code Maps",
-          "type": "command",
-          "command": "windsurf.openCodeMapView"
-        }
-      ]
-    },
-    {
       "key": "p",
       "name": "Project Manager...",
       "type": "bindings",
@@ -1380,19 +876,6 @@
       ]
     },
     {
-      "key": "l",
-      "name": "Lang...",
-      "type": "bindings",
-      "bindings": [
-        {
-          "key": "g",
-          "name": "Go...",
-          "type": "bindings",
-          "bindings": []
-        }
-      ]
-    },
-    {
       "key": "q",
       "name": "+Quit",
       "icon": "x",
@@ -1423,13 +906,6 @@
       "icon": "info",
       "type": "bindings",
       "bindings": [
-        {
-          "key": "c",
-          "name": "Search and Compare",
-          "icon": "diff",
-          "type": "command",
-          "command": "gitlens.views.searchAndCompare.focus"
-        },
         {
           "key": "e",
           "name": "Show vsnetrw",
@@ -1514,188 +990,6 @@
       ]
     },
     {
-      "key": "t",
-      "name": "Testing...",
-      "type": "bindings",
-      "bindings": [
-        {
-          "key": "a",
-          "name": "Run All",
-          "type": "command",
-          "command": "testing.runAll"
-        },
-        {
-          "key": "c",
-          "name": "Run at Cursor",
-          "type": "command",
-          "command": "testing.runAtCursor"
-        },
-        {
-          "key": "C",
-          "name": "Coverage",
-          "type": "command",
-          "command": "vscode-neovim.send",
-          "args": "gC"
-        },
-        {
-          "key": "d",
-          "name": "Debug...",
-          "type": "bindings",
-          "bindings": [
-            {
-              "key": "a",
-              "name": "Debug All",
-              "type": "command",
-              "command": "testing.debugAll"
-            },
-            {
-              "key": "c",
-              "name": "Debug at Cursor",
-              "type": "command",
-              "command": "testing.debugAtCursor"
-            },
-            {
-              "key": "e",
-              "name": "Debug Fail Tests",
-              "type": "command",
-              "command": "testing.debugFailTests"
-            },
-            {
-              "key": "f",
-              "name": "Debug Current File",
-              "type": "command",
-              "command": "testing.debugCurrentFile"
-            },
-            {
-              "key": "l",
-              "name": "Debug Last Run",
-              "type": "command",
-              "command": "testing.debugLastRun"
-            }
-          ]
-        },
-        {
-          "key": "e",
-          "name": "Re-Run Fail Tests",
-          "type": "command",
-          "command": "testing.reRunFailTests"
-        },
-        {
-          "key": "f",
-          "name": "Test File",
-          "type": "command",
-          "command": "vscode-neovim.send",
-          "args": "gt"
-        },
-        {
-          "key": "l",
-          "name": "Re-Run Last Run",
-          "type": "command",
-          "command": "testing.reRunLastRun"
-        },
-        {
-          "key": "o",
-          "name": "Output...",
-          "type": "bindings",
-          "bindings": [
-            {
-              "key": "h",
-              "name": "Toggle Testing Peek History",
-              "type": "command",
-              "command": "testing.toggleTestingPeekHistory"
-            },
-            {
-              "key": "I",
-              "name": "Toggle Inline Test Output",
-              "type": "command",
-              "command": "testing.toggleInlineTestOutput"
-            },
-            {
-              "key": "m",
-              "name": "Open Output Peek",
-              "type": "command",
-              "command": "testing.openOutputPeek"
-            },
-            {
-              "key": "o",
-              "name": "Show Most Recent Output",
-              "type": "command",
-              "command": "testing.showMostRecentOutput"
-            }
-          ]
-        },
-        {
-          "key": "r",
-          "name": "Refresh Tests",
-          "type": "command",
-          "command": "testing.refreshTests"
-        },
-        {
-          "key": "t",
-          "name": "Run Current File",
-          "type": "command",
-          "command": "testing.runCurrentFile"
-        },
-        {
-          "key": "x",
-          "name": "Cancel Run",
-          "type": "command",
-          "command": "testing.cancelRun"
-        }
-      ]
-    },
-    {
-      "key": "u",
-      "name": "Toggle/UI...",
-      "icon": "settings",
-      "type": "bindings",
-      "bindings": [
-        {
-          "key": "w",
-          "name": "Toggle Word Wrap",
-          "type": "command",
-          "command": "editor.action.toggleWordWrap"
-        },
-        {
-          "key": "s",
-          "name": "Toggle Status Bar Visibility",
-          "type": "command",
-          "command": "workbench.action.toggleStatusbarVisibility"
-        },
-        {
-          "key": "z",
-          "name": "Toggle Centered Layout (Zen mode)",
-          "type": "command",
-          "command": "workbench.action.toggleCenteredLayout"
-        },
-        {
-          "key": "v",
-          "name": "Markdown: Show Preview to Side",
-          "type": "command",
-          "command": "markdown.showPreviewToSide"
-        },
-        {
-          "key": "V",
-          "name": "Markdown: Show Preview",
-          "type": "command",
-          "command": "markdown.showPreview"
-        }
-      ]
-    },
-    {
-      "key": "v",
-      "name": "Neovim...",
-      "type": "bindings",
-      "bindings": [
-        {
-          "key": "r",
-          "name": "Restart Neovim",
-          "type": "command",
-          "command": "vscode-neovim.restart"
-        }
-      ]
-    },
-    {
       "key": "w",
       "name": "Workspace/Buffer/Window Management...",
       "type": "bindings",
@@ -1769,59 +1063,10 @@
           "command": "workbench.action.saveWorkspaceAs"
         }
       ]
-    },
-    {
-      "key": "z",
-      "name": "Fold...",
-      "type": "bindings",
-      "bindings": [
-        {
-          "key": "1",
-          "name": "Fold Level 1",
-          "type": "command",
-          "command": "editor.foldLevel1"
-        },
-        {
-          "key": "2",
-          "name": "Fold Level 2",
-          "type": "command",
-          "command": "editor.foldLevel2"
-        },
-        {
-          "key": "M",
-          "name": "[M]ore: Close All Folds",
-          "type": "command",
-          "command": "editor.foldAll"
-        },
-        {
-          "key": "R",
-          "name": "[R]educe: Open All Folds",
-          "type": "command",
-          "command": "editor.unfoldAll"
-        },
-        {
-          "key": "a",
-          "name": "Toggle Fold",
-          "type": "command",
-          "command": "editor.toggleFold"
-        }
-      ]
     }
   ],
 
-  // GITHUB.COPILOT CONFIGURATION
-  "github.copilot.chat.agent.thinkingTool": true,
-  "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
-
-  // next edit suggestions
-  "github.copilot.nextEditSuggestions.enabled": true,
-  "github.copilot.nextEditSuggestions.fixes": true,
-
-  // copilot chat configuration
-  "github.copilot.chat.search.keywordSuggestions": true,
-  "github.copilot.chat.commitMessageGeneration.instructions": [],
-  "github.copilot.chat.testGeneration.instructions": [],
-  "github.copilot.chat.codeGeneration.instructions": [],
+  // MCP discovery for agent integration
   "chat.agent.enabled": true,
   "chat.mcp.discovery.enabled": {
     "claude-desktop": true,
