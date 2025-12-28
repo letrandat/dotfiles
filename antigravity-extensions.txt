@@ -3,7 +3,7 @@ alefragnani.project-manager
 bradlc.vscode-tailwindcss
 danprince.vsnetrw
 dbaeumer.vscode-eslint
-eamodio.gitlens
+
 esbenp.prettier-vscode
 github.github-vscode-theme
 mechatroner.rainbow-csv
