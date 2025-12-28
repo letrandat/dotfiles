@@ -1,6 +1,6 @@
 ---
 name: dat-bd
-description: Beads task management using OSS contributor pattern
+description: Beads task management using redirect pattern
 ---
 
 # Beads Task Management

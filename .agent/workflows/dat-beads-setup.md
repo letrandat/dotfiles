@@ -1,15 +1,15 @@
 ---
-description: Automate beads OSS contributor pattern setup for new repositories
+description: Automate beads redirect pattern setup for new repositories
 ---
 
-# Beads OSS Contributor Pattern Setup (Antigravity Agent)
+# Beads Redirect Pattern Setup (Antigravity Agent)
 
 ## When to Use This Workflow
 
 Use this workflow when the user asks to:
 
 - "Set up beads for this repo"
-- "Configure beads contributor mode"
+- "Configure beads redirect mode"
 - "Add beads to this project"
 - "Set up task tracking"
 
@@ -97,7 +97,7 @@ bd list | head -5
 git add .beads/redirect .gitignore
 
 # Commit
-git commit -m "Configure beads OSS contributor pattern
+git commit -m "Configure beads redirect pattern
 
 - Added .beads/redirect pointing to ~/.beads-planning
 - Updated .gitignore to exclude beads database files"
@@ -140,7 +140,7 @@ bd list | head -5
 
 # If works, commit
 git add .beads/redirect .beads.backup/ .gitignore
-git commit -m "Migrate to beads OSS contributor pattern
+git commit -m "Migrate to beads redirect pattern
 
 - Migrated existing tasks to ~/.beads-planning
 - Configured redirect to planning repo
