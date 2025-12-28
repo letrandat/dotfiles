@@ -1,9 +1,8 @@
-````
 ---
 description: Import an OpenSpec change into Beads tasks
 ---
 
-# Beads from# Beads from OpenSpec
+# Beads from OpenSpec
 
 ## Overview
 
@@ -25,16 +24,17 @@ Converts a VALIDATED OpenSpec change into actionable Beads tasks. This is the **
 
 **Agent Action**:
 Run `openspec validate <change-id> --strict`.
-*   If it fails: **ABORT**. Report errors to user.
-*   If it passes: Proceed.
+
+- If it fails: **ABORT**. Report errors to user.
+- If it passes: Proceed.
 
 ### 3. Parse OpenSpec Data
 
 Read the files in `openspec/changes/<change-id>/`:
 
--   `proposal.md`: Sources the Epic Description.
--   `tasks.md`: Sources the list of implementation tasks.
--   `specs/**/*.md`: Used for referencing requirements.
+- `proposal.md`: Sources the Epic Description.
+- `tasks.md`: Sources the list of implementation tasks.
+- `specs/**/*.md`: Used for referencing requirements.
 
 ### 4. Create Beads Epic
 
@@ -44,22 +44,22 @@ Create a parent Epic to track the entire change.
 # Title derived from proposal title
 # Description includes link to proposal and summary
 bd create "Epic: <Title>" --type epic --description "$(<proposal_summary>)"
-````
+```
 
 ### 5. Create Child Tasks
 
 Iterate through `tasks.md` (which should contain a list of tasks).
 For each task:
 
-1.  **Create Task**:
+1. **Create Task**:
 
-    ```bash
-    bd create "<Task Text>" --parent <epic-id> --priority <P1/P2>
-    ```
+   ```bash
+   bd create "<Task Text>" --parent <epic-id> --priority <P1/P2>
+   ```
 
-2.  **Enrich Description**:
-    - Add "Context" from the OpenSpec intent.
-    - Link to specific Spec Requirements if applicable (e.g., "See `specs/auth/spec.md` Req 1.2").
+2. **Enrich Description**:
+   - Add "Context" from the OpenSpec intent.
+   - Link to specific Spec Requirements if applicable (e.g., "See `specs/auth/spec.md` Req 1.2").
 
 ### 6. Completion
 
@@ -74,8 +74,4 @@ For each task:
 
 **Next Step**:
 Run `bd show task-xyz` or start working with `bd ready`.
-```
-
-```
-
 ```
