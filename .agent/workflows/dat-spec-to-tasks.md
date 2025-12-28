@@ -1,16 +1,17 @@
+````
 ---
 description: Import an OpenSpec change into Beads tasks
 ---
 
-# Beads from OpenSpec
+# Beads from# Beads from OpenSpec
 
 ## Overview
 
-Converts a VALIDATED OpenSpec change into actionable Beads tasks. This is the Execution phase of the "Funnel".
+Converts a VALIDATED OpenSpec change into actionable Beads tasks. This is the **Implementation** phase of the workflow (Execution).
 
 ## When to Use
 
-- After an OpenSpec change has been successfully validated (`openspec validate <id>` returns success)
+- After `openspec validate <id>` returns success
 - When you are ready to start coding
 - To transition from Planning (OpenSpec) to Execution (Beads)
 
@@ -18,68 +19,63 @@ Converts a VALIDATED OpenSpec change into actionable Beads tasks. This is the Ex
 
 ### 1. Identify Input
 
-**Command:** `/beads-from-openspec <change-id>`
+**Command:** `/dat-spec-to-tasks <change-id>`
 
-- **Validation Check**: Run `openspec validate <change-id> --strict`. If it fails, abort and ask user to fix specs first.
+### 2. Validation Check
 
-### 2. Parse OpenSpec Data
+**Agent Action**:
+Run `openspec validate <change-id> --strict`.
+*   If it fails: **ABORT**. Report errors to user.
+*   If it passes: Proceed.
+
+### 3. Parse OpenSpec Data
 
 Read the files in `openspec/changes/<change-id>/`:
 
-- `proposal.md`: Sources the Epic Description.
-- `tasks.md`: Sources the list of implementation tasks.
-- `specs/*/*.md`: Used for reference links.
+-   `proposal.md`: Sources the Epic Description.
+-   `tasks.md`: Sources the list of implementation tasks.
+-   `specs/**/*.md`: Used for referencing requirements.
 
-### 3. Create Beads Epic
+### 4. Create Beads Epic
 
 Create a parent Epic to track the entire change.
 
 ```bash
-# Epic Title: "[Prop] <Title from proposal>"
-# Description: Motivation + Links to Spec
+# Title derived from proposal title
+# Description includes link to proposal and summary
+bd create "Epic: <Title>" --type epic --description "$(<proposal_summary>)"
+````
 
-bd create "Epic: <Title>" --type epic --description "..."
-```
+### 5. Create Child Tasks
 
-**Description Template**:
-
-```markdown
-## Context
-
-(Content from Proposal Motivation)
-
-## Specs
-
-- Proposal: [Link]
-- Design: [Link]
-- Change ID: <change-id>
-```
-
-### 4. Create Child Tasks
-
-Iterate through `tasks.md`. For each line item:
+Iterate through `tasks.md` (which should contain a list of tasks).
+For each task:
 
 1.  **Create Task**:
-    `bd create "<Item Text>" --parent <epic-id>`
+
+    ```bash
+    bd create "<Task Text>" --parent <epic-id> --priority <P1/P2>
+    ```
 
 2.  **Enrich Description**:
-    Add a link to the relevant Spec Requirement if detected.
+    - Add "Context" from the OpenSpec intent.
+    - Link to specific Spec Requirements if applicable (e.g., "See `specs/auth/spec.md` Req 1.2").
 
-3.  **Set Dependencies** (Optional but recommended):
-    If the task list is numbered 1..N, assume Task N depends on Task N-1?
-    _Decision_: No, strictly sequential dependency is often wrong. Create them as independent tasks under the Epic unless explicit dependencies are noted.
+### 6. Completion
 
-### 5. Completion
-
-Report to user:
+**Report to user:**
 
 ```markdown
-**Beads Epic Created**: `task-xyz`
+**Beads Implementation Ready**: `task-xyz`
 
 - [x] Validated OpenSpec change `<change-id>`
 - [x] Created Epic `task-xyz`
 - [x] Created N child tasks
 
 **Next Step**:
-Run `/dat-refine-epic task-xyz` to polish the task details before starting work.
+Run `bd show task-xyz` or start working with `bd ready`.
+```
+
+```
+
 ```

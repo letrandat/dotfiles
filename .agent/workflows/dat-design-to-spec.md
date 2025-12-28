@@ -6,75 +6,53 @@ description: Scaffolds a new OpenSpec change from an existing design document
 
 ## Overview
 
-Promotes a natural language Design Document (from Brainstorming) into a formal OpenSpec Proposal scaffold.
+A bridge workflow that initiates the formal OpenSpec Proposal process using an existing Design Document.
+This separates the "Proposal" phase (Design -> Specs) from the "Implementation" phase.
 
 ## When to Use
 
 - After completing `/superpower-brainstorming`
-- When you have a `docs/plans/` file that you want to formalize
-- Before starting implementation on a complex feature
+- When you have a `docs/plans/` file ready for specification
+- To create a validated OpenSpec proposal
 
 ## The Process
 
 ### 1. Identify Input
 
-**Command:** `/openspec-from-design <path/to/design.md>`
+**Command:** `/dat-design-to-spec <path/to/design.md>`
 
 If no path is provided, ask the user to select from recent files in `docs/plans/`.
 
-### 2. Generate Scaffold
+### 2. Instruct Agent
 
-Create the change directory structure:
+**Role**: You are an OpenSpec Supervisor.
+**Goal**: Execute the standard OpenSpec Proposal workflow using the Design Doc as the source of truth.
 
-```bash
-# Extract a short slug from the design title or filename
-CHANGE_ID="<slug>"
+**Action**:
+Read the design document, then execute the following instruction:
 
-# Create directory structure
-mkdir -p "openspec/changes/$CHANGE_ID/specs"
-```
+> "Please execute the standard OpenSpec Proposal workflow (`/openspec-proposal.md`) for this design.
+>
+> **Source Material**: `<path/to/design.md>` > **Change ID**: `<derive-from-title>`
+>
+> 1. Follow the `openspec-proposal` steps strictly.
+> 2. Use the Design Doc to populate the content.
+> 3. Run strict validation (`openspec validate`).
+> 4. **STOP** after validation and present the proposal for review."
 
-### 3. Map Content (Agent Action)
+### 3. Review & Handoff
 
-Read the Design Doc and populate the OpenSpec files.
-
-**Mapping Rules:**
-
-- **Motivation (`proposal.md`)**:
-
-  - Source: `## Problem Statement` / `## Overview` from Design.
-  - Action: Summarize why we are doing this.
-
-- **Design (`design.md`)**:
-
-  - Source: Whole Design Doc.
-  - Action: Copy the architectural details, diagrams, and trade-off discussions. reference the original file `docs/plans/...` as the source of truth if it's identical.
-
-- **Specs (`specs/<change-id>/spec.md`)**:
-
-  - Source: `## Proposed Changes` and `## Verification Plan`.
-  - Action: Convert bullet points into Requirements and Scenarios.
-    - _Requirement_: "The system MUST..."
-    - _Scenario_: "Given... When... Then..."
-
-- **Tasks (`tasks.md`)**:
-  - Source: `## Implementation Plan` / `## Proposed Changes`.
-  - Action: Create an ordered list of high-level steps.
-
-### 4. Validation
-
-Run `openspec validate $CHANGE_ID` to check for syntax errors.
-
-### 5. Review
-
-Present the generated proposal to the user for review.
+**Report to user:**
 
 ```markdown
-**OpenSpec Proposal Created**: `openspec/changes/<id>`
+**OpenSpec Proposal Ready**: `openspec/changes/<id>`
 
-- Proposal: [Link]
-- Design: [Link]
-- Spec: [Link]
+- [x] Validated strict compliance
+- [ ] User Review required
 
-Run `openspec validate <id>` to check status.
+**Next Steps**:
+
+1. Review the generated files.
+2. Refine specs if needed.
+3. When ready to implement, run: `/dat-spec-to-tasks <id>`
 ```
