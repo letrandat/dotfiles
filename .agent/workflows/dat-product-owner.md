@@ -4,9 +4,9 @@ description: Product Owner, START
 
 ## Related Workflows
 
-- 📋 `@workflow superpowers-brainstorming` - Use BEFORE creating issues for new features to ensure requirements are clear
-- 📝 `@workflow superpowers-writing-plans` - Reference for breaking epics into detailed implementation tasks
-- 🎯 `@workflow superpowers-using-git-worktrees` - Mentioned in issue description as setup step for assignees
+- 📋 `/superpower-brainstorming` - Use BEFORE creating issues for new features to ensure requirements are clear
+- 📝 `/superpower-writing-plans` - Reference for breaking epics into detailed implementation tasks
+- 🎯 `/superpower-using-git-worktrees` - Mentioned in issue description as setup step for assignees
 
 Act as an experienced product owner. Convert the user's intent into **high-quality b2 (beads) issues** that are immediately actionable by engineering agents.
 

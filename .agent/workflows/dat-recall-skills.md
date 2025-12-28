@@ -4,21 +4,21 @@ description: Mid-conversation reminder to check available workflows/skills for t
 
 **STOP.** You may have forgotten to use available workflows. Before continuing:
 
-1. **Check if a core workflow applies** (invoke via Cascade menu or @workflow):
+1. **Check if a core workflow applies** (invoke via Cascade menu or `/superpower-` command):
 
-   - Starting session? → `@workflow superpowers-using-superpowers`
-   - New feature/design? → `@workflow superpowers-brainstorming`
-   - Debugging? → `@workflow superpowers-systematic-debugging`
-   - Writing code? → `@workflow superpowers-test-driven-development`
-   - About to claim done? → `@workflow superpowers-verification-before-completion`
-   - Making a plan? → `@workflow superpowers-writing-plans`
-   - Executing plan (parallel)? → `@workflow superpowers-executing-plans`
-   - Executing plan (current session)? → `@workflow superpowers-subagent-driven-development`
-   - 2+ independent tasks? → `@workflow superpowers-dispatching-parallel-agents`
-   - Code review? → `@workflow superpowers-requesting-code-review` or `@workflow superpowers-receiving-code-review`
-   - Starting feature? → `@workflow superpowers-using-git-worktrees`
-   - Finishing work? → `@workflow superpowers-finishing-a-development-branch`
-   - Creating/editing skills? → `@workflow superpowers-writing-skills`
+   - Starting session? → `/superpower-using-superpowers`
+   - New feature/design? → `/superpower-brainstorming`
+   - Debugging? → `/superpower-systematic-debugging`
+   - Writing code? → `/superpower-test-driven-development`
+   - About to claim done? → `/superpower-verification-before-completion`
+   - Making a plan? → `/superpower-writing-plans`
+   - Executing plan (parallel)? → `/superpower-executing-plans`
+   - Executing plan (current session)? → `/superpower-subagent-driven-development`
+   - 2+ independent tasks? → `/superpower-dispatching-parallel-agents`
+   - Code review? → `/superpower-requesting-code-review` or `/superpower-receiving-code-review`
+   - Starting feature? → `/superpower-using-git-worktrees`
+   - Finishing work? → `/superpower-finishing-a-development-branch`
+   - Creating/editing skills? → `/superpower-writing-skills`
    - Creating tasks? → `b2` (never markdown TODOs)
 
 2. **For specialized skills not listed above**, use openskills:
