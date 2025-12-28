@@ -6,53 +6,24 @@ description: Scaffolds a new OpenSpec change from an existing design document
 
 ## Overview
 
-A bridge workflow that initiates the formal OpenSpec Proposal process using an existing Design Document.
-This separates the "Proposal" phase (Design -> Specs) from the "Implementation" phase.
+A bridge workflow that initiates the standard `/openspec-proposal` workflow using an existing Design Document or context as input.
 
-## When to Use
+## Steps
 
-- After completing `/superpower-brainstorming`
-- When you have a `docs/plans/` file ready for specification
-- To create a validated OpenSpec proposal
+1. **Analyze Input**:
 
-## The Process
+   - Identify the design document provided (e.g. `docs/plans/foo.md`) or the current context.
 
-### 1. Identify Input
+2. **Delegate to OpenSpec Proposal**:
 
-**Command:** `/dat-design-to-spec <path/to/design.md>`
+   - Invoke the `/openspec-proposal` workflow.
+   - Pass the design document or context as the source material for the "Feature" or "Change".
 
-If no path is provided, ask the user to select from recent files in `docs/plans/`.
+3. **Verify & Refine**:
 
-### 2. Instruct Agent
+   - Ensure the proposal is strictly validated.
+   - **CRITICAL**: Remind the user to refine the specs (e.g., "You can ask me to add acceptance criteria..." or "Would you like to add specific scenarios?").
 
-**Role**: You are an OpenSpec Supervisor.
-**Goal**: Execute the standard OpenSpec Proposal workflow using the Design Doc as the source of truth.
-
-**Action**:
-Read the design document, then execute the following instruction:
-
-> "Please execute the standard OpenSpec Proposal workflow (`/openspec-proposal.md`) for this design.
->
-> **Source Material**: `<path/to/design.md>` > **Change ID**: `<derive-from-title>`
->
-> 1. Follow the `openspec-proposal` steps strictly.
-> 2. Use the Design Doc to populate the content.
-> 3. Run strict validation (`openspec validate`).
-> 4. **STOP** after validation and present the proposal for review."
-
-### 3. Review & Handoff
-
-**Report to user:**
-
-```markdown
-**OpenSpec Proposal Ready**: `openspec/changes/<id>`
-
-- [x] Validated strict compliance
-- [ ] User Review required
-
-**Next Steps**:
-
-1. Review the generated files.
-2. Refine specs if needed.
-3. When ready to implement, run: `/dat-spec-to-tasks <id>`
-```
+4. **Stop**:
+   - **DO NOT** proceed to implementation.
+   - Inform the user that implementation will be handled separately (e.g. via `/dat-spec-to-tasks` or manual implementation).
