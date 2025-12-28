@@ -81,9 +81,9 @@ bd list --parent <epic-id>
 **Dependencies** (2 issues):
 
 - task-jkl: Missing dependency on task-abc
-  → Propose: Add --depends-on task-abc
+  → Propose: Add dependency task-jkl depends on task-abc
 - task-mno: Incorrect dependency on task-pqr (not actually needed)
-  → Propose: Remove dependency
+  → Propose: Remove dependency task-mno depends on task-pqr
 
 **Parallelization** (1 opportunity):
 
@@ -132,13 +132,13 @@ bd close task-def --reason "Merged into task-new4"
 bd close task-ghi --reason "Merged into task-new4"
 
 # Add dependency
-bd update task-jkl --depends-on task-abc
+bd dep add task-jkl task-abc
 
 # Remove dependency
-bd update task-mno --remove-dependency task-pqr
+bd dep remove task-mno task-pqr
 
 # Add new task
-bd create "Write error handling tests" -p 1 --parent <epic-id> --depends-on task-jkl --description "..."
+bd create "Write error handling tests" -p 1 --parent <epic-id> --deps task-jkl --description "..."
 
 # Update description
 bd update task-yz --description "Fix auth bug: JWT expiration not validated correctly..."
