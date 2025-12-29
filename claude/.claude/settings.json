@@ -34,7 +34,8 @@
       "WebSearch",
       "Bash(bd:*)",
       "Bash(shellcheck:*)",
-      "Bash(stow:*)"
+      "Bash(stow:*)",
+      "Bash(openspec:*)"
     ],
     "deny": [
       "Read(.env)",
