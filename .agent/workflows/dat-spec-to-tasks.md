@@ -1,77 +1,79 @@
 ---
-description: Import an OpenSpec change into Beads tasks
+description: Import an OpenSpec change into Beads tasks with high-quality detail
 ---
 
 # Beads from OpenSpec
 
 ## Overview
 
-Converts a VALIDATED OpenSpec change into actionable Beads tasks. This is the **Implementation** phase of the workflow (Execution).
+Converts a VALIDATED OpenSpec change into actionable, high-quality, **self-contained** Beads tasks.
+This workflow acts as a **Product Owner**, synthesizing the Proposal, Task List, and Specifications to create deep, verifiable tasks that do not rely on the existence of the source files.
 
-## When to Use
+## Checklist
 
-- After `openspec validate <id>` returns success
-- When you are ready to start coding
-- To transition from Planning (OpenSpec) to Execution (Beads)
+- [ ] `openspec validate <change-id>` passes.
+- [ ] You are ready to transition from Planning to Execution.
 
 ## The Process
 
-### 1. Identify Input
+### 1. Validate & Orient
 
-**Command:** `/dat-spec-to-tasks <change-id>`
+1. Run `openspec validate <change-id> --strict`. **STOP** if this fails.
+2. Read the source of truth files in `openspec/changes/<change-id>/`:
+   - `proposal.md`: Understand the "Why" and "What".
+   - `tasks.md`: The list of "How".
+3. Read ALL referenced specs in `specs/`. **Crucial**: You must read the specific requirement files to generate good acceptance criteria.
 
-### 2. Validation Check
+### 2. Create Epic
 
-**Agent Action**:
-Run `openspec validate <change-id> --strict`.
-
-- If it fails: **ABORT**. Report errors to user.
-- If it passes: Proceed.
-
-### 3. Parse OpenSpec Data
-
-Read the files in `openspec/changes/<change-id>/`:
-
-- `proposal.md`: Sources the Epic Description.
-- `tasks.md`: Sources the list of implementation tasks.
-- `specs/**/*.md`: Used for referencing requirements.
-
-### 4. Create Beads Epic
-
-Create a parent Epic to track the entire change.
+Create a parent Epic to house the work.
 
 ```bash
-# Title derived from proposal title
-# Description includes link to proposal and summary
-bd create "Epic: <Title>" --type epic --description "$(<proposal_summary>)"
+bd create "Epic: <Proposal Title>" --type epic --description "Implements OpenSpec Change: <change-id>. $(<Proposal Summary>)" --json
 ```
 
-### 5. Create Child Tasks
+### 3. Create Rich, Self-Contained Tasks
 
-Iterate through `tasks.md` (which should contain a list of tasks).
-For each task:
+Iterate through the items in `tasks.md`. For **EACH** task, perform this mental step:
+_"As a Product Owner, how to I create a self-contained task that an engineer can execute even if the original spec files are deleted?"_
 
-1. **Create Task**:
+Construct the `bd create` command with a rich description. **EXTRACT AND EMBED** specific requirements; do not just link to them.
 
-   ```bash
-   bd create "<Task Text>" --parent <epic-id> --priority <P1/P2>
-   ```
+```bash
+bd create "<Verb> <Object>" \
+  --parent <Epic-ID> \
+  --priority <P1/P2> \
+  --type task \
+  --description "
+**Context**
+<Extract the 'Why' from proposal.md. Do not rely on links.>
 
-2. **Enrich Description**:
-   - Add "Context" from the OpenSpec intent.
-   - Link to specific Spec Requirements if applicable (e.g., "See `specs/auth/spec.md` Req 1.2").
+**Requirements**
+- <EMBED specific text of the requirement from specs/foo.md>
+- <EMBED specific text of the requirement from specs/bar.md>
+*(Note: Quote the relevant spec lines directly so the task stands alone.)*
 
-### 6. Completion
+**Acceptance Criteria**
+- [ ] <Observable Outcome 1>
+- [ ] <Observable Outcome 2>
 
-**Report to user:**
+**Design Guidance**
+<Relevant design details, technical decisions, or constraints extracted from the specs>
+" --json
+```
+
+### 4. Verify & Report
+
+1. Run `bd ready` to confirm the tasks are correctly queued.
+2. Report the created structure to the user.
 
 ```markdown
-**Beads Implementation Ready**: `task-xyz`
+**Beads Implementation Ready**
+Epic: `task-xyz` (<Title>)
 
-- [x] Validated OpenSpec change `<change-id>`
-- [x] Created Epic `task-xyz`
-- [x] Created N child tasks
+**Created Tasks**:
 
-**Next Step**:
-Run `bd show task-xyz` or start working with `bd ready`.
+- `task-abc`: <Task 1>
+- `task-def`: <Task 2>
+  ...
 ```
