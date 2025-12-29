@@ -9,7 +9,7 @@ if [ "$TERM_PROGRAM" = "vscode" ] || [ "$TERM_PROGRAM" = "ghostty" ]; then
     CWD="$PWD"
     PARENT_DIR=$(basename "$(dirname "$CWD")" | tr . _)
     PROJECT_DIR=$(basename "$CWD" | tr . _)
-    SESSION_NAME="${PARENT_DIR}_${PROJECT_DIR}"
+    SESSION_NAME="${PARENT_DIR}/${PROJECT_DIR}"
 
     # check if the target session exists
     if tmux has-session -t "$SESSION_NAME" 2>/dev/null; then
