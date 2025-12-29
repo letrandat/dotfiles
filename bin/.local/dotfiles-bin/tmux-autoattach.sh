@@ -7,14 +7,12 @@
 if [ "$TERM_PROGRAM" = "vscode" ] || [ "$TERM_PROGRAM" = "ghostty" ]; then
     # Capture the current directory
     CWD="$PWD"
-    PARENT_DIR=$(basename "$(dirname "$CWD")")
-    PROJECT_DIR=$(basename "$CWD")
-    SESSION_NAME="${PARENT_DIR}-${PROJECT_DIR}"
-    SESSION_NAME=$(echo "$SESSION_NAME" | tr . _)
+    PARENT_DIR=$(basename "$(dirname "$CWD")" | tr . _)
+    PROJECT_DIR=$(basename "$CWD" | tr . _)
+    SESSION_NAME="${PARENT_DIR}_${PROJECT_DIR}"
 
     # check if the target session exists
-    tmux has-session -t "$SESSION_NAME" 2>/dev/null
-    if [ $? -eq 0 ]; then
+    if tmux has-session -t "$SESSION_NAME" 2>/dev/null; then
         # Session exists, attach to it.
         # 'exec' replaces the current shell process with tmux.
         exec tmux attach -t "$SESSION_NAME"
