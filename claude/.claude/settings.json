@@ -32,11 +32,7 @@
       "Bash(npm run test:*)",
       "WebFetch(domain:github.com)",
       "WebSearch",
-      "Bash(bd --help:*)",
-      "Bash(bd --version:*)",
-      "Bash(bd create:*)",
-      "Bash(bd list:*)",
-      "Bash(bd show:*)",
+      "Bash(bd:*)",
       "Bash(shellcheck:*)",
       "Bash(stow:*)"
     ],

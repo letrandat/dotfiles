@@ -108,14 +108,13 @@ stow claude
 - Git commands (status, diff, log, add, commit, push, etc.)
 - Package managers (npm, pip)
 - Testing (pytest, jest, vitest)
-- View-only bd/b2 commands (--help, --version, list, show, create)
+- **All bd commands** (full beads task management)
 - Utilities (shellcheck, stow)
 
 **Denied Commands (require confirmation):**
 
 - Destructive operations (rm, dd, mkfs, sudo)
-- Secret files (.env, *.key,*.pem)
-- Task modification (b2/bd close, update, delete)
+- Secret files (.env, *.key, *.pem)
 
 ### Modifying Settings
 
