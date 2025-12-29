@@ -1,5 +1,5 @@
 ---
-description: Scaffolds a new OpenSpec change from an existing design document
+description: Scaffolds a new OpenSpec change from an existing design document with strict requirement extraction
 auto_execution_mode: 0
 ---
 
@@ -7,24 +7,41 @@ auto_execution_mode: 0
 
 ## Overview
 
-A bridge workflow that initiates the standard `@workflow openspec-proposal` workflow using an existing Design Document or context as input.
+Converst a Design Document or context into a structured, **verification-ready** OpenSpec Proposal.
+This workflow acts as a **Technical Analyst**, extracting explicit requirements from the design source so that the resulting specs are self-contained.
 
 ## Steps
 
-1. **Analyze Input**:
+### 1. Analyze & Extract
 
-   - Identify the design document provided (e.g. `docs/plans/foo.md`) or the current context.
+1. **Identify Input**: Locate the design document (e.g., `docs/plans/foo.md`) or review the current context.
+2. **Deep Read**: Read the content.
+3. **Extraction**:
+   - Identify **Intent** (The "Why").
+   - Identify **Constraints** (The "Must Haves").
+   - Identify **Verification Points** (How to test).
 
-2. **Delegate to OpenSpec Proposal**:
+### 2. Delegate to Proposal
 
-   - Invoke the `@workflow openspec-proposal` workflow.
-   - Pass the design document or context as the source material for the "Feature" or "Change".
+Invoke the `/openspec-proposal` workflow with specific instructions:
 
-3. **Verify & Refine**:
+> "Create an OpenSpec proposal.
+> **Source Context**: [Content of Design Doc] > **Constraint**: Generate **self-contained specs**.
+> Do not write 'refer to design doc'.
+> Instead, **COPY** the specific tables, rules, and logic into the corresponding `specs/*.md` files.
+> Every spec must be verifiable on its own."
 
-   - Ensure the proposal is strictly validated.
-   - **CRITICAL**: Remind the user to refine the specs (e.g., "You can ask me to add acceptance criteria..." or "Would you like to add specific scenarios?").
+### 3. Review & Refine
 
-4. **Stop**:
-   - **DO NOT** proceed to implementation.
-   - Inform the user that implementation will be handled separately (e.g. via `@workflow dat-spec-to-tasks` or manual implementation).
+1. **Validation**: Run `openspec validate <id> --strict`.
+2. **Quality Check**:
+   - Open `specs/subdir/spec.md`.
+   - Does it describe _what_ to build explicitly?
+   - If it just says "See design", **REJECT IT** and refine the spec file manually to include the details.
+3. **Prompt User**:
+   - "I have scaffolded the specs. Please review `specs/` to ensure all design constraints are captured explicitly."
+
+### 4. Handoff
+
+Once validated, stop. Do not implement.
+Instruct the user: "Ready for implementation. Run `/dat-spec-to-tasks` to generate work items."
