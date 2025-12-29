@@ -1,7 +1,6 @@
 return {
   {
-    dir = "~/workspace/nvim-workspaces",
-    name = "nvim-workspaces",
+    "letrandat/nvim-workspaces",
     config = function()
       require("nvim-workspaces").setup({
         auto_restore = true,
