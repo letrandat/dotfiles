@@ -12,7 +12,7 @@ This workflow acts as a **Product Owner**, synthesizing the Proposal, Task List,
 
 **Key Principles:**
 
-- **Atomic**: Each task touches at MOST 3 files (aim for 2 on average)
+- **Atomic**: Each task is focused and manageable
 - **Self-Contained**: No reliance on spec files - all context embedded
 - **Verifiable**: Clear acceptance criteria and verification steps
 - **Actionable**: Includes problem statement, solution, files to change, and expected outcome
@@ -21,46 +21,35 @@ This workflow acts as a **Product Owner**, synthesizing the Proposal, Task List,
 
 **Before you start:**
 
-1. Validate: `openspec validate <change-id> --strict`
-2. Detect project name: `get-project-name` (optional)
+1. Validate: `openspec validate <change-id> --strict` - STOP if this fails
+2. Detect project name: `get-project-name` (optional, or use user-provided name)
 3. Read proposal.md, tasks.md, and ALL referenced specs
 
 **Task creation formula:**
 
-- 1-3 files = ideal task size
+- **1-2 files per task** (optimal) | **3 files** (maximum) | **4+ files** (split it!)
 - Must include: Problem + Solution + Files + Requirements + Verification
 - Priority: P1 (blocking/critical), P2 (important/normal), P3 (nice to have)
-- Tags: `[project-name]` in title + label
+- Tags: `[project-name]` in title + label (if available)
 
 **Quality checks:**
 
 - ✅ Each task stands alone (no external references)
 - ✅ Verification steps are specific commands/tests
 - ✅ All tasks.md items converted
-- ✅ Dependencies documented
-
-## Checklist
-
-- [ ] `openspec validate <change-id>` passes.
-- [ ] You are ready to transition from Planning to Execution.
+- ✅ Dependencies documented in descriptions
 
 ## The Process
 
 ### 0. Detect Project Name (Optional)
 
-**Use the project name if user provided it explicitly.** Otherwise, optionally try to detect it:
+Use user-provided project name if available. Otherwise, optionally detect:
 
 ```bash
 PROJECT_NAME=$(get-project-name 2>/dev/null || echo "")
-if [ -n "$PROJECT_NAME" ]; then
-  echo "Using project name: $PROJECT_NAME"
-else
-  echo "No project name detected, skipping tagging"
-fi
 ```
 
-If a project name is found (either from user or detection), use it as a tag: `[project-name]` in task titles and labels.
-If not available, skip tagging - it's a nice-to-have feature.
+Use `[project-name]` tags in titles and labels if available.
 
 ### 1. Validate & Orient
 
@@ -88,25 +77,14 @@ For **EACH** item in `tasks.md`:
 
 1. **Analyze File Impact**: List all files this task will touch.
 2. **Split if Needed**: If >3 files, break into smaller sub-tasks (aim for 2 files/task).
-3. **Create Self-Contained Task**: Use the template below.
-
-#### Task Breakdown Rules
-
-- ✅ **GOOD**: 1-2 files per task (optimal)
-- ✅ **ACCEPTABLE**: 3 files per task (maximum)
-- ❌ **TOO LARGE**: 4+ files → Split into multiple tasks
+3. **Assign Priority**: P1 (blocks other work, critical bugs, security), P2 (normal work), P3 (nice-to-have)
+4. **Create Self-Contained Task**: Use the template below.
 
 **Splitting Strategies:**
 
 - Split by layer (e.g., "Update API endpoint" + "Update UI component")
 - Split by concern (e.g., "Add validation logic" + "Add error handling")
 - Split by file type (e.g., "Update schema" + "Update migration" + "Update tests")
-
-**Priority Assignment:**
-
-- **P1**: Blocks other tasks, critical bugs, security issues, must-have for MVP
-- **P2**: Important features, normal development work, non-blocking enhancements
-- **P3**: Nice-to-have improvements, polish, optional features
 
 #### Task Creation Template
 
@@ -115,7 +93,7 @@ For each atomic task, create with this structure:
 ```bash
 bd create "[project-name] <Verb> <Object>" \
   --parent <Epic-ID> \
-  --priority <P1/P2> \
+  --priority <P1/P2/P3> \
   --type task \
   --label "project-name,<relevant-tags>" \
   --description "
@@ -136,6 +114,10 @@ Extract design details from specs/ and embed them here.>
 - <COPY exact requirement from specs/foo.md line X-Y>
 - <COPY exact requirement from specs/bar.md line A-B>
 - <COPY any constraints, edge cases, or technical decisions>
+
+## Dependencies (if applicable)
+⚠️ This task requires:
+- Task <project>-<id>: <Brief description of what must be done first>
 
 ## Expected Outcome
 <What does success look like? What should work after this task?>
@@ -197,6 +179,9 @@ bd create "Add user authentication"
 ```bash
 # Task 1: Database Schema (2 files)
 bd create "[myapp] Add user authentication schema" \
+  --parent "$EPIC_ID" \
+  --priority P1 \
+  --label "myapp,database,schema" \
   --description "
 ## Problem Statement
 Need database tables to store user credentials and sessions for authentication system.
@@ -205,73 +190,34 @@ Need database tables to store user credentials and sessions for authentication s
 Create users table with email/password fields and sessions table for JWT tracking.
 
 ## Files to Change
-1. \`db/schema.sql\` - Add users and sessions tables
-2. \`db/migrations/001.sql\` - Migration script to create tables
+1. db/schema.sql - Add users and sessions tables
+2. db/migrations/001.sql - Migration script to create tables
 
 ## Requirements (Embedded from Specs)
 - Users table must have: id (UUID), email (unique), password_hash, created_at
 - Sessions table must have: id, user_id (FK), token_hash, expires_at
 - Email must be case-insensitive unique (use LOWER index)
-..."
 
-# Task 2: JWT Library (1 file)
-bd create "[myapp] Implement JWT token utilities" \
-  --description "
-## Problem Statement
-Need functions to generate and verify JWT tokens for session management.
+## Expected Outcome
+- Database has users and sessions tables
+- Email uniqueness is enforced case-insensitively
+- Foreign key relationship exists between sessions.user_id and users.id
 
-## Solution Approach
-Create utility module with sign() and verify() functions using HS256 algorithm.
+## Verification Steps
+- [ ] Run migration: psql -f db/migrations/001.sql
+- [ ] Verify tables exist: \dt in psql shows users and sessions
+- [ ] Test email uniqueness: INSERT duplicate email with different case should fail
+- [ ] Verify FK constraint: DELETE user should cascade to sessions
 
-## Files to Change
-1. \`lib/jwt.ts\` - Token generation and verification functions
-..."
+## Context for New Agents
+This project uses PostgreSQL. Migrations are applied manually via psql.
+Schema file is source of truth; migrations modify existing databases.
+"
 
-# Task 3: Auth API Endpoint (2 files)
-bd create "[myapp] Create login/signup API endpoints" \
-  --description "
-## Problem Statement
-Need REST endpoints for users to register and login.
-
-## Solution Approach
-POST /api/auth/signup and POST /api/auth/login endpoints.
-
-## Files to Change
-1. \`api/auth.ts\` - Signup and login route handlers
-2. \`tests/auth.test.ts\` - Integration tests for auth endpoints
-..."
-
-# Task 4: Login UI (1 file)
-bd create "[myapp] Build login form component"
-
-# Task 5: Signup UI (1 file)
-bd create "[myapp] Build signup form component"
-```
-
-**Why This Is Better:**
-
-- Each task is 1-2 files (3 max)
-- New agent can complete any task independently
-- Clear dependencies: Task 1 → Task 2 → Task 3 → Task 4/5
-- Each has specific problem, solution, and verification
-
-### Task Dependency Management
-
-When tasks have dependencies, note them in the description:
-
-```bash
-bd create "[myapp] Create login API endpoint" \
-  --description "
-## Problem Statement
-...
-
-## Dependencies
-⚠️ This task requires:
-- Task dotfiles-123: JWT utilities must be implemented first
-- Task dotfiles-456: Database schema must be migrated
-
-## Solution Approach
-..."
+# Task 2: JWT Library (1 file) - P1
+# Task 3: Auth API Endpoint (2 files) - P1
+# Task 4: Login UI (1 file) - P2
+# Task 5: Signup UI (1 file) - P2
 ```
 
 ## Tips for Product Owners
@@ -282,8 +228,7 @@ bd create "[myapp] Create login API endpoint" \
 2. **Think like a new hire** - what would THEY need to know?
 3. **Be specific about verification** - "run tests" is vague, "run `pytest tests/auth.test.ts` and verify all 5 tests pass" is clear
 4. **Embed, don't link** - copy the actual requirement text, not just "see spec X"
-5. **2 files is the sweet spot** - most tasks should be 2 files (implementation + test)
-6. **Project tags help filtering** - consistent tagging makes task management easier
+5. **Project tags help filtering** - consistent tagging makes task management easier
 
 ### Error Handling
 
@@ -291,22 +236,25 @@ If commands fail:
 
 - **`openspec validate` fails**: Fix the OpenSpec change first, don't proceed
 
+### When to Refine OpenSpec vs Create Tasks
+
+**Refine the OpenSpec if:**
+
+- Requirements are vague or contradictory
+- Critical specs are missing
+- Proposal doesn't explain "Why" clearly
+- Tasks.md has items that are too large or unclear
+
+**Create tasks if:**
+
+- OpenSpec validates cleanly
+- All referenced specs exist and are complete
+- You can articulate clear problem statements for each task
+- File impacts are identifiable
+
 ### Integration with Other Workflows
 
 This workflow integrates with:
 
 - **verification-before-completion**: Use after implementing tasks to verify completion
 - **dat-rule-of-five**: Apply when creating complex task descriptions or reviewing task quality
-
-## Summary
-
-This workflow ensures every Beads task created from an OpenSpec change is:
-
-- ✅ **Atomic** (1-3 files max, aim for 2)
-- ✅ **Self-contained** (all context embedded, no external references)
-- ✅ **Verifiable** (specific verification steps with commands)
-- ✅ **Actionable** (clear problem, solution, files, expected outcome)
-- ✅ **Prioritized** (P1/P2/P3 assigned appropriately)
-- ✅ **Tagged** (project name for filtering and organization)
-
-Ready for any agent to execute, even with zero project context.
