@@ -16,6 +16,28 @@ This workflow acts as a **Product Owner**, synthesizing the Proposal, Task List,
 - **Verifiable**: Clear acceptance criteria and verification steps
 - **Actionable**: Includes problem statement, solution, files to change, and expected outcome
 
+## Quick Reference
+
+**Before you start:**
+
+1. Validate: `openspec validate <change-id> --strict`
+2. Detect project name: `get-project-name` (optional)
+3. Read proposal.md, tasks.md, and ALL referenced specs
+
+**Task creation formula:**
+
+- 1-3 files = ideal task size
+- Must include: Problem + Solution + Files + Requirements + Verification
+- Priority: P1 (blocking/critical), P2 (important/normal), P3 (nice to have)
+- Tags: `[project-name]` in title + label
+
+**Quality checks:**
+
+- ✅ Each task stands alone (no external references)
+- ✅ Verification steps are specific commands/tests
+- ✅ All tasks.md items converted
+- ✅ Dependencies documented
+
 ## Checklist
 
 - [ ] `openspec validate <change-id>` passes.
@@ -25,15 +47,19 @@ This workflow acts as a **Product Owner**, synthesizing the Proposal, Task List,
 
 ### 0. Detect Project Name (Optional)
 
-Try to detect the project name for tagging:
+**Use the project name if user provided it explicitly.** Otherwise, optionally try to detect it:
 
 ```bash
-# Try the get-project-name utility if available
-get-project-name 2>/dev/null || echo ""
+PROJECT_NAME=$(get-project-name 2>/dev/null || echo "")
+if [ -n "$PROJECT_NAME" ]; then
+  echo "Using project name: $PROJECT_NAME"
+else
+  echo "No project name detected, skipping tagging"
+fi
 ```
 
-If a project name is found, use it as a tag: `[project-name]` in task titles and labels.
-If not found or the command fails, skip tagging - it's a nice-to-have feature.
+If a project name is found (either from user or detection), use it as a tag: `[project-name]` in task titles and labels.
+If not available, skip tagging - it's a nice-to-have feature.
 
 ### 1. Validate & Orient
 
@@ -74,6 +100,12 @@ For **EACH** item in `tasks.md`:
 - Split by layer (e.g., "Update API endpoint" + "Update UI component")
 - Split by concern (e.g., "Add validation logic" + "Add error handling")
 - Split by file type (e.g., "Update schema" + "Update migration" + "Update tests")
+
+**Priority Assignment:**
+
+- **P1**: Blocks other tasks, critical bugs, security issues, must-have for MVP
+- **P2**: Important features, normal development work, non-blocking enhancements
+- **P3**: Nice-to-have improvements, polish, optional features
 
 #### Task Creation Template
 
@@ -125,8 +157,10 @@ Assume the agent knows NOTHING about this codebase.>
 
 ### 4. Verify & Report
 
-1. Run `bd ready` to confirm the tasks are correctly queued.
-2. Report the created structure to the user.
+1. **Verify all items converted**: Check that every item in `tasks.md` has a corresponding task created
+2. **Run `bd ready`** to confirm tasks are correctly queued
+3. **Check dependencies**: Ensure tasks with dependencies have them documented
+4. Report the created structure to the user
 
 ```markdown
 **Beads Implementation Ready**
@@ -134,9 +168,15 @@ Epic: `task-xyz` ([project-name] <Title>)
 
 **Created Tasks** (X tasks, avg Y files/task):
 
-- `task-abc`: [project-name] <Task 1> (2 files)
-- `task-def`: [project-name] <Task 2> (1 file)
+- `task-abc`: [project-name] <Task 1> (2 files) [P1]
+- `task-def`: [project-name] <Task 2> (1 file) [P2]
   ...
+
+**Verification:**
+- ✅ All tasks.md items converted
+- ✅ Dependencies documented
+- ✅ All tasks are atomic (≤3 files)
+- ✅ All tasks have complete context
 ```
 
 ## Examples
@@ -208,6 +248,7 @@ bd create "[myapp] Build signup form component"
 ```
 
 **Why This Is Better:**
+
 - Each task is 1-2 files (3 max)
 - New agent can complete any task independently
 - Clear dependencies: Task 1 → Task 2 → Task 3 → Task 4/5
@@ -234,9 +275,37 @@ bd create "[myapp] Create login API endpoint" \
 
 ## Tips for Product Owners
 
+### Critical Rules
+
 1. **Read the actual files** mentioned in specs/ - don't just reference them
 2. **Think like a new hire** - what would THEY need to know?
 3. **Be specific about verification** - "run tests" is vague, "run `pytest tests/auth.test.ts` and verify all 5 tests pass" is clear
 4. **Embed, don't link** - copy the actual requirement text, not just "see spec X"
 5. **2 files is the sweet spot** - most tasks should be 2 files (implementation + test)
 6. **Project tags help filtering** - consistent tagging makes task management easier
+
+### Error Handling
+
+If commands fail:
+
+- **`openspec validate` fails**: Fix the OpenSpec change first, don't proceed
+
+### Integration with Other Workflows
+
+This workflow integrates with:
+
+- **verification-before-completion**: Use after implementing tasks to verify completion
+- **dat-rule-of-five**: Apply when creating complex task descriptions or reviewing task quality
+
+## Summary
+
+This workflow ensures every Beads task created from an OpenSpec change is:
+
+- ✅ **Atomic** (1-3 files max, aim for 2)
+- ✅ **Self-contained** (all context embedded, no external references)
+- ✅ **Verifiable** (specific verification steps with commands)
+- ✅ **Actionable** (clear problem, solution, files, expected outcome)
+- ✅ **Prioritized** (P1/P2/P3 assigned appropriately)
+- ✅ **Tagged** (project name for filtering and organization)
+
+Ready for any agent to execute, even with zero project context.
