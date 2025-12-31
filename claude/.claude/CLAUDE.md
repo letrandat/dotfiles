@@ -4,14 +4,16 @@
 
 ### After Completing Any Work
 
-**ALWAYS check for lint/diagnostics from the IDE (neovim) after completing work.**
+**Check for lint/diagnostics when the IDE MCP server is available.**
 
-Use the `mcp__ide__getDiagnostics` tool to check for errors and warnings.
+The `mcp__ide__getDiagnostics` tool is only available when Claude Code is launched from within Neovim. When running standalone, this tool is unavailable.
 
 #### Workflow
 
 1. Complete the implementation/changes
-2. **ALWAYS** run `mcp__ide__getDiagnostics` to check for lint issues
+2. **Try to check IDE diagnostics** (skip gracefully if unavailable):
+   - If `mcp__ide__getDiagnostics` is available: Run it to check for lint issues
+   - If unavailable (standalone mode): Note "IDE diagnostics unavailable in standalone mode - skipping lint check"
 3. **Try to use appropriate linter to auto-fix** before manually fixing:
    - Markdown: `markdownlint-cli2 --fix <file>`
    - JavaScript/TypeScript: `eslint --fix <file>` or neovim LSP format
@@ -56,11 +58,17 @@ Agent: "Implementation complete!"
 [No diagnostic check performed]
 ```
 
+**✅ ALSO GOOD (Standalone mode):**
+
+```text
+Agent: "Changes complete. IDE diagnostics unavailable in standalone mode - skipping lint check."
+```
+
 ### Critical Rules
 
-- ✅ **ALWAYS** check diagnostics after completing work
-- ✅ **ALWAYS** explicitly state that you checked
-- ✅ **ALWAYS** fix lint errors related to your changes
+- ✅ **TRY** to check diagnostics after completing work (if IDE MCP available)
+- ✅ **ALWAYS** explicitly state whether you checked or skipped (with reason)
+- ✅ **ALWAYS** fix lint errors related to your changes (when diagnostics available)
 - ✅ Document why you're ignoring unrelated/minor issues
-- ❌ **NEVER** skip the diagnostic check
-- ❌ **NEVER** silently ignore lint errors in modified files
+- ✅ Skip gracefully in standalone mode with a clear message
+- ❌ **NEVER** silently ignore lint errors in modified files (when diagnostics available)
