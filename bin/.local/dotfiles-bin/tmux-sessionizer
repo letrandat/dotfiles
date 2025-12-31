@@ -109,7 +109,7 @@ if [[ "$selected" =~ ^\[TMUX\]\ (.+)$ ]]; then
 elif [[ -d "$selected" ]]; then
     parent=$(basename "$(dirname "$selected")" | tr . _)
     child=$(basename "$selected" | tr . _)
-    selected_name="${parent}_${child}"
+    selected_name="${parent}/${child}"
 else
     selected_name=$(basename "$selected" | tr . _)
 fi
