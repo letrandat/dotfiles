@@ -42,9 +42,9 @@ map("v", "<C-j>", ":m '>+1<CR>gv=gv", { desc = "Move selected lines down" })
 -- ============================================================================
 -- File Path Copying
 -- ============================================================================
--- Copy relative path with line range in visual mode
+-- Copy absolute path with line range in visual mode
 map("v", "Y", function()
-  local path = vim.fn.expand("%:.")
+  local path = vim.fn.expand("%:p")
   local start_line = vim.fn.line("v")
   local end_line = vim.fn.line(".")
   if start_line > end_line then
@@ -53,7 +53,7 @@ map("v", "Y", function()
   local ref = "@" .. path .. "#L" .. start_line .. "-" .. end_line
   vim.fn.setreg("+", ref)
   vim.notify("Copied: " .. ref, vim.log.levels.INFO)
-end, { desc = "Copy relative file path with line range" })
+end, { desc = "Copy absolute file path with line range" })
 
 -- ============================================================================
 -- Search and Replace
