@@ -96,7 +96,7 @@ find_dirs() {
 if [[ $# -eq 1 ]]; then
     selected="$1"
 else
-    selected=$(find_dirs | fzf)
+    selected=$(find_dirs | fzf --no-sort)
 fi
 
 if [[ -z $selected ]]; then
@@ -105,7 +105,7 @@ fi
 
 if [[ "$selected" =~ ^\[TMUX\]\ (.+)$ ]]; then
     selected="${BASH_REMATCH[1]}"
-    selected_name=$(basename "$selected" | tr . _)
+    selected_name="$selected"
 elif [[ -d "$selected" ]]; then
     parent=$(basename "$(dirname "$selected")" | tr . _)
     child=$(basename "$selected" | tr . _)
