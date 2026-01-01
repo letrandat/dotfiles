@@ -35,7 +35,8 @@
       "Bash(bd:*)",
       "Bash(shellcheck:*)",
       "Bash(stow:*)",
-      "Bash(openspec:*)"
+      "Bash(openspec:*)",
+      "Bash(pre-commit:*)"
     ],
     "deny": [
       "Read(.env)",
