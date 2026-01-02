@@ -28,6 +28,7 @@ trigger: always_on
 2. **Environment Detection**:
    - Use `hostname` or environment variables to detect the current machine
    - Example in `.zshrc`:
+
      ```zsh
      if [[ -f ~/.zshrc.$(hostname -s) ]]; then
          source ~/.zshrc.$(hostname -s)
@@ -60,6 +61,7 @@ trigger: always_on
 ## Setup Script
 
 Create a `bootstrap.sh` script to:
+
 1. Create necessary symlinks
 2. Install dependencies
 3. Set up environment variables
