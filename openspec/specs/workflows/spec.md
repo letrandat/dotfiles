@@ -1,8 +1,11 @@
 # workflows Specification
 
 ## Purpose
+
 TBD - created by archiving change unified-workflow-naming. Update Purpose after archive.
+
 ## Requirements
+
 ### Requirement: Namespace Standards
 
 The system MUST enforce strict namespace separation for workflows.
@@ -71,9 +74,11 @@ When the migration is complete
 Then the file `dat-b2.md` MUST NOT exist
 
 ### Requirement: Design to Spec Workflow Behavior
+
 The `dat-design-to-spec` workflow SHALL act as a bridge that initiates the standard `/openspec-proposal` workflow using a design document or current context as input.
 
 #### Scenario: Workflow Delegation
+
 - **WHEN** the `dat-design-to-spec` workflow is executed
 - **THEN** it MUST invoke the `/openspec-proposal` workflow
 - **AND** it MUST provide the design document or context as the "Feature" or "Change" input
@@ -81,7 +86,8 @@ The `dat-design-to-spec` workflow SHALL act as a bridge that initiates the stand
 - **AND** it MUST explicitly remind the user to refine the specs (e.g., "You can ask me to add acceptance criteria...") before proceeding
 
 #### Scenario: Out of Scope
+
 - **WHEN** the workflow is executed
 - **THEN** it MUST NOT perform any implementation (coding) of the specs
-```
 
+```

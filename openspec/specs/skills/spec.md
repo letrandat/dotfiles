@@ -3,7 +3,9 @@
 ## Purpose
 
 Defines agent skill capabilities for systematic iterative review patterns. Skills provide reusable review protocols that agents invoke to improve output quality through multi-pass examination with role-based perspectives and progressive scope escalation.
+
 ## Requirements
+
 ### Requirement: Rule of Five Iterative Review
 
 The system SHALL provide a Rule of Five skill that enforces systematic multi-pass review of agent work to achieve convergent quality before claiming completion.
@@ -114,4 +116,3 @@ The system SHALL define what constitutes a proper review pass.
 - **THEN** agent MUST actively look for issues, not just re-read
 - **AND** agent MUST check different aspects in each pass (not repeat same checks)
 - **AND** agent MUST apply increasingly critical lens in later passes
-
