@@ -27,3 +27,6 @@ codeium/.codeium/windsurf/user_settings.pb
 .claude/skills
 .claude/*.local.*
 .agent/skills
+
+# bv (beads viewer) local config and caches
+.bv/

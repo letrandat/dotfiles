@@ -126,4 +126,3 @@ type(scope): subject
 ### Guidelines
 - **Subject**: Imperative, present tense ("add" not "added"), no capitalization, no period.
 - **Body**: Use a bulleted list (`- `) to explain *what* and *why* vs. *how*.
-
