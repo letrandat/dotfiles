@@ -8,8 +8,7 @@ Custom scripts in this repo are stored in `bin/.local/dotfiles-bin/` and stowed 
 
 ### Structure
 
-```
-
+```text
 bin/.local/dotfiles-bin/    # Source location in repo
   ├── script-name           # Custom scripts
   ├── get-project-name      # Shared libraries/utilities
@@ -30,13 +29,13 @@ bin/.local/dotfiles-bin/    # Source location in repo
 
 ## Claude Code Settings Management
 
-### Overview
+### Claude Settings Overview
 
 Claude Code settings are version-controlled in this repo and stowed to the home directory.
 
-### Structure
+### Claude Settings Structure
 
-```
+```text
 claude/.claude/                 # Source location in repo
   ├── settings.json            # Claude Code settings
   ├── CLAUDE.md               # Project-specific instructions

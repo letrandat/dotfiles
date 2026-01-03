@@ -89,5 +89,3 @@ The `dat-design-to-spec` workflow SHALL act as a bridge that initiates the stand
 
 - **WHEN** the workflow is executed
 - **THEN** it MUST NOT perform any implementation (coding) of the specs
-
-```

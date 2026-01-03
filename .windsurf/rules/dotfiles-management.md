@@ -6,7 +6,7 @@ trigger: always_on
 
 ## Repository Structure
 
-```
+```text
 ├── .config/              # Application configurations
 │   ├── zsh/              # Zsh configuration
 │   ├── nvim/             # Neovim configuration

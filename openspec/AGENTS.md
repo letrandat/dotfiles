@@ -45,7 +45,7 @@ Skip proposal for:
 - Configuration changes
 - Tests for existing behavior
 
-**Workflow**
+### Workflow
 
 1. Review `openspec/project.md`, `openspec list`, and `openspec list --specs` to understand current context.
 2. Choose a unique verb-led `change-id` and scaffold `proposal.md`, `tasks.md`, optional `design.md`, and spec deltas under `openspec/changes/<id>/`.
@@ -135,7 +135,7 @@ openspec validate [change] --strict
 
 ## Directory Structure
 
-```
+```text
 openspec/
 ├── project.md              # Project conventions
 ├── specs/                  # Current truth - what IS built
@@ -157,7 +157,7 @@ openspec/
 
 ### Decision Tree
 
-```
+```text
 New request?
 ├─ Bug fix restoring spec behavior? → Fix directly
 ├─ Typo/format/comment? → Fix directly
@@ -315,17 +315,17 @@ Example for RENAMED:
 
 ### Common Errors
 
-**"Change must have at least one delta"**
+#### "Change must have at least one delta"
 
 - Check `changes/[name]/specs/` exists with .md files
 - Verify files have operation prefixes (## ADDED Requirements)
 
-**"Requirement must have at least one scenario"**
+#### "Requirement must have at least one scenario"
 
 - Check scenarios use `#### Scenario:` format (4 hashtags)
 - Don't use bullet points or bold for scenario headers
 
-**Silent scenario parsing failures**
+#### Silent scenario parsing failures
 
 - Exact format required: `#### Scenario: Name`
 - Debug with: `openspec show [change] --json --deltas-only`
@@ -376,7 +376,7 @@ openspec validate $CHANGE --strict
 
 ## Multi-Capability Example
 
-```
+```text
 openspec/changes/add-2fa-notify/
 ├── proposal.md
 ├── tasks.md
@@ -442,7 +442,7 @@ Only add complexity with:
 ## Tool Selection Guide
 
 | Task | Tool | Why |
-|------|------|-----|
+| --- | --- | --- |
 | Find files by pattern | Glob | Fast pattern matching |
 | Search code content | Grep | Optimized regex search |
 | Read specific files | Read | Direct file access |

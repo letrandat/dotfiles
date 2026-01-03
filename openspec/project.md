@@ -30,7 +30,6 @@ Personal dotfiles repository for managing development environment configurations
 ### Development Utilities
 
 - **Task Management**: Beads (git-based issue tracker)
-- **Skills**: Openskills (portable agent skills)
 - **Spec Management**: OpenSpec (spec-driven development)
 - **Custom Scripts**: Located in `bin/.local/dotfiles-bin/`
 
@@ -142,7 +141,7 @@ Personal dotfiles repository for managing development environment configurations
 
 **Windsurf Workflows Sync**:
 
-- Openskills automatically synced to Windsurf workflows
+- Advanced engineering workflows synced to Windsurf workflows
 - Command: `superpowers-sync sync`
 - 9 core skills converted to native Windsurf workflows
 - Plugin skills synced via `claude-plugins-sync sync`
@@ -194,7 +193,6 @@ Personal dotfiles repository for managing development environment configurations
 - LazyGit (git TUI)
 - fzf (fuzzy finder)
 - ripgrep (search)
-- Openskills (skill management)
 - Beads (task management)
 
 **AI Services**:

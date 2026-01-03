@@ -234,7 +234,7 @@ If you catch yourself thinking:
 ## Quick Reference
 
 | Task Size | Min Passes | Focus Progression | Convergence Signal |
-|-----------|------------|-------------------|-------------------|
+| --- | --- | --- | --- |
 | Small (<100 lines, 1 file) | 2-3 | Narrow → Medium | No substantive findings |
 | Large (multi-file, complex) | 4-5 | Narrow → Medium → Large | "As good as we can make it" |
 

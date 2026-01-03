@@ -3,7 +3,7 @@ description: Scaffold a new OpenSpec change and validate strictly.
 auto_execution_mode: 3
 ---
 <!-- OPENSPEC:START -->
-**Guardrails**
+## Guardrails
 
 - Favor straightforward, minimal implementations first and add complexity only when it is requested or clearly required.
 - Keep changes tightly scoped to the requested outcome.
@@ -11,7 +11,7 @@ auto_execution_mode: 3
 - Identify any vague or ambiguous details and ask the necessary follow-up questions before editing files.
 - Do not write any code during the proposal stage. Only create design documents (proposal.md, tasks.md, design.md, and spec deltas). Implementation happens in the apply stage after approval.
 
-**Steps**
+## Steps
 
 1. Review `openspec/project.md`, run `openspec list` and `openspec list --specs`, and inspect related code or docs (e.g., via `rg`/`ls`) to ground the proposal in current behaviour; note any gaps that require clarification.
 2. Choose a unique verb-led `change-id` and scaffold `proposal.md`, `tasks.md`, and `design.md` (when needed) under `openspec/changes/<id>/`.
@@ -21,7 +21,7 @@ auto_execution_mode: 3
 6. Draft `tasks.md` as an ordered list of small, verifiable work items that deliver user-visible progress, include validation (tests, tooling), and highlight dependencies or parallelizable work.
 7. Validate with `openspec validate <id> --strict` and resolve every issue before sharing the proposal.
 
-**Reference**
+## Reference
 
 - Use `openspec show <id> --json --deltas-only` or `openspec show <spec> --type spec` to inspect details when validation fails.
 - Search existing requirements with `rg -n "Requirement:|Scenario:" openspec/specs` before writing new ones.
