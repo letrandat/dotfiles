@@ -59,7 +59,34 @@ link_app_support() {
 link_app_support "Code" "Code"
 link_app_support "Windsurf" "Windsurf"
 
-# 4. Run Stow for all packages
+# 4. Special symlinks that can't be handled by Stow
+# These require manual linking because the parent directories contain other content
+echo "Setting up special symlinks..."
+
+# Antigravity global_workflows
+# Note: We symlink just the workflows directory, not the entire .gemini tree,
+# because .gemini contains user data (conversations, brain, settings, etc.)
+GEMINI_WORKFLOWS_SOURCE="$DOTFILES_DIR/gemini/.gemini/antigravity/global_workflows"
+GEMINI_WORKFLOWS_TARGET="$HOME/.gemini/antigravity/global_workflows"
+
+if [ -d "$GEMINI_WORKFLOWS_SOURCE" ]; then
+    # Ensure parent directory exists
+    mkdir -p "$(dirname "$GEMINI_WORKFLOWS_TARGET")"
+
+    # Backup existing directory if it's not a symlink
+    if [ -d "$GEMINI_WORKFLOWS_TARGET" ] && [ ! -L "$GEMINI_WORKFLOWS_TARGET" ]; then
+        echo "Backing up existing Antigravity workflows..."
+        mv "$GEMINI_WORKFLOWS_TARGET" "${GEMINI_WORKFLOWS_TARGET}.backup_$(date +%Y%m%d_%H%M%S)"
+    fi
+
+    # Create symlink if it doesn't exist
+    if [ ! -L "$GEMINI_WORKFLOWS_TARGET" ]; then
+        echo "Linking Antigravity workflows: $GEMINI_WORKFLOWS_TARGET -> $GEMINI_WORKFLOWS_SOURCE"
+        ln -s "$GEMINI_WORKFLOWS_SOURCE" "$GEMINI_WORKFLOWS_TARGET"
+    fi
+fi
+
+# 5. Run Stow for all packages
 PACKAGES=(
     zsh
     git
@@ -79,7 +106,7 @@ PACKAGES=(
     amp
 )
 
-# Cleanup legacy links that might block stow
+# 6. Cleanup legacy links that might block stow
 cleanup_legacy() {
     local target="$1"
     if [ -L "$target" ]; then
