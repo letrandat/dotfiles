@@ -2,7 +2,6 @@
 
 ## Core Mandates
 
-- **Consult First**: **CRITICAL**: You must NEVER modify files, create files, delete files, or execute state-changing commands (e.g., git commit, system modifications) without explicitly proposing the specific action and receiving clear, affirmative confirmation from the user. Do not assume permission based on vague intent.
 - **Plan & Approve**: Before starting implementation, you MUST provide a detailed implementation plan and obtain the user's explicit approval.
 - Use **OpenSpec** for intent (`openspec-proposal`).
 - Use **Beads** for task management (`bd`).
