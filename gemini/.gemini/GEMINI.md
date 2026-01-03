@@ -7,10 +7,37 @@
 - Use **Beads** for task management (`bd`).
 - Always brainstorm with `/dat-brainstorm` before coding complex features.
 
-## Universal Workflow: Land the Plane
+## Issue Tracking
 
-If I told you to "Land the Plane"" you MUST follow this ritual to prevent "session amnesia":
+This project uses **bd (beads)** for issue tracking.
+Run `bd prime` for workflow context, or install hooks (`bd hooks install`) for auto-injection.
 
-1. **Context Capture**: Run `bd update <id>` with a note summarizing the current logic state (e.g., "Mid-refactor of API, cursor at line 124").
-2. **Quality Gates**: Run local tests/lints on **changed files only** (e.g., `pre-commit run --files <files>`). Do not run on all files. If errors exist, create a new Beads issue.
-3. **State Reconciliation**: Run `bd sync`. This ensures local state matches the remote issue tracker.
+**Quick reference:**
+
+- `bd ready` - Find unblocked work
+- `bd create "Title" --type task --priority 2` - Create issue
+- `bd close <id>` - Complete work
+- `bd sync` - Sync with git (run at session end)
+
+For full workflow details: `bd prime`
+
+<!-- OPENSPEC:START -->
+## OpenSpec Instructions
+
+These instructions are for AI assistants working in this project.
+
+Always open `@/openspec/AGENTS.md` when the request:
+
+- Mentions planning or proposals (words like proposal, spec, change, plan)
+- Introduces new capabilities, breaking changes, architecture shifts, or big performance/security work
+- Sounds ambiguous and you need the authoritative spec before coding
+
+Use `@/openspec/AGENTS.md` to learn:
+
+- How to create and apply change proposals
+- Spec format and conventions
+- Project structure and guidelines
+
+Keep this managed block so 'openspec update' can refresh the instructions.
+
+<!-- OPENSPEC:END -->
