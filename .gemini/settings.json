@@ -1,0 +1,10 @@
+{
+  "autoApprovedTools": [
+    "run_shell_command(ls)",
+    "run_shell_command(git)",
+    "run_shell_command(cat)",
+    "run_shell_command(grep)",
+    "run_shell_command(find)",
+    "run_shell_command(bd)"
+  ]
+}
