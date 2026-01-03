@@ -13,6 +13,7 @@ Agents produce significantly better output when reviewing their work 4-5 times b
 ## The Iron Law
 
 **MINIMUM REVIEW PASSES BEFORE COMPLETION:**
+
 - Small tasks (single file, <100 lines): 2-3 passes
 - Large tasks (multi-file, complex logic): 4-5 passes
 
@@ -23,6 +24,7 @@ If you haven't completed minimum passes, you cannot declare completion.
 ## When to Use
 
 **ALWAYS use for:**
+
 - Design documents and proposals
 - Implementation plans (tasks.md, Beads issues)
 - Code implementations (any non-trivial logic)
@@ -30,6 +32,7 @@ If you haven't completed minimum passes, you cannot declare completion.
 - Architecture decisions
 
 **Skip only for:**
+
 - Trivial changes (typos, one-liners, formatting)
 - When you just need verification-before-completion (evidence check)
 
@@ -44,6 +47,7 @@ Each review pass adopts a different stakeholder perspective. Apply perspectives 
 **Focus:** Correctness, edge cases, performance
 
 **Questions to ask:**
+
 - Does this handle all edge cases?
 - What happens with invalid input?
 - Are there performance bottlenecks?
@@ -55,6 +59,7 @@ Each review pass adopts a different stakeholder perspective. Apply perspectives 
 **Focus:** Failure modes, test coverage, edge cases
 
 **Questions to ask:**
+
 - What could break this?
 - Are all code paths tested?
 - Do tests actually fail when they should?
@@ -66,6 +71,7 @@ Each review pass adopts a different stakeholder perspective. Apply perspectives 
 **Focus:** UX, accessibility, user experience (for user-facing work)
 
 **Questions to ask:**
+
 - Is this usable by target audience?
 - Does this meet accessibility standards?
 - Is the user flow intuitive?
@@ -77,6 +83,7 @@ Each review pass adopts a different stakeholder perspective. Apply perspectives 
 **Focus:** Usability, clarity, value delivered
 
 **Questions to ask:**
+
 - Would this solve the user's actual problem?
 - Is the benefit clear and immediate?
 - Is documentation understandable?
@@ -88,6 +95,7 @@ Each review pass adopts a different stakeholder perspective. Apply perspectives 
 **Focus:** Patterns, coupling, maintainability
 
 **Questions to ask:**
+
 - Does this fit existing architecture?
 - Is coupling minimal and intentional?
 - Can this be maintained by others?
@@ -99,6 +107,7 @@ Each review pass adopts a different stakeholder perspective. Apply perspectives 
 **Focus:** Requirements alignment, scope, business value
 
 **Questions to ask:**
+
 - Does this meet stated requirements?
 - Is scope appropriate (not over/under-engineered)?
 - Does this deliver business value?
@@ -154,12 +163,14 @@ Reviews escalate from narrow to broad concerns:
 ## Convergence Criteria
 
 **You've reached convergence when:**
+
 - Latest review finds no meaningful improvements
 - Only trivial/stylistic changes suggested
 - Multiple passes find nothing substantive
 - You can honestly state: "This is about as good as we can make it"
 
 **Convergence safeguards:**
+
 - MUST complete minimum pass count (2-3 small, 4-5 large)
 - MUST show progressive deepening of scope
 - MUST apply multiple role perspectives
@@ -170,6 +181,7 @@ Reviews escalate from narrow to broad concerns:
 ## Integration Points
 
 **REQUIRED integrations:**
+
 - **systematic-debugging**: When reviewing implementations, check for debugging anti-patterns
 - **verification-before-completion**: Final pass MUST verify with evidence (run tests, check output)
 - **test-driven-development**: When reviewing tests, ensure RED-GREEN-REFACTOR cycle followed
@@ -206,6 +218,7 @@ If YES to all: Declare convergence and proceed to verification-before-completion
 ## Red Flags - STOP
 
 If you catch yourself thinking:
+
 - "First draft looks good, ship it"
 - "One review is enough"
 - "Reviews are finding nothing" (before minimum passes)
@@ -226,6 +239,7 @@ If you catch yourself thinking:
 | Large (multi-file, complex) | 4-5 | Narrow → Medium → Large | "As good as we can make it" |
 
 **Role coverage:**
+
 - All tasks: Engineer, Tester, Architect (minimum)
 - User-facing: Add Designer, End User
 - Requirements-driven: Add PM/EM

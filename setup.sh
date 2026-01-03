@@ -58,7 +58,6 @@ link_app_support() {
 
 link_app_support "Code" "Code"
 link_app_support "Windsurf" "Windsurf"
-link_app_support "Antigravity" "Antigravity"
 
 # 4. Run Stow for all packages
 PACKAGES=(
@@ -76,6 +75,7 @@ PACKAGES=(
     windsurf
     antigravity
     codeium
+    gemini
     amp
 )
 
@@ -117,8 +117,6 @@ cleanup_legacy "$HOME/.config/Code/User/tasks.json"
 cleanup_legacy "$HOME/.config/Code/User/prompts/code-gen.instructions.md"
 cleanup_legacy "$HOME/.config/Windsurf/User/settings.json"
 cleanup_legacy "$HOME/.config/Windsurf/User/keybindings.json"
-cleanup_legacy "$HOME/.config/Antigravity/User/settings.json"
-cleanup_legacy "$HOME/.config/Antigravity/User/keybindings.json"
 
 echo "Stowing packages..."
 for pkg in "${PACKAGES[@]}"; do

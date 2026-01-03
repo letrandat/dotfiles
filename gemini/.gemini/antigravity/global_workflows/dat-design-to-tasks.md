@@ -46,7 +46,7 @@ This workflow translates OpenSpec design documents into structured Beads epics a
 
 **Parsing rules:**
 
-- Extract title from first `# ` heading
+- Extract title from first `#` heading
 - Problem Statement becomes epic description
 - Each `###` under "Proposed Changes" becomes a task group
 - Each `####` becomes an individual task

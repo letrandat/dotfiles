@@ -69,7 +69,7 @@ stow claude
 **Denied Commands (require confirmation):**
 
 - Destructive operations (rm, dd, mkfs, sudo)
-- Secret files (.env, *.key, *.pem)
+- Secret files (.env, *.key,*.pem)
 
 ### Modifying Settings
 
@@ -84,59 +84,26 @@ stow claude
 - Use `stow -R claude` to update after changes
 - Settings apply to all projects when using Claude Code
 
-## Windsurf Workflows Sync
+## Workflow Management
 
-### Overview
+### Antigravity Workflows
 
-This repo uses an automated sync system to convert openskills (superpowers skills) into native Windsurf workflows, ensuring reliable skill invocation in Windsurf.
+Antigravity workflows are managed in the `gemini` stow package and deployed to `~/.gemini/antigravity/global_workflow/`.
 
-### When Skills Update
+**Location in repo:** `gemini/.gemini/antigravity/global_workflow/`
+**Deployed location:** `~/.gemini/antigravity/global_workflow/`
 
-Run the sync command to regenerate Windsurf workflows from openskills:
+To update workflows:
 
-```bash
-superpowers-sync sync
-```
+1. Edit workflows in `gemini/.gemini/antigravity/global_workflow/`
+2. Restow: `stow -R gemini`
+3. Antigravity auto-discovers workflows from the deployed location
 
-### What Gets Synced
+### Windsurf Workflows
 
-9 core skills are automatically converted to native Windsurf workflows:
+Windsurf workflows are managed separately in `codeium/.codeium/windsurf/global_workflows/`.
 
-- brainstorming
-- systematic-debugging
-- test-driven-development
-- verification-before-completion
-- writing-plans
-- requesting-code-review
-- receiving-code-review
-- using-git-worktrees
-- finishing-a-development-branch
-
-### Architecture
-
-- **Source of truth**: `.agent/skills/*/SKILL.md` (openskills)
-- **Generated workflows**: `.codeium/windsurf/global_workflows/*.md`
-- **Sync tool**: `bin/.local/dotfiles-bin/superpowers-sync`
-
-### When to Sync
-
-- After updating skills via openskills
-- After pulling new skills from upstream
-- When skills seem out of sync between Claude Code and Windsurf
-
-### Plugin Skills Sync
-
-To sync official Claude plugin skills (like frontend-design) to Windsurf workflows:
-
-```bash
-claude-plugins-sync sync
-```
-
-This discovers and syncs all skills from `~/.claude/plugins/marketplaces/claude-plugins-official/plugins` to Windsurf workflows using the naming format `plugin-name:skill-name`.
-
-### Documentation
-
-See `docs/windsurf-workflows-sync.md` for detailed usage and architecture.
+Workflows are manually maintained - edit files directly when needed.
 
 ## Neovim/LazyVim Configuration
 
