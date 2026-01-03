@@ -13,7 +13,6 @@ alias b="git checkout"
 alias squash="git rebase -i master"
 alias lg="lazygit"
 alias ld="lazydocker"
-alias cc="claude"
 
 # set python to homebrew python3
 # this is going to create so many problem for me, #FIXME
@@ -30,5 +29,8 @@ command -v nvim &> /dev/null && alias vim='nvim'
 alias tmux-sessionizer='bash ~/.local/dotfiles-bin/tmux-sessionizer'
 bindkey -s ^f "tmux-sessionizer\n"
 
+# AI Coding Tools
+alias cc="claude"
+alias ge="gemini"
 # amp with free mode as default
 alias af='amp --mode free'
