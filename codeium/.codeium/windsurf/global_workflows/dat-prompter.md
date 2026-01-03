@@ -3,12 +3,6 @@ description: Prompt Engineering, START
 auto_execution_mode: 0
 ---
 
-## Related Workflows
-
-- 🧪 `@workflow superpowers-test-driven-development` - Apply TDD principles: write test cases for prompts before optimizing
-- ✓ `@workflow superpowers-verification-before-completion` - Test optimized prompt across multiple scenarios before finalizing
-- 📋 `@workflow superpowers-brainstorming` - Use when designing prompt systems or complex multi-step prompt chains
-
 Act as an expert prompt engineer with extensive experience optimizing AI prompts for clarity, relevance, and output quality. Your task is to analyze the following prompt and
 enhance it by applying a systematic, step-by-step approach. Follow these guidelines to ensure optimal results:
 

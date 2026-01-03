@@ -14,6 +14,7 @@ Agents produce significantly better output when reviewing their work 4-5 times b
 ## The Iron Law
 
 **MINIMUM REVIEW PASSES BEFORE COMPLETION:**
+
 - Small tasks (single file, <100 lines): 2-3 passes
 - Large tasks (multi-file, complex logic): 4-5 passes
 
@@ -24,6 +25,7 @@ If you haven't completed minimum passes, you cannot declare completion.
 ## When to Use
 
 **ALWAYS use for:**
+
 - Design documents and proposals
 - Implementation plans (tasks.md, Beads issues)
 - Code implementations (any non-trivial logic)
@@ -31,6 +33,7 @@ If you haven't completed minimum passes, you cannot declare completion.
 - Architecture decisions
 
 **Skip only for:**
+
 - Trivial changes (typos, one-liners, formatting)
 - When you just need verification-before-completion (evidence check)
 
@@ -41,7 +44,9 @@ If you haven't completed minimum passes, you cannot declare completion.
 Each review pass adopts a different stakeholder perspective. Apply perspectives relevant to your work type.
 
 ### Engineer Perspective
+
 **Focus:** Correctness, edge cases, performance
+
 - Does this handle all edge cases?
 - What happens with invalid input?
 - Are there performance bottlenecks?
@@ -49,7 +54,9 @@ Each review pass adopts a different stakeholder perspective. Apply perspectives 
 - Does this follow language idioms?
 
 ### Tester Perspective
+
 **Focus:** Failure modes, test coverage, edge cases
+
 - What could break this?
 - Are all code paths tested?
 - Do tests actually fail when they should?
@@ -57,7 +64,9 @@ Each review pass adopts a different stakeholder perspective. Apply perspectives 
 - Can I write a test that breaks this?
 
 ### Designer Perspective
+
 **Focus:** UX, accessibility, user experience (for user-facing work)
+
 - Is this usable by target audience?
 - Does this meet accessibility standards?
 - Is the user flow intuitive?
@@ -65,7 +74,9 @@ Each review pass adopts a different stakeholder perspective. Apply perspectives 
 - Does this respect user's time/attention?
 
 ### End User Perspective
+
 **Focus:** Usability, clarity, value delivered
+
 - Would this solve the user's actual problem?
 - Is the benefit clear and immediate?
 - Is documentation understandable?
@@ -73,7 +84,9 @@ Each review pass adopts a different stakeholder perspective. Apply perspectives 
 - Does this add unnecessary complexity?
 
 ### Architect Perspective
+
 **Focus:** Patterns, coupling, maintainability
+
 - Does this fit existing architecture?
 - Is coupling minimal and intentional?
 - Can this be maintained by others?
@@ -81,7 +94,9 @@ Each review pass adopts a different stakeholder perspective. Apply perspectives 
 - Are patterns consistent with codebase?
 
 ### PM/EM Perspective
+
 **Focus:** Requirements alignment, scope, business value
+
 - Does this meet stated requirements?
 - Is scope appropriate (not over/under-engineered)?
 - Does this deliver business value?
@@ -111,6 +126,7 @@ Consider reviewing a login form implementation. Each perspective finds different
 Reviews escalate from narrow to broad concerns:
 
 ### Pass 1-2: In-the-Small (Narrow Focus)
+
 - Code-level correctness
 - Edge cases and error handling
 - Basic performance issues
@@ -118,6 +134,7 @@ Reviews escalate from narrow to broad concerns:
 - Local logic flow
 
 ### Pass 3-4: In-the-Medium (Broader Concerns)
+
 - Design patterns and consistency
 - Integration with other components
 - Cross-cutting concerns (logging, security)
@@ -125,6 +142,7 @@ Reviews escalate from narrow to broad concerns:
 - Testing strategy
 
 ### Pass 5: In-the-Large (Architectural)
+
 - Fundamental approach ("Is this the Right Thing?")
 - Architecture alignment
 - Long-term maintainability
@@ -134,12 +152,14 @@ Reviews escalate from narrow to broad concerns:
 ## Convergence Criteria
 
 **You've reached convergence when:**
+
 - Latest review finds no meaningful improvements
 - Only trivial/stylistic changes suggested
 - Multiple passes find nothing substantive
 - You can honestly state: "This is about as good as we can make it"
 
 **Convergence safeguards:**
+
 - MUST complete minimum pass count (2-3 small, 4-5 large)
 - MUST show progressive deepening of scope
 - MUST apply multiple role perspectives
@@ -150,18 +170,23 @@ Reviews escalate from narrow to broad concerns:
 ## The Review Process
 
 ### Step 1: Initial Work
+
 Complete your first-draft work (design, plan, code, tests).
 
 ### Step 2: Pass 1-2 (Narrow)
+
 Review from Engineer and Tester perspectives. Focus in-the-small.
 
 ### Step 3: Pass 3-4 (Broader)
+
 Review from Designer/End User (if applicable) and Architect perspectives. Focus in-the-medium.
 
 ### Step 4: Pass 5 (Architectural)
+
 Review from PM/EM perspective. Focus in-the-large. Ask existential questions.
 
 ### Step 5: Convergence Check
+
 - Did this pass find meaningful improvements?
 - Have you completed minimum passes?
 - Can you honestly say "as good as we can make it"?
@@ -172,6 +197,7 @@ If YES to all: Declare convergence and proceed to verification-before-completion
 ## Red Flags - STOP
 
 If you catch yourself thinking:
+
 - "First draft looks good, ship it"
 - "One review is enough"
 - "Reviews are finding nothing" (before minimum passes)
@@ -187,6 +213,7 @@ If you catch yourself thinking:
 ## Integration Points
 
 **REQUIRED integrations:**
+
 - **systematic-debugging**: When reviewing implementations, check for debugging anti-patterns
 - **verification-before-completion**: Final pass MUST verify with evidence (run tests, check output)
 - **test-driven-development**: When reviewing tests, ensure RED-GREEN-REFACTOR cycle followed
@@ -201,6 +228,7 @@ If you catch yourself thinking:
 | Large (multi-file, complex) | 4-5 | Narrow → Medium → Large | "As good as we can make it" |
 
 **Role coverage:**
+
 - All tasks: Engineer, Tester, Architect (minimum)
 - User-facing: Add Designer, End User
 - Requirements-driven: Add PM/EM
