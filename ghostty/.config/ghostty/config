@@ -55,3 +55,7 @@
 keybind = super+e=text:\x1be
 # use shift+enter to add line break in claudecode
 keybind = shift+enter=text:\x1b\r
+
+# Cmd+L: Toggle between Claude (pane 1) and Neovim (pane 2) with zoom
+# Sends tmux prefix (Ctrl+B = \x02) + L to trigger 2-pane workspace toggle
+keybind = super+l=text:\x02L
