@@ -86,6 +86,27 @@ if [ -d "$GEMINI_WORKFLOWS_SOURCE" ]; then
     fi
 fi
 
+# GEMINI.md
+GEMINI_CONFIG_SOURCE="$DOTFILES_DIR/gemini/.gemini/GEMINI.md"
+GEMINI_CONFIG_TARGET="$HOME/.gemini/GEMINI.md"
+
+if [ -f "$GEMINI_CONFIG_SOURCE" ]; then
+    # Ensure parent directory exists
+    mkdir -p "$(dirname "$GEMINI_CONFIG_TARGET")"
+
+    # Backup existing file if it's not a symlink
+    if [ -f "$GEMINI_CONFIG_TARGET" ] && [ ! -L "$GEMINI_CONFIG_TARGET" ]; then
+        echo "Backing up existing GEMINI.md..."
+        mv "$GEMINI_CONFIG_TARGET" "${GEMINI_CONFIG_TARGET}.backup_$(date +%Y%m%d_%H%M%S)"
+    fi
+
+    # Create symlink if it doesn't exist
+    if [ ! -L "$GEMINI_CONFIG_TARGET" ]; then
+        echo "Linking GEMINI.md: $GEMINI_CONFIG_TARGET -> $GEMINI_CONFIG_SOURCE"
+        ln -s "$GEMINI_CONFIG_SOURCE" "$GEMINI_CONFIG_TARGET"
+    fi
+fi
+
 # 5. Run Stow for all packages
 # Note: gemini is NOT in this list because it's handled manually in section 4
 # (we only need to symlink the workflows directory, not the entire .gemini tree)
