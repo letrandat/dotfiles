@@ -87,6 +87,8 @@ if [ -d "$GEMINI_WORKFLOWS_SOURCE" ]; then
 fi
 
 # 5. Run Stow for all packages
+# Note: gemini is NOT in this list because it's handled manually in section 4
+# (we only need to symlink the workflows directory, not the entire .gemini tree)
 PACKAGES=(
     zsh
     git
@@ -102,7 +104,6 @@ PACKAGES=(
     windsurf
     antigravity
     codeium
-    gemini
     amp
 )
 
