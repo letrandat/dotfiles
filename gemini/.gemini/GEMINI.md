@@ -10,6 +10,7 @@ If I told you to "Land the Plane"" you MUST follow this ritual to prevent "sessi
 
 ## Core Mandates
 
+- **Consult First**: Do not make changes to the codebase without explicitly consulting the user or getting approval first.
 - Use **OpenSpec** for intent (`openspec-proposal`).
 - Use **Beads** for task management (`bd`).
 - Always brainstorm with `/dat-brainstorm` before coding complex features.
