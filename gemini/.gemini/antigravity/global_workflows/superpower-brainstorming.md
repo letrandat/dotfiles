@@ -1,6 +1,5 @@
 ---
-description: You MUST use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation.
-auto_execution_mode: 0
+description: Use this before any creative work - creating features, building components, adding functionality, or modifying behavior. Explores user intent, requirements and design before implementation.
 ---
 
 # Brainstorming Ideas Into Designs
@@ -9,15 +8,16 @@ auto_execution_mode: 0
 
 Help turn ideas into fully formed designs and specs through natural collaborative dialogue.
 
-Start by understanding the current project context, then ask questions to refine the idea. Once you understand what you're building, present the design in small sections (200-300 words), checking after each section whether it looks right so far.
+Start by understanding the current project context, then ask questions one at a time to refine the idea. Once you understand what you're building, present the design in small sections (200-300 words), checking after each section whether it looks right so far.
 
 ## The Process
 
 **Understanding the idea:**
 
 - Check out the current project state first (files, docs, recent commits)
-- Ask questions to refine the idea - multiple questions together when they explore related concerns
+- Ask questions one at a time to refine the idea
 - Prefer multiple choice questions when possible, but open-ended is fine too
+- Only one question per message - if a topic needs more exploration, break it into multiple questions
 - Focus on understanding: purpose, constraints, success criteria
 
 **Exploring approaches:**
@@ -44,65 +44,9 @@ Start by understanding the current project context, then ask questions to refine
 
 **Implementation (if continuing):**
 
-- Ask: "Ready to formalize this?"
-- Option A (Simple): "Create Beads tasks directly?" -> Use `/dat-plan-to-beads`
-- Option B (Rigorous): "Create OpenSpec Proposal?" -> Use `/openspec-from-design`
-
-  - Then, once validated, use `/beads-from-openspec`
-
 - Ask: "Ready to set up for implementation?"
 - Use superpowers:using-git-worktrees to create isolated workspace
 - Use superpowers:writing-plans to create detailed implementation plan
-
-After completing this workflow, emit completion state:
-
-<!-- WORKFLOW-STATE: brainstorming-complete -->
-<!-- BEADS-EPIC: task-xyz -->
-
-## Using Structured Questions (AskUserQuestion Pattern)
-
-When interviewing users, structure questions for clarity and efficiency using the pattern pioneered by Claude's AskUserQuestion tool:
-
-**Pattern Structure:**
-
-- **Header**: Short category label (8-12 chars) for quick scanning (e.g., "Discovery", "Tech stack", "Migration doc")
-- **Question**: Clear, specific question that ends with "?"
-- **Options**: 2-4 choices, each with:
-  - **Label**: Concise choice name (1-5 words)
-  - **Description**: Explains implications or what this option means
-- **MultiSelect**: Allow selecting multiple options when choices aren't mutually exclusive
-
-**Why This Pattern Works:**
-
-- **Categorization**: Headers help organize complex discussions
-- **Clarity**: Label + description format makes trade-offs explicit
-- **Efficiency**: Users can answer multiple related questions quickly
-- **Informed decisions**: Descriptions explain consequences before choosing
-
-**Example from This Proposal:**
-
-```
-Question: "Should .agent/workflows/ only contain brainstorming, or be completely empty?"
-Header: "Agent cleanup"
-Options:
-  - Label: "Only superpower-brainstorming.md remains"
-    Description: "Keep the Antigravity brainstorming workflow in .agent/workflows/"
-
-  - Label: "Delete .agent/workflows/ directory entirely"
-    Description: "Since everything moves to gemini, remove the directory"
-
-  - Label: "Keep .agent/workflows/ but only for generated/dynamic workflows"
-    Description: "Use it as a workspace for workflows created during runtime"
-```
-
-The user selected "Delete .agent/workflows/ directory entirely", which led to discovering this was the cleanest architectural approach.
-
-**When to Use:**
-
-- Exploring multiple valid approaches
-- Clarifying architectural decisions
-- Understanding user preferences on implementation details
-- Any time trade-offs need to be evaluated
 
 ## Key Principles
 
