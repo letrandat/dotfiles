@@ -19,6 +19,13 @@ Keep this managed block so 'openspec update' can refresh the instructions.
 
 <!-- OPENSPEC:END -->
 
+## Unified Global Workflow
+
+This project uses **OpenSpec** for intent and **Beads** for state.
+
+1. Use the `/dat-brainstorm` global command for new features.
+2. Always "Land the Plane" using `bd sync` before finishing a session.
+
 ## Landing the Plane (Session Completion)
 
 **When ending a work session**, you MUST complete ALL steps below. Work is NOT complete until `git push` succeeds.
