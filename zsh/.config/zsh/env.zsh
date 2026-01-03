@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 # ENVIRONMENT
 # home config
 export XDG_CONFIG_HOME="$HOME/.config"

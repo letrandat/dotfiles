@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # --- Tmux Auto-Attach ---
 # Automatically attach to or create a tmux session when launching
 # supported terminals (VS Code-like editors, Ghostty).

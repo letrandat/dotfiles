@@ -37,12 +37,14 @@ A single global rule (`codeium/.codeium/windsurf/memories/global_rules.md`) with
 
 **Intent Mapping:**
 A trigger table mapping user intent/context to specific workflows:
+
 - "Encountering a bug, error, or test failure" → `superpowers-systematic-debugging`
 - "Starting a new task, feature, or design" → `superpowers-brainstorming`
 - And 9 more mappings...
 
 **Interaction Protocol:**
 4-step process when a trigger is met:
+
 1. Stop and acknowledge the intent
 2. Suggest the relevant workflow
 3. Ask: "Would you like to run the `[Workflow Name]` workflow?"
@@ -50,6 +52,7 @@ A trigger table mapping user intent/context to specific workflows:
 
 **Boundaries:**
 Clear DO NOTs:
+
 - Don't auto-run workflows (user must confirm)
 - Don't ignore workflows when intent is clear
 
@@ -60,23 +63,28 @@ This lives in `memories/` (not `global_workflows/`) because it's a meta-rule abo
 The `superpowers-sync` script automates one-way sync from openskills → Windsurf:
 
 **Source of Truth:**
+
 - `.agent/skills/*/SKILL.md` - Openskills format
 
 **Generated Artifacts:**
+
 - `codeium/.codeium/windsurf/global_workflows/superpowers-*.md` - Windsurf native workflows
 
 **Sync Process:**
+
 1. Parse each skill's frontmatter (name, description) and body
 2. Generate Windsurf workflow with `auto_execution_mode: 0` (manual invoke only)
 3. Prefix filename with `superpowers-` for grouping
 4. Write to global_workflows directory
 
 **One Command:**
+
 ```bash
 superpowers-sync sync
 ```
 
 **When to Sync:**
+
 - After updating skills via openskills
 - After pulling new skills from upstream
 - When skills seem out of sync between Claude Code and Windsurf
@@ -119,6 +127,7 @@ superpowers-sync sync
 ## Maintenance
 
 To update workflows after changing skills:
+
 ```bash
 superpowers-sync sync
 ```

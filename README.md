@@ -231,4 +231,4 @@ openskills install letrandat/dotfiles/skills -g --universal
 
 Start any conversation with full context by running `/bootstrap`, which:
 
-2. Runs `openskills list` to show available skills
+1. Runs `openskills list` to show available skills

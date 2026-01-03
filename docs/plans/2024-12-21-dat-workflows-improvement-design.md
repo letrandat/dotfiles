@@ -18,6 +18,7 @@ Improve dat-* Windsurf workflows by adding lightweight integration points with s
 ## Workflow Classification
 
 ### High Priority (Frequently Used)
+
 1. **dat-hive-query** - SQL generation (used often)
 2. **dat-product-owner** - Issue creation (used regularly)
 3. **dat-prompter** - Prompt engineering (used regularly)
@@ -25,14 +26,17 @@ Improve dat-* Windsurf workflows by adding lightweight integration points with s
 5. **dat-z-github** - GitHub search (used a lot)
 
 ### Medium Priority (New/Testing)
-6. **dat-b2** - b2 initialization (new)
-7. **dat-lego** - Modular design (still testing)
+
+1. **dat-b2** - b2 initialization (new)
+2. **dat-lego** - Modular design (still testing)
 
 ### Low Priority (Rarely Used)
+
 - **dat-faster** - Performance optimization (used once)
 - **dat-recall-skills** - Workflow reminder (rarely used)
 
 ### To Remove (Not Useful)
+
 - **dat-rewrite-doc** - Documentation rewriting
 - **dat-rewrite** - Code rewriting
 
@@ -55,6 +59,7 @@ auto_execution_mode: [existing]
 ```
 
 **Rationale:**
+
 - Non-intrusive: doesn't interrupt main workflow content
 - Scannable: uses emojis and clear descriptions
 - Actionable: tells you when to use each integration
@@ -138,10 +143,12 @@ auto_execution_mode: [existing]
 ### File Changes
 
 **Remove (2 files):**
+
 - `codeium/.codeium/windsurf/global_workflows/dat-rewrite.md`
 - `codeium/.codeium/windsurf/global_workflows/dat-rewrite-doc.md`
 
 **Update (7 files):**
+
 - `codeium/.codeium/windsurf/global_workflows/dat-hive-query.md`
 - `codeium/.codeium/windsurf/global_workflows/dat-product-owner.md`
 - `codeium/.codeium/windsurf/global_workflows/dat-prompter.md`
@@ -170,6 +177,7 @@ auto_execution_mode: [existing value]
 ### Testing
 
 After updates:
+
 1. Verify workflows appear correctly in Windsurf's workflow menu
 2. Check that all `@workflow` references are accurate
 3. Test invoking related workflows from within dat-* workflows
@@ -196,6 +204,7 @@ After updates:
 ### Low Priority Workflows
 
 **dat-faster** and **dat-recall-skills** remain unchanged for now since they're rarely used. If usage increases, consider:
+
 - dat-faster: Add verification and TDD integration
 - dat-recall-skills: Already updated with new workflows, consider auto_execution_mode tuning
 
@@ -208,6 +217,7 @@ Track which dat-* workflows get used most over the next month to validate priori
 This design prioritizes practical value over theoretical completeness. By focusing on the 5 most-used workflows and using lightweight integration points, we create a cohesive ecosystem without overwhelming users or creating maintenance burden.
 
 The "Related Workflows" pattern is:
+
 - **Discoverable**: Users see integrations when viewing a workflow
 - **Non-intrusive**: Doesn't disrupt existing workflow content
 - **Actionable**: Clear guidance on when to use each integration

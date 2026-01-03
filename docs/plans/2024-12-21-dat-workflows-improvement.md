@@ -15,12 +15,14 @@
 ## Task 1: Remove Unused Workflows
 
 **Files:**
+
 - Delete: `codeium/.codeium/windsurf/global_workflows/dat-rewrite.md`
 - Delete: `codeium/.codeium/windsurf/global_workflows/dat-rewrite-doc.md`
 
 **Step 1: Verify files exist before deletion**
 
 Run:
+
 ```bash
 ls -la codeium/.codeium/windsurf/global_workflows/dat-rewrite*.md
 ```
@@ -30,6 +32,7 @@ Expected: Shows both files with details
 **Step 2: Delete the files**
 
 Run:
+
 ```bash
 git rm codeium/.codeium/windsurf/global_workflows/dat-rewrite.md
 git rm codeium/.codeium/windsurf/global_workflows/dat-rewrite-doc.md
@@ -40,6 +43,7 @@ Expected: Files staged for deletion
 **Step 3: Verify deletion**
 
 Run:
+
 ```bash
 git status
 ```
@@ -49,6 +53,7 @@ Expected: Shows 2 files deleted in staged changes
 **Step 4: Commit**
 
 Run:
+
 ```bash
 git commit -m "refactor(windsurf): remove unused dat-rewrite workflows
 
@@ -67,11 +72,13 @@ Expected: Commit successful
 ## Task 2: Update dat-hive-query.md
 
 **Files:**
+
 - Modify: `codeium/.codeium/windsurf/global_workflows/dat-hive-query.md:1-5`
 
 **Step 1: Read current frontmatter**
 
 Run:
+
 ```bash
 head -5 codeium/.codeium/windsurf/global_workflows/dat-hive-query.md
 ```
@@ -94,6 +101,7 @@ Add after line 4 (after `---`):
 **Step 3: Verify the edit**
 
 Run:
+
 ```bash
 head -15 codeium/.codeium/windsurf/global_workflows/dat-hive-query.md
 ```
@@ -103,6 +111,7 @@ Expected: Shows frontmatter, then Related Workflows section, then original conte
 **Step 4: Commit**
 
 Run:
+
 ```bash
 git add codeium/.codeium/windsurf/global_workflows/dat-hive-query.md
 git commit -m "feat(windsurf): add workflow integrations to dat-hive-query
@@ -122,11 +131,13 @@ Expected: Commit successful
 ## Task 3: Update dat-product-owner.md
 
 **Files:**
+
 - Modify: `codeium/.codeium/windsurf/global_workflows/dat-product-owner.md:1-5`
 
 **Step 1: Read current frontmatter**
 
 Run:
+
 ```bash
 head -5 codeium/.codeium/windsurf/global_workflows/dat-product-owner.md
 ```
@@ -149,6 +160,7 @@ Add after line 4 (after `---`):
 **Step 3: Verify the edit**
 
 Run:
+
 ```bash
 head -15 codeium/.codeium/windsurf/global_workflows/dat-product-owner.md
 ```
@@ -158,6 +170,7 @@ Expected: Shows frontmatter, then Related Workflows section, then original conte
 **Step 4: Commit**
 
 Run:
+
 ```bash
 git add codeium/.codeium/windsurf/global_workflows/dat-product-owner.md
 git commit -m "feat(windsurf): add workflow integrations to dat-product-owner
@@ -177,11 +190,13 @@ Expected: Commit successful
 ## Task 4: Update dat-prompter.md
 
 **Files:**
+
 - Modify: `codeium/.codeium/windsurf/global_workflows/dat-prompter.md:1-5`
 
 **Step 1: Read current frontmatter**
 
 Run:
+
 ```bash
 head -5 codeium/.codeium/windsurf/global_workflows/dat-prompter.md
 ```
@@ -204,6 +219,7 @@ Add after line 4 (after `---`):
 **Step 3: Verify the edit**
 
 Run:
+
 ```bash
 head -15 codeium/.codeium/windsurf/global_workflows/dat-prompter.md
 ```
@@ -213,6 +229,7 @@ Expected: Shows frontmatter, then Related Workflows section, then original conte
 **Step 4: Commit**
 
 Run:
+
 ```bash
 git add codeium/.codeium/windsurf/global_workflows/dat-prompter.md
 git commit -m "feat(windsurf): add workflow integrations to dat-prompter
@@ -232,11 +249,13 @@ Expected: Commit successful
 ## Task 5: Update dat-w-wiki.md
 
 **Files:**
+
 - Modify: `codeium/.codeium/windsurf/global_workflows/dat-w-wiki.md:1-5`
 
 **Step 1: Read current frontmatter**
 
 Run:
+
 ```bash
 head -5 codeium/.codeium/windsurf/global_workflows/dat-w-wiki.md
 ```
@@ -258,6 +277,7 @@ Add after line 4 (after `---`):
 **Step 3: Verify the edit**
 
 Run:
+
 ```bash
 head -15 codeium/.codeium/windsurf/global_workflows/dat-w-wiki.md
 ```
@@ -267,6 +287,7 @@ Expected: Shows frontmatter, then Related Workflows section, then original conte
 **Step 4: Commit**
 
 Run:
+
 ```bash
 git add codeium/.codeium/windsurf/global_workflows/dat-w-wiki.md
 git commit -m "feat(windsurf): add workflow integrations to dat-w-wiki
@@ -286,11 +307,13 @@ Expected: Commit successful
 ## Task 6: Update dat-z-github.md
 
 **Files:**
+
 - Modify: `codeium/.codeium/windsurf/global_workflows/dat-z-github.md:1-5`
 
 **Step 1: Read current frontmatter**
 
 Run:
+
 ```bash
 head -5 codeium/.codeium/windsurf/global_workflows/dat-z-github.md
 ```
@@ -312,6 +335,7 @@ Add after line 4 (after `---`):
 **Step 3: Verify the edit**
 
 Run:
+
 ```bash
 head -15 codeium/.codeium/windsurf/global_workflows/dat-z-github.md
 ```
@@ -321,6 +345,7 @@ Expected: Shows frontmatter, then Related Workflows section, then original conte
 **Step 4: Commit**
 
 Run:
+
 ```bash
 git add codeium/.codeium/windsurf/global_workflows/dat-z-github.md
 git commit -m "feat(windsurf): add workflow integrations to dat-z-github
@@ -340,11 +365,13 @@ Expected: Commit successful
 ## Task 7: Update dat-b2.md
 
 **Files:**
+
 - Modify: `codeium/.codeium/windsurf/global_workflows/dat-b2.md:1-5`
 
 **Step 1: Read current frontmatter**
 
 Run:
+
 ```bash
 head -5 codeium/.codeium/windsurf/global_workflows/dat-b2.md
 ```
@@ -366,6 +393,7 @@ Add after line 3 (after `---`):
 **Step 3: Verify the edit**
 
 Run:
+
 ```bash
 head -15 codeium/.codeium/windsurf/global_workflows/dat-b2.md
 ```
@@ -375,6 +403,7 @@ Expected: Shows frontmatter, then Related Workflows section, then original conte
 **Step 4: Commit**
 
 Run:
+
 ```bash
 git add codeium/.codeium/windsurf/global_workflows/dat-b2.md
 git commit -m "feat(windsurf): add workflow integrations to dat-b2
@@ -394,11 +423,13 @@ Expected: Commit successful
 ## Task 8: Update dat-lego.md
 
 **Files:**
+
 - Modify: `codeium/.codeium/windsurf/global_workflows/dat-lego.md:1-5`
 
 **Step 1: Read current frontmatter**
 
 Run:
+
 ```bash
 head -5 codeium/.codeium/windsurf/global_workflows/dat-lego.md
 ```
@@ -422,6 +453,7 @@ Add after line 4 (after `---`):
 **Step 3: Verify the edit**
 
 Run:
+
 ```bash
 head -20 codeium/.codeium/windsurf/global_workflows/dat-lego.md
 ```
@@ -431,6 +463,7 @@ Expected: Shows frontmatter, then Related Workflows section, then original conte
 **Step 4: Commit**
 
 Run:
+
 ```bash
 git add codeium/.codeium/windsurf/global_workflows/dat-lego.md
 git commit -m "feat(windsurf): add workflow integrations to dat-lego
@@ -452,6 +485,7 @@ Expected: Commit successful
 **Step 1: Check git status**
 
 Run:
+
 ```bash
 git status
 ```
@@ -461,6 +495,7 @@ Expected: Clean working tree, all changes committed
 **Step 2: Review commit history**
 
 Run:
+
 ```bash
 git log --oneline -9
 ```
@@ -470,6 +505,7 @@ Expected: Shows 9 commits (1 removal + 7 updates + 1 design doc)
 **Step 3: Verify workflow files**
 
 Run:
+
 ```bash
 ls -la codeium/.codeium/windsurf/global_workflows/dat-*.md
 ```
@@ -479,6 +515,7 @@ Expected: Shows 9 dat-* workflow files (11 original - 2 removed = 9)
 **Step 4: Spot check one workflow**
 
 Run:
+
 ```bash
 head -15 codeium/.codeium/windsurf/global_workflows/dat-hive-query.md
 ```
@@ -492,6 +529,7 @@ Expected: Shows frontmatter, Related Workflows section, then content
 **Step 1: Push all commits**
 
 Run:
+
 ```bash
 git push
 ```
@@ -501,6 +539,7 @@ Expected: All commits pushed successfully
 **Step 2: Verify push**
 
 Run:
+
 ```bash
 git status
 ```
@@ -510,6 +549,7 @@ Expected: "Your branch is up to date with 'origin/main'"
 **Step 3: Update b2 task**
 
 Run:
+
 ```bash
 b2 update dotfiles-fdk --notes "Implementation complete. All 7 workflows updated with Related Workflows sections. 2 unused workflows removed. Changes committed and pushed."
 ```

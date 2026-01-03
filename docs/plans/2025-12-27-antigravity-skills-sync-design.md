@@ -36,7 +36,7 @@ openskills-to-antigravity (Bash Script)
 
 ### Components
 
-1.  **Unified Sync Script**: `bin/.local/dotfiles-bin/superpowers-sync`
+1. **Unified Sync Script**: `bin/.local/dotfiles-bin/superpowers-sync`
 
     - Language: **Node.js**.
     - Architecture: **Plugin-Based Runner**.
@@ -45,12 +45,12 @@ openskills-to-antigravity (Bash Script)
       - `AntigravityPlugin`: Syncs to `~/.agent/workflows`, injects `agent.md`.
       - `WindsurfPlugin`: Syncs to `.codeium/...`, injects state markers.
 
-2.  **Context Source**: `docs/agent-context/superpowers/`
+2. **Context Source**: `docs/agent-context/superpowers/`
 
     - `antigravity/`: Context files for Antigravity (`agent.md`, `claude.md`).
     - _Rationale_: Centralized documentation for agent behavior.
 
-3.  **Core Skills**:
+3. **Core Skills**:
     - Both environments sync only the `CORE_SKILLS` list to ensure parity and reduce noise.
 
 ### Flow

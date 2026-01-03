@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+# shellcheck disable=SC2034,SC1091,SC2206
 # OPENSPEC:START
 # OpenSpec shell completions configuration
 fpath=("/Users/dat/.oh-my-zsh/custom/completions" $fpath)

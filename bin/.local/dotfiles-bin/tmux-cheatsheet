@@ -81,7 +81,7 @@ if [ -n "$SELECTED" ]; then
     ACTION=$(echo "$SELECTED" | grep -o '^\[[a-z]*\]' | tr -d '[]')
 
     # Extract keys (last column after the last |)
-    KEYS=$(echo "$SELECTED" | sed 's/.*| //')
+    KEYS=${SELECTED##*| }
 
     if [ "$ACTION" = "exec" ]; then
         echo "executing → $KEYS"

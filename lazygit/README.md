@@ -55,9 +55,9 @@ keybinding:
 - **Interactive Rebase**: Press `i` on a commit in the Commits panel to start an interactive rebase from that point.
 - **Cherry Pick**: Press `c` on a commit in the Commits panel (when viewing another branch) to copy it, then paste it in your branch.
 - **Patch Building**:
-  1.  Go to a specific commit and press `Enter` to view its files.
-  2.  Press `Space` on a file to add it to the patch, or `Enter` to enter the file and `Space` on specific lines.
-  3.  Press `Ctrl+p` to open the patch options menu (e.g., to create a patch).
+  1. Go to a specific commit and press `Enter` to view its files.
+  2. Press `Space` on a file to add it to the patch, or `Enter` to enter the file and `Space` on specific lines.
+  3. Press `Ctrl+p` to open the patch options menu (e.g., to create a patch).
 - **Custom Commands**: You can define custom commands in `config.yml` under `customCommands`.
 
 ## Resources

@@ -21,16 +21,19 @@ git-worktree-create <short-name> [full-branch-name]
 ```
 
 **Arguments:**
+
 - `short-name` (required): Short identifier for filesystem path (e.g., `ABC-123`, `bugfix`)
 - `full-branch-name` (optional): Full git branch name (auto-generated if not provided)
 
 **Output:**
+
 - On success: Print worktree path to stdout
 - On error: Print error to stderr, exit non-zero
 
 ### Detection Logic
 
 #### 1. Home vs Work Detection
+
 ```bash
 if [[ "$(pwd)" == /Users/dat/* ]]; then
     location="home"
@@ -40,6 +43,7 @@ fi
 ```
 
 #### 2. Repo Name Detection
+
 - Parse from `git remote get-url origin`
 - Extract from GitHub URL patterns:
   - SSH: `git@github.com:owner/repo.git` → `repo`
@@ -47,11 +51,14 @@ fi
 - Remove `.git` suffix
 
 #### 3. Branch Name Generation
+
 If `full-branch-name` not provided:
+
 - **Home:** `feat/<short-name>`
 - **Work:** `usr/dat/<short-name>`
 
 #### 4. Worktree Path
+
 Always: `~/worktree/<repo-name>/<short-name>`
 
 ### Error Handling
@@ -157,11 +164,13 @@ When I need to create a worktree:
 ## Deployment
 
 ### File Location
+
 ```
 dotfiles/bin/.local/dotfiles-bin/git-worktree-create
 ```
 
 ### Stow Structure
+
 ```
 dotfiles/
 ├── bin/
@@ -176,6 +185,7 @@ dotfiles/
 ```
 
 ### Steps
+
 1. Create script: `bin/.local/dotfiles-bin/git-worktree-create`
 2. Make executable: `chmod +x bin/.local/dotfiles-bin/git-worktree-create`
 3. Stow creates symlink: `~/.local/dotfiles-bin/git-worktree-create`
@@ -192,6 +202,7 @@ dotfiles/
 ## Usage by Claude
 
 The script is designed for LLM usage:
+
 - Non-interactive (no stdin prompts)
 - Clear stdout/stderr separation
 - Predictable error codes

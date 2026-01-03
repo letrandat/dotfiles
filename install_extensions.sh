@@ -15,7 +15,7 @@ if [ -z "$CMD" ]; then
     echo "1) VS Code (code)"
     echo "2) Windsurf (windsurf)"
     echo "3) Antigravity (antigravity)"
-    read -p "Enter choice [1-3]: " choice
+    read -r -p "Enter choice [1-3]: " choice
     case $choice in
         1) CMD="code" ;;
         2) CMD="windsurf" ;;

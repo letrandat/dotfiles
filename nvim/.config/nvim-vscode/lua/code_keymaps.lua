@@ -309,8 +309,6 @@ end, {
 	desc = "WhichKey: bookmarks",
 })
 
-
-
 -- For faster access to toggle fold
 keymap("n", "za", function()
 	vscode.call("editor.toggleFold")

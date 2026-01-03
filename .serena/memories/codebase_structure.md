@@ -113,6 +113,7 @@ dotfiles/
 Each top-level directory (nvim, zsh, git, etc.) is a GNU Stow package that gets symlinked to `~/`.
 
 **Structure pattern:**
+
 ```
 package-name/
 └── .exact/path/in/home/
@@ -120,6 +121,7 @@ package-name/
 ```
 
 **Example:**
+
 ```
 nvim/.config/nvim/init.lua  →  ~/.config/nvim/init.lua  (after stowing)
 zsh/.zshrc                  →  ~/.zshrc                  (after stowing)
@@ -132,6 +134,7 @@ zsh/.zshrc                  →  ~/.zshrc                  (after stowing)
 - **lua/plugins/**: Plugin specifications (one file per plugin or logical group)
 
 LazyVim automatically loads:
+
 1. `lua/config/*.lua`
 2. `lua/plugins/*.lua` (each file can return plugin spec or array of specs)
 
@@ -184,6 +187,7 @@ LazyVim automatically loads:
 ### Working with Multiple Configs
 
 Since editors share similar structure:
+
 - VS Code: `vscode/.config/Code/User/`
 - Windsurf: `windsurf/.config/Windsurf/User/`
 - Antigravity: `antigravity/.config/Antigravity/User/`

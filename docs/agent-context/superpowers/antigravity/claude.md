@@ -8,8 +8,8 @@ When you see a file named `superpower-<name>.md` in this directory, treat it as 
 
 - It is NOT just documentation; it is a **Prompt Chain** or **Checklist** you must follow.
 - When a user asks for a workflow (e.g., "Run TDD"), you must:
-  1.  **Read** the corresponding file (e.g., `superpower-test-driven-development.md`).
-  2.  **Adhere** strictly to the steps defined in that file.
+  1. **Read** the corresponding file (e.g., `superpower-test-driven-development.md`).
+  2. **Adhere** strictly to the steps defined in that file.
 
 ## avoiding Hallucinations
 

@@ -47,6 +47,7 @@ Repository path                    -> Home directory path
 ## Setup Process
 
 Run `./setup.sh` to:
+
 1. Install GNU Stow (via Homebrew) if missing
 2. Create necessary directories
 3. Set up macOS Application Support symlinks
@@ -55,6 +56,7 @@ Run `./setup.sh` to:
 ## Tmux Sessionizer Ecosystem
 
 A unified terminal session management system:
+
 - Auto-attach on terminal spawn
 - Session naming: `parent_child` pattern based on directory
 - fzf-powered session switcher

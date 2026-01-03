@@ -28,6 +28,7 @@ Located in `nvim/.config/nvim-full/lua/plugins/`:
 ## LazyVim Extras Already Added
 
 ### Languages (13)
+
 - ✅ typescript
 - ✅ go
 - ✅ python
@@ -43,11 +44,13 @@ Located in `nvim/.config/nvim-full/lua/plugins/`:
 - ✅ git
 
 ### Editor Utilities (3)
+
 - ✅ mini-files (file explorer)
 - ✅ dial (smart increment/decrement)
 - ✅ inc-rename (LSP rename preview)
 
 ### Utilities (1)
+
 - ✅ dot (dotfiles syntax)
 
 ## LazyVim Extras Available in nvim-full (Not Added)
@@ -76,39 +79,46 @@ These were in nvim-full but not in initial setup. Add when working on those proj
 
 ## Cherry-Pick Workflow
 
-### To add a plugin from nvim-full:
+### To add a plugin from nvim-full
 
 1. **Identify:** Find plugin file in list above
 2. **Copy:**
+
    ```bash
    cp nvim/.config/nvim-full/lua/plugins/<file>.lua \
       nvim/.config/nvim/lua/plugins/
    ```
+
 3. **Edit if needed:** Remove unwanted features (e.g., session stuff in extend-snacks)
 4. **Reload:** Restart nvim or run `:Lazy sync`
 5. **Test:** Verify plugin loads without errors (`:Lazy` to check status)
 6. **Commit:**
+
    ```bash
    git add nvim/.config/nvim/lua/plugins/<file>.lua
    git commit -m "feat: Add <plugin-name> from nvim-full"
    ```
+
 7. **Track:** Check off `[x]` in this document
 
-### To add a LazyVim extra:
+### To add a LazyVim extra
 
 **Method 1: Interactive (Recommended)**
+
 1. Open nvim: `nvim`
 2. Run: `:LazyExtras`
 3. Browse available extras
 4. Press `x` to toggle install
 5. Restart nvim
 6. Commit:
+
    ```bash
    git add nvim/.config/nvim/lazy-lock.json
    git commit -m "feat: Add LazyVim extra: <extra-name>"
    ```
 
 **Method 2: Manual**
+
 1. Create/edit a plugin file in `nvim/.config/nvim/lua/plugins/`
 2. Add: `{ import = "lazyvim.plugins.extras.<category>.<name>" }`
 3. Restart nvim or `:Lazy sync`
@@ -117,17 +127,21 @@ These were in nvim-full but not in initial setup. Add when working on those proj
 ## Config Switching
 
 ### Default (Fresh LazyVim)
+
 ```bash
 nvim                    # Uses nvim/.config/nvim/
 ```
 
 ### Old Config (nvim-full)
+
 ```bash
 NVIM_APPNAME=nvim-full nvim
 ```
 
 ### Optional Shell Aliases
+
 Add to `.zshrc`:
+
 ```bash
 alias nvim-full='NVIM_APPNAME=nvim-full nvim'
 alias nvim-kick='NVIM_APPNAME=nvim-kickstart nvim'
@@ -136,11 +150,13 @@ alias nvim-kick='NVIM_APPNAME=nvim-kickstart nvim'
 ## Stow Management
 
 After making changes to nvim configs:
+
 ```bash
 stow -R nvim            # Refresh symlinks
 ```
 
 Verify default symlink:
+
 ```bash
 ls -la ~/.config/nvim   # Should point to dotfiles/nvim/.config/nvim
 ```
@@ -148,6 +164,7 @@ ls -la ~/.config/nvim   # Should point to dotfiles/nvim/.config/nvim
 ## Success Indicators
 
 You'll know the setup is working when:
+
 - ✅ `nvim` launches LazyVim without errors
 - ✅ No autoformat on save (your preference)
 - ✅ `w`, `e`, `b` motions feel smarter (nvim-spider)

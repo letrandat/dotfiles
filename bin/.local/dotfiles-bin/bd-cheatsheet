@@ -129,7 +129,7 @@ if [ -n "$SELECTED" ]; then
     ACTION=$(echo "$SELECTED" | grep -o '^\[[a-z]*\]' | tr -d '[]')
 
     # Extract command (last column after the last |)
-    CMD=$(echo "$SELECTED" | sed 's/.*| //')
+    CMD=${SELECTED##*| }
 
     if [ "$ACTION" = "exec" ]; then
         echo "executing → $CMD"

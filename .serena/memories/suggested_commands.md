@@ -5,6 +5,7 @@
 Since this project runs on **macOS (Darwin)**, standard Unix commands are available. Note that macOS uses BSD-based utilities which may differ slightly from GNU versions.
 
 ### Common macOS Commands
+
 ```bash
 # File operations
 ls -la                    # List files with details
@@ -25,11 +26,13 @@ mkdir -p dir/subdir       # Create nested directories
 ## GNU Stow Commands
 
 ### Initial Setup
+
 ```bash
 ./setup.sh                # Run automated setup (recommended)
 ```
 
 ### Manual Stow Management
+
 ```bash
 # Stow a single package
 stow -d ~/dotfiles -t ~/ zsh
@@ -48,6 +51,7 @@ stow -n -v zsh
 ```
 
 ### Troubleshooting Stow
+
 ```bash
 # If stow reports conflicts, remove old symlinks
 rm ~/.zshrc
@@ -60,6 +64,7 @@ ls -la ~/ | grep '^l'     # List all symlinks in home
 ## Neovim/LazyVim Commands
 
 ### Formatting
+
 ```bash
 # Format Lua files with stylua
 stylua nvim/.config/nvim/
@@ -72,6 +77,7 @@ stylua --check nvim/.config/nvim/
 ```
 
 ### Neovim Health Check
+
 ```vim
 " Inside Neovim
 :checkhealth              " Check Neovim installation
@@ -82,6 +88,7 @@ stylua --check nvim/.config/nvim/
 ## Git Commands
 
 ### Standard Git Operations
+
 ```bash
 git status                # Check repository status
 git add .                 # Stage all changes
@@ -91,6 +98,7 @@ git pull                  # Pull from remote
 ```
 
 ### Git Worktree Workflow
+
 ```bash
 # Create new worktree
 git worktree add ../dotfiles-feature feature-name
@@ -108,6 +116,7 @@ git worktree prune
 ## VS Code/Windsurf Extension Management
 
 ### Export Extensions
+
 ```bash
 # VS Code
 code --list-extensions > vscode-extensions.txt
@@ -117,6 +126,7 @@ windsurf --list-extensions > windsurf-extensions.txt
 ```
 
 ### Install Extensions
+
 ```bash
 # VS Code
 cat vscode-extensions.txt | xargs -L 1 code --install-extension
@@ -131,6 +141,7 @@ cat windsurf-extensions.txt | xargs -L 1 windsurf --install-extension
 ## Tmux Commands
 
 ### Session Management
+
 ```bash
 # List sessions
 tmux ls
@@ -146,6 +157,7 @@ tmux-sessionizer          # Must be in PATH via stowed bin/
 ```
 
 ### Tmux Keybindings
+
 ```
 prefix + f                # Open tmux-sessionizer
 prefix + ?                # Show all keybindings
@@ -196,6 +208,7 @@ openskills list
 ## Development Workflow Commands
 
 ### After Making Changes
+
 ```bash
 # Format Lua files
 stylua nvim/.config/nvim/

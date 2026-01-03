@@ -12,6 +12,7 @@ Personal dotfiles repository for managing development environment configurations
 ## Tech Stack
 
 ### Core Tools
+
 - **Shell**: Zsh with Oh-My-Zsh framework
 - **Dotfiles Manager**: GNU Stow (symlink farm manager)
 - **Editor**: Neovim with LazyVim configuration
@@ -20,18 +21,21 @@ Personal dotfiles repository for managing development environment configurations
 - **Version Control**: Git with Delta (diff/pager), LazyGit (TUI)
 
 ### AI Coding Assistants
+
 - Claude Code (CLI)
 - Windsurf
 - VS Code with various extensions
 - Antigravity Agent
 
 ### Development Utilities
+
 - **Task Management**: Beads (git-based issue tracker)
 - **Skills**: Openskills (portable agent skills)
 - **Spec Management**: OpenSpec (spec-driven development)
 - **Custom Scripts**: Located in `bin/.local/dotfiles-bin/`
 
 ### Languages & Formats
+
 - Bash/Shell scripts
 - Lua (Neovim configuration)
 - Markdown (documentation)
@@ -40,6 +44,7 @@ Personal dotfiles repository for managing development environment configurations
 ## Project Conventions
 
 ### Code Style
+
 - **Shell Scripts**: Follow shellcheck recommendations, executable permissions required
 - **Markdown**: Use markdownlint-cli2 with relaxed rules (MD013, MD041 disabled)
 - **Naming**: kebab-case for files and directories
@@ -48,21 +53,25 @@ Personal dotfiles repository for managing development environment configurations
 ### Architecture Patterns
 
 **GNU Stow Package Structure**:
+
 - Each top-level directory is a "package" representing an application
 - Directory structure mirrors exact home directory paths
 - Example: `zsh/.zshrc` → `~/.zshrc`, `nvim/.config/nvim/` → `~/.config/nvim/`
 
 **XDG Base Directory Standard**:
+
 - Use `~/.config/` for configuration files whenever possible
 - Set `XDG_CONFIG_HOME="$HOME/.config"` in shell
 - Avoid cluttering home directory root
 
 **macOS Application Support Handling**:
+
 - GUI apps requiring `~/Library/Application Support/` are symlinked to `~/.config/`
 - This allows Stow to manage them like other configs
 - Handled in `setup.sh` for VS Code, Windsurf, Antigravity
 
 **Custom Scripts Convention**:
+
 - Source: `bin/.local/dotfiles-bin/`
 - Installed: Stowed to `~/.local/bin/` (symlinked)
 - Both paths must be in `$PATH`
@@ -71,12 +80,14 @@ Personal dotfiles repository for managing development environment configurations
 ### Testing Strategy
 
 **Manual Testing Only**:
+
 - No automated test suite
 - Scripts tested manually after changes
 - Shellcheck used for static analysis of shell scripts
 - Markdownlint for documentation quality
 
 **Validation Approach**:
+
 - Test setup.sh on clean environment when making structural changes
 - Verify stow operations don't conflict with existing files
 - Check custom scripts execute correctly after installation
@@ -84,6 +95,7 @@ Personal dotfiles repository for managing development environment configurations
 ### Git Workflow
 
 **Commit Convention**:
+
 - Follow Conventional Commits specification
 - Format: `type(scope): subject` with bulleted body
 - Template provided in `.gitmessage`
@@ -92,12 +104,14 @@ Personal dotfiles repository for managing development environment configurations
 - Reference tasks: `(close abc)` in subject or body
 
 **Branching Strategy**:
+
 - Git worktrees for parallel development
 - Main branch: `main`
 - Descriptive branch names: `feature-name` or `bugfix-description`
 - Use Which-Key + GitLens for worktree management
 
 **Pull Request Process**:
+
 - LazyGit for commit management
 - Select correct worktree in LazyGit before committing
 - Conventional commit messages required
@@ -105,12 +119,14 @@ Personal dotfiles repository for managing development environment configurations
 ## Domain Context
 
 **Dotfiles Management**:
+
 - Repository structure mirrors home directory structure exactly
 - Stow "folds" package directories onto the target (home) directory
 - Changes in repo are immediately reflected via symlinks
 - Backup existing configs before stowing (setup.sh does this)
 
 **Tmux Sessionizer Ecosystem**:
+
 - Unified session management across editors and terminals
 - Session naming: `parent_child` pattern based on working directory
 - Auto-attach on terminal spawn (VS Code, Ghostty)
@@ -118,12 +134,14 @@ Personal dotfiles repository for managing development environment configurations
 - Per-project hydration: `.tmux-sessionizer` files
 
 **Which-Key Integration**:
+
 - Consistent keybindings across Neovim and VS Code
 - `Alt+Space` triggers Which-Key outside Neovim
 - Maps to leader key bindings from Neovim
 - Enables muscle memory consistency
 
 **Windsurf Workflows Sync**:
+
 - Openskills automatically synced to Windsurf workflows
 - Command: `superpowers-sync sync`
 - 9 core skills converted to native Windsurf workflows
@@ -132,21 +150,25 @@ Personal dotfiles repository for managing development environment configurations
 ## Important Constraints
 
 **Platform**:
+
 - Primary target: macOS (Darwin)
 - Some cross-platform support, but macOS-specific handling required
 - Application Support symlinks are macOS-only
 
 **Installation**:
+
 - Requires manual setup.sh execution
 - Homebrew must be installed first
 - No automated deployment or CI/CD
 
 **File Management**:
+
 - Never edit symlinked files in home directory directly
 - Always edit source files in this repo
 - Re-stow packages after structural changes: `stow -R <package>`
 
 **Task Management Policy**:
+
 - NEVER auto-close, update, or delete Beads tasks without explicit user confirmation
 - Creating and listing tasks allowed without confirmation
 - Closing/updating/deleting requires user approval first
@@ -154,14 +176,17 @@ Personal dotfiles repository for managing development environment configurations
 ## External Dependencies
 
 **Package Managers**:
+
 - Homebrew (macOS package manager)
 
 **Required Tools**:
+
 - GNU Stow (symlink manager)
 - Git (version control)
 - Zsh (shell)
 
 **Optional but Expected**:
+
 - Neovim (editor)
 - Tmux (multiplexer)
 - Ghostty (terminal)
@@ -173,6 +198,7 @@ Personal dotfiles repository for managing development environment configurations
 - Beads (task management)
 
 **AI Services**:
+
 - Claude Code (Anthropic)
 - GitHub Copilot (various extensions)
 - Windsurf/Codeium

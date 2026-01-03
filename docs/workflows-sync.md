@@ -40,15 +40,15 @@ superpowers-sync sync --target=windsurf
 
 **What it does:**
 
-1.  Runs `openskills sync` (updates source).
-2.  Parses SKILL.md files.
-3.  **Antigravity Plugin**:
+1. Runs `openskills sync` (updates source).
+2. Parses SKILL.md files.
+3. **Antigravity Plugin**:
     - Generates `/superpower-<name>.md` in `~/.agent/workflows/`.
     - Injects context files (`agent.md`, `claude.md`) from `docs/agent-context/superpowers/antigravity/`.
-4.  **Windsurf Plugin**:
+4. **Windsurf Plugin**:
     - Generates `superpowers-<name>.md` in `.codeium/windsurf/global_workflows/`.
     - Injects state persistence markers.
-5.  **Verification**: Automatically verifies file existence and content integrity.
+5. **Verification**: Automatically verifies file existence and content integrity.
 
 ## Maintenance
 

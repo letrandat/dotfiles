@@ -3,11 +3,13 @@
 ## Primary Languages
 
 ### Lua
+
 - **Usage**: Neovim configuration
 - **Framework**: LazyVim (Lazy.nvim plugin manager)
 - **Version**: Modern Lua (Neovim embedded)
 
 ### Shell Scripts
+
 - **Bash**: Setup scripts, utilities
 - **Zsh**: Interactive shell configuration
 - **Framework**: Oh My Zsh

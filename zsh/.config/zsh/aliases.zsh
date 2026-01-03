@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 alias ws="cd ~/workspace"
 alias dc="git reset --hard"
 alias st="git stash"

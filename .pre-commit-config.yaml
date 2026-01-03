@@ -42,6 +42,7 @@ repos:
       - id: check-json
         name: Validate JSON syntax
         description: Checks JSON files are valid
+        exclude: '.*\.config/.*(settings|keybindings|vscodevim-settings)\.json$'
 
       - id: check-toml
         name: Validate TOML syntax
@@ -72,6 +73,7 @@ repos:
       - id: shellcheck
         name: ShellCheck
         description: Shell script static analysis
+        exclude: '.*\.zsh$|\.zshrc$'
 
   # === Lua (Neovim configs) ===
   - repo: https://github.com/JohnnyMorganz/StyLua

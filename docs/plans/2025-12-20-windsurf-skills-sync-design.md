@@ -9,6 +9,7 @@
 Windsurf AI agents don't reliably invoke superpowers skills via openskills, despite skills being documented in AGENTS.md. The root cause is an **invocation problem**: the AI knows skills exist but doesn't consistently run the Bash command `openskills read <skill-name>` to load them.
 
 **Current flow**:
+
 ```
 AGENTS.md lists skills
   → Windsurf AI reads AGENTS.md
@@ -23,6 +24,7 @@ AGENTS.md lists skills
 Build an automated sync system that converts openskills to native Windsurf workflows, eliminating the invocation problem while maintaining openskills as the single source of truth.
 
 **New flow**:
+
 ```
 openskills (source of truth)
   → superpowers-sync sync (automated)
@@ -87,11 +89,13 @@ Only sync the most critical skills to keep the workflow list manageable:
 **Decision**: Core skills as workflows, specialized skills via openskills
 
 **Alternatives considered**:
+
 - A) Full conversion (all skills → workflows)
 - B) Strengthen enforcement (better prompting for openskills)
 - C) Hybrid (chosen)
 
 **Rationale**:
+
 - ✅ Solves invocation problem for critical workflows
 - ✅ Maintains openskills ecosystem for edge cases
 - ✅ Keeps workflow list manageable
@@ -102,6 +106,7 @@ Only sync the most critical skills to keep the workflow list manageable:
 **Decision**: All workflows use `auto_execution_mode: 0`
 
 **Rationale**:
+
 - Skills should be invoked consciously, not auto-triggered
 - Prevents workflows from running unintentionally
 - Matches Claude Code's Skill tool behavior (explicit invocation)
@@ -111,11 +116,13 @@ Only sync the most critical skills to keep the workflow list manageable:
 **Decision**: Embed full skill content in workflows, not just references
 
 **Alternatives considered**:
+
 - A) Workflow calls `openskills read` (rejected - same invocation problem)
 - B) Workflow references openskills location (rejected - extra indirection)
 - C) Embed full content (chosen)
 
 **Rationale**:
+
 - Solves the invocation problem completely
 - Self-contained workflows
 - No runtime dependencies on openskills CLI
@@ -126,11 +133,13 @@ Only sync the most critical skills to keep the workflow list manageable:
 **Decision**: Implement as Node.js CLI tool
 
 **Alternatives considered**:
+
 - A) Shell script
 - B) Python script
 - C) Node.js (chosen)
 
 **Rationale**:
+
 - Matches openskills (also Node.js)
 - Could be integrated into openskills CLI later
 - Good ecosystem for markdown parsing
@@ -165,6 +174,7 @@ const CORE_SKILLS = [
 ## Updated Bootstrap Workflow
 
 Updated `.codeium/windsurf/global_workflows/bootstrap.md` to:
+
 - List core workflows available natively
 - Mention openskills for specialized skills
 - Clarify invocation methods (@workflow vs openskills read)
@@ -197,6 +207,7 @@ Updated `.codeium/windsurf/global_workflows/bootstrap.md` to:
 ## Testing
 
 Tested with:
+
 - ✅ All 9 core skills sync successfully
 - ✅ Generated workflows have correct format
 - ✅ Frontmatter includes description and auto_execution_mode

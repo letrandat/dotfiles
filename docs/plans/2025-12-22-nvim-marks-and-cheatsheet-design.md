@@ -20,11 +20,13 @@ Add relative line numbers, clarify harpoon configuration strategy, and create a 
 **Status:** ✅ Complete (user implemented)
 
 Added to `nvim/.config/nvim/lua/config/options.lua`:
+
 ```lua
 vim.opt.relativenumber = true
 ```
 
 **Benefits:**
+
 - Shows distance to lines above/below cursor
 - Enables efficient vim motions (e.g., `5j` to jump 5 lines)
 - Works alongside absolute line number for current line
@@ -32,11 +34,13 @@ vim.opt.relativenumber = true
 ### 2. Harpoon Configuration
 
 **Strategy:** Hybrid approach
+
 - LazyVim's `harpoon2` extra (in `lazyvim.json`) provides base plugin setup
 - Custom `lua/plugins/harpoon.lua` overrides keybindings only
 - Removed redundant `opts` block (LazyVim extras already provide same settings)
 
 **Simplified harpoon.lua:**
+
 ```lua
 return {
   {
@@ -51,12 +55,14 @@ return {
 ```
 
 **Custom Keybindings:**
+
 - `Alt+m` - Add file to harpoon
 - `Alt+o` - Quick menu
 - `Alt+j/k/l/;` - Jump to slots 1-4
 - `<leader>hj/k/l/;` - Replace slots 1-4
 
 **LazyVim Default Settings (inherited from extra):**
+
 - Menu width: `vim.api.nvim_win_get_width(0) - 4`
 - Save on toggle: `true`
 
@@ -77,6 +83,7 @@ return {
 | `:delmarks!` | Delete all lowercase marks |
 
 **Special Marks:**
+
 - `''` - Jump to last position
 - `'.` - Jump to last change
 - `'^` - Jump to last insert position
@@ -86,12 +93,14 @@ return {
 **File:** `bin/.local/dotfiles-bin/nvim-cheatsheet`
 
 **Features:**
+
 - Fuzzy search with fzf
 - Organized by categories (Marks, Harpoon, Files, Navigation, Editing, etc.)
 - Action types: `[info]` (display) and `[exec]` (execute command)
 - Dynamic leader key substitution
 
 **Categories Included:**
+
 - **Marks:** All vim marks commands
 - **Harpoon:** Custom keybindings
 - **Files:** Path copying, explorers
@@ -101,6 +110,7 @@ return {
 - **Config:** Quick access to view/edit config files
 
 **Usage:**
+
 ```bash
 nvim-cheatsheet
 ```

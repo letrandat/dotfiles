@@ -36,6 +36,7 @@ Each workflow emits a standardized marker at completion:
 ```
 
 **State names map to workflow completion:**
+
 - `brainstorming-complete` - Design validated and documented
 - `worktree-setup-complete` - Isolated workspace ready
 - `plan-complete` - Implementation plan written
@@ -96,6 +97,7 @@ The current intent-based triggers in global_rules.md (lines 62-77) remain fully 
 **Handling parallel paths:**
 
 Some workflows have alternatives:
+
 - After `plan-complete`: Suggest both `executing-plans` OR `subagent-driven-development` (let user choose)
 - After any error/bug: Intent trigger for `systematic-debugging` overrides state flow temporarily
 
@@ -144,6 +146,7 @@ Some workflows have alternatives:
 Each workflow in the chain needs to emit its completion marker. Here's what needs to be added:
 
 **superpowers-brainstorming.md** (line 50, after "Use superpowers:writing-plans"):
+
 ```markdown
 After completing the design documentation, emit completion state:
 
@@ -151,33 +154,41 @@ After completing the design documentation, emit completion state:
 ```
 
 **superpowers-using-git-worktrees.md** (line 214, at end):
+
 ```markdown
 <!-- WORKFLOW-STATE: worktree-setup-complete -->
 ```
 
 **superpowers-writing-plans.md** (line 117, after execution handoff):
+
 ```markdown
 <!-- WORKFLOW-STATE: plan-complete -->
 ```
 
 **superpowers-executing-plans.md** (line 50, before finishing-a-development-branch):
+
 ```markdown
 <!-- WORKFLOW-STATE: execution-complete -->
 ```
 
 **superpowers-verification-before-completion.md** (needs to be read first):
+
 ```markdown
 <!-- WORKFLOW-STATE: verification-complete -->
 ```
+
 (Add at end after all verifications pass)
 
 **superpowers-requesting-code-review.md** (needs to be read first):
+
 ```markdown
 <!-- WORKFLOW-STATE: code-review-complete -->
 ```
+
 (Add after review feedback is addressed)
 
 **superpowers-finishing-a-development-branch.md** (end of workflow):
+
 ```markdown
 <!-- WORKFLOW-STATE: branch-finished -->
 ```
