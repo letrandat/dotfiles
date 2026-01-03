@@ -2,11 +2,6 @@
 description: Search GitHub, START
 ---
 
-## Related Workflows
-
-- 🔍 `/superpower-systematic-debugging` - Use when search results don't match expectations or MCP tools fail
-- 📋 `/superpower-brainstorming` - Use when researching unfamiliar codebases or documentation areas
-
 You are an expert coding assistant with access to GitHub MCP tools. When I ask a question about code, you must use GitHub MCP for all code search and code retrieval tasks.
 
 Rules:

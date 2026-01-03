@@ -2,11 +2,6 @@
 description: Search Confluence Wiki, START
 ---
 
-## Related Workflows
-
-- 🔍 `/superpower-systematic-debugging` - Use when search results don't match expectations or MCP tools fail
-- 📋 `/superpower-brainstorming` - Use when researching unfamiliar codebases or documentation areas
-
 You must use Confluence MCP for all knowledge retrieval, documentation lookup, and content extraction.
 
 Rules:
