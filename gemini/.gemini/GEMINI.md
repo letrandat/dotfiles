@@ -15,7 +15,7 @@ Run `bd prime` for workflow context, or install hooks (`bd hooks install`) for a
 **Quick reference:**
 
 - `bd ready` - Find unblocked work
-- `bd create "Title" --type task --priority 2` - Create issue
+- `bd create "Title" --type task --priority 2 --description="Why this issue exists and what needs to be done"` - Create issue
 - `bd close <id>` - Complete work
 - `bd sync` - Sync with git (run at session end)
 
