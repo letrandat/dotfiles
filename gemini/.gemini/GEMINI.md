@@ -42,3 +42,41 @@ Use `@/openspec/AGENTS.md` to learn:
 Keep this managed block so 'openspec update' can refresh the instructions.
 
 <!-- OPENSPEC:END -->
+
+## Land the Plane Workflow
+
+**Trigger:** "land the plane"
+
+**Instructions:**
+This is the standard cleanup and finalization routine. When invoked, you MUST:
+
+1. **Commit & Lint:**
+    - Stage all changes: `git add .`
+    - Run pre-commit ONLY on staged files: `pre-commit run --files $(git diff --cached --name-only)`
+    - If pre-commit fixes files (auto-fix), re-stage them (`git add .`) and run again.
+    - If manual fixes are needed, perform them.
+    - Commit with a descriptive conventional commit message.
+
+2. **Close Administrative Tasks:**
+    - **OpenSpec:** Check `openspec list`. If a change proposal is active and implemented, archive it (`openspec archive <id> --yes`).
+    - **Beads Health:** Run `bd doctor`. If issues found, run `bd doctor --fix`.
+    - **Beads Close:** Check `bd list`. Close any open tasks/epics that were completed in this session (`bd close <id>`).
+    - **Beads Sync:** Run `bd sync` to ensure local state matches git.
+
+3. **Report:**
+    - Provide a concise summary of the actions taken (commits, files, tickets closed).
+
+**Example:**
+
+**User:** "land the plane"
+
+**Agent:**
+
+- (Runs `git add .`)
+- (Runs `pre-commit ...`) -> *Fixes trailing whitespace*
+- (Runs `git commit -m "feat: optimize database queries"`)
+- (Runs `openspec archive optimize-queries --yes`)
+- (Runs `bd doctor --fix`)
+- (Runs `bd close df-101`)
+- (Runs `bd sync`)
+- **Summary:** "Landed the plane. Committed 'feat: optimize database queries', passed all linters, archived 'optimize-queries' spec, verified beads health, closed task df-101, and synced beads."
