@@ -2,10 +2,11 @@
 
 ## Core Mandates
 
-- Use **OpenSpec** for intent (`openspec-proposal`).
 - Use **Beads** for task management (`bd`).
+- Use **OpenSpec** for understand the user intent and provide proposal (`openspec-proposal`).
 - Always brainstorm with `/dat-brainstorm` before coding complex features.
 
+<!-- BEADS:START -->
 ## Issue Tracking
 
 This project uses **bd (beads)** for issue tracking.
@@ -19,6 +20,7 @@ Run `bd prime` for workflow context, or install hooks (`bd hooks install`) for a
 - `bd sync` - Sync with git (run at session end)
 
 For full workflow details: `bd prime`
+<!-- BEADS:END -->
 
 <!-- OPENSPEC:START -->
 ## OpenSpec Instructions
