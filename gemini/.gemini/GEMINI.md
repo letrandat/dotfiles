@@ -82,7 +82,6 @@ This is the standard cleanup and finalization routine. When invoked, you MUST:
 
 2. **Close Administrative Tasks:**
     - **OpenSpec:** Check `openspec list`. If a change proposal is active and implemented, archive it (`openspec archive <id> --yes`).
-    - **Beads Health:** Run `bd doctor`. If issues found, run `bd doctor --fix`.
     - **Beads Close:** Check `bd list`. Close any open tasks/epics that were completed in this session (`bd close <id>`).
     - **Beads Sync:** Run `bd sync` to ensure local state matches git.
 
@@ -99,7 +98,6 @@ This is the standard cleanup and finalization routine. When invoked, you MUST:
 - (Runs `pre-commit ...`) -> *Fixes trailing whitespace*
 - (Runs `git commit -m "feat: optimize database queries"`)
 - (Runs `openspec archive optimize-queries --yes`)
-- (Runs `bd doctor --fix`)
 - (Runs `bd close df-101`)
 - (Runs `bd sync`)
-- **Summary:** "Landed the plane. Committed 'feat: optimize database queries', passed all linters, archived 'optimize-queries' spec, verified beads health, closed task df-101, and synced beads."
+- **Summary:** "Landed the plane. Committed 'feat: optimize database queries', passed all linters, archived 'optimize-queries' spec, closed task df-101, and synced beads."
