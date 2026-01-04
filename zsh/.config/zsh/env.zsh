@@ -47,3 +47,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 # Terminal -> tmux auto-attach (Ghostty, editors)
 [ -f "$HOME/.local/dotfiles-bin/tmux-autoattach.sh" ] && source "$HOME/.local/dotfiles-bin/tmux-autoattach.sh"
+
+# opencode
+export PATH=/Users/dat/.opencode/bin:$PATH
