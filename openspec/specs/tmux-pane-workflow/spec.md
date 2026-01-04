@@ -1,14 +1,10 @@
-# Spec: Tmux Pane Workflow
+# tmux-pane-workflow Specification
 
-## Capability
+## Purpose
 
-`tmux-pane-workflow`
+TBD - created by archiving change claude-primary-workspace. Update Purpose after archive.
 
-## Overview
-
-Defines the behavior of a 2-pane tmux workspace optimized for Claude Code as the primary development tool with Neovim as a secondary quick-reference editor. This capability specifies pane management, toggle semantics, visual labeling, and error recovery for a Claude-primary workflow.
-
-## ADDED Requirements
+## Requirements
 
 ### Requirement: Pane Toggle Keybind
 
@@ -280,29 +276,3 @@ The system SHALL configure tmux to display pane borders with labels at the top o
 **Then** borders shall appear at the top of each pane (not bottom, not hidden)
 
 **Implementation**: `set -g pane-border-status top`
-
-## MODIFIED Requirements
-
-None. This is a new capability with no modifications to existing specs.
-
-## REMOVED Requirements
-
-None. This capability does not remove or deprecate any existing functionality.
-
-## Related Capabilities
-
-None. This is a standalone capability.
-
-## Validation Criteria
-
-This spec is considered validated when:
-
-1. All scenarios pass manual testing
-2. OpenSpec validation (`openspec validate claude-primary-workspace --strict`) reports no errors
-3. Inline comments are clear and explain behavior
-4. No regressions to existing tmux or Ghostty keybinds
-5. Pane labels correctly display "1(ai)" and "2(nvim)"
-6. Cmd+L reliably toggles between panes with zoom
-7. Lazy pane creation works (pane 2 only created on first access)
-8. Error recovery handles manually killed panes gracefully
-9. Cross-window behavior does not create 3rd pane in 2+ pane windows

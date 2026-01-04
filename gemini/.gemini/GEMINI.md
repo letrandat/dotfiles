@@ -41,7 +41,30 @@ Use `@/openspec/AGENTS.md` to learn:
 
 Keep this managed block so 'openspec update' can refresh the instructions.
 
-<!-- OPENSPEC:END -->
+## Directory Structure
+
+```text
+openspec/
+├── project.md              # Project conventions
+├── specs/                  # Current truth - what IS built
+│   └── [capability]/       # Single focused capability
+│       ├── spec.md         # Requirements and scenarios
+│       └── design.md       # Technical patterns
+├── changes/                # Proposals - what SHOULD change
+│   ├── [change-name]/
+│   │   ├── proposal.md     # Why, what, impact
+│   │   └── specs/          # Delta changes
+│   │       └── [capability]/
+│   │           └── spec.md # ADDED/MODIFIED/REMOVED
+│   └── archive/            # Completed changes
+```
+
+## Task Management
+
+**CRITICAL:** This project does NOT use `tasks.md` within OpenSpec change directories. All implementation tracking MUST be done via **Beads** (`bd`).
+
+- If an OpenSpec proposal has no corresponding Beads tasks, it is likely that the implementation is already complete and the proposal is ready for archiving.
+- Always use `bd create` to track work from a proposal.
 
 ## Land the Plane Workflow
 
