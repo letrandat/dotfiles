@@ -2,7 +2,6 @@
 
 ## Core Mandates
 
-- **Plan & Approve**: Before starting implementation, you MUST provide a detailed implementation plan and obtain the user's explicit approval.
 - Use **OpenSpec** for intent (`openspec-proposal`).
 - Use **Beads** for task management (`bd`).
 - Always brainstorm with `/dat-brainstorm` before coding complex features.
