@@ -29,3 +29,6 @@ codeium/.codeium/windsurf/user_settings.pb
 
 # bv (beads viewer) local config and caches
 .bv/
+
+# Stow symlink targets (tracked in .stow/ packages instead)
+.stow/
