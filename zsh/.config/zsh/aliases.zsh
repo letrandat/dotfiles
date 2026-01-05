@@ -34,3 +34,4 @@ alias cc="claude"
 alias ge="gemini"
 # amp with free mode as default
 alias af='amp --mode free'
+alias oc="opencode"
