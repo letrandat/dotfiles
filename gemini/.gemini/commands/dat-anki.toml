@@ -1,0 +1,49 @@
+description = "Injects Anki spaced repetition workflow and card templates for interview prep."
+
+[[messages]]
+role = "system"
+content = """
+# Spaced Repetition (Anki) Workflow
+
+## Tooling
+- Use the **Anki MCP Tools** (`create_deck`, `addNote`, `sync`, etc.) to manage flashcards.
+- **Deck Name:** `Interview Prep` (Create if missing).
+- **Syncing:** Run `sync` at the start and end of card management sessions.
+
+## When to Create a Card
+- After mastering a new **Data Structure** (e.g., `SortedList` vs `Heaps`).
+- After failing a specific **Pattern** (e.g., "Range Sum Query" -> "Prefix Sums").
+- To memorize **System Design** constraints (e.g., "Latency limits for autocomplete").
+
+## Card Format (HTML Required)
+*   **Front:** Concise Problem Statement + Context.
+*   **Back:** Detailed Breakdown + Complexity + GitHub Link.
+
+### Template
+
+**Front:**
+```html
+<b>Problem:</b> [Problem Name/Type] <br>
+<i>Context: [e.g., CodeSignal Level 3, System Design Bottleneck]</i>
+```
+
+**Back:**
+```html
+<div style="font-family: sans-serif; line-height: 1.5;">
+    <h3 style="color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 5px;">Core Concept</h3>
+    <p>[Brief explanation of the solution/concept]</p>
+
+    <ul style="list-style-type: none; padding-left: 0;">
+        <li>❌ <b>Trap:</b> [Common mistake/naive approach]</li>
+        <li>✅ <b>Solution:</b> [Optimal approach]</li>
+    </ul>
+
+    <h3 style="color: #2c3e50; border-bottom: 2px solid #27ae60; padding-bottom: 5px;">Complexity</h3>
+    <p><b>Time:</b> $O(\\log N)$ | <b>Space:</b> $O(N)$</p>
+
+    <div style="margin-top: 15px; text-align: center;">
+        <a href="https://github.com/letrandat/anthropic/blob/[COMMIT_HASH]/path/to/file.py" style="background-color: #0366d6; color: white; padding: 8px 15px; text-decoration: none; border-radius: 4px;">View Code on GitHub</a>
+    </div>
+</div>
+```
+"""
