@@ -10,16 +10,13 @@
   "workbench.editor.showTabs": "none",
   // needed status bar for vscodevim only
   "workbench.statusBar.visible": false,
-
   // Breadcrumbs Configuration
   "breadcrumbs.enabled": false,
-
   // Window Configuration
   "window.autoDetectColorScheme": true,
   "window.openFoldersInNewWindow": "off",
   // Use active editor medium for the window title
   "window.title": "${folderName} @ ${activeRepositoryBranchName} > ${activeEditorShort} [${activeFolderMedium}]",
-
   // Editor Configuration
   "editor.fontSize": 13,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -41,18 +38,18 @@
   "editor.cursorSurroundingLines": 10,
   // show extra status bar for editor suggestions
   "editor.suggest.showStatusBar": true,
-  "editor.rulers": [80],
+  "editor.rulers": [
+    80
+  ],
   "editor.accessibilitySupport": "off",
   "editor.snippetSuggestions": "top",
   "editor.suggestSelection": "first",
   "editor.linkedEditing": true,
   "editor.tabSize": 2,
-
   // Diff Editor Configuration
   "diffEditor.hideUnchangedRegions.enabled": true,
   "diffEditor.renderSideBySide": false,
   "diffEditor.experimental.useTrueInlineView": true,
-
   // Search Configuration
   "search.searchEditor.focusResultsOnSearch": true,
   "search.searchEditor.reusePriorSearchConfiguration": true,
@@ -60,11 +57,9 @@
   "files.trimTrailingWhitespace": true,
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 300,
-
   // Zen Mode Configuration
   "zenMode.hideLineNumbers": false,
   "zenMode.showTabs": "none",
-
   // Terminal Configuration
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.suggest.enabled": true,
@@ -75,22 +70,22 @@
   "terminal.integrated.profiles.osx": {
     "vscode-tmux": {
       "path": "zsh",
-      "args": ["-c", "source ~/.local/dotfiles-bin/tmux-autoattach.sh"],
+      "args": [
+        "-c",
+        "source ~/.local/dotfiles-bin/tmux-autoattach.sh"
+      ],
       "icon": "terminal-tmux"
     }
   },
   "terminal.integrated.defaultProfile.osx": "zsh",
   "terminal.integrated.hideOnStartup": "always",
-
   // Programming Languages Configuration
   // HTML Configuration
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
   },
-
   // Python Configuration
   "python.defaultInterpreterPath": "/opt/homebrew/bin/python3",
-
   // Go language Configuration
   "[go]": {
     "editor.defaultFormatter": "golang.go"
@@ -108,12 +103,10 @@
   "go.inlayHints.compositeLiteralTypes": true,
   "go.inlayHints.functionTypeParameters": true,
   "go.inlayHints.parameterNames": true,
-
   // Lua Configuration
   "[lua]": {
     "editor.defaultFormatter": "JohnnyMorganz.stylua"
   },
-
   // Shell script configuration
   "[shellscript]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
@@ -121,12 +114,10 @@
   "[properties]": {
     "editor.defaultFormatter": "foxundermoon.shell-format"
   },
-
   "[jsonc]": {},
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
-
   // Java language settings
   "[java]": {
     "editor.formatOnSave": false,
@@ -134,7 +125,6 @@
   },
   "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
   "java.format.settings.profile": "GoogleStyle",
-
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -147,19 +137,18 @@
   "[helm]": {
     "editor.formatOnSave": false
   },
-
   //
   // Plugins
   //
-
   // Project Manager
-  "projectManager.any.baseFolders": ["~/personal", "~/workspace"],
+  "projectManager.any.baseFolders": [
+    "~/personal",
+    "~/workspace"
+  ],
   "projectManager.sortList": "Recent",
   "projectManager.removeCurrentProjectFromList": false,
-
   // Redhat telemetry
   "redhat.telemetry.enabled": true,
-
   //
   // Git Configuration
   //
@@ -167,7 +156,6 @@
   "git.autofetch": true,
   "git.verboseCommit": true,
   "git.enableSmartCommit": true,
-
   //
   // MultiCommand Configuration
   //
@@ -194,12 +182,16 @@
         // quit lazygit if it's running
         {
           "command": "workbench.action.terminal.sendSequence",
-          "args": { "text": "q" }
+          "args": {
+            "text": "q"
+          }
         },
         // send ctrl+u to terminal to clear terminal before running command
         {
           "command": "workbench.action.terminal.sendSequence",
-          "args": { "text": "\u0015vscode-switcher --antigravity\u000D" }
+          "args": {
+            "text": "\u0015vscode-switcher --antigravity\u000D"
+          }
         },
         // focus on terminal to select the new dir
         {
@@ -209,7 +201,6 @@
       ]
     }
   ],
-
   // vscode-vim Configuration
   "vim.useSystemClipboard": true,
   "vim.hlsearch": true,
@@ -217,12 +208,14 @@
   // Enable and configure yank highlighting
   "vim.highlightedyank.enable": true,
   "vim.highlightedyank.duration": 200,
-
   "vim.normalModeKeyBindings": [
     // replace with gs
     // Copy word under cursor to clipboard and trigger cmd with search/replace
     {
-      "before": ["g", "s"],
+      "before": [
+        "g",
+        "s"
+      ],
       "after": [
         ":",
         "%",
@@ -246,69 +239,119 @@
       ]
     },
     {
-      "before": ["<Left>"],
-      "commands": ["workbench.action.navigateLeft"]
+      "before": [
+        "<Left>"
+      ],
+      "commands": [
+        "workbench.action.navigateLeft"
+      ]
     },
     {
-      "before": ["<Right>"],
-      "commands": ["workbench.action.navigateRight"]
+      "before": [
+        "<Right>"
+      ],
+      "commands": [
+        "workbench.action.navigateRight"
+      ]
     },
     {
-      "before": ["<Up>"],
-      "commands": ["workbench.action.navigateUp"]
+      "before": [
+        "<Up>"
+      ],
+      "commands": [
+        "workbench.action.navigateUp"
+      ]
     },
     {
-      "before": ["<Down>"],
-      "commands": ["workbench.action.navigateDown"]
+      "before": [
+        "<Down>"
+      ],
+      "commands": [
+        "workbench.action.navigateDown"
+      ]
     },
     //
     // Core settings
     //
     // use vscode undo/redo
     {
-      "before": ["u"],
-      "commands": ["undo"]
+      "before": [
+        "u"
+      ],
+      "commands": [
+        "undo"
+      ]
     },
     {
-      "before": ["<C-r>"],
-      "commands": ["redo"]
+      "before": [
+        "<C-r>"
+      ],
+      "commands": [
+        "redo"
+      ]
     },
     {
-      "before": ["Y"], // usage: Y to yank from start to end
-      "after": ["y", "$"]
+      "before": [
+        "Y"
+      ], // usage: Y to yank from start to end
+      "after": [
+        "y",
+        "$"
+      ]
     },
     // open vim command line with :
     {
-      "before": [":"],
-      "commands": ["vim.showQuickpickCmdLine"]
+      "before": [
+        ":"
+      ],
+      "commands": [
+        "vim.showQuickpickCmdLine"
+      ]
     },
     // move line up
     {
-      "before": ["K"],
-      "commands": ["editor.action.moveLinesUpAction"]
+      "before": [
+        "K"
+      ],
+      "commands": [
+        "editor.action.moveLinesUpAction"
+      ]
     },
     // move line down
     {
-      "before": ["J"],
-      "commands": ["editor.action.moveLinesDownAction"]
+      "before": [
+        "J"
+      ],
+      "commands": [
+        "editor.action.moveLinesDownAction"
+      ]
     }
   ],
-
   "vim.visualModeKeyBindings": [
     // START: Core settings
     // prevent copying the selected text after pasting
     {
-      "before": ["p"],
+      "before": [
+        "p"
+      ],
       // p: Paste the text.
       // gv: Reselect the text that was just pasted.
       // y: Yank the reselected text back
-      "after": ["p", "g", "v", "y"]
+      "after": [
+        "p",
+        "g",
+        "v",
+        "y"
+      ]
     },
     // END: Core settings
     // replace with gs
     // Copy word under cursor to clipboard and trigger cmd with search/replace
     {
-      "before": ["g", "s"],
+      "before": [
+        "g",
+        "s"
+      ],
       "after": [
         "y",
         ":",
@@ -330,27 +373,32 @@
     },
     // move line up
     {
-      "before": ["K"],
-      "commands": ["editor.action.moveLinesUpAction"]
+      "before": [
+        "K"
+      ],
+      "commands": [
+        "editor.action.moveLinesUpAction"
+      ]
     },
     // move line down
     {
-      "before": ["J"],
-      "commands": ["editor.action.moveLinesDownAction"]
+      "before": [
+        "J"
+      ],
+      "commands": [
+        "editor.action.moveLinesDownAction"
+      ]
     }
   ],
-
   // lazygit-vscode
   "lazygit-vscode.configPath": "~/.config/lazygit/config-antigravity.yml",
   "lazygit-vscode.autoMaximizeWindow": true,
   "lazygit-vscode.panels": {
     "sidebar": "hide"
   },
-
   // GitLens Configuration
   "gitlens.currentLine.enabled": false,
   "gitlens.codeLens.enabled": false,
-
   //
   // whichkey
   //
@@ -1481,7 +1529,9 @@
           "icon": "add",
           "type": "command",
           "command": "workbench.action.terminal.newWithProfile",
-          "args": { "profileName": "vscode-tmux" }
+          "args": {
+            "profileName": "vscode-tmux"
+          }
         },
         {
           "key": "o",
