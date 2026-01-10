@@ -6,6 +6,7 @@
   "workbench.iconTheme": "material-icon-theme",
   "workbench.preferredLightColorTheme": "Catppuccin Latte",
   "workbench.preferredDarkColorTheme": "Catppuccin Frappé",
+  "workbench.colorTheme": "GitHub Light",
   "workbench.editor.showTabs": "none",
   // needed status bar for vscodevim only
   "workbench.statusBar.visible": false,
