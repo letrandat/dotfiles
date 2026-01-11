@@ -1,4 +1,6 @@
 # Sensitive / Auto-generated
+.env
+*.env
 globalStorage/
 workspaceStorage/
 History/

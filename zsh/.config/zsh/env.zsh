@@ -51,5 +51,10 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # opencode
 export PATH=/Users/dat/.opencode/bin:$PATH
 
-# 1Password
-export GITHUB_PERSONAL_ACCESS_TOKEN=$(op read "op://Private/GITHUB_PERSONAL_ACCESS_TOKEN/credential")
+# Environment secrets (use ~/.env if exists, fallback to 1Password)
+if [ -f "$HOME/.env" ]; then
+    source "$HOME/.env"
+else
+    # Fallback to 1Password (requires authentication)
+    export GITHUB_PERSONAL_ACCESS_TOKEN=$(op read "op://Private/GITHUB_PERSONAL_ACCESS_TOKEN/credential")
+fi
