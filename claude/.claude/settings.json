@@ -1,66 +1,16 @@
 {
-  "$schema": "https://json.schemastore.org/claude-code-settings.json",
-  "attribution": {},
-  "permissions": {
-    "allow": [
-      "Read",
-      "Bash(git status:*)",
-      "Bash(git diff:*)",
-      "Bash(git log:*)",
-      "Bash(git add:*)",
-      "Bash(git commit:*)",
-      "Bash(git pull:*)",
-      "Bash(git branch:*)",
-      "Bash(git checkout:*)",
-      "Bash(git worktree:*)",
-      "Bash(ls:*)",
-      "Bash(find:*)",
-      "Bash(tree:*)",
-      "Bash(cat:*)",
-      "Bash(head:*)",
-      "Bash(tail:*)",
-      "Bash(grep:*)",
-      "Bash(mkdir:*)",
-      "Bash(touch:*)",
-      "Bash(npm:*)",
-      "Bash(pip:*)",
-      "Bash(pip3:*)",
-      "Bash(pytest:*)",
-      "Bash(jest:*)",
-      "Bash(vitest:*)",
-      "Bash(npm test:*)",
-      "Bash(npm run test:*)",
-      "WebFetch(domain:github.com)",
-      "WebSearch",
-      "Bash(bd:*)",
-      "Bash(shellcheck:*)",
-      "Bash(stow:*)",
-      "Bash(openspec:*)",
-      "Bash(pre-commit:*)"
-    ],
-    "deny": [
-      "Read(.env)",
-      "Read(.env.*)",
-      "Read(**/.env)",
-      "Read(**/.env.*)",
-      "Read(**/secrets/**)",
-      "Read(**/*.key)",
-      "Read(**/*.pem)",
-      "Bash(rm:*)",
-      "Bash(dd:*)",
-      "Bash(mkfs:*)",
-      "Bash(sudo:*)"
+  "model": "opus",
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "terminal-notifier -title 'Claude Code' -message 'Claude needs your input!' -sound default"
+          }
+        ]
+      }
     ]
-  },
-  "model": "sonnet",
-  "statusLine": {
-    "type": "command",
-    "command": "~/.claude/statusline.sh"
-  },
-  "enabledPlugins": {
-    "github@claude-plugins-official": true,
-    "context7@claude-plugins-official": true,
-    "lua-lsp@claude-plugins-official": true,
-    "beads@beads-marketplace": true
   }
 }
